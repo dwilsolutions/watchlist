@@ -23,8 +23,8 @@ import urllib.request, urllib.error
 TOKEN = os.environ.get("FINVIZ_TOKEN", "")
 
 SCREENERS = [
-    ("Low Float", "cap_smallunder,sh_curvol_o5000,sh_float_u20,sh_price_u10"),
-    ("Mid Cap",   "cap_smallunder,sh_curvol_o5000,sh_float_20to100x,sh_price_u20"),
+    ("Low Float", "v=151&f=cap_smallunder,sh_curvol_o5000,sh_float_u20,sh_price_u10,sh_relvol_o2"),
+    ("Mid Cap",   "v=151&f=cap_smallunder,sh_curvol_o5000,sh_float_20to100x,sh_price_u20,sh_relvol_o3"),
 ]
 
 # US market holidays 2026
@@ -85,7 +85,7 @@ def safe(v, default=0.0):
 def fetch_csv(label, filters):
     if not TOKEN:
         raise RuntimeError("FINVIZ_TOKEN not set.")
-    url = f"https://elite.finviz.com/export.ashx?v=152&f={filters}&auth={TOKEN}"
+    url = f"https://elite.finviz.com/export.ashx?{filters}&auth={TOKEN}"
     req = urllib.request.Request(url, headers={"User-Agent": "watchlist-scorer/1.0"})
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
