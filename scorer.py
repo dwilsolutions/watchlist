@@ -101,10 +101,17 @@ def fetch_csv(label, filters):
 
 # ── Scoring ────────────────────────────────────────────────────────────────────
 
+def is_market_live(rows):
+    """Returns False when key intraday fields are missing — e.g. weekend/closed."""
+    if not rows: return False
+    rvols = [safe(r.get("Relative Volume")) for r in rows[:5]]
+    return any(v > 0.1 for v in rvols)
+
 def score_row(row):
     price        = safe(row.get("Price"))
     change       = pct(row.get("Change"))
-    gap          = pct(row.get("Gap"))
+    gap_raw      = row.get("Gap", "")
+    gap          = pct(gap_raw)
     rvol         = safe(row.get("Relative Volume"))
     rsi          = safe(row.get("Relative Strength Index (14)"))
     float_m      = safe(row.get("Shares Float"))
@@ -123,13 +130,18 @@ def score_row(row):
     vwap_proxy   = (h + l + o) / 3 if (h and l and o) else price
     above_vwap   = price >= vwap_proxy
 
+    import math as _math
+    gap_missing     = _math.isnan(gap)
+    rvol_missing    = rvol == 0
+    chgopen_missing = _math.isnan(chg_open)
+
     # Trend 30pts
     trend = 0
     if sma20  > 0: trend += 8
     if sma50  > 0: trend += 7
     if sma200 > 0: trend += 7
-    if perf_week  > 0: trend += 4
-    if perf_month > 0: trend += 4
+    if not _math.isnan(perf_week)  and perf_week  > 0: trend += 4
+    if not _math.isnan(perf_month) and perf_month > 0: trend += 4
     trend = min(trend, 30)
 
     # Range 45pts
@@ -141,18 +153,21 @@ def score_row(row):
     else:                    range_score += 6
     if   lo52 > 50: range_score += 10
     elif lo52 > 20: range_score += 5
-    if perf_quarter > 0: range_score += 5
+    if not _math.isnan(perf_quarter) and perf_quarter > 0: range_score += 5
     range_score = min(range_score, 45)
 
-    # Volume 25pts
+    # Volume 25pts — skip if intraday data unavailable
     vol_score = 0
-    if   rvol >= 50: vol_score += 12
-    elif rvol >= 10: vol_score += 9
-    elif rvol >= 3:  vol_score += 6
-    elif rvol >= 2:  vol_score += 3
-    gap_quality = gap > 10 and rvol >= 2 and chg_open > -5
-    if gap_quality:             vol_score += 7
-    elif gap > 5 and rvol >= 2: vol_score += 4
+    if not rvol_missing:
+        if   rvol >= 50: vol_score += 12
+        elif rvol >= 10: vol_score += 9
+        elif rvol >= 3:  vol_score += 6
+        elif rvol >= 2:  vol_score += 3
+    gap_quality = (not gap_missing) and gap > 10 and (not rvol_missing) and rvol >= 2 and (not chgopen_missing) and chg_open > -5
+    if gap_quality:
+        vol_score += 7
+    elif (not gap_missing) and gap > 5 and (not rvol_missing) and rvol >= 2:
+        vol_score += 4
     if   50 <= rsi <= 75:                      vol_score += 6
     elif (40 <= rsi < 50) or (75 < rsi <= 85): vol_score += 3
     vol_score = min(vol_score, 25)
@@ -161,9 +176,9 @@ def score_row(row):
     bonus = 0
     flags = []
 
-    continuation = perf_week > 30 and chg_open > -10
+    continuation = (not _math.isnan(perf_week)) and perf_week > 30 and (not chgopen_missing) and chg_open > -10
     if continuation:
-        flags.append(("CONTINUATION", "cont"));  bonus += 5
+        flags.append(("CONTINUATION", "cont")); bonus += 5
 
     if gap_quality:
         flags.append(("GAP QUALITY", "gap"))
@@ -177,12 +192,13 @@ def score_row(row):
     if "reverse" in news_lo and "split" in news_lo:
         flags.append(("REVERSE SPLIT", "danger")); bonus -= 15
 
-    if gap < -20:
-        flags.append(("CRASHED · GAP DOWN", "danger")); bonus -= 20
-    elif gap < -10:
-        bonus -= 10
+    if not gap_missing:
+        if gap < -20:
+            flags.append(("CRASHED · GAP DOWN", "danger")); bonus -= 20
+        elif gap < -10:
+            bonus -= 10
 
-    if not above_vwap:
+    if not (gap_missing and rvol_missing) and not above_vwap:
         flags.append(("BELOW VWAP PROXY", "vwap")); bonus -= 8
 
     total = max(0, min(100, base + bonus))
@@ -366,9 +382,10 @@ a{color:inherit;text-decoration:none;}
 .chip-score{font-size:10px;color:var(--red);}
 .chip-why{font-size:10px;color:var(--muted);}
 .footer{text-align:center;font-size:10px;color:var(--muted);padding:24px;border-top:1px solid var(--border);}
+.banner-closed{background:#3d2e1a;color:#f5c46e;font-size:11px;padding:10px 20px;text-align:center;border-bottom:1px solid #5a4010;}
 """
 
-def render_html(results, session, trading_date, label, note, gen_time_str):
+def render_html(results, session, trading_date, label, note, gen_time_str, market_live=True):
     buy     = [r for r in results if r["total"] >= 65]
     monitor = [r for r in results if 40 <= r["total"] < 65]
     avoid   = [r for r in results if r["total"] < 40]
@@ -408,6 +425,7 @@ def render_html(results, session, trading_date, label, note, gen_time_str):
   <span class="leg-item"><span class="leg-dot" style="background:#7ab4f5"></span>Low Float (&lt;$10 · &lt;20M float · RVol 2x+)</span>
   <span class="leg-item"><span class="leg-dot" style="background:#b07af5"></span>Mid Cap (&lt;$20 · 20–100M float · RVol 3x+)</span>
 </div>
+{'<div class="banner-closed">⚠ Market closed or pre-market data unavailable — intraday scores (RVol, Gap, VWAP) are estimated from prior session. Scores will update when market opens.</div>' if not market_live else ''}
 <div class="summary">
   <div class="sum-cell"><div class="sum-n c-g">{len(buy)}</div><div class="sum-l">Buy Watch ≥65</div></div>
   <div class="sum-cell"><div class="sum-n c-a">{len(monitor)}</div><div class="sum-l">Monitor 40–64</div></div>
@@ -433,8 +451,9 @@ SESSION_DISPLAY = {
 }
 
 def update_index(docs_dir):
+    FIXED_FILES = {"premarket.html","marketopen.html","midday.html","afterhours.html"}
     files = sorted(
-        [f for f in os.listdir(docs_dir) if f.endswith(".html") and f != "index.html"],
+        [f for f in os.listdir(docs_dir) if f.endswith(".html") and f != "index.html" and f not in FIXED_FILES],
         reverse=True
     )
     rows = ""
@@ -528,7 +547,8 @@ def main():
     results = apply_sector_bonus(results)
     results.sort(key=lambda x: x["total"], reverse=True)
 
-    html     = render_html(results, session, trading_day, label, note, gen_time)
+    live     = is_market_live(unique)
+    html     = render_html(results, session, trading_day, label, note, gen_time, market_live=live)
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     # 1. Dated archive copy — keeps history, powers index page
