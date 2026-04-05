@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Watchlist Archive</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0e11;--bg2:#141618;--border:rgba(255,255,255,0.07);--text:#dde1e9;--muted:#656c7a;--green:#3a9c5f;--mono:'DM Mono',monospace;--sans:'Syne',sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);}
+.hdr{padding:24px;border-bottom:1px solid var(--border);}
+.hdr h1{font-family:var(--sans);font-size:22px;font-weight:700;}
+.hdr h1 em{color:var(--green);font-style:normal;}
+.hdr p{font-size:11px;color:var(--muted);margin-top:4px;}
+.list{max-width:640px;margin:24px auto;padding:0 20px;display:flex;flex-direction:column;gap:6px;}
+.row{display:flex;align-items:center;gap:12px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px 16px;text-decoration:none;color:var(--text);}
+.row:hover{border-color:var(--green);}
+.rd{font-size:13px;font-weight:500;min-width:130px;}
+.rs{font-size:12px;color:var(--muted);flex:1;}
+.ra{font-size:11px;color:var(--green);margin-left:auto;}
+.empty{color:var(--muted);font-size:12px;padding:16px 0;}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <h1>Watchlist <em>Archive</em></h1>
+  <p>All sessions · Low Float + Mid Cap combined · Scored and ranked</p>
+</div>
+<div class="list">
+<p class="empty">No sessions yet — check back after the first run.</p>
+</div>
+</body>
+</html>
