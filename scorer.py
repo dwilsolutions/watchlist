@@ -23,8 +23,8 @@ import urllib.request, urllib.error
 TOKEN = os.environ.get("FINVIZ_TOKEN", "")
 
 SCREENERS = [
-    ("Low Float", "cap_smallunder,sh_curvol_o5000,sh_float_u20,sh_price_u10,sh_relvol_o2"),
-    ("Mid Cap",   "cap_smallunder,sh_curvol_o5000,sh_float_20to100x,sh_price_u20,sh_relvol_o3"),
+    ("Low Float", "cap_smallunder,sh_curvol_o5000,sh_float_u20,sh_price_u10"),
+    ("Mid Cap",   "cap_smallunder,sh_curvol_o5000,sh_float_20to100x,sh_price_u20"),
 ]
 
 # US market holidays 2026
