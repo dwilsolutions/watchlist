@@ -97,6 +97,14 @@ def fetch_csv(label, filters):
     for r in rows:
         r["_scan_label"] = label
     print(f"  [+] {label}: {len(rows)} tickers")
+    if rows:
+        cols = list(rows[0].keys())
+        has_gap = "Gap" in cols
+        has_rvol = "Relative Volume" in cols
+        has_sma = "20-Day Simple Moving Average" in cols
+        print(f"  [+] Columns: {len(cols)} total | Gap={has_gap} | RVol={has_rvol} | SMA20={has_sma}")
+        if rows[0].get("Gap"):
+            print(f"  [+] Sample Gap={rows[0].get('Gap')} RVol={rows[0].get('Relative Volume')} RSI={rows[0].get('Relative Strength Index (14)')}")
     return rows
 
 # ── Scoring ────────────────────────────────────────────────────────────────────
