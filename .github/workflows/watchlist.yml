@@ -3,16 +3,15 @@ name: Watchlist Auto-Score
 on:
   schedule:
     # All times UTC (ET = UTC-4 in summer daylight saving)
-    # Pre-Market  / Night scan  ~9:00 PM ET → 01:00 UTC next day
-    - cron: '0 1 * * 2-6'
-    # Market Open / Pre-market  ~8:30 AM ET → 12:30 UTC
-    - cron: '30 12 * * 1-5'
-    # Midday                    ~12:30 PM ET → 16:30 UTC
+    # Pre-Market  / Night scan  8:00 PM ET → 00:00 UTC next day
+    - cron: '0 0 * * 2-6'
+    # Market Open               9:00 AM ET → 13:00 UTC
+    - cron: '0 13 * * 1-5'
+    # Midday                    12:30 PM ET → 16:30 UTC
     - cron: '30 16 * * 1-5'
-    # After Hours / Power hour  ~3:30 PM ET → 19:30 UTC
+    # After Hours               3:30 PM ET → 19:30 UTC
     - cron: '30 19 * * 1-5'
 
-  # Manual trigger from GitHub Actions UI
   workflow_dispatch:
     inputs:
       session:
@@ -46,8 +45,9 @@ jobs:
             echo "name=${{ github.event.inputs.session }}" >> $GITHUB_OUTPUT
           else
             HOUR=$(date -u +%-H)
-            if   [ "$HOUR" -eq 1 ];  then echo "name=night"     >> $GITHUB_OUTPUT
-            elif [ "$HOUR" -eq 12 ]; then echo "name=premarket" >> $GITHUB_OUTPUT
+            MIN=$(date -u +%-M)
+            if   [ "$HOUR" -eq 0 ];  then echo "name=night"     >> $GITHUB_OUTPUT
+            elif [ "$HOUR" -eq 13 ]; then echo "name=premarket" >> $GITHUB_OUTPUT
             elif [ "$HOUR" -eq 16 ]; then echo "name=midday"    >> $GITHUB_OUTPUT
             else                          echo "name=powerhour" >> $GITHUB_OUTPUT
             fi
