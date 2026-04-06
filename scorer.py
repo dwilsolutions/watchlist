@@ -117,8 +117,12 @@ def fetch_csv(label, filters):
 def is_market_live(rows):
     """Returns False when key intraday fields are missing — e.g. weekend/closed."""
     if not rows: return False
-    rvols = [safe(r.get("Relative Volume")) for r in rows[:5]]
-    return any(v > 0.1 for v in rvols)
+    # Check Gap and Relative Volume fields are populated
+    gaps  = [r.get("Gap", "") for r in rows[:5]]
+    rvols = [r.get("Relative Volume", "") for r in rows[:5]]
+    gap_ok  = any(str(g).strip() not in ("", "0", "0.00%", "0%") for g in gaps)
+    rvol_ok = any(str(v).strip() not in ("", "0", "0.00") for v in rvols)
+    return gap_ok or rvol_ok
 
 def score_row(row):
     price        = safe(row.get("Price"))
