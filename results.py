@@ -139,7 +139,11 @@ def load_cumulative():
             data = json.load(f)
         stats["days"] += 1
         for s in data.get("sessions", {}).values():
-            for t in s.get("tickers", []):
+            if isinstance(s, list):
+                ticker_list = s
+            else:
+                ticker_list = s.get("tickers", [])
+            for t in ticker_list:
                 outcome = t.get("outcome", "")
                 tier    = "buy" if t.get("tier") == "buy" else "monitor"
                 stats[tier]["total"] += 1
