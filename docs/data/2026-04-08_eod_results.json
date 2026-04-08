@@ -1,0 +1,136 @@
+{
+  "date": "2026-04-08",
+  "generated": "11:18 AM ET",
+  "sessions": {
+    "premarket": [
+      {
+        "ticker": "OMEX",
+        "company": "Odyssey Marine Exploration, Inc",
+        "sector": "Basic Materials",
+        "scan": "Mid Cap",
+        "score": 89,
+        "tier": "buy",
+        "entry": 2.2,
+        "stop": 2.1,
+        "tp1": 2.41,
+        "tp2": 2.63,
+        "tp3": 2.96,
+        "price_at_scan": 2.19,
+        "gap": 9.24,
+        "rvol": 2202.58,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "stopped"
+      },
+      {
+        "ticker": "BBGI",
+        "company": "Beasley Broadcast Group Inc",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 86,
+        "tier": "buy",
+        "entry": 5.42,
+        "stop": 5.17,
+        "tp1": 5.93,
+        "tp2": 6.47,
+        "tp3": 7.28,
+        "price_at_scan": 5.39,
+        "gap": 9.87,
+        "rvol": 7075.55,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "stopped"
+      },
+      {
+        "ticker": "CYCU",
+        "company": "Cycurion Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 77,
+        "tier": "buy",
+        "entry": 1.73,
+        "stop": 1.65,
+        "tp1": 1.89,
+        "tp2": 2.06,
+        "tp3": 2.32,
+        "price_at_scan": 1.72,
+        "gap": 10.08,
+        "rvol": 766.38,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "stopped"
+      },
+      {
+        "ticker": "QNCX",
+        "company": "Quince Therapeutics Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 69,
+        "tier": "buy",
+        "entry": 0.33,
+        "stop": 0.3,
+        "tp1": 0.34,
+        "tp2": 0.37,
+        "tp3": 0.42,
+        "price_at_scan": 0.31,
+        "gap": 67.67,
+        "rvol": 110.74,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "BELOW VWAP PROXY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "stopped"
+      },
+      {
+        "ticker": "HCAI",
+        "company": "Huachen AI Parking Management Technology Holding Co. Ltd",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 60,
+        "tier": "monitor",
+        "entry": 0.4,
+        "stop": 0.35,
+        "tp1": 0.4,
+        "tp2": 0.43,
+        "tp3": 0.49,
+        "price_at_scan": 0.36,
+        "gap": 16.43,
+        "rvol": 15.44,
+        "flags": [
+          "BELOW VWAP PROXY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "stopped"
+      },
+      {
+        "ticker": "ELAB",
+        "company": "PMGC Holdings Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 51,
+        "tier": "monitor",
+        "entry": 4.9,
+        "stop": 4.68,
+        "tp1": 5.37,
+        "tp2": 5.86,
+        "tp3": 6.59,
+        "price_at_scan": 4.88,
+        "gap": -3.19,
+        "rvol": 58.85,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "stopped"
+      }
+    ]
+  }
+}
