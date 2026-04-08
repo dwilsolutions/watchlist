@@ -1,17 +1,6 @@
 name: Watchlist Auto-Score
 
 on:
-  schedule:
-    # All times UTC (ET = UTC-4 in summer daylight saving)
-    # Pre-Market  / Night scan  8:00 PM ET → 00:00 UTC next day
-    - cron: '0 0 * * 2-6'
-    # Market Open               9:00 AM ET → 13:00 UTC
-    - cron: '0 13 * * 1-5'
-    # Midday                    12:30 PM ET → 16:30 UTC
-    - cron: '30 16 * * 1-5'
-    # After Hours               3:30 PM ET → 19:30 UTC
-    - cron: '30 19 * * 1-5'
-
   workflow_dispatch:
     inputs:
       session:
@@ -24,6 +13,7 @@ on:
           - premarket
           - midday
           - powerhour
+          - eod
 
 jobs:
   score-and-publish:
@@ -38,31 +28,20 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Determine session from schedule
-        id: session
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "name=${{ github.event.inputs.session }}" >> $GITHUB_OUTPUT
-          else
-            HOUR=$(date -u +%-H)
-            MIN=$(date -u +%-M)
-            if   [ "$HOUR" -eq 0 ];  then echo "name=night"     >> $GITHUB_OUTPUT
-            elif [ "$HOUR" -eq 13 ]; then echo "name=premarket" >> $GITHUB_OUTPUT
-            elif [ "$HOUR" -eq 16 ]; then echo "name=midday"    >> $GITHUB_OUTPUT
-            else                          echo "name=powerhour" >> $GITHUB_OUTPUT
-            fi
-          fi
-
-      - name: Run scorer
+      - name: Run scorer or results
         env:
           FINVIZ_TOKEN: ${{ secrets.FINVIZ_TOKEN }}
         run: |
-          python scorer.py --session ${{ steps.session.outputs.name }}
+          if [ "${{ github.event.inputs.session }}" = "eod" ]; then
+            python results.py
+          else
+            python scorer.py --session ${{ github.event.inputs.session }}
+          fi
 
-      - name: Commit and push dashboards
+      - name: Commit and push
         run: |
           git config user.name  "Watchlist Bot"
           git config user.email "bot@watchlist"
           git add docs/
-          git diff --staged --quiet || git commit -m "Watchlist: ${{ steps.session.outputs.name }} $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git diff --staged --quiet || git commit -m "Watchlist: ${{ github.event.inputs.session }} $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
