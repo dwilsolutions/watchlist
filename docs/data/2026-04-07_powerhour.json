@@ -1,0 +1,435 @@
+{
+  "session": "powerhour",
+  "label": "After Hours",
+  "date": "2026-04-07",
+  "generated": "10:36 PM ET",
+  "tickers": [
+    {
+      "ticker": "RYDE",
+      "company": "Ryde Group Ltd",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 97,
+      "tier": "buy",
+      "entry": 1.04,
+      "stop": 0.99,
+      "tp1": 1.13,
+      "tp2": 1.24,
+      "tp3": 1.39,
+      "price_at_scan": 1.03,
+      "gap": 1.35,
+      "rvol": 3.96,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "BMEA",
+      "company": "Biomea Fusion Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 92,
+      "tier": "buy",
+      "entry": 1.91,
+      "stop": 1.82,
+      "tp1": 2.09,
+      "tp2": 2.28,
+      "tp3": 2.56,
+      "price_at_scan": 1.9,
+      "gap": 1.32,
+      "rvol": 4.53,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SKYQ",
+      "company": "Sky Quarry Inc",
+      "sector": "Energy",
+      "scan": "Low Float",
+      "score": 86,
+      "tier": "buy",
+      "entry": 6.9,
+      "stop": 6.11,
+      "tp1": 7.0,
+      "tp2": 7.63,
+      "tp3": 8.59,
+      "price_at_scan": 6.36,
+      "gap": 27.4,
+      "rvol": 17.79,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CUPR",
+      "company": "Cuprina Holdings (Cayman) Ltd",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 79,
+      "tier": "buy",
+      "entry": 0.6,
+      "stop": 0.58,
+      "tp1": 0.66,
+      "tp2": 0.72,
+      "tp3": 0.81,
+      "price_at_scan": 0.6,
+      "gap": 24.47,
+      "rvol": 41.62,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SILO",
+      "company": "SILO Pharma Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 78,
+      "tier": "buy",
+      "entry": 0.56,
+      "stop": 0.51,
+      "tp1": 0.58,
+      "tp2": 0.64,
+      "tp3": 0.72,
+      "price_at_scan": 0.53,
+      "gap": 66.98,
+      "rvol": 131.42,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "KPRX",
+      "company": "Kiora Pharmaceuticals Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 77,
+      "tier": "buy",
+      "entry": 2.37,
+      "stop": 2.07,
+      "tp1": 2.38,
+      "tp2": 2.59,
+      "tp3": 2.92,
+      "price_at_scan": 2.16,
+      "gap": 15.35,
+      "rvol": 553.28,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "LXEH",
+      "company": "Lixiang Education Holding Co Ltd ADR",
+      "sector": "Consumer Defensive",
+      "scan": "Low Float",
+      "score": 72,
+      "tier": "buy",
+      "entry": 0.25,
+      "stop": 0.24,
+      "tp1": 0.28,
+      "tp2": 0.3,
+      "tp3": 0.34,
+      "price_at_scan": 0.25,
+      "gap": 0.51,
+      "rvol": 19.66,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MEHA",
+      "company": "Functional Brands Inc",
+      "sector": "Consumer Defensive",
+      "scan": "Low Float",
+      "score": 68,
+      "tier": "buy",
+      "entry": 0.2,
+      "stop": 0.19,
+      "tp1": 0.22,
+      "tp2": 0.24,
+      "tp3": 0.27,
+      "price_at_scan": 0.2,
+      "gap": 6.76,
+      "rvol": 5.23,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SPCE",
+      "company": "Virgin Galactic Holdings Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 67,
+      "tier": "buy",
+      "entry": 3.0,
+      "stop": 2.87,
+      "tp1": 3.29,
+      "tp2": 3.59,
+      "tp3": 4.04,
+      "price_at_scan": 2.99,
+      "gap": -0.98,
+      "rvol": 4.9,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ADVB",
+      "company": "Advanced Biomed Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 66,
+      "tier": "buy",
+      "entry": 6.95,
+      "stop": 6.26,
+      "tp1": 7.17,
+      "tp2": 7.82,
+      "tp3": 8.8,
+      "price_at_scan": 6.52,
+      "gap": 61.54,
+      "rvol": 64.62,
+      "flags": [
+        "CONTINUATION",
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "HCAI",
+      "company": "Huachen AI Parking Management Technology Holding Co. Ltd",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 63,
+      "tier": "monitor",
+      "entry": 0.44,
+      "stop": 0.35,
+      "tp1": 0.4,
+      "tp2": 0.43,
+      "tp3": 0.49,
+      "price_at_scan": 0.36,
+      "gap": 204.91,
+      "rvol": 494.65,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "IPST",
+      "company": "IP Strategy Holdings Inc",
+      "sector": "Financial",
+      "scan": "Low Float",
+      "score": 63,
+      "tier": "monitor",
+      "entry": 0.4,
+      "stop": 0.38,
+      "tp1": 0.44,
+      "tp2": 0.48,
+      "tp3": 0.54,
+      "price_at_scan": 0.4,
+      "gap": 55.18,
+      "rvol": 378.79,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "TDIC",
+      "company": "Dreamland Ltd",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 62,
+      "tier": "monitor",
+      "entry": 0.18,
+      "stop": 0.16,
+      "tp1": 0.19,
+      "tp2": 0.2,
+      "tp3": 0.23,
+      "price_at_scan": 0.17,
+      "gap": -0.5,
+      "rvol": 130.39,
+      "flags": [
+        "CONTINUATION",
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CETX",
+      "company": "Cemtrex Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 61,
+      "tier": "monitor",
+      "entry": 1.56,
+      "stop": 1.24,
+      "tp1": 1.42,
+      "tp2": 1.55,
+      "tp3": 1.74,
+      "price_at_scan": 1.29,
+      "gap": 112.39,
+      "rvol": 70.15,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "QNCX",
+      "company": "Quince Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 58,
+      "tier": "monitor",
+      "entry": 0.16,
+      "stop": 0.15,
+      "tp1": 0.18,
+      "tp2": 0.19,
+      "tp3": 0.22,
+      "price_at_scan": 0.16,
+      "gap": 7.43,
+      "rvol": 8.25,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MIGI",
+      "company": "Mawson Infrastructure Group Inc",
+      "sector": "Financial",
+      "scan": "Low Float",
+      "score": 56,
+      "tier": "monitor",
+      "entry": 3.09,
+      "stop": 2.75,
+      "tp1": 3.15,
+      "tp2": 3.43,
+      "tp3": 3.86,
+      "price_at_scan": 2.86,
+      "gap": 18.53,
+      "rvol": 29.52,
+      "flags": [
+        "CONTINUATION",
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "AESI",
+      "company": "Atlas Energy Solutions Inc",
+      "sector": "Energy",
+      "scan": "Mid Cap",
+      "score": 54,
+      "tier": "monitor",
+      "entry": 11.3,
+      "stop": 10.79,
+      "tp1": 12.36,
+      "tp2": 13.49,
+      "tp3": 15.17,
+      "price_at_scan": 11.24,
+      "gap": -0.99,
+      "rvol": 7.81,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "IRIX",
+      "company": "IRIDEX Corp",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 51,
+      "tier": "monitor",
+      "entry": 1.04,
+      "stop": 0.99,
+      "tp1": 1.13,
+      "tp2": 1.24,
+      "tp3": 1.39,
+      "price_at_scan": 1.03,
+      "gap": 0.0,
+      "rvol": 99.02,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MGN",
+      "company": "Megan Holdings Ltd",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 44,
+      "tier": "monitor",
+      "entry": 0.25,
+      "stop": 0.22,
+      "tp1": 0.25,
+      "tp2": 0.28,
+      "tp3": 0.31,
+      "price_at_scan": 0.23,
+      "gap": 17.74,
+      "rvol": 72.01,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "GRCE",
+      "company": "Grace Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 41,
+      "tier": "monitor",
+      "entry": 3.62,
+      "stop": 3.2,
+      "tp1": 3.66,
+      "tp2": 4.0,
+      "tp3": 4.5,
+      "price_at_scan": 3.33,
+      "gap": 0.49,
+      "rvol": 18.74,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "LNAI",
+      "company": "Lunai Bioworks Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 41,
+      "tier": "monitor",
+      "entry": 0.47,
+      "stop": 0.37,
+      "tp1": 0.43,
+      "tp2": 0.47,
+      "tp3": 0.53,
+      "price_at_scan": 0.39,
+      "gap": 71.67,
+      "rvol": 8.29,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
