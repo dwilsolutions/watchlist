@@ -588,6 +588,41 @@ def main():
         f.write(html)
     print(f"  [+] Fixed URL → {fixed_path}")
 
+    # 3. Save JSON data file for results tracker
+    import json
+    data_dir = os.path.join(OUTPUT_DIR, "data")
+    os.makedirs(data_dir, exist_ok=True)
+    json_data = {
+        "session": session,
+        "label": label,
+        "date": trading_day.isoformat(),
+        "generated": gen_time,
+        "tickers": [
+            {
+                "ticker": r["ticker"],
+                "company": r["company"],
+                "sector": r["sector"],
+                "scan": r["scan"],
+                "score": r["total"],
+                "tier": "buy" if r["total"] >= 65 else ("monitor" if r["total"] >= 40 else "avoid"),
+                "entry": r["entry"],
+                "stop": r["stop"],
+                "tp1": r["tp1"],
+                "tp2": r["tp2"],
+                "tp3": r["tp3"],
+                "price_at_scan": r["price"],
+                "gap": r["gap"],
+                "rvol": r["rvol"],
+                "flags": [f[0] for f in r["flags"]],
+            }
+            for r in results if r["total"] >= 40  # Buy Watch + Monitor only
+        ]
+    }
+    json_path = os.path.join(data_dir, f"{trading_day.isoformat()}_{session}.json")
+    with open(json_path, "w") as f:
+        json.dump(json_data, f, indent=2)
+    print(f"  [+] JSON data → {json_path}")
+
     update_index(OUTPUT_DIR)
     print(f"\nDone.")
     print(f"  Archive URL : https://YOUR_USERNAME.github.io/watchlist/{filename}")
