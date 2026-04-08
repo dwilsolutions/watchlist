@@ -1,0 +1,274 @@
+{
+  "session": "midday",
+  "label": "Midday",
+  "date": "2026-04-08",
+  "generated": "12:30 PM ET",
+  "tickers": [
+    {
+      "ticker": "BBGI",
+      "company": "Beasley Broadcast Group Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 81,
+      "tier": "buy",
+      "entry": 5.23,
+      "stop": 4.97,
+      "tp1": 5.7,
+      "tp2": 6.22,
+      "tp3": 6.99,
+      "price_at_scan": 5.18,
+      "gap": 65.92,
+      "rvol": 1215.37,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SIDU",
+      "company": "Sidus Space Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 78,
+      "tier": "buy",
+      "entry": 4.03,
+      "stop": 3.39,
+      "tp1": 3.88,
+      "tp2": 4.24,
+      "tp3": 4.77,
+      "price_at_scan": 3.53,
+      "gap": 12.4,
+      "rvol": 3.28,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "OMEX",
+      "company": "Odyssey Marine Exploration, Inc",
+      "sector": "Basic Materials",
+      "scan": "Mid Cap",
+      "score": 65,
+      "tier": "buy",
+      "entry": 1.86,
+      "stop": 1.44,
+      "tp1": 1.65,
+      "tp2": 1.8,
+      "tp3": 2.03,
+      "price_at_scan": 1.5,
+      "gap": 149.55,
+      "rvol": 490.85,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "HCAI",
+      "company": "Huachen AI Parking Management Technology Holding Co. Ltd",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 62,
+      "tier": "monitor",
+      "entry": 0.37,
+      "stop": 0.35,
+      "tp1": 0.4,
+      "tp2": 0.43,
+      "tp3": 0.49,
+      "price_at_scan": 0.36,
+      "gap": 8.69,
+      "rvol": 3.23,
+      "flags": [
+        "CONTINUATION",
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CYCU",
+      "company": "Cycurion Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 58,
+      "tier": "monitor",
+      "entry": 1.52,
+      "stop": 1.43,
+      "tp1": 1.64,
+      "tp2": 1.79,
+      "tp3": 2.01,
+      "price_at_scan": 1.49,
+      "gap": 18.6,
+      "rvol": 123.3,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SPCE",
+      "company": "Virgin Galactic Holdings Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 58,
+      "tier": "monitor",
+      "entry": 3.19,
+      "stop": 2.85,
+      "tp1": 3.27,
+      "tp2": 3.56,
+      "tp3": 4.01,
+      "price_at_scan": 2.97,
+      "gap": 10.03,
+      "rvol": 4.01,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "AESI",
+      "company": "Atlas Energy Solutions Inc",
+      "sector": "Energy",
+      "scan": "Mid Cap",
+      "score": 54,
+      "tier": "monitor",
+      "entry": 11.22,
+      "stop": 10.71,
+      "tp1": 12.28,
+      "tp2": 13.39,
+      "tp3": 15.07,
+      "price_at_scan": 11.16,
+      "gap": -5.96,
+      "rvol": 4.41,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "PROP",
+      "company": "Prairie Operating Co",
+      "sector": "Energy",
+      "scan": "Mid Cap",
+      "score": 54,
+      "tier": "monitor",
+      "entry": 2.15,
+      "stop": 1.97,
+      "tp1": 2.25,
+      "tp2": 2.46,
+      "tp3": 2.77,
+      "price_at_scan": 2.05,
+      "gap": -11.6,
+      "rvol": 3.45,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "OTLK",
+      "company": "Outlook Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 49,
+      "tier": "monitor",
+      "entry": 0.27,
+      "stop": 0.26,
+      "tp1": 0.3,
+      "tp2": 0.32,
+      "tp3": 0.36,
+      "price_at_scan": 0.27,
+      "gap": 5.35,
+      "rvol": 7.15,
+      "flags": [
+        "CONTINUATION",
+        "CATALYST \u00b7 FDA",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "QNCX",
+      "company": "Quince Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 48,
+      "tier": "monitor",
+      "entry": 0.29,
+      "stop": 0.19,
+      "tp1": 0.22,
+      "tp2": 0.24,
+      "tp3": 0.27,
+      "price_at_scan": 0.2,
+      "gap": 104.85,
+      "rvol": 24.41,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ELAB",
+      "company": "PMGC Holdings Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 47,
+      "tier": "monitor",
+      "entry": 4.82,
+      "stop": 4.56,
+      "tp1": 5.23,
+      "tp2": 5.7,
+      "tp3": 6.41,
+      "price_at_scan": 4.75,
+      "gap": 34.78,
+      "rvol": 17.86,
+      "flags": [
+        "GAP QUALITY",
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "EVTL",
+      "company": "Vertical Aerospace Ltd",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 44,
+      "tier": "monitor",
+      "entry": 2.53,
+      "stop": 2.42,
+      "tp1": 2.77,
+      "tp2": 3.02,
+      "tp3": 3.4,
+      "price_at_scan": 2.52,
+      "gap": 12.64,
+      "rvol": 5.84,
+      "flags": [
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MGN",
+      "company": "Megan Holdings Ltd",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 43,
+      "tier": "monitor",
+      "entry": 0.25,
+      "stop": 0.24,
+      "tp1": 0.28,
+      "tp2": 0.3,
+      "tp3": 0.34,
+      "price_at_scan": 0.25,
+      "gap": 6.34,
+      "rvol": 6.21,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
