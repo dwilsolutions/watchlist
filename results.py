@@ -40,29 +40,113 @@ def safe(v, default=0.0):
 def fmt_date(d):
     return d.strftime("%a %b %-d, %Y")
 
-# ── Fetch quotes ───────────────────────────────────────────────────────────────
+# ── Session time windows (ET) ─────────────────────────────────────────────────
+
+SESSION_WINDOWS = {
+    "night":     ("04:00", "09:30"),  # Pre-Market window
+    "premarket": ("09:30", "12:30"),  # Market Open window
+    "midday":    ("12:30", "15:30"),  # Midday window
+    "powerhour": ("16:00", "20:00"),  # After Hours window
+}
+
+# ── Fetch session-specific highs via yfinance ──────────────────────────────────
+
+def fetch_session_highs(tickers, session_key, today):
+    """Fetch the intraday high for each ticker within the session's time window."""
+    import yfinance as yf
+    import pandas as pd
+
+    window = SESSION_WINDOWS.get(session_key)
+    if not window:
+        return {}
+
+    start_time, end_time = window
+    date_str = today.isoformat()
+
+    # Build timezone-aware window
+    et = ZoneInfo("America/New_York")
+    start_dt = datetime.fromisoformat(f"{date_str}T{start_time}:00").replace(tzinfo=et)
+    end_dt   = datetime.fromisoformat(f"{date_str}T{end_time}:00").replace(tzinfo=et)
+
+    highs = {}
+    lows  = {}
+
+    print(f"  [+] Fetching session highs for {len(tickers)} tickers ({session_key} window {start_time}-{end_time} ET)")
+
+    # Batch download 1-minute bars for all tickers
+    try:
+        data = yf.download(
+            tickers,
+            start=start_dt,
+            end=end_dt,
+            interval="1m",
+            group_by="ticker",
+            auto_adjust=True,
+            progress=False,
+            threads=True,
+            prepost=True,  # include pre/post market data for PM and AH sessions
+        )
+        print(f"  [+] yfinance returned data shape: {data.shape if hasattr(data, 'shape') else 'unknown'}")
+    except Exception as e:
+        print(f"  [!] yfinance download error: {e}", file=sys.stderr)
+        return {}, {}
+
+    if data.empty:
+        print(f"  [!] yfinance returned empty data for {session_key} window")
+        return {}, {}
+
+    for ticker in tickers:
+        try:
+            if len(tickers) == 1:
+                df = data
+            else:
+                if ticker not in data.columns.get_level_values(0):
+                    continue
+                df = data[ticker]
+            if df is None or df.empty:
+                continue
+            highs[ticker] = round(float(df["High"].max()), 2)
+            lows[ticker]  = round(float(df["Low"].min()), 2)
+        except Exception as e:
+            print(f"  [!] Error processing {ticker}: {e}")
+            continue
+
+    print(f"  [+] Session highs fetched for {len(highs)}/{len(tickers)} tickers")
+    return highs, lows
+
+# ── Fetch closing prices via yfinance ─────────────────────────────────────────
 
 def fetch_quotes(tickers):
-    if not TOKEN:
-        raise RuntimeError("FINVIZ_TOKEN not set.")
-    ticker_str = ",".join(tickers)
-    url = (
-        f"https://elite.finviz.com/export.ashx"
-        f"?v=152&c={COLS}&t={ticker_str}&auth={TOKEN}"
-    )
-    req = urllib.request.Request(url, headers={
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Referer": "https://elite.finviz.com/screener.ashx",
-    })
+    """Fetch end of day closing prices for all tickers."""
+    import yfinance as yf
+    quotes = {}
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            raw = resp.read().decode("utf-8-sig")
-    except urllib.error.HTTPError as e:
-        print(f"  [!] HTTP {e.code} fetching quotes", file=sys.stderr)
-        return {}
-    rows = list(csv.DictReader(io.StringIO(raw)))
-    return {r.get("Ticker", ""): r for r in rows if r.get("Ticker")}
+        data = yf.download(
+            tickers,
+            period="1d",
+            interval="1d",
+            auto_adjust=True,
+            progress=False,
+            threads=True,
+        )
+        for ticker in tickers:
+            try:
+                if len(tickers) == 1:
+                    row = data.iloc[-1]
+                else:
+                    row = data.xs(ticker, axis=1, level=1).iloc[-1]
+                quotes[ticker] = {
+                    "Price": round(float(row["Close"]), 2),
+                    "High":  round(float(row["High"]), 2),
+                    "Low":   round(float(row["Low"]), 2),
+                    "Open":  round(float(row["Open"]), 2),
+                }
+            except Exception:
+                continue
+    except Exception as e:
+        print(f"  [!] yfinance quotes error: {e}", file=sys.stderr)
+    print(f"  [+] Closing quotes fetched for {len(quotes)} tickers")
+    return quotes
 
 # ── Load today's session JSONs ─────────────────────────────────────────────────
 
@@ -83,16 +167,17 @@ def load_today_sessions(today):
 
 # ── Calculate performance ──────────────────────────────────────────────────────
 
-def calc_outcome(t, quote):
+def calc_outcome(t, quote, session_high=None, session_low=None):
     entry = t["entry"]
     stop  = t["stop"]
     tp1   = t["tp1"]
     tp2   = t["tp2"]
     tp3   = t["tp3"]
 
-    close = safe(quote.get("Price"))
-    high  = safe(quote.get("High"))
-    low   = safe(quote.get("Low"))
+    close = safe(quote.get("Price")) if isinstance(quote, dict) else safe(quote)
+    # Use session-specific high/low if available, fall back to full day
+    high  = session_high if session_high else safe(quote.get("High"))
+    low   = session_low  if session_low  else safe(quote.get("Low"))
 
     if not close or not entry:
         return None
@@ -114,12 +199,13 @@ def calc_outcome(t, quote):
         outcome = "open_down"
 
     return {
-        "close":     round(close, 2),
-        "high":      round(high, 2),
-        "low":       round(low, 2),
-        "pct_close": pct_close,
-        "pct_high":  pct_high,
-        "outcome":   outcome,
+        "close":       round(close, 2),
+        "high":        round(high, 2),
+        "low":         round(low, 2),
+        "pct_close":   pct_close,
+        "pct_high":    pct_high,
+        "outcome":     outcome,
+        "session_window": SESSION_WINDOWS.get(t.get("session_key", ""), ("?","?")),
     }
 
 # ── Cumulative stats ───────────────────────────────────────────────────────────
@@ -381,17 +467,29 @@ def main():
     quotes = fetch_quotes(list(all_tickers.keys()))
     print(f"  [+] Fetched quotes for {len(quotes)} tickers")
 
-    # Calculate outcomes per session
+    # Calculate outcomes per session using session-specific highs
     session_results = {}
     eod_save = {"date": today.isoformat(), "generated": gen_time, "sessions": {}}
 
     for session_key, data in today_sessions.items():
+        # Fetch session-specific highs for this session's tickers
+        tickers_in_session = [t["ticker"] for t in data["tickers"]]
+        try:
+            s_highs, s_lows = fetch_session_highs(tickers_in_session, session_key, today)
+        except Exception as e:
+            print(f"  [!] Session highs failed for {session_key}: {e} — falling back to full day")
+            s_highs, s_lows = {}, {}
+
         results = []
         for t in data["tickers"]:
-            quote = quotes.get(t["ticker"])
+            ticker = t["ticker"]
+            quote  = quotes.get(ticker)
             if not quote:
                 continue
-            perf = calc_outcome(t, quote)
+            s_high = s_highs.get(ticker)
+            s_low  = s_lows.get(ticker)
+            t_with_session = {**t, "session_key": session_key}
+            perf = calc_outcome(t_with_session, quote, session_high=s_high, session_low=s_low)
             if perf:
                 entry = {**t, "perf": perf, "outcome": perf["outcome"]}
                 results.append(entry)
