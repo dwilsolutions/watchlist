@@ -125,13 +125,13 @@ def is_market_live(rows):
     return gap_ok or rvol_ok
 
 def calc_stop(price, atr, entry):
-    """ATR-based stop with 6% floor and 15% ceiling."""
+    """ATR-based stop: 1.5x ATR with 6% floor and 10% ceiling."""
     if atr and atr > 0:
-        atr_stop = round(entry - (atr * 1.5), 2)
-        floor    = round(price * 0.85, 2)  # never more than 15% below price
-        pct_floor = round(price * 0.94, 2)  # never tighter than 6%
-        return max(floor, min(pct_floor, atr_stop))
-    return round(price * 0.94, 2)  # fallback: 6% fixed
+        atr_stop  = round(entry - (atr * 1.5), 2)
+        ceiling   = round(entry * 0.90, 2)  # never more than 10% below entry
+        floor     = round(entry * 0.94, 2)  # never tighter than 6% below entry
+        return max(ceiling, min(floor, atr_stop))
+    return round(entry * 0.94, 2)  # fallback: 6% fixed
 
 def score_row(row):
     price        = safe(row.get("Price"))
@@ -224,8 +224,12 @@ def score_row(row):
         elif gap < -10:
             bonus -= 10
 
-    if not (gap_missing and rvol_missing) and not above_vwap:
-        flags.append(("BELOW VWAP PROXY", "vwap")); bonus -= 8
+    # Change from Open signal — replaces VWAP proxy
+    if not chgopen_missing:
+        if chg_open > 0:
+            bonus += 5   # holding above open — strength
+        elif chg_open < -5:
+            bonus -= 5   # fading hard from open — weakness
 
     total = max(0, min(100, base + bonus))
     entry = round(vwap_proxy * 1.005, 2) if not above_vwap else round(price * 1.005, 2)
@@ -302,11 +306,7 @@ def card_html(r):
     chg_cls  = "pos" if r["change"] >= 0 else "neg"
     scan_bg, scan_tx = SCAN_COLORS.get(r["scan"], ("#1c1f23", "#656c7a"))
     flags_out = "".join(flag_html(l, k) for l, k in r["flags"])
-    if r["above_vwap"]:
-        flags_out += '<span class="flag" style="background:#1e3d2a;color:#6ee89a">✓ ABOVE VWAP</span>'
-    else:
-        flags_out += f'<span class="flag" style="background:#3d3010;color:#f5d96e">🚫 VWAP reclaim ${r["vwap_proxy"]}</span>'
-    entry_str = f'${r["entry"]}' if r["above_vwap"] else f'${r["vwap_proxy"]} reclaim'
+    entry_str = f'${r["entry"]}'
 
     return f"""<div class="card {tier}">
   <div class="r1">

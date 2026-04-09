@@ -114,6 +114,63 @@ def fetch_session_highs(tickers, session_key, today):
     print(f"  [+] Session highs fetched for {len(highs)}/{len(tickers)} tickers")
     return highs, lows
 
+# ── Calculate real VWAP via yfinance ──────────────────────────────────────────
+
+def fetch_real_vwap(tickers, session_key, today):
+    """Calculate true VWAP from 9:30 AM to session start time for each ticker."""
+    import yfinance as yf
+
+    et = ZoneInfo("America/New_York")
+    date_str = today.isoformat()
+
+    # VWAP always calculated from market open to session start
+    vwap_end = {
+        "night":     "16:00",  # use prior day close — VWAP from prev day
+        "premarket": "09:30",  # at market open
+        "midday":    "12:30",  # from open to midday
+        "powerhour": "15:30",  # from open to AH
+    }
+
+    end_time = vwap_end.get(session_key, "15:30")
+    start_dt = datetime.fromisoformat(f"{date_str}T09:30:00").replace(tzinfo=et)
+    end_dt   = datetime.fromisoformat(f"{date_str}T{end_time}:00").replace(tzinfo=et)
+
+    if start_dt >= end_dt:
+        return {}
+
+    vwaps = {}
+    try:
+        data = yf.download(
+            tickers,
+            start=start_dt,
+            end=end_dt,
+            interval="1m",
+            group_by="ticker",
+            auto_adjust=True,
+            progress=False,
+            threads=True,
+        )
+        if data.empty:
+            return {}
+
+        for ticker in tickers:
+            try:
+                df = data if len(tickers) == 1 else (
+                    data[ticker] if ticker in data.columns.get_level_values(0) else None
+                )
+                if df is None or df.empty:
+                    continue
+                typical = (df["High"] + df["Low"] + df["Close"]) / 3
+                vwap = (typical * df["Volume"]).sum() / df["Volume"].sum()
+                vwaps[ticker] = round(float(vwap), 3)
+            except Exception:
+                continue
+    except Exception as e:
+        print(f"  [!] VWAP fetch error: {e}")
+
+    print(f"  [+] Real VWAP calculated for {len(vwaps)} tickers ({session_key})")
+    return vwaps
+
 # ── Fetch closing prices via yfinance ─────────────────────────────────────────
 
 def fetch_quotes(tickers):
@@ -336,6 +393,12 @@ def card_html(t, perf):
 
     stop_cls = "stp" if perf["low"] <= stop else "miss"
 
+    real_vwap    = perf.get("real_vwap")
+    above_vwap   = perf.get("above_vwap")
+    vwap_str     = f"VWAP ${real_vwap:.3f}" if real_vwap else "VWAP —"
+    vwap_color   = "#6ee89a" if above_vwap else "#f57a7a" if above_vwap is False else "#656c7a"
+    vwap_label   = f"✓ {vwap_str}" if above_vwap else f"✗ {vwap_str}" if above_vwap is False else vwap_str
+
     return f"""<div class="card {tier}">
   <div class="r1">
     <span class="tkr">{ticker}</span>
@@ -345,6 +408,7 @@ def card_html(t, perf):
     <span class="outcome-pill" style="background:{obg};color:{otx}">{olabel}</span>
     <span class="pct {pc_cls}">{pc_sign}{pct_c:.1f}% close</span>
     <span class="pct {ph_cls}" style="margin-left:4px">{ph_sign}{pct_h:.1f}% high</span>
+    <span style="font-size:11px;color:{vwap_color};margin-left:4px">{vwap_label}</span>
     <a class="clink" href="https://finviz.com/quote.ashx?t={ticker}" target="_blank">Chart ↗</a>
   </div>
   <div class="levels">
@@ -480,6 +544,13 @@ def main():
             print(f"  [!] Session highs failed for {session_key}: {e} — falling back to full day")
             s_highs, s_lows = {}, {}
 
+        # Fetch real VWAP for this session
+        try:
+            vwaps = fetch_real_vwap(tickers_in_session, session_key, today)
+        except Exception as e:
+            print(f"  [!] VWAP failed for {session_key}: {e}")
+            vwaps = {}
+
         results = []
         for t in data["tickers"]:
             ticker = t["ticker"]
@@ -488,9 +559,14 @@ def main():
                 continue
             s_high = s_highs.get(ticker)
             s_low  = s_lows.get(ticker)
+            real_vwap = vwaps.get(ticker)
+            entry_price = t.get("entry", 0)
+            above_vwap = (entry_price >= real_vwap) if real_vwap else None
             t_with_session = {**t, "session_key": session_key}
             perf = calc_outcome(t_with_session, quote, session_high=s_high, session_low=s_low)
             if perf:
+                perf["real_vwap"] = real_vwap
+                perf["above_vwap"] = above_vwap
                 entry = {**t, "perf": perf, "outcome": perf["outcome"]}
                 results.append(entry)
         session_results[session_key] = results
