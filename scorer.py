@@ -124,6 +124,15 @@ def is_market_live(rows):
     rvol_ok = any(str(v).strip() not in ("", "0", "0.00") for v in rvols)
     return gap_ok or rvol_ok
 
+def calc_stop(price, atr, entry):
+    """ATR-based stop with 6% floor and 15% ceiling."""
+    if atr and atr > 0:
+        atr_stop = round(entry - (atr * 1.5), 2)
+        floor    = round(price * 0.85, 2)  # never more than 15% below price
+        pct_floor = round(price * 0.94, 2)  # never tighter than 6%
+        return max(floor, min(pct_floor, atr_stop))
+    return round(price * 0.94, 2)  # fallback: 6% fixed
+
 def score_row(row):
     price        = safe(row.get("Price"))
     change       = pct(row.get("Change"))
@@ -234,7 +243,7 @@ def score_row(row):
         "flags":       flags,   "above_vwap": above_vwap,
         "vwap_proxy":  round(vwap_proxy, 3),
         "entry":       entry,
-        "stop":        round(price * 0.96, 2),
+        "stop":        calc_stop(price, safe(row.get("Average True Range")), entry),
         "tp1":         round(price * 1.10, 2),
         "tp2":         round(price * 1.20, 2),
         "tp3":         round(price * 1.35, 2),
