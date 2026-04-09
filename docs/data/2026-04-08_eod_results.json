@@ -1,6 +1,6 @@
 {
   "date": "2026-04-08",
-  "generated": "09:12 PM ET",
+  "generated": "09:24 PM ET",
   "sessions": {
     "premarket": [
       {
@@ -154,7 +154,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "tp2"
       },
       {
         "ticker": "SIDU",
@@ -175,7 +175,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "tp2"
+        "outcome": "open_down"
       },
       {
         "ticker": "OMEX",
@@ -262,7 +262,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "tp1"
+        "outcome": "open_down"
       },
       {
         "ticker": "AESI",
@@ -282,7 +282,7 @@
         "flags": [
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "open_up"
       },
       {
         "ticker": "PROP",
@@ -389,7 +389,7 @@
           "GAP QUALITY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "open_down"
       },
       {
         "ticker": "MGN",
@@ -583,7 +583,7 @@
           "GAP QUALITY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "open_up"
       }
     ]
   }
