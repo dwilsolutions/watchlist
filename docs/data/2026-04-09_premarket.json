@@ -1,0 +1,191 @@
+{
+  "session": "premarket",
+  "label": "Market Open",
+  "date": "2026-04-09",
+  "generated": "08:42 AM ET",
+  "tickers": [
+    {
+      "ticker": "CCCC",
+      "company": "C4 Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 89,
+      "tier": "buy",
+      "entry": 3.18,
+      "stop": 2.69,
+      "tp1": 3.03,
+      "tp2": 3.2,
+      "tp3": 3.43,
+      "price_at_scan": 2.86,
+      "gap": 2.4,
+      "rvol": 100.66,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "GLMD",
+      "company": "Galmed Pharmaceuticals Ltd",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 80,
+      "tier": "buy",
+      "entry": 1.02,
+      "stop": 0.95,
+      "tp1": 1.07,
+      "tp2": 1.13,
+      "tp3": 1.21,
+      "price_at_scan": 1.01,
+      "gap": 4.43,
+      "rvol": 27931.85,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "GAME",
+      "company": "GameSquare Holdings Inc",
+      "sector": "Communication Services",
+      "scan": "Mid Cap",
+      "score": 72,
+      "tier": "buy",
+      "entry": 0.44,
+      "stop": 0.39,
+      "tp1": 0.43,
+      "tp2": 0.46,
+      "tp3": 0.49,
+      "price_at_scan": 0.41,
+      "gap": 68.81,
+      "rvol": 2276.56,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "CATALYST \u00b7 8-K",
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CLIK",
+      "company": "Click Holdings Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 52,
+      "tier": "monitor",
+      "entry": 2.6,
+      "stop": 2.28,
+      "tp1": 2.58,
+      "tp2": 2.72,
+      "tp3": 2.92,
+      "price_at_scan": 2.43,
+      "gap": 5.71,
+      "rvol": 1701.14,
+      "flags": [
+        "CONTINUATION",
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "DKI",
+      "company": "Darkiris Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 50,
+      "tier": "monitor",
+      "entry": 0.65,
+      "stop": 0.39,
+      "tp1": 0.45,
+      "tp2": 0.47,
+      "tp3": 0.5,
+      "price_at_scan": 0.42,
+      "gap": 93.8,
+      "rvol": 99.96,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ELAB",
+      "company": "PMGC Holdings Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 48,
+      "tier": "monitor",
+      "entry": 5.9,
+      "stop": 5.52,
+      "tp1": 6.22,
+      "tp2": 6.57,
+      "tp3": 7.04,
+      "price_at_scan": 5.87,
+      "gap": -4.22,
+      "rvol": 48.45,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "QNCX",
+      "company": "Quince Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 45,
+      "tier": "monitor",
+      "entry": 0.19,
+      "stop": 0.15,
+      "tp1": 0.17,
+      "tp2": 0.18,
+      "tp3": 0.19,
+      "price_at_scan": 0.16,
+      "gap": 9.67,
+      "rvol": 7.82,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ONCO",
+      "company": "Onconetix Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 43,
+      "tier": "monitor",
+      "entry": 2.2,
+      "stop": 2.06,
+      "tp1": 2.32,
+      "tp2": 2.45,
+      "tp3": 2.63,
+      "price_at_scan": 2.19,
+      "gap": 1.77,
+      "rvol": 217.64,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "GIPR",
+      "company": "Generation Income Properties Inc",
+      "sector": "Real Estate",
+      "scan": "Low Float",
+      "score": 42,
+      "tier": "monitor",
+      "entry": 0.33,
+      "stop": 0.31,
+      "tp1": 0.35,
+      "tp2": 0.37,
+      "tp3": 0.4,
+      "price_at_scan": 0.33,
+      "gap": 32.26,
+      "rvol": 281.5,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "BELOW VWAP PROXY"
+      ]
+    }
+  ]
+}
