@@ -1,0 +1,311 @@
+{
+  "session": "powerhour",
+  "label": "After Hours",
+  "date": "2026-04-09",
+  "generated": "03:30 PM ET",
+  "tickers": [
+    {
+      "ticker": "ZNTL",
+      "company": "Zentalis Pharmaceuticals Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "buy",
+      "entry": 4.5,
+      "stop": 4.21,
+      "tp1": 4.75,
+      "tp2": 5.02,
+      "tp3": 5.38,
+      "price_at_scan": 4.48,
+      "gap": 9.42,
+      "rvol": 12.21,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SPIR",
+      "company": "Spire Global Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 93,
+      "tier": "buy",
+      "entry": 18.16,
+      "stop": 16.99,
+      "tp1": 19.15,
+      "tp2": 20.24,
+      "tp3": 21.68,
+      "price_at_scan": 18.07,
+      "gap": -14.2,
+      "rvol": 11.08,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CCCC",
+      "company": "C4 Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 83,
+      "tier": "buy",
+      "entry": 2.85,
+      "stop": 2.65,
+      "tp1": 2.99,
+      "tp2": 3.16,
+      "tp3": 3.38,
+      "price_at_scan": 2.82,
+      "gap": -2.41,
+      "rvol": 9.21,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ARAI",
+      "company": "Arrive AI Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 77,
+      "tier": "buy",
+      "entry": 1.14,
+      "stop": 1.06,
+      "tp1": 1.2,
+      "tp2": 1.27,
+      "tp3": 1.36,
+      "price_at_scan": 1.13,
+      "gap": 48.73,
+      "rvol": 333.4,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SKYQ",
+      "company": "Sky Quarry Inc",
+      "sector": "Energy",
+      "scan": "Low Float",
+      "score": 77,
+      "tier": "buy",
+      "entry": 7.92,
+      "stop": 7.28,
+      "tp1": 8.2,
+      "tp2": 8.67,
+      "tp3": 9.29,
+      "price_at_scan": 7.74,
+      "gap": 8.32,
+      "rvol": 4.25,
+      "flags": [
+        "CONTINUATION",
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "DKI",
+      "company": "Darkiris Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 76,
+      "tier": "buy",
+      "entry": 0.67,
+      "stop": 0.63,
+      "tp1": 0.71,
+      "tp2": 0.75,
+      "tp3": 0.8,
+      "price_at_scan": 0.67,
+      "gap": 14.86,
+      "rvol": 32.22,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CLIK",
+      "company": "Click Holdings Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 66,
+      "tier": "buy",
+      "entry": 2.85,
+      "stop": 2.67,
+      "tp1": 3.01,
+      "tp2": 3.18,
+      "tp3": 3.41,
+      "price_at_scan": 2.84,
+      "gap": 23.81,
+      "rvol": 133.21,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "GLMD",
+      "company": "Galmed Pharmaceuticals Ltd",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 61,
+      "tier": "monitor",
+      "entry": 1.07,
+      "stop": 0.72,
+      "tp1": 0.82,
+      "tp2": 0.86,
+      "tp3": 0.92,
+      "price_at_scan": 0.77,
+      "gap": 86.36,
+      "rvol": 3723.92,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "NUAI",
+      "company": "New Era Energy & Digital Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 57,
+      "tier": "monitor",
+      "entry": 4.38,
+      "stop": 4.1,
+      "tp1": 4.62,
+      "tp2": 4.88,
+      "tp3": 5.23,
+      "price_at_scan": 4.36,
+      "gap": -9.9,
+      "rvol": 4.47,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "GAME",
+      "company": "GameSquare Holdings Inc",
+      "sector": "Communication Services",
+      "scan": "Mid Cap",
+      "score": 56,
+      "tier": "monitor",
+      "entry": 0.4,
+      "stop": 0.31,
+      "tp1": 0.35,
+      "tp2": 0.37,
+      "tp3": 0.4,
+      "price_at_scan": 0.33,
+      "gap": 62.62,
+      "rvol": 227.88,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "VSA",
+      "company": "VisionSys AI Inc ADR",
+      "sector": "Consumer Defensive",
+      "scan": "Low Float",
+      "score": 54,
+      "tier": "monitor",
+      "entry": 0.81,
+      "stop": 0.76,
+      "tp1": 0.86,
+      "tp2": 0.91,
+      "tp3": 0.97,
+      "price_at_scan": 0.81,
+      "gap": 6.41,
+      "rvol": 3.67,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "PMAX",
+      "company": "Powell Max Ltd",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 49,
+      "tier": "monitor",
+      "entry": 0.45,
+      "stop": 0.4,
+      "tp1": 0.46,
+      "tp2": 0.48,
+      "tp3": 0.52,
+      "price_at_scan": 0.43,
+      "gap": 29.65,
+      "rvol": 62.92,
+      "flags": [
+        "CONTINUATION",
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CHOW",
+      "company": "ChowChow Cloud International Holdings Ltd",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 43,
+      "tier": "monitor",
+      "entry": 0.48,
+      "stop": 0.45,
+      "tp1": 0.51,
+      "tp2": 0.54,
+      "tp3": 0.58,
+      "price_at_scan": 0.48,
+      "gap": 0.0,
+      "rvol": 4.22,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CUE",
+      "company": "Cue Biopharma Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 43,
+      "tier": "monitor",
+      "entry": 0.28,
+      "stop": 0.26,
+      "tp1": 0.3,
+      "tp2": 0.31,
+      "tp3": 0.34,
+      "price_at_scan": 0.28,
+      "gap": -10.19,
+      "rvol": 3.03,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ELAB",
+      "company": "PMGC Holdings Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 41,
+      "tier": "monitor",
+      "entry": 6.33,
+      "stop": 5.22,
+      "tp1": 5.88,
+      "tp2": 6.22,
+      "tp3": 6.66,
+      "price_at_scan": 5.55,
+      "gap": 44.0,
+      "rvol": 9.92,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
