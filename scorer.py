@@ -244,9 +244,9 @@ def score_row(row):
         "vwap_proxy":  round(vwap_proxy, 3),
         "entry":       entry,
         "stop":        calc_stop(price, safe(row.get("Average True Range")), entry),
-        "tp1":         round(price * 1.10, 2),
-        "tp2":         round(price * 1.20, 2),
-        "tp3":         round(price * 1.35, 2),
+        "tp1":         round(price * 1.06, 2),   # 6% — tighter first target
+        "tp2":         round(price * 1.12, 2),   # 12% — second target
+        "tp3":         round(price * 1.20, 2),   # 20% — runner target
         "news":        news[:120],
         "perf_week":   perf_week, "perf_month": perf_month,
         "continuation": continuation, "gap_quality": gap_quality,
