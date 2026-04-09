@@ -1,6 +1,6 @@
 {
   "date": "2026-04-08",
-  "generated": "09:24 PM ET",
+  "generated": "10:41 PM ET",
   "sessions": {
     "premarket": [
       {
@@ -419,22 +419,23 @@
         "company": "Beasley Broadcast Group Inc",
         "sector": "Communication Services",
         "scan": "Low Float",
-        "score": 86,
+        "score": 92,
         "tier": "buy",
-        "entry": 5.82,
-        "stop": 5.56,
-        "tp1": 6.37,
-        "tp2": 6.95,
-        "tp3": 7.82,
-        "price_at_scan": 5.79,
-        "gap": 65.92,
-        "rvol": 868.88,
+        "entry": 5.7,
+        "stop": 5.33,
+        "tp1": 6.24,
+        "tp2": 6.8,
+        "tp3": 7.65,
+        "price_at_scan": 5.67,
+        "gap": 67.2,
+        "rvol": 841.79,
         "flags": [
           "CONTINUATION",
           "GAP QUALITY",
+          "CATALYST \u00b7 8-K",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "open_down"
       },
       {
         "ticker": "MIGI",
@@ -443,14 +444,14 @@
         "scan": "Low Float",
         "score": 67,
         "tier": "buy",
-        "entry": 4.18,
-        "stop": 3.99,
-        "tp1": 4.58,
-        "tp2": 4.99,
-        "tp3": 5.62,
-        "price_at_scan": 4.16,
-        "gap": 0.35,
-        "rvol": 36.61,
+        "entry": 4.28,
+        "stop": 4.0,
+        "tp1": 4.69,
+        "tp2": 5.11,
+        "tp3": 5.75,
+        "price_at_scan": 4.26,
+        "gap": 1.05,
+        "rvol": 36.0,
         "flags": [
           "CONTINUATION",
           "SECTOR MOMENTUM"
@@ -458,23 +459,126 @@
         "outcome": "stopped"
       },
       {
-        "ticker": "CYCU",
-        "company": "Cycurion Inc",
-        "sector": "Technology",
+        "ticker": "DKI",
+        "company": "Darkiris Inc",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 57,
+        "tier": "monitor",
+        "entry": 0.4,
+        "stop": 0.38,
+        "tp1": 0.44,
+        "tp2": 0.48,
+        "tp3": 0.54,
+        "price_at_scan": 0.4,
+        "gap": 8.61,
+        "rvol": 5.06,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "tp3"
+      },
+      {
+        "ticker": "AESI",
+        "company": "Atlas Energy Solutions Inc",
+        "sector": "Energy",
+        "scan": "Mid Cap",
+        "score": 57,
+        "tier": "monitor",
+        "entry": 11.38,
+        "stop": 10.64,
+        "tp1": 12.45,
+        "tp2": 13.58,
+        "tp3": 15.28,
+        "price_at_scan": 11.32,
+        "gap": -5.96,
+        "rvol": 3.37,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "open_down"
+      },
+      {
+        "ticker": "VSME",
+        "company": "Vs Media Holdings Ltd",
+        "sector": "Communication Services",
         "scan": "Low Float",
         "score": 55,
         "tier": "monitor",
-        "entry": 1.52,
-        "stop": 1.32,
-        "tp1": 1.52,
-        "tp2": 1.66,
-        "tp3": 1.86,
-        "price_at_scan": 1.38,
-        "gap": 18.6,
-        "rvol": 69.32,
+        "entry": 1.09,
+        "stop": 1.02,
+        "tp1": 1.19,
+        "tp2": 1.3,
+        "tp3": 1.46,
+        "price_at_scan": 1.08,
+        "gap": 18.48,
+        "rvol": 46.57,
+        "flags": [
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "stopped"
+      },
+      {
+        "ticker": "PROP",
+        "company": "Prairie Operating Co",
+        "sector": "Energy",
+        "scan": "Mid Cap",
+        "score": 54,
+        "tier": "monitor",
+        "entry": 2.12,
+        "stop": 1.97,
+        "tp1": 2.31,
+        "tp2": 2.52,
+        "tp3": 2.84,
+        "price_at_scan": 2.1,
+        "gap": -11.6,
+        "rvol": 3.02,
+        "flags": [
+          "BELOW VWAP PROXY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "open_down"
+      },
+      {
+        "ticker": "HCAI",
+        "company": "Huachen AI Parking Management Technology Holding Co. Ltd",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 52,
+        "tier": "monitor",
+        "entry": 0.39,
+        "stop": 0.37,
+        "tp1": 0.43,
+        "tp2": 0.47,
+        "tp3": 0.53,
+        "price_at_scan": 0.39,
+        "gap": 8.69,
+        "rvol": 2.22,
         "flags": [
           "CONTINUATION",
-          "BELOW VWAP PROXY",
+          "REVERSE SPLIT",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "stopped"
+      },
+      {
+        "ticker": "CUE",
+        "company": "Cue Biopharma Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 51,
+        "tier": "monitor",
+        "entry": 0.27,
+        "stop": 0.25,
+        "tp1": 0.3,
+        "tp2": 0.32,
+        "tp3": 0.36,
+        "price_at_scan": 0.27,
+        "gap": -0.64,
+        "rvol": 15.11,
+        "flags": [
           "SECTOR MOMENTUM"
         ],
         "outcome": "stopped"
@@ -487,13 +591,13 @@
         "score": 50,
         "tier": "monitor",
         "entry": 1.81,
-        "stop": 1.23,
-        "tp1": 1.41,
-        "tp2": 1.54,
-        "tp3": 1.73,
-        "price_at_scan": 1.28,
+        "stop": 1.17,
+        "tp1": 1.38,
+        "tp2": 1.5,
+        "tp3": 1.69,
+        "price_at_scan": 1.25,
         "gap": 149.55,
-        "rvol": 286.48,
+        "rvol": 274.24,
         "flags": [
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
@@ -508,18 +612,59 @@
         "score": 48,
         "tier": "monitor",
         "entry": 0.29,
-        "stop": 0.18,
-        "tp1": 0.21,
-        "tp2": 0.23,
-        "tp3": 0.26,
-        "price_at_scan": 0.19,
+        "stop": 0.17,
+        "tp1": 0.2,
+        "tp2": 0.22,
+        "tp3": 0.24,
+        "price_at_scan": 0.18,
         "gap": 104.85,
-        "rvol": 14.46,
+        "rvol": 14.35,
         "flags": [
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
         "outcome": "stopped"
+      },
+      {
+        "ticker": "CLIK",
+        "company": "Click Holdings Ltd",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 47,
+        "tier": "monitor",
+        "entry": 2.11,
+        "stop": 1.97,
+        "tp1": 2.31,
+        "tp2": 2.52,
+        "tp3": 2.84,
+        "price_at_scan": 2.1,
+        "gap": 5.11,
+        "rvol": 64.03,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "tp1"
+      },
+      {
+        "ticker": "CYCU",
+        "company": "Cycurion Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 47,
+        "tier": "monitor",
+        "entry": 1.51,
+        "stop": 1.24,
+        "tp1": 1.45,
+        "tp2": 1.58,
+        "tp3": 1.78,
+        "price_at_scan": 1.32,
+        "gap": 18.6,
+        "rvol": 66.16,
+        "flags": [
+          "BELOW VWAP PROXY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "tp1"
       },
       {
         "ticker": "ELAB",
@@ -529,40 +674,19 @@
         "score": 47,
         "tier": "monitor",
         "entry": 4.82,
-        "stop": 4.46,
-        "tp1": 5.12,
-        "tp2": 5.58,
-        "tp3": 6.28,
-        "price_at_scan": 4.65,
+        "stop": 4.23,
+        "tp1": 4.95,
+        "tp2": 5.4,
+        "tp3": 6.08,
+        "price_at_scan": 4.5,
         "gap": 34.78,
-        "rvol": 11.81,
+        "rvol": 11.28,
         "flags": [
           "GAP QUALITY",
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
-      },
-      {
-        "ticker": "VSME",
-        "company": "Vs Media Holdings Ltd",
-        "sector": "Communication Services",
-        "scan": "Low Float",
-        "score": 47,
-        "tier": "monitor",
-        "entry": 1.04,
-        "stop": 0.99,
-        "tp1": 1.13,
-        "tp2": 1.24,
-        "tp3": 1.39,
-        "price_at_scan": 1.03,
-        "gap": 18.47,
-        "rvol": 48.69,
-        "flags": [
-          "GAP QUALITY",
-          "SECTOR MOMENTUM"
-        ],
-        "outcome": "stopped"
+        "outcome": "open_down"
       },
       {
         "ticker": "EVTL",
@@ -571,19 +695,61 @@
         "scan": "Mid Cap",
         "score": 44,
         "tier": "monitor",
-        "entry": 2.46,
-        "stop": 2.35,
-        "tp1": 2.7,
-        "tp2": 2.94,
-        "tp3": 3.31,
-        "price_at_scan": 2.45,
-        "gap": 12.64,
-        "rvol": 3.65,
+        "entry": 2.49,
+        "stop": 2.33,
+        "tp1": 2.73,
+        "tp2": 2.98,
+        "tp3": 3.35,
+        "price_at_scan": 2.48,
+        "gap": 11.74,
+        "rvol": 3.74,
         "flags": [
           "GAP QUALITY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "open_up"
+        "outcome": "open_down"
+      },
+      {
+        "ticker": "OTLK",
+        "company": "Outlook Therapeutics Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 41,
+        "tier": "monitor",
+        "entry": 0.25,
+        "stop": 0.23,
+        "tp1": 0.28,
+        "tp2": 0.3,
+        "tp3": 0.34,
+        "price_at_scan": 0.25,
+        "gap": 5.35,
+        "rvol": 6.93,
+        "flags": [
+          "CATALYST \u00b7 FDA",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "stopped"
+      },
+      {
+        "ticker": "WGRX",
+        "company": "Wellgistics Health Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 40,
+        "tier": "monitor",
+        "entry": 0.13,
+        "stop": 0.12,
+        "tp1": 0.14,
+        "tp2": 0.16,
+        "tp3": 0.18,
+        "price_at_scan": 0.13,
+        "gap": -5.91,
+        "rvol": 18.08,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "stopped"
       }
     ]
   }
