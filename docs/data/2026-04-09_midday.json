@@ -1,0 +1,332 @@
+{
+  "session": "midday",
+  "label": "Midday",
+  "date": "2026-04-09",
+  "generated": "12:30 PM ET",
+  "tickers": [
+    {
+      "ticker": "CCCC",
+      "company": "C4 Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 94,
+      "tier": "buy",
+      "entry": 2.98,
+      "stop": 2.79,
+      "tp1": 3.15,
+      "tp2": 3.33,
+      "tp3": 3.56,
+      "price_at_scan": 2.97,
+      "gap": -2.41,
+      "rvol": 15.87,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SKYQ",
+      "company": "Sky Quarry Inc",
+      "sector": "Energy",
+      "scan": "Low Float",
+      "score": 93,
+      "tier": "buy",
+      "entry": 7.94,
+      "stop": 7.43,
+      "tp1": 8.37,
+      "tp2": 8.85,
+      "tp3": 9.48,
+      "price_at_scan": 7.9,
+      "gap": 8.32,
+      "rvol": 7.38,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SPIR",
+      "company": "Spire Global Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 85,
+      "tier": "buy",
+      "entry": 18.1,
+      "stop": 16.86,
+      "tp1": 19.02,
+      "tp2": 20.09,
+      "tp3": 21.53,
+      "price_at_scan": 17.94,
+      "gap": -14.2,
+      "rvol": 15.92,
+      "flags": [
+        "CONTINUATION",
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "DKI",
+      "company": "Darkiris Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 79,
+      "tier": "buy",
+      "entry": 0.57,
+      "stop": 0.54,
+      "tp1": 0.6,
+      "tp2": 0.64,
+      "tp3": 0.68,
+      "price_at_scan": 0.57,
+      "gap": 14.86,
+      "rvol": 47.73,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ARAI",
+      "company": "Arrive AI Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 77,
+      "tier": "buy",
+      "entry": 1.22,
+      "stop": 1.14,
+      "tp1": 1.28,
+      "tp2": 1.36,
+      "tp3": 1.45,
+      "price_at_scan": 1.21,
+      "gap": 48.73,
+      "rvol": 432.63,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "GLMD",
+      "company": "Galmed Pharmaceuticals Ltd",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 74,
+      "tier": "buy",
+      "entry": 1.08,
+      "stop": 0.82,
+      "tp1": 0.92,
+      "tp2": 0.97,
+      "tp3": 1.04,
+      "price_at_scan": 0.87,
+      "gap": 86.36,
+      "rvol": 6613.57,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "GAME",
+      "company": "GameSquare Holdings Inc",
+      "sector": "Communication Services",
+      "scan": "Mid Cap",
+      "score": 66,
+      "tier": "buy",
+      "entry": 0.41,
+      "stop": 0.37,
+      "tp1": 0.41,
+      "tp2": 0.44,
+      "tp3": 0.47,
+      "price_at_scan": 0.39,
+      "gap": 62.62,
+      "rvol": 389.16,
+      "flags": [
+        "CONTINUATION",
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CHOW",
+      "company": "ChowChow Cloud International Holdings Ltd",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 64,
+      "tier": "monitor",
+      "entry": 0.53,
+      "stop": 0.5,
+      "tp1": 0.56,
+      "tp2": 0.59,
+      "tp3": 0.64,
+      "price_at_scan": 0.53,
+      "gap": 0.0,
+      "rvol": 6.75,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ONCO",
+      "company": "Onconetix Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 63,
+      "tier": "monitor",
+      "entry": 2.45,
+      "stop": 2.29,
+      "tp1": 2.59,
+      "tp2": 2.73,
+      "tp3": 2.93,
+      "price_at_scan": 2.44,
+      "gap": 42.92,
+      "rvol": 262.42,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CLIK",
+      "company": "Click Holdings Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 55,
+      "tier": "monitor",
+      "entry": 2.64,
+      "stop": 2.31,
+      "tp1": 2.61,
+      "tp2": 2.76,
+      "tp3": 2.95,
+      "price_at_scan": 2.46,
+      "gap": 23.81,
+      "rvol": 231.03,
+      "flags": [
+        "CONTINUATION",
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "NUAI",
+      "company": "New Era Energy & Digital Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 53,
+      "tier": "monitor",
+      "entry": 4.17,
+      "stop": 3.9,
+      "tp1": 4.4,
+      "tp2": 4.65,
+      "tp3": 4.98,
+      "price_at_scan": 4.15,
+      "gap": -9.9,
+      "rvol": 7.07,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ELAB",
+      "company": "PMGC Holdings Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 44,
+      "tier": "monitor",
+      "entry": 6.44,
+      "stop": 5.4,
+      "tp1": 6.08,
+      "tp2": 6.43,
+      "tp3": 6.89,
+      "price_at_scan": 5.74,
+      "gap": 44.0,
+      "rvol": 16.46,
+      "flags": [
+        "BELOW VWAP PROXY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "NXL",
+      "company": "Nexalin Technology Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 44,
+      "tier": "monitor",
+      "entry": 0.41,
+      "stop": 0.39,
+      "tp1": 0.43,
+      "tp2": 0.46,
+      "tp3": 0.49,
+      "price_at_scan": 0.41,
+      "gap": -0.71,
+      "rvol": 99.06,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "GIPR",
+      "company": "Generation Income Properties Inc",
+      "sector": "Real Estate",
+      "scan": "Low Float",
+      "score": 42,
+      "tier": "monitor",
+      "entry": 0.35,
+      "stop": 0.32,
+      "tp1": 0.36,
+      "tp2": 0.38,
+      "tp3": 0.41,
+      "price_at_scan": 0.34,
+      "gap": 21.3,
+      "rvol": 195.13,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "BELOW VWAP PROXY"
+      ]
+    },
+    {
+      "ticker": "VSA",
+      "company": "VisionSys AI Inc ADR",
+      "sector": "Consumer Defensive",
+      "scan": "Low Float",
+      "score": 41,
+      "tier": "monitor",
+      "entry": 0.71,
+      "stop": 0.67,
+      "tp1": 0.75,
+      "tp2": 0.8,
+      "tp3": 0.85,
+      "price_at_scan": 0.71,
+      "gap": 6.41,
+      "rvol": 3.67,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "OMEX",
+      "company": "Odyssey Marine Exploration, Inc",
+      "sector": "Basic Materials",
+      "scan": "Mid Cap",
+      "score": 40,
+      "tier": "monitor",
+      "entry": 1.12,
+      "stop": 1.04,
+      "tp1": 1.18,
+      "tp2": 1.24,
+      "tp3": 1.33,
+      "price_at_scan": 1.11,
+      "gap": -12.0,
+      "rvol": 3.49,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
