@@ -36,10 +36,11 @@ MARKET_HOLIDAYS = {
 }
 
 SESSIONS = {
-    "night":     ("Pre-Market",  "Night scan · setups for tomorrow's open · ~9 PM ET"),
-    "premarket": ("Market Open", "Pre-market momentum &amp; gap ups · ~8:30 AM ET"),
-    "midday":    ("Midday",      "VWAP reclaims &amp; second entries · ~12:30 PM ET"),
-    "powerhour": ("After Hours", "Power hour seeds &amp; HOD breakouts · ~3:30 PM ET"),
+    "earlypremarket": ("Early Pre-Market", "First look · overnight gappers · ~4:00 AM ET"),
+    "premarket":      ("Pre-Market",       "Confirmed setups · pre-Robinhood open · ~6:55 AM ET"),
+    "marketopen":     ("Market Open",      "Pre-market momentum &amp; gap ups · ~8:30 AM ET"),
+    "midday":         ("Midday",           "VWAP reclaims &amp; second entries · ~12:30 PM ET"),
+    "afterhours":     ("After Hours",      "Power hour seeds &amp; HOD breakouts · ~3:30 PM ET"),
 }
 
 OUTPUT_DIR = "docs"
@@ -57,7 +58,7 @@ def next_trading_day(from_date):
 
 def trading_date_for_session(session, now_et):
     today = now_et.date()
-    if session == "night":
+    if session in ("premarket", "earlypremarket"):
         # Night scan is always for the NEXT trading day
         return next_trading_day(today)
     else:
@@ -421,10 +422,10 @@ a{color:inherit;text-decoration:none;}
 
 SESSION_COLORS = {
     "earlypremarket": "#1a4a8a",   # deep blue — night sky
-    "night":          "#6b3fa0",   # purple — dawn
-    "premarket":      "#c07b1a",   # amber — sunrise
+    "premarket":      "#6b3fa0",   # purple — dawn
+    "marketopen":     "#c07b1a",   # amber — sunrise
     "midday":         "#3a9c5f",   # green — midday
-    "powerhour":      "#a33333",   # crimson — closing bell
+    "afterhours":     "#a33333",   # crimson — closing bell
 }
 
 def render_html(results, session, trading_date, label, note, gen_time_str, market_live=True):
@@ -562,7 +563,7 @@ body{{background:var(--bg);color:var(--text);font-family:var(--mono);}}
 def fetch_vwap(tickers, session, now_et):
     """Fetch real VWAP for each ticker. Only meaningful for midday and powerhour sessions."""
     # Night and premarket run before/at market open — no meaningful intraday VWAP yet
-    if session in ("earlypremarket", "night", "premarket"):
+    if session in ("earlypremarket", "premarket", "marketopen"):
         return {}
     try:
         import yfinance as yf
@@ -665,10 +666,10 @@ def main():
     # 2. Fixed permanent URL — WHOP embeds always point here, never changes
     FIXED_NAMES = {
         "earlypremarket": "earlypremarket.html",
-        "night":          "premarket.html",
-        "premarket":      "marketopen.html",
+        "premarket":      "premarket.html",
+        "marketopen":     "marketopen.html",
         "midday":         "midday.html",
-        "powerhour":      "afterhours.html",
+        "afterhours":     "afterhours.html",
     }
     fixed_name = FIXED_NAMES[session]
     fixed_path = os.path.join(OUTPUT_DIR, fixed_name)
