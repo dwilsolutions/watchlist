@@ -1,0 +1,323 @@
+{
+  "session": "midday",
+  "label": "Midday",
+  "date": "2026-04-10",
+  "generated": "12:30 PM ET",
+  "tickers": [
+    {
+      "ticker": "CUE",
+      "company": "Cue Biopharma Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "buy",
+      "entry": 0.58,
+      "stop": 0.55,
+      "tp1": 0.61,
+      "tp2": 0.65,
+      "tp3": 0.7,
+      "price_at_scan": 0.58,
+      "gap": 0.0,
+      "rvol": 81.74,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ZNTL",
+      "company": "Zentalis Pharmaceuticals Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "buy",
+      "entry": 5.9,
+      "stop": 5.55,
+      "tp1": 6.22,
+      "tp2": 6.57,
+      "tp3": 7.04,
+      "price_at_scan": 5.87,
+      "gap": 2.26,
+      "rvol": 65.15,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SIDU",
+      "company": "Sidus Space Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 95,
+      "tier": "buy",
+      "entry": 3.99,
+      "stop": 3.75,
+      "tp1": 4.21,
+      "tp2": 4.45,
+      "tp3": 4.76,
+      "price_at_scan": 3.97,
+      "gap": 3.29,
+      "rvol": 3.53,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "FUSE",
+      "company": "Fusemachines Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 79,
+      "tier": "buy",
+      "entry": 1.56,
+      "stop": 1.47,
+      "tp1": 1.64,
+      "tp2": 1.74,
+      "tp3": 1.86,
+      "price_at_scan": 1.55,
+      "gap": 17.65,
+      "rvol": 33.24,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "RAYA",
+      "company": "Erayak Power Solution Group Inc",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 73,
+      "tier": "buy",
+      "entry": 0.86,
+      "stop": 0.81,
+      "tp1": 0.91,
+      "tp2": 0.96,
+      "tp3": 1.03,
+      "price_at_scan": 0.86,
+      "gap": 90.75,
+      "rvol": 352.6,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "GAME",
+      "company": "GameSquare Holdings Inc",
+      "sector": "Communication Services",
+      "scan": "Mid Cap",
+      "score": 69,
+      "tier": "buy",
+      "entry": 0.34,
+      "stop": 0.32,
+      "tp1": 0.36,
+      "tp2": 0.38,
+      "tp3": 0.41,
+      "price_at_scan": 0.34,
+      "gap": 0.0,
+      "rvol": 4.86,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SPCE",
+      "company": "Virgin Galactic Holdings Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 67,
+      "tier": "buy",
+      "entry": 3.11,
+      "stop": 2.92,
+      "tp1": 3.24,
+      "tp2": 3.43,
+      "tp3": 3.67,
+      "price_at_scan": 3.06,
+      "gap": 0.67,
+      "rvol": 3.84,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SQFT",
+      "company": "Presidio Property Trust Inc",
+      "sector": "Real Estate",
+      "scan": "Low Float",
+      "score": 64,
+      "tier": "monitor",
+      "entry": 3.96,
+      "stop": 3.72,
+      "tp1": 3.87,
+      "tp2": 4.09,
+      "tp3": 4.38,
+      "price_at_scan": 3.65,
+      "gap": 45.39,
+      "rvol": 6947.99,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CREG",
+      "company": "Smart Powerr Corp",
+      "sector": "Utilities",
+      "scan": "Mid Cap",
+      "score": 63,
+      "tier": "monitor",
+      "entry": 0.65,
+      "stop": 0.61,
+      "tp1": 0.65,
+      "tp2": 0.68,
+      "tp3": 0.73,
+      "price_at_scan": 0.61,
+      "gap": 40.93,
+      "rvol": 294.74,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY"
+      ]
+    },
+    {
+      "ticker": "TMCI",
+      "company": "Treace Medical Concepts Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 57,
+      "tier": "monitor",
+      "entry": 1.96,
+      "stop": 1.84,
+      "tp1": 2.01,
+      "tp2": 2.13,
+      "tp3": 2.28,
+      "price_at_scan": 1.9,
+      "gap": -1.31,
+      "rvol": 26.84,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "BENF",
+      "company": "Beneficient",
+      "sector": "Financial",
+      "scan": "Low Float",
+      "score": 56,
+      "tier": "monitor",
+      "entry": 4.18,
+      "stop": 3.93,
+      "tp1": 4.06,
+      "tp2": 4.29,
+      "tp3": 4.6,
+      "price_at_scan": 3.83,
+      "gap": 3.78,
+      "rvol": 51.17,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MAXN",
+      "company": "Maxeon Solar Technologies Ltd",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 51,
+      "tier": "monitor",
+      "entry": 1.79,
+      "stop": 1.68,
+      "tp1": 1.87,
+      "tp2": 1.97,
+      "tp3": 2.11,
+      "price_at_scan": 1.76,
+      "gap": -1.52,
+      "rvol": 6.57,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "WRAP",
+      "company": "Wrap Technologies Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 49,
+      "tier": "monitor",
+      "entry": 1.51,
+      "stop": 1.42,
+      "tp1": 1.59,
+      "tp2": 1.68,
+      "tp3": 1.8,
+      "price_at_scan": 1.5,
+      "gap": 4.0,
+      "rvol": 36.39,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "IPST",
+      "company": "IP Strategy Holdings Inc",
+      "sector": "Financial",
+      "scan": "Low Float",
+      "score": 47,
+      "tier": "monitor",
+      "entry": 0.39,
+      "stop": 0.37,
+      "tp1": 0.4,
+      "tp2": 0.43,
+      "tp3": 0.46,
+      "price_at_scan": 0.38,
+      "gap": 5.74,
+      "rvol": 13.19,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SOAR",
+      "company": "Volato Group Inc",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 42,
+      "tier": "monitor",
+      "entry": 0.27,
+      "stop": 0.25,
+      "tp1": 0.29,
+      "tp2": 0.3,
+      "tp3": 0.32,
+      "price_at_scan": 0.27,
+      "gap": 1.5,
+      "rvol": 3.85,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "WGRX",
+      "company": "Wellgistics Health Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 40,
+      "tier": "monitor",
+      "entry": 0.14,
+      "stop": 0.13,
+      "tp1": 0.14,
+      "tp2": 0.15,
+      "tp3": 0.16,
+      "price_at_scan": 0.13,
+      "gap": 41.6,
+      "rvol": 87.7,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
