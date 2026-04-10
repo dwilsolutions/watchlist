@@ -125,13 +125,16 @@ def fetch_real_vwap(tickers, session_key, today):
 
     # VWAP always calculated from market open to session start
     vwap_end = {
-        "night":     "16:00",  # use prior day close — VWAP from prev day
-        "premarket": "09:30",  # at market open
+        "night":     None,     # no meaningful VWAP pre-market
+        "premarket": None,     # no meaningful VWAP at open
         "midday":    "12:30",  # from open to midday
-        "powerhour": "15:30",  # from open to AH
+        "powerhour": "15:30",  # from open to AH start
     }
 
-    end_time = vwap_end.get(session_key, "15:30")
+    end_time = vwap_end.get(session_key)
+    if not end_time:
+        return {}  # no VWAP for night/premarket sessions
+
     start_dt = datetime.fromisoformat(f"{date_str}T09:30:00").replace(tzinfo=et)
     end_dt   = datetime.fromisoformat(f"{date_str}T{end_time}:00").replace(tzinfo=et)
 

@@ -154,7 +154,9 @@ def score_row(row):
     news         = str(row.get("News Title", ""))
     h = safe(row.get("High")); l = safe(row.get("Low")); o = safe(row.get("Open"))
     vwap_proxy   = (h + l + o) / 3 if (h and l and o) else price
-    above_vwap   = price >= vwap_proxy
+    real_vwap    = safe(row.get("_real_vwap"))
+    above_vwap   = (price >= real_vwap) if real_vwap else (price >= vwap_proxy)
+    vwap_ref     = real_vwap if real_vwap else vwap_proxy
 
     import math as _math
     gap_missing     = _math.isnan(gap)
@@ -224,15 +226,20 @@ def score_row(row):
         elif gap < -10:
             bonus -= 10
 
-    # Change from Open signal — replaces VWAP proxy
-    if not chgopen_missing:
+    # Real VWAP signal (midday + powerhour) or Change from Open (night + premarket)
+    if real_vwap:
+        if above_vwap:
+            bonus += 10  # above real VWAP — strong
+        else:
+            bonus -= 10  # below real VWAP — weak
+    elif not chgopen_missing:
         if chg_open > 0:
-            bonus += 5   # holding above open — strength
+            bonus += 5   # holding above open — strength proxy
         elif chg_open < -5:
-            bonus -= 5   # fading hard from open — weakness
+            bonus -= 5   # fading hard from open — weakness proxy
 
     total = max(0, min(100, base + bonus))
-    entry = round(vwap_proxy * 1.005, 2) if not above_vwap else round(price * 1.005, 2)
+    entry = round(vwap_ref * 1.005, 2) if not above_vwap else round(price * 1.005, 2)
 
     return {
         "ticker":      row.get("Ticker", ""),
@@ -246,6 +253,7 @@ def score_row(row):
         "bonus":       bonus,   "total":   total,
         "flags":       flags,   "above_vwap": above_vwap,
         "vwap_proxy":  round(vwap_proxy, 3),
+        "real_vwap":   round(real_vwap, 3) if real_vwap else None,
         "entry":       entry,
         "stop":        calc_stop(price, safe(row.get("Average True Range")), entry),
         "tp1":         round(price * 1.06, 2),   # 6% — tighter first target
@@ -327,7 +335,7 @@ def card_html(r):
     <div class="st"><div class="sl">RVol</div><div class="sv">{r["rvol"]:.0f}x</div></div>
     <div class="st"><div class="sl">RSI</div><div class="sv">{r["rsi"]:.1f}</div></div>
     <div class="st"><div class="sl">Float</div><div class="sv">{r["float_m"]:.1f}M</div></div>
-    <div class="st"><div class="sl">VWAP~</div><div class="sv">${r["vwap_proxy"]}</div></div>
+    <div class="st"><div class="sl">{"VWAP" if r.get("real_vwap") else "VWAP~"}</div><div class="sv" style="color:{"#6ee89a" if r["above_vwap"] else "#f57a7a"}">${r.get("real_vwap") or r["vwap_proxy"]}</div></div>
   </div>
   <div class="lvls">
     <span><span class="ll">Entry</span> <span class="lv">{entry_str}</span></span>
@@ -539,6 +547,56 @@ body{{background:var(--bg);color:var(--text);font-family:var(--mono);}}
         f.write(html)
     print("  [+] index.html updated")
 
+# ── Real VWAP via yfinance ────────────────────────────────────────────────────
+
+def fetch_vwap(tickers, session, now_et):
+    """Fetch real VWAP for each ticker. Only meaningful for midday and powerhour sessions."""
+    # Night and premarket run before/at market open — no meaningful intraday VWAP yet
+    if session in ("night", "premarket"):
+        return {}
+    try:
+        import yfinance as yf
+        from zoneinfo import ZoneInfo as _ZI
+        et = _ZI("America/New_York")
+        today = now_et.date()
+        start_dt = datetime(today.year, today.month, today.day, 9, 30, tzinfo=et)
+        end_dt   = now_et  # up to current time
+
+        if start_dt >= end_dt:
+            return {}
+
+        data = yf.download(
+            tickers,
+            start=start_dt,
+            end=end_dt,
+            interval="1m",
+            group_by="ticker",
+            auto_adjust=True,
+            progress=False,
+            threads=True,
+        )
+        if data is None or data.empty:
+            return {}
+
+        vwaps = {}
+        for ticker in tickers:
+            try:
+                df = data if len(tickers) == 1 else (
+                    data[ticker] if ticker in data.columns.get_level_values(0) else None
+                )
+                if df is None or df.empty:
+                    continue
+                typical = (df["High"] + df["Low"] + df["Close"]) / 3
+                vwap = (typical * df["Volume"]).cumsum().iloc[-1] / df["Volume"].cumsum().iloc[-1]
+                vwaps[ticker] = round(float(vwap), 3)
+            except Exception:
+                continue
+        print(f"  [+] Real VWAP calculated for {len(vwaps)}/{len(tickers)} tickers")
+        return vwaps
+    except Exception as e:
+        print(f"  [!] VWAP fetch failed: {e} — skipping")
+        return {}
+
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def main():
@@ -568,6 +626,16 @@ def main():
         if t and t not in seen:
             seen.add(t); unique.append(r)
     print(f"  [+] {len(unique)} unique tickers after dedup")
+
+    # Fetch real VWAP for midday and powerhour sessions
+    tickers = [r.get("Ticker", "") for r in unique if r.get("Ticker")]
+    real_vwaps = fetch_vwap(tickers, session, now_et)
+
+    # Inject real VWAP into rows so score_row can use it
+    for r in unique:
+        t = r.get("Ticker", "")
+        if t in real_vwaps:
+            r["_real_vwap"] = real_vwaps[t]
 
     results = [score_row(r) for r in unique]
     results = apply_sector_bonus(results)
