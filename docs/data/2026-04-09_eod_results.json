@@ -1,6 +1,6 @@
 {
   "date": "2026-04-09",
-  "generated": "05:29 PM ET",
+  "generated": "08:05 PM ET",
   "sessions": {
     "night": [
       {
@@ -1110,7 +1110,7 @@
           "CONTINUATION",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "tp1"
+        "outcome": "stopped"
       },
       {
         "ticker": "PMAX",
@@ -1152,7 +1152,7 @@
         "flags": [
           "SECTOR MOMENTUM"
         ],
-        "outcome": "tp2"
+        "outcome": "stopped"
       },
       {
         "ticker": "CUE",
