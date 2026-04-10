@@ -1,0 +1,131 @@
+{
+  "session": "night",
+  "label": "Pre-Market",
+  "date": "2026-04-13",
+  "generated": "06:59 AM ET",
+  "tickers": [
+    {
+      "ticker": "SQFT",
+      "company": "Presidio Property Trust Inc",
+      "sector": "Real Estate",
+      "scan": "Low Float",
+      "score": 82,
+      "tier": "buy",
+      "entry": 3.92,
+      "stop": 3.68,
+      "tp1": 4.13,
+      "tp2": 4.37,
+      "tp3": 4.68,
+      "price_at_scan": 3.9,
+      "gap": 31.91,
+      "rvol": 10672.16,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "CATALYST \u00b7 8-K"
+      ]
+    },
+    {
+      "ticker": "ISPC",
+      "company": "iSpecimen Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 71,
+      "tier": "buy",
+      "entry": 0.21,
+      "stop": 0.2,
+      "tp1": 0.22,
+      "tp2": 0.24,
+      "tp3": 0.25,
+      "price_at_scan": 0.21,
+      "gap": 44.5,
+      "rvol": 274.38,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "WGRX",
+      "company": "Wellgistics Health Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 66,
+      "tier": "buy",
+      "entry": 0.17,
+      "stop": 0.16,
+      "tp1": 0.16,
+      "tp2": 0.17,
+      "tp3": 0.18,
+      "price_at_scan": 0.15,
+      "gap": 49.43,
+      "rvol": 378.93,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "RAYA",
+      "company": "Erayak Power Solution Group Inc",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 63,
+      "tier": "monitor",
+      "entry": 0.63,
+      "stop": 0.59,
+      "tp1": 0.64,
+      "tp2": 0.67,
+      "tp3": 0.72,
+      "price_at_scan": 0.6,
+      "gap": 35.51,
+      "rvol": 178.23,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "IPST",
+      "company": "IP Strategy Holdings Inc",
+      "sector": "Financial",
+      "scan": "Low Float",
+      "score": 57,
+      "tier": "monitor",
+      "entry": 0.41,
+      "stop": 0.39,
+      "tp1": 0.4,
+      "tp2": 0.43,
+      "tp3": 0.46,
+      "price_at_scan": 0.38,
+      "gap": 6.49,
+      "rvol": 94.31,
+      "flags": [
+        "CONTINUATION"
+      ]
+    },
+    {
+      "ticker": "MGN",
+      "company": "Megan Holdings Ltd",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 50,
+      "tier": "monitor",
+      "entry": 0.26,
+      "stop": 0.24,
+      "tp1": 0.28,
+      "tp2": 0.29,
+      "tp3": 0.31,
+      "price_at_scan": 0.26,
+      "gap": 2.55,
+      "rvol": 96.06,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
