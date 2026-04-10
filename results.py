@@ -20,10 +20,11 @@ OUTPUT_DIR = "docs"
 DATA_DIR   = os.path.join(OUTPUT_DIR, "data")
 
 SESSIONS_ORDER = [
-    ("night",     "Pre-Market"),
-    ("premarket", "Market Open"),
-    ("midday",    "Midday"),
-    ("powerhour", "After Hours"),
+    ("earlypremarket", "Early Pre-Market"),
+    ("night",          "Pre-Market"),
+    ("premarket",      "Market Open"),
+    ("midday",         "Midday"),
+    ("powerhour",      "After Hours"),
 ]
 
 COLS = "0,1,2,3,4,5,6,65,66,61,67,64,63,25,59,52,53,54,57,58,42,43,44,60,87,88,86,81,30,68,137,136,49"
@@ -125,15 +126,16 @@ def fetch_real_vwap(tickers, session_key, today):
 
     # VWAP always calculated from market open to session start
     vwap_end = {
-        "night":     None,     # no meaningful VWAP pre-market
-        "premarket": None,     # no meaningful VWAP at open
-        "midday":    "12:30",  # from open to midday
-        "powerhour": "15:30",  # from open to AH start
+        "earlypremarket": None,     # 4 AM — no meaningful VWAP yet
+        "night":          None,     # 6:55 AM — no meaningful VWAP yet
+        "premarket":      None,     # no meaningful VWAP at open
+        "midday":         "12:30",  # from open to midday
+        "powerhour":      "15:30",  # from open to AH start
     }
 
     end_time = vwap_end.get(session_key)
     if not end_time:
-        return {}  # no VWAP for night/premarket sessions
+        return {}  # no VWAP for earlypremarket/night/premarket sessions
 
     start_dt = datetime.fromisoformat(f"{date_str}T09:30:00").replace(tzinfo=et)
     end_dt   = datetime.fromisoformat(f"{date_str}T{end_time}:00").replace(tzinfo=et)

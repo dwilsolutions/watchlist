@@ -359,11 +359,11 @@ def chip_html(r):
     )
 
 CSS = """
-:root{--bg:#0c0e11;--bg2:#141618;--bg3:#1c1f23;--border:rgba(255,255,255,0.07);--text:#dde1e9;--muted:#656c7a;--green:#3a9c5f;--amber:#c07b1a;--red:#a33333;--mono:'DM Mono',monospace;--sans:'Syne',sans-serif;}
+:root{{--bg:#0c0e11;--bg2:#141618;--bg3:#1c1f23;--border:rgba(255,255,255,0.07);--text:#dde1e9;--muted:#656c7a;--green:#3a9c5f;--amber:#c07b1a;--red:#a33333;--mono:'DM Mono',monospace;--sans:'Syne',sans-serif;--session-color:{session_color};}}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.5;}
 a{color:inherit;text-decoration:none;}
-.hdr{background:var(--bg2);border-bottom:1px solid var(--border);padding:16px 20px;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.hdr{background:var(--bg2);border-bottom:2px solid var(--session-color);padding:16px 20px;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px;}
 .hdr-l h1{font-family:var(--sans);font-size:20px;font-weight:700;letter-spacing:-0.3px;}
 .hdr-l h1 em{color:var(--green);font-style:normal;}
 .hdr-l .sub{font-size:11px;color:var(--muted);margin-top:3px;}
@@ -419,7 +419,16 @@ a{color:inherit;text-decoration:none;}
 .banner-closed{background:#3d2e1a;color:#f5c46e;font-size:11px;padding:10px 20px;text-align:center;border-bottom:1px solid #5a4010;}
 """
 
+SESSION_COLORS = {
+    "earlypremarket": "#1a4a8a",   # deep blue — night sky
+    "night":          "#6b3fa0",   # purple — dawn
+    "premarket":      "#c07b1a",   # amber — sunrise
+    "midday":         "#3a9c5f",   # green — midday
+    "powerhour":      "#a33333",   # crimson — closing bell
+}
+
 def render_html(results, session, trading_date, label, note, gen_time_str, market_live=True):
+    session_color = SESSION_COLORS.get(session, "#3a9c5f")
     buy     = [r for r in results if r["total"] >= 65]
     monitor = [r for r in results if 40 <= r["total"] < 65]
     avoid   = [r for r in results if r["total"] < 40]
@@ -433,6 +442,7 @@ def render_html(results, session, trading_date, label, note, gen_time_str, marke
     monitor_out = "".join(card_html(r) for r in monitor) or '<p class="empty">No setups in Monitor range.</p>'
     avoid_out   = "".join(chip_html(r) for r in avoid)
 
+    css = CSS.format(session_color=session_color)
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -440,12 +450,12 @@ def render_html(results, session, trading_date, label, note, gen_time_str, marke
 <title>{label} · {td_str}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Syne:wght@500;700&display=swap" rel="stylesheet">
-<style>{CSS}</style>
+<style>{css}</style>
 </head>
 <body>
 <div class="hdr">
   <div class="hdr-l">
-    <h1>Watchlist · <em>{label}</em></h1>
+    <h1>Watchlist · <em style="color:var(--session-color)">{label}</em></h1>
     <div class="sub">{note} · {total_n} tickers scored ({lf_n} low float · {mc_n} mid cap)</div>
   </div>
   <div class="hdr-r">
@@ -552,7 +562,7 @@ body{{background:var(--bg);color:var(--text);font-family:var(--mono);}}
 def fetch_vwap(tickers, session, now_et):
     """Fetch real VWAP for each ticker. Only meaningful for midday and powerhour sessions."""
     # Night and premarket run before/at market open — no meaningful intraday VWAP yet
-    if session in ("night", "premarket"):
+    if session in ("earlypremarket", "night", "premarket"):
         return {}
     try:
         import yfinance as yf
@@ -654,10 +664,11 @@ def main():
 
     # 2. Fixed permanent URL — WHOP embeds always point here, never changes
     FIXED_NAMES = {
-        "night":     "premarket.html",
-        "premarket": "marketopen.html",
-        "midday":    "midday.html",
-        "powerhour": "afterhours.html",
+        "earlypremarket": "earlypremarket.html",
+        "night":          "premarket.html",
+        "premarket":      "marketopen.html",
+        "midday":         "midday.html",
+        "powerhour":      "afterhours.html",
     }
     fixed_name = FIXED_NAMES[session]
     fixed_path = os.path.join(OUTPUT_DIR, fixed_name)
