@@ -360,7 +360,7 @@ def chip_html(r):
     )
 
 CSS = """
-:root{{--bg:#0c0e11;--bg2:#141618;--bg3:#1c1f23;--border:rgba(255,255,255,0.07);--text:#dde1e9;--muted:#656c7a;--green:#3a9c5f;--amber:#c07b1a;--red:#a33333;--mono:'DM Mono',monospace;--sans:'Syne',sans-serif;--session-color:{session_color};}}
+:root{--bg:#0c0e11;--bg2:#141618;--bg3:#1c1f23;--border:rgba(255,255,255,0.07);--text:#dde1e9;--muted:#656c7a;--green:#3a9c5f;--amber:#c07b1a;--red:#a33333;--mono:'DM Mono',monospace;--sans:'Syne',sans-serif;--session-color:{session_color};}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.5;}
 a{color:inherit;text-decoration:none;}
@@ -378,7 +378,7 @@ a{color:inherit;text-decoration:none;}
 .sum-cell{background:var(--bg2);padding:12px 16px;text-align:center;}
 .sum-n{font-family:var(--sans);font-size:26px;font-weight:700;}
 .sum-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:0.06em;text-transform:uppercase;}
-.c-g{color:var(--green);}.c-a{color:var(--amber);}.c-r{color:var(--red);}
+.c-g{color:var(--session-color);}.c-a{color:var(--amber);}.c-r{color:var(--red);}
 .body{padding:18px 20px 48px;max-width:940px;margin:0 auto;}
 .sec-lbl{font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin:22px 0 9px;display:flex;align-items:center;gap:8px;}
 .sec-lbl::after{content:'';flex:1;height:1px;background:var(--border);}
