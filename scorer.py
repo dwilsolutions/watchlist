@@ -443,7 +443,7 @@ def render_html(results, session, trading_date, label, note, gen_time_str, marke
     monitor_out = "".join(card_html(r) for r in monitor) or '<p class="empty">No setups in Monitor range.</p>'
     avoid_out   = "".join(chip_html(r) for r in avoid)
 
-    css = CSS.format(session_color=session_color)
+    css = CSS.replace("{session_color}", session_color)
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
