@@ -6,14 +6,14 @@ on:
       session:
         description: 'Session to run'
         required: true
-        default: 'night'
+        default: 'premarket'
         type: choice
         options:
           - earlypremarket
-          - night
           - premarket
+          - marketopen
           - midday
-          - powerhour
+          - afterhours
           - eod
 
 jobs:
