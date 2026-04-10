@@ -9,6 +9,7 @@ on:
         default: 'night'
         type: choice
         options:
+          - earlypremarket
           - night
           - premarket
           - midday
