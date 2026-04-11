@@ -119,7 +119,7 @@ for ticker, df in all_data.items():
                 continue
 
             pct_move = (high_val - open_val) / open_val
-            if pct_move < MIN_MOVE:
+            if pct_move < MIN_MOVE or pct_move > 20.0:  # filter >2000% as bad data
                 continue
 
             high_idx = group['High'].idxmax()
@@ -128,6 +128,12 @@ for ticker, df in all_data.items():
             bucket30 = f"{h:02d}:{m30:02d}"
 
             time_buckets_30[bucket30] += 1
+            import math
+            if math.isnan(pct_move) or math.isinf(pct_move):
+                continue
+            if open_val < 0.01:  # skip penny stocks with bad data
+                continue
+
             ticker_results.append({
                 'ticker':    ticker,
                 'date':      str(day),
