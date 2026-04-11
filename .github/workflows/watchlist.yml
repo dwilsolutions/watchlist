@@ -15,6 +15,7 @@ on:
           - midday
           - afterhours
           - eod
+          - analyze
 
 jobs:
   score-and-publish:
@@ -30,16 +31,19 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install yfinance --quiet
+        run: pip install yfinance pandas --quiet
 
       - name: Run scorer or results
         env:
           FINVIZ_TOKEN: ${{ secrets.FINVIZ_TOKEN }}
         run: |
-          if [ "${{ github.event.inputs.session }}" = "eod" ]; then
+          SESSION="${{ github.event.inputs.session }}"
+          if [ "$SESSION" = "eod" ]; then
             python results.py
+          elif [ "$SESSION" = "analyze" ]; then
+            python analyze_timing.py
           else
-            python scorer.py --session ${{ github.event.inputs.session }}
+            python scorer.py --session $SESSION
           fi
 
       - name: Commit and push
