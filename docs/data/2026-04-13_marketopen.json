@@ -1,0 +1,326 @@
+{
+  "session": "marketopen",
+  "label": "Market Open",
+  "date": "2026-04-13",
+  "generated": "09:00 AM ET",
+  "tickers": [
+    {
+      "ticker": "ZNTL",
+      "company": "Zentalis Pharmaceuticals Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "buy",
+      "entry": 6.64,
+      "stop": 6.24,
+      "tp1": 7.01,
+      "tp2": 7.4,
+      "tp3": 7.93,
+      "price_at_scan": 6.61,
+      "gap": 2.26,
+      "rvol": 44.97,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CUE",
+      "company": "Cue Biopharma Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 85,
+      "tier": "buy",
+      "entry": 0.5,
+      "stop": 0.47,
+      "tp1": 0.53,
+      "tp2": 0.56,
+      "tp3": 0.6,
+      "price_at_scan": 0.5,
+      "gap": 1.91,
+      "rvol": 65.25,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "FUSE",
+      "company": "Fusemachines Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 84,
+      "tier": "buy",
+      "entry": 1.84,
+      "stop": 1.73,
+      "tp1": 1.94,
+      "tp2": 2.05,
+      "tp3": 2.2,
+      "price_at_scan": 1.83,
+      "gap": 17.65,
+      "rvol": 34.79,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "RAYA",
+      "company": "Erayak Power Solution Group Inc",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 82,
+      "tier": "buy",
+      "entry": 0.95,
+      "stop": 0.89,
+      "tp1": 1.01,
+      "tp2": 1.06,
+      "tp3": 1.14,
+      "price_at_scan": 0.95,
+      "gap": 92.3,
+      "rvol": 239.44,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "BENF",
+      "company": "Beneficient",
+      "sector": "Financial",
+      "scan": "Low Float",
+      "score": 75,
+      "tier": "buy",
+      "entry": 4.1,
+      "stop": 3.85,
+      "tp1": 4.32,
+      "tp2": 4.57,
+      "tp3": 4.9,
+      "price_at_scan": 4.08,
+      "gap": 3.51,
+      "rvol": 26.7,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SQFT",
+      "company": "Presidio Property Trust Inc",
+      "sector": "Real Estate",
+      "scan": "Low Float",
+      "score": 74,
+      "tier": "buy",
+      "entry": 3.97,
+      "stop": 3.73,
+      "tp1": 4.12,
+      "tp2": 4.36,
+      "tp3": 4.67,
+      "price_at_scan": 3.89,
+      "gap": 45.74,
+      "rvol": 3659.46,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "GAME",
+      "company": "GameSquare Holdings Inc",
+      "sector": "Communication Services",
+      "scan": "Mid Cap",
+      "score": 69,
+      "tier": "buy",
+      "entry": 0.37,
+      "stop": 0.35,
+      "tp1": 0.39,
+      "tp2": 0.41,
+      "tp3": 0.44,
+      "price_at_scan": 0.37,
+      "gap": 0.09,
+      "rvol": 4.19,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SPCE",
+      "company": "Virgin Galactic Holdings Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 67,
+      "tier": "buy",
+      "entry": 3.11,
+      "stop": 2.92,
+      "tp1": 3.2,
+      "tp2": 3.38,
+      "tp3": 3.62,
+      "price_at_scan": 3.02,
+      "gap": 1.01,
+      "rvol": 3.26,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "TMCI",
+      "company": "Treace Medical Concepts Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 67,
+      "tier": "buy",
+      "entry": 1.82,
+      "stop": 1.71,
+      "tp1": 1.92,
+      "tp2": 2.03,
+      "tp3": 2.17,
+      "price_at_scan": 1.81,
+      "gap": -0.65,
+      "rvol": 15.0,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "LOBO",
+      "company": "Lobo Technologies Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 66,
+      "tier": "buy",
+      "entry": 0.54,
+      "stop": 0.51,
+      "tp1": 0.57,
+      "tp2": 0.6,
+      "tp3": 0.65,
+      "price_at_scan": 0.54,
+      "gap": 0.46,
+      "rvol": 77.83,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MAXN",
+      "company": "Maxeon Solar Technologies Ltd",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 63,
+      "tier": "monitor",
+      "entry": 1.72,
+      "stop": 1.62,
+      "tp1": 1.81,
+      "tp2": 1.92,
+      "tp3": 2.05,
+      "price_at_scan": 1.71,
+      "gap": -0.76,
+      "rvol": 4.06,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CREG",
+      "company": "Smart Powerr Corp",
+      "sector": "Utilities",
+      "scan": "Mid Cap",
+      "score": 63,
+      "tier": "monitor",
+      "entry": 0.65,
+      "stop": 0.61,
+      "tp1": 0.67,
+      "tp2": 0.71,
+      "tp3": 0.76,
+      "price_at_scan": 0.63,
+      "gap": 39.64,
+      "rvol": 173.02,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY"
+      ]
+    },
+    {
+      "ticker": "IPST",
+      "company": "IP Strategy Holdings Inc",
+      "sector": "Financial",
+      "scan": "Low Float",
+      "score": 59,
+      "tier": "monitor",
+      "entry": 0.46,
+      "stop": 0.43,
+      "tp1": 0.49,
+      "tp2": 0.52,
+      "tp3": 0.55,
+      "price_at_scan": 0.46,
+      "gap": 5.74,
+      "rvol": 7.22,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MGN",
+      "company": "Megan Holdings Ltd",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 51,
+      "tier": "monitor",
+      "entry": 0.24,
+      "stop": 0.23,
+      "tp1": 0.25,
+      "tp2": 0.27,
+      "tp3": 0.29,
+      "price_at_scan": 0.24,
+      "gap": 14.49,
+      "rvol": 8.9,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SOAR",
+      "company": "Volato Group Inc",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 45,
+      "tier": "monitor",
+      "entry": 0.29,
+      "stop": 0.27,
+      "tp1": 0.31,
+      "tp2": 0.32,
+      "tp3": 0.35,
+      "price_at_scan": 0.29,
+      "gap": 1.5,
+      "rvol": 6.67,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "NVVE",
+      "company": "Nuvve Holding Corp",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 40,
+      "tier": "monitor",
+      "entry": 0.67,
+      "stop": 0.63,
+      "tp1": 0.71,
+      "tp2": 0.75,
+      "tp3": 0.8,
+      "price_at_scan": 0.67,
+      "gap": 3.26,
+      "rvol": 11.73,
+      "flags": [
+        "CATALYST \u00b7 8-K",
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
