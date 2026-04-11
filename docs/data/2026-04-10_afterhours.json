@@ -2,7 +2,7 @@
   "session": "afterhours",
   "label": "After Hours",
   "date": "2026-04-10",
-  "generated": "07:16 PM ET",
+  "generated": "09:46 PM ET",
   "tickers": [
     {
       "ticker": "ZNTL",
@@ -18,7 +18,7 @@
       "tp3": 7.93,
       "price_at_scan": 6.61,
       "gap": 2.26,
-      "rvol": 44.91,
+      "rvol": 44.97,
       "flags": [
         "CONTINUATION",
         "SECTOR MOMENTUM"
@@ -38,7 +38,7 @@
       "tp3": 2.2,
       "price_at_scan": 1.83,
       "gap": 17.65,
-      "rvol": 34.66,
+      "rvol": 34.79,
       "flags": [
         "CONTINUATION",
         "GAP QUALITY",
@@ -59,7 +59,7 @@
       "tp3": 1.14,
       "price_at_scan": 0.95,
       "gap": 92.3,
-      "rvol": 239.18,
+      "rvol": 239.44,
       "flags": [
         "CONTINUATION",
         "GAP QUALITY",
@@ -80,7 +80,7 @@
       "tp3": 0.44,
       "price_at_scan": 0.37,
       "gap": 0.09,
-      "rvol": 4.17,
+      "rvol": 4.19,
       "flags": [
         "CONTINUATION",
         "SECTOR MOMENTUM"
@@ -100,7 +100,7 @@
       "tp3": 0.6,
       "price_at_scan": 0.5,
       "gap": 1.91,
-      "rvol": 65.18,
+      "rvol": 65.25,
       "flags": [
         "CONTINUATION",
         "SECTOR MOMENTUM"
@@ -120,7 +120,7 @@
       "tp3": 4.67,
       "price_at_scan": 3.89,
       "gap": 45.74,
-      "rvol": 3656.66,
+      "rvol": 3659.46,
       "flags": [
         "CONTINUATION",
         "SECTOR MOMENTUM"
@@ -140,7 +140,7 @@
       "tp3": 0.65,
       "price_at_scan": 0.54,
       "gap": 0.46,
-      "rvol": 77.12,
+      "rvol": 77.83,
       "flags": [
         "SECTOR MOMENTUM"
       ]
@@ -159,7 +159,7 @@
       "tp3": 0.55,
       "price_at_scan": 0.46,
       "gap": 5.74,
-      "rvol": 7.21,
+      "rvol": 7.22,
       "flags": [
         "CONTINUATION",
         "SECTOR MOMENTUM"
@@ -179,7 +179,7 @@
       "tp3": 4.9,
       "price_at_scan": 4.08,
       "gap": 3.51,
-      "rvol": 26.68,
+      "rvol": 26.7,
       "flags": [
         "SECTOR MOMENTUM"
       ]
@@ -198,7 +198,7 @@
       "tp3": 3.62,
       "price_at_scan": 3.02,
       "gap": 1.01,
-      "rvol": 3.25,
+      "rvol": 3.26,
       "flags": [
         "SECTOR MOMENTUM"
       ]
@@ -236,7 +236,7 @@
       "tp3": 0.35,
       "price_at_scan": 0.29,
       "gap": 1.5,
-      "rvol": 6.25,
+      "rvol": 6.67,
       "flags": [
         "SECTOR MOMENTUM"
       ]
@@ -255,7 +255,7 @@
       "tp3": 1.8,
       "price_at_scan": 1.5,
       "gap": 4.0,
-      "rvol": 19.26,
+      "rvol": 19.29,
       "flags": [
         "SECTOR MOMENTUM"
       ]
@@ -294,7 +294,7 @@
       "tp3": 0.76,
       "price_at_scan": 0.63,
       "gap": 39.64,
-      "rvol": 172.81,
+      "rvol": 173.02,
       "flags": [
         "CONTINUATION",
         "GAP QUALITY"
@@ -314,7 +314,7 @@
       "tp3": 0.22,
       "price_at_scan": 0.18,
       "gap": -0.56,
-      "rvol": 3.74,
+      "rvol": 3.93,
       "flags": [
         "SECTOR MOMENTUM"
       ]
