@@ -1,0 +1,84 @@
+{
+  "session": "premarket",
+  "label": "Pre-Market",
+  "date": "2026-04-14",
+  "generated": "06:55 AM ET",
+  "tickers": [
+    {
+      "ticker": "RMSG",
+      "company": "Real Messenger Corp",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 82,
+      "tier": "buy",
+      "entry": 0.69,
+      "stop": 0.65,
+      "tp1": 0.73,
+      "tp2": 0.77,
+      "tp3": 0.83,
+      "price_at_scan": 0.69,
+      "gap": 25.67,
+      "rvol": 114.97,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "VRAX",
+      "company": "Virax Biolabs Group Ltd",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 82,
+      "tier": "buy",
+      "entry": 0.2,
+      "stop": 0.19,
+      "tp1": 0.21,
+      "tp2": 0.22,
+      "tp3": 0.24,
+      "price_at_scan": 0.2,
+      "gap": 82.13,
+      "rvol": 171.01,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SBEV",
+      "company": "Splash Beverage Group Inc",
+      "sector": "Consumer Defensive",
+      "scan": "Low Float",
+      "score": 47,
+      "tier": "monitor",
+      "entry": 0.52,
+      "stop": 0.49,
+      "tp1": 0.52,
+      "tp2": 0.55,
+      "tp3": 0.59,
+      "price_at_scan": 0.49,
+      "gap": 44.93,
+      "rvol": 181.57,
+      "flags": []
+    },
+    {
+      "ticker": "SOAR",
+      "company": "Volato Group Inc",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 45,
+      "tier": "monitor",
+      "entry": 0.36,
+      "stop": 0.34,
+      "tp1": 0.33,
+      "tp2": 0.35,
+      "tp3": 0.37,
+      "price_at_scan": 0.31,
+      "gap": 35.32,
+      "rvol": 95.88,
+      "flags": []
+    }
+  ]
+}
