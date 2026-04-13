@@ -1,0 +1,27 @@
+{
+  "session": "earlypremarket",
+  "label": "Early Pre-Market",
+  "date": "2026-04-14",
+  "generated": "04:05 AM ET",
+  "tickers": [
+    {
+      "ticker": "VRAX",
+      "company": "Virax Biolabs Group Ltd",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 55,
+      "tier": "monitor",
+      "entry": 0.2,
+      "stop": 0.19,
+      "tp1": 0.2,
+      "tp2": 0.21,
+      "tp3": 0.23,
+      "price_at_scan": 0.19,
+      "gap": 82.13,
+      "rvol": 25.0,
+      "flags": [
+        "GAP QUALITY"
+      ]
+    }
+  ]
+}
