@@ -259,8 +259,8 @@ def score_row(row):
             ("Second target",  round(base_low + move * 1.618, 2)),
             ("Extended",       round(base_low + move * 2.0,   2)),
         ]
-        # Filter out levels below current price — only show upside targets
-        fib_levels = [(l, v) for l, v in fib_levels if v > price]
+        # Filter out levels at or below current price — only show upside targets
+        fib_levels = [(l, v) for l, v in fib_levels if v > price * 1.01]
 
     # Suggested entry + range
     if real_vwap:
@@ -383,10 +383,10 @@ def card_html(r):
     <div class="st"><div class="sl">{"VWAP" if r.get("real_vwap") else "VWAP~"}</div><div class="sv" style="color:{"#6ee89a" if r["above_vwap"] else "#f57a7a"}">${r.get("real_vwap") or r["vwap_proxy"]}</div></div>
   </div>
   <div class="entry-box">
-    <span class="entry-label">▶ Entry: {r["entry_label"]}{r["range_str"]}</span>
+    <span class="entry-label">▶ Proposed Entry: {r["entry_label"]}{r["range_str"]}</span>
   </div>
   <div class="lvls">
-    {"".join(f'<span><span class="ll">{lbl}</span> <span class="lv">${val}</span></span><span class="sep">·</span>' for lbl, val in r["fib_levels"])[:-32] if r["fib_levels"] else f'<span class="ll" style="color:var(--muted)">No level data</span>'}
+    {"<span class=\"sep\">·</span>".join(f'<span><span class="ll">{lbl}</span> <span class="lv">${val}</span></span>' for lbl, val in r["fib_levels"]) if r["fib_levels"] else '<span class="ll" style="color:var(--muted)">No level data</span>'}
   </div>
   <div class="news-line">{r["news"]}</div>
 </div>"""
