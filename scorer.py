@@ -349,6 +349,13 @@ def bar_html(label, val, mx, color):
         f'<span class="bv">{val}/{mx}</span></div>'
     )
 
+def _fib_html(fib_levels):
+    if not fib_levels:
+        return '<span class="ll" style="color:var(--muted)">No level data</span>'
+    sep = '<span class="sep">·</span>'
+    parts = [f'<span><span class="ll">{lbl}</span> <span class="lv">${val}</span></span>' for lbl, val in fib_levels]
+    return sep.join(parts)
+
 def card_html(r):
     score    = r["total"]
     tier     = "buy" if score >= 65 else ("monitor" if score >= 40 else "avoid")
@@ -386,7 +393,7 @@ def card_html(r):
     <span class="entry-label">▶ Proposed Entry: {r["entry_label"]}{r["range_str"]}</span>
   </div>
   <div class="lvls">
-    {"<span class=\"sep\">·</span>".join(f'<span><span class="ll">{lbl}</span> <span class="lv">${val}</span></span>' for lbl, val in r["fib_levels"]) if r["fib_levels"] else '<span class="ll" style="color:var(--muted)">No level data</span>'}
+    {_fib_html(r["fib_levels"])}
   </div>
   <div class="news-line">{r["news"]}</div>
 </div>"""
