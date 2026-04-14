@@ -1,0 +1,197 @@
+{
+  "session": "premarket",
+  "label": "Pre-Market",
+  "date": "2026-04-15",
+  "generated": "06:55 AM ET",
+  "tickers": [
+    {
+      "ticker": "PMNT",
+      "company": "Perfect Moment Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Mid Cap",
+      "score": 99,
+      "tier": "buy",
+      "entry": 0.8,
+      "entry_label": "Break above $0.80",
+      "range_str": "",
+      "prev_close": 0.24,
+      "prev_high": 0.8,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.8
+        ],
+        [
+          "First target",
+          0.95
+        ],
+        [
+          "Second target",
+          1.15
+        ],
+        [
+          "Extended",
+          1.36
+        ]
+      ],
+      "price_at_scan": 0.63,
+      "gap": 54.49,
+      "rvol": 1189.76,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY"
+      ]
+    },
+    {
+      "ticker": "RMSG",
+      "company": "Real Messenger Corp",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 80,
+      "tier": "buy",
+      "entry": 3.71,
+      "entry_label": "Break above $3.69",
+      "range_str": "",
+      "prev_close": 2.7,
+      "prev_high": 3.69,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.69
+        ],
+        [
+          "First target",
+          3.96
+        ],
+        [
+          "Second target",
+          4.3
+        ],
+        [
+          "Extended",
+          4.68
+        ]
+      ],
+      "price_at_scan": 3.09,
+      "gap": 22.22,
+      "rvol": 25.2,
+      "flags": [
+        "CONTINUATION"
+      ]
+    },
+    {
+      "ticker": "SNAL",
+      "company": "Snail Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 77,
+      "tier": "buy",
+      "entry": 0.72,
+      "entry_label": "Break above $0.72",
+      "range_str": "",
+      "prev_close": 0.38,
+      "prev_high": 0.72,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.72
+        ],
+        [
+          "First target",
+          0.81
+        ],
+        [
+          "Second target",
+          0.93
+        ],
+        [
+          "Extended",
+          1.06
+        ]
+      ],
+      "price_at_scan": 0.66,
+      "gap": 29.97,
+      "rvol": 10719.85,
+      "flags": [
+        "GAP QUALITY"
+      ]
+    },
+    {
+      "ticker": "HOTH",
+      "company": "Hoth Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 74,
+      "tier": "buy",
+      "entry": 0.87,
+      "entry_label": "Break above $0.87",
+      "range_str": "",
+      "prev_close": 0.51,
+      "prev_high": 0.87,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.87
+        ],
+        [
+          "First target",
+          0.97
+        ],
+        [
+          "Second target",
+          1.09
+        ],
+        [
+          "Extended",
+          1.23
+        ]
+      ],
+      "price_at_scan": 0.79,
+      "gap": 62.14,
+      "rvol": 572.5,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SNYR",
+      "company": "Synergy CHC Corp",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 56,
+      "tier": "monitor",
+      "entry": 1.33,
+      "entry_label": "Break above $1.32",
+      "range_str": "",
+      "prev_close": 0.58,
+      "prev_high": 1.32,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.32
+        ],
+        [
+          "First target",
+          1.52
+        ],
+        [
+          "Second target",
+          1.78
+        ],
+        [
+          "Extended",
+          2.06
+        ]
+      ],
+      "price_at_scan": 1.07,
+      "gap": 106.85,
+      "rvol": 919.98,
+      "flags": [
+        "CATALYST \u00b7 8-K",
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
