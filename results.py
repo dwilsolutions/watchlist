@@ -212,70 +212,82 @@ def fetch_quotes(tickers):
 
 # ── Load today's session JSONs ─────────────────────────────────────────────────
 
+# Fallback names for backward compatibility with old naming convention
+SESSION_LEGACY_NAMES = {
+    "earlypremarket": [],
+    "premarket":      ["night"],
+    "marketopen":     ["premarket"],
+    "midday":         ["midday"],
+    "afterhours":     ["powerhour"],
+}
+
 def load_today_sessions(today):
     sessions = {}
     if not os.path.exists(DATA_DIR):
         return sessions
     for session_key, label in SESSIONS_ORDER:
-        fname = f"{today.isoformat()}_{session_key}.json"
-        fpath = os.path.join(DATA_DIR, fname)
-        if os.path.exists(fpath):
-            with open(fpath) as f:
-                sessions[session_key] = json.load(f)
-            print(f"  [+] Loaded {fname} — {len(sessions[session_key]['tickers'])} tickers")
-        else:
+        # Try new name first, then legacy names
+        candidates = [session_key] + SESSION_LEGACY_NAMES.get(session_key, [])
+        loaded = False
+        for name in candidates:
+            fname = f"{today.isoformat()}_{name}.json"
+            fpath = os.path.join(DATA_DIR, fname)
+            if os.path.exists(fpath):
+                with open(fpath) as f:
+                    sessions[session_key] = json.load(f)
+                print(f"  [+] Loaded {fname} — {len(sessions[session_key]['tickers'])} tickers")
+                loaded = True
+                break
+        if not loaded:
             print(f"  [-] No data for {session_key} today")
     return sessions
 
 # ── Calculate performance ──────────────────────────────────────────────────────
 
 def calc_outcome(t, quote, session_high=None, session_low=None):
-    entry = t["entry"]
-    stop  = t["stop"]
-    tp1   = t["tp1"]
-    tp2   = t["tp2"]
-    tp3   = t["tp3"]
-
+    entry = t.get("entry", 0)
     close = safe(quote.get("Price")) if isinstance(quote, dict) else safe(quote)
-    # Use session-specific high/low if available, fall back to full day
     high  = session_high if session_high else safe(quote.get("High"))
     low   = session_low  if session_low  else safe(quote.get("Low"))
+    open_ = safe(quote.get("Open")) if isinstance(quote, dict) else 0
 
     if not close or not entry:
         return None
 
-    pct_close = round((close - entry) / entry * 100, 1) if entry else 0
-    pct_high  = round((high  - entry) / entry * 100, 1) if entry else 0
+    # Use entry price as baseline for % move
+    baseline  = entry if entry else close
+    pct_close = round((close - baseline) / baseline * 100, 1) if baseline else 0
+    pct_high  = round((high  - baseline) / baseline * 100, 1) if baseline else 0
 
-    if low <= stop:
-        outcome = "stopped"
-    elif high >= tp3:
-        outcome = "tp3"
-    elif high >= tp2:
-        outcome = "tp2"
-    elif high >= tp1:
-        outcome = "tp1"
-    elif close > entry:
-        outcome = "open_up"
+    # Outcome based on session high
+    if pct_high >= 50:
+        outcome = "monster"    # 50%+ runner
+    elif pct_high >= 20:
+        outcome = "big_runner" # 20%+ runner
+    elif pct_high >= 10:
+        outcome = "runner"     # 10%+ runner
+    elif pct_high >= 5:
+        outcome = "mover"      # 5%+ mover
+    elif pct_close > 0:
+        outcome = "up"         # positive but small
     else:
-        outcome = "open_down"
+        outcome = "flat"       # flat or down
 
     return {
-        "close":       round(close, 2),
-        "high":        round(high, 2),
-        "low":         round(low, 2),
-        "pct_close":   pct_close,
-        "pct_high":    pct_high,
-        "outcome":     outcome,
-        "session_window": SESSION_WINDOWS.get(t.get("session_key", ""), ("?","?")),
+        "close":     round(close, 2),
+        "high":      round(high, 2),
+        "low":       round(low, 2) if low else 0,
+        "pct_close": pct_close,
+        "pct_high":  pct_high,
+        "outcome":   outcome,
     }
 
 # ── Cumulative stats ───────────────────────────────────────────────────────────
 
 def load_cumulative():
     stats = {
-        "buy":     {"total": 0, "tp1": 0, "tp2": 0, "tp3": 0, "stopped": 0},
-        "monitor": {"total": 0, "tp1": 0, "tp2": 0, "tp3": 0, "stopped": 0},
+        "buy":     {"total": 0, "runner": 0, "big_runner": 0, "monster": 0},
+        "monitor": {"total": 0, "runner": 0, "big_runner": 0, "monster": 0},
         "days":    0,
     }
     if not os.path.exists(DATA_DIR):
@@ -295,25 +307,23 @@ def load_cumulative():
                 outcome = t.get("outcome", "")
                 tier    = "buy" if t.get("tier") == "buy" else "monitor"
                 stats[tier]["total"] += 1
-                if outcome in ("tp1", "tp2", "tp3"):
-                    stats[tier]["tp1"] += 1
-                if outcome in ("tp2", "tp3"):
-                    stats[tier]["tp2"] += 1
-                if outcome == "tp3":
-                    stats[tier]["tp3"] += 1
-                if outcome == "stopped":
-                    stats[tier]["stopped"] += 1
+                if outcome in ("runner", "big_runner", "monster"):
+                    stats[tier]["runner"] += 1
+                if outcome in ("big_runner", "monster"):
+                    stats[tier]["big_runner"] += 1
+                if outcome == "monster":
+                    stats[tier]["monster"] += 1
     return stats
 
 # ── HTML ───────────────────────────────────────────────────────────────────────
 
 OUTCOME_CFG = {
-    "tp3":       ("🎯 TP3",      "#1e3d2a", "#6ee89a"),
-    "tp2":       ("✅ TP2",      "#1e3d2a", "#6ee89a"),
-    "tp1":       ("✅ TP1",      "#1e3d2a", "#6ee89a"),
-    "stopped":   ("❌ Stopped",  "#3d1a1a", "#f57a7a"),
-    "open_up":   ("📈 Up",       "#1a2a3d", "#7ab4f5"),
-    "open_down": ("📉 Down",     "#3d2e1a", "#f5c46e"),
+    "monster":    ("🎯 Monster 50%+", "#1e3d2a", "#6ee89a"),
+    "big_runner": ("🔥 Big Run 20%+", "#1e3d2a", "#6ee89a"),
+    "runner":     ("✅ Runner 10%+",  "#1a3320", "#5cc98a"),
+    "mover":      ("📈 Mover 5%+",    "#1a2a3d", "#7ab4f5"),
+    "up":         ("↑ Up",            "#1c1f23", "#656c7a"),
+    "flat":       ("➖ Flat",          "#1c1f23", "#656c7a"),
 }
 
 SCAN_COLORS = {
@@ -417,29 +427,25 @@ def card_html(t, perf):
     <a class="clink" href="https://finviz.com/quote.ashx?t={ticker}" target="_blank">Chart ↗</a>
   </div>
   <div class="levels">
-    <div class="lv"><div class="lv-l">Entry</div><div class="lv-v">${entry}</div></div>
+    <div class="lv"><div class="lv-l">Entry</div><div class="lv-v">${t.get("entry","—")}</div></div>
     <div class="lv"><div class="lv-l">Close</div><div class="lv-v {pc_cls}">${close}</div></div>
-    <div class="lv"><div class="lv-l">Day High</div><div class="lv-v {ph_cls}">${high}</div></div>
-    <div class="lv"><div class="lv-l">Stop</div><div class="lv-v {stop_cls}">${stop}</div></div>
-    <div class="lv"><div class="lv-l">TP1</div><div class="lv-v {lv_cls(tp1)}">${tp1}</div></div>
-    <div class="lv"><div class="lv-l">TP2</div><div class="lv-v {lv_cls(tp2)}">${tp2}</div></div>
-    <div class="lv"><div class="lv-l">TP3</div><div class="lv-v {lv_cls(tp3)}">${tp3}</div></div>
+    <div class="lv"><div class="lv-l">Session High</div><div class="lv-v {ph_cls}">${high} ({ph_sign}{pct_h:.1f}%)</div></div>
+    <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">${t.get("prev_high","—")}</div></div>
+    <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">${t.get("hi52_price","—")}</div></div>
   </div>
 </div>"""
 
 def cum_section_html(label, d):
-    total   = d["total"]
-    tp1_pct = round(d["tp1"]/total*100) if total else 0
-    tp2_pct = round(d["tp2"]/total*100) if total else 0
-    tp3_pct = round(d["tp3"]/total*100) if total else 0
-    stp_pct = round(d["stopped"]/total*100) if total else 0
+    total      = d["total"]
+    run_pct    = round(d["runner"]/total*100) if total else 0
+    big_pct    = round(d["big_runner"]/total*100) if total else 0
+    mon_pct    = round(d["monster"]/total*100) if total else 0
     return f"""<div class="cum-section">
   <div class="cum-label">{label}</div>
   <div class="cum-row"><span>Total tracked</span><span>{total}</span></div>
-  <div class="cum-row"><span>Hit TP1+</span><span class="cum-val-g">{tp1_pct}%</span></div>
-  <div class="cum-row"><span>Hit TP2+</span><span class="cum-val-g">{tp2_pct}%</span></div>
-  <div class="cum-row"><span>Hit TP3</span><span class="cum-val-g">{tp3_pct}%</span></div>
-  <div class="cum-row"><span>Stopped out</span><span class="cum-val-r">{stp_pct}%</span></div>
+  <div class="cum-row"><span>Runners 10%+</span><span class="cum-val-g">{run_pct}%</span></div>
+  <div class="cum-row"><span>Big Runners 20%+</span><span class="cum-val-g">{big_pct}%</span></div>
+  <div class="cum-row"><span>Monsters 50%+</span><span class="cum-val-g">{mon_pct}%</span></div>
 </div>"""
 
 def render_html(today, session_results, all_quotes, cum_stats, gen_time):
@@ -448,9 +454,11 @@ def render_html(today, session_results, all_quotes, cum_stats, gen_time):
     # Totals across all sessions today
     all_tickers  = [t for s in session_results.values() for t in s]
     total        = len(all_tickers)
-    tp1_hits     = len([t for t in all_tickers if t["outcome"] in ("tp1","tp2","tp3")])
-    stopped      = len([t for t in all_tickers if t["outcome"] == "stopped"])
-    catch_rate   = f"{round(tp1_hits/total*100)}%" if total else "—"
+    runners      = len([t for t in all_tickers if t["outcome"] in ("runner","big_runner","monster")])
+    big_runners  = len([t for t in all_tickers if t["outcome"] in ("big_runner","monster")])
+    monsters     = len([t for t in all_tickers if t["outcome"] == "monster"])
+    catch_rate   = f"{round(runners/total*100)}%" if total else "—"
+    stopped      = 0  # no longer tracked
 
     # Build session blocks
     session_html = ""

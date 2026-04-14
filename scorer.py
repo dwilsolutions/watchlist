@@ -240,7 +240,30 @@ def score_row(row):
             bonus -= 5   # fading hard from open — weakness proxy
 
     total = max(0, min(100, base + bonus))
-    entry = round(vwap_ref * 1.005, 2) if not above_vwap else round(price * 1.005, 2)
+    # Key levels
+    prev_close = safe(row.get("Prev Close"))
+    prev_high  = safe(row.get("High"))   # today's high as prev high proxy
+    hi52_price = round(price / (1 + hi52/100), 2) if hi52 and not _math.isnan(hi52) and hi52 != 0 else None
+    lo52_price = round(price / (1 + lo52/100), 2) if lo52 and not _math.isnan(lo52) and lo52 != 0 else None
+
+    # Suggested entry
+    if real_vwap:
+        if above_vwap:
+            entry_label = f"Momentum above VWAP ${real_vwap:.3f}"
+            entry_price = round(price * 1.005, 2)
+        else:
+            entry_label = f"Reclaim VWAP ${real_vwap:.3f}"
+            entry_price = round(real_vwap * 1.005, 2)
+    else:
+        if prev_high and prev_high > price:
+            entry_label = f"Break above ${prev_high:.2f}"
+            entry_price = round(prev_high * 1.005, 2)
+        elif prev_close and prev_close > price:
+            entry_label = f"Reclaim ${prev_close:.2f}"
+            entry_price = round(prev_close * 1.005, 2)
+        else:
+            entry_label = f"Current ${price:.2f}"
+            entry_price = round(price * 1.005, 2)
 
     return {
         "ticker":      row.get("Ticker", ""),
@@ -255,11 +278,12 @@ def score_row(row):
         "flags":       flags,   "above_vwap": above_vwap,
         "vwap_proxy":  round(vwap_proxy, 3),
         "real_vwap":   round(real_vwap, 3) if real_vwap else None,
-        "entry":       entry,
-        "stop":        calc_stop(price, safe(row.get("Average True Range")), entry),
-        "tp1":         round(price * 1.06, 2),   # 6% — tighter first target
-        "tp2":         round(price * 1.12, 2),   # 12% — second target
-        "tp3":         round(price * 1.20, 2),   # 20% — runner target
+        "entry_label": entry_label,
+        "entry":       entry_price,
+        "prev_close":  round(prev_close, 2) if prev_close else None,
+        "prev_high":   round(prev_high, 2) if prev_high else None,
+        "hi52_price":  hi52_price,
+        "lo52_price":  lo52_price,
         "news":        news[:120],
         "perf_week":   perf_week, "perf_month": perf_month,
         "continuation": continuation, "gap_quality": gap_quality,
@@ -315,7 +339,7 @@ def card_html(r):
     chg_cls  = "pos" if r["change"] >= 0 else "neg"
     scan_bg, scan_tx = SCAN_COLORS.get(r["scan"], ("#1c1f23", "#656c7a"))
     flags_out = "".join(flag_html(l, k) for l, k in r["flags"])
-    entry_str = f'${r["entry"]}'
+
 
     return f"""<div class="card {tier}">
   <div class="r1">
@@ -338,12 +362,14 @@ def card_html(r):
     <div class="st"><div class="sl">Float</div><div class="sv">{r["float_m"]:.1f}M</div></div>
     <div class="st"><div class="sl">{"VWAP" if r.get("real_vwap") else "VWAP~"}</div><div class="sv" style="color:{"#6ee89a" if r["above_vwap"] else "#f57a7a"}">${r.get("real_vwap") or r["vwap_proxy"]}</div></div>
   </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ {r["entry_label"]}</span>
+  </div>
   <div class="lvls">
-    <span><span class="ll">Entry</span> <span class="lv">{entry_str}</span></span>
-    <span class="sep">·</span><span><span class="ll">Stop</span> <span class="lv stop">${r["stop"]}</span></span>
-    <span class="sep">·</span><span><span class="ll">TP1</span> <span class="lv">${r["tp1"]}</span></span>
-    <span class="sep">·</span><span><span class="ll">TP2</span> <span class="lv">${r["tp2"]}</span></span>
-    <span class="sep">·</span><span><span class="ll">TP3</span> <span class="lv">${r["tp3"]}</span></span>
+    <span><span class="ll">Prev Close</span> <span class="lv">${r["prev_close"] or "—"}</span></span>
+    <span class="sep">·</span><span><span class="ll">Prev High</span> <span class="lv">${r["prev_high"] or "—"}</span></span>
+    <span class="sep">·</span><span><span class="ll">52W High</span> <span class="lv">${r["hi52_price"] or "—"}</span></span>
+    <span class="sep">·</span><span><span class="ll">52W Low</span> <span class="lv">${r["lo52_price"] or "—"}</span></span>
   </div>
   <div class="news-line">{r["news"]}</div>
 </div>"""
@@ -407,7 +433,7 @@ a{color:inherit;text-decoration:none;}
 .sl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;}
 .sv{font-size:12px;font-weight:500;color:var(--text);margin-top:1px;}
 .lvls{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:7px;font-size:11px;}
-.ll{color:var(--muted);}.lv{color:var(--text);font-weight:500;}.lv.stop{color:#e06060;}.sep{color:var(--border);}
+.ll{color:var(--muted);}.lv{color:var(--text);font-weight:500;}.sep{color:var(--border);}.entry-box{background:var(--bg3);border-radius:6px;padding:7px 10px;margin:7px 0;border-left:3px solid var(--session-color);}.entry-label{font-size:12px;font-weight:500;color:var(--text);}
 .news-line{font-size:10px;color:var(--muted);font-style:italic;border-top:1px solid var(--border);padding-top:6px;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;}
 .chip{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:8px 10px;display:flex;flex-direction:column;gap:2px;opacity:0.65;}
@@ -695,10 +721,11 @@ def main():
                 "score": r["total"],
                 "tier": "buy" if r["total"] >= 65 else ("monitor" if r["total"] >= 40 else "avoid"),
                 "entry": r["entry"],
-                "stop": r["stop"],
-                "tp1": r["tp1"],
-                "tp2": r["tp2"],
-                "tp3": r["tp3"],
+                "entry_label": r["entry_label"],
+                "prev_close": r["prev_close"],
+                "prev_high": r["prev_high"],
+                "hi52_price": r["hi52_price"],
+                "lo52_price": r["lo52_price"],
                 "price_at_scan": r["price"],
                 "gap": r["gap"],
                 "rvol": r["rvol"],
