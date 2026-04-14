@@ -1,0 +1,233 @@
+{
+  "session": "marketopen",
+  "label": "Market Open",
+  "date": "2026-04-14",
+  "generated": "09:25 AM ET",
+  "tickers": [
+    {
+      "ticker": "PMNT",
+      "company": "Perfect Moment Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "buy",
+      "entry": 0.8,
+      "entry_label": "Break above $0.80",
+      "range_str": "",
+      "prev_close": 0.24,
+      "prev_high": 0.8,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.8
+        ],
+        [
+          "First target",
+          0.95
+        ],
+        [
+          "Second target",
+          1.15
+        ],
+        [
+          "Extended",
+          1.36
+        ]
+      ],
+      "price_at_scan": 0.59,
+      "gap": 54.49,
+      "rvol": 2159.93,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SNAL",
+      "company": "Snail Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 87,
+      "tier": "buy",
+      "entry": 1.0,
+      "entry_label": "Break above $1.00",
+      "range_str": "",
+      "prev_close": 0.38,
+      "prev_high": 1.0,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.0
+        ],
+        [
+          "First target",
+          1.17
+        ],
+        [
+          "Second target",
+          1.38
+        ],
+        [
+          "Extended",
+          1.62
+        ]
+      ],
+      "price_at_scan": 0.76,
+      "gap": 29.97,
+      "rvol": 32456.94,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY"
+      ]
+    },
+    {
+      "ticker": "BTBD",
+      "company": "BT Brands Inc",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 86,
+      "tier": "buy",
+      "entry": 2.7,
+      "entry_label": "Break above $2.69",
+      "range_str": "",
+      "prev_close": 1.71,
+      "prev_high": 2.69,
+      "fib_levels": [
+        [
+          "Prev High",
+          2.69
+        ],
+        [
+          "First target",
+          2.96
+        ],
+        [
+          "Second target",
+          3.3
+        ],
+        [
+          "Extended",
+          3.67
+        ]
+      ],
+      "price_at_scan": 1.93,
+      "gap": 0.6,
+      "rvol": 1440.81,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "RMSG",
+      "company": "Real Messenger Corp",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 83,
+      "tier": "buy",
+      "entry": 3.71,
+      "entry_label": "Break above $3.69",
+      "range_str": "",
+      "prev_close": 2.7,
+      "prev_high": 3.69,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.69
+        ],
+        [
+          "First target",
+          3.96
+        ],
+        [
+          "Second target",
+          4.3
+        ],
+        [
+          "Extended",
+          4.68
+        ]
+      ],
+      "price_at_scan": 2.78,
+      "gap": 22.22,
+      "rvol": 35.88,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "WGRX",
+      "company": "Wellgistics Health Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 51,
+      "tier": "monitor",
+      "entry": 0.2,
+      "entry_label": "Break above $0.20",
+      "range_str": "",
+      "prev_close": 0.12,
+      "prev_high": 0.2,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.2
+        ],
+        [
+          "First target",
+          0.22
+        ],
+        [
+          "Second target",
+          0.25
+        ],
+        [
+          "Extended",
+          0.28
+        ]
+      ],
+      "price_at_scan": 0.14,
+      "gap": -2.5,
+      "rvol": 327.02,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "HOTH",
+      "company": "Hoth Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 45,
+      "tier": "monitor",
+      "entry": 0.87,
+      "entry_label": "Break above $0.87",
+      "range_str": "",
+      "prev_close": 0.51,
+      "prev_high": 0.87,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.87
+        ],
+        [
+          "First target",
+          0.97
+        ],
+        [
+          "Second target",
+          1.09
+        ],
+        [
+          "Extended",
+          1.23
+        ]
+      ],
+      "price_at_scan": 0.72,
+      "gap": 62.14,
+      "rvol": 887.31,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
