@@ -2,496 +2,78 @@
   "session": "earlypremarket",
   "label": "Early Pre-Market",
   "date": "2026-04-15",
-  "generated": "12:24 AM ET",
+  "generated": "04:05 AM ET",
   "tickers": [
     {
-      "ticker": "RMSG",
-      "company": "Real Messenger Corp",
-      "sector": "Technology",
-      "scan": "Low Float",
-      "score": 96,
-      "tier": "buy",
-      "entry": 2.74,
-      "entry_label": "Break above $2.73",
-      "range_str": "",
-      "prev_close": 0.47,
-      "prev_high": 2.73,
-      "fib_levels": [
-        [
-          "Prev High",
-          2.73
-        ],
-        [
-          "First target",
-          3.34
-        ],
-        [
-          "Second target",
-          4.13
-        ],
-        [
-          "Extended",
-          4.99
-        ]
-      ],
-      "price_at_scan": 2.7,
-      "gap": 101.6,
-      "rvol": 95.06,
-      "flags": [
-        "CONTINUATION",
-        "GAP QUALITY",
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "RECT",
-      "company": "Rectitude Holdings Ltd",
+      "ticker": "PMNT",
+      "company": "Perfect Moment Ltd",
       "sector": "Consumer Cyclical",
-      "scan": "Low Float",
-      "score": 92,
-      "tier": "buy",
-      "entry": 2.91,
-      "entry_label": "Break above $2.90",
-      "range_str": "",
-      "prev_close": 1.2,
-      "prev_high": 2.9,
-      "fib_levels": [
-        [
-          "Prev High",
-          2.9
-        ],
-        [
-          "First target",
-          3.36
-        ],
-        [
-          "Second target",
-          3.95
-        ],
-        [
-          "Extended",
-          4.6
-        ]
-      ],
-      "price_at_scan": 2.23,
-      "gap": 65.0,
-      "rvol": 27478.1,
-      "flags": [
-        "CONTINUATION",
-        "GAP QUALITY",
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "ZNTL",
-      "company": "Zentalis Pharmaceuticals Inc",
-      "sector": "Healthcare",
       "scan": "Mid Cap",
-      "score": 90,
+      "score": 94,
       "tier": "buy",
-      "entry": 6.88,
-      "entry_label": "Break above $6.85",
-      "range_str": "",
-      "prev_close": 6.61,
-      "prev_high": 6.85,
+      "entry": 0.46,
+      "entry_label": "Current $0.46",
+      "range_str": " \u2014 range to $0.52",
+      "prev_close": 0.24,
+      "prev_high": 0.46,
       "fib_levels": [
         [
-          "Prev High",
-          6.85
-        ],
-        [
           "First target",
-          6.92
+          0.52
         ],
         [
           "Second target",
-          7.0
+          0.6
         ],
         [
           "Extended",
-          7.09
+          0.68
         ]
       ],
-      "price_at_scan": 5.56,
-      "gap": -3.1,
-      "rvol": 3.76,
-      "flags": [
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "IMA",
-      "company": "ImageneBio Inc",
-      "sector": "Healthcare",
-      "scan": "Low Float",
-      "score": 83,
-      "tier": "buy",
-      "entry": 6.67,
-      "entry_label": "Break above $6.64",
-      "range_str": "",
-      "prev_close": 4.9,
-      "prev_high": 6.64,
-      "fib_levels": [
-        [
-          "Prev High",
-          6.64
-        ],
-        [
-          "First target",
-          7.11
-        ],
-        [
-          "Second target",
-          7.72
-        ],
-        [
-          "Extended",
-          8.38
-        ]
-      ],
-      "price_at_scan": 6.05,
-      "gap": 13.02,
-      "rvol": 510.54,
-      "flags": [
-        "CONTINUATION",
-        "GAP QUALITY",
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "DEVS",
-      "company": "DevvStream Corp",
-      "sector": "Industrials",
-      "scan": "Low Float",
-      "score": 79,
-      "tier": "buy",
-      "entry": 1.0,
-      "entry_label": "Break above $1.00",
-      "range_str": "",
-      "prev_close": 0.64,
-      "prev_high": 1.0,
-      "fib_levels": [
-        [
-          "Prev High",
-          1.0
-        ],
-        [
-          "First target",
-          1.1
-        ],
-        [
-          "Second target",
-          1.22
-        ],
-        [
-          "Extended",
-          1.36
-        ]
-      ],
-      "price_at_scan": 0.95,
-      "gap": 27.46,
-      "rvol": 10.4,
-      "flags": [
-        "CONTINUATION",
-        "GAP QUALITY",
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "MNTS",
-      "company": "Momentus Inc",
-      "sector": "Industrials",
-      "scan": "Low Float",
-      "score": 72,
-      "tier": "buy",
-      "entry": 5.2,
-      "entry_label": "Break above $5.17",
-      "range_str": "",
-      "prev_close": 3.48,
-      "prev_high": 5.17,
-      "fib_levels": [
-        [
-          "Prev High",
-          5.17
-        ],
-        [
-          "First target",
-          5.63
-        ],
-        [
-          "Second target",
-          6.21
-        ],
-        [
-          "Extended",
-          6.86
-        ]
-      ],
-      "price_at_scan": 4.92,
-      "gap": 4.89,
-      "rvol": 10.62,
-      "flags": [
-        "CONTINUATION",
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "FUSE",
-      "company": "Fusemachines Inc",
-      "sector": "Technology",
-      "scan": "Low Float",
-      "score": 71,
-      "tier": "buy",
-      "entry": 2.27,
-      "entry_label": "Break above $2.26",
-      "range_str": "",
-      "prev_close": 1.83,
-      "prev_high": 2.26,
-      "fib_levels": [
-        [
-          "Prev High",
-          2.26
-        ],
-        [
-          "First target",
-          2.38
-        ],
-        [
-          "Second target",
-          2.53
-        ],
-        [
-          "Extended",
-          2.69
-        ]
-      ],
-      "price_at_scan": 1.84,
-      "gap": -3.83,
-      "rvol": 2.28,
-      "flags": [
-        "CONTINUATION",
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "HXHX",
-      "company": "Haoxin Holdings Ltd",
-      "sector": "Industrials",
-      "scan": "Low Float",
-      "score": 69,
-      "tier": "buy",
-      "entry": 0.75,
-      "entry_label": "Break above $0.75",
-      "range_str": "",
-      "prev_close": 0.52,
-      "prev_high": 0.75,
-      "fib_levels": [
-        [
-          "Prev High",
-          0.75
-        ],
-        [
-          "First target",
-          0.81
-        ],
-        [
-          "Second target",
-          0.89
-        ],
-        [
-          "Extended",
-          0.98
-        ]
-      ],
-      "price_at_scan": 0.62,
-      "gap": -7.62,
-      "rvol": 4.82,
-      "flags": [
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "RCT",
-      "company": "RedCloud Holdings PLC",
-      "sector": "Technology",
-      "scan": "Mid Cap",
-      "score": 64,
-      "tier": "monitor",
-      "entry": 1.4,
-      "entry_label": "Break above $1.39",
-      "range_str": "",
-      "prev_close": 0.57,
-      "prev_high": 1.39,
-      "fib_levels": [
-        [
-          "Prev High",
-          1.39
-        ],
-        [
-          "First target",
-          1.61
-        ],
-        [
-          "Second target",
-          1.9
-        ],
-        [
-          "Extended",
-          2.21
-        ]
-      ],
-      "price_at_scan": 1.01,
-      "gap": 120.18,
-      "rvol": 910.43,
-      "flags": [
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "DLXY",
-      "company": "Delixy Holdings Ltd",
-      "sector": "Energy",
-      "scan": "Low Float",
-      "score": 52,
-      "tier": "monitor",
-      "entry": 0.87,
-      "entry_label": "Break above $0.87",
-      "range_str": "",
-      "prev_close": 0.5,
-      "prev_high": 0.87,
-      "fib_levels": [
-        [
-          "Prev High",
-          0.87
-        ],
-        [
-          "First target",
-          0.97
-        ],
-        [
-          "Second target",
-          1.1
-        ],
-        [
-          "Extended",
-          1.24
-        ]
-      ],
-      "price_at_scan": 0.68,
-      "gap": 5.95,
-      "rvol": 36.19,
-      "flags": []
-    },
-    {
-      "ticker": "CMCT",
-      "company": "Creative Media & Community Trust",
-      "sector": "Real Estate",
-      "scan": "Low Float",
-      "score": 49,
-      "tier": "monitor",
-      "entry": 1.13,
-      "entry_label": "Break above $1.12",
-      "range_str": "",
-      "prev_close": 0.5,
-      "prev_high": 1.12,
-      "fib_levels": [
-        [
-          "Prev High",
-          1.12
-        ],
-        [
-          "First target",
-          1.29
-        ],
-        [
-          "Second target",
-          1.5
-        ],
-        [
-          "Extended",
-          1.74
-        ]
-      ],
-      "price_at_scan": 0.92,
-      "gap": 12.83,
-      "rvol": 248.83,
+      "price_at_scan": 0.46,
+      "gap": 54.49,
+      "rvol": 69.19,
       "flags": [
         "CONTINUATION",
         "GAP QUALITY"
       ]
     },
     {
-      "ticker": "WGRX",
-      "company": "Wellgistics Health Inc",
-      "sector": "Healthcare",
-      "scan": "Mid Cap",
-      "score": 45,
-      "tier": "monitor",
-      "entry": 0.13,
-      "entry_label": "Break above $0.13",
-      "range_str": "",
-      "prev_close": 0.12,
-      "prev_high": 0.13,
-      "fib_levels": [
-        [
-          "Prev High",
-          0.13
-        ],
-        [
-          "First target",
-          0.13
-        ],
-        [
-          "Second target",
-          0.14
-        ],
-        [
-          "Extended",
-          0.14
-        ]
-      ],
-      "price_at_scan": 0.12,
-      "gap": -6.25,
-      "rvol": 3.28,
-      "flags": [
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "GCTK",
-      "company": "GlucoTrack Inc",
+      "ticker": "HOTH",
+      "company": "Hoth Therapeutics Inc",
       "sector": "Healthcare",
       "scan": "Low Float",
-      "score": 40,
-      "tier": "monitor",
-      "entry": 1.0,
-      "entry_label": "Break above $1.00",
+      "score": 66,
+      "tier": "buy",
+      "entry": 0.85,
+      "entry_label": "Break above $0.85",
       "range_str": "",
-      "prev_close": 0.66,
-      "prev_high": 1.0,
+      "prev_close": 0.51,
+      "prev_high": 0.85,
       "fib_levels": [
         [
           "Prev High",
-          1.0
+          0.85
         ],
         [
           "First target",
-          1.09
+          0.94
         ],
         [
           "Second target",
-          1.21
+          1.06
         ],
         [
           "Extended",
-          1.34
+          1.19
         ]
       ],
-      "price_at_scan": 0.88,
-      "gap": -2.0,
-      "rvol": 29.79,
+      "price_at_scan": 0.79,
+      "gap": 62.14,
+      "rvol": 119.05,
       "flags": [
-        "SECTOR MOMENTUM"
+        "CONTINUATION",
+        "GAP QUALITY"
       ]
     }
   ]
