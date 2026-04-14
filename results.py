@@ -387,9 +387,7 @@ def card_html(t, perf):
     tier    = t["tier"]
     ticker  = t["ticker"]
     outcome = perf["outcome"]
-    entry   = t["entry"]
-    stop    = t["stop"]
-    tp1, tp2, tp3 = t["tp1"], t["tp2"], t["tp3"]
+    entry   = t.get("entry", 0)
     high    = perf["high"]
     close   = perf["close"]
     pct_h   = perf["pct_high"]
@@ -401,12 +399,6 @@ def card_html(t, perf):
     pc_sign = "+" if pct_c >= 0 else ""
     ph_cls  = "pos" if pct_h >= 0 else "neg"
     ph_sign = "+" if pct_h >= 0 else ""
-
-    def lv_cls(target):
-        if outcome == "stopped": return "stp"
-        return "hit" if high >= target else "miss"
-
-    stop_cls = "stp" if perf["low"] <= stop else "miss"
 
     real_vwap    = perf.get("real_vwap")
     above_vwap   = perf.get("above_vwap")
@@ -505,9 +497,9 @@ def render_html(today, session_results, all_quotes, cum_stats, gen_time):
   </div>
 </div>
 <div class="summary">
-  <div class="sum-cell"><div class="sum-n c-g">{tp1_hits}</div><div class="sum-l">Hit TP1+</div></div>
-  <div class="sum-cell"><div class="sum-n c-r">{stopped}</div><div class="sum-l">Stopped Out</div></div>
-  <div class="sum-cell"><div class="sum-n">{total - tp1_hits - stopped}</div><div class="sum-l">Flat / Mixed</div></div>
+  <div class="sum-cell"><div class="sum-n c-g">{monsters}</div><div class="sum-l">Monsters 50%+</div></div>
+  <div class="sum-cell"><div class="sum-n c-g">{big_runners}</div><div class="sum-l">Big Runners 20%+</div></div>
+  <div class="sum-cell"><div class="sum-n c-g">{runners}</div><div class="sum-l">Runners 10%+</div></div>
   <div class="sum-cell"><div class="sum-n c-g">{catch_rate}</div><div class="sum-l">Today Catch Rate</div></div>
 </div>
 <div class="body">
