@@ -1,0 +1,1722 @@
+{
+  "date": "2026-04-14",
+  "generated": "07:23 PM ET",
+  "sessions": {
+    "earlypremarket": [
+      {
+        "ticker": "RMSG",
+        "company": "Real Messenger Corp",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 96,
+        "tier": "buy",
+        "entry": 2.74,
+        "entry_label": "Break above $2.73",
+        "prev_close": 0.47,
+        "prev_high": 2.73,
+        "hi52_price": 5.46,
+        "lo52_price": 0.33,
+        "price_at_scan": 2.7,
+        "gap": 101.6,
+        "rvol": 95.06,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "big_runner"
+      },
+      {
+        "ticker": "RECT",
+        "company": "Rectitude Holdings Ltd",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 92,
+        "tier": "buy",
+        "entry": 2.91,
+        "entry_label": "Break above $2.90",
+        "prev_close": 1.2,
+        "prev_high": 2.9,
+        "hi52_price": 5.21,
+        "lo52_price": 1.0,
+        "price_at_scan": 2.23,
+        "gap": 65.0,
+        "rvol": 27478.1,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "ZNTL",
+        "company": "Zentalis Pharmaceuticals Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 90,
+        "tier": "buy",
+        "entry": 6.88,
+        "entry_label": "Break above $6.85",
+        "prev_close": 6.61,
+        "prev_high": 6.85,
+        "hi52_price": 6.95,
+        "lo52_price": 1.09,
+        "price_at_scan": 5.56,
+        "gap": -3.1,
+        "rvol": 3.76,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "IMA",
+        "company": "ImageneBio Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 83,
+        "tier": "buy",
+        "entry": 6.67,
+        "entry_label": "Break above $6.64",
+        "prev_close": 4.9,
+        "prev_high": 6.64,
+        "hi52_price": 18.0,
+        "lo52_price": 3.94,
+        "price_at_scan": 6.05,
+        "gap": 13.02,
+        "rvol": 510.54,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "DEVS",
+        "company": "DevvStream Corp",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 79,
+        "tier": "buy",
+        "entry": 1.0,
+        "entry_label": "Break above $1.00",
+        "prev_close": 0.64,
+        "prev_high": 1.0,
+        "hi52_price": 13.49,
+        "lo52_price": 0.52,
+        "price_at_scan": 0.95,
+        "gap": 27.46,
+        "rvol": 10.4,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "MNTS",
+        "company": "Momentus Inc",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 72,
+        "tier": "buy",
+        "entry": 5.2,
+        "entry_label": "Break above $5.17",
+        "prev_close": 3.48,
+        "prev_high": 5.17,
+        "hi52_price": 43.54,
+        "lo52_price": 3.11,
+        "price_at_scan": 4.92,
+        "gap": 4.89,
+        "rvol": 10.62,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "runner"
+      },
+      {
+        "ticker": "FUSE",
+        "company": "Fusemachines Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 71,
+        "tier": "buy",
+        "entry": 2.27,
+        "entry_label": "Break above $2.26",
+        "prev_close": 1.83,
+        "prev_high": 2.26,
+        "hi52_price": 25.0,
+        "lo52_price": 0.8,
+        "price_at_scan": 1.84,
+        "gap": -3.83,
+        "rvol": 2.28,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "HXHX",
+        "company": "Haoxin Holdings Ltd",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 69,
+        "tier": "buy",
+        "entry": 0.75,
+        "entry_label": "Break above $0.75",
+        "prev_close": 0.52,
+        "prev_high": 0.75,
+        "hi52_price": 6.33,
+        "lo52_price": 0.33,
+        "price_at_scan": 0.62,
+        "gap": -7.62,
+        "rvol": 4.82,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "RCT",
+        "company": "RedCloud Holdings PLC",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 64,
+        "tier": "monitor",
+        "entry": 1.4,
+        "entry_label": "Break above $1.39",
+        "prev_close": 0.57,
+        "prev_high": 1.39,
+        "hi52_price": 5.36,
+        "lo52_price": 0.56,
+        "price_at_scan": 1.01,
+        "gap": 120.18,
+        "rvol": 910.43,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "DLXY",
+        "company": "Delixy Holdings Ltd",
+        "sector": "Energy",
+        "scan": "Low Float",
+        "score": 52,
+        "tier": "monitor",
+        "entry": 0.87,
+        "entry_label": "Break above $0.87",
+        "prev_close": 0.5,
+        "prev_high": 0.87,
+        "hi52_price": 7.16,
+        "lo52_price": 0.45,
+        "price_at_scan": 0.68,
+        "gap": 5.95,
+        "rvol": 36.19,
+        "flags": [],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "CMCT",
+        "company": "Creative Media & Community Trust",
+        "sector": "Real Estate",
+        "scan": "Low Float",
+        "score": 49,
+        "tier": "monitor",
+        "entry": 1.13,
+        "entry_label": "Break above $1.12",
+        "prev_close": 0.5,
+        "prev_high": 1.12,
+        "hi52_price": 143.75,
+        "lo52_price": 0.4,
+        "price_at_scan": 0.92,
+        "gap": 12.83,
+        "rvol": 248.83,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "WGRX",
+        "company": "Wellgistics Health Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 45,
+        "tier": "monitor",
+        "entry": 0.13,
+        "entry_label": "Break above $0.13",
+        "prev_close": 0.12,
+        "prev_high": 0.13,
+        "hi52_price": 7.06,
+        "lo52_price": 0.1,
+        "price_at_scan": 0.12,
+        "gap": -6.25,
+        "rvol": 3.28,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "runner"
+      },
+      {
+        "ticker": "GCTK",
+        "company": "GlucoTrack Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 40,
+        "tier": "monitor",
+        "entry": 1.0,
+        "entry_label": "Break above $1.00",
+        "prev_close": 0.66,
+        "prev_high": 1.0,
+        "hi52_price": 15.94,
+        "lo52_price": 0.62,
+        "price_at_scan": 0.88,
+        "gap": -2.0,
+        "rvol": 29.79,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      }
+    ],
+    "premarket": [
+      {
+        "ticker": "RMSG",
+        "company": "Real Messenger Corp",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 82,
+        "tier": "buy",
+        "entry": 0.69,
+        "stop": 0.65,
+        "tp1": 0.73,
+        "tp2": 0.77,
+        "tp3": 0.83,
+        "price_at_scan": 0.69,
+        "gap": 25.67,
+        "rvol": 114.97,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "monster"
+      },
+      {
+        "ticker": "VRAX",
+        "company": "Virax Biolabs Group Ltd",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 82,
+        "tier": "buy",
+        "entry": 0.2,
+        "stop": 0.19,
+        "tp1": 0.21,
+        "tp2": 0.22,
+        "tp3": 0.24,
+        "price_at_scan": 0.2,
+        "gap": 82.13,
+        "rvol": 171.01,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SBEV",
+        "company": "Splash Beverage Group Inc",
+        "sector": "Consumer Defensive",
+        "scan": "Low Float",
+        "score": 47,
+        "tier": "monitor",
+        "entry": 0.52,
+        "stop": 0.49,
+        "tp1": 0.52,
+        "tp2": 0.55,
+        "tp3": 0.59,
+        "price_at_scan": 0.49,
+        "gap": 44.93,
+        "rvol": 181.57,
+        "flags": [],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SOAR",
+        "company": "Volato Group Inc",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 45,
+        "tier": "monitor",
+        "entry": 0.36,
+        "stop": 0.34,
+        "tp1": 0.33,
+        "tp2": 0.35,
+        "tp3": 0.37,
+        "price_at_scan": 0.31,
+        "gap": 35.32,
+        "rvol": 95.88,
+        "flags": [],
+        "outcome": "flat"
+      }
+    ],
+    "marketopen": [
+      {
+        "ticker": "PMNT",
+        "company": "Perfect Moment Ltd",
+        "sector": "Consumer Cyclical",
+        "scan": "Mid Cap",
+        "score": 100,
+        "tier": "buy",
+        "entry": 0.8,
+        "entry_label": "Break above $0.80",
+        "range_str": "",
+        "prev_close": 0.24,
+        "prev_high": 0.8,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.8
+          ],
+          [
+            "First target",
+            0.95
+          ],
+          [
+            "Second target",
+            1.15
+          ],
+          [
+            "Extended",
+            1.36
+          ]
+        ],
+        "price_at_scan": 0.59,
+        "gap": 54.49,
+        "rvol": 2159.93,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SNAL",
+        "company": "Snail Inc",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 87,
+        "tier": "buy",
+        "entry": 1.0,
+        "entry_label": "Break above $1.00",
+        "range_str": "",
+        "prev_close": 0.38,
+        "prev_high": 1.0,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.0
+          ],
+          [
+            "First target",
+            1.17
+          ],
+          [
+            "Second target",
+            1.38
+          ],
+          [
+            "Extended",
+            1.62
+          ]
+        ],
+        "price_at_scan": 0.76,
+        "gap": 29.97,
+        "rvol": 32456.94,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY"
+        ],
+        "outcome": "monster"
+      },
+      {
+        "ticker": "BTBD",
+        "company": "BT Brands Inc",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 86,
+        "tier": "buy",
+        "entry": 2.7,
+        "entry_label": "Break above $2.69",
+        "range_str": "",
+        "prev_close": 1.71,
+        "prev_high": 2.69,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.69
+          ],
+          [
+            "First target",
+            2.96
+          ],
+          [
+            "Second target",
+            3.3
+          ],
+          [
+            "Extended",
+            3.67
+          ]
+        ],
+        "price_at_scan": 1.93,
+        "gap": 0.6,
+        "rvol": 1440.81,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "RMSG",
+        "company": "Real Messenger Corp",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 83,
+        "tier": "buy",
+        "entry": 3.71,
+        "entry_label": "Break above $3.69",
+        "range_str": "",
+        "prev_close": 2.7,
+        "prev_high": 3.69,
+        "fib_levels": [
+          [
+            "Prev High",
+            3.69
+          ],
+          [
+            "First target",
+            3.96
+          ],
+          [
+            "Second target",
+            4.3
+          ],
+          [
+            "Extended",
+            4.68
+          ]
+        ],
+        "price_at_scan": 2.78,
+        "gap": 22.22,
+        "rvol": 35.88,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "WGRX",
+        "company": "Wellgistics Health Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 51,
+        "tier": "monitor",
+        "entry": 0.2,
+        "entry_label": "Break above $0.20",
+        "range_str": "",
+        "prev_close": 0.12,
+        "prev_high": 0.2,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.2
+          ],
+          [
+            "First target",
+            0.22
+          ],
+          [
+            "Second target",
+            0.25
+          ],
+          [
+            "Extended",
+            0.28
+          ]
+        ],
+        "price_at_scan": 0.14,
+        "gap": -2.5,
+        "rvol": 327.02,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "HOTH",
+        "company": "Hoth Therapeutics Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 45,
+        "tier": "monitor",
+        "entry": 0.87,
+        "entry_label": "Break above $0.87",
+        "range_str": "",
+        "prev_close": 0.51,
+        "prev_high": 0.87,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.87
+          ],
+          [
+            "First target",
+            0.97
+          ],
+          [
+            "Second target",
+            1.09
+          ],
+          [
+            "Extended",
+            1.23
+          ]
+        ],
+        "price_at_scan": 0.72,
+        "gap": 62.14,
+        "rvol": 887.31,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      }
+    ],
+    "midday": [
+      {
+        "ticker": "SNAL",
+        "company": "Snail Inc",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 100,
+        "tier": "buy",
+        "entry": 1.31,
+        "entry_label": "Break above $1.30",
+        "range_str": "",
+        "prev_close": 0.38,
+        "prev_high": 1.3,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.3
+          ],
+          [
+            "First target",
+            1.55
+          ],
+          [
+            "Second target",
+            1.87
+          ],
+          [
+            "Extended",
+            2.22
+          ]
+        ],
+        "price_at_scan": 1.21,
+        "gap": 104.64,
+        "rvol": 21705.61,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "monster"
+      },
+      {
+        "ticker": "PMNT",
+        "company": "Perfect Moment Ltd",
+        "sector": "Consumer Cyclical",
+        "scan": "Mid Cap",
+        "score": 100,
+        "tier": "buy",
+        "entry": 0.58,
+        "entry_label": "Break above $0.58",
+        "range_str": "",
+        "prev_close": 0.24,
+        "prev_high": 0.58,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.58
+          ],
+          [
+            "First target",
+            0.67
+          ],
+          [
+            "Second target",
+            0.79
+          ],
+          [
+            "Extended",
+            0.92
+          ]
+        ],
+        "price_at_scan": 0.56,
+        "gap": 138.77,
+        "rvol": 1026.82,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SIDU",
+        "company": "Sidus Space Inc",
+        "sector": "Industrials",
+        "scan": "Mid Cap",
+        "score": 95,
+        "tier": "buy",
+        "entry": 5.28,
+        "entry_label": "Break above $5.25",
+        "range_str": "",
+        "prev_close": 4.93,
+        "prev_high": 5.25,
+        "fib_levels": [
+          [
+            "Prev High",
+            5.25
+          ],
+          [
+            "First target",
+            5.34
+          ],
+          [
+            "Second target",
+            5.45
+          ],
+          [
+            "Extended",
+            5.57
+          ]
+        ],
+        "price_at_scan": 4.92,
+        "gap": 2.03,
+        "rvol": 5.49,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
+      },
+      {
+        "ticker": "RMSG",
+        "company": "Real Messenger Corp",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 79,
+        "tier": "buy",
+        "entry": 2.91,
+        "entry_label": "Break above $2.90",
+        "range_str": "",
+        "prev_close": 2.7,
+        "prev_high": 2.9,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.9
+          ],
+          [
+            "First target",
+            2.95
+          ],
+          [
+            "Second target",
+            3.02
+          ],
+          [
+            "Extended",
+            3.1
+          ]
+        ],
+        "price_at_scan": 2.55,
+        "gap": 3.33,
+        "rvol": 17.17,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "runner"
+      },
+      {
+        "ticker": "BTBD",
+        "company": "BT Brands Inc",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 75,
+        "tier": "buy",
+        "entry": 1.76,
+        "entry_label": "Reclaim $1.75",
+        "range_str": " \u2014 range to $1.99",
+        "prev_close": 1.71,
+        "prev_high": 1.99,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.99
+          ],
+          [
+            "First target",
+            2.07
+          ],
+          [
+            "Second target",
+            2.16
+          ],
+          [
+            "Extended",
+            2.27
+          ]
+        ],
+        "price_at_scan": 1.68,
+        "gap": 12.28,
+        "rvol": 608.74,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "ROLR",
+        "company": "High Roller Technologies Inc",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 73,
+        "tier": "buy",
+        "entry": 11.8,
+        "entry_label": "Break above $11.74",
+        "range_str": "",
+        "prev_close": 5.09,
+        "prev_high": 11.74,
+        "fib_levels": [
+          [
+            "Prev High",
+            11.74
+          ],
+          [
+            "First target",
+            13.55
+          ],
+          [
+            "Second target",
+            15.85
+          ],
+          [
+            "Extended",
+            18.39
+          ]
+        ],
+        "price_at_scan": 8.13,
+        "gap": 110.81,
+        "rvol": 172.02,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "GAME",
+        "company": "GameSquare Holdings Inc",
+        "sector": "Communication Services",
+        "scan": "Mid Cap",
+        "score": 58,
+        "tier": "monitor",
+        "entry": 0.39,
+        "entry_label": "Reclaim $0.39",
+        "range_str": " \u2014 range to $0.4",
+        "prev_close": 0.37,
+        "prev_high": 0.4,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.4
+          ],
+          [
+            "First target",
+            0.41
+          ],
+          [
+            "Second target",
+            0.42
+          ],
+          [
+            "Extended",
+            0.43
+          ]
+        ],
+        "price_at_scan": 0.38,
+        "gap": 6.31,
+        "rvol": 6.37,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "HOTH",
+        "company": "Hoth Therapeutics Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 53,
+        "tier": "monitor",
+        "entry": 0.78,
+        "entry_label": "Break above $0.78",
+        "range_str": "",
+        "prev_close": 0.51,
+        "prev_high": 0.78,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.78
+          ],
+          [
+            "First target",
+            0.85
+          ],
+          [
+            "Second target",
+            0.95
+          ],
+          [
+            "Extended",
+            1.05
+          ]
+        ],
+        "price_at_scan": 0.72,
+        "gap": 41.81,
+        "rvol": 484.29,
+        "flags": [
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SLNH",
+        "company": "Soluna Holdings Inc",
+        "sector": "Financial",
+        "scan": "Mid Cap",
+        "score": 53,
+        "tier": "monitor",
+        "entry": 1.13,
+        "entry_label": "Reclaim $1.13",
+        "range_str": " \u2014 range to $1.23",
+        "prev_close": 0.93,
+        "prev_high": 1.23,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.23
+          ],
+          [
+            "First target",
+            1.31
+          ],
+          [
+            "Second target",
+            1.42
+          ],
+          [
+            "Extended",
+            1.53
+          ]
+        ],
+        "price_at_scan": 1.1,
+        "gap": 25.26,
+        "rvol": 15.47,
+        "flags": [
+          "CONTINUATION"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "AHMA",
+        "company": "Ambitions Enterprise Management Co LLC",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 50,
+        "tier": "monitor",
+        "entry": 1.6,
+        "entry_label": "Break above $1.59",
+        "range_str": "",
+        "prev_close": 0.79,
+        "prev_high": 1.59,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.59
+          ],
+          [
+            "First target",
+            1.81
+          ],
+          [
+            "Second target",
+            2.08
+          ],
+          [
+            "Extended",
+            2.39
+          ]
+        ],
+        "price_at_scan": 1.41,
+        "gap": 1.98,
+        "rvol": 57.44,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "WGRX",
+        "company": "Wellgistics Health Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 43,
+        "tier": "monitor",
+        "entry": 0.14,
+        "entry_label": "Reclaim $0.14",
+        "range_str": " \u2014 range to $0.15",
+        "prev_close": 0.12,
+        "prev_high": 0.15,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.15
+          ],
+          [
+            "First target",
+            0.16
+          ],
+          [
+            "Second target",
+            0.17
+          ],
+          [
+            "Extended",
+            0.18
+          ]
+        ],
+        "price_at_scan": 0.14,
+        "gap": 17.75,
+        "rvol": 134.94,
+        "flags": [
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "UAVS",
+        "company": "AgEagle Aerial Systems Inc",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 40,
+        "tier": "monitor",
+        "entry": 1.02,
+        "entry_label": "Reclaim $1.01",
+        "range_str": " \u2014 range to $1.05",
+        "prev_close": 0.96,
+        "prev_high": 1.05,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.05
+          ],
+          [
+            "First target",
+            1.07
+          ],
+          [
+            "Second target",
+            1.11
+          ],
+          [
+            "Extended",
+            1.14
+          ]
+        ],
+        "price_at_scan": 1.0,
+        "gap": 9.87,
+        "rvol": 13.59,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
+      }
+    ],
+    "afterhours": [
+      {
+        "ticker": "BOLD",
+        "company": "Boundless Bio Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 100,
+        "tier": "buy",
+        "entry": 1.59,
+        "entry_label": "Reclaim $1.58",
+        "range_str": " \u2014 range to $1.68",
+        "prev_close": 1.2,
+        "prev_high": 1.68,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.68
+          ],
+          [
+            "First target",
+            1.81
+          ],
+          [
+            "Second target",
+            1.98
+          ],
+          [
+            "Extended",
+            2.16
+          ]
+        ],
+        "price_at_scan": 1.56,
+        "gap": 21.67,
+        "rvol": 52.39,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "mover"
+      },
+      {
+        "ticker": "SNAL",
+        "company": "Snail Inc",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 100,
+        "tier": "buy",
+        "entry": 1.71,
+        "entry_label": "Momentum above VWAP $1.38",
+        "range_str": " \u2014 range to $2.16",
+        "prev_close": 0.38,
+        "prev_high": 2.16,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.16
+          ],
+          [
+            "First target",
+            2.64
+          ],
+          [
+            "Second target",
+            3.26
+          ],
+          [
+            "Extended",
+            3.94
+          ]
+        ],
+        "price_at_scan": 1.7,
+        "gap": 104.32,
+        "rvol": 6913.26,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "big_runner"
+      },
+      {
+        "ticker": "BTBD",
+        "company": "BT Brands Inc",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 95,
+        "tier": "buy",
+        "entry": 1.76,
+        "entry_label": "Momentum above VWAP $1.74",
+        "range_str": " \u2014 range to $1.99",
+        "prev_close": 1.71,
+        "prev_high": 1.99,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.99
+          ],
+          [
+            "First target",
+            2.07
+          ],
+          [
+            "Second target",
+            2.16
+          ],
+          [
+            "Extended",
+            2.27
+          ]
+        ],
+        "price_at_scan": 1.75,
+        "gap": 12.87,
+        "rvol": 90.48,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "runner"
+      },
+      {
+        "ticker": "ARAI",
+        "company": "Arrive AI Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 77,
+        "tier": "buy",
+        "entry": 1.66,
+        "entry_label": "Momentum above VWAP $1.39",
+        "range_str": " \u2014 range to $1.78",
+        "prev_close": 0.89,
+        "prev_high": 1.78,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.78
+          ],
+          [
+            "First target",
+            2.02
+          ],
+          [
+            "Second target",
+            2.33
+          ],
+          [
+            "Extended",
+            2.67
+          ]
+        ],
+        "price_at_scan": 1.65,
+        "gap": 4.61,
+        "rvol": 11.0,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "mover"
+      },
+      {
+        "ticker": "LASE",
+        "company": "Laser Photonics Corp",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 69,
+        "tier": "buy",
+        "entry": 1.06,
+        "entry_label": "Momentum above VWAP $1.03",
+        "range_str": " \u2014 range to $1.07",
+        "prev_close": 0.97,
+        "prev_high": 1.07,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.07
+          ],
+          [
+            "First target",
+            1.1
+          ],
+          [
+            "Second target",
+            1.13
+          ],
+          [
+            "Extended",
+            1.17
+          ]
+        ],
+        "price_at_scan": 1.05,
+        "gap": 5.15,
+        "rvol": 3.57,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "PMNT",
+        "company": "Perfect Moment Ltd",
+        "sector": "Consumer Cyclical",
+        "scan": "Mid Cap",
+        "score": 67,
+        "tier": "buy",
+        "entry": 0.47,
+        "entry_label": "Reclaim $0.47",
+        "range_str": " \u2014 range to $0.6",
+        "prev_close": 0.24,
+        "prev_high": 0.6,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.6
+          ],
+          [
+            "First target",
+            0.7
+          ],
+          [
+            "Second target",
+            0.82
+          ],
+          [
+            "Extended",
+            0.96
+          ]
+        ],
+        "price_at_scan": 0.36,
+        "gap": 138.81,
+        "rvol": 215.08,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "big_runner"
+      },
+      {
+        "ticker": "RMSG",
+        "company": "Real Messenger Corp",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 66,
+        "tier": "buy",
+        "entry": 2.68,
+        "entry_label": "Reclaim $2.67",
+        "range_str": " \u2014 range to $3.33",
+        "prev_close": 2.7,
+        "prev_high": 3.33,
+        "fib_levels": [
+          [
+            "Prev High",
+            3.33
+          ],
+          [
+            "First target",
+            3.5
+          ],
+          [
+            "Second target",
+            3.72
+          ],
+          [
+            "Extended",
+            3.96
+          ]
+        ],
+        "price_at_scan": 2.4,
+        "gap": 3.7,
+        "rvol": 4.09,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "big_runner"
+      },
+      {
+        "ticker": "ROLR",
+        "company": "High Roller Technologies Inc",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 65,
+        "tier": "buy",
+        "entry": 8.77,
+        "entry_label": "Reclaim $8.73",
+        "range_str": " \u2014 range to $11.74",
+        "prev_close": 5.09,
+        "prev_high": 11.74,
+        "fib_levels": [
+          [
+            "Prev High",
+            11.74
+          ],
+          [
+            "First target",
+            13.55
+          ],
+          [
+            "Second target",
+            15.85
+          ],
+          [
+            "Extended",
+            18.39
+          ]
+        ],
+        "price_at_scan": 7.41,
+        "gap": 106.48,
+        "rvol": 36.79,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "big_runner"
+      },
+      {
+        "ticker": "WGRX",
+        "company": "Wellgistics Health Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 65,
+        "tier": "buy",
+        "entry": 0.14,
+        "entry_label": "Momentum above VWAP $0.14",
+        "range_str": " \u2014 range to $0.15",
+        "prev_close": 0.12,
+        "prev_high": 0.15,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.15
+          ],
+          [
+            "First target",
+            0.16
+          ],
+          [
+            "Second target",
+            0.17
+          ],
+          [
+            "Extended",
+            0.18
+          ]
+        ],
+        "price_at_scan": 0.14,
+        "gap": 17.92,
+        "rvol": 21.64,
+        "flags": [
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "mover"
+      },
+      {
+        "ticker": "AGAE",
+        "company": "Allied Gaming & Entertainment Inc",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 64,
+        "tier": "monitor",
+        "entry": 0.33,
+        "entry_label": "Momentum above VWAP $0.32",
+        "range_str": " \u2014 range to $0.34",
+        "prev_close": 0.28,
+        "prev_high": 0.34,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.34
+          ],
+          [
+            "First target",
+            0.36
+          ],
+          [
+            "Second target",
+            0.38
+          ],
+          [
+            "Extended",
+            0.4
+          ]
+        ],
+        "price_at_scan": 0.33,
+        "gap": 1.51,
+        "rvol": 4.69,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "UAVS",
+        "company": "AgEagle Aerial Systems Inc",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 64,
+        "tier": "monitor",
+        "entry": 1.05,
+        "entry_label": "Momentum above VWAP $1.02",
+        "range_str": " \u2014 range to $1.07",
+        "prev_close": 0.96,
+        "prev_high": 1.05,
+        "fib_levels": [
+          [
+            "First target",
+            1.07
+          ],
+          [
+            "Second target",
+            1.11
+          ],
+          [
+            "Extended",
+            1.14
+          ]
+        ],
+        "price_at_scan": 1.04,
+        "gap": 9.87,
+        "rvol": 3.09,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "MIMI",
+        "company": "Mint Inc Ltd",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 62,
+        "tier": "monitor",
+        "entry": 0.57,
+        "entry_label": "Reclaim $0.57",
+        "range_str": " \u2014 range to $0.73",
+        "prev_close": 0.26,
+        "prev_high": 0.73,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.73
+          ],
+          [
+            "First target",
+            0.86
+          ],
+          [
+            "Second target",
+            1.02
+          ],
+          [
+            "Extended",
+            1.2
+          ]
+        ],
+        "price_at_scan": 0.54,
+        "gap": -1.76,
+        "rvol": 70.91,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "big_runner"
+      },
+      {
+        "ticker": "MITQ",
+        "company": "Moving iMage Technologies Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 58,
+        "tier": "monitor",
+        "entry": 0.7,
+        "entry_label": "Reclaim $0.69",
+        "range_str": " \u2014 range to $0.81",
+        "prev_close": 0.57,
+        "prev_high": 0.81,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.81
+          ],
+          [
+            "First target",
+            0.88
+          ],
+          [
+            "Second target",
+            0.96
+          ],
+          [
+            "Extended",
+            1.05
+          ]
+        ],
+        "price_at_scan": 0.61,
+        "gap": 0.0,
+        "rvol": 187.87,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "runner"
+      },
+      {
+        "ticker": "MNTS",
+        "company": "Momentus Inc",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 54,
+        "tier": "monitor",
+        "entry": 5.23,
+        "entry_label": "Reclaim $5.20",
+        "range_str": " \u2014 range to $5.95",
+        "prev_close": 4.92,
+        "prev_high": 5.95,
+        "fib_levels": [
+          [
+            "Prev High",
+            5.95
+          ],
+          [
+            "First target",
+            6.23
+          ],
+          [
+            "Second target",
+            6.59
+          ],
+          [
+            "Extended",
+            6.98
+          ]
+        ],
+        "price_at_scan": 4.96,
+        "gap": 4.67,
+        "rvol": 6.02,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "runner"
+      },
+      {
+        "ticker": "SLNH",
+        "company": "Soluna Holdings Inc",
+        "sector": "Financial",
+        "scan": "Mid Cap",
+        "score": 50,
+        "tier": "monitor",
+        "entry": 1.1,
+        "entry_label": "Reclaim $1.09",
+        "range_str": " \u2014 range to $1.23",
+        "prev_close": 0.93,
+        "prev_high": 1.23,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.23
+          ],
+          [
+            "First target",
+            1.31
+          ],
+          [
+            "Second target",
+            1.42
+          ],
+          [
+            "Extended",
+            1.53
+          ]
+        ],
+        "price_at_scan": 1.05,
+        "gap": 25.26,
+        "rvol": 3.47,
+        "flags": [
+          "CONTINUATION"
+        ],
+        "outcome": "runner"
+      },
+      {
+        "ticker": "RETO",
+        "company": "ReTo Eco-Solutions Inc",
+        "sector": "Basic Materials",
+        "scan": "Low Float",
+        "score": 44,
+        "tier": "monitor",
+        "entry": 0.87,
+        "entry_label": "Reclaim $0.86",
+        "range_str": " \u2014 range to $1.13",
+        "prev_close": 0.64,
+        "prev_high": 1.13,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.13
+          ],
+          [
+            "First target",
+            1.26
+          ],
+          [
+            "Second target",
+            1.43
+          ],
+          [
+            "Extended",
+            1.62
+          ]
+        ],
+        "price_at_scan": 0.84,
+        "gap": -0.17,
+        "rvol": 11.55,
+        "flags": [],
+        "outcome": "big_runner"
+      },
+      {
+        "ticker": "HOTH",
+        "company": "Hoth Therapeutics Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 40,
+        "tier": "monitor",
+        "entry": 0.73,
+        "entry_label": "Reclaim $0.73",
+        "range_str": " \u2014 range to $0.78",
+        "prev_close": 0.51,
+        "prev_high": 0.78,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.78
+          ],
+          [
+            "First target",
+            0.85
+          ],
+          [
+            "Second target",
+            0.95
+          ],
+          [
+            "Extended",
+            1.05
+          ]
+        ],
+        "price_at_scan": 0.65,
+        "gap": 41.55,
+        "rvol": 91.66,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "mover"
+      }
+    ]
+  }
+}
