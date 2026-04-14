@@ -242,17 +242,33 @@ def score_row(row):
     total = max(0, min(100, base + bonus))
     # Key levels
     prev_close = safe(row.get("Prev Close"))
-    prev_high  = safe(row.get("High"))   # today's high as prev high proxy
-    hi52_price = round(price / (1 + hi52/100), 2) if hi52 and not _math.isnan(hi52) and hi52 != 0 else None
-    lo52_price = round(price / (1 + lo52/100), 2) if lo52 and not _math.isnan(lo52) and lo52 != 0 else None
+    prev_high  = safe(row.get("High"))
+    low_day    = safe(row.get("Low"))
 
-    # Suggested entry
+    # Fib extension levels
+    # Use Prev Close as base (swing low anchor) and current High as the measured move
+    fib_levels = []
+    base_low  = prev_close if prev_close and prev_close > 0 else low_day
+    base_high = prev_high  if prev_high  and prev_high  > 0 else price
+
+    if base_high and base_low and base_high > base_low:
+        move = base_high - base_low
+        fib_levels = [
+            ("Prev High",      round(base_high, 2)),
+            ("First target",   round(base_low + move * 1.272, 2)),
+            ("Second target",  round(base_low + move * 1.618, 2)),
+            ("Extended",       round(base_low + move * 2.0,   2)),
+        ]
+        # Filter out levels below current price — only show upside targets
+        fib_levels = [(l, v) for l, v in fib_levels if v > price]
+
+    # Suggested entry + range
     if real_vwap:
         if above_vwap:
-            entry_label = f"Momentum above VWAP ${real_vwap:.3f}"
+            entry_label = f"Momentum above VWAP ${real_vwap:.2f}"
             entry_price = round(price * 1.005, 2)
         else:
-            entry_label = f"Reclaim VWAP ${real_vwap:.3f}"
+            entry_label = f"Reclaim ${real_vwap:.2f}"
             entry_price = round(real_vwap * 1.005, 2)
     else:
         if prev_high and prev_high > price:
@@ -264,6 +280,10 @@ def score_row(row):
         else:
             entry_label = f"Current ${price:.2f}"
             entry_price = round(price * 1.005, 2)
+
+    # First fib target for range summary
+    first_target = fib_levels[0][1] if fib_levels else None
+    range_str = f" — range to ${first_target}" if first_target and first_target > entry_price else ""
 
     return {
         "ticker":      row.get("Ticker", ""),
@@ -279,11 +299,11 @@ def score_row(row):
         "vwap_proxy":  round(vwap_proxy, 3),
         "real_vwap":   round(real_vwap, 3) if real_vwap else None,
         "entry_label": entry_label,
+        "range_str":   range_str,
         "entry":       entry_price,
         "prev_close":  round(prev_close, 2) if prev_close else None,
         "prev_high":   round(prev_high, 2) if prev_high else None,
-        "hi52_price":  hi52_price,
-        "lo52_price":  lo52_price,
+        "fib_levels":  fib_levels,
         "news":        news[:120],
         "perf_week":   perf_week, "perf_month": perf_month,
         "continuation": continuation, "gap_quality": gap_quality,
@@ -363,13 +383,10 @@ def card_html(r):
     <div class="st"><div class="sl">{"VWAP" if r.get("real_vwap") else "VWAP~"}</div><div class="sv" style="color:{"#6ee89a" if r["above_vwap"] else "#f57a7a"}">${r.get("real_vwap") or r["vwap_proxy"]}</div></div>
   </div>
   <div class="entry-box">
-    <span class="entry-label">▶ {r["entry_label"]}</span>
+    <span class="entry-label">▶ Entry: {r["entry_label"]}{r["range_str"]}</span>
   </div>
   <div class="lvls">
-    <span><span class="ll">Prev Close</span> <span class="lv">${r["prev_close"] or "—"}</span></span>
-    <span class="sep">·</span><span><span class="ll">Prev High</span> <span class="lv">${r["prev_high"] or "—"}</span></span>
-    <span class="sep">·</span><span><span class="ll">52W High</span> <span class="lv">${r["hi52_price"] or "—"}</span></span>
-    <span class="sep">·</span><span><span class="ll">52W Low</span> <span class="lv">${r["lo52_price"] or "—"}</span></span>
+    {"".join(f'<span><span class="ll">{lbl}</span> <span class="lv">${val}</span></span><span class="sep">·</span>' for lbl, val in r["fib_levels"])[:-32] if r["fib_levels"] else f'<span class="ll" style="color:var(--muted)">No level data</span>'}
   </div>
   <div class="news-line">{r["news"]}</div>
 </div>"""
@@ -722,10 +739,10 @@ def main():
                 "tier": "buy" if r["total"] >= 65 else ("monitor" if r["total"] >= 40 else "avoid"),
                 "entry": r["entry"],
                 "entry_label": r["entry_label"],
+                "range_str": r["range_str"],
                 "prev_close": r["prev_close"],
                 "prev_high": r["prev_high"],
-                "hi52_price": r["hi52_price"],
-                "lo52_price": r["lo52_price"],
+                "fib_levels": r["fib_levels"],
                 "price_at_scan": r["price"],
                 "gap": r["gap"],
                 "rvol": r["rvol"],
