@@ -134,7 +134,7 @@ def calc_stop(price, atr, entry):
         return max(ceiling, min(floor, atr_stop))
     return round(entry * 0.94, 2)  # fallback: 6% fixed
 
-def score_row(row):
+def score_row(row, session=""):
     price        = safe(row.get("Price"))
     change       = pct(row.get("Change"))
     gap_raw      = row.get("Gap", "")
@@ -213,10 +213,22 @@ def score_row(row):
         flags.append(("GAP QUALITY", "gap"))
 
     news_lo = news.lower()
-    if "fda" in news_lo or "fast track" in news_lo or "approval" in news_lo:
-        flags.append(("CATALYST · FDA", "catalyst")); bonus += 3
+
+    # Catalyst detection — ordered strongest to weakest, first match wins
+    if "fda" in news_lo or "fast track" in news_lo or "approval" in news_lo or "cleared" in news_lo:
+        flags.append(("CATALYST · FDA", "catalyst")); bonus += 6
+    elif any(x in news_lo for x in ("merger", "acquisition", "acquires", "buyout", "takeover")):
+        flags.append(("CATALYST · M&A", "catalyst")); bonus += 6
+    elif any(x in news_lo for x in ("partnership", "agreement", "definitive agreement", "joint venture")):
+        flags.append(("CATALYST · DEAL", "catalyst")); bonus += 4
+    elif any(x in news_lo for x in ("financing", "growth financing", "private placement")):
+        flags.append(("CATALYST · FINANCING", "catalyst")); bonus += 2
     elif "8-k" in news_lo or "earnings" in news_lo:
         flags.append(("CATALYST · 8-K", "catalyst")); bonus += 3
+    elif any(x in news_lo for x in ("nasdaq notification", "minimum bid", "deficiency")):
+        # Compliance notices often spark short squeezes on low floats
+        flags.append(("NASDAQ NOTICE", "catalyst")); bonus += 3
+    # Generic news (conference, bc-most active, shareholder letter) gets no bonus
 
     if "reverse" in news_lo and "split" in news_lo:
         flags.append(("REVERSE SPLIT", "danger")); bonus -= 15
@@ -239,7 +251,27 @@ def score_row(row):
         elif chg_open < -5:
             bonus -= 5   # fading hard from open — weakness proxy
 
-    total = max(0, min(100, base + bonus))
+    # Already-extended penalty — midday and afterhours only.
+    # Gap/rvol stay anchored to prev_close all day, making stocks look exciting
+    # long after the move has already happened. Penalise based on how far price
+    # has already travelled from prev_close by the time the session runs.
+    _prev_close_raw = safe(row.get("Prev Close"))
+    if session in ("midday", "afterhours") and _prev_close_raw > 0:
+        already_up = (price / _prev_close_raw - 1) * 100
+        if already_up >= 75:
+            flags.append(("ALREADY EXTENDED", "danger")); bonus -= 20
+        elif already_up >= 50:
+            flags.append(("ALREADY EXTENDED", "danger")); bonus -= 15
+        elif already_up >= 30:
+            flags.append(("EXTENDED", "danger")); bonus -= 8
+
+    # RVol gate — if a stock has virtually no intraday energy and isn't gapping,
+    # the trend/range components can carry it to a falsely high score.
+    # Cap at 60 (monitor ceiling) to prevent low-energy names reaching buy watch.
+    if not rvol_missing and rvol < 5 and (gap_missing or gap < 5):
+        total = min(60, max(0, base + bonus))
+    else:
+        total = max(0, min(100, base + bonus))
     # Key levels
     prev_close = safe(row.get("Prev Close"))
     prev_high  = safe(row.get("High"))
@@ -698,7 +730,7 @@ def main():
         if t in real_vwaps:
             r["_real_vwap"] = real_vwaps[t]
 
-    results = [score_row(r) for r in unique]
+    results = [score_row(r, session=session) for r in unique]
     results = apply_sector_bonus(results)
     results.sort(key=lambda x: x["total"], reverse=True)
 
