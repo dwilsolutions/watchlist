@@ -1,0 +1,514 @@
+{
+  "session": "afterhours",
+  "label": "After Hours",
+  "date": "2026-04-15",
+  "generated": "04:15 PM ET",
+  "tickers": [
+    {
+      "ticker": "NEXA",
+      "company": "Nexa Resources S.A",
+      "sector": "Basic Materials",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "buy",
+      "entry": 14.72,
+      "entry_label": "Momentum above VWAP $13.82",
+      "range_str": " \u2014 range to $15.45",
+      "prev_close": 11.94,
+      "prev_high": 14.7,
+      "fib_levels": [
+        [
+          "First target",
+          15.45
+        ],
+        [
+          "Second target",
+          16.41
+        ],
+        [
+          "Extended",
+          17.46
+        ]
+      ],
+      "price_at_scan": 14.65,
+      "gap": -1.01,
+      "rvol": 12.53,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "NNBR",
+      "company": "NN Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "buy",
+      "entry": 2.05,
+      "entry_label": "Reclaim $2.04",
+      "range_str": " \u2014 range to $2.25",
+      "prev_close": 1.57,
+      "prev_high": 2.25,
+      "fib_levels": [
+        [
+          "Prev High",
+          2.25
+        ],
+        [
+          "First target",
+          2.43
+        ],
+        [
+          "Second target",
+          2.67
+        ],
+        [
+          "Extended",
+          2.93
+        ]
+      ],
+      "price_at_scan": 1.98,
+      "gap": 14.65,
+      "rvol": 29.9,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CUE",
+      "company": "Cue Biopharma Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 92,
+      "tier": "buy",
+      "entry": 0.72,
+      "entry_label": "Momentum above VWAP $0.62",
+      "range_str": " \u2014 range to $0.74",
+      "prev_close": 0.44,
+      "prev_high": 0.74,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.74
+        ],
+        [
+          "First target",
+          0.82
+        ],
+        [
+          "Second target",
+          0.93
+        ],
+        [
+          "Extended",
+          1.04
+        ]
+      ],
+      "price_at_scan": 0.72,
+      "gap": -4.11,
+      "rvol": 8.49,
+      "flags": [
+        "CONTINUATION",
+        "ALREADY EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ASTI",
+      "company": "Ascent Solar Technologies Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 87,
+      "tier": "buy",
+      "entry": 6.39,
+      "entry_label": "Momentum above VWAP $5.86",
+      "range_str": " \u2014 range to $6.86",
+      "prev_close": 3.98,
+      "prev_high": 6.86,
+      "fib_levels": [
+        [
+          "Prev High",
+          6.86
+        ],
+        [
+          "First target",
+          7.64
+        ],
+        [
+          "Second target",
+          8.64
+        ],
+        [
+          "Extended",
+          9.74
+        ]
+      ],
+      "price_at_scan": 6.36,
+      "gap": 1.01,
+      "rvol": 5.7,
+      "flags": [
+        "CONTINUATION",
+        "ALREADY EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "COSM",
+      "company": "Cosmos Health Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 76,
+      "tier": "buy",
+      "entry": 0.39,
+      "entry_label": "Momentum above VWAP $0.38",
+      "range_str": " \u2014 range to $0.45",
+      "prev_close": 0.33,
+      "prev_high": 0.45,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.45
+        ],
+        [
+          "First target",
+          0.48
+        ],
+        [
+          "Second target",
+          0.52
+        ],
+        [
+          "Extended",
+          0.57
+        ]
+      ],
+      "price_at_scan": 0.39,
+      "gap": 24.61,
+      "rvol": 11.18,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MNTS",
+      "company": "Momentus Inc",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 73,
+      "tier": "buy",
+      "entry": 6.94,
+      "entry_label": "Momentum above VWAP $6.72",
+      "range_str": " \u2014 range to $7.47",
+      "prev_close": 4.96,
+      "prev_high": 7.47,
+      "fib_levels": [
+        [
+          "Prev High",
+          7.47
+        ],
+        [
+          "First target",
+          8.15
+        ],
+        [
+          "Second target",
+          9.02
+        ],
+        [
+          "Extended",
+          9.98
+        ]
+      ],
+      "price_at_scan": 6.91,
+      "gap": 9.27,
+      "rvol": 10.13,
+      "flags": [
+        "CONTINUATION",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "NOTV",
+      "company": "Inotiv Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 65,
+      "tier": "buy",
+      "entry": 0.39,
+      "entry_label": "Momentum above VWAP $0.33",
+      "range_str": " \u2014 range to $0.4",
+      "prev_close": 0.25,
+      "prev_high": 0.4,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.4
+        ],
+        [
+          "First target",
+          0.44
+        ],
+        [
+          "Second target",
+          0.49
+        ],
+        [
+          "Extended",
+          0.55
+        ]
+      ],
+      "price_at_scan": 0.39,
+      "gap": 3.27,
+      "rvol": 19.89,
+      "flags": [
+        "CONTINUATION",
+        "CATALYST \u00b7 8-K",
+        "ALREADY EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "RETO",
+      "company": "ReTo Eco-Solutions Inc",
+      "sector": "Basic Materials",
+      "scan": "Low Float",
+      "score": 63,
+      "tier": "monitor",
+      "entry": 1.14,
+      "entry_label": "Reclaim $1.13",
+      "range_str": " \u2014 range to $1.4",
+      "prev_close": 0.84,
+      "prev_high": 1.4,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.4
+        ],
+        [
+          "First target",
+          1.55
+        ],
+        [
+          "Second target",
+          1.75
+        ],
+        [
+          "Extended",
+          1.96
+        ]
+      ],
+      "price_at_scan": 1.04,
+      "gap": 4.54,
+      "rvol": 21.59,
+      "flags": [
+        "CONTINUATION",
+        "CATALYST \u00b7 M&A",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "AGAE",
+      "company": "Allied Gaming & Entertainment Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 58,
+      "tier": "monitor",
+      "entry": 0.69,
+      "entry_label": "Reclaim $0.68",
+      "range_str": " \u2014 range to $0.96",
+      "prev_close": 0.33,
+      "prev_high": 0.96,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.96
+        ],
+        [
+          "First target",
+          1.13
+        ],
+        [
+          "Second target",
+          1.35
+        ],
+        [
+          "Extended",
+          1.59
+        ]
+      ],
+      "price_at_scan": 0.47,
+      "gap": 57.84,
+      "rvol": 81.53,
+      "flags": [
+        "CONTINUATION",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "NXXT",
+      "company": "NextNRG Inc",
+      "sector": "Utilities",
+      "scan": "Mid Cap",
+      "score": 54,
+      "tier": "monitor",
+      "entry": 0.5,
+      "entry_label": "Momentum above VWAP $0.48",
+      "range_str": " \u2014 range to $0.53",
+      "prev_close": 0.42,
+      "prev_high": 0.53,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.53
+        ],
+        [
+          "First target",
+          0.56
+        ],
+        [
+          "Second target",
+          0.6
+        ],
+        [
+          "Extended",
+          0.64
+        ]
+      ],
+      "price_at_scan": 0.5,
+      "gap": 5.53,
+      "rvol": 9.96,
+      "flags": []
+    },
+    {
+      "ticker": "HOTH",
+      "company": "Hoth Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 47,
+      "tier": "monitor",
+      "entry": 0.7,
+      "entry_label": "Momentum above VWAP $0.68",
+      "range_str": " \u2014 range to $0.72",
+      "prev_close": 0.65,
+      "prev_high": 0.72,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.72
+        ],
+        [
+          "First target",
+          0.74
+        ],
+        [
+          "Second target",
+          0.76
+        ],
+        [
+          "Extended",
+          0.79
+        ]
+      ],
+      "price_at_scan": 0.7,
+      "gap": -3.59,
+      "rvol": 2.83,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SNAL",
+      "company": "Snail Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 47,
+      "tier": "monitor",
+      "entry": 0.99,
+      "entry_label": "Reclaim $0.98",
+      "range_str": "",
+      "prev_close": 1.7,
+      "prev_high": 1.22,
+      "fib_levels": [],
+      "price_at_scan": 0.87,
+      "gap": -49.41,
+      "rvol": 3.34,
+      "flags": [
+        "CONTINUATION",
+        "CRASHED \u00b7 GAP DOWN",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "REPL",
+      "company": "Replimune Group Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 46,
+      "tier": "monitor",
+      "entry": 2.29,
+      "entry_label": "Momentum above VWAP $2.15",
+      "range_str": " \u2014 range to $2.4",
+      "prev_close": 1.95,
+      "prev_high": 2.3,
+      "fib_levels": [
+        [
+          "First target",
+          2.4
+        ],
+        [
+          "Second target",
+          2.52
+        ],
+        [
+          "Extended",
+          2.65
+        ]
+      ],
+      "price_at_scan": 2.28,
+      "gap": 0.0,
+      "rvol": 3.87,
+      "flags": [
+        "CATALYST \u00b7 FDA",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "INO",
+      "company": "Inovio Pharmaceuticals Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 42,
+      "tier": "monitor",
+      "entry": 1.2,
+      "entry_label": "Momentum above VWAP $1.14",
+      "range_str": " \u2014 range to $1.22",
+      "prev_close": 1.11,
+      "prev_high": 1.2,
+      "fib_levels": [
+        [
+          "First target",
+          1.22
+        ],
+        [
+          "Second target",
+          1.26
+        ],
+        [
+          "Extended",
+          1.29
+        ]
+      ],
+      "price_at_scan": 1.19,
+      "gap": 0.9,
+      "rvol": 5.05,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
