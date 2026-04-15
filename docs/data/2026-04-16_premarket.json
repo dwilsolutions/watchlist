@@ -1,0 +1,144 @@
+{
+  "session": "premarket",
+  "label": "Pre-Market",
+  "date": "2026-04-16",
+  "generated": "06:55 AM ET",
+  "tickers": [
+    {
+      "ticker": "MLSS",
+      "company": "Milestone Scientific Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 98,
+      "tier": "buy",
+      "entry": 0.44,
+      "entry_label": "Break above $0.44",
+      "range_str": "",
+      "prev_close": 0.29,
+      "prev_high": 0.44,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.44
+        ],
+        [
+          "First target",
+          0.48
+        ],
+        [
+          "Second target",
+          0.53
+        ],
+        [
+          "Extended",
+          0.59
+        ]
+      ],
+      "price_at_scan": 0.4,
+      "gap": 36.64,
+      "rvol": 2564.52,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "CATALYST \u00b7 8-K",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "AGAE",
+      "company": "Allied Gaming & Entertainment Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 68,
+      "tier": "buy",
+      "entry": 0.76,
+      "entry_label": "Break above $0.76",
+      "range_str": "",
+      "prev_close": 0.33,
+      "prev_high": 0.76,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.76
+        ],
+        [
+          "First target",
+          0.88
+        ],
+        [
+          "Second target",
+          1.03
+        ],
+        [
+          "Extended",
+          1.19
+        ]
+      ],
+      "price_at_scan": 0.66,
+      "gap": 117.38,
+      "rvol": 131.48,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SNAL",
+      "company": "Snail Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 47,
+      "tier": "monitor",
+      "entry": 1.08,
+      "entry_label": "Break above $1.07",
+      "range_str": "",
+      "prev_close": 1.7,
+      "prev_high": 1.07,
+      "fib_levels": [],
+      "price_at_scan": 0.91,
+      "gap": -37.59,
+      "rvol": 9.7,
+      "flags": [
+        "CRASHED \u00b7 GAP DOWN",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "LIMN",
+      "company": "Liminatus Pharma Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 45,
+      "tier": "monitor",
+      "entry": 0.29,
+      "entry_label": "Break above $0.29",
+      "range_str": "",
+      "prev_close": 0.18,
+      "prev_high": 0.29,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.29
+        ],
+        [
+          "First target",
+          0.32
+        ],
+        [
+          "Second target",
+          0.36
+        ],
+        [
+          "Extended",
+          0.4
+        ]
+      ],
+      "price_at_scan": 0.21,
+      "gap": 58.34,
+      "rvol": 100.21,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
