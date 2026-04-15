@@ -1,0 +1,384 @@
+{
+  "session": "midday",
+  "label": "Midday",
+  "date": "2026-04-15",
+  "generated": "10:05 AM ET",
+  "tickers": [
+    {
+      "ticker": "MLSS",
+      "company": "Milestone Scientific Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 73,
+      "tier": "buy",
+      "entry": 0.3,
+      "entry_label": "Current $0.30",
+      "range_str": " \u2014 range to $0.31",
+      "prev_close": 0.29,
+      "prev_high": 0.3,
+      "fib_levels": [
+        [
+          "Second target",
+          0.31
+        ],
+        [
+          "Extended",
+          0.31
+        ]
+      ],
+      "price_at_scan": 0.3,
+      "gap": -2.12,
+      "rvol": 1548.66,
+      "flags": [
+        "CATALYST \u00b7 8-K",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "GAME",
+      "company": "GameSquare Holdings Inc",
+      "sector": "Communication Services",
+      "scan": "Mid Cap",
+      "score": 70,
+      "tier": "buy",
+      "entry": 0.42,
+      "entry_label": "Break above $0.42",
+      "range_str": "",
+      "prev_close": 0.39,
+      "prev_high": 0.42,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.42
+        ],
+        [
+          "First target",
+          0.43
+        ],
+        [
+          "Second target",
+          0.44
+        ],
+        [
+          "Extended",
+          0.45
+        ]
+      ],
+      "price_at_scan": 0.41,
+      "gap": 6.82,
+      "rvol": 7.25,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SIDU",
+      "company": "Sidus Space Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 68,
+      "tier": "buy",
+      "entry": 5.43,
+      "entry_label": "Break above $5.40",
+      "range_str": "",
+      "prev_close": 5.31,
+      "prev_high": 5.4,
+      "fib_levels": [
+        [
+          "Prev High",
+          5.4
+        ],
+        [
+          "First target",
+          5.42
+        ],
+        [
+          "Second target",
+          5.46
+        ],
+        [
+          "Extended",
+          5.49
+        ]
+      ],
+      "price_at_scan": 5.14,
+      "gap": -3.2,
+      "rvol": 3.5,
+      "flags": [
+        "CONTINUATION",
+        "CATALYST \u00b7 DEAL",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "VSA",
+      "company": "VisionSys AI Inc ADR",
+      "sector": "Consumer Defensive",
+      "scan": "Low Float",
+      "score": 60,
+      "tier": "monitor",
+      "entry": 1.09,
+      "entry_label": "Momentum above VWAP $1.05",
+      "range_str": " \u2014 range to $1.2",
+      "prev_close": 0.6,
+      "prev_high": 1.2,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.2
+        ],
+        [
+          "First target",
+          1.36
+        ],
+        [
+          "Second target",
+          1.57
+        ],
+        [
+          "Extended",
+          1.8
+        ]
+      ],
+      "price_at_scan": 1.08,
+      "gap": 53.83,
+      "rvol": 153.68,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "ALREADY EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "AGAE",
+      "company": "Allied Gaming & Entertainment Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 58,
+      "tier": "monitor",
+      "entry": 0.62,
+      "entry_label": "Break above $0.62",
+      "range_str": "",
+      "prev_close": 0.33,
+      "prev_high": 0.62,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.62
+        ],
+        [
+          "First target",
+          0.7
+        ],
+        [
+          "Second target",
+          0.8
+        ],
+        [
+          "Extended",
+          0.91
+        ]
+      ],
+      "price_at_scan": 0.45,
+      "gap": 57.84,
+      "rvol": 188.43,
+      "flags": [
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SNAL",
+      "company": "Snail Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 57,
+      "tier": "monitor",
+      "entry": 0.98,
+      "entry_label": "Break above $0.98",
+      "range_str": "",
+      "prev_close": 1.7,
+      "prev_high": 0.98,
+      "fib_levels": [],
+      "price_at_scan": 0.85,
+      "gap": -49.41,
+      "rvol": 9.27,
+      "flags": [
+        "CONTINUATION",
+        "CRASHED \u00b7 GAP DOWN",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "LIMN",
+      "company": "Liminatus Pharma Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 51,
+      "tier": "monitor",
+      "entry": 0.21,
+      "entry_label": "Current $0.21",
+      "range_str": " \u2014 range to $0.22",
+      "prev_close": 0.18,
+      "prev_high": 0.21,
+      "fib_levels": [
+        [
+          "First target",
+          0.22
+        ],
+        [
+          "Second target",
+          0.23
+        ],
+        [
+          "Extended",
+          0.24
+        ]
+      ],
+      "price_at_scan": 0.21,
+      "gap": 2.06,
+      "rvol": 54.14,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ARAI",
+      "company": "Arrive AI Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 49,
+      "tier": "monitor",
+      "entry": 1.1,
+      "entry_label": "Break above $1.09",
+      "range_str": "",
+      "prev_close": 1.65,
+      "prev_high": 1.09,
+      "fib_levels": [],
+      "price_at_scan": 1.06,
+      "gap": -38.79,
+      "rvol": 9.75,
+      "flags": [
+        "CONTINUATION",
+        "CRASHED \u00b7 GAP DOWN",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MIMI",
+      "company": "Mint Inc Ltd",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 44,
+      "tier": "monitor",
+      "entry": 0.35,
+      "entry_label": "Break above $0.35",
+      "range_str": "",
+      "prev_close": 0.54,
+      "prev_high": 0.35,
+      "fib_levels": [],
+      "price_at_scan": 0.32,
+      "gap": -39.93,
+      "rvol": 3.22,
+      "flags": [
+        "CRASHED \u00b7 GAP DOWN",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "NXXT",
+      "company": "NextNRG Inc",
+      "sector": "Utilities",
+      "scan": "Mid Cap",
+      "score": 44,
+      "tier": "monitor",
+      "entry": 0.52,
+      "entry_label": "Break above $0.52",
+      "range_str": "",
+      "prev_close": 0.42,
+      "prev_high": 0.52,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.52
+        ],
+        [
+          "First target",
+          0.55
+        ],
+        [
+          "Second target",
+          0.58
+        ],
+        [
+          "Extended",
+          0.62
+        ]
+      ],
+      "price_at_scan": 0.46,
+      "gap": 5.29,
+      "rvol": 32.82,
+      "flags": []
+    },
+    {
+      "ticker": "LNAI",
+      "company": "Lunai Bioworks Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 40,
+      "tier": "monitor",
+      "entry": 0.37,
+      "entry_label": "Break above $0.37",
+      "range_str": "",
+      "prev_close": 0.34,
+      "prev_high": 0.37,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.37
+        ],
+        [
+          "First target",
+          0.38
+        ],
+        [
+          "Second target",
+          0.39
+        ],
+        [
+          "Extended",
+          0.4
+        ]
+      ],
+      "price_at_scan": 0.29,
+      "gap": 8.97,
+      "rvol": 8.63,
+      "flags": [
+        "CATALYST \u00b7 DEAL",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "PMNT",
+      "company": "Perfect Moment Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Mid Cap",
+      "score": 40,
+      "tier": "monitor",
+      "entry": 0.3,
+      "entry_label": "Break above $0.30",
+      "range_str": "",
+      "prev_close": 0.36,
+      "prev_high": 0.3,
+      "fib_levels": [],
+      "price_at_scan": 0.28,
+      "gap": -15.79,
+      "rvol": 4.59,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
