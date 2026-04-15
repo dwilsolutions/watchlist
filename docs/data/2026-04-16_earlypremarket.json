@@ -1,0 +1,123 @@
+{
+  "session": "earlypremarket",
+  "label": "Early Pre-Market",
+  "date": "2026-04-16",
+  "generated": "04:05 AM ET",
+  "tickers": [
+    {
+      "ticker": "MLSS",
+      "company": "Milestone Scientific Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 85,
+      "tier": "buy",
+      "entry": 0.41,
+      "entry_label": "Break above $0.41",
+      "range_str": "",
+      "prev_close": 0.29,
+      "prev_high": 0.41,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.41
+        ],
+        [
+          "First target",
+          0.44
+        ],
+        [
+          "Second target",
+          0.48
+        ],
+        [
+          "Extended",
+          0.53
+        ]
+      ],
+      "price_at_scan": 0.36,
+      "gap": 36.64,
+      "rvol": 265.29,
+      "flags": [
+        "CONTINUATION",
+        "CATALYST \u00b7 8-K",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "AGAE",
+      "company": "Allied Gaming & Entertainment Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 70,
+      "tier": "buy",
+      "entry": 0.76,
+      "entry_label": "Break above $0.76",
+      "range_str": "",
+      "prev_close": 0.33,
+      "prev_high": 0.76,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.76
+        ],
+        [
+          "First target",
+          0.88
+        ],
+        [
+          "Second target",
+          1.03
+        ],
+        [
+          "Extended",
+          1.19
+        ]
+      ],
+      "price_at_scan": 0.72,
+      "gap": 117.38,
+      "rvol": 18.44,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY"
+      ]
+    },
+    {
+      "ticker": "LIMN",
+      "company": "Liminatus Pharma Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 59,
+      "tier": "monitor",
+      "entry": 0.28,
+      "entry_label": "Break above $0.28",
+      "range_str": "",
+      "prev_close": 0.18,
+      "prev_high": 0.28,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.28
+        ],
+        [
+          "First target",
+          0.31
+        ],
+        [
+          "Second target",
+          0.34
+        ],
+        [
+          "Extended",
+          0.38
+        ]
+      ],
+      "price_at_scan": 0.27,
+      "gap": 58.34,
+      "rvol": 16.24,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
