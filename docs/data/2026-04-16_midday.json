@@ -1,0 +1,367 @@
+{
+  "session": "midday",
+  "label": "Midday",
+  "date": "2026-04-16",
+  "generated": "10:05 AM ET",
+  "tickers": [
+    {
+      "ticker": "ONFO",
+      "company": "Onfolio Holdings Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 98,
+      "tier": "buy",
+      "entry": 1.76,
+      "entry_label": "Break above $1.75",
+      "range_str": "",
+      "prev_close": 0.67,
+      "prev_high": 1.75,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.75
+        ],
+        [
+          "First target",
+          2.04
+        ],
+        [
+          "Second target",
+          2.42
+        ],
+        [
+          "Extended",
+          2.83
+        ]
+      ],
+      "price_at_scan": 1.59,
+      "gap": 66.42,
+      "rvol": 3317.34,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "CATALYST \u00b7 M&A",
+        "ALREADY EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MYSE",
+      "company": "Myseum.AI Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 77,
+      "tier": "buy",
+      "entry": 5.78,
+      "entry_label": "Break above $5.75",
+      "range_str": "",
+      "prev_close": 1.44,
+      "prev_high": 5.75,
+      "fib_levels": [
+        [
+          "Prev High",
+          5.75
+        ],
+        [
+          "First target",
+          6.92
+        ],
+        [
+          "Second target",
+          8.41
+        ],
+        [
+          "Extended",
+          10.06
+        ]
+      ],
+      "price_at_scan": 3.57,
+      "gap": 283.33,
+      "rvol": 1495.6,
+      "flags": [
+        "ALREADY EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MAMO",
+      "company": "Massimo Group",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 70,
+      "tier": "buy",
+      "entry": 1.4,
+      "entry_label": "Break above $1.39",
+      "range_str": " \u2014 range to $1.5",
+      "prev_close": 0.99,
+      "prev_high": 1.39,
+      "fib_levels": [
+        [
+          "First target",
+          1.5
+        ],
+        [
+          "Second target",
+          1.64
+        ],
+        [
+          "Extended",
+          1.79
+        ]
+      ],
+      "price_at_scan": 1.38,
+      "gap": 17.58,
+      "rvol": 143.15,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "CATALYST \u00b7 DEAL",
+        "EXTENDED"
+      ]
+    },
+    {
+      "ticker": "SIDU",
+      "company": "Sidus Space Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 68,
+      "tier": "buy",
+      "entry": 4.95,
+      "entry_label": "Reclaim $4.92",
+      "range_str": " \u2014 range to $5.26",
+      "prev_close": 4.88,
+      "prev_high": 5.26,
+      "fib_levels": [
+        [
+          "Prev High",
+          5.26
+        ],
+        [
+          "First target",
+          5.36
+        ],
+        [
+          "Second target",
+          5.49
+        ],
+        [
+          "Extended",
+          5.64
+        ]
+      ],
+      "price_at_scan": 4.89,
+      "gap": -4.92,
+      "rvol": 3.98,
+      "flags": [
+        "CONTINUATION",
+        "CATALYST \u00b7 DEAL",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "AGAE",
+      "company": "Allied Gaming & Entertainment Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 59,
+      "tier": "monitor",
+      "entry": 0.67,
+      "entry_label": "Break above $0.67",
+      "range_str": "",
+      "prev_close": 0.47,
+      "prev_high": 0.67,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.67
+        ],
+        [
+          "First target",
+          0.72
+        ],
+        [
+          "Second target",
+          0.79
+        ],
+        [
+          "Extended",
+          0.87
+        ]
+      ],
+      "price_at_scan": 0.59,
+      "gap": 31.36,
+      "rvol": 34.09,
+      "flags": [
+        "CONTINUATION",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "BTOG",
+      "company": "Bit Origin Ltd",
+      "sector": "Financial",
+      "scan": "Low Float",
+      "score": 58,
+      "tier": "monitor",
+      "entry": 5.36,
+      "entry_label": "Break above $5.33",
+      "range_str": "",
+      "prev_close": 2.77,
+      "prev_high": 5.33,
+      "fib_levels": [
+        [
+          "Prev High",
+          5.33
+        ],
+        [
+          "First target",
+          6.03
+        ],
+        [
+          "Second target",
+          6.91
+        ],
+        [
+          "Extended",
+          7.89
+        ]
+      ],
+      "price_at_scan": 3.24,
+      "gap": 39.96,
+      "rvol": 2149.99,
+      "flags": [
+        "CATALYST \u00b7 FINANCING"
+      ]
+    },
+    {
+      "ticker": "ZSPC",
+      "company": "Zspace Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 53,
+      "tier": "monitor",
+      "entry": 0.11,
+      "entry_label": "Current $0.11",
+      "range_str": " \u2014 range to $0.12",
+      "prev_close": 0.07,
+      "prev_high": 0.11,
+      "fib_levels": [
+        [
+          "First target",
+          0.12
+        ],
+        [
+          "Second target",
+          0.13
+        ],
+        [
+          "Extended",
+          0.15
+        ]
+      ],
+      "price_at_scan": 0.11,
+      "gap": 26.92,
+      "rvol": 292.82,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "ALREADY EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CAPS",
+      "company": "Capstone Holding Corp",
+      "sector": "Basic Materials",
+      "scan": "Low Float",
+      "score": 52,
+      "tier": "monitor",
+      "entry": 0.89,
+      "entry_label": "Break above $0.89",
+      "range_str": "",
+      "prev_close": 0.59,
+      "prev_high": 0.89,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.89
+        ],
+        [
+          "First target",
+          0.97
+        ],
+        [
+          "Second target",
+          1.08
+        ],
+        [
+          "Extended",
+          1.19
+        ]
+      ],
+      "price_at_scan": 0.63,
+      "gap": 36.52,
+      "rvol": 2911.11,
+      "flags": []
+    },
+    {
+      "ticker": "DGNX",
+      "company": "Diginex Ltd",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 51,
+      "tier": "monitor",
+      "entry": 0.66,
+      "entry_label": "Break above $0.66",
+      "range_str": "",
+      "prev_close": 0.56,
+      "prev_high": 0.66,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.66
+        ],
+        [
+          "First target",
+          0.69
+        ],
+        [
+          "Second target",
+          0.72
+        ],
+        [
+          "Extended",
+          0.76
+        ]
+      ],
+      "price_at_scan": 0.55,
+      "gap": 12.48,
+      "rvol": 138.39,
+      "flags": [
+        "CATALYST \u00b7 M&A",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SGLY",
+      "company": "Singularity Future Technology Ltd",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 40,
+      "tier": "monitor",
+      "entry": 0.41,
+      "entry_label": "Break above $0.41",
+      "range_str": "",
+      "prev_close": 0.42,
+      "prev_high": 0.41,
+      "fib_levels": [],
+      "price_at_scan": 0.4,
+      "gap": -4.48,
+      "rvol": 165.09,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
