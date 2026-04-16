@@ -1,0 +1,350 @@
+{
+  "session": "premarket",
+  "label": "Pre-Market",
+  "date": "2026-04-17",
+  "generated": "08:45 AM ET",
+  "tickers": [
+    {
+      "ticker": "MYSE",
+      "company": "Myseum.AI Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 100,
+      "tier": "buy",
+      "entry": 6.44,
+      "entry_label": "Break above $6.41",
+      "range_str": "",
+      "prev_close": 1.44,
+      "prev_high": 6.41,
+      "fib_levels": [
+        [
+          "Prev High",
+          6.41
+        ],
+        [
+          "First target",
+          7.76
+        ],
+        [
+          "Second target",
+          9.48
+        ],
+        [
+          "Extended",
+          11.38
+        ]
+      ],
+      "price_at_scan": 5.13,
+      "gap": 176.39,
+      "rvol": 2807.44,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ONFO",
+      "company": "Onfolio Holdings Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 100,
+      "tier": "buy",
+      "entry": 1.43,
+      "entry_label": "Break above $1.42",
+      "range_str": "",
+      "prev_close": 0.67,
+      "prev_high": 1.42,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.42
+        ],
+        [
+          "First target",
+          1.62
+        ],
+        [
+          "Second target",
+          1.88
+        ],
+        [
+          "Extended",
+          2.17
+        ]
+      ],
+      "price_at_scan": 1.18,
+      "gap": 3.43,
+      "rvol": 2364.27,
+      "flags": [
+        "CONTINUATION",
+        "CATALYST \u00b7 M&A",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "DGNX",
+      "company": "Diginex Ltd",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 81,
+      "tier": "buy",
+      "entry": 1.49,
+      "entry_label": "Break above $1.48",
+      "range_str": "",
+      "prev_close": 0.56,
+      "prev_high": 1.48,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.48
+        ],
+        [
+          "First target",
+          1.73
+        ],
+        [
+          "Second target",
+          2.05
+        ],
+        [
+          "Extended",
+          2.4
+        ]
+      ],
+      "price_at_scan": 0.72,
+      "gap": -1.14,
+      "rvol": 269.89,
+      "flags": [
+        "CONTINUATION",
+        "CATALYST \u00b7 M&A",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CAPS",
+      "company": "Capstone Holding Corp",
+      "sector": "Basic Materials",
+      "scan": "Low Float",
+      "score": 72,
+      "tier": "buy",
+      "entry": 1.32,
+      "entry_label": "Break above $1.31",
+      "range_str": "",
+      "prev_close": 0.59,
+      "prev_high": 1.31,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.31
+        ],
+        [
+          "First target",
+          1.51
+        ],
+        [
+          "Second target",
+          1.75
+        ],
+        [
+          "Extended",
+          2.03
+        ]
+      ],
+      "price_at_scan": 0.85,
+      "gap": -1.53,
+      "rvol": 5836.63,
+      "flags": [
+        "CONTINUATION"
+      ]
+    },
+    {
+      "ticker": "AGAE",
+      "company": "Allied Gaming & Entertainment Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 56,
+      "tier": "monitor",
+      "entry": 0.72,
+      "entry_label": "Break above $0.72",
+      "range_str": "",
+      "prev_close": 0.47,
+      "prev_high": 0.72,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.72
+        ],
+        [
+          "First target",
+          0.79
+        ],
+        [
+          "Second target",
+          0.87
+        ],
+        [
+          "Extended",
+          0.97
+        ]
+      ],
+      "price_at_scan": 0.59,
+      "gap": -4.81,
+      "rvol": 48.63,
+      "flags": [
+        "CONTINUATION",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MAMO",
+      "company": "Massimo Group",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 55,
+      "tier": "monitor",
+      "entry": 1.57,
+      "entry_label": "Break above $1.56",
+      "range_str": "",
+      "prev_close": 0.99,
+      "prev_high": 1.56,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.56
+        ],
+        [
+          "First target",
+          1.72
+        ],
+        [
+          "Second target",
+          1.91
+        ],
+        [
+          "Extended",
+          2.13
+        ]
+      ],
+      "price_at_scan": 1.14,
+      "gap": 40.89,
+      "rvol": 245.54,
+      "flags": [
+        "CATALYST \u00b7 DEAL"
+      ]
+    },
+    {
+      "ticker": "CTNT",
+      "company": "Cheetah Net Supply Chain Service Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 48,
+      "tier": "monitor",
+      "entry": 0.45,
+      "entry_label": "Break above $0.45",
+      "range_str": "",
+      "prev_close": 0.17,
+      "prev_high": 0.45,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.45
+        ],
+        [
+          "First target",
+          0.53
+        ],
+        [
+          "Second target",
+          0.62
+        ],
+        [
+          "Extended",
+          0.73
+        ]
+      ],
+      "price_at_scan": 0.23,
+      "gap": 11.31,
+      "rvol": 2992.19,
+      "flags": [
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SGLY",
+      "company": "Singularity Future Technology Ltd",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 47,
+      "tier": "monitor",
+      "entry": 0.56,
+      "entry_label": "Break above $0.56",
+      "range_str": "",
+      "prev_close": 0.42,
+      "prev_high": 0.56,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.56
+        ],
+        [
+          "First target",
+          0.6
+        ],
+        [
+          "Second target",
+          0.65
+        ],
+        [
+          "Extended",
+          0.7
+        ]
+      ],
+      "price_at_scan": 0.41,
+      "gap": 30.33,
+      "rvol": 414.81,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ZSPC",
+      "company": "Zspace Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 44,
+      "tier": "monitor",
+      "entry": 0.13,
+      "entry_label": "Break above $0.13",
+      "range_str": "",
+      "prev_close": 0.07,
+      "prev_high": 0.13,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.13
+        ],
+        [
+          "First target",
+          0.15
+        ],
+        [
+          "Second target",
+          0.17
+        ],
+        [
+          "Extended",
+          0.19
+        ]
+      ],
+      "price_at_scan": 0.08,
+      "gap": 8.79,
+      "rvol": 631.59,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
