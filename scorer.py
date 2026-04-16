@@ -134,7 +134,7 @@ def calc_stop(price, atr, entry):
         return max(ceiling, min(floor, atr_stop))
     return round(entry * 0.94, 2)  # fallback: 6% fixed
 
-def score_row(row, session=""):
+def score_row(row, session="", prior_runners=None):
     price        = safe(row.get("Price"))
     change       = pct(row.get("Change"))
     gap_raw      = row.get("Gap", "")
@@ -265,6 +265,21 @@ def score_row(row, session=""):
         elif already_up >= 30:
             flags.append(("EXTENDED", "danger")); bonus -= 8
 
+    # Prior-day runner penalty — stocks that ran big yesterday tend to sell off hard
+    # the next morning. Apply a session-weighted penalty and flag visibly.
+    # Floor at 42 so they stay visible in monitor (never drop to avoid entirely).
+    if prior_runners:
+        _prior_outcome = prior_runners.get(row.get("Ticker", ""))
+        if _prior_outcome:
+            _base_penalty = {"monster": -18, "big_runner": -15, "runner": -10}.get(_prior_outcome, 0)
+            _session_mult = {
+                "earlypremarket": 1.0, "premarket": 1.0,
+                "marketopen": 0.7, "midday": 0.5, "afterhours": 0.4,
+            }.get(session, 1.0)
+            _penalty = round(_base_penalty * _session_mult)
+            bonus += _penalty
+            flags.append(("PRIOR DAY RUNNER", "danger"))
+
     # RVol gate — if a stock has virtually no intraday energy and isn't gapping,
     # the trend/range components can carry it to a falsely high score.
     # Cap at 60 (monitor ceiling) to prevent low-energy names reaching buy watch.
@@ -272,6 +287,10 @@ def score_row(row, session=""):
         total = min(60, max(0, base + bonus))
     else:
         total = max(0, min(100, base + bonus))
+
+    # Prior-runner floor: never drop a flagged ticker to avoid — keep visible in monitor
+    if prior_runners and prior_runners.get(row.get("Ticker", "")):
+        total = max(42, total)
     # Key levels
     prev_close = safe(row.get("Prev Close"))
     prev_high  = safe(row.get("High"))
@@ -690,6 +709,38 @@ def fetch_vwap(tickers, session, now_et):
         print(f"  [!] VWAP fetch failed: {e} — skipping")
         return {}
 
+
+# ── Prior day runner lookup ────────────────────────────────────────────────────
+
+def load_prior_runners(trading_day, data_dir):
+    """
+    Return a dict of {ticker: best_outcome} for any ticker that was a runner,
+    big_runner, or monster in the most recent EOD results before trading_day.
+    Looks back up to 5 calendar days to handle weekends and holidays.
+    """
+    from datetime import timedelta
+    check = trading_day - timedelta(days=1)
+    for _ in range(5):
+        fname = os.path.join(data_dir, f"{check.isoformat()}_eod_results.json")
+        if os.path.exists(fname):
+            with open(fname) as f:
+                eod = json.load(f)
+            RANK = {"monster": 3, "big_runner": 2, "runner": 1}
+            runners = {}
+            for session_tickers in eod.get("sessions", {}).values():
+                if isinstance(session_tickers, list):
+                    for t in session_tickers:
+                        ticker  = t.get("ticker", "")
+                        outcome = t.get("outcome", "")
+                        if outcome in RANK:
+                            if RANK[outcome] > RANK.get(runners.get(ticker, ""), 0):
+                                runners[ticker] = outcome
+            print(f"  [+] Prior runners loaded from {check.isoformat()}: {len(runners)} tickers ({sorted(runners.keys())})")
+            return runners
+        check -= timedelta(days=1)
+    print("  [-] No prior EOD results found — skipping prior-runner penalty")
+    return {}
+
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def main():
@@ -730,7 +781,11 @@ def main():
         if t in real_vwaps:
             r["_real_vwap"] = real_vwaps[t]
 
-    results = [score_row(r, session=session) for r in unique]
+    # Load prior day runners for penalty
+    import json as _json
+    prior_runners = load_prior_runners(trading_day, os.path.join(OUTPUT_DIR, "data"))
+
+    results = [score_row(r, session=session, prior_runners=prior_runners) for r in unique]
     results = apply_sector_bonus(results)
     results.sort(key=lambda x: x["total"], reverse=True)
 
