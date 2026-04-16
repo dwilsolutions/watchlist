@@ -13,7 +13,7 @@ Environment variables:
   FINVIZ_TOKEN — Finviz Elite API token (store as GitHub Secret)
 """
 
-import os, sys, math, argparse, csv, io
+import os, sys, math, argparse, csv, io, json
 from datetime import datetime, date, timedelta
 from zoneinfo import ZoneInfo
 import urllib.request, urllib.error
@@ -718,7 +718,6 @@ def load_prior_runners(trading_day, data_dir):
     big_runner, or monster in the most recent EOD results before trading_day.
     Looks back up to 5 calendar days to handle weekends and holidays.
     """
-    from datetime import timedelta
     check = trading_day - timedelta(days=1)
     for _ in range(5):
         fname = os.path.join(data_dir, f"{check.isoformat()}_eod_results.json")
@@ -782,7 +781,6 @@ def main():
             r["_real_vwap"] = real_vwaps[t]
 
     # Load prior day runners for penalty
-    import json as _json
     prior_runners = load_prior_runners(trading_day, os.path.join(OUTPUT_DIR, "data"))
 
     results = [score_row(r, session=session, prior_runners=prior_runners) for r in unique]
@@ -815,7 +813,6 @@ def main():
     print(f"  [+] Fixed URL → {fixed_path}")
 
     # 3. Save JSON data file for results tracker
-    import json
     data_dir = os.path.join(OUTPUT_DIR, "data")
     os.makedirs(data_dir, exist_ok=True)
     json_data = {
