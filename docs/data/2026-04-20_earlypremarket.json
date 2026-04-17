@@ -1,0 +1,116 @@
+{
+  "session": "earlypremarket",
+  "label": "Early Pre-Market",
+  "date": "2026-04-20",
+  "generated": "04:05 AM ET",
+  "tickers": [
+    {
+      "ticker": "YXT",
+      "company": "Yxt.Com Group Holding Ltd. ADR",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 98,
+      "tier": "buy",
+      "entry": 0.85,
+      "entry_label": "Break above $0.85",
+      "range_str": "",
+      "prev_close": 0.37,
+      "prev_high": 0.85,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.85
+        ],
+        [
+          "First target",
+          0.98
+        ],
+        [
+          "Second target",
+          1.15
+        ],
+        [
+          "Extended",
+          1.33
+        ]
+      ],
+      "price_at_scan": 0.71,
+      "gap": 83.54,
+      "rvol": 1403.61,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ZSPC",
+      "company": "Zspace Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 46,
+      "tier": "monitor",
+      "entry": 0.1,
+      "entry_label": "Current $0.10",
+      "range_str": " \u2014 range to $0.11",
+      "prev_close": 0.09,
+      "prev_high": 0.1,
+      "fib_levels": [
+        [
+          "Second target",
+          0.11
+        ],
+        [
+          "Extended",
+          0.11
+        ]
+      ],
+      "price_at_scan": 0.1,
+      "gap": 10.22,
+      "rvol": 7.04,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CTNT",
+      "company": "Cheetah Net Supply Chain Service Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 41,
+      "tier": "monitor",
+      "entry": 0.23,
+      "entry_label": "Break above $0.23",
+      "range_str": "",
+      "prev_close": 0.16,
+      "prev_high": 0.23,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.23
+        ],
+        [
+          "First target",
+          0.25
+        ],
+        [
+          "Second target",
+          0.27
+        ],
+        [
+          "Extended",
+          0.3
+        ]
+      ],
+      "price_at_scan": 0.21,
+      "gap": 18.1,
+      "rvol": 29.44,
+      "flags": [
+        "GAP QUALITY",
+        "CATALYST \u00b7 DEAL"
+      ]
+    }
+  ]
+}
