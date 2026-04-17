@@ -1,0 +1,237 @@
+{
+  "session": "premarket",
+  "label": "Pre-Market",
+  "date": "2026-04-20",
+  "generated": "06:55 AM ET",
+  "tickers": [
+    {
+      "ticker": "YXT",
+      "company": "Yxt.Com Group Holding Ltd. ADR",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 93,
+      "tier": "buy",
+      "entry": 0.85,
+      "entry_label": "Break above $0.85",
+      "range_str": "",
+      "prev_close": 0.37,
+      "prev_high": 0.85,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.85
+        ],
+        [
+          "First target",
+          0.98
+        ],
+        [
+          "Second target",
+          1.15
+        ],
+        [
+          "Extended",
+          1.33
+        ]
+      ],
+      "price_at_scan": 0.65,
+      "gap": 83.54,
+      "rvol": 13360.0,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "BZAI",
+      "company": "Blaize Holdings Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 82,
+      "tier": "buy",
+      "entry": 2.3,
+      "entry_label": "Break above $2.29",
+      "range_str": "",
+      "prev_close": 1.73,
+      "prev_high": 2.29,
+      "fib_levels": [
+        [
+          "Prev High",
+          2.29
+        ],
+        [
+          "First target",
+          2.44
+        ],
+        [
+          "Second target",
+          2.64
+        ],
+        [
+          "Extended",
+          2.85
+        ]
+      ],
+      "price_at_scan": 2.13,
+      "gap": 29.48,
+      "rvol": 39.42,
+      "flags": [
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ABLV",
+      "company": "Able View Global Inc",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 75,
+      "tier": "buy",
+      "entry": 1.22,
+      "entry_label": "Break above $1.21",
+      "range_str": "",
+      "prev_close": 0.58,
+      "prev_high": 1.21,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.21
+        ],
+        [
+          "First target",
+          1.38
+        ],
+        [
+          "Second target",
+          1.6
+        ],
+        [
+          "Extended",
+          1.84
+        ]
+      ],
+      "price_at_scan": 0.77,
+      "gap": 60.71,
+      "rvol": 911.21,
+      "flags": [
+        "NASDAQ NOTICE",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "AGAE",
+      "company": "Allied Gaming & Entertainment Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 60,
+      "tier": "monitor",
+      "entry": 0.73,
+      "entry_label": "Break above $0.73",
+      "range_str": "",
+      "prev_close": 0.52,
+      "prev_high": 0.73,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.73
+        ],
+        [
+          "First target",
+          0.79
+        ],
+        [
+          "Second target",
+          0.86
+        ],
+        [
+          "Extended",
+          0.94
+        ]
+      ],
+      "price_at_scan": 0.62,
+      "gap": 15.52,
+      "rvol": 21.13,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "PRIOR DAY RUNNER"
+      ]
+    },
+    {
+      "ticker": "NPT",
+      "company": "Texxon Holding Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Mid Cap",
+      "score": 51,
+      "tier": "monitor",
+      "entry": 6.48,
+      "entry_label": "Break above $6.45",
+      "range_str": "",
+      "prev_close": 3.22,
+      "prev_high": 6.45,
+      "fib_levels": [
+        [
+          "Prev High",
+          6.45
+        ],
+        [
+          "First target",
+          7.33
+        ],
+        [
+          "Second target",
+          8.45
+        ],
+        [
+          "Extended",
+          9.68
+        ]
+      ],
+      "price_at_scan": 5.47,
+      "gap": 20.5,
+      "rvol": 103.23,
+      "flags": [
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ISPC",
+      "company": "iSpecimen Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 50,
+      "tier": "monitor",
+      "entry": 0.18,
+      "entry_label": "Break above $0.18",
+      "range_str": "",
+      "prev_close": 0.12,
+      "prev_high": 0.18,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.18
+        ],
+        [
+          "First target",
+          0.2
+        ],
+        [
+          "Second target",
+          0.22
+        ],
+        [
+          "Extended",
+          0.24
+        ]
+      ],
+      "price_at_scan": 0.15,
+      "gap": 15.97,
+      "rvol": 162.52,
+      "flags": [
+        "GAP QUALITY"
+      ]
+    }
+  ]
+}
