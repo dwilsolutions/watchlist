@@ -1,0 +1,530 @@
+{
+  "session": "midday",
+  "label": "Midday",
+  "date": "2026-04-17",
+  "generated": "10:05 AM ET",
+  "tickers": [
+    {
+      "ticker": "RPAY",
+      "company": "Repay Holdings Corporation",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "buy",
+      "entry": 4.2,
+      "entry_label": "Break above $4.18",
+      "range_str": "",
+      "prev_close": 3.18,
+      "prev_high": 4.18,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.18
+        ],
+        [
+          "First target",
+          4.45
+        ],
+        [
+          "Second target",
+          4.8
+        ],
+        [
+          "Extended",
+          5.18
+        ]
+      ],
+      "price_at_scan": 4.07,
+      "gap": 25.0,
+      "rvol": 87.24,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "DARE",
+      "company": "Dare Bioscience Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 96,
+      "tier": "buy",
+      "entry": 3.45,
+      "entry_label": "Break above $3.43",
+      "range_str": "",
+      "prev_close": 2.72,
+      "prev_high": 3.43,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.43
+        ],
+        [
+          "First target",
+          3.62
+        ],
+        [
+          "Second target",
+          3.87
+        ],
+        [
+          "Extended",
+          4.14
+        ]
+      ],
+      "price_at_scan": 3.39,
+      "gap": 19.85,
+      "rvol": 331.29,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "EFOI",
+      "company": "Energy Focus Inc",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 92,
+      "tier": "buy",
+      "entry": 9.89,
+      "entry_label": "Break above $9.84",
+      "range_str": "",
+      "prev_close": 2.09,
+      "prev_high": 9.84,
+      "fib_levels": [
+        [
+          "Prev High",
+          9.84
+        ],
+        [
+          "First target",
+          11.95
+        ],
+        [
+          "Second target",
+          14.63
+        ],
+        [
+          "Extended",
+          17.59
+        ]
+      ],
+      "price_at_scan": 8.32,
+      "gap": 156.94,
+      "rvol": 25521.13,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "ALREADY EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SNAL",
+      "company": "Snail Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 89,
+      "tier": "buy",
+      "entry": 0.88,
+      "entry_label": "Break above $0.88",
+      "range_str": "",
+      "prev_close": 0.76,
+      "prev_high": 0.88,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.88
+        ],
+        [
+          "First target",
+          0.91
+        ],
+        [
+          "Second target",
+          0.95
+        ],
+        [
+          "Extended",
+          1.0
+        ]
+      ],
+      "price_at_scan": 0.86,
+      "gap": 11.64,
+      "rvol": 6.66,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ABLV",
+      "company": "Able View Global Inc",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 88,
+      "tier": "buy",
+      "entry": 0.72,
+      "entry_label": "Momentum above VWAP $0.70",
+      "range_str": " \u2014 range to $0.74",
+      "prev_close": 0.58,
+      "prev_high": 0.74,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.74
+        ],
+        [
+          "First target",
+          0.78
+        ],
+        [
+          "Second target",
+          0.84
+        ],
+        [
+          "Extended",
+          0.9
+        ]
+      ],
+      "price_at_scan": 0.72,
+      "gap": 25.86,
+      "rvol": 458.44,
+      "flags": [
+        "GAP QUALITY",
+        "NASDAQ NOTICE",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MYSE",
+      "company": "Myseum.AI Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 82,
+      "tier": "buy",
+      "entry": 3.96,
+      "entry_label": "Break above $3.94",
+      "range_str": "",
+      "prev_close": 3.3,
+      "prev_high": 3.94,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.94
+        ],
+        [
+          "First target",
+          4.11
+        ],
+        [
+          "Second target",
+          4.34
+        ],
+        [
+          "Extended",
+          4.58
+        ]
+      ],
+      "price_at_scan": 3.57,
+      "gap": 14.85,
+      "rvol": 42.43,
+      "flags": [
+        "CONTINUATION",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "BZAI",
+      "company": "Blaize Holdings Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 78,
+      "tier": "buy",
+      "entry": 2.2,
+      "entry_label": "Break above $2.19",
+      "range_str": "",
+      "prev_close": 1.73,
+      "prev_high": 2.19,
+      "fib_levels": [
+        [
+          "Prev High",
+          2.19
+        ],
+        [
+          "First target",
+          2.32
+        ],
+        [
+          "Second target",
+          2.47
+        ],
+        [
+          "Extended",
+          2.65
+        ]
+      ],
+      "price_at_scan": 2.07,
+      "gap": 17.05,
+      "rvol": 30.36,
+      "flags": [
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CRML",
+      "company": "Critical Metals Corp",
+      "sector": "Basic Materials",
+      "scan": "Mid Cap",
+      "score": 78,
+      "tier": "buy",
+      "entry": 12.7,
+      "entry_label": "Break above $12.64",
+      "range_str": "",
+      "prev_close": 9.27,
+      "prev_high": 12.64,
+      "fib_levels": [
+        [
+          "Prev High",
+          12.64
+        ],
+        [
+          "First target",
+          13.56
+        ],
+        [
+          "Second target",
+          14.72
+        ],
+        [
+          "Extended",
+          16.01
+        ]
+      ],
+      "price_at_scan": 12.43,
+      "gap": 21.9,
+      "rvol": 15.19,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "EXTENDED"
+      ]
+    },
+    {
+      "ticker": "AGAE",
+      "company": "Allied Gaming & Entertainment Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 70,
+      "tier": "buy",
+      "entry": 0.62,
+      "entry_label": "Current $0.62",
+      "range_str": " \u2014 range to $0.65",
+      "prev_close": 0.52,
+      "prev_high": 0.62,
+      "fib_levels": [
+        [
+          "First target",
+          0.65
+        ],
+        [
+          "Second target",
+          0.68
+        ],
+        [
+          "Extended",
+          0.72
+        ]
+      ],
+      "price_at_scan": 0.62,
+      "gap": 9.22,
+      "rvol": 12.47,
+      "flags": [
+        "CONTINUATION",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SIDU",
+      "company": "Sidus Space Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 68,
+      "tier": "buy",
+      "entry": 5.89,
+      "entry_label": "Break above $5.86",
+      "range_str": "",
+      "prev_close": 5.95,
+      "prev_high": 5.86,
+      "fib_levels": [],
+      "price_at_scan": 5.53,
+      "gap": -5.21,
+      "rvol": 3.13,
+      "flags": [
+        "CATALYST \u00b7 DEAL",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ISPC",
+      "company": "iSpecimen Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 63,
+      "tier": "monitor",
+      "entry": 0.2,
+      "entry_label": "Break above $0.20",
+      "range_str": "",
+      "prev_close": 0.12,
+      "prev_high": 0.2,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.2
+        ],
+        [
+          "First target",
+          0.22
+        ],
+        [
+          "Second target",
+          0.25
+        ],
+        [
+          "Extended",
+          0.28
+        ]
+      ],
+      "price_at_scan": 0.17,
+      "gap": 41.63,
+      "rvol": 191.75,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "YXT",
+      "company": "Yxt.Com Group Holding Ltd. ADR",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 51,
+      "tier": "monitor",
+      "entry": 0.51,
+      "entry_label": "Reclaim $0.51",
+      "range_str": " \u2014 range to $0.58",
+      "prev_close": 0.37,
+      "prev_high": 0.58,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.58
+        ],
+        [
+          "First target",
+          0.64
+        ],
+        [
+          "Second target",
+          0.71
+        ],
+        [
+          "Extended",
+          0.79
+        ]
+      ],
+      "price_at_scan": 0.47,
+      "gap": 53.92,
+      "rvol": 7279.84,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "PBM",
+      "company": "Psyence Biomedical Ltd",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 50,
+      "tier": "monitor",
+      "entry": 9.87,
+      "entry_label": "Break above $9.82",
+      "range_str": "",
+      "prev_close": 5.87,
+      "prev_high": 9.82,
+      "fib_levels": [
+        [
+          "Prev High",
+          9.82
+        ],
+        [
+          "First target",
+          10.89
+        ],
+        [
+          "Second target",
+          12.26
+        ],
+        [
+          "Extended",
+          13.77
+        ]
+      ],
+      "price_at_scan": 8.53,
+      "gap": 67.12,
+      "rvol": 215.84,
+      "flags": [
+        "EXTENDED",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "NPT",
+      "company": "Texxon Holding Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Mid Cap",
+      "score": 41,
+      "tier": "monitor",
+      "entry": 3.72,
+      "entry_label": "Momentum above VWAP $3.52",
+      "range_str": " \u2014 range to $3.87",
+      "prev_close": 3.22,
+      "prev_high": 3.87,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.87
+        ],
+        [
+          "First target",
+          4.05
+        ],
+        [
+          "Second target",
+          4.27
+        ],
+        [
+          "Extended",
+          4.52
+        ]
+      ],
+      "price_at_scan": 3.7,
+      "gap": 3.73,
+      "rvol": 80.2,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
