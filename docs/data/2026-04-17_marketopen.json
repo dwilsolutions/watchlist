@@ -1,0 +1,466 @@
+{
+  "session": "marketopen",
+  "label": "Market Open",
+  "date": "2026-04-17",
+  "generated": "09:25 AM ET",
+  "tickers": [
+    {
+      "ticker": "EFOI",
+      "company": "Energy Focus Inc",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 100,
+      "tier": "buy",
+      "entry": 5.58,
+      "entry_label": "Break above $5.55",
+      "range_str": "",
+      "prev_close": 2.09,
+      "prev_high": 5.55,
+      "fib_levels": [
+        [
+          "Prev High",
+          5.55
+        ],
+        [
+          "First target",
+          6.49
+        ],
+        [
+          "Second target",
+          7.69
+        ],
+        [
+          "Extended",
+          9.01
+        ]
+      ],
+      "price_at_scan": 5.03,
+      "gap": 34.45,
+      "rvol": 17654.82,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "RPAY",
+      "company": "Repay Holdings Corporation",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 96,
+      "tier": "buy",
+      "entry": 4.75,
+      "entry_label": "Break above $4.73",
+      "range_str": "",
+      "prev_close": 3.18,
+      "prev_high": 4.73,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.73
+        ],
+        [
+          "First target",
+          5.15
+        ],
+        [
+          "Second target",
+          5.69
+        ],
+        [
+          "Extended",
+          6.28
+        ]
+      ],
+      "price_at_scan": 4.03,
+      "gap": 0.0,
+      "rvol": 185.6,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SNAL",
+      "company": "Snail Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 89,
+      "tier": "buy",
+      "entry": 1.0,
+      "entry_label": "Break above $1.00",
+      "range_str": "",
+      "prev_close": 0.76,
+      "prev_high": 1.0,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.0
+        ],
+        [
+          "First target",
+          1.07
+        ],
+        [
+          "Second target",
+          1.15
+        ],
+        [
+          "Extended",
+          1.24
+        ]
+      ],
+      "price_at_scan": 0.84,
+      "gap": 9.41,
+      "rvol": 15.41,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MYSE",
+      "company": "Myseum.AI Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 84,
+      "tier": "buy",
+      "entry": 4.29,
+      "entry_label": "Break above $4.27",
+      "range_str": "",
+      "prev_close": 3.3,
+      "prev_high": 4.27,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.27
+        ],
+        [
+          "First target",
+          4.53
+        ],
+        [
+          "Second target",
+          4.87
+        ],
+        [
+          "Extended",
+          5.24
+        ]
+      ],
+      "price_at_scan": 3.75,
+      "gap": -1.22,
+      "rvol": 88.77,
+      "flags": [
+        "CONTINUATION",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CRML",
+      "company": "Critical Metals Corp",
+      "sector": "Basic Materials",
+      "scan": "Mid Cap",
+      "score": 79,
+      "tier": "buy",
+      "entry": 11.93,
+      "entry_label": "Break above $11.87",
+      "range_str": "",
+      "prev_close": 9.27,
+      "prev_high": 11.87,
+      "fib_levels": [
+        [
+          "Prev High",
+          11.87
+        ],
+        [
+          "First target",
+          12.58
+        ],
+        [
+          "Second target",
+          13.48
+        ],
+        [
+          "Extended",
+          14.47
+        ]
+      ],
+      "price_at_scan": 11.64,
+      "gap": -0.43,
+      "rvol": 11.95,
+      "flags": [
+        "CONTINUATION"
+      ]
+    },
+    {
+      "ticker": "PBM",
+      "company": "Psyence Biomedical Ltd",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 71,
+      "tier": "buy",
+      "entry": 12.33,
+      "entry_label": "Break above $12.27",
+      "range_str": "",
+      "prev_close": 5.87,
+      "prev_high": 12.27,
+      "fib_levels": [
+        [
+          "Prev High",
+          12.27
+        ],
+        [
+          "First target",
+          14.01
+        ],
+        [
+          "Second target",
+          16.23
+        ],
+        [
+          "Extended",
+          18.67
+        ]
+      ],
+      "price_at_scan": 9.84,
+      "gap": 44.17,
+      "rvol": 499.17,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ABLV",
+      "company": "Able View Global Inc",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 70,
+      "tier": "buy",
+      "entry": 1.22,
+      "entry_label": "Break above $1.21",
+      "range_str": "",
+      "prev_close": 0.58,
+      "prev_high": 1.21,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.21
+        ],
+        [
+          "First target",
+          1.38
+        ],
+        [
+          "Second target",
+          1.6
+        ],
+        [
+          "Extended",
+          1.84
+        ]
+      ],
+      "price_at_scan": 0.71,
+      "gap": 60.71,
+      "rvol": 1127.2,
+      "flags": [
+        "NASDAQ NOTICE",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "BZAI",
+      "company": "Blaize Holdings Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 68,
+      "tier": "buy",
+      "entry": 2.3,
+      "entry_label": "Break above $2.29",
+      "range_str": "",
+      "prev_close": 1.73,
+      "prev_high": 2.29,
+      "fib_levels": [
+        [
+          "Prev High",
+          2.29
+        ],
+        [
+          "First target",
+          2.44
+        ],
+        [
+          "Second target",
+          2.64
+        ],
+        [
+          "Extended",
+          2.85
+        ]
+      ],
+      "price_at_scan": 2.06,
+      "gap": 29.48,
+      "rvol": 54.22,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "YXT",
+      "company": "Yxt.Com Group Holding Ltd. ADR",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 68,
+      "tier": "buy",
+      "entry": 0.85,
+      "entry_label": "Break above $0.85",
+      "range_str": "",
+      "prev_close": 0.37,
+      "prev_high": 0.85,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.85
+        ],
+        [
+          "First target",
+          0.98
+        ],
+        [
+          "Second target",
+          1.15
+        ],
+        [
+          "Extended",
+          1.33
+        ]
+      ],
+      "price_at_scan": 0.56,
+      "gap": 83.54,
+      "rvol": 17690.62,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ISPC",
+      "company": "iSpecimen Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 63,
+      "tier": "monitor",
+      "entry": 0.2,
+      "entry_label": "Break above $0.20",
+      "range_str": "",
+      "prev_close": 0.12,
+      "prev_high": 0.2,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.2
+        ],
+        [
+          "First target",
+          0.22
+        ],
+        [
+          "Second target",
+          0.25
+        ],
+        [
+          "Extended",
+          0.28
+        ]
+      ],
+      "price_at_scan": 0.16,
+      "gap": 15.97,
+      "rvol": 352.42,
+      "flags": [
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "AGAE",
+      "company": "Allied Gaming & Entertainment Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 61,
+      "tier": "monitor",
+      "entry": 0.73,
+      "entry_label": "Break above $0.73",
+      "range_str": "",
+      "prev_close": 0.52,
+      "prev_high": 0.73,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.73
+        ],
+        [
+          "First target",
+          0.79
+        ],
+        [
+          "Second target",
+          0.86
+        ],
+        [
+          "Extended",
+          0.94
+        ]
+      ],
+      "price_at_scan": 0.57,
+      "gap": 15.52,
+      "rvol": 29.21,
+      "flags": [
+        "CONTINUATION",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ELAB",
+      "company": "PMGC Holdings Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 40,
+      "tier": "monitor",
+      "entry": 5.22,
+      "entry_label": "Break above $5.19",
+      "range_str": "",
+      "prev_close": 3.81,
+      "prev_high": 5.19,
+      "fib_levels": [
+        [
+          "Prev High",
+          5.19
+        ],
+        [
+          "First target",
+          5.57
+        ],
+        [
+          "Second target",
+          6.04
+        ],
+        [
+          "Extended",
+          6.57
+        ]
+      ],
+      "price_at_scan": 3.9,
+      "gap": 4.72,
+      "rvol": 19.18,
+      "flags": [
+        "CATALYST \u00b7 DEAL",
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
