@@ -1,0 +1,588 @@
+{
+  "session": "afterhours",
+  "label": "After Hours",
+  "date": "2026-04-17",
+  "generated": "04:15 PM ET",
+  "tickers": [
+    {
+      "ticker": "IFRX",
+      "company": "InflaRx N.V",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "buy",
+      "entry": 1.6,
+      "entry_label": "Momentum above VWAP $1.52",
+      "range_str": " \u2014 range to $1.67",
+      "prev_close": 1.2,
+      "prev_high": 1.67,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.67
+        ],
+        [
+          "First target",
+          1.8
+        ],
+        [
+          "Second target",
+          1.96
+        ],
+        [
+          "Extended",
+          2.14
+        ]
+      ],
+      "price_at_scan": 1.59,
+      "gap": 0.0,
+      "rvol": 17.64,
+      "flags": [
+        "CONTINUATION",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "RPAY",
+      "company": "Repay Holdings Corporation",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "buy",
+      "entry": 4.13,
+      "entry_label": "Momentum above VWAP $4.08",
+      "range_str": " \u2014 range to $4.29",
+      "prev_close": 3.18,
+      "prev_high": 4.29,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.29
+        ],
+        [
+          "First target",
+          4.59
+        ],
+        [
+          "Second target",
+          4.98
+        ],
+        [
+          "Extended",
+          5.4
+        ]
+      ],
+      "price_at_scan": 4.11,
+      "gap": 25.0,
+      "rvol": 18.4,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "TRVI",
+      "company": "Trevi Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "buy",
+      "entry": 15.31,
+      "entry_label": "Momentum above VWAP $15.06",
+      "range_str": " \u2014 range to $15.76",
+      "prev_close": 14.54,
+      "prev_high": 15.76,
+      "fib_levels": [
+        [
+          "Prev High",
+          15.76
+        ],
+        [
+          "First target",
+          16.09
+        ],
+        [
+          "Second target",
+          16.51
+        ],
+        [
+          "Extended",
+          16.98
+        ]
+      ],
+      "price_at_scan": 15.23,
+      "gap": -0.76,
+      "rvol": 5.3,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MYSE",
+      "company": "Myseum.AI Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 96,
+      "tier": "buy",
+      "entry": 3.83,
+      "entry_label": "Momentum above VWAP $3.68",
+      "range_str": " \u2014 range to $3.95",
+      "prev_close": 3.3,
+      "prev_high": 3.95,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.95
+        ],
+        [
+          "First target",
+          4.13
+        ],
+        [
+          "Second target",
+          4.35
+        ],
+        [
+          "Extended",
+          4.6
+        ]
+      ],
+      "price_at_scan": 3.81,
+      "gap": 15.0,
+      "rvol": 8.05,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "BZAI",
+      "company": "Blaize Holdings Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 84,
+      "tier": "buy",
+      "entry": 2.53,
+      "entry_label": "Momentum above VWAP $2.38",
+      "range_str": " \u2014 range to $2.64",
+      "prev_close": 1.73,
+      "prev_high": 2.64,
+      "fib_levels": [
+        [
+          "Prev High",
+          2.64
+        ],
+        [
+          "First target",
+          2.89
+        ],
+        [
+          "Second target",
+          3.2
+        ],
+        [
+          "Extended",
+          3.55
+        ]
+      ],
+      "price_at_scan": 2.52,
+      "gap": 17.05,
+      "rvol": 14.0,
+      "flags": [
+        "GAP QUALITY",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "DARE",
+      "company": "Dare Bioscience Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 81,
+      "tier": "buy",
+      "entry": 3.13,
+      "entry_label": "Reclaim $3.12",
+      "range_str": " \u2014 range to $3.43",
+      "prev_close": 2.72,
+      "prev_high": 3.43,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.43
+        ],
+        [
+          "First target",
+          3.62
+        ],
+        [
+          "Second target",
+          3.87
+        ],
+        [
+          "Extended",
+          4.14
+        ]
+      ],
+      "price_at_scan": 2.95,
+      "gap": 20.22,
+      "rvol": 72.25,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "EFOI",
+      "company": "Energy Focus Inc",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 77,
+      "tier": "buy",
+      "entry": 7.7,
+      "entry_label": "Reclaim $7.66",
+      "range_str": " \u2014 range to $9.84",
+      "prev_close": 2.09,
+      "prev_high": 9.84,
+      "fib_levels": [
+        [
+          "Prev High",
+          9.84
+        ],
+        [
+          "First target",
+          11.95
+        ],
+        [
+          "Second target",
+          14.63
+        ],
+        [
+          "Extended",
+          17.59
+        ]
+      ],
+      "price_at_scan": 6.49,
+      "gap": 157.42,
+      "rvol": 8595.37,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "ALREADY EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ABLV",
+      "company": "Able View Global Inc",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 68,
+      "tier": "buy",
+      "entry": 0.81,
+      "entry_label": "Reclaim $0.81",
+      "range_str": " \u2014 range to $0.95",
+      "prev_close": 0.58,
+      "prev_high": 0.95,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.95
+        ],
+        [
+          "First target",
+          1.05
+        ],
+        [
+          "Second target",
+          1.18
+        ],
+        [
+          "Extended",
+          1.32
+        ]
+      ],
+      "price_at_scan": 0.74,
+      "gap": 27.59,
+      "rvol": 110.89,
+      "flags": [
+        "GAP QUALITY",
+        "NASDAQ NOTICE",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CRML",
+      "company": "Critical Metals Corp",
+      "sector": "Basic Materials",
+      "scan": "Mid Cap",
+      "score": 60,
+      "tier": "monitor",
+      "entry": 12.79,
+      "entry_label": "Reclaim $12.73",
+      "range_str": " \u2014 range to $13.75",
+      "prev_close": 9.27,
+      "prev_high": 13.75,
+      "fib_levels": [
+        [
+          "Prev High",
+          13.75
+        ],
+        [
+          "First target",
+          14.97
+        ],
+        [
+          "Second target",
+          16.52
+        ],
+        [
+          "Extended",
+          18.23
+        ]
+      ],
+      "price_at_scan": 12.56,
+      "gap": 22.01,
+      "rvol": 5.85,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "EXTENDED"
+      ]
+    },
+    {
+      "ticker": "AGAE",
+      "company": "Allied Gaming & Entertainment Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 57,
+      "tier": "monitor",
+      "entry": 0.69,
+      "entry_label": "Momentum above VWAP $0.64",
+      "range_str": " \u2014 range to $0.74",
+      "prev_close": 0.52,
+      "prev_high": 0.74,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.74
+        ],
+        [
+          "First target",
+          0.8
+        ],
+        [
+          "Second target",
+          0.88
+        ],
+        [
+          "Extended",
+          0.96
+        ]
+      ],
+      "price_at_scan": 0.69,
+      "gap": 9.22,
+      "rvol": 3.12,
+      "flags": [
+        "CONTINUATION",
+        "EXTENDED",
+        "PRIOR DAY RUNNER"
+      ]
+    },
+    {
+      "ticker": "PBM",
+      "company": "Psyence Biomedical Ltd",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 50,
+      "tier": "monitor",
+      "entry": 8.93,
+      "entry_label": "Reclaim $8.88",
+      "range_str": " \u2014 range to $10.53",
+      "prev_close": 5.87,
+      "prev_high": 10.53,
+      "fib_levels": [
+        [
+          "Prev High",
+          10.53
+        ],
+        [
+          "First target",
+          11.8
+        ],
+        [
+          "Second target",
+          13.41
+        ],
+        [
+          "Extended",
+          15.19
+        ]
+      ],
+      "price_at_scan": 7.6,
+      "gap": 67.29,
+      "rvol": 43.68,
+      "flags": [
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "YXT",
+      "company": "Yxt.Com Group Holding Ltd. ADR",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 48,
+      "tier": "monitor",
+      "entry": 0.61,
+      "entry_label": "Reclaim $0.60",
+      "range_str": " \u2014 range to $0.72",
+      "prev_close": 0.37,
+      "prev_high": 0.72,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.72
+        ],
+        [
+          "First target",
+          0.82
+        ],
+        [
+          "Second target",
+          0.94
+        ],
+        [
+          "Extended",
+          1.07
+        ]
+      ],
+      "price_at_scan": 0.5,
+      "gap": 53.92,
+      "rvol": 2093.82,
+      "flags": [
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "FRMM",
+      "company": "Forum Markets Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 47,
+      "tier": "monitor",
+      "entry": 4.42,
+      "entry_label": "Reclaim $4.40",
+      "range_str": " \u2014 range to $5.55",
+      "prev_close": 2.37,
+      "prev_high": 5.55,
+      "fib_levels": [
+        [
+          "Prev High",
+          5.55
+        ],
+        [
+          "First target",
+          6.41
+        ],
+        [
+          "Second target",
+          7.52
+        ],
+        [
+          "Extended",
+          8.73
+        ]
+      ],
+      "price_at_scan": 4.29,
+      "gap": 26.16,
+      "rvol": 74.26,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "ALREADY EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "EVTL",
+      "company": "Vertical Aerospace Ltd",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 46,
+      "tier": "monitor",
+      "entry": 3.07,
+      "entry_label": "Reclaim $3.05",
+      "range_str": " \u2014 range to $3.42",
+      "prev_close": 3.34,
+      "prev_high": 3.42,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.42
+        ],
+        [
+          "First target",
+          3.44
+        ],
+        [
+          "Second target",
+          3.47
+        ],
+        [
+          "Extended",
+          3.5
+        ]
+      ],
+      "price_at_scan": 2.99,
+      "gap": 1.2,
+      "rvol": 4.76,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "DFNS",
+      "company": "T3 Defense Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 40,
+      "tier": "monitor",
+      "entry": 0.79,
+      "entry_label": "Reclaim $0.79",
+      "range_str": " \u2014 range to $0.88",
+      "prev_close": 0.68,
+      "prev_high": 0.88,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.88
+        ],
+        [
+          "First target",
+          0.93
+        ],
+        [
+          "Second target",
+          1.0
+        ],
+        [
+          "Extended",
+          1.08
+        ]
+      ],
+      "price_at_scan": 0.76,
+      "gap": -0.31,
+      "rvol": 4.23,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
