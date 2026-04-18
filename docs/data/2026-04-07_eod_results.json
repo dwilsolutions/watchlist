@@ -1,6 +1,6 @@
 {
   "date": "2026-04-07",
-  "generated": "10:44 PM ET",
+  "generated": "backfill",
   "sessions": {
     "powerhour": [
       {
@@ -22,7 +22,7 @@
           "CONTINUATION",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "up"
       },
       {
         "ticker": "BMEA",
@@ -43,7 +43,7 @@
           "CONTINUATION",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "flat"
       },
       {
         "ticker": "SKYQ",
@@ -66,7 +66,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "flat"
       },
       {
         "ticker": "CUPR",
@@ -88,7 +88,8 @@
           "GAP QUALITY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "runner",
+        "dumped": true
       },
       {
         "ticker": "SILO",
@@ -109,7 +110,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "flat"
       },
       {
         "ticker": "KPRX",
@@ -130,7 +131,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "tp1"
+        "outcome": "flat"
       },
       {
         "ticker": "LXEH",
@@ -151,7 +152,8 @@
           "CONTINUATION",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "monster",
+        "dumped": true
       },
       {
         "ticker": "MEHA",
@@ -172,7 +174,7 @@
           "CONTINUATION",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "mover"
       },
       {
         "ticker": "SPCE",
@@ -193,7 +195,7 @@
           "CONTINUATION",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "mover"
       },
       {
         "ticker": "ADVB",
@@ -215,7 +217,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "flat"
       },
       {
         "ticker": "HCAI",
@@ -236,7 +238,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "up"
       },
       {
         "ticker": "IPST",
@@ -258,7 +260,8 @@
           "GAP QUALITY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "big_runner",
+        "dumped": true
       },
       {
         "ticker": "TDIC",
@@ -280,7 +283,8 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "runner",
+        "dumped": true
       },
       {
         "ticker": "CETX",
@@ -301,7 +305,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "flat"
       },
       {
         "ticker": "QNCX",
@@ -322,7 +326,7 @@
           "CONTINUATION",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "monster"
       },
       {
         "ticker": "MIGI",
@@ -344,7 +348,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "flat"
       },
       {
         "ticker": "AESI",
@@ -364,7 +368,7 @@
         "flags": [
           "SECTOR MOMENTUM"
         ],
-        "outcome": "open_down"
+        "outcome": "up"
       },
       {
         "ticker": "IRIX",
@@ -384,7 +388,8 @@
         "flags": [
           "SECTOR MOMENTUM"
         ],
-        "outcome": "open_down"
+        "outcome": "big_runner",
+        "dumped": true
       },
       {
         "ticker": "MGN",
@@ -407,7 +412,8 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "big_runner",
+        "dumped": true
       },
       {
         "ticker": "GRCE",
@@ -428,7 +434,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "flat"
       },
       {
         "ticker": "LNAI",
@@ -449,7 +455,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "flat"
       }
     ]
   }

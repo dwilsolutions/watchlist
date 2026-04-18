@@ -1,137 +1,7 @@
 {
   "date": "2026-04-08",
-  "generated": "10:53 PM ET",
+  "generated": "backfill",
   "sessions": {
-    "premarket": [
-      {
-        "ticker": "OMEX",
-        "company": "Odyssey Marine Exploration, Inc",
-        "sector": "Basic Materials",
-        "scan": "Mid Cap",
-        "score": 89,
-        "tier": "buy",
-        "entry": 2.2,
-        "stop": 2.1,
-        "tp1": 2.41,
-        "tp2": 2.63,
-        "tp3": 2.96,
-        "price_at_scan": 2.19,
-        "gap": 9.24,
-        "rvol": 2202.58,
-        "flags": [
-          "CONTINUATION",
-          "SECTOR MOMENTUM"
-        ],
-        "outcome": "stopped"
-      },
-      {
-        "ticker": "BBGI",
-        "company": "Beasley Broadcast Group Inc",
-        "sector": "Communication Services",
-        "scan": "Low Float",
-        "score": 86,
-        "tier": "buy",
-        "entry": 5.42,
-        "stop": 5.17,
-        "tp1": 5.93,
-        "tp2": 6.47,
-        "tp3": 7.28,
-        "price_at_scan": 5.39,
-        "gap": 9.87,
-        "rvol": 7075.55,
-        "flags": [
-          "CONTINUATION",
-          "SECTOR MOMENTUM"
-        ],
-        "outcome": "stopped"
-      },
-      {
-        "ticker": "CYCU",
-        "company": "Cycurion Inc",
-        "sector": "Technology",
-        "scan": "Low Float",
-        "score": 77,
-        "tier": "buy",
-        "entry": 1.73,
-        "stop": 1.65,
-        "tp1": 1.89,
-        "tp2": 2.06,
-        "tp3": 2.32,
-        "price_at_scan": 1.72,
-        "gap": 10.08,
-        "rvol": 766.38,
-        "flags": [
-          "CONTINUATION",
-          "GAP QUALITY",
-          "SECTOR MOMENTUM"
-        ],
-        "outcome": "stopped"
-      },
-      {
-        "ticker": "QNCX",
-        "company": "Quince Therapeutics Inc",
-        "sector": "Healthcare",
-        "scan": "Mid Cap",
-        "score": 69,
-        "tier": "buy",
-        "entry": 0.33,
-        "stop": 0.3,
-        "tp1": 0.34,
-        "tp2": 0.37,
-        "tp3": 0.42,
-        "price_at_scan": 0.31,
-        "gap": 67.67,
-        "rvol": 110.74,
-        "flags": [
-          "CONTINUATION",
-          "GAP QUALITY",
-          "BELOW VWAP PROXY",
-          "SECTOR MOMENTUM"
-        ],
-        "outcome": "stopped"
-      },
-      {
-        "ticker": "HCAI",
-        "company": "Huachen AI Parking Management Technology Holding Co. Ltd",
-        "sector": "Industrials",
-        "scan": "Low Float",
-        "score": 60,
-        "tier": "monitor",
-        "entry": 0.4,
-        "stop": 0.35,
-        "tp1": 0.4,
-        "tp2": 0.43,
-        "tp3": 0.49,
-        "price_at_scan": 0.36,
-        "gap": 16.43,
-        "rvol": 15.44,
-        "flags": [
-          "BELOW VWAP PROXY",
-          "SECTOR MOMENTUM"
-        ],
-        "outcome": "stopped"
-      },
-      {
-        "ticker": "ELAB",
-        "company": "PMGC Holdings Inc",
-        "sector": "Healthcare",
-        "scan": "Low Float",
-        "score": 51,
-        "tier": "monitor",
-        "entry": 4.9,
-        "stop": 4.68,
-        "tp1": 5.37,
-        "tp2": 5.86,
-        "tp3": 6.59,
-        "price_at_scan": 4.88,
-        "gap": -3.19,
-        "rvol": 58.85,
-        "flags": [
-          "SECTOR MOMENTUM"
-        ],
-        "outcome": "stopped"
-      }
-    ],
     "midday": [
       {
         "ticker": "BBGI",
@@ -154,7 +24,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "tp2"
+        "outcome": "big_runner"
       },
       {
         "ticker": "SIDU",
@@ -175,7 +45,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "open_down"
+        "outcome": "flat"
       },
       {
         "ticker": "OMEX",
@@ -196,7 +66,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "flat"
       },
       {
         "ticker": "HCAI",
@@ -218,7 +88,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "up"
       },
       {
         "ticker": "CYCU",
@@ -241,7 +111,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "up"
       },
       {
         "ticker": "SPCE",
@@ -262,7 +132,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "open_down"
+        "outcome": "flat"
       },
       {
         "ticker": "AESI",
@@ -282,7 +152,7 @@
         "flags": [
           "SECTOR MOMENTUM"
         ],
-        "outcome": "open_up"
+        "outcome": "flat"
       },
       {
         "ticker": "PROP",
@@ -303,7 +173,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "flat"
       },
       {
         "ticker": "OTLK",
@@ -325,7 +195,7 @@
           "CATALYST \u00b7 FDA",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "flat"
       },
       {
         "ticker": "QNCX",
@@ -346,7 +216,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "flat"
       },
       {
         "ticker": "ELAB",
@@ -368,7 +238,8 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "runner",
+        "dumped": true
       },
       {
         "ticker": "EVTL",
@@ -389,7 +260,7 @@
           "GAP QUALITY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "open_down"
+        "outcome": "up"
       },
       {
         "ticker": "MGN",
@@ -410,7 +281,7 @@
           "CONTINUATION",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "up"
       }
     ],
     "powerhour": [
@@ -435,7 +306,7 @@
           "CATALYST \u00b7 8-K",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "open_down"
+        "outcome": "up"
       },
       {
         "ticker": "MIGI",
@@ -456,7 +327,7 @@
           "CONTINUATION",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "mover"
       },
       {
         "ticker": "DKI",
@@ -477,7 +348,8 @@
           "CONTINUATION",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "tp3"
+        "outcome": "monster",
+        "dumped": true
       },
       {
         "ticker": "AESI",
@@ -497,7 +369,7 @@
         "flags": [
           "SECTOR MOMENTUM"
         ],
-        "outcome": "open_down"
+        "outcome": "up"
       },
       {
         "ticker": "VSME",
@@ -518,7 +390,7 @@
           "GAP QUALITY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "flat"
       },
       {
         "ticker": "PROP",
@@ -539,7 +411,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "open_down"
+        "outcome": "flat"
       },
       {
         "ticker": "HCAI",
@@ -561,7 +433,7 @@
           "REVERSE SPLIT",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "flat"
       },
       {
         "ticker": "CUE",
@@ -581,7 +453,7 @@
         "flags": [
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "mover"
       },
       {
         "ticker": "OMEX",
@@ -602,7 +474,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "flat"
       },
       {
         "ticker": "QNCX",
@@ -623,7 +495,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "flat"
       },
       {
         "ticker": "CLIK",
@@ -643,7 +515,7 @@
         "flags": [
           "SECTOR MOMENTUM"
         ],
-        "outcome": "tp2"
+        "outcome": "runner"
       },
       {
         "ticker": "CYCU",
@@ -664,7 +536,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "tp2"
+        "outcome": "flat"
       },
       {
         "ticker": "ELAB",
@@ -686,7 +558,7 @@
           "BELOW VWAP PROXY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "open_down"
+        "outcome": "flat"
       },
       {
         "ticker": "EVTL",
@@ -707,7 +579,7 @@
           "GAP QUALITY",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "open_down"
+        "outcome": "up"
       },
       {
         "ticker": "OTLK",
@@ -728,7 +600,7 @@
           "CATALYST \u00b7 FDA",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "flat"
       },
       {
         "ticker": "WGRX",
@@ -749,7 +621,138 @@
           "CONTINUATION",
           "SECTOR MOMENTUM"
         ],
-        "outcome": "stopped"
+        "outcome": "flat"
+      }
+    ],
+    "premarket": [
+      {
+        "ticker": "OMEX",
+        "company": "Odyssey Marine Exploration, Inc",
+        "sector": "Basic Materials",
+        "scan": "Mid Cap",
+        "score": 89,
+        "tier": "buy",
+        "entry": 2.2,
+        "stop": 2.1,
+        "tp1": 2.41,
+        "tp2": 2.63,
+        "tp3": 2.96,
+        "price_at_scan": 2.19,
+        "gap": 9.24,
+        "rvol": 2202.58,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
+      },
+      {
+        "ticker": "BBGI",
+        "company": "Beasley Broadcast Group Inc",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 86,
+        "tier": "buy",
+        "entry": 5.42,
+        "stop": 5.17,
+        "tp1": 5.93,
+        "tp2": 6.47,
+        "tp3": 7.28,
+        "price_at_scan": 5.39,
+        "gap": 9.87,
+        "rvol": 7075.55,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "big_runner"
+      },
+      {
+        "ticker": "CYCU",
+        "company": "Cycurion Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 77,
+        "tier": "buy",
+        "entry": 1.73,
+        "stop": 1.65,
+        "tp1": 1.89,
+        "tp2": 2.06,
+        "tp3": 2.32,
+        "price_at_scan": 1.72,
+        "gap": 10.08,
+        "rvol": 766.38,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "runner",
+        "dumped": true
+      },
+      {
+        "ticker": "QNCX",
+        "company": "Quince Therapeutics Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 69,
+        "tier": "buy",
+        "entry": 0.33,
+        "stop": 0.3,
+        "tp1": 0.34,
+        "tp2": 0.37,
+        "tp3": 0.42,
+        "price_at_scan": 0.31,
+        "gap": 67.67,
+        "rvol": 110.74,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "BELOW VWAP PROXY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "big_runner"
+      },
+      {
+        "ticker": "HCAI",
+        "company": "Huachen AI Parking Management Technology Holding Co. Ltd",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 60,
+        "tier": "monitor",
+        "entry": 0.4,
+        "stop": 0.35,
+        "tp1": 0.4,
+        "tp2": 0.43,
+        "tp3": 0.49,
+        "price_at_scan": 0.36,
+        "gap": 16.43,
+        "rvol": 15.44,
+        "flags": [
+          "BELOW VWAP PROXY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "runner"
+      },
+      {
+        "ticker": "ELAB",
+        "company": "PMGC Holdings Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 51,
+        "tier": "monitor",
+        "entry": 4.9,
+        "stop": 4.68,
+        "tp1": 5.37,
+        "tp2": 5.86,
+        "tp3": 6.59,
+        "price_at_scan": 4.88,
+        "gap": -3.19,
+        "rvol": 58.85,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
       }
     ]
   }
