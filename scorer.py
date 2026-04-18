@@ -153,6 +153,7 @@ def score_row(row, session="", prior_runners=None):
     perf_quarter = pct(row.get("Performance (Quarter)"))
     chg_open     = pct(row.get("Change from Open"))
     news         = str(row.get("News Title", ""))
+    news_url     = str(row.get("News URL", "")).strip()
     h = safe(row.get("High")); l = safe(row.get("Low")); o = safe(row.get("Open"))
     vwap_proxy   = (h + l + o) / 3 if (h and l and o) else price
     real_vwap    = safe(row.get("_real_vwap"))
@@ -356,6 +357,7 @@ def score_row(row, session="", prior_runners=None):
         "prev_high":   round(prev_high, 2) if prev_high else None,
         "fib_levels":  fib_levels,
         "news":        news[:120],
+        "news_url":    news_url,
         "perf_week":   perf_week, "perf_month": perf_month,
         "continuation": continuation, "gap_quality": gap_quality,
     }
@@ -480,12 +482,16 @@ def card_html(r):
     <div class="st"><div class="sl">{vwap_lbl}</div><div class="sv" style="color:{vwap_col}">${vwap_val}</div></div>
   </div>
   <div class="entry-box">
-    <span class="entry-label">▶ {r["entry_label"]}{r["range_str"]}</span>
+    <span class="entry-label">▶ Proposed Entry: {r["entry_label"]}{r["range_str"]}</span>
   </div>
   <div class="lvls">
     {_fib_html(r["fib_levels"])}
   </div>
-  <div class="news-line">{r["news"]}</div>
+  <div class="news-line">{
+    f'<a href="{r["news_url"]}" target="_blank" style="color:inherit;text-decoration:none;">{r["news"]}</a>'
+    if r.get("news_url") and r["news_url"].startswith("http")
+    else r["news"]
+  }</div>
 </div>"""
 
 
@@ -857,6 +863,7 @@ def main():
                 "gap": r["gap"],
                 "rvol": r["rvol"],
                 "flags": [f[0] for f in r["flags"]],
+                "news_url": r.get("news_url", ""),
             }
             for r in results if r["total"] >= 40  # Buy Watch + Monitor only
         ]
