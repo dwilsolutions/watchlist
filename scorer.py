@@ -383,6 +383,45 @@ FLAG_CFG = {
     "vwap":     ("#3d3010", "#f5d96e"),
 }
 
+
+RANK_CFG = {
+    "hot":   ("#1e3d2a", "#6ee89a", "🔥 HOT"),
+    "warm":  ("#3d2e1a", "#f5c46e", "⚡ WARM"),
+    "watch": ("#1a2a3a", "#7ab4f5", "👁 WATCH"),
+    "avoid": ("#3d1a1a", "#f57a7a", "✗ AVOID"),
+}
+
+def get_rank(r):
+    rvol  = r.get("rvol", 0) or 0
+    gap   = r.get("gap",  0) or 0
+    flags = [l for l, _ in r.get("flags", [])]
+
+    has_catalyst    = any("CATALYST" in f or "NASDAQ NOTICE" in f for f in flags)
+    is_prior_runner = "PRIOR DAY RUNNER" in flags
+    is_danger       = any(f in ("REVERSE SPLIT", "CRASHED · GAP DOWN") for f in flags)
+
+    # Hard avoid
+    if is_danger or gap < -10:
+        return "avoid"
+    if is_prior_runner and not (has_catalyst and rvol >= 100):
+        return "avoid"
+    if rvol < 5:
+        return "avoid"
+
+    # Hot — strong rvol + reason
+    if rvol >= 100 and (gap >= 5 or has_catalyst):
+        return "hot"
+    if rvol >= 50 and gap >= 20:
+        return "hot"
+
+    # Warm — meaningful rvol
+    if rvol >= 20:
+        return "warm"
+    if rvol >= 10 and (gap >= 5 or has_catalyst):
+        return "warm"
+
+    return "watch"
+
 SCAN_COLORS = {
     "Low Float": ("#1a2a3d", "#7ab4f5"),
     "Mid Cap":   ("#2a1e3d", "#b07af5"),
@@ -418,11 +457,15 @@ def card_html(r):
     vwap_lbl  = "VWAP" if r.get("real_vwap") else "VWAP~"
     vwap_col  = "#6ee89a" if r["above_vwap"] else "#f57a7a"
 
-    return f"""<div class="card">
+    rank               = get_rank(r)
+    rank_bg, rank_tx, rank_lbl = RANK_CFG[rank]
+
+    return f"""<div class="card {rank}">
   <div class="r1">
     <span class="tkr">{t}</span>
     <span class="co">{r["company"][:24]}</span>
     <span class="scan-tag" style="background:{scan_bg};color:{scan_tx};border-color:{scan_tx}44">{r["scan"]}</span>
+    <span class="rank-pill" style="background:{rank_bg};color:{rank_tx}">{rank_lbl}</span>
     <span class="rvol-pill">{r["rvol"]:.0f}x RVol</span>
     <span class="ch {chg_cls}">{chg_sign}{r["change"]:.1f}%</span>
     <a class="clink" href="https://finviz.com/quote.ashx?t={t}" target="_blank">Chart ↗</a>
@@ -470,12 +513,14 @@ a{color:inherit;text-decoration:none;}
 .sec-lbl::after{content:'';flex:1;height:1px;background:var(--border);}
 .cards{display:flex;flex-direction:column;gap:9px;}
 .empty{color:var(--muted);font-size:12px;padding:8px 0;}
-.card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:13px 15px;border-left:3px solid var(--session-color);}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:13px 15px;border-left:3px solid var(--muted);}
+.card.hot{border-left-color:#6ee89a;}.card.warm{border-left-color:#f5c46e;}.card.watch{border-left-color:#7ab4f5;}.card.avoid{border-left-color:#f57a7a;opacity:0.55;}
 .r1{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:9px;}
 .tkr{font-family:var(--sans);font-size:16px;font-weight:700;min-width:46px;}
 .co{font-size:11px;color:var(--muted);flex:1;min-width:60px;}
 .scan-tag{font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid;white-space:nowrap;}
-.rvol-pill{font-size:11px;font-weight:500;padding:2px 9px;border-radius:20px;background:#1a2a3d;color:#7ab4f5;}
+.rank-pill{font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;letter-spacing:0.02em;}
+.rvol-pill{font-size:11px;font-weight:500;padding:2px 9px;border-radius:20px;background:#1c1f23;color:#656c7a;}
 .ch{font-size:12px;font-weight:500;}.pos{color:#5cc98a;}.neg{color:#e06060;}
 .clink{font-size:11px;color:#5a8fd4;margin-left:auto;white-space:nowrap;}
 .clink:hover{color:#7aaef5;}
@@ -755,7 +800,8 @@ def main():
 
     results = [score_row(r, session=session, prior_runners=prior_runners) for r in unique]
     results = apply_sector_bonus(results)
-    results.sort(key=lambda x: x["rvol"], reverse=True)
+    rank_order = {"hot": 0, "warm": 1, "watch": 2, "avoid": 3}
+    results.sort(key=lambda x: (rank_order.get(get_rank(x), 4), -x["rvol"]))
 
     live     = is_market_live(unique)
     html     = render_html(results, session, trading_day, label, note, gen_time, market_live=live)
