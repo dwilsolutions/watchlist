@@ -2,86 +2,8 @@
   "session": "premarket",
   "label": "Pre-Market",
   "date": "2026-04-20",
-  "generated": "12:22 AM ET",
+  "generated": "06:55 AM ET",
   "tickers": [
-    {
-      "ticker": "EFOI",
-      "company": "Energy Focus Inc",
-      "sector": "Consumer Cyclical",
-      "scan": "Low Float",
-      "score": 94,
-      "tier": "watch",
-      "entry": 9.89,
-      "entry_label": "Break above $9.84",
-      "range_str": "",
-      "prev_close": 2.09,
-      "prev_high": 9.84,
-      "fib_levels": [
-        [
-          "Prev High",
-          9.84
-        ],
-        [
-          "First target",
-          11.95
-        ],
-        [
-          "Second target",
-          14.63
-        ],
-        [
-          "Extended",
-          17.59
-        ]
-      ],
-      "price_at_scan": 6.49,
-      "gap": 157.42,
-      "rvol": 8718.93,
-      "flags": [
-        "CONTINUATION",
-        "GAP QUALITY",
-        "PRIOR DAY RUNNER",
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "YXT",
-      "company": "Yxt.Com Group Holding Ltd. ADR",
-      "sector": "Technology",
-      "scan": "Mid Cap",
-      "score": 50,
-      "tier": "watch",
-      "entry": 0.72,
-      "entry_label": "Break above $0.72",
-      "range_str": "",
-      "prev_close": 0.37,
-      "prev_high": 0.72,
-      "fib_levels": [
-        [
-          "Prev High",
-          0.72
-        ],
-        [
-          "First target",
-          0.82
-        ],
-        [
-          "Second target",
-          0.94
-        ],
-        [
-          "Extended",
-          1.07
-        ]
-      ],
-      "price_at_scan": 0.5,
-      "gap": 53.92,
-      "rvol": 2109.9,
-      "flags": [
-        "PRIOR DAY RUNNER",
-        "SECTOR MOMENTUM"
-      ]
-    },
     {
       "ticker": "ABLV",
       "company": "Able View Global Inc",
@@ -118,46 +40,6 @@
       "flags": [
         "GAP QUALITY",
         "NASDAQ NOTICE",
-        "PRIOR DAY RUNNER",
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "FRMM",
-      "company": "Forum Markets Inc",
-      "sector": "Technology",
-      "scan": "Low Float",
-      "score": 72,
-      "tier": "watch",
-      "entry": 5.58,
-      "entry_label": "Break above $5.55",
-      "range_str": "",
-      "prev_close": 2.37,
-      "prev_high": 5.55,
-      "fib_levels": [
-        [
-          "Prev High",
-          5.55
-        ],
-        [
-          "First target",
-          6.41
-        ],
-        [
-          "Second target",
-          7.52
-        ],
-        [
-          "Extended",
-          8.73
-        ]
-      ],
-      "price_at_scan": 4.29,
-      "gap": 26.16,
-      "rvol": 78.67,
-      "flags": [
-        "CONTINUATION",
-        "GAP QUALITY",
         "PRIOR DAY RUNNER",
         "SECTOR MOMENTUM"
       ]
@@ -315,6 +197,267 @@
       ]
     },
     {
+      "ticker": "TOVX",
+      "company": "Theriva Biologics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 69,
+      "tier": "watch",
+      "entry": 0.26,
+      "entry_label": "Current $0.26",
+      "range_str": " \u2014 range to $0.27",
+      "prev_close": 0.25,
+      "prev_high": 0.26,
+      "fib_levels": [
+        [
+          "Second target",
+          0.27
+        ],
+        [
+          "Extended",
+          0.27
+        ]
+      ],
+      "price_at_scan": 0.26,
+      "gap": 1.63,
+      "rvol": 8.93,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MYSE",
+      "company": "Myseum.AI Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 98,
+      "tier": "watch",
+      "entry": 3.97,
+      "entry_label": "Break above $3.95",
+      "range_str": "",
+      "prev_close": 3.3,
+      "prev_high": 3.95,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.95
+        ],
+        [
+          "First target",
+          4.13
+        ],
+        [
+          "Second target",
+          4.35
+        ],
+        [
+          "Extended",
+          4.6
+        ]
+      ],
+      "price_at_scan": 3.81,
+      "gap": 15.0,
+      "rvol": 8.19,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "BEAT",
+      "company": "HeartBeam Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 42,
+      "tier": "watch",
+      "entry": 1.0,
+      "entry_label": "Break above $1.00",
+      "range_str": "",
+      "prev_close": 0.81,
+      "prev_high": 1.0,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.0
+        ],
+        [
+          "First target",
+          1.05
+        ],
+        [
+          "Second target",
+          1.12
+        ],
+        [
+          "Extended",
+          1.19
+        ]
+      ],
+      "price_at_scan": 0.92,
+      "gap": 11.11,
+      "rvol": 5.73,
+      "flags": [
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "TRVI",
+      "company": "Trevi Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 97,
+      "tier": "watch",
+      "entry": 15.84,
+      "entry_label": "Break above $15.76",
+      "range_str": "",
+      "prev_close": 14.54,
+      "prev_high": 15.76,
+      "fib_levels": [
+        [
+          "Prev High",
+          15.76
+        ],
+        [
+          "First target",
+          16.09
+        ],
+        [
+          "Second target",
+          16.51
+        ],
+        [
+          "Extended",
+          16.98
+        ]
+      ],
+      "price_at_scan": 15.23,
+      "gap": -0.76,
+      "rvol": 5.36,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "EFOI",
+      "company": "Energy Focus Inc",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 94,
+      "tier": "watch",
+      "entry": 9.89,
+      "entry_label": "Break above $9.84",
+      "range_str": "",
+      "prev_close": 2.09,
+      "prev_high": 9.84,
+      "fib_levels": [
+        [
+          "Prev High",
+          9.84
+        ],
+        [
+          "First target",
+          11.95
+        ],
+        [
+          "Second target",
+          14.63
+        ],
+        [
+          "Extended",
+          17.59
+        ]
+      ],
+      "price_at_scan": 6.49,
+      "gap": 157.42,
+      "rvol": 8718.93,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "YXT",
+      "company": "Yxt.Com Group Holding Ltd. ADR",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 50,
+      "tier": "watch",
+      "entry": 0.72,
+      "entry_label": "Break above $0.72",
+      "range_str": "",
+      "prev_close": 0.37,
+      "prev_high": 0.72,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.72
+        ],
+        [
+          "First target",
+          0.82
+        ],
+        [
+          "Second target",
+          0.94
+        ],
+        [
+          "Extended",
+          1.07
+        ]
+      ],
+      "price_at_scan": 0.5,
+      "gap": 53.92,
+      "rvol": 2109.9,
+      "flags": [
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "FRMM",
+      "company": "Forum Markets Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 72,
+      "tier": "watch",
+      "entry": 5.58,
+      "entry_label": "Break above $5.55",
+      "range_str": "",
+      "prev_close": 2.37,
+      "prev_high": 5.55,
+      "fib_levels": [
+        [
+          "Prev High",
+          5.55
+        ],
+        [
+          "First target",
+          6.41
+        ],
+        [
+          "Second target",
+          7.52
+        ],
+        [
+          "Extended",
+          8.73
+        ]
+      ],
+      "price_at_scan": 4.29,
+      "gap": 26.16,
+      "rvol": 78.67,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
       "ticker": "NPT",
       "company": "Texxon Holding Ltd",
       "sector": "Consumer Cyclical",
@@ -392,74 +535,6 @@
       ]
     },
     {
-      "ticker": "TOVX",
-      "company": "Theriva Biologics Inc",
-      "sector": "Healthcare",
-      "scan": "Mid Cap",
-      "score": 69,
-      "tier": "watch",
-      "entry": 0.26,
-      "entry_label": "Current $0.26",
-      "range_str": " \u2014 range to $0.27",
-      "prev_close": 0.25,
-      "prev_high": 0.26,
-      "fib_levels": [
-        [
-          "Second target",
-          0.27
-        ],
-        [
-          "Extended",
-          0.27
-        ]
-      ],
-      "price_at_scan": 0.26,
-      "gap": 1.63,
-      "rvol": 8.93,
-      "flags": [
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "MYSE",
-      "company": "Myseum.AI Inc",
-      "sector": "Technology",
-      "scan": "Low Float",
-      "score": 98,
-      "tier": "watch",
-      "entry": 3.97,
-      "entry_label": "Break above $3.95",
-      "range_str": "",
-      "prev_close": 3.3,
-      "prev_high": 3.95,
-      "fib_levels": [
-        [
-          "Prev High",
-          3.95
-        ],
-        [
-          "First target",
-          4.13
-        ],
-        [
-          "Second target",
-          4.35
-        ],
-        [
-          "Extended",
-          4.6
-        ]
-      ],
-      "price_at_scan": 3.81,
-      "gap": 15.0,
-      "rvol": 8.19,
-      "flags": [
-        "CONTINUATION",
-        "GAP QUALITY",
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
       "ticker": "CRML",
       "company": "Critical Metals Corp",
       "sector": "Basic Materials",
@@ -496,81 +571,6 @@
         "CONTINUATION",
         "GAP QUALITY",
         "PRIOR DAY RUNNER",
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "BEAT",
-      "company": "HeartBeam Inc",
-      "sector": "Healthcare",
-      "scan": "Mid Cap",
-      "score": 42,
-      "tier": "watch",
-      "entry": 1.0,
-      "entry_label": "Break above $1.00",
-      "range_str": "",
-      "prev_close": 0.81,
-      "prev_high": 1.0,
-      "fib_levels": [
-        [
-          "Prev High",
-          1.0
-        ],
-        [
-          "First target",
-          1.05
-        ],
-        [
-          "Second target",
-          1.12
-        ],
-        [
-          "Extended",
-          1.19
-        ]
-      ],
-      "price_at_scan": 0.92,
-      "gap": 11.11,
-      "rvol": 5.73,
-      "flags": [
-        "GAP QUALITY",
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "TRVI",
-      "company": "Trevi Therapeutics Inc",
-      "sector": "Healthcare",
-      "scan": "Mid Cap",
-      "score": 97,
-      "tier": "watch",
-      "entry": 15.84,
-      "entry_label": "Break above $15.76",
-      "range_str": "",
-      "prev_close": 14.54,
-      "prev_high": 15.76,
-      "fib_levels": [
-        [
-          "Prev High",
-          15.76
-        ],
-        [
-          "First target",
-          16.09
-        ],
-        [
-          "Second target",
-          16.51
-        ],
-        [
-          "Extended",
-          16.98
-        ]
-      ],
-      "price_at_scan": 15.23,
-      "gap": -0.76,
-      "rvol": 5.36,
-      "flags": [
         "SECTOR MOMENTUM"
       ]
     },
