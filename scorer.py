@@ -564,7 +564,8 @@ def render_html(results, session, trading_date, label, note, gen_time_str, marke
     td_str  = fmt_trading_date(trading_date)
 
     # Sort by RVol descending — highest momentum first
-    sorted_results = sorted(results, key=lambda x: x["rvol"], reverse=True)
+    rank_order = {"hot": 0, "warm": 1, "watch": 2, "avoid": 3}
+    sorted_results = sorted(results, key=lambda x: (rank_order.get(get_rank(x), 4), -x["rvol"]))
     cards_out = "".join(card_html(r) for r in sorted_results) or '<p class="empty">No tickers matched screener criteria.</p>'
 
     css = CSS.replace("{session_color}", session_color)
