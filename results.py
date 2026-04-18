@@ -44,10 +44,16 @@ def fmt_date(d):
 # ── Session time windows (ET) ─────────────────────────────────────────────────
 
 SESSION_WINDOWS = {
-    "night":     ("04:00", "09:30"),  # Pre-Market window
-    "premarket": ("09:30", "12:30"),  # Market Open window
-    "midday":    ("12:30", "15:30"),  # Midday window
-    "powerhour": ("16:00", "20:00"),  # After Hours window
+    # Maps session key → (window_start, window_end) ET
+    # Window is used to find the HIGH within that session period
+    # so run-and-dump stocks are correctly classified as runners.
+    "earlypremarket": ("04:00", "06:55"),  # Early Pre-Market
+    "premarket":      ("04:00", "09:30"),  # Pre-Market (covers full pre-market open)
+    "night":          ("04:00", "09:30"),  # Legacy name for premarket
+    "marketopen":     ("09:30", "12:30"),  # Market Open
+    "midday":         ("12:30", "15:30"),  # Midday
+    "afterhours":     ("15:30", "20:00"),  # After Hours
+    "powerhour":      ("15:30", "20:00"),  # Legacy name for afterhours
 }
 
 # ── Fetch session-specific highs via yfinance ──────────────────────────────────
@@ -259,19 +265,24 @@ def calc_outcome(t, quote, session_high=None, session_low=None):
     pct_close = round((close - baseline) / baseline * 100, 1) if baseline else 0
     pct_high  = round((high  - baseline) / baseline * 100, 1) if baseline else 0
 
-    # Outcome based on session high
+    # Outcome is based on session HIGH from entry — not close.
+    # This correctly counts run-and-dump: a stock that hit +30% then
+    # closed -20% is still a runner (the high was achievable intraday).
     if pct_high >= 50:
-        outcome = "monster"    # 50%+ runner
+        outcome = "monster"    # 50%+ from entry at any point
     elif pct_high >= 20:
-        outcome = "big_runner" # 20%+ runner
+        outcome = "big_runner" # 20%+ from entry at any point
     elif pct_high >= 10:
-        outcome = "runner"     # 10%+ runner
+        outcome = "runner"     # 10%+ from entry at any point
     elif pct_high >= 5:
-        outcome = "mover"      # 5%+ mover
-    elif pct_close > 0:
-        outcome = "up"         # positive but small
+        outcome = "mover"      # 5%+ from entry at any point
+    elif pct_high >= 1:
+        outcome = "up"         # 1%+ move — small but positive
     else:
-        outcome = "flat"       # flat or down
+        outcome = "flat"       # never moved meaningfully above entry
+
+    # Flag whether it dumped after running — high was much better than close
+    dumped = (pct_high >= 10) and (pct_close < pct_high - 15)
 
     return {
         "close":     round(close, 2),
@@ -280,14 +291,15 @@ def calc_outcome(t, quote, session_high=None, session_low=None):
         "pct_close": pct_close,
         "pct_high":  pct_high,
         "outcome":   outcome,
+        "dumped":    dumped,
     }
 
 # ── Cumulative stats ───────────────────────────────────────────────────────────
 
 def load_cumulative():
     stats = {
-        "buy":     {"total": 0, "runner": 0, "big_runner": 0, "monster": 0},
-        "monitor": {"total": 0, "runner": 0, "big_runner": 0, "monster": 0},
+        "buy":     {"total": 0, "runner": 0, "big_runner": 0, "monster": 0, "dumped": 0},
+        "monitor": {"total": 0, "runner": 0, "big_runner": 0, "monster": 0, "dumped": 0},
         "days":    0,
     }
     if not os.path.exists(DATA_DIR):
@@ -313,6 +325,8 @@ def load_cumulative():
                     stats[tier]["big_runner"] += 1
                 if outcome == "monster":
                     stats[tier]["monster"] += 1
+                if t.get("dumped"):
+                    stats[tier]["dumped"] = stats[tier].get("dumped", 0) + 1
     return stats
 
 # ── HTML ───────────────────────────────────────────────────────────────────────
@@ -393,7 +407,14 @@ def card_html(t, perf):
     pct_h   = perf["pct_high"]
     pct_c   = perf["pct_close"]
 
+    dumped = perf.get("dumped", False)
+    if dumped:
+        outcome_display = outcome + "_dumped"
+    else:
+        outcome_display = outcome
     olabel, obg, otx = OUTCOME_CFG.get(outcome, ("—", "#1c1f23", "#656c7a"))
+    if dumped:
+        olabel = olabel + " · dumped"
     scan_bg, scan_tx = SCAN_COLORS.get(t["scan"], ("#1c1f23", "#656c7a"))
     pc_cls  = "pos" if pct_c >= 0 else "neg"
     pc_sign = "+" if pct_c >= 0 else ""
@@ -432,12 +453,15 @@ def cum_section_html(label, d):
     run_pct    = round(d["runner"]/total*100) if total else 0
     big_pct    = round(d["big_runner"]/total*100) if total else 0
     mon_pct    = round(d["monster"]/total*100) if total else 0
+    dump_pct   = round(d.get("dumped",0)/total*100) if total else 0
+    dump_row   = f'<div class="cum-row"><span>Run &amp; Dump</span><span class="cum-val-g">{dump_pct}%</span></div>' if dump_pct else ""
     return f"""<div class="cum-section">
   <div class="cum-label">{label}</div>
   <div class="cum-row"><span>Total tracked</span><span>{total}</span></div>
   <div class="cum-row"><span>Runners 10%+</span><span class="cum-val-g">{run_pct}%</span></div>
   <div class="cum-row"><span>Big Runners 20%+</span><span class="cum-val-g">{big_pct}%</span></div>
   <div class="cum-row"><span>Monsters 50%+</span><span class="cum-val-g">{mon_pct}%</span></div>
+  {dump_row}
 </div>"""
 
 def render_html(today, session_results, all_quotes, cum_stats, gen_time):
