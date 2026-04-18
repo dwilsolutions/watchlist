@@ -20,7 +20,7 @@ a{color:inherit;text-decoration:none;}
 .leg-label{font-size:10px;color:var(--muted);margin-right:4px;}
 .leg-item{display:flex;align-items:center;gap:5px;font-size:10px;}
 .leg-dot{width:8px;height:8px;border-radius:2px;}
-.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border);}
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border);}
 .sum-cell{background:var(--bg2);padding:12px 16px;text-align:center;}
 .sum-n{font-family:var(--sans);font-size:26px;font-weight:700;}
 .sum-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:0.06em;text-transform:uppercase;}
@@ -30,24 +30,18 @@ a{color:inherit;text-decoration:none;}
 .sec-lbl::after{content:'';flex:1;height:1px;background:var(--border);}
 .cards{display:flex;flex-direction:column;gap:9px;}
 .empty{color:var(--muted);font-size:12px;padding:8px 0;}
-.card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:13px 15px;border-left-width:3px;}
-.card.buy{border-left-color:var(--green);}.card.monitor{border-left-color:var(--amber);}.card.avoid{border-left-color:var(--red);opacity:0.6;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:13px 15px;border-left:3px solid var(--session-color);}
 .r1{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:9px;}
 .tkr{font-family:var(--sans);font-size:16px;font-weight:700;min-width:46px;}
 .co{font-size:11px;color:var(--muted);flex:1;min-width:60px;}
 .scan-tag{font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid;white-space:nowrap;}
-.score{font-size:13px;font-weight:500;padding:2px 9px;border-radius:20px;}
-.sbuy{background:#1e3d2a;color:#6ee89a;}.smon{background:#3d2e1a;color:#f5c46e;}.savoid{background:#3d1a1a;color:#f57a7a;}
+.rvol-pill{font-size:11px;font-weight:500;padding:2px 9px;border-radius:20px;background:#1a2a3d;color:#7ab4f5;}
 .ch{font-size:12px;font-weight:500;}.pos{color:#5cc98a;}.neg{color:#e06060;}
 .clink{font-size:11px;color:#5a8fd4;margin-left:auto;white-space:nowrap;}
 .clink:hover{color:#7aaef5;}
 .flags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:9px;}
 .flag{font-size:10px;padding:2px 7px;border-radius:10px;font-weight:500;white-space:nowrap;}
-.bar-row{display:flex;align-items:center;gap:6px;margin-bottom:4px;}
-.bl{font-size:10px;color:var(--muted);width:44px;text-align:right;flex-shrink:0;}
-.bt{flex:1;height:5px;background:var(--bg3);border-radius:3px;overflow:hidden;}
-.bf{height:100%;border-radius:3px;}
-.bv{font-size:10px;color:var(--muted);width:30px;}
+
 .stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(76px,1fr));gap:5px;margin:9px 0;}
 .st{background:var(--bg3);border-radius:6px;padding:5px 8px;}
 .sl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;}
@@ -70,12 +64,12 @@ a{color:inherit;text-decoration:none;}
 <div class="hdr">
   <div class="hdr-l">
     <h1>Watchlist · <em style="color:var(--session-color)">Pre-Market</em></h1>
-    <div class="sub">Confirmed setups · pre-Robinhood open · ~6:55 AM ET · 8 tickers scored (3 low float · 5 mid cap)</div>
+    <div class="sub">Confirmed setups · pre-Robinhood open · ~6:55 AM ET · Sorted by RVol · 30 tickers</div>
   </div>
   <div class="hdr-r">
     <span class="pill">Mon Apr 20, 2026</span>
-    <span class="pill">Generated 06:55 AM ET</span>
-    <span class="pill">5 sectors</span>
+    <span class="pill">Generated 12:22 AM ET</span>
+    <span class="pill">8 sectors</span>
   </div>
 </div>
 <div class="legend">
@@ -85,186 +79,702 @@ a{color:inherit;text-decoration:none;}
 </div>
 
 <div class="summary">
-  <div class="sum-cell"><div class="sum-n c-g">3</div><div class="sum-l">Buy Watch ≥65</div></div>
-  <div class="sum-cell"><div class="sum-n c-a">3</div><div class="sum-l">Monitor 40–64</div></div>
-  <div class="sum-cell"><div class="sum-n c-r">2</div><div class="sum-l">Avoid &lt;40</div></div>
-  <div class="sum-cell"><div class="sum-n">8</div><div class="sum-l">Total Scored</div></div>
+  <div class="sum-cell"><div class="sum-n c-g">16</div><div class="sum-l">Low Float</div></div>
+  <div class="sum-cell"><div class="sum-n c-a">14</div><div class="sum-l">Mid Cap</div></div>
+  <div class="sum-cell"><div class="sum-n">30</div><div class="sum-l">Total Tickers</div></div>
 </div>
 <div class="body">
-  <div class="sec-lbl">Buy Watch — 65+</div>
-  <div class="cards"><div class="card buy">
+  <div class="cards"><div class="card">
+  <div class="r1">
+    <span class="tkr">EFOI</span>
+    <span class="co">Energy Focus Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rvol-pill">8719x RVol</span>
+    <span class="ch pos">+210.5%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=EFOI" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">GAP QUALITY</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">PRIOR DAY RUNNER</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$6.49</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+157.4%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">2.6M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$6.74</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $9.84</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$9.84</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$11.95</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$14.63</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$17.59</span></span>
+  </div>
+  <div class="news-line">BC-Most Active Stocks</div>
+</div><div class="card">
   <div class="r1">
     <span class="tkr">YXT</span>
     <span class="co">Yxt.Com Group Holding Lt</span>
     <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
-    <span class="score sbuy">93</span>
-    <span class="ch pos">+75.3%</span>
+    <span class="rvol-pill">2110x RVol</span>
+    <span class="ch pos">+34.0%</span>
     <a class="clink" href="https://finviz.com/quote.ashx?t=YXT" target="_blank">Chart ↗</a>
   </div>
-  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">GAP QUALITY</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
-  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:77%;background:#3a9c5f"></div></div><span class="bv">23/30</span></div>
-  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:71%;background:#3266ad"></div></div><span class="bv">32/45</span></div>
-  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:100%;background:#c07b1a"></div></div><span class="bv">25/25</span></div>
+  <div class="flags"><span class="flag" style="background:#3d1a1a;color:#f57a7a">PRIOR DAY RUNNER</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
   <div class="stats">
-    <div class="st"><div class="sl">Price</div><div class="sv">$0.65</div></div>
-    <div class="st"><div class="sl">Gap</div><div class="sv">+83.5%</div></div>
-    <div class="st"><div class="sl">RVol</div><div class="sv">13360x</div></div>
-    <div class="st"><div class="sl">RSI</div><div class="sv">62.6</div></div>
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.50</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+53.9%</div></div>
     <div class="st"><div class="sl">Float</div><div class="sv">56.5M</div></div>
-    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$0.687</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$0.583</div></div>
   </div>
   <div class="entry-box">
-    <span class="entry-label">▶ Proposed Entry: Break above $0.85</span>
+    <span class="entry-label">▶ Break above $0.72</span>
   </div>
   <div class="lvls">
-    <span><span class="ll">Prev High</span> <span class="lv">$0.85</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$0.98</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$1.15</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$1.33</span></span>
+    <span><span class="ll">Prev High</span> <span class="lv">$0.72</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$0.82</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$0.94</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$1.07</span></span>
   </div>
   <div class="news-line">YXT.com Reports Full Year 2025 Unaudited Financial Results</div>
-</div><div class="card buy">
+</div><div class="card">
   <div class="r1">
-    <span class="tkr">BZAI</span>
-    <span class="co">Blaize Holdings Inc</span>
-    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
-    <span class="score sbuy">82</span>
-    <span class="ch pos">+23.1%</span>
-    <a class="clink" href="https://finviz.com/quote.ashx?t=BZAI" target="_blank">Chart ↗</a>
+    <span class="tkr">LZMH</span>
+    <span class="co">LZ Technology Holdings L</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rvol-pill">461x RVol</span>
+    <span class="ch neg">-84.1%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=LZMH" target="_blank">Chart ↗</a>
   </div>
-  <div class="flags"><span class="flag" style="background:#1a2a3d;color:#7ab4f5">GAP QUALITY</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
-  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:77%;background:#3a9c5f"></div></div><span class="bv">23/30</span></div>
-  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:64%;background:#3266ad"></div></div><span class="bv">29/45</span></div>
-  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:88%;background:#c07b1a"></div></div><span class="bv">22/25</span></div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">CATALYST · DEAL</span></div>
   <div class="stats">
-    <div class="st"><div class="sl">Price</div><div class="sv">$2.13</div></div>
-    <div class="st"><div class="sl">Gap</div><div class="sv">+29.5%</div></div>
-    <div class="st"><div class="sl">RVol</div><div class="sv">39x</div></div>
-    <div class="st"><div class="sl">RSI</div><div class="sv">62.8</div></div>
-    <div class="st"><div class="sl">Float</div><div class="sv">83.2M</div></div>
-    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$2.203</div></div>
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.17</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+12.8%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">4.9M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$0.98</div></div>
   </div>
   <div class="entry-box">
-    <span class="entry-label">▶ Proposed Entry: Break above $2.29</span>
+    <span class="entry-label">▶ Break above $1.54</span>
   </div>
   <div class="lvls">
-    <span><span class="ll">Prev High</span> <span class="lv">$2.29</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$2.44</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$2.64</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$2.85</span></span>
+    <span><span class="ll">Prev High</span> <span class="lv">$1.54</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$1.66</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$1.82</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$1.99</span></span>
   </div>
-  <div class="news-line">Blaize and NeoTensr Enter into Contract for Up to $50M to Deploy Co-Branded AI Edge Data Center Infrastructure Across As</div>
-</div><div class="card buy">
+  <div class="news-line">Strategic Partnership with Leading UAE Family Office to Build a New Growth Engine in the Middle East and North Africa</div>
+</div><div class="card">
   <div class="r1">
     <span class="tkr">ABLV</span>
     <span class="co">Able View Global Inc</span>
     <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
-    <span class="score sbuy">75</span>
-    <span class="ch pos">+32.1%</span>
+    <span class="rvol-pill">112x RVol</span>
+    <span class="ch pos">+27.6%</span>
     <a class="clink" href="https://finviz.com/quote.ashx?t=ABLV" target="_blank">Chart ↗</a>
   </div>
-  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">NASDAQ NOTICE</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
-  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:77%;background:#3a9c5f"></div></div><span class="bv">23/30</span></div>
-  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:53%;background:#3266ad"></div></div><span class="bv">24/45</span></div>
-  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:88%;background:#c07b1a"></div></div><span class="bv">22/25</span></div>
+  <div class="flags"><span class="flag" style="background:#1a2a3d;color:#7ab4f5">GAP QUALITY</span><span class="flag" style="background:#3d2e1a;color:#f5c46e">NASDAQ NOTICE</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">PRIOR DAY RUNNER</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
   <div class="stats">
-    <div class="st"><div class="sl">Price</div><div class="sv">$0.77</div></div>
-    <div class="st"><div class="sl">Gap</div><div class="sv">+60.7%</div></div>
-    <div class="st"><div class="sl">RVol</div><div class="sv">911x</div></div>
-    <div class="st"><div class="sl">RSI</div><div class="sv">64.0</div></div>
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.74</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+27.6%</div></div>
     <div class="st"><div class="sl">Float</div><div class="sv">14.0M</div></div>
-    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$0.963</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$0.767</div></div>
   </div>
   <div class="entry-box">
-    <span class="entry-label">▶ Proposed Entry: Break above $1.21</span>
+    <span class="entry-label">▶ Break above $0.95</span>
   </div>
   <div class="lvls">
-    <span><span class="ll">Prev High</span> <span class="lv">$1.21</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$1.38</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$1.6</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$1.84</span></span>
+    <span><span class="ll">Prev High</span> <span class="lv">$0.95</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$1.05</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$1.18</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$1.32</span></span>
   </div>
   <div class="news-line">Able View Announced Receipt of  Nasdaq Notification Regarding Minimum Bid Price Deficiency</div>
-</div></div>
-  <div class="sec-lbl">Monitor — 40 to 64</div>
-  <div class="cards"><div class="card monitor">
+</div><div class="card">
   <div class="r1">
-    <span class="tkr">AGAE</span>
-    <span class="co">Allied Gaming & Entertai</span>
+    <span class="tkr">FRMM</span>
+    <span class="co">Forum Markets Inc</span>
     <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
-    <span class="score smon">60</span>
-    <span class="ch pos">+18.8%</span>
-    <a class="clink" href="https://finviz.com/quote.ashx?t=AGAE" target="_blank">Chart ↗</a>
+    <span class="rvol-pill">79x RVol</span>
+    <span class="ch pos">+81.0%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=FRMM" target="_blank">Chart ↗</a>
   </div>
-  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">GAP QUALITY</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">PRIOR DAY RUNNER</span></div>
-  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:77%;background:#3a9c5f"></div></div><span class="bv">23/30</span></div>
-  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:47%;background:#3266ad"></div></div><span class="bv">21/45</span></div>
-  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:64%;background:#c07b1a"></div></div><span class="bv">16/25</span></div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">GAP QUALITY</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">PRIOR DAY RUNNER</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
   <div class="stats">
-    <div class="st"><div class="sl">Price</div><div class="sv">$0.62</div></div>
-    <div class="st"><div class="sl">Gap</div><div class="sv">+15.5%</div></div>
-    <div class="st"><div class="sl">RVol</div><div class="sv">21x</div></div>
-    <div class="st"><div class="sl">RSI</div><div class="sv">85.3</div></div>
-    <div class="st"><div class="sl">Float</div><div class="sv">12.0M</div></div>
-    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$0.62</div></div>
+    <div class="st"><div class="sl">Price</div><div class="sv">$4.29</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+26.2%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">9.1M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$3.767</div></div>
   </div>
   <div class="entry-box">
-    <span class="entry-label">▶ Proposed Entry: Break above $0.73</span>
+    <span class="entry-label">▶ Break above $5.55</span>
   </div>
   <div class="lvls">
-    <span><span class="ll">Prev High</span> <span class="lv">$0.73</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$0.79</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$0.86</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$0.94</span></span>
+    <span><span class="ll">Prev High</span> <span class="lv">$5.55</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$6.41</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$7.52</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$8.73</span></span>
   </div>
-  <div class="news-line">BC-Most Active Stocks</div>
-</div><div class="card monitor">
+  <div class="news-line">Forum Markets Stock Jumps 19% After Board Revives Buyback and Launches Strategic Review</div>
+</div><div class="card">
   <div class="r1">
-    <span class="tkr">NPT</span>
-    <span class="co">Texxon Holding Ltd</span>
-    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
-    <span class="score smon">51</span>
-    <span class="ch pos">+69.9%</span>
-    <a class="clink" href="https://finviz.com/quote.ashx?t=NPT" target="_blank">Chart ↗</a>
+    <span class="tkr">DARE</span>
+    <span class="co">Dare Bioscience Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rvol-pill">73x RVol</span>
+    <span class="ch pos">+8.5%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=DARE" target="_blank">Chart ↗</a>
   </div>
-  <div class="flags"><span class="flag" style="background:#1a2a3d;color:#7ab4f5">GAP QUALITY</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
-  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:0%;background:#3a9c5f"></div></div><span class="bv">0/30</span></div>
-  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:36%;background:#3266ad"></div></div><span class="bv">16/45</span></div>
-  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:88%;background:#c07b1a"></div></div><span class="bv">22/25</span></div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
   <div class="stats">
-    <div class="st"><div class="sl">Price</div><div class="sv">$5.47</div></div>
-    <div class="st"><div class="sl">Gap</div><div class="sv">+20.5%</div></div>
-    <div class="st"><div class="sl">RVol</div><div class="sv">103x</div></div>
-    <div class="st"><div class="sl">RSI</div><div class="sv">42.5</div></div>
-    <div class="st"><div class="sl">Float</div><div class="sv">22.2M</div></div>
-    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$4.61</div></div>
+    <div class="st"><div class="sl">Price</div><div class="sv">$2.95</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+20.2%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">13.3M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$3.063</div></div>
   </div>
   <div class="entry-box">
-    <span class="entry-label">▶ Proposed Entry: Break above $6.45</span>
+    <span class="entry-label">▶ Break above $3.43</span>
   </div>
   <div class="lvls">
-    <span><span class="ll">Prev High</span> <span class="lv">$6.45</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$7.33</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$8.45</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$9.68</span></span>
+    <span><span class="ll">Prev High</span> <span class="lv">$3.43</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$3.62</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$3.87</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$4.14</span></span>
   </div>
-  <div class="news-line">Texxon Holding Limited Completes Key Safety and Regulatory Milestones for 600,000-Ton Polystyrene Project</div>
-</div><div class="card monitor">
+  <div class="news-line">Dare Bioscience Reports Full Year 2025 Financial Results and Provides Business Update</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">PBM</span>
+    <span class="co">Psyence Biomedical Ltd</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rvol-pill">46x RVol</span>
+    <span class="ch pos">+29.5%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=PBM" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$7.60</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+67.3%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">0.2M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$9.153</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $10.53</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$10.53</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$11.8</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$13.41</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$15.19</span></span>
+  </div>
+  <div class="news-line">Psyence BioMed Welcomes U.S. Executive Action to Advance Research into Ibogaine</div>
+</div><div class="card">
   <div class="r1">
     <span class="tkr">ISPC</span>
     <span class="co">iSpecimen Inc</span>
     <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
-    <span class="score smon">50</span>
-    <span class="ch pos">+27.0%</span>
+    <span class="rvol-pill">35x RVol</span>
+    <span class="ch pos">+17.2%</span>
     <a class="clink" href="https://finviz.com/quote.ashx?t=ISPC" target="_blank">Chart ↗</a>
   </div>
-  <div class="flags"><span class="flag" style="background:#1a2a3d;color:#7ab4f5">GAP QUALITY</span></div>
-  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:40%;background:#3a9c5f"></div></div><span class="bv">12/30</span></div>
-  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:24%;background:#3266ad"></div></div><span class="bv">11/45</span></div>
-  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:88%;background:#c07b1a"></div></div><span class="bv">22/25</span></div>
+  <div class="flags"></div>
   <div class="stats">
-    <div class="st"><div class="sl">Price</div><div class="sv">$0.15</div></div>
-    <div class="st"><div class="sl">Gap</div><div class="sv">+16.0%</div></div>
-    <div class="st"><div class="sl">RVol</div><div class="sv">163x</div></div>
-    <div class="st"><div class="sl">RSI</div><div class="sv">44.8</div></div>
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.14</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+42.1%</div></div>
     <div class="st"><div class="sl">Float</div><div class="sv">29.5M</div></div>
-    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$0.15</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$0.167</div></div>
   </div>
   <div class="entry-box">
-    <span class="entry-label">▶ Proposed Entry: Break above $0.18</span>
+    <span class="entry-label">▶ Break above $0.20</span>
   </div>
   <div class="lvls">
-    <span><span class="ll">Prev High</span> <span class="lv">$0.18</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$0.2</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$0.22</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$0.24</span></span>
+    <span><span class="ll">Prev High</span> <span class="lv">$0.2</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$0.22</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$0.25</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$0.28</span></span>
   </div>
   <div class="news-line">BC-Most Active Stocks</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">QVCGA</span>
+    <span class="co">QVC Group Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rvol-pill">28x RVol</span>
+    <span class="ch neg">-18.8%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=QVCGA" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.64</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">-6.5%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">6.7M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$0.687</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $0.75</span>
+  </div>
+  <div class="lvls">
+    <span class="ll" style="color:var(--muted)">No level data</span>
+  </div>
+  <div class="news-line">QVC, HSN owner files for bankruptcy, but shopping shows to continue</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">CTNT</span>
+    <span class="co">Cheetah Net Supply Chain</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="rvol-pill">25x RVol</span>
+    <span class="ch neg">-40.7%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=CTNT" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">CATALYST · DEAL</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.10</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">-6.6%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">34.2M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$0.123</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $0.15</span>
+  </div>
+  <div class="lvls">
+    <span class="ll" style="color:var(--muted)">No level data</span>
+  </div>
+  <div class="news-line">Cheetah Net Supply Chain Service Inc. enters Agreement to Acquire Super International Trading Limited</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">RPAY</span>
+    <span class="co">Repay Holdings Corporati</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="rvol-pill">19x RVol</span>
+    <span class="ch pos">+29.2%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=RPAY" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">GAP QUALITY</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$4.11</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+25.0%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">65.1M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$3.997</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $4.29</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$4.29</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$4.59</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$4.98</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$5.4</span></span>
+  </div>
+  <div class="news-line">REPAY Confirms Receipt of Unsolicited, Non-Binding Proposal from Forager Capital Management</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">IFRX</span>
+    <span class="co">InflaRx N.V</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="rvol-pill">18x RVol</span>
+    <span class="ch pos">+32.5%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=IFRX" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$1.59</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+0.0%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">67.6M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$1.357</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $1.67</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$1.67</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$1.8</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$1.96</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$2.14</span></span>
+  </div>
+  <div class="news-line">InflaRx Reports New Mechanistic Data for Izicopan Supporting its Potential as a Best-in-Class C5aR Inhibitor</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">NPT</span>
+    <span class="co">Texxon Holding Ltd</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="rvol-pill">15x RVol</span>
+    <span class="ch pos">+23.0%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=NPT" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d1a1a;color:#f57a7a">PRIOR DAY RUNNER</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$3.96</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+3.7%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">22.2M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$3.723</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $4.77</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$4.77</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$5.19</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$5.73</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$6.32</span></span>
+  </div>
+  <div class="news-line">Texxon Holding Limited Completes Key Safety and Regulatory Milestones for 600,000-Ton Polystyrene Project</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">BZAI</span>
+    <span class="co">Blaize Holdings Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="rvol-pill">14x RVol</span>
+    <span class="ch pos">+45.7%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=BZAI" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1a2a3d;color:#7ab4f5">GAP QUALITY</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">PRIOR DAY RUNNER</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$2.52</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+17.1%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">83.2M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$2.223</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $2.64</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$2.64</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$2.89</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$3.2</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$3.55</span></span>
+  </div>
+  <div class="news-line">BC-Most Active Stocks</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">TOVX</span>
+    <span class="co">Theriva Biologics Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="rvol-pill">9x RVol</span>
+    <span class="ch pos">+1.9%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=TOVX" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.26</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+1.6%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">44.9M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$0.257</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Current $0.26 — range to $0.27</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Second target</span> <span class="lv">$0.27</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$0.27</span></span>
+  </div>
+  <div class="news-line">Theriva Biologics Announces Upcoming Presentation of Additional Data from the VIRAGE Phase 2b Clinical Trial of VCN-01 i</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">MYSE</span>
+    <span class="co">Myseum.AI Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rvol-pill">8x RVol</span>
+    <span class="ch pos">+15.4%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=MYSE" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">GAP QUALITY</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$3.81</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+15.0%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">4.0M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$3.74</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $3.95</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$3.95</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$4.13</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$4.35</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$4.6</span></span>
+  </div>
+  <div class="news-line">Meme stock revival reflects AI as the defining trade,' says investor</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">IPW</span>
+    <span class="co">iPower Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rvol-pill">7x RVol</span>
+    <span class="ch pos">+4.5%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=IPW" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">CATALYST · DEAL</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$1.15</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+8.2%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">0.4M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$1.193</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $1.33</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$1.33</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$1.39</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$1.47</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$1.56</span></span>
+  </div>
+  <div class="news-line">iPower Adds Over $2.6 Million in Contracted, Non-Dilutive Income Through Sublease Agreement</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">FCHL</span>
+    <span class="co">Fitness Champs Holdings </span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rvol-pill">6x RVol</span>
+    <span class="ch neg">-76.9%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=FCHL" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d1a1a;color:#f57a7a">CRASHED · GAP DOWN</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.36</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">-68.0%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">0.3M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$0.467</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $0.55</span>
+  </div>
+  <div class="lvls">
+    <span class="ll" style="color:var(--muted)">No level data</span>
+  </div>
+  <div class="news-line">Fitness Champs Holdings Limited Announces Pricing of $5 Million Public Offering</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">ZSPC</span>
+    <span class="co">Zspace Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rvol-pill">6x RVol</span>
+    <span class="ch neg">-38.5%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=ZSPC" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d1a1a;color:#f57a7a">CRASHED · GAP DOWN</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.05</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">-22.7%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">14.1M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$0.063</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $0.07</span>
+  </div>
+  <div class="lvls">
+    <span class="ll" style="color:var(--muted)">No level data</span>
+  </div>
+  <div class="news-line">BC-Most Active Stocks</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">ASBP</span>
+    <span class="co">Aspire Biopharma Holding</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rvol-pill">6x RVol</span>
+    <span class="ch neg">-10.1%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=ASBP" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.27</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">-3.0%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">4.5M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$0.277</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $0.29</span>
+  </div>
+  <div class="lvls">
+    <span class="ll" style="color:var(--muted)">No level data</span>
+  </div>
+  <div class="news-line">Aspire Biopharma's Buzz Bomb(TM) Caffeine Company's Brand Ambassador, Ashley Paulson, to Attempt Fastest 100-Mile Treadm</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">CRML</span>
+    <span class="co">Critical Metals Corp</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="rvol-pill">6x RVol</span>
+    <span class="ch pos">+35.5%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=CRML" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">GAP QUALITY</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">PRIOR DAY RUNNER</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$12.56</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+22.0%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">62.8M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$12.07</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $13.75</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$13.75</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$14.97</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$16.52</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$18.23</span></span>
+  </div>
+  <div class="news-line">Investors in This Stock Are Still Bullish on Greenland</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">BEAT</span>
+    <span class="co">HeartBeam Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="rvol-pill">6x RVol</span>
+    <span class="ch pos">+13.6%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=BEAT" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1a2a3d;color:#7ab4f5">GAP QUALITY</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.92</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+11.1%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">33.0M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$0.93</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $1.00</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$1.0</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$1.05</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$1.12</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$1.19</span></span>
+  </div>
+  <div class="news-line">HeartBeam (BEAT) Closes $10M Public Offering to Advance Cardiac Technology Commercialization</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">TRVI</span>
+    <span class="co">Trevi Therapeutics Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="rvol-pill">5x RVol</span>
+    <span class="ch pos">+4.8%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=TRVI" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$15.23</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">-0.8%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">82.5M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$14.67</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $15.76</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$15.76</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$16.09</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$16.51</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$16.98</span></span>
+  </div>
+  <div class="news-line">Trevi Therapeutics Announces Pricing of $150 Million Underwritten Offering of Common Stock</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">EVTL</span>
+    <span class="co">Vertical Aerospace Ltd</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="rvol-pill">5x RVol</span>
+    <span class="ch neg">-10.5%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=EVTL" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$2.99</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+1.2%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">96.1M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$3.24</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $3.42</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$3.42</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$3.44</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$3.47</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$3.5</span></span>
+  </div>
+  <div class="news-line">Vertical Aerospace Achieves World First Two-Way Piloted Transition Flight</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">LRHC</span>
+    <span class="co">La Rosa Holdings Corp</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rvol-pill">5x RVol</span>
+    <span class="ch neg">-8.3%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=LRHC" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.27</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+0.7%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">2.8M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$0.28</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $0.30</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$0.3</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$0.3</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$0.31</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$0.31</span></span>
+  </div>
+  <div class="news-line">La Rosa Holdings Unveils My Agent Account 5.0, Advancing AI-Driven Transaction Management</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">DFNS</span>
+    <span class="co">T3 Defense Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="rvol-pill">4x RVol</span>
+    <span class="ch pos">+12.4%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=DFNS" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.76</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">-0.3%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">27.2M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$0.737</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $0.88</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$0.88</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$0.93</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$1.0</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$1.08</span></span>
+  </div>
+  <div class="news-line">T3 Defense Announces Unaudited Preliminary Key Financial and Operational Metrics for Q1 2026, Its First Reporting Quarte</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">MAPS</span>
+    <span class="co">WM Technology Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="rvol-pill">4x RVol</span>
+    <span class="ch neg">-3.9%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=MAPS" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.35</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+0.3%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">91.0M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$0.36</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $0.37</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$0.37</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$0.37</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$0.38</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$0.38</span></span>
+  </div>
+  <div class="news-line">WM Technology, Inc. Reports Preliminary First Quarter 2026 Financial Results</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">AGAE</span>
+    <span class="co">Allied Gaming & Entertai</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rvol-pill">3x RVol</span>
+    <span class="ch pos">+32.2%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=AGAE" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">PRIOR DAY RUNNER</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.69</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+9.2%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">12.0M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$0.623</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $0.74</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$0.74</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$0.8</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$0.88</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$0.96</span></span>
+  </div>
+  <div class="news-line">BC-Most Active Stocks</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">CAPS</span>
+    <span class="co">Capstone Holding Corp</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rvol-pill">3x RVol</span>
+    <span class="ch neg">-24.4%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=CAPS" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.40</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">-10.2%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">2.8M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$0.453</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $0.50</span>
+  </div>
+  <div class="lvls">
+    <span class="ll" style="color:var(--muted)">No level data</span>
+  </div>
+  <div class="news-line">Capstone Reports FY2025 Results and Guides to 54% Revenue Growth and 4x EBITDA Growth in 2026</div>
+</div><div class="card">
+  <div class="r1">
+    <span class="tkr">MDCX</span>
+    <span class="co">Medicus Pharma Ltd</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rvol-pill">2x RVol</span>
+    <span class="ch pos">+17.0%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=MDCX" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.35</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+2.6%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">8.4M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$0.323</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Break above $0.36</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$0.36</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$0.38</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$0.4</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$0.42</span></span>
+  </div>
+  <div class="news-line">Medicus Pharma seeks orphan drug status for SkinJect in rare skin cancer disorder</div>
 </div></div>
-  <div class="sec-lbl">Avoid — below 40</div>
-  <div class="chips"><div class="chip"><div class="chip-top"><span class="chip-tkr">ZSPC</span><span class="chip-scan" style="background:#1a2a3d;color:#7ab4f5">Low Float</span></div><span class="chip-score">23</span><span class="chip-why">weak setup</span></div><div class="chip"><div class="chip-top"><span class="chip-tkr">CTNT</span><span class="chip-scan" style="background:#2a1e3d;color:#b07af5">Mid Cap</span></div><span class="chip-score">21</span><span class="chip-why">CATALYST · DEAL</span></div></div>
 </div>
 <div class="footer">Trend 30% · Range 45% · Volume 25% · Not financial advice · Always confirm on live chart before entry</div>
 </body></html>
