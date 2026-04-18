@@ -400,26 +400,28 @@ def get_rank(r):
     is_prior_runner = "PRIOR DAY RUNNER" in flags
     is_danger       = any(f in ("REVERSE SPLIT", "CRASHED · GAP DOWN") for f in flags)
 
-    # Hard avoid
-    if is_danger or gap < -10:
+    # AVOID — danger flag or exhausted prior runner only
+    # Gap-down stocks are NOT avoided — they can short squeeze (validated in backtest)
+    if is_danger:
         return "avoid"
-    if is_prior_runner and not (has_catalyst and rvol >= 100):
+    if is_prior_runner and not has_catalyst:
         return "avoid"
-    if rvol < 5:
+    if rvol < 2:
         return "avoid"
 
-    # Hot — strong rvol + reason
-    if rvol >= 100 and (gap >= 5 or has_catalyst):
+    # HOT — rvol >= 100x validated as 60.8% monster rate over 1339 runner days
+    if rvol >= 100:
         return "hot"
-    if rvol >= 50 and gap >= 20:
+    if rvol >= 50 and has_catalyst:
         return "hot"
 
-    # Warm — meaningful rvol
-    if rvol >= 20:
+    # WARM — meaningful momentum
+    if rvol >= 10:
         return "warm"
-    if rvol >= 10 and (gap >= 5 or has_catalyst):
+    if rvol >= 5 and has_catalyst:
         return "warm"
 
+    # WATCH — passes screener, low momentum
     return "watch"
 
 SCAN_COLORS = {
