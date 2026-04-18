@@ -488,9 +488,9 @@ def card_html(r):
     {_fib_html(r["fib_levels"])}
   </div>
   <div class="news-line">{
-    f'<a href="{r["news_url"]}" target="_blank" style="color:inherit;text-decoration:none;">{r["news"]}</a>'
+    f'<span class="news-txt">{r["news"]}</span><a class="news-btn" href="{r["news_url"]}" target="_blank">Read ↗</a>'
     if r.get("news_url") and r["news_url"].startswith("http")
-    else r["news"]
+    else f'<span class="news-txt">{r["news"]}</span>'
   }</div>
 </div>"""
 
@@ -541,7 +541,7 @@ a{color:inherit;text-decoration:none;}
 .sv{font-size:12px;font-weight:500;color:var(--text);margin-top:1px;}
 .lvls{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:7px;font-size:11px;}
 .ll{color:var(--muted);}.lv{color:var(--text);font-weight:500;}.sep{color:var(--border);}.entry-box{background:var(--bg3);border-radius:6px;padding:7px 10px;margin:7px 0;border-left:3px solid var(--session-color);}.entry-label{font-size:12px;font-weight:500;color:var(--text);}
-.news-line{font-size:10px;color:var(--muted);font-style:italic;border-top:1px solid var(--border);padding-top:6px;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.news-line{font-size:10px;color:var(--muted);font-style:italic;border-top:1px solid var(--border);padding-top:6px;margin-top:4px;display:flex;align-items:center;gap:8px;overflow:hidden;}.news-txt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;}.news-btn{flex-shrink:0;font-size:10px;font-style:normal;padding:2px 8px;border-radius:20px;background:#1a2a3d;color:#7ab4f5;border:1px solid #7ab4f533;text-decoration:none;white-space:nowrap;}
 .chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;}
 .chip{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:8px 10px;display:flex;flex-direction:column;gap:2px;opacity:0.65;}
 .chip-top{display:flex;align-items:center;gap:6px;margin-bottom:2px;}
