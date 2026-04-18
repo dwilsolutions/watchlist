@@ -408,40 +408,34 @@ def _fib_html(fib_levels):
     return sep.join(parts)
 
 def card_html(r):
-    score    = r["total"]
-    tier     = "buy" if score >= 65 else ("monitor" if score >= 40 else "avoid")
-    scls     = "sbuy" if score >= 65 else ("smon" if score >= 40 else "savoid")
-    t        = r["ticker"]
-    gap_sign = "+" if r["gap"] >= 0 else ""
-    chg_sign = "+" if r["change"] >= 0 else ""
-    chg_cls  = "pos" if r["change"] >= 0 else "neg"
+    t         = r["ticker"]
+    gap_sign  = "+" if r["gap"] >= 0 else ""
+    chg_sign  = "+" if r["change"] >= 0 else ""
+    chg_cls   = "pos" if r["change"] >= 0 else "neg"
     scan_bg, scan_tx = SCAN_COLORS.get(r["scan"], ("#1c1f23", "#656c7a"))
     flags_out = "".join(flag_html(l, k) for l, k in r["flags"])
+    vwap_val  = r.get("real_vwap") or r["vwap_proxy"]
+    vwap_lbl  = "VWAP" if r.get("real_vwap") else "VWAP~"
+    vwap_col  = "#6ee89a" if r["above_vwap"] else "#f57a7a"
 
-
-    return f"""<div class="card {tier}">
+    return f"""<div class="card">
   <div class="r1">
     <span class="tkr">{t}</span>
     <span class="co">{r["company"][:24]}</span>
     <span class="scan-tag" style="background:{scan_bg};color:{scan_tx};border-color:{scan_tx}44">{r["scan"]}</span>
-    <span class="score {scls}">{score}</span>
+    <span class="rvol-pill">{r["rvol"]:.0f}x RVol</span>
     <span class="ch {chg_cls}">{chg_sign}{r["change"]:.1f}%</span>
     <a class="clink" href="https://finviz.com/quote.ashx?t={t}" target="_blank">Chart ↗</a>
   </div>
   <div class="flags">{flags_out}</div>
-  {bar_html("Trend",  r["trend"],       30, "#3a9c5f")}
-  {bar_html("Range",  r["range_score"], 45, "#3266ad")}
-  {bar_html("Volume", r["vol_score"],   25, "#c07b1a")}
   <div class="stats">
     <div class="st"><div class="sl">Price</div><div class="sv">${r["price"]:.2f}</div></div>
     <div class="st"><div class="sl">Gap</div><div class="sv">{gap_sign}{r["gap"]:.1f}%</div></div>
-    <div class="st"><div class="sl">RVol</div><div class="sv">{r["rvol"]:.0f}x</div></div>
-    <div class="st"><div class="sl">RSI</div><div class="sv">{r["rsi"]:.1f}</div></div>
     <div class="st"><div class="sl">Float</div><div class="sv">{r["float_m"]:.1f}M</div></div>
-    <div class="st"><div class="sl">{"VWAP" if r.get("real_vwap") else "VWAP~"}</div><div class="sv" style="color:{"#6ee89a" if r["above_vwap"] else "#f57a7a"}">${r.get("real_vwap") or r["vwap_proxy"]}</div></div>
+    <div class="st"><div class="sl">{vwap_lbl}</div><div class="sv" style="color:{vwap_col}">${vwap_val}</div></div>
   </div>
   <div class="entry-box">
-    <span class="entry-label">▶ Proposed Entry: {r["entry_label"]}{r["range_str"]}</span>
+    <span class="entry-label">▶ {r["entry_label"]}{r["range_str"]}</span>
   </div>
   <div class="lvls">
     {_fib_html(r["fib_levels"])}
@@ -449,16 +443,7 @@ def card_html(r):
   <div class="news-line">{r["news"]}</div>
 </div>"""
 
-def chip_html(r):
-    reasons  = ", ".join(l for l, _ in r["flags"]) or "weak setup"
-    scan_bg, scan_tx = SCAN_COLORS.get(r["scan"], ("#1c1f23", "#656c7a"))
-    return (
-        f'<div class="chip">'
-        f'<div class="chip-top"><span class="chip-tkr">{r["ticker"]}</span>'
-        f'<span class="chip-scan" style="background:{scan_bg};color:{scan_tx}">{r["scan"]}</span></div>'
-        f'<span class="chip-score">{r["total"]}</span>'
-        f'<span class="chip-why">{reasons[:50]}</span></div>'
-    )
+
 
 CSS = """
 :root{--bg:#0c0e11;--bg2:#141618;--bg3:#1c1f23;--border:rgba(255,255,255,0.07);--text:#dde1e9;--muted:#656c7a;--green:#3a9c5f;--amber:#c07b1a;--red:#a33333;--mono:'DM Mono',monospace;--sans:'Syne',sans-serif;--session-color:{session_color};}
@@ -475,7 +460,7 @@ a{color:inherit;text-decoration:none;}
 .leg-label{font-size:10px;color:var(--muted);margin-right:4px;}
 .leg-item{display:flex;align-items:center;gap:5px;font-size:10px;}
 .leg-dot{width:8px;height:8px;border-radius:2px;}
-.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border);}
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border);}
 .sum-cell{background:var(--bg2);padding:12px 16px;text-align:center;}
 .sum-n{font-family:var(--sans);font-size:26px;font-weight:700;}
 .sum-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:0.06em;text-transform:uppercase;}
@@ -485,24 +470,18 @@ a{color:inherit;text-decoration:none;}
 .sec-lbl::after{content:'';flex:1;height:1px;background:var(--border);}
 .cards{display:flex;flex-direction:column;gap:9px;}
 .empty{color:var(--muted);font-size:12px;padding:8px 0;}
-.card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:13px 15px;border-left-width:3px;}
-.card.buy{border-left-color:var(--green);}.card.monitor{border-left-color:var(--amber);}.card.avoid{border-left-color:var(--red);opacity:0.6;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:13px 15px;border-left:3px solid var(--session-color);}
 .r1{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:9px;}
 .tkr{font-family:var(--sans);font-size:16px;font-weight:700;min-width:46px;}
 .co{font-size:11px;color:var(--muted);flex:1;min-width:60px;}
 .scan-tag{font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid;white-space:nowrap;}
-.score{font-size:13px;font-weight:500;padding:2px 9px;border-radius:20px;}
-.sbuy{background:#1e3d2a;color:#6ee89a;}.smon{background:#3d2e1a;color:#f5c46e;}.savoid{background:#3d1a1a;color:#f57a7a;}
+.rvol-pill{font-size:11px;font-weight:500;padding:2px 9px;border-radius:20px;background:#1a2a3d;color:#7ab4f5;}
 .ch{font-size:12px;font-weight:500;}.pos{color:#5cc98a;}.neg{color:#e06060;}
 .clink{font-size:11px;color:#5a8fd4;margin-left:auto;white-space:nowrap;}
 .clink:hover{color:#7aaef5;}
 .flags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:9px;}
 .flag{font-size:10px;padding:2px 7px;border-radius:10px;font-weight:500;white-space:nowrap;}
-.bar-row{display:flex;align-items:center;gap:6px;margin-bottom:4px;}
-.bl{font-size:10px;color:var(--muted);width:44px;text-align:right;flex-shrink:0;}
-.bt{flex:1;height:5px;background:var(--bg3);border-radius:3px;overflow:hidden;}
-.bf{height:100%;border-radius:3px;}
-.bv{font-size:10px;color:var(--muted);width:30px;}
+
 .stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(76px,1fr));gap:5px;margin:9px 0;}
 .st{background:var(--bg3);border-radius:6px;padding:5px 8px;}
 .sl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;}
@@ -531,18 +510,15 @@ SESSION_COLORS = {
 
 def render_html(results, session, trading_date, label, note, gen_time_str, market_live=True):
     session_color = SESSION_COLORS.get(session, "#3a9c5f")
-    buy     = [r for r in results if r["total"] >= 65]
-    monitor = [r for r in results if 40 <= r["total"] < 65]
-    avoid   = [r for r in results if r["total"] < 40]
     n_sec   = len({r["sector"] for r in results})
     total_n = len(results)
     lf_n    = len([r for r in results if r["scan"] == "Low Float"])
     mc_n    = len([r for r in results if r["scan"] == "Mid Cap"])
     td_str  = fmt_trading_date(trading_date)
 
-    buy_out     = "".join(card_html(r) for r in buy)     or '<p class="empty">No setups reached Buy Watch threshold.</p>'
-    monitor_out = "".join(card_html(r) for r in monitor) or '<p class="empty">No setups in Monitor range.</p>'
-    avoid_out   = "".join(chip_html(r) for r in avoid)
+    # Sort by RVol descending — highest momentum first
+    sorted_results = sorted(results, key=lambda x: x["rvol"], reverse=True)
+    cards_out = "".join(card_html(r) for r in sorted_results) or '<p class="empty">No tickers matched screener criteria.</p>'
 
     css = CSS.replace("{session_color}", session_color)
     return f"""<!DOCTYPE html>
@@ -558,7 +534,7 @@ def render_html(results, session, trading_date, label, note, gen_time_str, marke
 <div class="hdr">
   <div class="hdr-l">
     <h1>Watchlist · <em style="color:var(--session-color)">{label}</em></h1>
-    <div class="sub">{note} · {total_n} tickers scored ({lf_n} low float · {mc_n} mid cap)</div>
+    <div class="sub">{note} · Sorted by RVol · {total_n} tickers</div>
   </div>
   <div class="hdr-r">
     <span class="pill">{td_str}</span>
@@ -573,18 +549,12 @@ def render_html(results, session, trading_date, label, note, gen_time_str, marke
 </div>
 {'<div class="banner-closed">⚠ Market closed or pre-market data unavailable — intraday scores (RVol, Gap, VWAP) are estimated from prior session. Scores will update when market opens.</div>' if not market_live else ''}
 <div class="summary">
-  <div class="sum-cell"><div class="sum-n c-g">{len(buy)}</div><div class="sum-l">Buy Watch ≥65</div></div>
-  <div class="sum-cell"><div class="sum-n c-a">{len(monitor)}</div><div class="sum-l">Monitor 40–64</div></div>
-  <div class="sum-cell"><div class="sum-n c-r">{len(avoid)}</div><div class="sum-l">Avoid &lt;40</div></div>
-  <div class="sum-cell"><div class="sum-n">{total_n}</div><div class="sum-l">Total Scored</div></div>
+  <div class="sum-cell"><div class="sum-n c-g">{lf_n}</div><div class="sum-l">Low Float</div></div>
+  <div class="sum-cell"><div class="sum-n c-a">{mc_n}</div><div class="sum-l">Mid Cap</div></div>
+  <div class="sum-cell"><div class="sum-n">{total_n}</div><div class="sum-l">Total Tickers</div></div>
 </div>
 <div class="body">
-  <div class="sec-lbl">Buy Watch — 65+</div>
-  <div class="cards">{buy_out}</div>
-  <div class="sec-lbl">Monitor — 40 to 64</div>
-  <div class="cards">{monitor_out}</div>
-  <div class="sec-lbl">Avoid — below 40</div>
-  <div class="chips">{avoid_out}</div>
+  <div class="cards">{cards_out}</div>
 </div>
 <div class="footer">Trend 30% · Range 45% · Volume 25% · Not financial advice · Always confirm on live chart before entry</div>
 </body></html>"""
@@ -785,7 +755,7 @@ def main():
 
     results = [score_row(r, session=session, prior_runners=prior_runners) for r in unique]
     results = apply_sector_bonus(results)
-    results.sort(key=lambda x: x["total"], reverse=True)
+    results.sort(key=lambda x: x["rvol"], reverse=True)
 
     live     = is_market_live(unique)
     html     = render_html(results, session, trading_day, label, note, gen_time, market_live=live)
@@ -827,7 +797,7 @@ def main():
                 "sector": r["sector"],
                 "scan": r["scan"],
                 "score": r["total"],
-                "tier": "buy" if r["total"] >= 65 else ("monitor" if r["total"] >= 40 else "avoid"),
+                "tier": "watch",  # all tickers are watchlist candidates
                 "entry": r["entry"],
                 "entry_label": r["entry_label"],
                 "range_str": r["range_str"],
