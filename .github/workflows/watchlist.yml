@@ -16,6 +16,7 @@ on:
           - afterhours
           - eod
           - analyze
+          - backfill
 
 jobs:
   score-and-publish:
@@ -42,6 +43,8 @@ jobs:
             python results.py
           elif [ "$SESSION" = "analyze" ]; then
             python analyze_timing.py
+          elif [ "$SESSION" = "backfill" ]; then
+            python backfill.py
           else
             python scorer.py --session $SESSION
           fi
