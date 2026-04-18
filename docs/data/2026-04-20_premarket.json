@@ -2,7 +2,7 @@
   "session": "premarket",
   "label": "Pre-Market",
   "date": "2026-04-20",
-  "generated": "06:55 AM ET",
+  "generated": "11:47 AM ET",
   "tickers": [
     {
       "ticker": "ABLV",
@@ -340,6 +340,81 @@
       ]
     },
     {
+      "ticker": "EVTL",
+      "company": "Vertical Aerospace Ltd",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 51,
+      "tier": "watch",
+      "entry": 3.44,
+      "entry_label": "Break above $3.42",
+      "range_str": "",
+      "prev_close": 3.34,
+      "prev_high": 3.42,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.42
+        ],
+        [
+          "First target",
+          3.44
+        ],
+        [
+          "Second target",
+          3.47
+        ],
+        [
+          "Extended",
+          3.5
+        ]
+      ],
+      "price_at_scan": 2.99,
+      "gap": 1.2,
+      "rvol": 4.78,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "DFNS",
+      "company": "T3 Defense Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 55,
+      "tier": "watch",
+      "entry": 0.88,
+      "entry_label": "Break above $0.88",
+      "range_str": "",
+      "prev_close": 0.68,
+      "prev_high": 0.88,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.88
+        ],
+        [
+          "First target",
+          0.93
+        ],
+        [
+          "Second target",
+          1.0
+        ],
+        [
+          "Extended",
+          1.08
+        ]
+      ],
+      "price_at_scan": 0.76,
+      "gap": -0.31,
+      "rvol": 4.3,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
       "ticker": "EFOI",
       "company": "Energy Focus Inc",
       "sector": "Consumer Cyclical",
@@ -571,81 +646,6 @@
         "CONTINUATION",
         "GAP QUALITY",
         "PRIOR DAY RUNNER",
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "EVTL",
-      "company": "Vertical Aerospace Ltd",
-      "sector": "Industrials",
-      "scan": "Mid Cap",
-      "score": 51,
-      "tier": "watch",
-      "entry": 3.44,
-      "entry_label": "Break above $3.42",
-      "range_str": "",
-      "prev_close": 3.34,
-      "prev_high": 3.42,
-      "fib_levels": [
-        [
-          "Prev High",
-          3.42
-        ],
-        [
-          "First target",
-          3.44
-        ],
-        [
-          "Second target",
-          3.47
-        ],
-        [
-          "Extended",
-          3.5
-        ]
-      ],
-      "price_at_scan": 2.99,
-      "gap": 1.2,
-      "rvol": 4.78,
-      "flags": [
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "DFNS",
-      "company": "T3 Defense Inc",
-      "sector": "Industrials",
-      "scan": "Mid Cap",
-      "score": 55,
-      "tier": "watch",
-      "entry": 0.88,
-      "entry_label": "Break above $0.88",
-      "range_str": "",
-      "prev_close": 0.68,
-      "prev_high": 0.88,
-      "fib_levels": [
-        [
-          "Prev High",
-          0.88
-        ],
-        [
-          "First target",
-          0.93
-        ],
-        [
-          "Second target",
-          1.0
-        ],
-        [
-          "Extended",
-          1.08
-        ]
-      ],
-      "price_at_scan": 0.76,
-      "gap": -0.31,
-      "rvol": 4.3,
-      "flags": [
-        "CONTINUATION",
         "SECTOR MOMENTUM"
       ]
     },
