@@ -17,6 +17,7 @@ on:
           - eod
           - analyze
           - backfill
+          - backtest
 
 jobs:
   score-and-publish:
@@ -32,11 +33,18 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install yfinance pandas --quiet
+        run: |
+          SESSION="${{ github.event.inputs.session }}"
+          if [ "$SESSION" = "backtest" ]; then
+            pip install yfinance databento pandas --quiet
+          else
+            pip install yfinance pandas --quiet
+          fi
 
       - name: Run scorer or results
         env:
           FINVIZ_TOKEN: ${{ secrets.FINVIZ_TOKEN }}
+          DATABENTO_API_KEY: ${{ secrets.DATABENTO_API_KEY }}
         run: |
           SESSION="${{ github.event.inputs.session }}"
           if [ "$SESSION" = "eod" ]; then
@@ -45,6 +53,8 @@ jobs:
             python analyze_timing.py
           elif [ "$SESSION" = "backfill" ]; then
             python backfill.py
+          elif [ "$SESSION" = "backtest" ]; then
+            python build_backtest.py
           else
             python scorer.py --session $SESSION
           fi
@@ -53,6 +63,6 @@ jobs:
         run: |
           git config user.name  "Watchlist Bot"
           git config user.email "bot@watchlist"
-          git add docs/
+          git add docs/ backtest_runners.csv || true
           git diff --staged --quiet || git commit -m "Watchlist: ${{ github.event.inputs.session }} $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
