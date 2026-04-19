@@ -42,7 +42,8 @@
         "NASDAQ NOTICE",
         "PRIOR DAY RUNNER",
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": "https://elite.finviz.com/news/249989/able-view-announced-receipt-of-nasdaq-notification-regarding-minimum-bid-price-deficiency"
     },
     {
       "ticker": "DARE",
@@ -80,7 +81,8 @@
       "flags": [
         "CONTINUATION",
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": "https://elite.finviz.com/news/340359/dare-bioscience-reports-full-year-2025-financial-results-and-provides-business-update"
     },
     {
       "ticker": "PBM",
@@ -117,11 +119,12 @@
       "rvol": 45.91,
       "flags": [
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": "https://elite.finviz.com/news/345520/psyence-biomed-welcomes-us-executive-action-to-advance-research-into-ibogaine"
     },
     {
       "ticker": "RPAY",
-      "company": "Repay Holdings Corporation",
+      "company": "Repay Holdings Corp",
       "sector": "Technology",
       "scan": "Mid Cap",
       "score": 100,
@@ -156,11 +159,12 @@
         "CONTINUATION",
         "GAP QUALITY",
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": "https://www.businesswire.com/news/home/20260417336994/en"
     },
     {
       "ticker": "IFRX",
-      "company": "InflaRx N.V",
+      "company": "InflaRx NV",
       "sector": "Healthcare",
       "scan": "Mid Cap",
       "score": 97,
@@ -195,7 +199,8 @@
         "CONTINUATION",
         "EXTENDED",
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": "https://elite.finviz.com/news/343437/inflarx-reports-new-mechanistic-data-for-izicopan-supporting-its-potential-as-a-best-in-class-c5ar-inhibitor"
     },
     {
       "ticker": "TOVX",
@@ -224,7 +229,8 @@
       "rvol": 8.93,
       "flags": [
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": "https://elite.finviz.com/news/345569/theriva-biologics-announces-upcoming-presentation-of-additional-data-from-the-virage-phase-2b-clinical-trial-of-vcn-01-in-metastatic-pancreatic-cancer-at-aacr-2026-annual-meeting"
     },
     {
       "ticker": "MYSE",
@@ -263,7 +269,8 @@
         "CONTINUATION",
         "GAP QUALITY",
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": "https://finance.yahoo.com/video/meme-stock-revival-reflects-ai-202357939.html"
     },
     {
       "ticker": "BEAT",
@@ -301,7 +308,8 @@
       "flags": [
         "GAP QUALITY",
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": "https://finance.yahoo.com/sectors/healthcare/articles/heartbeam-beat-closes-10m-public-190000390.html"
     },
     {
       "ticker": "TRVI",
@@ -338,7 +346,8 @@
       "rvol": 5.36,
       "flags": [
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": "https://elite.finviz.com/news/345428/trevi-therapeutics-announces-pricing-of-150-million-underwritten-offering-of-common-stock"
     },
     {
       "ticker": "EVTL",
@@ -375,7 +384,8 @@
       "rvol": 4.78,
       "flags": [
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": "https://www.businesswire.com/news/home/20260416648511/en/On"
     },
     {
       "ticker": "DFNS",
@@ -413,7 +423,8 @@
       "flags": [
         "CONTINUATION",
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": "https://elite.finviz.com/news/344926/t3-defense-announces-unaudited-preliminary-key-financial-and-operational-metrics-for-q1-2026-its-first-reporting-quarter-as-a-defense-focused-holding-company"
     },
     {
       "ticker": "EFOI",
@@ -454,11 +465,12 @@
         "ALREADY EXTENDED",
         "PRIOR DAY RUNNER",
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018281.html"
     },
     {
       "ticker": "YXT",
-      "company": "Yxt.Com Group Holding Ltd. ADR",
+      "company": "Yxt.Com Group Holding Ltd ADR",
       "sector": "Technology",
       "scan": "Mid Cap",
       "score": 50,
@@ -493,7 +505,8 @@
         "EXTENDED",
         "PRIOR DAY RUNNER",
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": "https://elite.finviz.com/news/341100/yxtcom-reports-full-year-2025-unaudited-financial-results"
     },
     {
       "ticker": "FRMM",
@@ -534,7 +547,8 @@
         "ALREADY EXTENDED",
         "PRIOR DAY RUNNER",
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": "https://finance.yahoo.com/m/d171348f-efc6-3c1c-b05a-ada227d2b2ed/forum-markets-stock-jumps-19%25.html"
     },
     {
       "ticker": "NPT",
@@ -572,7 +586,8 @@
       "flags": [
         "PRIOR DAY RUNNER",
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": "https://elite.finviz.com/news/270536/texxon-holding-limited-completes-key-safety-and-regulatory-milestones-for-600000-ton-polystyrene-project"
     },
     {
       "ticker": "BZAI",
@@ -612,7 +627,8 @@
         "EXTENDED",
         "PRIOR DAY RUNNER",
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018281.html"
     },
     {
       "ticker": "CRML",
@@ -653,7 +669,8 @@
         "EXTENDED",
         "PRIOR DAY RUNNER",
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-17-2026/card/investors-in-this-stock-are-still-bullish-on-greenland-sIYrHXWNhpksbOoCLhPo?mod=wsj_FV"
     },
     {
       "ticker": "AGAE",
@@ -692,7 +709,8 @@
         "CONTINUATION",
         "EXTENDED",
         "PRIOR DAY RUNNER"
-      ]
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018281.html"
     }
   ]
 }
