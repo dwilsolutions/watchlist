@@ -1,0 +1,716 @@
+{
+  "session": "midday",
+  "label": "Midday",
+  "date": "2026-04-20",
+  "generated": "10:05 AM ET",
+  "tickers": [
+    {
+      "ticker": "ABLV",
+      "company": "Able View Global Inc",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 70,
+      "tier": "watch",
+      "entry": 0.95,
+      "entry_label": "Break above $0.95",
+      "range_str": "",
+      "prev_close": 0.58,
+      "prev_high": 0.95,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.95
+        ],
+        [
+          "First target",
+          1.05
+        ],
+        [
+          "Second target",
+          1.18
+        ],
+        [
+          "Extended",
+          1.32
+        ]
+      ],
+      "price_at_scan": 0.74,
+      "gap": 27.59,
+      "rvol": 111.76,
+      "flags": [
+        "GAP QUALITY",
+        "NASDAQ NOTICE",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/249989/able-view-announced-receipt-of-nasdaq-notification-regarding-minimum-bid-price-deficiency"
+    },
+    {
+      "ticker": "DARE",
+      "company": "Dare Bioscience Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 86,
+      "tier": "watch",
+      "entry": 3.45,
+      "entry_label": "Break above $3.43",
+      "range_str": "",
+      "prev_close": 2.72,
+      "prev_high": 3.43,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.43
+        ],
+        [
+          "First target",
+          3.62
+        ],
+        [
+          "Second target",
+          3.87
+        ],
+        [
+          "Extended",
+          4.14
+        ]
+      ],
+      "price_at_scan": 2.95,
+      "gap": 20.22,
+      "rvol": 72.57,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/340359/dare-bioscience-reports-full-year-2025-financial-results-and-provides-business-update"
+    },
+    {
+      "ticker": "PBM",
+      "company": "Psyence Biomedical Ltd",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 60,
+      "tier": "watch",
+      "entry": 10.58,
+      "entry_label": "Break above $10.53",
+      "range_str": "",
+      "prev_close": 5.87,
+      "prev_high": 10.53,
+      "fib_levels": [
+        [
+          "Prev High",
+          10.53
+        ],
+        [
+          "First target",
+          11.8
+        ],
+        [
+          "Second target",
+          13.41
+        ],
+        [
+          "Extended",
+          15.19
+        ]
+      ],
+      "price_at_scan": 7.6,
+      "gap": 67.29,
+      "rvol": 45.91,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/345520/psyence-biomed-welcomes-us-executive-action-to-advance-research-into-ibogaine"
+    },
+    {
+      "ticker": "RPAY",
+      "company": "Repay Holdings Corp",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "watch",
+      "entry": 4.31,
+      "entry_label": "Break above $4.29",
+      "range_str": "",
+      "prev_close": 3.18,
+      "prev_high": 4.29,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.29
+        ],
+        [
+          "First target",
+          4.59
+        ],
+        [
+          "Second target",
+          4.98
+        ],
+        [
+          "Extended",
+          5.4
+        ]
+      ],
+      "price_at_scan": 4.11,
+      "gap": 25.0,
+      "rvol": 18.52,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://www.businesswire.com/news/home/20260417336994/en"
+    },
+    {
+      "ticker": "IFRX",
+      "company": "InflaRx NV",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 97,
+      "tier": "watch",
+      "entry": 1.68,
+      "entry_label": "Break above $1.67",
+      "range_str": "",
+      "prev_close": 1.2,
+      "prev_high": 1.67,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.67
+        ],
+        [
+          "First target",
+          1.8
+        ],
+        [
+          "Second target",
+          1.96
+        ],
+        [
+          "Extended",
+          2.14
+        ]
+      ],
+      "price_at_scan": 1.59,
+      "gap": 0.0,
+      "rvol": 17.96,
+      "flags": [
+        "CONTINUATION",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/343437/inflarx-reports-new-mechanistic-data-for-izicopan-supporting-its-potential-as-a-best-in-class-c5ar-inhibitor"
+    },
+    {
+      "ticker": "TOVX",
+      "company": "Theriva Biologics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 69,
+      "tier": "watch",
+      "entry": 0.26,
+      "entry_label": "Current $0.26",
+      "range_str": " \u2014 range to $0.27",
+      "prev_close": 0.25,
+      "prev_high": 0.26,
+      "fib_levels": [
+        [
+          "Second target",
+          0.27
+        ],
+        [
+          "Extended",
+          0.27
+        ]
+      ],
+      "price_at_scan": 0.26,
+      "gap": 1.63,
+      "rvol": 8.93,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/345569/theriva-biologics-announces-upcoming-presentation-of-additional-data-from-the-virage-phase-2b-clinical-trial-of-vcn-01-in-metastatic-pancreatic-cancer-at-aacr-2026-annual-meeting"
+    },
+    {
+      "ticker": "MYSE",
+      "company": "Myseum.AI Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 98,
+      "tier": "watch",
+      "entry": 3.97,
+      "entry_label": "Break above $3.95",
+      "range_str": "",
+      "prev_close": 3.3,
+      "prev_high": 3.95,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.95
+        ],
+        [
+          "First target",
+          4.13
+        ],
+        [
+          "Second target",
+          4.35
+        ],
+        [
+          "Extended",
+          4.6
+        ]
+      ],
+      "price_at_scan": 3.81,
+      "gap": 15.0,
+      "rvol": 8.19,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/video/meme-stock-revival-reflects-ai-202357939.html"
+    },
+    {
+      "ticker": "BEAT",
+      "company": "HeartBeam Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 42,
+      "tier": "watch",
+      "entry": 1.0,
+      "entry_label": "Break above $1.00",
+      "range_str": "",
+      "prev_close": 0.81,
+      "prev_high": 1.0,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.0
+        ],
+        [
+          "First target",
+          1.05
+        ],
+        [
+          "Second target",
+          1.12
+        ],
+        [
+          "Extended",
+          1.19
+        ]
+      ],
+      "price_at_scan": 0.92,
+      "gap": 11.11,
+      "rvol": 5.73,
+      "flags": [
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/sectors/healthcare/articles/heartbeam-beat-closes-10m-public-190000390.html"
+    },
+    {
+      "ticker": "TRVI",
+      "company": "Trevi Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 97,
+      "tier": "watch",
+      "entry": 15.84,
+      "entry_label": "Break above $15.76",
+      "range_str": "",
+      "prev_close": 14.54,
+      "prev_high": 15.76,
+      "fib_levels": [
+        [
+          "Prev High",
+          15.76
+        ],
+        [
+          "First target",
+          16.09
+        ],
+        [
+          "Second target",
+          16.51
+        ],
+        [
+          "Extended",
+          16.98
+        ]
+      ],
+      "price_at_scan": 15.23,
+      "gap": -0.76,
+      "rvol": 5.36,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/345428/trevi-therapeutics-announces-pricing-of-150-million-underwritten-offering-of-common-stock"
+    },
+    {
+      "ticker": "EVTL",
+      "company": "Vertical Aerospace Ltd",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 51,
+      "tier": "watch",
+      "entry": 3.44,
+      "entry_label": "Break above $3.42",
+      "range_str": "",
+      "prev_close": 3.34,
+      "prev_high": 3.42,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.42
+        ],
+        [
+          "First target",
+          3.44
+        ],
+        [
+          "Second target",
+          3.47
+        ],
+        [
+          "Extended",
+          3.5
+        ]
+      ],
+      "price_at_scan": 2.99,
+      "gap": 1.2,
+      "rvol": 4.78,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://www.businesswire.com/news/home/20260416648511/en/On"
+    },
+    {
+      "ticker": "DFNS",
+      "company": "T3 Defense Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 55,
+      "tier": "watch",
+      "entry": 0.88,
+      "entry_label": "Break above $0.88",
+      "range_str": "",
+      "prev_close": 0.68,
+      "prev_high": 0.88,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.88
+        ],
+        [
+          "First target",
+          0.93
+        ],
+        [
+          "Second target",
+          1.0
+        ],
+        [
+          "Extended",
+          1.08
+        ]
+      ],
+      "price_at_scan": 0.76,
+      "gap": -0.31,
+      "rvol": 4.3,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/344926/t3-defense-announces-unaudited-preliminary-key-financial-and-operational-metrics-for-q1-2026-its-first-reporting-quarter-as-a-defense-focused-holding-company"
+    },
+    {
+      "ticker": "EFOI",
+      "company": "Energy Focus Inc",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 83,
+      "tier": "watch",
+      "entry": 9.89,
+      "entry_label": "Break above $9.84",
+      "range_str": "",
+      "prev_close": 2.09,
+      "prev_high": 9.84,
+      "fib_levels": [
+        [
+          "Prev High",
+          9.84
+        ],
+        [
+          "First target",
+          11.95
+        ],
+        [
+          "Second target",
+          14.63
+        ],
+        [
+          "Extended",
+          17.59
+        ]
+      ],
+      "price_at_scan": 6.49,
+      "gap": 157.42,
+      "rvol": 8718.93,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "ALREADY EXTENDED",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018281.html"
+    },
+    {
+      "ticker": "YXT",
+      "company": "Yxt.Com Group Holding Ltd ADR",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 50,
+      "tier": "watch",
+      "entry": 0.72,
+      "entry_label": "Break above $0.72",
+      "range_str": "",
+      "prev_close": 0.37,
+      "prev_high": 0.72,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.72
+        ],
+        [
+          "First target",
+          0.82
+        ],
+        [
+          "Second target",
+          0.94
+        ],
+        [
+          "Extended",
+          1.07
+        ]
+      ],
+      "price_at_scan": 0.5,
+      "gap": 53.92,
+      "rvol": 2109.9,
+      "flags": [
+        "EXTENDED",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/341100/yxtcom-reports-full-year-2025-unaudited-financial-results"
+    },
+    {
+      "ticker": "FRMM",
+      "company": "Forum Markets Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 57,
+      "tier": "watch",
+      "entry": 5.58,
+      "entry_label": "Break above $5.55",
+      "range_str": "",
+      "prev_close": 2.37,
+      "prev_high": 5.55,
+      "fib_levels": [
+        [
+          "Prev High",
+          5.55
+        ],
+        [
+          "First target",
+          6.41
+        ],
+        [
+          "Second target",
+          7.52
+        ],
+        [
+          "Extended",
+          8.73
+        ]
+      ],
+      "price_at_scan": 4.29,
+      "gap": 26.16,
+      "rvol": 78.67,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "ALREADY EXTENDED",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/m/d171348f-efc6-3c1c-b05a-ada227d2b2ed/forum-markets-stock-jumps-19%25.html"
+    },
+    {
+      "ticker": "NPT",
+      "company": "Texxon Holding Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Mid Cap",
+      "score": 50,
+      "tier": "watch",
+      "entry": 4.79,
+      "entry_label": "Break above $4.77",
+      "range_str": "",
+      "prev_close": 3.22,
+      "prev_high": 4.77,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.77
+        ],
+        [
+          "First target",
+          5.19
+        ],
+        [
+          "Second target",
+          5.73
+        ],
+        [
+          "Extended",
+          6.32
+        ]
+      ],
+      "price_at_scan": 3.96,
+      "gap": 3.73,
+      "rvol": 14.75,
+      "flags": [
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/270536/texxon-holding-limited-completes-key-safety-and-regulatory-milestones-for-600000-ton-polystyrene-project"
+    },
+    {
+      "ticker": "BZAI",
+      "company": "Blaize Holdings Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 74,
+      "tier": "watch",
+      "entry": 2.65,
+      "entry_label": "Break above $2.64",
+      "range_str": "",
+      "prev_close": 1.73,
+      "prev_high": 2.64,
+      "fib_levels": [
+        [
+          "Prev High",
+          2.64
+        ],
+        [
+          "First target",
+          2.89
+        ],
+        [
+          "Second target",
+          3.2
+        ],
+        [
+          "Extended",
+          3.55
+        ]
+      ],
+      "price_at_scan": 2.52,
+      "gap": 17.05,
+      "rvol": 14.19,
+      "flags": [
+        "GAP QUALITY",
+        "EXTENDED",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018281.html"
+    },
+    {
+      "ticker": "CRML",
+      "company": "Critical Metals Corp",
+      "sector": "Basic Materials",
+      "scan": "Mid Cap",
+      "score": 78,
+      "tier": "watch",
+      "entry": 13.82,
+      "entry_label": "Break above $13.75",
+      "range_str": "",
+      "prev_close": 9.27,
+      "prev_high": 13.75,
+      "fib_levels": [
+        [
+          "Prev High",
+          13.75
+        ],
+        [
+          "First target",
+          14.97
+        ],
+        [
+          "Second target",
+          16.52
+        ],
+        [
+          "Extended",
+          18.23
+        ]
+      ],
+      "price_at_scan": 12.56,
+      "gap": 22.01,
+      "rvol": 5.89,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "EXTENDED",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-17-2026/card/investors-in-this-stock-are-still-bullish-on-greenland-sIYrHXWNhpksbOoCLhPo?mod=wsj_FV"
+    },
+    {
+      "ticker": "AGAE",
+      "company": "Allied Gaming & Entertainment Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 51,
+      "tier": "watch",
+      "entry": 0.74,
+      "entry_label": "Break above $0.74",
+      "range_str": "",
+      "prev_close": 0.52,
+      "prev_high": 0.74,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.74
+        ],
+        [
+          "First target",
+          0.8
+        ],
+        [
+          "Second target",
+          0.88
+        ],
+        [
+          "Extended",
+          0.96
+        ]
+      ],
+      "price_at_scan": 0.69,
+      "gap": 9.22,
+      "rvol": 3.19,
+      "flags": [
+        "CONTINUATION",
+        "EXTENDED",
+        "PRIOR DAY RUNNER"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018281.html"
+    }
+  ]
+}
