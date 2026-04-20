@@ -39,7 +39,7 @@ SESSIONS = {
     "earlypremarket": ("Early Pre-Market", "First look · overnight gappers · ~4:00 AM ET"),
     "premarket":      ("Pre-Market",       "Confirmed setups · pre-Robinhood open · ~6:55 AM ET"),
     "marketopen":     ("Market Open",      "Pre-market momentum &amp; gap ups · ~8:30 AM ET"),
-    "midday":         ("Midday",           "VWAP reclaims &amp; second entries · ~12:30 PM ET"),
+    "midday":         ("Midday",           "VWAP reclaims &amp; second entries · ~1:00 PM ET"),
     "afterhours":     ("After Hours",      "Power hour seeds &amp; HOD breakouts · ~3:30 PM ET"),
 }
 
