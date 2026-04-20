@@ -58,12 +58,10 @@ def next_trading_day(from_date):
 
 def trading_date_for_session(session, now_et):
     today = now_et.date()
-    if session in ("premarket", "earlypremarket"):
-        # Night scan is always for the NEXT trading day
-        return next_trading_day(today)
-    else:
-        # Same-day sessions: use today if it's a trading day
-        return today if is_trading_day(today) else next_trading_day(today)
+    # All sessions target the current trading day
+    # Early pre-market (4AM) and pre-market (6:55AM) run before market open
+    # but are still scanning for TODAY's session, not tomorrow's
+    return today if is_trading_day(today) else next_trading_day(today)
 
 def fmt_trading_date(d):
     return d.strftime("%a %b %-d, %Y")   # e.g. "Mon Apr 6, 2026"
