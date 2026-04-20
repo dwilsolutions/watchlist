@@ -1,7 +1,7 @@
 """
-Time of Day Analysis — 60 Day
-Analyzes when low float runners hit their intraday high over 60 days.
-Uses top gainers list from Finviz as the ticker universe.
+Time of Day Analysis — 6 Month
+Analyzes when low float runners hit their intraday high over 6 months.
+Uses top gainers list + watchlist history as the ticker universe.
 
 Usage (GitHub Actions): trigger 'analyze' session
 """
@@ -9,16 +9,19 @@ Usage (GitHub Actions): trigger 'analyze' session
 import yfinance as yf
 import pandas as pd
 import json, glob, os
-from datetime import datetime
+from datetime import datetime, date, timedelta
 from zoneinfo import ZoneInfo
 from collections import defaultdict
 
 et = ZoneInfo("America/New_York")
 DATA_DIR = "docs/data"
 
+START_DATE = (date.today() - timedelta(days=180)).isoformat()
+END_DATE   = date.today().isoformat()
+
 # ── Ticker universe ────────────────────────────────────────────────────────────
 
-GAINERS_60D = [
+GAINERS_6M = [
     'FUSE','RAYA','CREG','SKYQ','CUE','ZNTL','UCAR','SQFT','TPST','MAXN',
     'OGN','SIDU','LWLG','AIXI','PSTV','CBUS','ALOY','NCEL','OCC','MFI',
     'MTVA','TMCI','XNDU','CIGL','YYGH','HURA','POET','GPRK','TRON','AIB',
@@ -34,10 +37,26 @@ GAINERS_60D = [
     'MHH','GOVX','DSWL','CURV','ONEG','INFQ','CMTG','CULP','UPXI','STAK',
     'KYIV','ASYS','PDM','SHIM','DFDV','DTI','PYXS','SSL','AREC','LPTH',
     'DAIO','LTRN','BTMD','LPCN','NOMA','RPAY','LIXT','ACHV','ODD','MVST',
-    'NPT','LI','NCT'
+    'NPT','LI','NCT',
+    # Expanded from Finviz export + session JSONs
+    'ABLV','ACHV','AGAE','AHMA','ALGS','ARAI','ASTI','BIRD','BOLD','BTBD',
+    'BTOG','BZAI','CAPS','CMCT','CMPS','COSM','CRML','DARE','DEVS','DFNS',
+    'DGNX','DLXY','EFOI','ELAB','ENVB','EVTL','FRMM','GAME','GBR','GCTK',
+    'HOTH','HXHX','IFRX','IMA','INO','ISPC','ITP','LASE','LIMN','LNAI',
+    'LRHC','MAMO','MIMI','MITQ','MLSS','MNTS','MYSE','NCI','NEXA','NNBR',
+    'NOTV','ONFO','PMNT','RCT','RECT','RETO','RMSG','RPAY','SBEV','SGLY',
+    'SLNH','SNAL','SNYR','SOAR','TRVI','UAVS','VRAX','VSA','WATT','YXT',
+    'ZSPC','HUBC','IMMP','BEAT','SURG','ASBP','PMAX','GOVX','CLOV','MVIS',
+    'EXPR','BBIG','BFRI','ATER','ILUS','RNAZ','NCTY','GFAI','BACK','ATXG',
+    'BNED','CLPS','DATS','EDSA','ELOX','FTFT','GNPX','GRPN','HOOK','HPNN',
+    'HYMC','IDEX','IMVT','INBS','INPX','JAGX','JBDI','KALA','KAVL','LFLY',
+    'LGVN','LIQT','LKCO','LPCN','MAXN','MBOT','MEGL','MEIP','MGAM','MITI',
+    'MNDO','MOBQ','MOGO','MOTS','MPLN','MRAI','MREO','MYMD','MYSZ','NCNA',
+    'NDRA','NKGN','NNOX','NRXP','NTBL','NVAX','NVFY','NVOS','OCAX','OCGN',
+    'ONCY','ONVO',
 ]
 
-# Also include our watchlist tickers
+# Also pull from watchlist session JSONs
 watchlist_tickers = set()
 for fpath in glob.glob(f'{DATA_DIR}/*.json'):
     if 'eod_results' in fpath:
@@ -52,25 +71,25 @@ for fpath in glob.glob(f'{DATA_DIR}/*.json'):
     except:
         continue
 
-all_tickers = sorted(set(GAINERS_60D) | watchlist_tickers)
-print(f"\n📋 Analyzing {len(all_tickers)} tickers total")
-print(f"   {len(GAINERS_60D)} from Finviz top gainers")
-print(f"   {len(watchlist_tickers)} from our watchlist history")
-print(f"   Combined unique: {len(all_tickers)}\n")
+all_tickers = sorted(set(t for t in (set(GAINERS_6M) | watchlist_tickers)
+                         if t.isalpha() and len(t) <= 5))
+print(f"\nAnalyzing {len(all_tickers)} tickers | {START_DATE} to {END_DATE}")
 
 # ── Download in batches ────────────────────────────────────────────────────────
 
-print("⏳ Fetching 5-min bars (60 days)...")
-BATCH_SIZE = 50
+print("Fetching 5-min bars (6 months) — this will take a few minutes...")
+BATCH_SIZE = 40
 all_data = {}
 
 for i in range(0, len(all_tickers), BATCH_SIZE):
     batch = all_tickers[i:i+BATCH_SIZE]
-    print(f"   Batch {i//BATCH_SIZE + 1}/{(len(all_tickers)-1)//BATCH_SIZE + 1} — {len(batch)} tickers...")
+    print(f"  Batch {i//BATCH_SIZE + 1}/{-(-len(all_tickers)//BATCH_SIZE)}: "
+          f"{batch[0]}..{batch[-1]}")
     try:
-        data = yf.download(
+        raw = yf.download(
             batch,
-            period="60d",
+            start=START_DATE,
+            end=END_DATE,
             interval="5m",
             group_by="ticker",
             auto_adjust=True,
@@ -81,26 +100,30 @@ for i in range(0, len(all_tickers), BATCH_SIZE):
         for ticker in batch:
             try:
                 if len(batch) == 1:
-                    df = data
-                else:
-                    if ticker not in data.columns.get_level_values(0):
+                    df = raw
+                elif isinstance(raw.columns, pd.MultiIndex):
+                    if ticker not in raw.columns.get_level_values(0):
                         continue
-                    df = data[ticker]
+                    df = raw[ticker]
+                else:
+                    continue
                 if df is not None and not df.empty:
                     all_data[ticker] = df
             except:
                 continue
     except Exception as e:
-        print(f"   Batch error: {e}")
+        print(f"  Batch error: {e}")
         continue
 
-print(f"\n✅ Downloaded data for {len(all_data)} tickers\n")
+print(f"\nDownloaded data for {len(all_data)} tickers\n")
 
 # ── Analyze ────────────────────────────────────────────────────────────────────
 
 time_buckets_30 = defaultdict(int)
 ticker_results  = []
-MIN_MOVE = 0.08
+MIN_MOVE = 0.08   # 8% minimum intraday move to count
+
+import math
 
 for ticker, df in all_data.items():
     try:
@@ -113,13 +136,16 @@ for ticker, df in all_data.items():
 
             high_val  = group['High'].max()
             open_val  = group['Open'].iloc[0]
-            close_val = group['Close'].iloc[-1]
 
-            if not open_val or open_val == 0:
+            if not open_val or open_val == 0 or open_val < 0.01:
+                continue
+            if open_val > 20.0:   # outside screener price range
                 continue
 
             pct_move = (high_val - open_val) / open_val
-            if pct_move < MIN_MOVE or pct_move > 20.0:  # filter >2000% as bad data
+            if pct_move < MIN_MOVE or pct_move > 20.0:
+                continue
+            if math.isnan(pct_move) or math.isinf(pct_move):
                 continue
 
             high_idx = group['High'].idxmax()
@@ -128,12 +154,6 @@ for ticker, df in all_data.items():
             bucket30 = f"{h:02d}:{m30:02d}"
 
             time_buckets_30[bucket30] += 1
-            import math
-            if math.isnan(pct_move) or math.isinf(pct_move):
-                continue
-            if open_val < 0.01:  # skip penny stocks with bad data
-                continue
-
             ticker_results.append({
                 'ticker':    ticker,
                 'date':      str(day),
@@ -150,20 +170,20 @@ total = sum(time_buckets_30.values())
 # ── Output ─────────────────────────────────────────────────────────────────────
 
 print("=" * 65)
-print("📊 60-DAY TIME OF DAY ANALYSIS — When do runners hit their HIGH?")
-print(f"   (Stocks that moved 8%+ | {total} events | {len(all_data)} tickers)")
+print(f"6-MONTH TIME OF DAY ANALYSIS — When do runners hit their HIGH?")
+print(f"  Stocks that moved 8%+ | {total} events | {len(all_data)} tickers")
 print("=" * 65)
 
 LABELS = {
-    "04:00": "← Pre-market opens",
-    "07:00": "← Robinhood opens",
-    "09:00": "← Late pre-market",
-    "09:30": "← Market OPENS",
-    "10:00": "← Post-open momentum",
-    "12:00": "← Lunch",
-    "15:30": "← Power hour",
-    "16:00": "← After hours opens",
-    "19:30": "← AH thins out",
+    "04:00": "<-- Pre-market opens",
+    "07:00": "<-- Robinhood opens",
+    "09:00": "<-- Late pre-market",
+    "09:30": "<-- Market OPENS",
+    "10:00": "<-- Post-open momentum",
+    "12:00": "<-- Lunch",
+    "15:30": "<-- Power hour",
+    "16:00": "<-- After hours opens",
+    "19:30": "<-- AH thins out",
 }
 
 for time_str in sorted(time_buckets_30.keys()):
@@ -179,38 +199,45 @@ for time_str in sorted(time_buckets_30.keys()):
 print("=" * 65)
 
 top5 = sorted(time_buckets_30.items(), key=lambda x: x[1], reverse=True)[:5]
-print("\n🎯 TOP 5 WINDOWS:")
+print("\nTOP 5 WINDOWS:")
 for t, c in top5:
     pct = round(c / total * 100)
-    print(f"   {t} ET  →  {pct}% of runners ({c} events)")
+    print(f"  {t} ET  ->  {pct}% of runners ({c} events)")
 
 periods = {
-    "Pre-Market    (4:00-9:30 AM)":  [f"{h:02d}:{m:02d}" for h in range(4,9) for m in [0,30]] + ["09:00"],
-    "Market Open   (9:30-11:00 AM)": ["09:30","10:00","10:30"],
-    "Mid-Morning   (11AM-12:30PM)":  ["11:00","11:30","12:00"],
-    "Midday        (12:30-2:00 PM)": ["12:30","13:00","13:30"],
-    "Afternoon     (2:00-4:00 PM)":  ["14:00","14:30","15:00","15:30"],
-    "After Hours   (4:00-8:00 PM)":  [f"{h:02d}:{m:02d}" for h in range(16,20) for m in [0,30]],
+    "Early Pre-Market (4:00-6:55 AM)":  [f"{h:02d}:{m:02d}" for h in range(4,7) for m in [0,30]],
+    "Pre-Market       (6:55-9:30 AM)":  [f"{h:02d}:{m:02d}" for h in range(7,10) for m in [0,30]],
+    "Market Open      (9:30-11:00 AM)": ["09:30","10:00","10:30"],
+    "Mid-Morning      (11AM-12:30PM)":  ["11:00","11:30","12:00"],
+    "Midday           (12:30-2:00 PM)": ["12:30","13:00","13:30"],
+    "Afternoon        (2:00-3:30 PM)":  ["14:00","14:30","15:00","15:30"],
+    "After Hours      (4:00-8:00 PM)":  [f"{h:02d}:{m:02d}" for h in range(16,20) for m in [0,30]],
 }
 
-print("\n📅 BY TRADING PERIOD:")
+print("\nBY TRADING PERIOD:")
+period_counts = {}
 for period, buckets in periods.items():
     count = sum(time_buckets_30.get(b, 0) for b in buckets)
     pct   = round(count / total * 100) if total else 0
     bar   = "█" * (pct // 3)
-    print(f"   {period:<38} {pct:3}% {bar}")
+    period_counts[period] = count
+    print(f"  {period:<40} {pct:3}% {bar}")
 
-print(f"\n📈 TOP 20 BIGGEST MOVES:")
+print("\nRANKED BY RUNNER CONCENTRATION:")
+for period, count in sorted(period_counts.items(), key=lambda x: -x[1]):
+    pct = round(count / total * 100) if total else 0
+    print(f"  {pct:3}%  {period.strip()}")
+
+print(f"\nTOP 20 BIGGEST MOVES:")
 ticker_results.sort(key=lambda x: x['pct_move'], reverse=True)
 for r in ticker_results[:20]:
-    print(f"   {r['ticker']:6} {r['date']}  high at {r['high_time']} ET  +{r['pct_move']:.1f}%")
+    print(f"  {r['ticker']:6} {r['date']}  high at {r['high_time']} ET  +{r['pct_move']:.1f}%")
 
-print(f"\n✅ Analysis complete — {len(ticker_results)} runner days analyzed")
+print(f"\nAnalysis complete — {len(ticker_results)} runner days analyzed")
 
-print("\n💡 OPTIMAL SCAN SCHEDULE (based on 60-day data):")
-top3_periods = sorted(periods.items(),
-    key=lambda x: sum(time_buckets_30.get(b,0) for b in x[1]),
-    reverse=True)[:3]
-for period, _ in top3_periods:
-    print(f"   ✓ {period.strip()}")
+print("\nOPTIMAL SCAN SCHEDULE (based on 6-month data):")
+top3 = sorted(period_counts.items(), key=lambda x: -x[1])[:3]
+for period, count in top3:
+    pct = round(count / total * 100) if total else 0
+    print(f"  {pct}%  {period.strip()}")
 print()
