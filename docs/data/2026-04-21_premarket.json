@@ -1,0 +1,85 @@
+{
+  "session": "premarket",
+  "label": "Pre-Market",
+  "date": "2026-04-21",
+  "generated": "06:55 AM ET",
+  "tickers": [
+    {
+      "ticker": "FCHL",
+      "company": "Fitness Champs Holdings Ltd",
+      "sector": "Consumer Defensive",
+      "scan": "Low Float",
+      "score": 40,
+      "tier": "watch",
+      "entry": 1.02,
+      "entry_label": "Break above $1.01",
+      "range_str": "",
+      "prev_close": 0.36,
+      "prev_high": 1.01,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.01
+        ],
+        [
+          "First target",
+          1.19
+        ],
+        [
+          "Second target",
+          1.41
+        ],
+        [
+          "Extended",
+          1.66
+        ]
+      ],
+      "price_at_scan": 0.61,
+      "gap": 13.67,
+      "rvol": 578.15,
+      "flags": [
+        "GAP QUALITY"
+      ],
+      "news_url": "https://elite.finviz.com/news/345511/fitness-champs-holdings-limited-announces-pricing-of-5-million-public-offering"
+    },
+    {
+      "ticker": "TOVX",
+      "company": "Theriva Biologics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 91,
+      "tier": "watch",
+      "entry": 0.54,
+      "entry_label": "Break above $0.54",
+      "range_str": "",
+      "prev_close": 0.26,
+      "prev_high": 0.54,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.54
+        ],
+        [
+          "First target",
+          0.62
+        ],
+        [
+          "Second target",
+          0.71
+        ],
+        [
+          "Extended",
+          0.82
+        ]
+      ],
+      "price_at_scan": 0.48,
+      "gap": 73.37,
+      "rvol": 243.79,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY"
+      ],
+      "news_url": "https://elite.finviz.com/news/345569/theriva-biologics-announces-upcoming-presentation-of-additional-data-from-the-virage-phase-2b-clinical-trial-of-vcn-01-in-metastatic-pancreatic-cancer-at-aacr-2026-annual-meeting"
+    }
+  ]
+}
