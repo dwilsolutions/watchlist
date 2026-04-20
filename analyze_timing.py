@@ -1,6 +1,6 @@
 """
-Time of Day Analysis — 6 Month
-Analyzes when low float runners hit their intraday high over 6 months.
+Time of Day Analysis — 60 Day
+Analyzes when low float runners hit their intraday high over 60 days.
 Uses top gainers list + watchlist history as the ticker universe.
 
 Usage (GitHub Actions): trigger 'analyze' session
@@ -9,19 +9,17 @@ Usage (GitHub Actions): trigger 'analyze' session
 import yfinance as yf
 import pandas as pd
 import json, glob, os
-from datetime import datetime, date, timedelta
+from datetime import datetime
 from zoneinfo import ZoneInfo
 from collections import defaultdict
+import math
 
 et = ZoneInfo("America/New_York")
 DATA_DIR = "docs/data"
 
-START_DATE = (date.today() - timedelta(days=180)).isoformat()
-END_DATE   = date.today().isoformat()
-
 # ── Ticker universe ────────────────────────────────────────────────────────────
 
-GAINERS_6M = [
+GAINERS_60D = [
     'FUSE','RAYA','CREG','SKYQ','CUE','ZNTL','UCAR','SQFT','TPST','MAXN',
     'OGN','SIDU','LWLG','AIXI','PSTV','CBUS','ALOY','NCEL','OCC','MFI',
     'MTVA','TMCI','XNDU','CIGL','YYGH','HURA','POET','GPRK','TRON','AIB',
@@ -46,17 +44,17 @@ GAINERS_6M = [
     'LRHC','MAMO','MIMI','MITQ','MLSS','MNTS','MYSE','NCI','NEXA','NNBR',
     'NOTV','ONFO','PMNT','RCT','RECT','RETO','RMSG','RPAY','SBEV','SGLY',
     'SLNH','SNAL','SNYR','SOAR','TRVI','UAVS','VRAX','VSA','WATT','YXT',
-    'ZSPC','HUBC','IMMP','BEAT','SURG','ASBP','PMAX','GOVX','CLOV','MVIS',
-    'EXPR','BBIG','BFRI','ATER','ILUS','RNAZ','NCTY','GFAI','BACK','ATXG',
-    'BNED','CLPS','DATS','EDSA','ELOX','FTFT','GNPX','GRPN','HOOK','HPNN',
-    'HYMC','IDEX','IMVT','INBS','INPX','JAGX','JBDI','KALA','KAVL','LFLY',
-    'LGVN','LIQT','LKCO','LPCN','MAXN','MBOT','MEGL','MEIP','MGAM','MITI',
-    'MNDO','MOBQ','MOGO','MOTS','MPLN','MRAI','MREO','MYMD','MYSZ','NCNA',
-    'NDRA','NKGN','NNOX','NRXP','NTBL','NVAX','NVFY','NVOS','OCAX','OCGN',
-    'ONCY','ONVO',
+    'ZSPC','HUBC','IMMP','BEAT','SURG','ASBP','PMAX','CLOV','MVIS','EXPR',
+    'BBIG','BFRI','ATER','ILUS','RNAZ','NCTY','GFAI','BACK','ATXG','BNED',
+    'CLPS','DATS','EDSA','ELOX','FTFT','GNPX','GRPN','HOOK','HPNN','HYMC',
+    'IDEX','IMVT','INBS','INPX','JAGX','JBDI','KALA','KAVL','LFLY','LGVN',
+    'LIQT','LKCO','LPCN','MAXN','MBOT','MEGL','MEIP','MGAM','MITI','MNDO',
+    'MOBQ','MOGO','MOTS','MPLN','MRAI','MREO','MYMD','MYSZ','NCNA','NDRA',
+    'NKGN','NNOX','NRXP','NTBL','NVAX','NVFY','NVOS','OCAX','OCGN','ONCY',
+    'ONVO',
 ]
 
-# Also pull from watchlist session JSONs
+# Pull from watchlist session JSONs
 watchlist_tickers = set()
 for fpath in glob.glob(f'{DATA_DIR}/*.json'):
     if 'eod_results' in fpath:
@@ -71,13 +69,17 @@ for fpath in glob.glob(f'{DATA_DIR}/*.json'):
     except:
         continue
 
-all_tickers = sorted(set(t for t in (set(GAINERS_6M) | watchlist_tickers)
-                         if t.isalpha() and len(t) <= 5))
-print(f"\nAnalyzing {len(all_tickers)} tickers | {START_DATE} to {END_DATE}")
+all_tickers = sorted(set(
+    t for t in (set(GAINERS_60D) | watchlist_tickers)
+    if t.isalpha() and len(t) <= 5
+))
+print(f"\nAnalyzing {len(all_tickers)} tickers | last 60 days")
+print(f"  {len(GAINERS_60D)} from gainers list")
+print(f"  {len(watchlist_tickers)} from watchlist history")
 
 # ── Download in batches ────────────────────────────────────────────────────────
 
-print("Fetching 5-min bars (6 months) — this will take a few minutes...")
+print("\nFetching 5-min bars (60 days)...")
 BATCH_SIZE = 40
 all_data = {}
 
@@ -88,8 +90,7 @@ for i in range(0, len(all_tickers), BATCH_SIZE):
     try:
         raw = yf.download(
             batch,
-            start=START_DATE,
-            end=END_DATE,
+            period="60d",
             interval="5m",
             group_by="ticker",
             auto_adjust=True,
@@ -121,9 +122,7 @@ print(f"\nDownloaded data for {len(all_data)} tickers\n")
 
 time_buckets_30 = defaultdict(int)
 ticker_results  = []
-MIN_MOVE = 0.08   # 8% minimum intraday move to count
-
-import math
+MIN_MOVE = 0.08
 
 for ticker, df in all_data.items():
     try:
@@ -137,9 +136,7 @@ for ticker, df in all_data.items():
             high_val  = group['High'].max()
             open_val  = group['Open'].iloc[0]
 
-            if not open_val or open_val == 0 or open_val < 0.01:
-                continue
-            if open_val > 20.0:   # outside screener price range
+            if not open_val or open_val == 0 or open_val < 0.01 or open_val > 20.0:
                 continue
 
             pct_move = (high_val - open_val) / open_val
@@ -170,13 +167,13 @@ total = sum(time_buckets_30.values())
 # ── Output ─────────────────────────────────────────────────────────────────────
 
 print("=" * 65)
-print(f"6-MONTH TIME OF DAY ANALYSIS — When do runners hit their HIGH?")
+print(f"60-DAY TIME OF DAY — When do runners hit their HIGH?")
 print(f"  Stocks that moved 8%+ | {total} events | {len(all_data)} tickers")
 print("=" * 65)
 
 LABELS = {
-    "04:00": "<-- Pre-market opens",
-    "07:00": "<-- Robinhood opens",
+    "04:00": "<-- Early pre-market opens",
+    "06:30": "<-- Robinhood pre-market",
     "09:00": "<-- Late pre-market",
     "09:30": "<-- Market OPENS",
     "10:00": "<-- Post-open momentum",
@@ -209,8 +206,7 @@ periods = {
     "Pre-Market       (6:55-9:30 AM)":  [f"{h:02d}:{m:02d}" for h in range(7,10) for m in [0,30]],
     "Market Open      (9:30-11:00 AM)": ["09:30","10:00","10:30"],
     "Mid-Morning      (11AM-12:30PM)":  ["11:00","11:30","12:00"],
-    "Midday           (12:30-2:00 PM)": ["12:30","13:00","13:30"],
-    "Afternoon        (2:00-3:30 PM)":  ["14:00","14:30","15:00","15:30"],
+    "Midday           (12:30-3:30 PM)": [f"{h:02d}:{m:02d}" for h in range(12,16) for m in [0,30]],
     "After Hours      (4:00-8:00 PM)":  [f"{h:02d}:{m:02d}" for h in range(16,20) for m in [0,30]],
 }
 
@@ -221,7 +217,7 @@ for period, buckets in periods.items():
     pct   = round(count / total * 100) if total else 0
     bar   = "█" * (pct // 3)
     period_counts[period] = count
-    print(f"  {period:<40} {pct:3}% {bar}")
+    print(f"  {period:<42} {pct:3}%  {bar}")
 
 print("\nRANKED BY RUNNER CONCENTRATION:")
 for period, count in sorted(period_counts.items(), key=lambda x: -x[1]):
@@ -235,7 +231,7 @@ for r in ticker_results[:20]:
 
 print(f"\nAnalysis complete — {len(ticker_results)} runner days analyzed")
 
-print("\nOPTIMAL SCAN SCHEDULE (based on 6-month data):")
+print("\nOPTIMAL SCAN SCHEDULE (based on 60-day data):")
 top3 = sorted(period_counts.items(), key=lambda x: -x[1])[:3]
 for period, count in top3:
     pct = round(count / total * 100) if total else 0
