@@ -1,0 +1,30 @@
+{
+  "session": "earlypremarket",
+  "label": "Early Pre-Market",
+  "date": "2026-04-21",
+  "generated": "04:05 AM ET",
+  "tickers": [
+    {
+      "ticker": "TOVX",
+      "company": "Theriva Biologics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 50,
+      "tier": "watch",
+      "entry": 0.39,
+      "entry_label": "Break above $0.39",
+      "range_str": "",
+      "prev_close": 0.41,
+      "prev_high": 0.39,
+      "fib_levels": [],
+      "price_at_scan": 0.36,
+      "gap": -9.39,
+      "rvol": 5.51,
+      "flags": [
+        "CONTINUATION",
+        "PRIOR DAY RUNNER"
+      ],
+      "news_url": "https://elite.finviz.com/news/345569/theriva-biologics-announces-upcoming-presentation-of-additional-data-from-the-virage-phase-2b-clinical-trial-of-vcn-01-in-metastatic-pancreatic-cancer-at-aacr-2026-annual-meeting"
+    }
+  ]
+}
