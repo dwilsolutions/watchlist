@@ -5,79 +5,260 @@
   "generated": "06:55 AM ET",
   "tickers": [
     {
+      "ticker": "LOCL",
+      "company": "Local Bounti Corp",
+      "sector": "Consumer Defensive",
+      "scan": "Low Float",
+      "score": 100,
+      "tier": "watch",
+      "entry": 3.85,
+      "entry_label": "Break above $3.83",
+      "range_str": "",
+      "prev_close": 1.88,
+      "prev_high": 3.83,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.83
+        ],
+        [
+          "First target",
+          4.36
+        ],
+        [
+          "Second target",
+          5.04
+        ],
+        [
+          "Extended",
+          5.78
+        ]
+      ],
+      "price_at_scan": 2.97,
+      "gap": 37.77,
+      "rvol": 14644.95,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "CATALYST \u00b7 8-K",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/local-bounti-corp-locl-q4-190033450.html"
+    },
+    {
+      "ticker": "SPRC",
+      "company": "SciSparc Ltd",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 82,
+      "tier": "watch",
+      "entry": 8.46,
+      "entry_label": "Break above $8.42",
+      "range_str": "",
+      "prev_close": 4.23,
+      "prev_high": 8.42,
+      "fib_levels": [
+        [
+          "Prev High",
+          8.42
+        ],
+        [
+          "First target",
+          9.56
+        ],
+        [
+          "Second target",
+          11.01
+        ],
+        [
+          "Extended",
+          12.61
+        ]
+      ],
+      "price_at_scan": 6.49,
+      "gap": 27.66,
+      "rvol": 1002.02,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/337490/scisparc-neurothera-labs-clearmind-medicine-collaboration-leads-to-patent-application-for-depression-therapy"
+    },
+    {
+      "ticker": "SOWG",
+      "company": "Sow Good Inc",
+      "sector": "Consumer Defensive",
+      "scan": "Low Float",
+      "score": 42,
+      "tier": "watch",
+      "entry": 0.41,
+      "entry_label": "Break above $0.41",
+      "range_str": "",
+      "prev_close": 0.24,
+      "prev_high": 0.41,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.41
+        ],
+        [
+          "First target",
+          0.46
+        ],
+        [
+          "Second target",
+          0.52
+        ],
+        [
+          "Extended",
+          0.58
+        ]
+      ],
+      "price_at_scan": 0.29,
+      "gap": 2.92,
+      "rvol": 538.25,
+      "flags": [
+        "CATALYST \u00b7 M&A",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/346037/sow-good-announces-transformative-acquisition-of-the-nachu-graphite-project-positioning-the-company-as-a-critical-minerals-and-battery-anode-developer"
+    },
+    {
+      "ticker": "BIYA",
+      "company": "Baiya International Group Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 42,
+      "tier": "watch",
+      "entry": 1.66,
+      "entry_label": "Break above $1.65",
+      "range_str": "",
+      "prev_close": 0.87,
+      "prev_high": 1.65,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.65
+        ],
+        [
+          "First target",
+          1.86
+        ],
+        [
+          "Second target",
+          2.13
+        ],
+        [
+          "Extended",
+          2.43
+        ]
+      ],
+      "price_at_scan": 1.23,
+      "gap": 78.14,
+      "rvol": 320.06,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/340840/baiya-international-group-inc-sets-sail-the-market-takes-the-helm-the-cryptocurrency-ark-plan-begins-with-a-global-vote-to-determine-its-first-allocation-direction"
+    },
+    {
+      "ticker": "CLIK",
+      "company": "Click Holdings Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 73,
+      "tier": "watch",
+      "entry": 5.3,
+      "entry_label": "Break above $5.27",
+      "range_str": "",
+      "prev_close": 2.57,
+      "prev_high": 5.27,
+      "fib_levels": [
+        [
+          "Prev High",
+          5.27
+        ],
+        [
+          "First target",
+          6.0
+        ],
+        [
+          "Second target",
+          6.94
+        ],
+        [
+          "Extended",
+          7.97
+        ]
+      ],
+      "price_at_scan": 4.15,
+      "gap": 0.0,
+      "rvol": 217.53,
+      "flags": [
+        "CONTINUATION",
+        "CATALYST \u00b7 M&A"
+      ],
+      "news_url": "https://elite.finviz.com/news/346031/click-holdings-limited-nasdaq-clik-launches-explosive-three-year-silver-economy-drive-targeting-hk500-million-annual-revenue-with-100-cagr-via-gba-expansion-silver-economy-tech-acquisition"
+    },
+    {
       "ticker": "FCHL",
       "company": "Fitness Champs Holdings Ltd",
       "sector": "Consumer Defensive",
       "scan": "Low Float",
-      "score": 40,
+      "score": 43,
       "tier": "watch",
-      "entry": 1.02,
-      "entry_label": "Break above $1.01",
+      "entry": 0.36,
+      "entry_label": "Break above $0.36",
       "range_str": "",
-      "prev_close": 0.36,
-      "prev_high": 1.01,
+      "prev_close": 0.22,
+      "prev_high": 0.36,
       "fib_levels": [
         [
           "Prev High",
-          1.01
+          0.36
         ],
         [
           "First target",
-          1.19
+          0.4
         ],
         [
           "Second target",
-          1.41
+          0.45
         ],
         [
           "Extended",
-          1.66
+          0.5
         ]
       ],
-      "price_at_scan": 0.61,
-      "gap": 13.67,
-      "rvol": 578.15,
+      "price_at_scan": 0.3,
+      "gap": 30.22,
+      "rvol": 155.73,
       "flags": [
-        "GAP QUALITY"
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
       ],
-      "news_url": "https://elite.finviz.com/news/345511/fitness-champs-holdings-limited-announces-pricing-of-5-million-public-offering"
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018596.html"
     },
     {
       "ticker": "TOVX",
       "company": "Theriva Biologics Inc",
       "sector": "Healthcare",
       "scan": "Mid Cap",
-      "score": 91,
+      "score": 51,
       "tier": "watch",
-      "entry": 0.54,
-      "entry_label": "Break above $0.54",
+      "entry": 0.39,
+      "entry_label": "Break above $0.39",
       "range_str": "",
-      "prev_close": 0.26,
-      "prev_high": 0.54,
-      "fib_levels": [
-        [
-          "Prev High",
-          0.54
-        ],
-        [
-          "First target",
-          0.62
-        ],
-        [
-          "Second target",
-          0.71
-        ],
-        [
-          "Extended",
-          0.82
-        ]
-      ],
-      "price_at_scan": 0.48,
-      "gap": 73.37,
-      "rvol": 243.79,
+      "prev_close": 0.41,
+      "prev_high": 0.39,
+      "fib_levels": [],
+      "price_at_scan": 0.33,
+      "gap": -9.39,
+      "rvol": 12.92,
       "flags": [
-        "CONTINUATION",
-        "GAP QUALITY"
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
       ],
       "news_url": "https://elite.finviz.com/news/345569/theriva-biologics-announces-upcoming-presentation-of-additional-data-from-the-virage-phase-2b-clinical-trial-of-vcn-01-in-metastatic-pancreatic-cancer-at-aacr-2026-annual-meeting"
     }
