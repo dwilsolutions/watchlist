@@ -1,0 +1,558 @@
+{
+  "session": "afterhours",
+  "label": "After Hours",
+  "date": "2026-04-21",
+  "generated": "04:30 PM ET",
+  "tickers": [
+    {
+      "ticker": "LOCL",
+      "company": "Local Bounti Corp",
+      "sector": "Consumer Defensive",
+      "scan": "Low Float",
+      "score": 100,
+      "tier": "watch",
+      "entry": 2.92,
+      "entry_label": "Momentum above VWAP $2.82",
+      "range_str": " \u2014 range to $3.13",
+      "prev_close": 1.88,
+      "prev_high": 3.13,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.13
+        ],
+        [
+          "First target",
+          3.47
+        ],
+        [
+          "Second target",
+          3.9
+        ],
+        [
+          "Extended",
+          4.38
+        ]
+      ],
+      "price_at_scan": 2.91,
+      "gap": 51.06,
+      "rvol": 2615.62,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "CATALYST \u00b7 8-K",
+        "ALREADY EXTENDED",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/local-bounti-corp-locl-q4-190033450.html"
+    },
+    {
+      "ticker": "XRTX",
+      "company": "XORTX Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 67,
+      "tier": "watch",
+      "entry": 3.07,
+      "entry_label": "Reclaim $3.05",
+      "range_str": " \u2014 range to $3.6",
+      "prev_close": 2.25,
+      "prev_high": 3.6,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.6
+        ],
+        [
+          "First target",
+          3.97
+        ],
+        [
+          "Second target",
+          4.43
+        ],
+        [
+          "Extended",
+          4.95
+        ]
+      ],
+      "price_at_scan": 2.69,
+      "gap": 31.11,
+      "rvol": 1226.16,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143020968.html"
+    },
+    {
+      "ticker": "LOBO",
+      "company": "Lobo Technologies Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 71,
+      "tier": "watch",
+      "entry": 0.87,
+      "entry_label": "Reclaim $0.86",
+      "range_str": " \u2014 range to $1.35",
+      "prev_close": 0.57,
+      "prev_high": 1.35,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.35
+        ],
+        [
+          "First target",
+          1.56
+        ],
+        [
+          "Second target",
+          1.83
+        ],
+        [
+          "Extended",
+          2.13
+        ]
+      ],
+      "price_at_scan": 0.68,
+      "gap": 97.35,
+      "rvol": 1220.96,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143020968.html"
+    },
+    {
+      "ticker": "CLIK",
+      "company": "Click Holdings Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 60,
+      "tier": "watch",
+      "entry": 3.65,
+      "entry_label": "Reclaim $3.63",
+      "range_str": " \u2014 range to $4.02",
+      "prev_close": 2.57,
+      "prev_high": 4.02,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.02
+        ],
+        [
+          "First target",
+          4.41
+        ],
+        [
+          "Second target",
+          4.92
+        ],
+        [
+          "Extended",
+          5.47
+        ]
+      ],
+      "price_at_scan": 3.49,
+      "gap": 31.13,
+      "rvol": 50.92,
+      "flags": [
+        "GAP QUALITY",
+        "CATALYST \u00b7 M&A",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/346031/click-holdings-limited-nasdaq-clik-launches-explosive-three-year-silver-economy-drive-targeting-hk500-million-annual-revenue-with-100-cagr-via-gba-expansion-silver-economy-tech-acquisition"
+    },
+    {
+      "ticker": "SPRC",
+      "company": "SciSparc Ltd",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 79,
+      "tier": "watch",
+      "entry": 6.02,
+      "entry_label": "Momentum above VWAP $5.57",
+      "range_str": " \u2014 range to $6.57",
+      "prev_close": 4.23,
+      "prev_high": 6.57,
+      "fib_levels": [
+        [
+          "Prev High",
+          6.57
+        ],
+        [
+          "First target",
+          7.21
+        ],
+        [
+          "Second target",
+          8.02
+        ],
+        [
+          "Extended",
+          8.91
+        ]
+      ],
+      "price_at_scan": 5.99,
+      "gap": 43.74,
+      "rvol": 97.08,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/337490/scisparc-neurothera-labs-clearmind-medicine-collaboration-leads-to-patent-application-for-depression-therapy"
+    },
+    {
+      "ticker": "BIYA",
+      "company": "Baiya International Group Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 53,
+      "tier": "watch",
+      "entry": 1.36,
+      "entry_label": "Momentum above VWAP $1.26",
+      "range_str": " \u2014 range to $1.45",
+      "prev_close": 0.87,
+      "prev_high": 1.45,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.45
+        ],
+        [
+          "First target",
+          1.61
+        ],
+        [
+          "Second target",
+          1.81
+        ],
+        [
+          "Extended",
+          2.03
+        ]
+      ],
+      "price_at_scan": 1.35,
+      "gap": 34.47,
+      "rvol": 50.42,
+      "flags": [
+        "GAP QUALITY",
+        "ALREADY EXTENDED",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143020968.html"
+    },
+    {
+      "ticker": "TDIC",
+      "company": "Dreamland Ltd",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 67,
+      "tier": "watch",
+      "entry": 1.02,
+      "entry_label": "Momentum above VWAP $0.94",
+      "range_str": " \u2014 range to $1.2",
+      "prev_close": 0.67,
+      "prev_high": 1.2,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.2
+        ],
+        [
+          "First target",
+          1.34
+        ],
+        [
+          "Second target",
+          1.53
+        ],
+        [
+          "Extended",
+          1.73
+        ]
+      ],
+      "price_at_scan": 1.01,
+      "gap": 1.58,
+      "rvol": 33.94,
+      "flags": [
+        "CONTINUATION",
+        "ALREADY EXTENDED",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018689.html"
+    },
+    {
+      "ticker": "FCEL",
+      "company": "Fuelcell Energy Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 88,
+      "tier": "watch",
+      "entry": 9.67,
+      "entry_label": "Reclaim $9.62",
+      "range_str": " \u2014 range to $10.34",
+      "prev_close": 8.65,
+      "prev_high": 10.34,
+      "fib_levels": [
+        [
+          "Prev High",
+          10.34
+        ],
+        [
+          "First target",
+          10.8
+        ],
+        [
+          "Second target",
+          11.38
+        ],
+        [
+          "Extended",
+          12.03
+        ]
+      ],
+      "price_at_scan": 9.49,
+      "gap": -1.39,
+      "rvol": 10.41,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://qz.com/fcel-and-ai-data-centers-can-12-5-mw-blocks-drive-scale"
+    },
+    {
+      "ticker": "GRPN",
+      "company": "Groupon Inc",
+      "sector": "Communication Services",
+      "scan": "Mid Cap",
+      "score": 77,
+      "tier": "watch",
+      "entry": 17.0,
+      "entry_label": "Reclaim $16.91",
+      "range_str": " \u2014 range to $18.69",
+      "prev_close": 14.95,
+      "prev_high": 18.69,
+      "fib_levels": [
+        [
+          "Prev High",
+          18.69
+        ],
+        [
+          "First target",
+          19.71
+        ],
+        [
+          "Second target",
+          21.0
+        ],
+        [
+          "Extended",
+          22.43
+        ]
+      ],
+      "price_at_scan": 16.66,
+      "gap": 16.92,
+      "rvol": 6.26,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "CATALYST \u00b7 8-K",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/news/groupon-inc-grpn-q4-2025-190032253.html"
+    },
+    {
+      "ticker": "BANL",
+      "company": "CBL International Ltd",
+      "sector": "Energy",
+      "scan": "Low Float",
+      "score": 52,
+      "tier": "watch",
+      "entry": 0.51,
+      "entry_label": "Momentum above VWAP $0.47",
+      "range_str": " \u2014 range to $0.53",
+      "prev_close": 0.43,
+      "prev_high": 0.53,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.53
+        ],
+        [
+          "First target",
+          0.56
+        ],
+        [
+          "Second target",
+          0.59
+        ],
+        [
+          "Extended",
+          0.63
+        ]
+      ],
+      "price_at_scan": 0.51,
+      "gap": 1.52,
+      "rvol": 7.87,
+      "flags": [],
+      "news_url": "https://elite.finviz.com/news/264029/cbl-international-facilitates-xiaomo-ports-first-lng-bunkering-for-byd-in-shenzhen"
+    },
+    {
+      "ticker": "POET",
+      "company": "POET Technologies Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 91,
+      "tier": "watch",
+      "entry": 10.37,
+      "entry_label": "Reclaim $10.32",
+      "range_str": " \u2014 range to $11.09",
+      "prev_close": 8.59,
+      "prev_high": 11.09,
+      "fib_levels": [
+        [
+          "Prev High",
+          11.09
+        ],
+        [
+          "First target",
+          11.77
+        ],
+        [
+          "Second target",
+          12.63
+        ],
+        [
+          "Extended",
+          13.59
+        ]
+      ],
+      "price_at_scan": 10.25,
+      "gap": 5.12,
+      "rvol": 5.53,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143020968.html"
+    },
+    {
+      "ticker": "OCG",
+      "company": "Oriental Culture Holding Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 61,
+      "tier": "watch",
+      "entry": 0.77,
+      "entry_label": "Momentum above VWAP $0.77",
+      "range_str": " \u2014 range to $0.88",
+      "prev_close": 0.86,
+      "prev_high": 0.88,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.88
+        ],
+        [
+          "First target",
+          0.89
+        ],
+        [
+          "Second target",
+          0.89
+        ],
+        [
+          "Extended",
+          0.9
+        ]
+      ],
+      "price_at_scan": 0.77,
+      "gap": 0.47,
+      "rvol": 5.36,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/275658/what-sparked-oriental-culture-holdings-ocg-24-after-hours-surge"
+    },
+    {
+      "ticker": "OTLK",
+      "company": "Outlook Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 50,
+      "tier": "watch",
+      "entry": 0.32,
+      "entry_label": "Reclaim $0.32",
+      "range_str": " \u2014 range to $0.39",
+      "prev_close": 0.37,
+      "prev_high": 0.39,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.39
+        ],
+        [
+          "First target",
+          0.4
+        ],
+        [
+          "Second target",
+          0.4
+        ],
+        [
+          "Extended",
+          0.41
+        ]
+      ],
+      "price_at_scan": 0.32,
+      "gap": 6.22,
+      "rvol": 3.5,
+      "flags": [
+        "CATALYST \u00b7 FDA",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/346235/outlook-therapeutics-completes-federal-dispute-resolution-fdr-meeting-with-fda-for-ons-5010lytenava-bevacizumab-vikg"
+    },
+    {
+      "ticker": "SLNH",
+      "company": "Soluna Holdings Inc",
+      "sector": "Financial",
+      "scan": "Mid Cap",
+      "score": 42,
+      "tier": "watch",
+      "entry": 1.47,
+      "entry_label": "Reclaim $1.46",
+      "range_str": " \u2014 range to $1.65",
+      "prev_close": 1.4,
+      "prev_high": 1.65,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.65
+        ],
+        [
+          "First target",
+          1.72
+        ],
+        [
+          "Second target",
+          1.8
+        ],
+        [
+          "Extended",
+          1.9
+        ]
+      ],
+      "price_at_scan": 1.31,
+      "gap": 16.43,
+      "rvol": 9.91,
+      "flags": [
+        "PRIOR DAY RUNNER"
+      ],
+      "news_url": "https://www.businesswire.com/news/home/20260421426186/en"
+    }
+  ]
+}
