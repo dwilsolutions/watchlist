@@ -1,0 +1,425 @@
+{
+  "session": "marketopen",
+  "label": "Market Open",
+  "date": "2026-04-21",
+  "generated": "09:25 AM ET",
+  "tickers": [
+    {
+      "ticker": "LOCL",
+      "company": "Local Bounti Corp",
+      "sector": "Consumer Defensive",
+      "scan": "Low Float",
+      "score": 100,
+      "tier": "watch",
+      "entry": 3.85,
+      "entry_label": "Break above $3.83",
+      "range_str": "",
+      "prev_close": 1.88,
+      "prev_high": 3.83,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.83
+        ],
+        [
+          "First target",
+          4.36
+        ],
+        [
+          "Second target",
+          5.04
+        ],
+        [
+          "Extended",
+          5.78
+        ]
+      ],
+      "price_at_scan": 2.88,
+      "gap": 37.77,
+      "rvol": 26266.08,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "CATALYST \u00b7 8-K",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/local-bounti-corp-locl-q4-190033450.html"
+    },
+    {
+      "ticker": "XRTX",
+      "company": "XORTX Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 95,
+      "tier": "watch",
+      "entry": 3.75,
+      "entry_label": "Break above $3.73",
+      "range_str": "",
+      "prev_close": 2.25,
+      "prev_high": 3.73,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.73
+        ],
+        [
+          "First target",
+          4.13
+        ],
+        [
+          "Second target",
+          4.64
+        ],
+        [
+          "Extended",
+          5.21
+        ]
+      ],
+      "price_at_scan": 2.93,
+      "gap": 19.11,
+      "rvol": 12783.6,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/346065/xortx-meets-nasdaq-continued-listing-requirements"
+    },
+    {
+      "ticker": "LOBO",
+      "company": "Lobo Technologies Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 89,
+      "tier": "watch",
+      "entry": 1.27,
+      "entry_label": "Break above $1.26",
+      "range_str": "",
+      "prev_close": 0.57,
+      "prev_high": 1.26,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.26
+        ],
+        [
+          "First target",
+          1.45
+        ],
+        [
+          "Second target",
+          1.69
+        ],
+        [
+          "Extended",
+          1.95
+        ]
+      ],
+      "price_at_scan": 1.11,
+      "gap": -1.07,
+      "rvol": 10996.14,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/346147/lobo-upgrades-claw-ai-platform-via-ai-director-advisory-layer-advancing-to-enterprise-level-strategic-decision-making-and-closed-loop-ai-agent-ecosystem"
+    },
+    {
+      "ticker": "SPRC",
+      "company": "SciSparc Ltd",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 82,
+      "tier": "watch",
+      "entry": 8.46,
+      "entry_label": "Break above $8.42",
+      "range_str": "",
+      "prev_close": 4.23,
+      "prev_high": 8.42,
+      "fib_levels": [
+        [
+          "Prev High",
+          8.42
+        ],
+        [
+          "First target",
+          9.56
+        ],
+        [
+          "Second target",
+          11.01
+        ],
+        [
+          "Extended",
+          12.61
+        ]
+      ],
+      "price_at_scan": 6.19,
+      "gap": 27.66,
+      "rvol": 1331.17,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/337490/scisparc-neurothera-labs-clearmind-medicine-collaboration-leads-to-patent-application-for-depression-therapy"
+    },
+    {
+      "ticker": "CLIK",
+      "company": "Click Holdings Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 76,
+      "tier": "watch",
+      "entry": 5.3,
+      "entry_label": "Break above $5.27",
+      "range_str": "",
+      "prev_close": 2.57,
+      "prev_high": 5.27,
+      "fib_levels": [
+        [
+          "Prev High",
+          5.27
+        ],
+        [
+          "First target",
+          6.0
+        ],
+        [
+          "Second target",
+          6.94
+        ],
+        [
+          "Extended",
+          7.97
+        ]
+      ],
+      "price_at_scan": 3.35,
+      "gap": 0.0,
+      "rvol": 530.64,
+      "flags": [
+        "CATALYST \u00b7 M&A",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/346031/click-holdings-limited-nasdaq-clik-launches-explosive-three-year-silver-economy-drive-targeting-hk500-million-annual-revenue-with-100-cagr-via-gba-expansion-silver-economy-tech-acquisition"
+    },
+    {
+      "ticker": "EDBL",
+      "company": "Edible Garden AG Inc",
+      "sector": "Consumer Defensive",
+      "scan": "Low Float",
+      "score": 61,
+      "tier": "watch",
+      "entry": 1.68,
+      "entry_label": "Break above $1.67",
+      "range_str": "",
+      "prev_close": 0.92,
+      "prev_high": 1.67,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.67
+        ],
+        [
+          "First target",
+          1.87
+        ],
+        [
+          "Second target",
+          2.13
+        ],
+        [
+          "Extended",
+          2.42
+        ]
+      ],
+      "price_at_scan": 1.37,
+      "gap": 0.0,
+      "rvol": 387.04,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/346246/edible-garden-wins-major-new-fresh-cut-herb-program-at-target-stores"
+    },
+    {
+      "ticker": "FCHL",
+      "company": "Fitness Champs Holdings Ltd",
+      "sector": "Consumer Defensive",
+      "scan": "Low Float",
+      "score": 48,
+      "tier": "watch",
+      "entry": 0.36,
+      "entry_label": "Break above $0.36",
+      "range_str": "",
+      "prev_close": 0.22,
+      "prev_high": 0.36,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.36
+        ],
+        [
+          "First target",
+          0.4
+        ],
+        [
+          "Second target",
+          0.45
+        ],
+        [
+          "Extended",
+          0.5
+        ]
+      ],
+      "price_at_scan": 0.32,
+      "gap": 30.22,
+      "rvol": 266.88,
+      "flags": [
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018596.html"
+    },
+    {
+      "ticker": "GNPX",
+      "company": "Genprex Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 42,
+      "tier": "watch",
+      "entry": 1.48,
+      "entry_label": "Break above $1.47",
+      "range_str": "",
+      "prev_close": 1.15,
+      "prev_high": 1.47,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.47
+        ],
+        [
+          "First target",
+          1.56
+        ],
+        [
+          "Second target",
+          1.67
+        ],
+        [
+          "Extended",
+          1.79
+        ]
+      ],
+      "price_at_scan": 1.34,
+      "gap": 4.76,
+      "rvol": 206.62,
+      "flags": [
+        "CATALYST \u00b7 DEAL",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/346055/genprex-signs-sponsored-research-agreement-to-study-biomarkers-that-may-predict-patient-response-to-reqorsa-gene-therapy"
+    },
+    {
+      "ticker": "OCG",
+      "company": "Oriental Culture Holding Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 67,
+      "tier": "watch",
+      "entry": 1.06,
+      "entry_label": "Break above $1.05",
+      "range_str": "",
+      "prev_close": 0.86,
+      "prev_high": 1.05,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.05
+        ],
+        [
+          "First target",
+          1.1
+        ],
+        [
+          "Second target",
+          1.17
+        ],
+        [
+          "Extended",
+          1.24
+        ]
+      ],
+      "price_at_scan": 0.83,
+      "gap": -6.06,
+      "rvol": 89.87,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/275658/what-sparked-oriental-culture-holdings-ocg-24-after-hours-surge"
+    },
+    {
+      "ticker": "TOVX",
+      "company": "Theriva Biologics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 56,
+      "tier": "watch",
+      "entry": 0.39,
+      "entry_label": "Break above $0.39",
+      "range_str": "",
+      "prev_close": 0.41,
+      "prev_high": 0.39,
+      "fib_levels": [],
+      "price_at_scan": 0.33,
+      "gap": -9.39,
+      "rvol": 20.3,
+      "flags": [
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/345569/theriva-biologics-announces-upcoming-presentation-of-additional-data-from-the-virage-phase-2b-clinical-trial-of-vcn-01-in-metastatic-pancreatic-cancer-at-aacr-2026-annual-meeting"
+    },
+    {
+      "ticker": "SLNH",
+      "company": "Soluna Holdings Inc",
+      "sector": "Financial",
+      "scan": "Mid Cap",
+      "score": 81,
+      "tier": "watch",
+      "entry": 1.78,
+      "entry_label": "Break above $1.77",
+      "range_str": "",
+      "prev_close": 1.4,
+      "prev_high": 1.77,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.77
+        ],
+        [
+          "First target",
+          1.87
+        ],
+        [
+          "Second target",
+          2.0
+        ],
+        [
+          "Extended",
+          2.14
+        ]
+      ],
+      "price_at_scan": 1.68,
+      "gap": 18.46,
+      "rvol": 19.64,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "PRIOR DAY RUNNER"
+      ],
+      "news_url": "https://www.businesswire.com/news/home/20260421426186/en"
+    }
+  ]
+}
