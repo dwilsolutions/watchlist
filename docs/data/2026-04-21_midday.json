@@ -1,0 +1,580 @@
+{
+  "session": "midday",
+  "label": "Midday",
+  "date": "2026-04-21",
+  "generated": "01:05 PM ET",
+  "tickers": [
+    {
+      "ticker": "LOCL",
+      "company": "Local Bounti Corp",
+      "sector": "Consumer Defensive",
+      "scan": "Low Float",
+      "score": 98,
+      "tier": "watch",
+      "entry": 3.15,
+      "entry_label": "Break above $3.13",
+      "range_str": "",
+      "prev_close": 1.88,
+      "prev_high": 3.13,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.13
+        ],
+        [
+          "First target",
+          3.47
+        ],
+        [
+          "Second target",
+          3.9
+        ],
+        [
+          "Extended",
+          4.38
+        ]
+      ],
+      "price_at_scan": 2.84,
+      "gap": 51.06,
+      "rvol": 4025.25,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "CATALYST \u00b7 8-K",
+        "ALREADY EXTENDED",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/local-bounti-corp-locl-q4-190033450.html"
+    },
+    {
+      "ticker": "XRTX",
+      "company": "XORTX Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 72,
+      "tier": "watch",
+      "entry": 3.62,
+      "entry_label": "Break above $3.60",
+      "range_str": "",
+      "prev_close": 2.25,
+      "prev_high": 3.6,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.6
+        ],
+        [
+          "First target",
+          3.97
+        ],
+        [
+          "Second target",
+          4.43
+        ],
+        [
+          "Extended",
+          4.95
+        ]
+      ],
+      "price_at_scan": 2.74,
+      "gap": 31.11,
+      "rvol": 2059.98,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143020968.html"
+    },
+    {
+      "ticker": "LOBO",
+      "company": "Lobo Technologies Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 76,
+      "tier": "watch",
+      "entry": 1.36,
+      "entry_label": "Break above $1.35",
+      "range_str": "",
+      "prev_close": 0.57,
+      "prev_high": 1.35,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.35
+        ],
+        [
+          "First target",
+          1.56
+        ],
+        [
+          "Second target",
+          1.83
+        ],
+        [
+          "Extended",
+          2.13
+        ]
+      ],
+      "price_at_scan": 0.7,
+      "gap": 99.07,
+      "rvol": 2048.72,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143020968.html"
+    },
+    {
+      "ticker": "SPRC",
+      "company": "SciSparc Ltd",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 59,
+      "tier": "watch",
+      "entry": 5.66,
+      "entry_label": "Reclaim $5.63",
+      "range_str": " \u2014 range to $6.57",
+      "prev_close": 4.23,
+      "prev_high": 6.57,
+      "fib_levels": [
+        [
+          "Prev High",
+          6.57
+        ],
+        [
+          "First target",
+          7.21
+        ],
+        [
+          "Second target",
+          8.02
+        ],
+        [
+          "Extended",
+          8.91
+        ]
+      ],
+      "price_at_scan": 5.12,
+      "gap": 43.74,
+      "rvol": 155.73,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/337490/scisparc-neurothera-labs-clearmind-medicine-collaboration-leads-to-patent-application-for-depression-therapy"
+    },
+    {
+      "ticker": "CLIK",
+      "company": "Click Holdings Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 85,
+      "tier": "watch",
+      "entry": 3.67,
+      "entry_label": "Momentum above VWAP $3.57",
+      "range_str": " \u2014 range to $3.89",
+      "prev_close": 2.57,
+      "prev_high": 3.89,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.89
+        ],
+        [
+          "First target",
+          4.25
+        ],
+        [
+          "Second target",
+          4.71
+        ],
+        [
+          "Extended",
+          5.21
+        ]
+      ],
+      "price_at_scan": 3.65,
+      "gap": 31.13,
+      "rvol": 77.04,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "CATALYST \u00b7 M&A",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/346031/click-holdings-limited-nasdaq-clik-launches-explosive-three-year-silver-economy-drive-targeting-hk500-million-annual-revenue-with-100-cagr-via-gba-expansion-silver-economy-tech-acquisition"
+    },
+    {
+      "ticker": "BIYA",
+      "company": "Baiya International Group Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 47,
+      "tier": "watch",
+      "entry": 1.46,
+      "entry_label": "Break above $1.45",
+      "range_str": "",
+      "prev_close": 0.87,
+      "prev_high": 1.45,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.45
+        ],
+        [
+          "First target",
+          1.61
+        ],
+        [
+          "Second target",
+          1.81
+        ],
+        [
+          "Extended",
+          2.03
+        ]
+      ],
+      "price_at_scan": 1.21,
+      "gap": 35.62,
+      "rvol": 80.58,
+      "flags": [
+        "GAP QUALITY",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143020968.html"
+    },
+    {
+      "ticker": "TDIC",
+      "company": "Dreamland Ltd",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 52,
+      "tier": "watch",
+      "entry": 0.94,
+      "entry_label": "Reclaim $0.94",
+      "range_str": " \u2014 range to $1.2",
+      "prev_close": 0.67,
+      "prev_high": 1.2,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.2
+        ],
+        [
+          "First target",
+          1.34
+        ],
+        [
+          "Second target",
+          1.53
+        ],
+        [
+          "Extended",
+          1.73
+        ]
+      ],
+      "price_at_scan": 0.88,
+      "gap": 1.58,
+      "rvol": 52.52,
+      "flags": [
+        "CONTINUATION",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018689.html"
+    },
+    {
+      "ticker": "FCEL",
+      "company": "Fuelcell Energy Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 88,
+      "tier": "watch",
+      "entry": 9.7,
+      "entry_label": "Reclaim $9.66",
+      "range_str": " \u2014 range to $10.34",
+      "prev_close": 8.65,
+      "prev_high": 10.34,
+      "fib_levels": [
+        [
+          "Prev High",
+          10.34
+        ],
+        [
+          "First target",
+          10.8
+        ],
+        [
+          "Second target",
+          11.38
+        ],
+        [
+          "Extended",
+          12.03
+        ]
+      ],
+      "price_at_scan": 9.32,
+      "gap": -1.27,
+      "rvol": 13.28,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://qz.com/fcel-and-ai-data-centers-can-12-5-mw-blocks-drive-scale"
+    },
+    {
+      "ticker": "GRPN",
+      "company": "Groupon Inc",
+      "sector": "Communication Services",
+      "scan": "Mid Cap",
+      "score": 79,
+      "tier": "watch",
+      "entry": 18.76,
+      "entry_label": "Break above $18.67",
+      "range_str": "",
+      "prev_close": 14.95,
+      "prev_high": 18.67,
+      "fib_levels": [
+        [
+          "Prev High",
+          18.67
+        ],
+        [
+          "First target",
+          19.68
+        ],
+        [
+          "Second target",
+          20.97
+        ],
+        [
+          "Extended",
+          22.39
+        ]
+      ],
+      "price_at_scan": 16.46,
+      "gap": 16.92,
+      "rvol": 8.23,
+      "flags": [
+        "CONTINUATION",
+        "CATALYST \u00b7 8-K",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/news/groupon-inc-grpn-q4-2025-190032253.html"
+    },
+    {
+      "ticker": "OTLK",
+      "company": "Outlook Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 50,
+      "tier": "watch",
+      "entry": 0.39,
+      "entry_label": "Break above $0.39",
+      "range_str": "",
+      "prev_close": 0.37,
+      "prev_high": 0.39,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.39
+        ],
+        [
+          "First target",
+          0.4
+        ],
+        [
+          "Second target",
+          0.4
+        ],
+        [
+          "Extended",
+          0.41
+        ]
+      ],
+      "price_at_scan": 0.31,
+      "gap": 6.19,
+      "rvol": 5.06,
+      "flags": [
+        "CATALYST \u00b7 FDA",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/346235/outlook-therapeutics-completes-federal-dispute-resolution-fdr-meeting-with-fda-for-ons-5010lytenava-bevacizumab-vikg"
+    },
+    {
+      "ticker": "POET",
+      "company": "POET Technologies Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "watch",
+      "entry": 11.14,
+      "entry_label": "Break above $11.08",
+      "range_str": "",
+      "prev_close": 8.59,
+      "prev_high": 11.08,
+      "fib_levels": [
+        [
+          "Prev High",
+          11.08
+        ],
+        [
+          "First target",
+          11.76
+        ],
+        [
+          "Second target",
+          12.62
+        ],
+        [
+          "Extended",
+          13.57
+        ]
+      ],
+      "price_at_scan": 10.15,
+      "gap": 5.01,
+      "rvol": 8.09,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143020968.html"
+    },
+    {
+      "ticker": "SIDU",
+      "company": "Sidus Space Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 68,
+      "tier": "watch",
+      "entry": 4.43,
+      "entry_label": "Break above $4.41",
+      "range_str": "",
+      "prev_close": 4.34,
+      "prev_high": 4.41,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.41
+        ],
+        [
+          "First target",
+          4.43
+        ],
+        [
+          "Second target",
+          4.45
+        ],
+        [
+          "Extended",
+          4.48
+        ]
+      ],
+      "price_at_scan": 3.7,
+      "gap": 0.69,
+      "rvol": 3.07,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/345615/sidus-space-announces-pricing-of-585-million-registered-direct-offering-of-class-a-common-stock"
+    },
+    {
+      "ticker": "SPCE",
+      "company": "Virgin Galactic Holdings Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 62,
+      "tier": "watch",
+      "entry": 3.11,
+      "entry_label": "Break above $3.09",
+      "range_str": "",
+      "prev_close": 2.92,
+      "prev_high": 3.09,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.09
+        ],
+        [
+          "First target",
+          3.14
+        ],
+        [
+          "Second target",
+          3.2
+        ],
+        [
+          "Extended",
+          3.26
+        ]
+      ],
+      "price_at_scan": 2.92,
+      "gap": 0.34,
+      "rvol": 3.03,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://www.businesswire.com/news/home/20260420223396/en"
+    },
+    {
+      "ticker": "SLNH",
+      "company": "Soluna Holdings Inc",
+      "sector": "Financial",
+      "scan": "Mid Cap",
+      "score": 47,
+      "tier": "watch",
+      "entry": 1.49,
+      "entry_label": "Reclaim $1.48",
+      "range_str": " \u2014 range to $1.63",
+      "prev_close": 1.4,
+      "prev_high": 1.63,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.63
+        ],
+        [
+          "First target",
+          1.69
+        ],
+        [
+          "Second target",
+          1.77
+        ],
+        [
+          "Extended",
+          1.86
+        ]
+      ],
+      "price_at_scan": 1.46,
+      "gap": 16.43,
+      "rvol": 13.34,
+      "flags": [
+        "PRIOR DAY RUNNER"
+      ],
+      "news_url": "https://www.businesswire.com/news/home/20260421426186/en"
+    },
+    {
+      "ticker": "TOVX",
+      "company": "Theriva Biologics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 62,
+      "tier": "watch",
+      "entry": 0.41,
+      "entry_label": "Reclaim $0.41",
+      "range_str": "",
+      "prev_close": 0.41,
+      "prev_high": 0.35,
+      "fib_levels": [],
+      "price_at_scan": 0.35,
+      "gap": -17.51,
+      "rvol": 3.12,
+      "flags": [
+        "CONTINUATION",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/345569/theriva-biologics-announces-upcoming-presentation-of-additional-data-from-the-virage-phase-2b-clinical-trial-of-vcn-01-in-metastatic-pancreatic-cancer-at-aacr-2026-annual-meeting"
+    }
+  ]
+}
