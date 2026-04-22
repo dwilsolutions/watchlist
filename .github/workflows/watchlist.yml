@@ -27,7 +27,6 @@ on:
           - swing-midday
 
 env:
-  # Swing scanner settings
   SWING_PRICE_MIN: "0.20"
   SWING_PRICE_MAX: "5.00"
   SWING_FLOAT_MAX_M: "10"
@@ -60,7 +59,7 @@ jobs:
           SESSION="${{ github.event.inputs.session }}"
           if [ "$SESSION" = "backtest" ]; then
             pip install yfinance databento pandas --quiet
-          elif [[ "$SESSION" == swing-* ]] || [ "${{ github.event_name }}" = "schedule" ]; then
+          elif [ "$SESSION" = "swing-premarket" ] || [ "$SESSION" = "swing-midday" ] || [ "${{ github.event_name }}" = "schedule" ]; then
             pip install yfinance pandas requests beautifulsoup4 --quiet
           else
             pip install yfinance pandas --quiet
@@ -85,7 +84,16 @@ jobs:
           SESSION="${{ github.event.inputs.session }}"
 
           if [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "Running swing scanner via cron..."
             python scripts/scanner.py --session ${{ steps.swing_session.outputs.name }}
+            python scripts/build_watchlist.py
+          elif [ "$SESSION" = "swing-premarket" ]; then
+            echo "Running swing scanner: premarket..."
+            python scripts/scanner.py --session premarket
+            python scripts/build_watchlist.py
+          elif [ "$SESSION" = "swing-midday" ]; then
+            echo "Running swing scanner: midday..."
+            python scripts/scanner.py --session midday
             python scripts/build_watchlist.py
           elif [ "$SESSION" = "eod" ]; then
             python results.py
@@ -95,12 +103,6 @@ jobs:
             python backfill.py
           elif [ "$SESSION" = "backtest" ]; then
             python build_backtest.py
-          elif [ "$SESSION" = "swing-premarket" ]; then
-            python scripts/scanner.py --session premarket
-            python scripts/build_watchlist.py
-          elif [ "$SESSION" = "swing-midday" ]; then
-            python scripts/scanner.py --session midday
-            python scripts/build_watchlist.py
           else
             python scorer.py --session $SESSION
           fi
