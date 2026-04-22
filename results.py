@@ -298,9 +298,10 @@ def calc_outcome(t, quote, session_high=None, session_low=None):
 
 def load_cumulative():
     stats = {
-        "buy":     {"total": 0, "runner": 0, "big_runner": 0, "monster": 0, "dumped": 0},
-        "monitor": {"total": 0, "runner": 0, "big_runner": 0, "monster": 0, "dumped": 0},
-        "days":    0,
+        "hot":   {"total": 0, "runner": 0, "big_runner": 0, "monster": 0, "dumped": 0},
+        "warm":  {"total": 0, "runner": 0, "big_runner": 0, "monster": 0, "dumped": 0},
+        "watch": {"total": 0, "runner": 0, "big_runner": 0, "monster": 0, "dumped": 0},
+        "days":  0,
     }
     if not os.path.exists(DATA_DIR):
         return stats
@@ -317,7 +318,21 @@ def load_cumulative():
                 ticker_list = s.get("tickers", [])
             for t in ticker_list:
                 outcome = t.get("outcome", "")
-                tier    = "buy" if t.get("tier") == "buy" else "monitor"
+                # Derive rank from rvol (same logic as scorer get_rank)
+                rvol  = t.get("rvol", 0) or 0
+                flags = t.get("flags", [])
+                has_cat = any("CATALYST" in f or "NASDAQ" in f for f in flags)
+                is_prior = "PRIOR DAY RUNNER" in flags
+                is_danger = any(f in ("REVERSE SPLIT","CRASHED · GAP DOWN") for f in flags)
+                if is_danger or (is_prior and not has_cat) or rvol < 2:
+                    tier = "watch"
+                elif rvol >= 100 or (rvol >= 50 and has_cat):
+                    tier = "hot"
+                elif rvol >= 10 or (rvol >= 5 and has_cat):
+                    tier = "warm"
+                else:
+                    tier = "watch"
+                if tier not in stats: tier = "watch"
                 stats[tier]["total"] += 1
                 if outcome in ("runner", "big_runner", "monster"):
                     stats[tier]["runner"] += 1
@@ -376,8 +391,9 @@ a{color:inherit;text-decoration:none;}
 .session-block{margin-bottom:8px;}
 .cards{display:flex;flex-direction:column;gap:7px;margin-bottom:16px;}
 .card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:12px 15px;border-left-width:3px;}
-.card.buy{border-left-color:var(--green);}
-.card.monitor{border-left-color:var(--amber);}
+.card.hot{border-left-color:#6ee89a;}
+.card.warm{border-left-color:#f5c46e;}
+.card.watch{border-left-color:#7ab4f5;}
 .r1{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
 .tkr{font-family:var(--sans);font-size:15px;font-weight:700;min-width:46px;}
 .co{font-size:11px;color:var(--muted);flex:1;}
@@ -398,7 +414,28 @@ a{color:inherit;text-decoration:none;}
 """
 
 def card_html(t, perf):
-    tier    = t["tier"]
+    # Derive rank for display
+    rvol  = t.get("rvol", 0) or 0
+    flags = t.get("flags", [])
+    has_cat = any("CATALYST" in f or "NASDAQ" in f for f in flags)
+    is_prior = "PRIOR DAY RUNNER" in flags
+    is_danger = any(f in ("REVERSE SPLIT","CRASHED · GAP DOWN") for f in flags)
+    if is_danger or (is_prior and not has_cat) or rvol < 2:
+        tier = "watch"
+    elif rvol >= 100 or (rvol >= 50 and has_cat):
+        tier = "hot"
+    elif rvol >= 10 or (rvol >= 5 and has_cat):
+        tier = "warm"
+    else:
+        tier = "watch"
+    RANK_LABELS = {"hot": "🔥 HOT", "warm": "⚡ WARM", "watch": "👁 WATCH"}
+    rank_label = RANK_LABELS.get(tier, "👁 WATCH")
+    RANK_STYLES = {
+        "hot":   ("background:#1e3d2a;color:#6ee89a",),
+        "warm":  ("background:#3d2e1a;color:#f5c46e",),
+        "watch": ("background:#1a2a3a;color:#7ab4f5",),
+    }
+    rank_style = RANK_STYLES.get(tier, RANK_STYLES["watch"])[0]
     ticker  = t["ticker"]
     outcome = perf["outcome"]
     entry   = t.get("entry", 0)
@@ -432,7 +469,7 @@ def card_html(t, perf):
     <span class="tkr">{ticker}</span>
     <span class="co">{t["company"][:20]}</span>
     <span class="scan-tag" style="background:{scan_bg};color:{scan_tx};border-color:{scan_tx}44">{t["scan"]}</span>
-    <span class="score-pill">{t["score"]}</span>
+    <span style="font-size:11px;font-weight:500;padding:2px 9px;border-radius:20px;{rank_style}">{rank_label}</span>
     <span class="outcome-pill" style="background:{obg};color:{otx}">{olabel}</span>
     <span class="pct {pc_cls}">{pc_sign}{pct_c:.1f}% close</span>
     <span class="pct {ph_cls}" style="margin-left:4px">{ph_sign}{pct_h:.1f}% high</span>
@@ -484,19 +521,19 @@ def render_html(today, session_results, all_quotes, cum_stats, gen_time):
         if not tickers:
             session_html += '<div class="no-data">No data for this session today</div>'
             continue
-        buy_cards = "".join(card_html(t, t["perf"]) for t in tickers if t["tier"] == "buy")
-        mon_cards = "".join(card_html(t, t["perf"]) for t in tickers if t["tier"] == "monitor")
-        if not buy_cards and not mon_cards:
-            session_html += '<div class="no-data">No Buy Watch or Monitor tickers for this session</div>'
+        all_cards = "".join(card_html(t, t["perf"]) for t in tickers)
+        if not all_cards:
+            session_html += '<div class="no-data">No tickers tracked for this session</div>'
         else:
-            session_html += f'<div class="cards">{buy_cards}{mon_cards}</div>'
+            session_html += f'<div class="cards">{all_cards}</div>'
 
     # Cumulative block
     cum_html = f"""<div class="cumulative">
   <div class="cum-title">Cumulative Performance — {cum_stats["days"]} days tracked</div>
   <div class="cum-grid">
-    {cum_section_html("Buy Watch ≥65", cum_stats["buy"])}
-    {cum_section_html("Monitor 40–64", cum_stats["monitor"])}
+    {cum_section_html("🔥 HOT (rvol ≥100x)", cum_stats["hot"])}
+    {cum_section_html("⚡ WARM (rvol ≥10x)", cum_stats["warm"])}
+    {cum_section_html("👁 WATCH", cum_stats["watch"])}
   </div>
 </div>"""
 

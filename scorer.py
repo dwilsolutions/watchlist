@@ -36,7 +36,7 @@ MARKET_HOLIDAYS = {
 }
 
 SESSIONS = {
-    "earlypremarket": ("Early Pre-Market", "First look · overnight gappers · ~4:00 AM ET"),
+    "earlypremarket": ("Early Pre-Market", "Continuation setups · tomorrow's key levels · ~8:00 PM ET"),
     "premarket":      ("Pre-Market",       "Confirmed setups · pre-Robinhood open · ~6:55 AM ET"),
     "marketopen":     ("Market Open",      "Pre-market momentum &amp; gap ups · ~8:30 AM ET"),
     "midday":         ("Midday",           "VWAP reclaims &amp; second entries · ~1:00 PM ET"),
@@ -58,9 +58,10 @@ def next_trading_day(from_date):
 
 def trading_date_for_session(session, now_et):
     today = now_et.date()
-    # All sessions target the current trading day
-    # Early pre-market (4AM) and pre-market (6:55AM) run before market open
-    # but are still scanning for TODAY's session, not tomorrow's
+    if session == "earlypremarket":
+        # Runs at 8PM ET — scanning for TOMORROW's continuation setups
+        return next_trading_day(today)
+    # All other sessions target the current trading day
     return today if is_trading_day(today) else next_trading_day(today)
 
 def fmt_trading_date(d):
@@ -762,6 +763,166 @@ def load_prior_runners(trading_day, data_dir):
     print("  [-] No prior EOD results found — skipping prior-runner penalty")
     return {}
 
+def build_continuation_watchlist(tomorrow, data_dir):
+    """
+    Build tomorrow's earlypremarket watchlist from today's EOD results.
+    Finds clean runners (ran but not dumped) and sets entry at today's high.
+    Mirrors the strategy of building a continuation watchlist the night before.
+    """
+    # Find today's EOD file (tomorrow - 1 trading day)
+    check = tomorrow - timedelta(days=1)
+    eod_path = None
+    for _ in range(5):
+        p = os.path.join(data_dir, f"{check.isoformat()}_eod_results.json")
+        if os.path.exists(p):
+            eod_path = p
+            break
+        check -= timedelta(days=1)
+
+    if not eod_path:
+        print("  [-] No EOD results found for continuation watchlist")
+        return []
+
+    with open(eod_path) as f:
+        eod = json.load(f)
+
+    eod_date = eod["date"]
+    print(f"  [+] Building continuation watchlist from {eod_date} EOD results")
+
+    # Build best outcome per ticker
+    RANK = {"monster": 4, "big_runner": 3, "runner": 2, "up": 1, "flat": 0, "dumped": -1}
+    outcomes = {}
+    for sess, tickers in eod.get("sessions", {}).items():
+        if not isinstance(tickers, list):
+            continue
+        for t in tickers:
+            ticker  = t["ticker"]
+            outcome = t.get("outcome", "flat")
+            if RANK.get(outcome, 0) > RANK.get(outcomes.get(ticker, {}).get("outcome", "flat"), 0):
+                outcomes[ticker] = t
+
+    # Load all session JSONs from EOD date to get full ticker data
+    all_ticker_data = {}
+    import glob as _glob
+    for sf in sorted(_glob.glob(os.path.join(data_dir, f"{eod_date}_*.json"))):
+        if "eod_results" in sf:
+            continue
+        try:
+            with open(sf) as f:
+                sdata = json.load(f)
+            for t in sdata.get("tickers", []):
+                tkr = t["ticker"]
+                if tkr not in all_ticker_data or t.get("rvol", 0) > all_ticker_data[tkr].get("rvol", 0):
+                    all_ticker_data[tkr] = t
+        except Exception:
+            continue
+
+    # Build continuation candidates
+    results = []
+    for ticker, odata in outcomes.items():
+        outcome = odata.get("outcome", "flat")
+
+        # Only clean runners — not dumps, not flat
+        if outcome not in ("runner", "big_runner", "monster"):
+            continue
+
+        tdata = all_ticker_data.get(ticker)
+        if not tdata:
+            continue
+
+        # Entry tomorrow = today's high (the key level to break)
+        fib  = tdata.get("fib_levels", [])
+        today_high = fib[0][1] if fib else tdata.get("prev_high", 0)
+        if not today_high or today_high <= 0:
+            continue
+
+        # Targets from existing fib levels
+        fib_targets = []
+        if len(fib) > 0: fib_targets.append(("Today's High", f"{today_high:.2f}"))
+        if len(fib) > 1: fib_targets.append(("First target",  f"{fib[1][1]:.2f}"))
+        if len(fib) > 2: fib_targets.append(("Second target", f"{fib[2][1]:.2f}"))
+        if len(fib) > 3: fib_targets.append(("Extended",      f"{fib[3][1]:.2f}"))
+
+        # Build flags — add outcome badge, remove PRIOR DAY RUNNER if present
+        flags = [(l, k) for l, k in (tdata.get("flags_raw") or
+                 [(f, "cont" if f == "CONTINUATION" else
+                      "catalyst" if "CATALYST" in f or "NASDAQ" in f else
+                      "gap" if "GAP" in f else
+                      "danger" if f in ("PRIOR DAY RUNNER","CRASHED · GAP DOWN","REVERSE SPLIT","ALREADY EXTENDED") else
+                      "sector") for f in tdata.get("flags", [])])
+                 if l != "PRIOR DAY RUNNER" and l != "ALREADY EXTENDED"]
+
+        # Add outcome badge
+        outcome_labels = {
+            "monster":    ("MONSTER YESTERDAY", "catalyst"),
+            "big_runner": ("BIG RUNNER YESTERDAY", "cont"),
+            "runner":     ("RUNNER YESTERDAY", "gap"),
+        }
+        if outcome in outcome_labels:
+            flags = [outcome_labels[outcome]] + flags
+
+        results.append({
+            "ticker":       ticker,
+            "company":      tdata.get("company", ""),
+            "sector":       tdata.get("sector", ""),
+            "scan":         tdata.get("scan", "Low Float"),
+            "price":        tdata.get("price", today_high),
+            "gap":          tdata.get("gap", 0),
+            "rvol":         tdata.get("rvol", 0),
+            "float_m":      tdata.get("float_m", 0),
+            "change":       tdata.get("change", 0),
+            "above_vwap":   False,
+            "real_vwap":    None,
+            "vwap_proxy":   f"{today_high:.2f}",
+            "entry":        today_high,
+            "entry_label":  f"Break above ${today_high:.2f}",
+            "range_str":    f" — target ${fib[1][1]:.2f}" if len(fib) > 1 else "",
+            "fib_levels":   fib_targets,
+            "flags":        flags,
+            "news":         tdata.get("news", ""),
+            "news_url":     tdata.get("news_url", ""),
+            "total":        80,
+            "trend":        0, "range_score": 0, "vol_score": 0, "bonus": 0,
+            "continuation": False, "gap_quality": False,
+        })
+
+    print(f"  [+] {len(results)} continuation candidates")
+    return results
+
+
+def _write_json(results, session, trading_day, data_dir, label, gen_time):
+    """Write session JSON for EOD tracker compatibility."""
+    os.makedirs(data_dir, exist_ok=True)
+    payload = {
+        "session": session, "label": label,
+        "date": trading_day.isoformat(), "generated": gen_time,
+        "tickers": [{
+            "ticker":      r["ticker"],
+            "company":     r["company"],
+            "sector":      r["sector"],
+            "scan":        r["scan"],
+            "score":       r["total"],
+            "tier":        "watch",
+            "entry":       r["entry"],
+            "entry_label": r["entry_label"],
+            "range_str":   r["range_str"],
+            "prev_close":  r.get("prev_close", 0),
+            "prev_high":   r["entry"],
+            "fib_levels":  [[l, float(v.replace("$",""))] for l, v in r["fib_levels"]],
+            "price_at_scan": r["price"],
+            "gap":         r["gap"],
+            "rvol":        r["rvol"],
+            "flags":       [l for l, _ in r["flags"]],
+            "news_url":    r.get("news_url", ""),
+        } for r in results]
+    }
+    path = os.path.join(data_dir, f"{trading_day.isoformat()}_{session}.json")
+    with open(path, "w") as f:
+        json.dump(payload, f, indent=2)
+    print(f"  [+] JSON written → {path}")
+
+
+
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def main():
@@ -776,6 +937,27 @@ def main():
     gen_time    = now_et.strftime("%I:%M %p ET")
 
     print(f"\nWatchlist scorer · {label} · target date: {fmt_trading_date(trading_day)} · generated {gen_time}")
+
+    # ── Early pre-market: continuation watchlist from today's EOD ────────────────
+    if session == "earlypremarket":
+        results = build_continuation_watchlist(trading_day, os.path.join(OUTPUT_DIR, "data"))
+        if not results:
+            print("No continuation candidates found — check EOD results.")
+            sys.exit(1)
+        results.sort(key=lambda x: ({"hot":0,"warm":1,"watch":2,"avoid":3}.get(get_rank(x),4), -x["rvol"]))
+        live = False
+        html = render_html(results, session, trading_day, label, note, gen_time, market_live=live)
+        os.makedirs(OUTPUT_DIR, exist_ok=True)
+        filename = f"{trading_day.isoformat()}_{session}.html"
+        with open(os.path.join(OUTPUT_DIR, filename), "w") as f:
+            f.write(html)
+        print(f"  [+] Written → {os.path.join(OUTPUT_DIR, filename)}")
+        fixed = os.path.join(OUTPUT_DIR, "earlypremarket.html")
+        with open(fixed, "w") as f:
+            f.write(html)
+        print(f"  [+] Written → {fixed}")
+        _write_json(results, session, trading_day, os.path.join(OUTPUT_DIR, "data"), label, gen_time)
+        return
 
     all_rows = []
     for scan_label, filters in SCREENERS:
