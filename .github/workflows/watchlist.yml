@@ -1,6 +1,11 @@
 name: Watchlist Auto-Score
 
 on:
+  schedule:
+    # Swing scanner — 6:00 AM ET (10:00 UTC) Mon-Fri
+    - cron: '0 10 * * 1-5'
+    # Swing scanner — 10:30 AM ET (14:30 UTC) Mon-Fri
+    - cron: '30 14 * * 1-5'
   workflow_dispatch:
     inputs:
       session:
@@ -18,6 +23,24 @@ on:
           - analyze
           - backfill
           - backtest
+          - swing-premarket
+          - swing-midday
+
+env:
+  # Swing scanner settings
+  SWING_PRICE_MIN: "0.20"
+  SWING_PRICE_MAX: "5.00"
+  SWING_FLOAT_MAX_M: "10"
+  SWING_MKTCAP_MAX_M: "50"
+  SWING_AVG_VOL_MIN: "100000"
+  SWING_MIN_SCORE: "0.35"
+  SWING_SPIKE_DAYS: "90"
+  SWING_SPIKE_PCT: "40"
+  SWING_SHORT_INT_MIN: "10"
+  SWING_DTC_MAX: "3"
+  SWING_MANUAL: "BTBD,FLYX,AZTR,BFRG,UGRO,DEFT,BYAH,OXBR,SST,SER,EEIQ"
+  SWING_OUT_DIR: "docs"
+  SWING_DATA_DIR: "docs/data/swing"
 
 jobs:
   score-and-publish:
@@ -37,8 +60,21 @@ jobs:
           SESSION="${{ github.event.inputs.session }}"
           if [ "$SESSION" = "backtest" ]; then
             pip install yfinance databento pandas --quiet
+          elif [[ "$SESSION" == swing-* ]] || [ "${{ github.event_name }}" = "schedule" ]; then
+            pip install yfinance pandas requests beautifulsoup4 --quiet
           else
             pip install yfinance pandas --quiet
+          fi
+
+      - name: Determine swing session (cron only)
+        id: swing_session
+        if: github.event_name == 'schedule'
+        run: |
+          HOUR=$(date -u +%H)
+          if [ "$HOUR" -lt "13" ]; then
+            echo "name=premarket" >> $GITHUB_OUTPUT
+          else
+            echo "name=midday" >> $GITHUB_OUTPUT
           fi
 
       - name: Run scorer or results
@@ -47,7 +83,11 @@ jobs:
           DATABENTO_API_KEY: ${{ secrets.DATABENTO_API_KEY }}
         run: |
           SESSION="${{ github.event.inputs.session }}"
-          if [ "$SESSION" = "eod" ]; then
+
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            python scripts/scanner.py --session ${{ steps.swing_session.outputs.name }}
+            python scripts/build_watchlist.py
+          elif [ "$SESSION" = "eod" ]; then
             python results.py
           elif [ "$SESSION" = "analyze" ]; then
             python analyze_timing.py
@@ -55,6 +95,12 @@ jobs:
             python backfill.py
           elif [ "$SESSION" = "backtest" ]; then
             python build_backtest.py
+          elif [ "$SESSION" = "swing-premarket" ]; then
+            python scripts/scanner.py --session premarket
+            python scripts/build_watchlist.py
+          elif [ "$SESSION" = "swing-midday" ]; then
+            python scripts/scanner.py --session midday
+            python scripts/build_watchlist.py
           else
             python scorer.py --session $SESSION
           fi
@@ -63,6 +109,6 @@ jobs:
         run: |
           git config user.name  "Watchlist Bot"
           git config user.email "bot@watchlist"
-          git add docs/ backtest_runners.csv || true
-          git diff --staged --quiet || git commit -m "Watchlist: ${{ github.event.inputs.session }} $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git add docs/ data/ backtest_runners.csv || true
+          git diff --staged --quiet || git commit -m "Watchlist: ${{ github.event.inputs.session || 'swing-cron' }} $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
