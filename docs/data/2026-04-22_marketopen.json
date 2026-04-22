@@ -1,0 +1,276 @@
+{
+  "session": "marketopen",
+  "label": "Market Open",
+  "date": "2026-04-22",
+  "generated": "09:25 AM ET",
+  "tickers": [
+    {
+      "ticker": "ALP",
+      "company": "Alpha Compute Corp",
+      "sector": "Financial",
+      "scan": "Mid Cap",
+      "score": 52,
+      "tier": "watch",
+      "entry": 0.48,
+      "entry_label": "Break above $0.48",
+      "range_str": "",
+      "prev_close": 0.28,
+      "prev_high": 0.48,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.48
+        ],
+        [
+          "First target",
+          0.53
+        ],
+        [
+          "Second target",
+          0.6
+        ],
+        [
+          "Extended",
+          0.68
+        ]
+      ],
+      "price_at_scan": 0.34,
+      "gap": 24.64,
+      "rvol": 2505.07,
+      "flags": [
+        "GAP QUALITY",
+        "CATALYST \u00b7 FINANCING"
+      ],
+      "news_url": "https://elite.finviz.com/news/346660/alpha-compute-executes-binding-319-million-non-recourse-gpu-financing-backed-by-nvidia-b300-hardware-assets"
+    },
+    {
+      "ticker": "DCX",
+      "company": "Digital Currency X Technology Inc",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 65,
+      "tier": "watch",
+      "entry": 2.82,
+      "entry_label": "Break above $2.81",
+      "range_str": "",
+      "prev_close": 1.93,
+      "prev_high": 2.81,
+      "fib_levels": [
+        [
+          "Prev High",
+          2.81
+        ],
+        [
+          "First target",
+          3.05
+        ],
+        [
+          "Second target",
+          3.35
+        ],
+        [
+          "Extended",
+          3.69
+        ]
+      ],
+      "price_at_scan": 2.1,
+      "gap": 0.52,
+      "rvol": 546.11,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/317062/digital-currency-x-technology-inc-regains-compliance-with-nasdaq-bid-price-requirement-and-hearing-cancelled"
+    },
+    {
+      "ticker": "WBUY",
+      "company": "Webuy Global Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 75,
+      "tier": "watch",
+      "entry": 1.83,
+      "entry_label": "Break above $1.82",
+      "range_str": "",
+      "prev_close": 1.21,
+      "prev_high": 1.82,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.82
+        ],
+        [
+          "First target",
+          1.99
+        ],
+        [
+          "Second target",
+          2.2
+        ],
+        [
+          "Extended",
+          2.43
+        ]
+      ],
+      "price_at_scan": 1.39,
+      "gap": 0.0,
+      "rvol": 357.52,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/346560/webuy-global-ltd-announces-record-breaking-performance-for-the-company-at-natas-fair-march-2026-with-over-us334-million-in-travel-bookings"
+    },
+    {
+      "ticker": "VTGN",
+      "company": "Vistagen Therapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 58,
+      "tier": "watch",
+      "entry": 0.94,
+      "entry_label": "Break above $0.94",
+      "range_str": "",
+      "prev_close": 0.61,
+      "prev_high": 0.94,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.94
+        ],
+        [
+          "First target",
+          1.03
+        ],
+        [
+          "Second target",
+          1.14
+        ],
+        [
+          "Extended",
+          1.27
+        ]
+      ],
+      "price_at_scan": 0.61,
+      "gap": 0.76,
+      "rvol": 139.4,
+      "flags": [
+        "CATALYST \u00b7 FDA",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://www.businesswire.com/news/home/20260422186960/en"
+    },
+    {
+      "ticker": "SRFM",
+      "company": "Surf Air Mobility Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 46,
+      "tier": "watch",
+      "entry": 1.42,
+      "entry_label": "Break above $1.41",
+      "range_str": "",
+      "prev_close": 1.1,
+      "prev_high": 1.41,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.41
+        ],
+        [
+          "First target",
+          1.49
+        ],
+        [
+          "Second target",
+          1.6
+        ],
+        [
+          "Extended",
+          1.72
+        ]
+      ],
+      "price_at_scan": 1.21,
+      "gap": 7.27,
+      "rvol": 128.98,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://www.businesswire.com/news/home/20260421205070/en"
+    },
+    {
+      "ticker": "POET",
+      "company": "POET Technologies Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "watch",
+      "entry": 13.4,
+      "entry_label": "Break above $13.33",
+      "range_str": "",
+      "prev_close": 10.25,
+      "prev_high": 13.33,
+      "fib_levels": [
+        [
+          "Prev High",
+          13.33
+        ],
+        [
+          "First target",
+          14.17
+        ],
+        [
+          "Second target",
+          15.23
+        ],
+        [
+          "Extended",
+          16.41
+        ]
+      ],
+      "price_at_scan": 11.84,
+      "gap": 7.61,
+      "rvol": 26.68,
+      "flags": [
+        "CONTINUATION"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143020968.html"
+    },
+    {
+      "ticker": "BANL",
+      "company": "CBL International Ltd",
+      "sector": "Energy",
+      "scan": "Low Float",
+      "score": 51,
+      "tier": "watch",
+      "entry": 0.63,
+      "entry_label": "Break above $0.63",
+      "range_str": "",
+      "prev_close": 0.51,
+      "prev_high": 0.63,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.63
+        ],
+        [
+          "First target",
+          0.66
+        ],
+        [
+          "Second target",
+          0.7
+        ],
+        [
+          "Extended",
+          0.75
+        ]
+      ],
+      "price_at_scan": 0.56,
+      "gap": 0.92,
+      "rvol": 167.54,
+      "flags": [
+        "PRIOR DAY RUNNER"
+      ],
+      "news_url": "https://elite.finviz.com/news/264029/cbl-international-facilitates-xiaomo-ports-first-lng-bunkering-for-byd-in-shenzhen"
+    }
+  ]
+}
