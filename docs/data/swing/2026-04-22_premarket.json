@@ -1,0 +1,1071 @@
+{
+  "date": "2026-04-22",
+  "session": "premarket",
+  "generated": "03:40 PM ET",
+  "tickers": [
+    {
+      "ticker": "ASBP",
+      "scan": "Low Float",
+      "company": "Aspire Biopharma Holdings Inc",
+      "sector": "Healthcare",
+      "price": 0.21,
+      "change": 8.64,
+      "rvol": 12.77,
+      "float_m": 4.68,
+      "short_pct": 9.21,
+      "days_cover": 99.0,
+      "spike_pct": 67.8,
+      "news": "Aspire Biopharma Announces Closing of Second and Final Tranche of $21 Million Private Placement by Select Investors; Sec",
+      "news_url": "https://elite.finviz.com/news/345788/aspire-biopharma-announces-closing-of-second-and-final-tranche-of-21-million-private-placement-by-select-investors-secures-commitment-letter-for-225m-credit-facility-to-fund-the-dcs-acquisition",
+      "score": 0.75,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "CATALYST \u00b7 M&A",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +68%",
+          "gap"
+        ]
+      ],
+      "manual": false,
+      "rank": "hot"
+    },
+    {
+      "ticker": "SBEV",
+      "scan": "Low Float",
+      "company": "Splash Beverage Group Inc",
+      "sector": "Consumer Defensive",
+      "price": 0.41,
+      "change": 23.54,
+      "rvol": 4.93,
+      "float_m": 9.31,
+      "short_pct": 1.34,
+      "days_cover": 99.0,
+      "spike_pct": 66.2,
+      "news": "Splash Beverage plans pivot to CBD",
+      "news_url": "https://finance.yahoo.com/m/1e6b5c8f-d44d-36a7-b147-1e9ebe7dded2/splash-beverage-plans-pivot.html",
+      "score": 0.69,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.4,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "CATALYST \u00b7 NEWS",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +66%",
+          "gap"
+        ]
+      ],
+      "manual": false,
+      "rank": "warm"
+    },
+    {
+      "ticker": "QVCGA",
+      "scan": "Low Float",
+      "company": "QVC Group Inc",
+      "sector": "Consumer Cyclical",
+      "price": 0.46,
+      "change": 13.54,
+      "rvol": 104.4,
+      "float_m": 6.73,
+      "short_pct": 18.92,
+      "days_cover": 99.0,
+      "spike_pct": 87.5,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018096.html",
+      "score": 0.625,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +88%",
+          "gap"
+        ],
+        [
+          "SHORT INT 19%",
+          "danger"
+        ]
+      ],
+      "manual": false,
+      "rank": "warm"
+    },
+    {
+      "ticker": "ACB",
+      "scan": "Mid Float",
+      "company": "Aurora Cannabis Inc",
+      "sector": "Healthcare",
+      "price": 3.84,
+      "change": 7.87,
+      "rvol": 10.85,
+      "float_m": 56.41,
+      "short_pct": 12.99,
+      "days_cover": 99.0,
+      "spike_pct": 21.0,
+      "news": "Aurora Cannabis Accelerates Global Medical Cannabis Leadership with Accretive Acquisition of Safari Flower Company, Expa",
+      "news_url": "https://elite.finviz.com/news/344691/aurora-cannabis-accelerates-global-medical-cannabis-leadership-with-accretive-acquisition-of-safari-flower-company-expanding-eu-gmp-capacity-to-serve-growing-high-margin-international-markets",
+      "score": 0.625,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "CATALYST \u00b7 M&A",
+          "catalyst"
+        ],
+        [
+          "SHORT INT 13%",
+          "danger"
+        ]
+      ],
+      "manual": false,
+      "rank": "warm"
+    },
+    {
+      "ticker": "KYTX",
+      "scan": "Mid Float",
+      "company": "Kyverna Therapeutics Inc",
+      "sector": "Healthcare",
+      "price": 10.05,
+      "change": 3.5,
+      "rvol": 8.22,
+      "float_m": 35.02,
+      "short_pct": 12.03,
+      "days_cover": 99.0,
+      "spike_pct": 55.7,
+      "news": "Kyverna Presents Registrational Trial Primary Analysis for Miv-cel in Stiff Person Syndrome Demonstrating Statistically ",
+      "news_url": "https://elite.finviz.com/news/346455/kyverna-presents-registrational-trial-primary-analysis-for-miv-cel-in-stiff-person-syndrome-demonstrating-statistically-significant-durable-clinical-benefit-across-all-endpoints-in-an-oral-late-breaker-session-at-aan-annual-meeting",
+      "score": 0.595,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 0.7,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +56%",
+          "gap"
+        ],
+        [
+          "SHORT INT 12%",
+          "danger"
+        ]
+      ],
+      "manual": false,
+      "rank": "warm"
+    },
+    {
+      "ticker": "SOWG",
+      "scan": "Low Float",
+      "company": "Sow Good Inc",
+      "sector": "Consumer Defensive",
+      "price": 0.12,
+      "change": -28.77,
+      "rvol": 4.4,
+      "float_m": 0.5,
+      "short_pct": 81.57,
+      "days_cover": 99.0,
+      "spike_pct": 60.5,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143020968.html",
+      "score": 0.565,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 0.4,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +60%",
+          "gap"
+        ],
+        [
+          "SHORT INT 82%",
+          "danger"
+        ]
+      ],
+      "manual": false,
+      "rank": "warm"
+    },
+    {
+      "ticker": "GP",
+      "scan": "Low Float",
+      "company": "GreenPower Motor Company Inc",
+      "sector": "Industrials",
+      "price": 0.98,
+      "change": 2.82,
+      "rvol": 121.9,
+      "float_m": 2.2,
+      "short_pct": 2.91,
+      "days_cover": 99.0,
+      "spike_pct": 88.8,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018096.html",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +89%",
+          "gap"
+        ]
+      ],
+      "manual": false,
+      "rank": "warm"
+    },
+    {
+      "ticker": "YCBD",
+      "scan": "Low Float",
+      "company": "cbdMD Inc",
+      "sector": "Healthcare",
+      "price": 0.94,
+      "change": 11.29,
+      "rvol": 23.7,
+      "float_m": 9.38,
+      "short_pct": 6.03,
+      "days_cover": 99.0,
+      "spike_pct": 136.1,
+      "news": "cbdMD Launches Clinical Healthcare Channel to Support First Federal Pathway for Hemp-Derived CBD in Medicare",
+      "news_url": "https://elite.finviz.com/news/341686/cbdmd-launches-clinical-healthcare-channel-to-support-first-federal-pathway-for-hemp-derived-cbd-in-medicare",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +136%",
+          "gap"
+        ]
+      ],
+      "manual": false,
+      "rank": "warm"
+    },
+    {
+      "ticker": "CTNT",
+      "scan": "Mid Float",
+      "company": "Cheetah Net Supply Chain Service Inc",
+      "sector": "Industrials",
+      "price": 0.04,
+      "change": -13.48,
+      "rvol": 9.74,
+      "float_m": 36.03,
+      "short_pct": 0.24,
+      "days_cover": 99.0,
+      "spike_pct": 118.1,
+      "news": "Cheetah Net Supply Chain Service Inc. enters Agreement to Acquire Super International Trading Limited",
+      "news_url": "https://elite.finviz.com/news/345199/cheetah-net-supply-chain-service-inc-enters-agreement-to-acquire-super-international-trading-limited",
+      "score": 0.52,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.7,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +118%",
+          "gap"
+        ]
+      ],
+      "manual": false,
+      "rank": "warm"
+    },
+    {
+      "ticker": "GAME",
+      "scan": "Mid Float",
+      "company": "GameSquare Holdings Inc",
+      "sector": "Communication Services",
+      "price": 0.62,
+      "change": 36.63,
+      "rvol": 6.38,
+      "float_m": 82.06,
+      "short_pct": 3.23,
+      "days_cover": 99.0,
+      "spike_pct": 80.6,
+      "news": "GameSquare Announces Largest Monthly Repurchase to Date, with the Repurchase of Nearly 2.3 Million Shares in April 2026",
+      "news_url": "https://elite.finviz.com/news/346586/gamesquare-announces-largest-monthly-repurchase-to-date-with-the-repurchase-of-nearly-23-million-shares-in-april-2026",
+      "score": 0.52,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.7,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +81%",
+          "gap"
+        ]
+      ],
+      "manual": false,
+      "rank": "warm"
+    },
+    {
+      "ticker": "TH",
+      "scan": "Mid Float",
+      "company": "Target Hospitality Corp",
+      "sector": "Industrials",
+      "price": 14.54,
+      "change": -8.56,
+      "rvol": 9.04,
+      "float_m": 32.48,
+      "short_pct": 7.43,
+      "days_cover": 99.0,
+      "spike_pct": 43.2,
+      "news": "Under The Surface, Big Moves Are Building",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/under-surface-big-moves-building-135036120.html",
+      "score": 0.52,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.7,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +43%",
+          "gap"
+        ]
+      ],
+      "manual": false,
+      "rank": "warm"
+    },
+    {
+      "ticker": "BANL",
+      "scan": "Low Float",
+      "company": "CBL International Ltd",
+      "sector": "Energy",
+      "price": 0.46,
+      "change": -10.17,
+      "rvol": 11.41,
+      "float_m": 5.15,
+      "short_pct": 5.27,
+      "days_cover": 99.0,
+      "spike_pct": 66.6,
+      "news": "CBL International Limited Acquires Majority Stake in Green Marine Energy Holdings Limited",
+      "news_url": "https://finance.yahoo.com/sectors/energy/articles/cbl-international-limited-acquires-majority-150127154.html",
+      "score": 0.5,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "CATALYST \u00b7 NEWS",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +67%",
+          "gap"
+        ]
+      ],
+      "manual": false,
+      "rank": "warm"
+    },
+    {
+      "ticker": "HCAI",
+      "scan": "Low Float",
+      "company": "Huachen AI Parking Management Technology Holding Co Ltd",
+      "sector": "Industrials",
+      "price": 9.55,
+      "change": 40.65,
+      "rvol": 19.16,
+      "float_m": 0.63,
+      "short_pct": 0.55,
+      "days_cover": 99.0,
+      "spike_pct": 270.1,
+      "news": "Huachen AI Parking Management Technology Holding Co., Ltd Announces 1-for-30 Reverse Stock Split Effective April 13, 202",
+      "news_url": "https://elite.finviz.com/news/343300/huachen-ai-parking-management-technology-holding-co-ltd-announces-1-for-30-reverse-stock-split-effective-april-13-2026",
+      "score": 0.5,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "CATALYST \u00b7 PIVOT",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +270%",
+          "gap"
+        ]
+      ],
+      "manual": false,
+      "rank": "warm"
+    },
+    {
+      "ticker": "RETO",
+      "scan": "Low Float",
+      "company": "ReTo Eco-Solutions Inc",
+      "sector": "Basic Materials",
+      "price": 0.88,
+      "change": -36.36,
+      "rvol": 6.76,
+      "float_m": 9.6,
+      "short_pct": 0.35,
+      "days_cover": 99.0,
+      "spike_pct": 76.8,
+      "news": "ReTo Eco-Solutions, Inc. Announces Acquisition of Majority Interest in Seven Arrows Supply Chain Limited",
+      "news_url": "https://elite.finviz.com/news/329418/reto-eco-solutions-inc-announces-acquisition-of-majority-interest-in-seven-arrows-supply-chain-limited",
+      "score": 0.47,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.7,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "CATALYST \u00b7 M&A",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +77%",
+          "gap"
+        ]
+      ],
+      "manual": false,
+      "rank": "watch"
+    },
+    {
+      "ticker": "SRFM",
+      "scan": "Mid Float",
+      "company": "Surf Air Mobility Inc",
+      "sector": "Industrials",
+      "price": 1.24,
+      "change": 12.27,
+      "rvol": 15.01,
+      "float_m": 55.25,
+      "short_pct": 19.15,
+      "days_cover": 99.0,
+      "spike_pct": 31.2,
+      "news": "Surf Air Mobility Co-Founders, Officers, and Directors Backing 2026 Plan with Common Stock Purchases",
+      "news_url": "https://www.businesswire.com/news/home/20260421205070/en",
+      "score": 0.425,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "SHORT INT 19%",
+          "danger"
+        ]
+      ],
+      "manual": false,
+      "rank": "watch"
+    },
+    {
+      "ticker": "REPL",
+      "scan": "Mid Float",
+      "company": "Replimune Group Inc",
+      "sector": "Healthcare",
+      "price": 2.21,
+      "change": 19.09,
+      "rvol": 4.59,
+      "float_m": 76.57,
+      "short_pct": 21.33,
+      "days_cover": 99.0,
+      "spike_pct": 24.2,
+      "news": "Replimune Plans Layoffs After FDA Rejects Cancer Therapy Again. The Stock Craters 64%.",
+      "news_url": "https://www.barrons.com/articles/replimune-plans-layoffs-fda-rejects-cancer-therapy-5fc36987?mod=bar_FV",
+      "score": 0.415,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 0.4,
+        "fda_binary": 1.0
+      },
+      "flags": [
+        [
+          "FDA EVENT",
+          "catalyst"
+        ],
+        [
+          "SHORT INT 21%",
+          "danger"
+        ]
+      ],
+      "manual": false,
+      "rank": "watch"
+    },
+    {
+      "ticker": "VTGN",
+      "scan": "Mid Float",
+      "company": "Vistagen Therapeutics Inc",
+      "sector": "Healthcare",
+      "price": 0.6,
+      "change": -0.96,
+      "rvol": 10.42,
+      "float_m": 33.76,
+      "short_pct": 4.18,
+      "days_cover": 99.0,
+      "spike_pct": 15.4,
+      "news": "Vistagen Receives FDA \"Study May Proceed\" Letter Under its Refisolone IND Application, Enabling Further Phase 2 Clinical",
+      "news_url": "https://www.businesswire.com/news/home/20260422186960/en",
+      "score": 0.4,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 1.0
+      },
+      "flags": [
+        [
+          "FDA EVENT",
+          "catalyst"
+        ]
+      ],
+      "manual": false,
+      "rank": "watch"
+    },
+    {
+      "ticker": "SPWR",
+      "scan": "Mid Float",
+      "company": "SunPower Inc",
+      "sector": "Technology",
+      "price": 1.02,
+      "change": -9.4,
+      "rvol": 5.91,
+      "float_m": 84.0,
+      "short_pct": 12.41,
+      "days_cover": 99.0,
+      "spike_pct": 13.3,
+      "news": "SunPower Prices $41 Million Convertible Debt",
+      "news_url": "https://elite.finviz.com/news/346618/sunpower-prices-41-million-convertible-debt",
+      "score": 0.395,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 0.7,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "SHORT INT 12%",
+          "danger"
+        ]
+      ],
+      "manual": false,
+      "rank": "watch"
+    },
+    {
+      "ticker": "NMAX",
+      "scan": "Mid Float",
+      "company": "Newsmax Inc",
+      "sector": "Communication Services",
+      "price": 9.17,
+      "change": 25.96,
+      "rvol": 32.46,
+      "float_m": 65.81,
+      "short_pct": 11.32,
+      "days_cover": 99.0,
+      "spike_pct": 53.8,
+      "news": "Newsmax, Inc. Q4 2025 Earnings Call Summary",
+      "news_url": "https://finance.yahoo.com/m/24b0088a-ac6c-3450-a5af-d5c5626782c8/newsmax%2C-inc.-q4-2025.html",
+      "score": 0.375,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +54%",
+          "gap"
+        ],
+        [
+          "SHORT INT 11%",
+          "danger"
+        ]
+      ],
+      "manual": false,
+      "rank": "watch"
+    },
+    {
+      "ticker": "BTBD",
+      "scan": "Manual",
+      "company": "BTBD",
+      "sector": "",
+      "price": 0.0,
+      "change": 0.0,
+      "rvol": 0.0,
+      "float_m": 0.0,
+      "short_pct": 0.0,
+      "days_cover": 99.0,
+      "spike_pct": 31.7,
+      "news": "",
+      "news_url": "",
+      "score": 0.25,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ]
+      ],
+      "manual": true,
+      "rank": "avoid"
+    },
+    {
+      "ticker": "FLYX",
+      "scan": "Manual",
+      "company": "FLYX",
+      "sector": "",
+      "price": 0.0,
+      "change": 0.0,
+      "rvol": 0.0,
+      "float_m": 0.0,
+      "short_pct": 0.0,
+      "days_cover": 99.0,
+      "spike_pct": 182.8,
+      "news": "",
+      "news_url": "",
+      "score": 0.2,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +183%",
+          "gap"
+        ]
+      ],
+      "manual": true,
+      "rank": "avoid"
+    },
+    {
+      "ticker": "AZTR",
+      "scan": "Manual",
+      "company": "AZTR",
+      "sector": "",
+      "price": 0.0,
+      "change": 0.0,
+      "rvol": 0.0,
+      "float_m": 0.0,
+      "short_pct": 0.0,
+      "days_cover": 99.0,
+      "spike_pct": 115.9,
+      "news": "",
+      "news_url": "",
+      "score": 0.2,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +116%",
+          "gap"
+        ]
+      ],
+      "manual": true,
+      "rank": "avoid"
+    },
+    {
+      "ticker": "BFRG",
+      "scan": "Manual",
+      "company": "BFRG",
+      "sector": "",
+      "price": 0.0,
+      "change": 0.0,
+      "rvol": 0.0,
+      "float_m": 0.0,
+      "short_pct": 0.0,
+      "days_cover": 99.0,
+      "spike_pct": 205.1,
+      "news": "",
+      "news_url": "",
+      "score": 0.45,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +205%",
+          "gap"
+        ]
+      ],
+      "manual": true,
+      "rank": "watch"
+    },
+    {
+      "ticker": "UGRO",
+      "scan": "Manual",
+      "company": "UGRO",
+      "sector": "",
+      "price": 0.0,
+      "change": 0.0,
+      "rvol": 0.0,
+      "float_m": 0.0,
+      "short_pct": 0.0,
+      "days_cover": 99.0,
+      "spike_pct": 417.1,
+      "news": "",
+      "news_url": "",
+      "score": 0.2,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +417%",
+          "gap"
+        ]
+      ],
+      "manual": true,
+      "rank": "avoid"
+    },
+    {
+      "ticker": "DEFT",
+      "scan": "Manual",
+      "company": "DEFT",
+      "sector": "",
+      "price": 0.0,
+      "change": 0.0,
+      "rvol": 0.0,
+      "float_m": 0.0,
+      "short_pct": 0.0,
+      "days_cover": 99.0,
+      "spike_pct": 44.3,
+      "news": "",
+      "news_url": "",
+      "score": 0.2,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +44%",
+          "gap"
+        ]
+      ],
+      "manual": true,
+      "rank": "avoid"
+    },
+    {
+      "ticker": "BYAH",
+      "scan": "Manual",
+      "company": "BYAH",
+      "sector": "",
+      "price": 0.0,
+      "change": 0.0,
+      "rvol": 0.0,
+      "float_m": 0.0,
+      "short_pct": 0.0,
+      "days_cover": 99.0,
+      "spike_pct": 74.7,
+      "news": "",
+      "news_url": "",
+      "score": 0.2,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +75%",
+          "gap"
+        ]
+      ],
+      "manual": true,
+      "rank": "avoid"
+    },
+    {
+      "ticker": "OXBR",
+      "scan": "Manual",
+      "company": "OXBR",
+      "sector": "",
+      "price": 0.0,
+      "change": 0.0,
+      "rvol": 0.0,
+      "float_m": 0.0,
+      "short_pct": 0.0,
+      "days_cover": 99.0,
+      "spike_pct": 62.6,
+      "news": "",
+      "news_url": "",
+      "score": 0.2,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +63%",
+          "gap"
+        ]
+      ],
+      "manual": true,
+      "rank": "avoid"
+    },
+    {
+      "ticker": "SST",
+      "scan": "Manual",
+      "company": "SST",
+      "sector": "",
+      "price": 0.0,
+      "change": 0.0,
+      "rvol": 0.0,
+      "float_m": 0.0,
+      "short_pct": 0.0,
+      "days_cover": 99.0,
+      "spike_pct": 246.7,
+      "news": "",
+      "news_url": "",
+      "score": 0.2,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +247%",
+          "gap"
+        ]
+      ],
+      "manual": true,
+      "rank": "avoid"
+    },
+    {
+      "ticker": "SER",
+      "scan": "Manual",
+      "company": "SER",
+      "sector": "",
+      "price": 0.0,
+      "change": 0.0,
+      "rvol": 0.0,
+      "float_m": 0.0,
+      "short_pct": 0.0,
+      "days_cover": 99.0,
+      "spike_pct": 121.1,
+      "news": "",
+      "news_url": "",
+      "score": 0.45,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +121%",
+          "gap"
+        ]
+      ],
+      "manual": true,
+      "rank": "watch"
+    },
+    {
+      "ticker": "EEIQ",
+      "scan": "Manual",
+      "company": "EEIQ",
+      "sector": "",
+      "price": 0.0,
+      "change": 0.0,
+      "rvol": 0.0,
+      "float_m": 0.0,
+      "short_pct": 0.0,
+      "days_cover": 99.0,
+      "spike_pct": 365.2,
+      "news": "",
+      "news_url": "",
+      "score": 0.2,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +365%",
+          "gap"
+        ]
+      ],
+      "manual": true,
+      "rank": "avoid"
+    }
+  ]
+}

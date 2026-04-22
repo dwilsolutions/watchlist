@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Swing Watchlist · Wed Apr 22, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Syne:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0e11;--bg2:#141618;--bg3:#1c1f23;--border:rgba(255,255,255,0.07);--text:#dde1e9;--muted:#656c7a;--green:#3a9c5f;--amber:#c07b1a;--red:#a33333;--mono:'DM Mono',monospace;--sans:'Syne',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.5;}
+a{color:inherit;text-decoration:none;}
+.hdr{background:var(--bg2);border-bottom:2px solid #3a9c5f;padding:16px 20px;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.hdr-l h1{font-family:var(--sans);font-size:20px;font-weight:700;letter-spacing:-0.3px;}
+.hdr-l h1 em{color:#3a9c5f;font-style:normal;}
+.hdr-l .sub{font-size:11px;color:var(--muted);margin-top:3px;}
+.hdr-r{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.pill{font-size:10px;padding:3px 9px;border-radius:20px;background:var(--bg3);color:var(--muted);border:1px solid var(--border);}
+.legend{display:flex;gap:14px;padding:8px 20px;background:var(--bg2);border-bottom:1px solid var(--border);flex-wrap:wrap;align-items:center;}
+.leg-label{font-size:10px;color:var(--muted);margin-right:4px;}
+.leg-item{display:flex;align-items:center;gap:5px;font-size:10px;}
+.leg-dot{width:8px;height:8px;border-radius:2px;}
+.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border);}
+.sum-cell{background:var(--bg2);padding:12px 16px;text-align:center;}
+.sum-n{font-family:var(--sans);font-size:26px;font-weight:700;}
+.sum-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:0.06em;text-transform:uppercase;}
+.body{padding:18px 20px 48px;max-width:940px;margin:0 auto;}
+.sec-lbl{font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin:22px 0 9px;display:flex;align-items:center;gap:8px;}
+.sec-lbl::after{content:'';flex:1;height:1px;background:var(--border);}
+.cards{display:flex;flex-direction:column;gap:9px;}
+.card{background:var(--bg2);border:0.5px solid var(--border);border-radius:10px;padding:13px 15px;border-left-width:3px;border-left-style:solid;}
+.card.hot{border-left-color:#6ee89a;}.card.warm{border-left-color:#f5c46e;}.card.watch{border-left-color:#7ab4f5;}.card.avoid{border-left-color:#f57a7a;opacity:0.55;}
+.card.manual-pin{border-top:1px solid #3a9c5f44;}
+.r1{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
+.tkr{font-family:var(--sans);font-size:15px;font-weight:700;}
+.co{font-size:11px;color:var(--muted);flex:1;}
+.scan-tag{font-size:10px;padding:2px 7px;border-radius:10px;border:0.5px solid;}
+.rank-pill{font-size:11px;font-weight:500;padding:2px 9px;border-radius:20px;}
+.score-bar-wrap{display:flex;align-items:center;gap:6px;margin-bottom:8px;}
+.score-bar-bg{flex:1;height:4px;background:var(--bg3);border-radius:3px;overflow:hidden;}
+.score-bar-fill{height:100%;border-radius:3px;background:#3a9c5f;}
+.score-val{font-size:10px;color:var(--muted);min-width:28px;text-align:right;}
+.flags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;}
+.flag{font-size:10px;padding:2px 7px;border-radius:10px;font-weight:500;}
+.manual-badge{font-size:10px;padding:2px 7px;border-radius:10px;background:#1a2a1a;color:#7af5a0;font-weight:500;}
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:5px;margin:8px 0;}
+.st{background:var(--bg3);border-radius:6px;padding:5px 8px;}
+.sl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;}
+.sv{font-size:12px;font-weight:500;color:var(--text);margin-top:1px;}
+.score-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin:8px 0;}
+.sc{background:var(--bg3);border-radius:6px;padding:4px 7px;}
+.scl{font-size:9px;color:var(--muted);}
+.scv{font-size:11px;font-weight:500;}
+.scv.hit{color:#6ee89a;}.scv.miss{color:var(--muted);}
+.news-line{font-size:10px;color:var(--muted);font-style:italic;border-top:0.5px solid var(--border);padding-top:5px;margin-top:4px;display:flex;align-items:center;gap:8px;overflow:hidden;}
+.news-txt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;}
+.news-btn{flex-shrink:0;font-size:10px;font-style:normal;padding:2px 8px;border-radius:20px;background:#1a2a3d;color:#7ab4f5;border:0.5px solid #7ab4f533;text-decoration:none;white-space:nowrap;}
+.ch{font-size:12px;font-weight:500;}.pos{color:#5cc98a;}.neg{color:#e06060;}
+.clink{font-size:11px;color:#5a8fd4;margin-left:auto;}
+.footer{text-align:center;font-size:10px;color:var(--muted);padding:24px;border-top:1px solid var(--border);}
+.empty{color:var(--muted);font-size:12px;padding:8px 0;}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="hdr-l">
+    <h1>Swing Watchlist · <em>Pre-Market Scan</em></h1>
+    <div class="sub">Micro-cap momentum · 50-100% target moves · days to weeks</div>
+  </div>
+  <div class="hdr-r">
+    <span class="pill">Wed Apr 22, 2026</span>
+    <span class="pill">Generated 03:40 PM ET</span>
+  </div>
+</div>
+<div class="legend">
+  <span class="leg-label">Screener:</span>
+  <span class="leg-item"><span class="leg-dot" style="background:#7ab4f5"></span>Low Float (&lt;$10 · &lt;20M · RVol 2x+)</span>
+  <span class="leg-item"><span class="leg-dot" style="background:#b07af5"></span>Mid Float ($10-20 · 20-100M · RVol 3x+)</span>
+  <span class="leg-item"><span class="leg-dot" style="background:#7af5a0"></span>Manual Watchlist</span>
+</div>
+<div class="summary">
+  <div class="sum-cell"><div class="sum-n" style="color:#6ee89a">1</div><div class="sum-l">Hot Setups</div></div>
+  <div class="sum-cell"><div class="sum-n" style="color:#f5c46e">12</div><div class="sum-l">Warm Setups</div></div>
+  <div class="sum-cell"><div class="sum-n" style="color:#7ab4f5">6</div><div class="sum-l">Watch</div></div>
+  <div class="sum-cell"><div class="sum-n">30</div><div class="sum-l">Total</div></div>
+</div>
+<div class="body">
+  <div class="sec-lbl">Hot setups — score ≥70%</div>
+  <div class="cards"><div class="card hot">
+  <div class="r1">
+    <span class="tkr">ASBP</span>
+    <span class="co">Aspire Biopharma Holding</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rank-pill" style="background:#1e3d2a;color:#6ee89a">🔥 HOT</span>
+    <span class="ch pos">+8.6%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=ASBP" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:75%"></div></div>
+    <span class="score-val">75%</span>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">FRESH 8-K</span><span class="flag" style="background:#3d2e1a;color:#f5c46e">CATALYST · M&A</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +68%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.21</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">13x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">4.7M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">9%</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+68%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt">Aspire Biopharma Announces Closing of Second and Final Tranche of $21 Million Private Placement by Select Investors; Sec</span><a class="news-btn" href="https://elite.finviz.com/news/345788/aspire-biopharma-announces-closing-of-second-and-final-tranche-of-21-million-private-placement-by-select-investors-secures-commitment-letter-for-225m-credit-facility-to-fund-the-dcs-acquisition" target="_blank">Read ↗</a></div>
+</div></div>
+  <div class="sec-lbl">Warm setups — score ≥50%</div>
+  <div class="cards"><div class="card warm">
+  <div class="r1">
+    <span class="tkr">SBEV</span>
+    <span class="co">Splash Beverage Group In</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rank-pill" style="background:#3d2e1a;color:#f5c46e">⚡ WARM</span>
+    <span class="ch pos">+23.5%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=SBEV" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:69%"></div></div>
+    <span class="score-val">69%</span>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">FRESH 8-K</span><span class="flag" style="background:#3d2e1a;color:#f5c46e">CATALYST · NEWS</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +66%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.41</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">5x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">9.3M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">1%</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+66%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv hit">~</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt">Splash Beverage plans pivot to CBD</span><a class="news-btn" href="https://finance.yahoo.com/m/1e6b5c8f-d44d-36a7-b147-1e9ebe7dded2/splash-beverage-plans-pivot.html" target="_blank">Read ↗</a></div>
+</div><div class="card warm">
+  <div class="r1">
+    <span class="tkr">QVCGA</span>
+    <span class="co">QVC Group Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rank-pill" style="background:#3d2e1a;color:#f5c46e">⚡ WARM</span>
+    <span class="ch pos">+13.5%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=QVCGA" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:62%"></div></div>
+    <span class="score-val">62%</span>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">FRESH 8-K</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +88%</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">SHORT INT 19%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.46</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">104x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">6.7M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">19%</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+88%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv hit">~</div></div><div class="sc"><div class="scl">RVol</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt">BC-Most Active Stocks</span><a class="news-btn" href="https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018096.html" target="_blank">Read ↗</a></div>
+</div><div class="card warm">
+  <div class="r1">
+    <span class="tkr">ACB</span>
+    <span class="co">Aurora Cannabis Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Float</span>
+    <span class="rank-pill" style="background:#3d2e1a;color:#f5c46e">⚡ WARM</span>
+    <span class="ch pos">+7.9%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=ACB" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:62%"></div></div>
+    <span class="score-val">62%</span>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">FRESH 8-K</span><span class="flag" style="background:#3d2e1a;color:#f5c46e">CATALYST · M&A</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">SHORT INT 13%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$3.84</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">11x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">56.4M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">13%</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+21%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv hit">~</div></div><div class="sc"><div class="scl">RVol</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt">Aurora Cannabis Accelerates Global Medical Cannabis Leadership with Accretive Acquisition of Safari Flower Company, Expa</span><a class="news-btn" href="https://elite.finviz.com/news/344691/aurora-cannabis-accelerates-global-medical-cannabis-leadership-with-accretive-acquisition-of-safari-flower-company-expanding-eu-gmp-capacity-to-serve-growing-high-margin-international-markets" target="_blank">Read ↗</a></div>
+</div><div class="card warm">
+  <div class="r1">
+    <span class="tkr">KYTX</span>
+    <span class="co">Kyverna Therapeutics Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Float</span>
+    <span class="rank-pill" style="background:#3d2e1a;color:#f5c46e">⚡ WARM</span>
+    <span class="ch pos">+3.5%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=KYTX" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:60%"></div></div>
+    <span class="score-val">60%</span>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">FRESH 8-K</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +56%</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">SHORT INT 12%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$10.05</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">8x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">35.0M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">12%</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+56%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv hit">~</div></div><div class="sc"><div class="scl">RVol</div><div class="scv hit">~</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt">Kyverna Presents Registrational Trial Primary Analysis for Miv-cel in Stiff Person Syndrome Demonstrating Statistically </span><a class="news-btn" href="https://elite.finviz.com/news/346455/kyverna-presents-registrational-trial-primary-analysis-for-miv-cel-in-stiff-person-syndrome-demonstrating-statistically-significant-durable-clinical-benefit-across-all-endpoints-in-an-oral-late-breaker-session-at-aan-annual-meeting" target="_blank">Read ↗</a></div>
+</div><div class="card warm">
+  <div class="r1">
+    <span class="tkr">SOWG</span>
+    <span class="co">Sow Good Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rank-pill" style="background:#3d2e1a;color:#f5c46e">⚡ WARM</span>
+    <span class="ch neg">-28.8%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=SOWG" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:56%"></div></div>
+    <span class="score-val">56%</span>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">FRESH 8-K</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +60%</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">SHORT INT 82%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.12</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">4x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">0.5M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">82%</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+60%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv hit">~</div></div><div class="sc"><div class="scl">RVol</div><div class="scv hit">~</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt">BC-Most Active Stocks</span><a class="news-btn" href="https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143020968.html" target="_blank">Read ↗</a></div>
+</div><div class="card warm">
+  <div class="r1">
+    <span class="tkr">GP</span>
+    <span class="co">GreenPower Motor Company</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rank-pill" style="background:#3d2e1a;color:#f5c46e">⚡ WARM</span>
+    <span class="ch pos">+2.8%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=GP" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:55%"></div></div>
+    <span class="score-val">55%</span>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">FRESH 8-K</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +89%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.98</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">122x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">2.2M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">3%</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+89%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt">BC-Most Active Stocks</span><a class="news-btn" href="https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018096.html" target="_blank">Read ↗</a></div>
+</div><div class="card warm">
+  <div class="r1">
+    <span class="tkr">YCBD</span>
+    <span class="co">cbdMD Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rank-pill" style="background:#3d2e1a;color:#f5c46e">⚡ WARM</span>
+    <span class="ch pos">+11.3%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=YCBD" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:55%"></div></div>
+    <span class="score-val">55%</span>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">FRESH 8-K</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +136%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.94</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">24x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">9.4M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">6%</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+136%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt">cbdMD Launches Clinical Healthcare Channel to Support First Federal Pathway for Hemp-Derived CBD in Medicare</span><a class="news-btn" href="https://elite.finviz.com/news/341686/cbdmd-launches-clinical-healthcare-channel-to-support-first-federal-pathway-for-hemp-derived-cbd-in-medicare" target="_blank">Read ↗</a></div>
+</div><div class="card warm">
+  <div class="r1">
+    <span class="tkr">CTNT</span>
+    <span class="co">Cheetah Net Supply Chain</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Float</span>
+    <span class="rank-pill" style="background:#3d2e1a;color:#f5c46e">⚡ WARM</span>
+    <span class="ch neg">-13.5%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=CTNT" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:52%"></div></div>
+    <span class="score-val">52%</span>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">FRESH 8-K</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +118%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.04</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">10x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">36.0M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">0%</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+118%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv hit">~</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt">Cheetah Net Supply Chain Service Inc. enters Agreement to Acquire Super International Trading Limited</span><a class="news-btn" href="https://elite.finviz.com/news/345199/cheetah-net-supply-chain-service-inc-enters-agreement-to-acquire-super-international-trading-limited" target="_blank">Read ↗</a></div>
+</div><div class="card warm">
+  <div class="r1">
+    <span class="tkr">GAME</span>
+    <span class="co">GameSquare Holdings Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Float</span>
+    <span class="rank-pill" style="background:#3d2e1a;color:#f5c46e">⚡ WARM</span>
+    <span class="ch pos">+36.6%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=GAME" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:52%"></div></div>
+    <span class="score-val">52%</span>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">FRESH 8-K</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +81%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.62</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">6x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">82.1M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">3%</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+81%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv hit">~</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt">GameSquare Announces Largest Monthly Repurchase to Date, with the Repurchase of Nearly 2.3 Million Shares in April 2026</span><a class="news-btn" href="https://elite.finviz.com/news/346586/gamesquare-announces-largest-monthly-repurchase-to-date-with-the-repurchase-of-nearly-23-million-shares-in-april-2026" target="_blank">Read ↗</a></div>
+</div><div class="card warm">
+  <div class="r1">
+    <span class="tkr">TH</span>
+    <span class="co">Target Hospitality Corp</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Float</span>
+    <span class="rank-pill" style="background:#3d2e1a;color:#f5c46e">⚡ WARM</span>
+    <span class="ch neg">-8.6%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=TH" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:52%"></div></div>
+    <span class="score-val">52%</span>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">FRESH 8-K</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +43%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$14.54</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">9x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">32.5M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">7%</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+43%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv hit">~</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt">Under The Surface, Big Moves Are Building</span><a class="news-btn" href="https://finance.yahoo.com/markets/stocks/articles/under-surface-big-moves-building-135036120.html" target="_blank">Read ↗</a></div>
+</div><div class="card warm">
+  <div class="r1">
+    <span class="tkr">BANL</span>
+    <span class="co">CBL International Ltd</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rank-pill" style="background:#3d2e1a;color:#f5c46e">⚡ WARM</span>
+    <span class="ch neg">-10.2%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=BANL" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:50%"></div></div>
+    <span class="score-val">50%</span>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">CATALYST · NEWS</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +67%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.46</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">11x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">5.2M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">5%</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+67%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt">CBL International Limited Acquires Majority Stake in Green Marine Energy Holdings Limited</span><a class="news-btn" href="https://finance.yahoo.com/sectors/energy/articles/cbl-international-limited-acquires-majority-150127154.html" target="_blank">Read ↗</a></div>
+</div><div class="card warm">
+  <div class="r1">
+    <span class="tkr">HCAI</span>
+    <span class="co">Huachen AI Parking Manag</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rank-pill" style="background:#3d2e1a;color:#f5c46e">⚡ WARM</span>
+    <span class="ch pos">+40.6%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=HCAI" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:50%"></div></div>
+    <span class="score-val">50%</span>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">CATALYST · PIVOT</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +270%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$9.55</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">19x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">0.6M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">1%</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+270%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt">Huachen AI Parking Management Technology Holding Co., Ltd Announces 1-for-30 Reverse Stock Split Effective April 13, 202</span><a class="news-btn" href="https://elite.finviz.com/news/343300/huachen-ai-parking-management-technology-holding-co-ltd-announces-1-for-30-reverse-stock-split-effective-april-13-2026" target="_blank">Read ↗</a></div>
+</div></div>
+  <div class='sec-lbl'>Watch — score ≥35%</div><div class='cards'><div class="card watch">
+  <div class="r1">
+    <span class="tkr">RETO</span>
+    <span class="co">ReTo Eco-Solutions Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="rank-pill" style="background:#1a2a3a;color:#7ab4f5">👁 WATCH</span>
+    <span class="ch neg">-36.4%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=RETO" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:47%"></div></div>
+    <span class="score-val">47%</span>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">CATALYST · M&A</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +77%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.88</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">7x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">9.6M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">0%</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+77%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv hit">~</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt">ReTo Eco-Solutions, Inc. Announces Acquisition of Majority Interest in Seven Arrows Supply Chain Limited</span><a class="news-btn" href="https://elite.finviz.com/news/329418/reto-eco-solutions-inc-announces-acquisition-of-majority-interest-in-seven-arrows-supply-chain-limited" target="_blank">Read ↗</a></div>
+</div><div class="card watch">
+  <div class="r1">
+    <span class="tkr">SRFM</span>
+    <span class="co">Surf Air Mobility Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Float</span>
+    <span class="rank-pill" style="background:#1a2a3a;color:#7ab4f5">👁 WATCH</span>
+    <span class="ch pos">+12.3%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=SRFM" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:42%"></div></div>
+    <span class="score-val">42%</span>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">FRESH 8-K</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">SHORT INT 19%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$1.24</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">15x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">55.2M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">19%</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+31%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv hit">~</div></div><div class="sc"><div class="scl">RVol</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt">Surf Air Mobility Co-Founders, Officers, and Directors Backing 2026 Plan with Common Stock Purchases</span><a class="news-btn" href="https://www.businesswire.com/news/home/20260421205070/en" target="_blank">Read ↗</a></div>
+</div><div class="card watch">
+  <div class="r1">
+    <span class="tkr">REPL</span>
+    <span class="co">Replimune Group Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Float</span>
+    <span class="rank-pill" style="background:#1a2a3a;color:#7ab4f5">👁 WATCH</span>
+    <span class="ch pos">+19.1%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=REPL" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:42%"></div></div>
+    <span class="score-val">42%</span>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">FDA EVENT</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">SHORT INT 21%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$2.21</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">5x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">76.6M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">21%</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+24%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv hit">~</div></div><div class="sc"><div class="scl">RVol</div><div class="scv hit">~</div></div><div class="sc"><div class="scl">FDA</div><div class="scv hit">✓</div></div></div>
+  <div class="news-line"><span class="news-txt">Replimune Plans Layoffs After FDA Rejects Cancer Therapy Again. The Stock Craters 64%.</span><a class="news-btn" href="https://www.barrons.com/articles/replimune-plans-layoffs-fda-rejects-cancer-therapy-5fc36987?mod=bar_FV" target="_blank">Read ↗</a></div>
+</div><div class="card watch">
+  <div class="r1">
+    <span class="tkr">VTGN</span>
+    <span class="co">Vistagen Therapeutics In</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Float</span>
+    <span class="rank-pill" style="background:#1a2a3a;color:#7ab4f5">👁 WATCH</span>
+    <span class="ch neg">-1.0%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=VTGN" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:40%"></div></div>
+    <span class="score-val">40%</span>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">FDA EVENT</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.60</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">10x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">33.8M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">4%</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+15%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">FDA</div><div class="scv hit">✓</div></div></div>
+  <div class="news-line"><span class="news-txt">Vistagen Receives FDA "Study May Proceed" Letter Under its Refisolone IND Application, Enabling Further Phase 2 Clinical</span><a class="news-btn" href="https://www.businesswire.com/news/home/20260422186960/en" target="_blank">Read ↗</a></div>
+</div><div class="card watch">
+  <div class="r1">
+    <span class="tkr">SPWR</span>
+    <span class="co">SunPower Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Float</span>
+    <span class="rank-pill" style="background:#1a2a3a;color:#7ab4f5">👁 WATCH</span>
+    <span class="ch neg">-9.4%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=SPWR" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:40%"></div></div>
+    <span class="score-val">40%</span>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">FRESH 8-K</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">SHORT INT 12%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$1.02</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">6x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">84.0M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">12%</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+13%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv hit">~</div></div><div class="sc"><div class="scl">RVol</div><div class="scv hit">~</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt">SunPower Prices $41 Million Convertible Debt</span><a class="news-btn" href="https://elite.finviz.com/news/346618/sunpower-prices-41-million-convertible-debt" target="_blank">Read ↗</a></div>
+</div><div class="card watch">
+  <div class="r1">
+    <span class="tkr">NMAX</span>
+    <span class="co">Newsmax Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Float</span>
+    <span class="rank-pill" style="background:#1a2a3a;color:#7ab4f5">👁 WATCH</span>
+    <span class="ch pos">+26.0%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=NMAX" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:38%"></div></div>
+    <span class="score-val">38%</span>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +54%</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">SHORT INT 11%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$9.17</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">32x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">65.8M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">11%</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+54%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv hit">~</div></div><div class="sc"><div class="scl">RVol</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt">Newsmax, Inc. Q4 2025 Earnings Call Summary</span><a class="news-btn" href="https://finance.yahoo.com/m/24b0088a-ac6c-3450-a5af-d5c5626782c8/newsmax%2C-inc.-q4-2025.html" target="_blank">Read ↗</a></div>
+</div></div>
+  <div class="sec-lbl">📌 Manual watchlist</div>
+  <div class="cards"><div class="card avoid manual-pin">
+  <div class="r1">
+    <span class="tkr">BTBD</span>
+    <span class="co">BTBD</span>
+    <span class="scan-tag" style="background:#1a2a1a;color:#7af5a0;border-color:#7af5a044">Manual</span>
+    <span class="rank-pill" style="background:#3d1a1a;color:#f57a7a">✗ AVOID</span>
+    <span class="ch pos">+0.0%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=BTBD" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:25%"></div></div>
+    <span class="score-val">25%</span>
+  </div>
+  <div class="flags"><span class="manual-badge">📌 WATCHLIST</span><span class="flag" style="background:#3d2e1a;color:#f5c46e">FRESH 8-K</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.00</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">0x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">0.0M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">—</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+32%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt"></span></div>
+</div><div class="card avoid manual-pin">
+  <div class="r1">
+    <span class="tkr">FLYX</span>
+    <span class="co">FLYX</span>
+    <span class="scan-tag" style="background:#1a2a1a;color:#7af5a0;border-color:#7af5a044">Manual</span>
+    <span class="rank-pill" style="background:#3d1a1a;color:#f57a7a">✗ AVOID</span>
+    <span class="ch pos">+0.0%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=FLYX" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:20%"></div></div>
+    <span class="score-val">20%</span>
+  </div>
+  <div class="flags"><span class="manual-badge">📌 WATCHLIST</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +183%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.00</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">0x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">0.0M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">—</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+183%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt"></span></div>
+</div><div class="card avoid manual-pin">
+  <div class="r1">
+    <span class="tkr">AZTR</span>
+    <span class="co">AZTR</span>
+    <span class="scan-tag" style="background:#1a2a1a;color:#7af5a0;border-color:#7af5a044">Manual</span>
+    <span class="rank-pill" style="background:#3d1a1a;color:#f57a7a">✗ AVOID</span>
+    <span class="ch pos">+0.0%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=AZTR" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:20%"></div></div>
+    <span class="score-val">20%</span>
+  </div>
+  <div class="flags"><span class="manual-badge">📌 WATCHLIST</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +116%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.00</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">0x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">0.0M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">—</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+116%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt"></span></div>
+</div><div class="card watch manual-pin">
+  <div class="r1">
+    <span class="tkr">BFRG</span>
+    <span class="co">BFRG</span>
+    <span class="scan-tag" style="background:#1a2a1a;color:#7af5a0;border-color:#7af5a044">Manual</span>
+    <span class="rank-pill" style="background:#1a2a3a;color:#7ab4f5">👁 WATCH</span>
+    <span class="ch pos">+0.0%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=BFRG" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:45%"></div></div>
+    <span class="score-val">45%</span>
+  </div>
+  <div class="flags"><span class="manual-badge">📌 WATCHLIST</span><span class="flag" style="background:#3d2e1a;color:#f5c46e">FRESH 8-K</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +205%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.00</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">0x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">0.0M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">—</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+205%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt"></span></div>
+</div><div class="card avoid manual-pin">
+  <div class="r1">
+    <span class="tkr">UGRO</span>
+    <span class="co">UGRO</span>
+    <span class="scan-tag" style="background:#1a2a1a;color:#7af5a0;border-color:#7af5a044">Manual</span>
+    <span class="rank-pill" style="background:#3d1a1a;color:#f57a7a">✗ AVOID</span>
+    <span class="ch pos">+0.0%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=UGRO" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:20%"></div></div>
+    <span class="score-val">20%</span>
+  </div>
+  <div class="flags"><span class="manual-badge">📌 WATCHLIST</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +417%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.00</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">0x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">0.0M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">—</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+417%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt"></span></div>
+</div><div class="card avoid manual-pin">
+  <div class="r1">
+    <span class="tkr">DEFT</span>
+    <span class="co">DEFT</span>
+    <span class="scan-tag" style="background:#1a2a1a;color:#7af5a0;border-color:#7af5a044">Manual</span>
+    <span class="rank-pill" style="background:#3d1a1a;color:#f57a7a">✗ AVOID</span>
+    <span class="ch pos">+0.0%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=DEFT" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:20%"></div></div>
+    <span class="score-val">20%</span>
+  </div>
+  <div class="flags"><span class="manual-badge">📌 WATCHLIST</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +44%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.00</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">0x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">0.0M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">—</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+44%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt"></span></div>
+</div><div class="card avoid manual-pin">
+  <div class="r1">
+    <span class="tkr">BYAH</span>
+    <span class="co">BYAH</span>
+    <span class="scan-tag" style="background:#1a2a1a;color:#7af5a0;border-color:#7af5a044">Manual</span>
+    <span class="rank-pill" style="background:#3d1a1a;color:#f57a7a">✗ AVOID</span>
+    <span class="ch pos">+0.0%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=BYAH" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:20%"></div></div>
+    <span class="score-val">20%</span>
+  </div>
+  <div class="flags"><span class="manual-badge">📌 WATCHLIST</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +75%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.00</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">0x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">0.0M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">—</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+75%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt"></span></div>
+</div><div class="card avoid manual-pin">
+  <div class="r1">
+    <span class="tkr">OXBR</span>
+    <span class="co">OXBR</span>
+    <span class="scan-tag" style="background:#1a2a1a;color:#7af5a0;border-color:#7af5a044">Manual</span>
+    <span class="rank-pill" style="background:#3d1a1a;color:#f57a7a">✗ AVOID</span>
+    <span class="ch pos">+0.0%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=OXBR" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:20%"></div></div>
+    <span class="score-val">20%</span>
+  </div>
+  <div class="flags"><span class="manual-badge">📌 WATCHLIST</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +63%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.00</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">0x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">0.0M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">—</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+63%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt"></span></div>
+</div><div class="card avoid manual-pin">
+  <div class="r1">
+    <span class="tkr">SST</span>
+    <span class="co">SST</span>
+    <span class="scan-tag" style="background:#1a2a1a;color:#7af5a0;border-color:#7af5a044">Manual</span>
+    <span class="rank-pill" style="background:#3d1a1a;color:#f57a7a">✗ AVOID</span>
+    <span class="ch pos">+0.0%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=SST" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:20%"></div></div>
+    <span class="score-val">20%</span>
+  </div>
+  <div class="flags"><span class="manual-badge">📌 WATCHLIST</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +247%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.00</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">0x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">0.0M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">—</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+247%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt"></span></div>
+</div><div class="card watch manual-pin">
+  <div class="r1">
+    <span class="tkr">SER</span>
+    <span class="co">SER</span>
+    <span class="scan-tag" style="background:#1a2a1a;color:#7af5a0;border-color:#7af5a044">Manual</span>
+    <span class="rank-pill" style="background:#1a2a3a;color:#7ab4f5">👁 WATCH</span>
+    <span class="ch pos">+0.0%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=SER" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:45%"></div></div>
+    <span class="score-val">45%</span>
+  </div>
+  <div class="flags"><span class="manual-badge">📌 WATCHLIST</span><span class="flag" style="background:#3d2e1a;color:#f5c46e">FRESH 8-K</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +121%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.00</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">0x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">0.0M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">—</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+121%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt"></span></div>
+</div><div class="card avoid manual-pin">
+  <div class="r1">
+    <span class="tkr">EEIQ</span>
+    <span class="co">EEIQ</span>
+    <span class="scan-tag" style="background:#1a2a1a;color:#7af5a0;border-color:#7af5a044">Manual</span>
+    <span class="rank-pill" style="background:#3d1a1a;color:#f57a7a">✗ AVOID</span>
+    <span class="ch pos">+0.0%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=EEIQ" target="_blank">Chart ↗</a>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:20%"></div></div>
+    <span class="score-val">20%</span>
+  </div>
+  <div class="flags"><span class="manual-badge">📌 WATCHLIST</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">PREV SPIKE +365%</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.00</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">0x</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">0.0M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">—</div></div>
+    <div class="st"><div class="sl">90d Spike</div><div class="sv">+365%</div></div>
+  </div>
+  <div class="score-grid"><div class="sc"><div class="scl">8-K</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Catalyst</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">Prev Spike</div><div class="scv hit">✓</div></div><div class="sc"><div class="scl">Short Sq.</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">RVol</div><div class="scv miss">✗</div></div><div class="sc"><div class="scl">FDA</div><div class="scv miss">✗</div></div></div>
+  <div class="news-line"><span class="news-txt"></span></div>
+</div></div>
+</div>
+<div class="footer">Micro-Cap Momentum Swing Scanner · Not financial advice · Always confirm on live chart before entry</div>
+</body>
+</html>
