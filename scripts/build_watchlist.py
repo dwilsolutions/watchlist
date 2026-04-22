@@ -5,15 +5,9 @@ Reads the scanner JSON output and renders swing-trading.html
 
 import os, sys, json, glob
 from datetime import date
-import yaml
 
-ROOT     = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CFG_PATH = os.path.join(ROOT, "config.yaml")
-with open(CFG_PATH) as f:
-    CFG = yaml.safe_load(f)
-
-DATA_DIR = os.path.join(ROOT, CFG["output"]["data_dir"])
-OUT_DIR  = os.path.join(ROOT, CFG["output"]["dir"])
+DATA_DIR = os.environ.get("SWING_DATA_DIR", "docs/data/swing")
+OUT_DIR  = os.environ.get("SWING_OUT_DIR",  "docs")
 
 # ── Styles ─────────────────────────────────────────────────────────────────────
 
