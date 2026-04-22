@@ -1,0 +1,84 @@
+{
+  "session": "premarket",
+  "label": "Pre-Market",
+  "date": "2026-04-22",
+  "generated": "06:55 AM ET",
+  "tickers": [
+    {
+      "ticker": "ALP",
+      "company": "Alpha Compute Corp",
+      "sector": "Financial",
+      "scan": "Mid Cap",
+      "score": 58,
+      "tier": "watch",
+      "entry": 0.48,
+      "entry_label": "Break above $0.48",
+      "range_str": "",
+      "prev_close": 0.28,
+      "prev_high": 0.48,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.48
+        ],
+        [
+          "First target",
+          0.53
+        ],
+        [
+          "Second target",
+          0.6
+        ],
+        [
+          "Extended",
+          0.68
+        ]
+      ],
+      "price_at_scan": 0.36,
+      "gap": 24.64,
+      "rvol": 1523.21,
+      "flags": [
+        "GAP QUALITY"
+      ],
+      "news_url": "https://elite.finviz.com/news/346222/alpha-compute-appoints-tom-richer-to-advisory-board-to-accelerate-ai-gpu-compute-infrastructure-and-confidential-cloud-strategy"
+    },
+    {
+      "ticker": "POET",
+      "company": "POET Technologies Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "watch",
+      "entry": 13.4,
+      "entry_label": "Break above $13.33",
+      "range_str": "",
+      "prev_close": 10.25,
+      "prev_high": 13.33,
+      "fib_levels": [
+        [
+          "Prev High",
+          13.33
+        ],
+        [
+          "First target",
+          14.17
+        ],
+        [
+          "Second target",
+          15.23
+        ],
+        [
+          "Extended",
+          16.41
+        ]
+      ],
+      "price_at_scan": 12.19,
+      "gap": 7.61,
+      "rvol": 14.84,
+      "flags": [
+        "CONTINUATION"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143020968.html"
+    }
+  ]
+}
