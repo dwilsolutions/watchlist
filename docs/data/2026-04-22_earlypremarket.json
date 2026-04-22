@@ -1,0 +1,46 @@
+{
+  "session": "earlypremarket",
+  "label": "Early Pre-Market",
+  "date": "2026-04-22",
+  "generated": "04:05 AM ET",
+  "tickers": [
+    {
+      "ticker": "ALP",
+      "company": "Alpha Compute Corp",
+      "sector": "Financial",
+      "scan": "Mid Cap",
+      "score": 69,
+      "tier": "watch",
+      "entry": 0.48,
+      "entry_label": "Break above $0.48",
+      "range_str": "",
+      "prev_close": 0.28,
+      "prev_high": 0.48,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.48
+        ],
+        [
+          "First target",
+          0.53
+        ],
+        [
+          "Second target",
+          0.6
+        ],
+        [
+          "Extended",
+          0.68
+        ]
+      ],
+      "price_at_scan": 0.38,
+      "gap": 24.64,
+      "rvol": 104.83,
+      "flags": [
+        "GAP QUALITY"
+      ],
+      "news_url": "https://elite.finviz.com/news/346222/alpha-compute-appoints-tom-richer-to-advisory-board-to-accelerate-ai-gpu-compute-infrastructure-and-confidential-cloud-strategy"
+    }
+  ]
+}
