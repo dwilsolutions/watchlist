@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Use the Watchlist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0e11;--bg2:#141618;--bg3:#1c1f23;
+  --border:rgba(255,255,255,0.07);
+  --text:#dde1e9;--muted:#656c7a;
+  --green:#3a9c5f;--amber:#c07b1a;--blue:#2a6aad;--red:#a33333;
+  --hot:#6ee89a;--warm:#f5c46e;--watch:#7ab4f5;--avoid:#f57a7a;
+  --mono:'DM Mono',monospace;--sans:'Syne',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:14px;line-height:1.7;}
+a{color:var(--watch);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* Header */
+.hero{padding:60px 24px 48px;max-width:860px;margin:0 auto;border-bottom:1px solid var(--border);}
+.hero-label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.hero h1{font-family:var(--sans);font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.1;letter-spacing:-1px;color:var(--text);margin-bottom:20px;}
+.hero h1 em{color:var(--green);font-style:normal;}
+.hero p{font-size:15px;color:var(--muted);max-width:560px;line-height:1.8;}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:100;background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;display:flex;gap:0;overflow-x:auto;}
+.nav a{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:14px 16px;white-space:nowrap;border-bottom:2px solid transparent;text-decoration:none;transition:color .2s,border-color .2s;}
+.nav a:hover{color:var(--text);border-bottom-color:var(--green);}
+
+/* Main layout */
+.main{max-width:860px;margin:0 auto;padding:48px 24px 96px;}
+
+/* Sections */
+.section{margin-bottom:64px;}
+.section-tag{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--green);margin-bottom:10px;}
+.section h2{font-family:var(--sans);font-size:26px;font-weight:700;margin-bottom:20px;letter-spacing:-0.3px;}
+.section p{color:var(--muted);margin-bottom:16px;line-height:1.8;}
+.section p strong{color:var(--text);font-weight:500;}
+
+/* Cards / callouts */
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:12px;}
+.card-title{font-family:var(--sans);font-size:15px;font-weight:700;margin-bottom:6px;}
+
+/* Rank pills */
+.rank{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:500;padding:3px 12px;border-radius:20px;margin-right:6px;margin-bottom:6px;}
+.rank.hot{background:#1e3d2a;color:var(--hot);}
+.rank.warm{background:#3d2e1a;color:var(--warm);}
+.rank.watch{background:#1a2a3a;color:var(--watch);}
+.rank.avoid{background:#3d1a1a;color:var(--avoid);}
+
+/* Schedule table */
+.schedule{width:100%;border-collapse:collapse;margin:20px 0;}
+.schedule th{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:1px solid var(--border);}
+.schedule td{padding:12px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
+.schedule td:first-child{font-weight:500;color:var(--text);white-space:nowrap;}
+.schedule td:nth-child(2){color:var(--green);white-space:nowrap;}
+.schedule td:nth-child(3){color:var(--muted);font-size:13px;}
+.schedule tr:last-child td{border-bottom:none;}
+
+/* Glossary grid */
+.gloss{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:20px;}
+.gterm{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:14px 16px;}
+.gterm-name{font-family:var(--sans);font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.gterm-def{font-size:12px;color:var(--muted);line-height:1.6;}
+
+/* Signal breakdown */
+.signals{display:flex;flex-direction:column;gap:8px;margin-top:16px;}
+.sig{display:grid;grid-template-columns:160px 1fr auto;align-items:center;gap:12px;padding:12px 16px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;}
+.sig-name{font-size:12px;font-weight:500;color:var(--text);}
+.sig-desc{font-size:12px;color:var(--muted);}
+.sig-weight{font-size:12px;font-weight:500;color:var(--green);}
+
+/* Steps */
+.steps{counter-reset:step;display:flex;flex-direction:column;gap:16px;margin-top:20px;}
+.step{counter-increment:step;display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:start;}
+.step-num{width:40px;height:40px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:14px;font-weight:700;color:var(--green);flex-shrink:0;}
+.step-content{padding-top:8px;}
+.step-title{font-family:var(--sans);font-size:14px;font-weight:700;margin-bottom:4px;}
+.step-desc{font-size:13px;color:var(--muted);line-height:1.7;}
+
+/* Warning / tip boxes */
+.tip{background:#1a2a1a;border:1px solid #3a9c5f44;border-left:3px solid var(--green);border-radius:8px;padding:14px 18px;margin:16px 0;font-size:13px;color:var(--muted);}
+.tip strong{color:var(--green);}
+.warn{background:#2a1a0a;border:1px solid #c07b1a44;border-left:3px solid var(--amber);border-radius:8px;padding:14px 18px;margin:16px 0;font-size:13px;color:var(--muted);}
+.warn strong{color:var(--amber);}
+
+/* Links section */
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+.link-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;background:var(--bg2);border:1px solid var(--border);font-size:13px;color:var(--text);text-decoration:none;transition:border-color .2s;}
+.link-btn:hover{border-color:var(--green);text-decoration:none;}
+
+/* Footer */
+.footer{text-align:center;font-size:11px;color:var(--muted);padding:32px 24px;border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-label">Documentation</div>
+  <h1>How to Use the<br><em>Watchlist System</em></h1>
+  <p>Two scanners. Five daily sessions. One goal — surface momentum setups before they move. This guide covers everything from reading your first card to executing a trade.</p>
+</div>
+
+<nav class="nav">
+  <a href="#overview">Overview</a>
+  <a href="#daytrading">Day Trading WL</a>
+  <a href="#swing">Swing WL</a>
+  <a href="#ranks">Ranks</a>
+  <a href="#signals">Signals</a>
+  <a href="#howto">How to Use</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="main">
+
+  <!-- OVERVIEW -->
+  <div class="section" id="overview">
+    <div class="section-tag">Start Here</div>
+    <h2>Two watchlists, two timeframes</h2>
+    <p>The system runs two separate scanners pulling from Finviz Elite's real-time data. They share the same universe — low float, small cap stocks under $20 — but they're built for different strategies.</p>
+
+    <div class="card" style="border-left:3px solid var(--green);">
+      <div class="card-title">📈 Day Trading Watchlist</div>
+      <p style="color:var(--muted);font-size:13px;margin:0;">Intraday momentum plays. Stocks moving right now with high relative volume and catalysts. Runs 5 times daily. Hold time: minutes to hours.</p>
+    </div>
+    <div class="card" style="border-left:3px solid var(--watch);">
+      <div class="card-title">📊 Swing Trading Watchlist</div>
+      <p style="color:var(--muted);font-size:13px;margin:0;">Multi-day momentum plays targeting 50-100% moves. Scored on 8-K filings, previous spike history, short squeeze setups, and catalyst quality. Hold time: days to weeks.</p>
+    </div>
+
+    <div class="warn">
+      <strong>Not financial advice.</strong> These watchlists identify setups for manual review. Always confirm on a live chart, check Level 2, and size appropriately before entering any trade.
+    </div>
+  </div>
+
+  <!-- DAY TRADING -->
+  <div class="section" id="daytrading">
+    <div class="section-tag">Day Trading Watchlist</div>
+    <h2>Five sessions, one day</h2>
+    <p>The day trading scanner runs at five fixed times each market day, pulling stocks that pass the screener filters at that moment. Each session has a different focus based on what the market is doing.</p>
+
+    <table class="schedule">
+      <thead><tr><th>Session</th><th>Time (ET)</th><th>What it's looking for</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Early Pre-Market</td>
+          <td>~8:00 PM</td>
+          <td>Yesterday's clean runners — stocks that ran and held, setting up for continuation tomorrow. Built the night before like a professional pre-market prep list.</td>
+        </tr>
+        <tr>
+          <td>Pre-Market</td>
+          <td>~6:55 AM</td>
+          <td>Live screener before Robinhood opens. Catches stocks with overnight catalysts and pre-market gap-ups before retail volume floods in.</td>
+        </tr>
+        <tr>
+          <td>Market Open</td>
+          <td>~9:30 AM</td>
+          <td>First 30 minutes of the session. Highest volatility window of the day — runners hit their high here 11% of the time based on 60-day data.</td>
+        </tr>
+        <tr>
+          <td>Midday</td>
+          <td>~1:00 PM</td>
+          <td>VWAP reclaims and second entries. Stocks that pulled back after the open and are setting up for a second leg. 25% of runners peak during this window.</td>
+        </tr>
+        <tr>
+          <td>After Hours</td>
+          <td>~3:30 PM</td>
+          <td>Power hour seeds and HOD breakouts. Historically the best session — 25% runner rate, 3.8 runners per day on average.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Screener filters:</strong> The scanner pulls two lists from Finviz Elite simultaneously.</p>
+    <div class="card">
+      <div class="card-title" style="color:var(--watch)">Low Float</div>
+      <p style="color:var(--muted);font-size:13px;margin:0;">Price under $10 · Float under 20M shares · Relative volume 2x+ · Current volume over 5M</p>
+    </div>
+    <div class="card">
+      <div class="card-title" style="color:#b07af5">Mid Cap</div>
+      <p style="color:var(--muted);font-size:13px;margin:0;">Price under $20 · Float 20M–100M shares · Relative volume 3x+ · Current volume over 5M</p>
+    </div>
+  </div>
+
+  <!-- SWING -->
+  <div class="section" id="swing">
+    <div class="section-tag">Swing Trading Watchlist</div>
+    <h2>Scoring for multi-day moves</h2>
+    <p>The swing scanner runs twice daily and scores every ticker on six weighted signals. Only stocks scoring above 35% appear. The manual watchlist (BTBD, FLYX, AZTR etc.) always shows regardless of score.</p>
+
+    <div class="signals">
+      <div class="sig">
+        <span class="sig-name">Fresh 8-K Filing</span>
+        <span class="sig-desc">SEC filing in the last 7 days — checked via EDGAR full-text search for merger, AI, crypto, or pivot keywords</span>
+        <span class="sig-weight">25%</span>
+      </div>
+      <div class="sig">
+        <span class="sig-name">Merger / Pivot Catalyst</span>
+        <span class="sig-desc">M&A, LOI, business pivot, AI rebrand, crypto pivot, or definitive agreement in news headline</span>
+        <span class="sig-weight">20%</span>
+      </div>
+      <div class="sig">
+        <span class="sig-name">Previous Spike History</span>
+        <span class="sig-desc">Stock had a 40%+ single-day move in the last 90 days — proven it can make a big move</span>
+        <span class="sig-weight">20%</span>
+      </div>
+      <div class="sig">
+        <span class="sig-name">Short Squeeze Setup</span>
+        <span class="sig-desc">Short interest above 10% AND days-to-cover under 3 — squeeze potential if momentum hits</span>
+        <span class="sig-weight">15%</span>
+      </div>
+      <div class="sig">
+        <span class="sig-name">High Relative Volume</span>
+        <span class="sig-desc">2x+ relative volume confirms active interest. 10x+ scores maximum — someone is buying</span>
+        <span class="sig-weight">10%</span>
+      </div>
+      <div class="sig">
+        <span class="sig-name">FDA Binary Event</span>
+        <span class="sig-desc">FDA approval, PDUFA date, NDA/BLA filing, or clinical trial result in news or 8-K</span>
+        <span class="sig-weight">10%</span>
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:20px;">
+      <strong>Score breakdown on every card</strong> — each card shows a ✓ / ~ / ✗ grid for all six signals so you can see exactly why a stock ranked where it did. A ✓ means full score, ~ means partial, ✗ means not triggered.
+    </div>
+  </div>
+
+  <!-- RANKS -->
+  <div class="section" id="ranks">
+    <div class="section-tag">Understanding Ranks</div>
+    <h2>What the rank labels mean</h2>
+    <p>Every card gets one of four rank labels. For the day trading WL, rank is based purely on relative volume — the single strongest predictor of a big intraday move validated across 1,339 runner days of backtest data. For the swing WL, rank is based on the composite score.</p>
+
+    <div class="card" style="border-left:3px solid var(--hot);">
+      <div class="card-title"><span class="rank hot">🔥 HOT</span></div>
+      <p style="color:var(--muted);font-size:13px;margin:0;"><strong style="color:var(--text)">Day trading:</strong> RVol ≥ 100x. These stocks are moving on extreme volume — someone knows something, or a catalyst just hit. Backtest shows 60.8% monster rate (50%+ move) at this threshold. <strong style="color:var(--text)">Swing:</strong> Score ≥ 70% — multiple strong signals firing simultaneously.</p>
+    </div>
+    <div class="card" style="border-left:3px solid var(--warm);">
+      <div class="card-title"><span class="rank warm">⚡ WARM</span></div>
+      <p style="color:var(--muted);font-size:13px;margin:0;"><strong style="color:var(--text)">Day trading:</strong> RVol ≥ 10x. Meaningful momentum but not extreme. Worth watching for a setup — if it breaks a key level with volume it can still run big. <strong style="color:var(--text)">Swing:</strong> Score ≥ 50%.</p>
+    </div>
+    <div class="card" style="border-left:3px solid var(--watch);">
+      <div class="card-title"><span class="rank watch">👁 WATCH</span></div>
+      <p style="color:var(--muted);font-size:13px;margin:0;"><strong style="color:var(--text)">Day trading:</strong> RVol ≥ 2x. Passes the screener, some volume interest, but not enough momentum yet. Keep it on the radar — it could develop. <strong style="color:var(--text)">Swing:</strong> Score ≥ 35%.</p>
+    </div>
+    <div class="card" style="border-left:3px solid var(--avoid);opacity:0.7;">
+      <div class="card-title"><span class="rank avoid">✗ AVOID</span></div>
+      <p style="color:var(--muted);font-size:13px;margin:0;">Prior day runner with no fresh catalyst, reverse split, or crashed gap-down. Backtest shows prior runners dump 84%+ of the time at high RVol the next day. Shown dimmed at the bottom for awareness only.</p>
+    </div>
+
+    <div class="tip">
+      <strong>Gap-down stocks are NOT avoided.</strong> Stocks gapping down hard (-20%+) have a 23% monster rate due to short squeezes. They show as WATCH so you can see them — but treat them as high-risk, high-reward plays only.
+    </div>
+  </div>
+
+  <!-- SIGNALS -->
+  <div class="section" id="signals">
+    <div class="section-tag">Reading the Cards</div>
+    <h2>What every flag means</h2>
+    <p>Each card shows flags — coloured pills below the ticker name. Here's what each one means:</p>
+
+    <div class="gloss">
+      <div class="gterm">
+        <div class="gterm-name" style="color:var(--warm)">CONTINUATION</div>
+        <div class="gterm-def">Stock trended above its 20-day SMA and is gapping up today — multi-day momentum carry.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name" style="color:var(--warm)">GAP QUALITY</div>
+        <div class="gterm-def">Today's gap is significantly larger than the stock's normal daily range — unusual move.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name" style="color:var(--warm)">CATALYST · M&A</div>
+        <div class="gterm-def">Merger, acquisition, letter of intent, or buyout announced. Binary event — can move 50-200%+.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name" style="color:var(--warm)">CATALYST · DEAL</div>
+        <div class="gterm-def">Partnership, licensing deal, or strategic agreement announced.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name" style="color:var(--warm)">FDA EVENT</div>
+        <div class="gterm-def">FDA approval decision, PDUFA date, or trial result. Binary catalyst — can move violently either direction.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name" style="color:var(--warm)">NASDAQ NOTICE</div>
+        <div class="gterm-def">Minimum bid price deficiency notice from NASDAQ. Stock may need to do a reverse split — attracts momentum traders.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name" style="color:var(--watch)">SECTOR MOMENTUM</div>
+        <div class="gterm-def">Two or more stocks from the same sector are moving together — sector rotation theme in play.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name" style="color:var(--avoid)">PRIOR DAY RUNNER</div>
+        <div class="gterm-def">This stock ran big yesterday. Without a fresh catalyst, 84%+ of prior runners dump the next day. Shown in AVOID.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name" style="color:var(--avoid)">ALREADY EXTENDED</div>
+        <div class="gterm-def">Price is already up 30-75%+ from the prior close. Risk/reward is poor for a new entry — the move may be largely done.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name" style="color:var(--avoid)">CRASHED · GAP DOWN</div>
+        <div class="gterm-def">Stock crashed or gapped down hard. High risk — short squeeze potential exists but so does further downside.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name" style="color:var(--warm)">PREV SPIKE +X%</div>
+        <div class="gterm-def">(Swing WL) This stock made a 40%+ single-day move in the last 90 days — proven momentum mover.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name" style="color:var(--avoid)">SHORT SQUEEZE X%</div>
+        <div class="gterm-def">(Swing WL) Short interest above 10% with less than 3 days to cover — forced buying if it moves up.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW TO USE -->
+  <div class="section" id="howto">
+    <div class="section-tag">Workflow</div>
+    <h2>How to use this every day</h2>
+
+    <p style="margin-bottom:24px;"><strong>Day trading workflow — the morning routine:</strong></p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Check Early Pre-Market (8PM the night before)</div>
+          <div class="step-desc">This is tomorrow's continuation list — stocks that ran cleanly today and are setting up to go again. Note the entry levels (today's high) and have them ready for the morning.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">Check Pre-Market at 6:55 AM</div>
+          <div class="step-desc">Look for HOT and WARM tickers with catalysts. The 8AM window produces 9% of all runner highs — your pre-market scan catches setups before that spike. Read the news headline for each HOT ticker.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">At Market Open (9:30 AM) — confirm, don't chase</div>
+          <div class="step-desc">Use the Market Open scan to see what's still moving. Wait for a break above the proposed entry level with volume confirmation — not before. The entry box on each card shows the specific level to watch.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">Midday and After Hours — second entries</div>
+          <div class="step-desc">25% of runners peak in the midday window (12:30-3:30PM). Look for stocks that pulled back to VWAP and are reclaiming it. After hours (3:30PM+) is historically the best session — power hour setups and HOD breaks.</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:36px;margin-bottom:24px;"><strong>Swing trading workflow — weekly routine:</strong></p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Review the swing scan each morning at 6 AM</div>
+          <div class="step-desc">HOT setups (score ≥70%) have multiple signals firing — prioritise these. Check the score grid on the card to see which signals triggered. A stock with fresh 8-K + catalyst + previous spike + short squeeze is rare and powerful.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">Click "Read ↗" to verify the catalyst</div>
+          <div class="step-desc">The news pill links directly to the source article. Always read the actual filing or announcement before entering a swing position. Micro-cap news can be misleading — understand what the catalyst actually is.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">Use the manual watchlist as a baseline</div>
+          <div class="step-desc">BTBD, FLYX, AZTR, BFRG, UGRO and the other manual tickers are always shown. These are known momentum movers in this price range — track them daily and be ready when volume picks up.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">Size small, trail your stop</div>
+          <div class="step-desc">Micro-cap swings are volatile. Target 50-100% but plan for 20-30% drawdowns. Use the 90-day spike history to understand the stock's range. If it spiked 80% before, a 50% target is realistic. If it only spiked 40%, temper expectations.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="warn" style="margin-top:32px;">
+      <strong>The most common mistake:</strong> chasing a stock that's already up 50% because it looks hot on the scan. The entry box and proposed entry level exist for a reason — wait for the break, not the gap.
+    </div>
+  </div>
+
+  <!-- GLOSSARY -->
+  <div class="section" id="glossary">
+    <div class="section-tag">Reference</div>
+    <h2>Key terms explained</h2>
+    <div class="gloss">
+      <div class="gterm">
+        <div class="gterm-name">Relative Volume (RVol)</div>
+        <div class="gterm-def">Today's volume divided by the average daily volume. 5x means trading 5x its normal volume. The single strongest predictor of a big move.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name">Float</div>
+        <div class="gterm-def">The number of shares available for public trading. Low float (under 20M) means less supply — when demand spikes, price can move violently.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name">Gap %</div>
+        <div class="gterm-def">How much the stock opened above or below yesterday's close. A 50% gap means it opened 50% higher than yesterday's closing price.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name">VWAP</div>
+        <div class="gterm-def">Volume Weighted Average Price — the average price weighted by volume for the day. Key intraday level. Above VWAP = bullish bias, below = bearish.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name">Proposed Entry</div>
+        <div class="gterm-def">The specific price level to watch for a breakout. Usually the prior day's high or a key resistance level. Wait for price to break AND hold above this level with volume.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name">Fib Targets</div>
+        <div class="gterm-def">Fibonacci extension levels used as upside price targets. First target, second target, and extended target — take partial profits at each level.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name">Run & Dump</div>
+        <div class="gterm-def">Stock ran 20%+ intraday but closed near its lows. Common in low floats — someone sells into the spike. The session high was achievable but you had to exit quickly.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name">Monster (50%+)</div>
+        <div class="gterm-def">An intraday move of 50% or more from the session open. HOT tickers (RVol ≥100x) produce monsters 60.8% of the time based on 1,339 runner days of data.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name">8-K Filing</div>
+        <div class="gterm-def">A mandatory SEC filing when a company has a material event — merger, bankruptcy, executive change, etc. Fresh 8-Ks with merger/AI/crypto keywords are the highest-scoring swing signal.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name">Days to Cover</div>
+        <div class="gterm-def">How many days it would take short sellers to buy back their shares based on average volume. Under 3 days = squeeze risk if the stock moves up.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name">Short Interest</div>
+        <div class="gterm-def">The percentage of the float that is sold short. Above 10% is notable — if the stock moves up, shorts are forced to buy to cover, accelerating the move.</div>
+      </div>
+      <div class="gterm">
+        <div class="gterm-name">Catalyst</div>
+        <div class="gterm-def">A specific event or announcement that drives the move — M&A deal, FDA approval, AI pivot, earnings beat. Stocks with real catalysts have higher sustained moves than pure volume plays.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINKS -->
+  <div class="section">
+    <div class="section-tag">Quick Links</div>
+    <h2>Jump to a watchlist</h2>
+    <div class="links">
+      <a class="link-btn" href="earlypremarket.html">Early Pre-Market ↗</a>
+      <a class="link-btn" href="premarket.html">Pre-Market ↗</a>
+      <a class="link-btn" href="marketopen.html">Market Open ↗</a>
+      <a class="link-btn" href="midday.html">Midday ↗</a>
+      <a class="link-btn" href="afterhours.html">After Hours ↗</a>
+      <a class="link-btn" href="swing-trading.html">Swing Watchlist ↗</a>
+      <a class="link-btn" href="eod-results.html">EOD Results ↗</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Watchlist System · Not financial advice · Always confirm on a live chart before entry
+</div>
+
+</body>
+</html>
