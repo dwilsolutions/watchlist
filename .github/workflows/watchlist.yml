@@ -2,9 +2,7 @@ name: Watchlist Auto-Score
 
 on:
   schedule:
-    # Swing scanner — 6:00 AM ET (10:00 UTC) Mon-Fri
     - cron: '0 10 * * 1-5'
-    # Swing scanner — 10:30 AM ET (14:30 UTC) Mon-Fri
     - cron: '30 14 * * 1-5'
   workflow_dispatch:
     inputs:
@@ -111,6 +109,10 @@ jobs:
         run: |
           git config user.name  "Watchlist Bot"
           git config user.email "bot@watchlist"
-          git add docs/ data/ backtest_runners.csv || true
-          git diff --staged --quiet || git commit -m "Watchlist: ${{ github.event.inputs.session || 'swing-cron' }} $(date -u +'%Y-%m-%d %H:%M UTC')"
-          git push
+          git add -A docs/ backtest_runners.csv 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "Nothing to commit"
+          else
+            git commit -m "Watchlist: ${{ github.event.inputs.session || 'swing-cron' }} $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
