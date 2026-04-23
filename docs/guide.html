@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>How to Use the Watchlist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#08090b;
@@ -28,17 +28,17 @@
   --watch:#60a5fa;
   --avoid:#f87171;
   --mono:'DM Mono',monospace;
-  --sans:'Syne',sans-serif;
+  --sans:'Inter',sans-serif;
   --sidebar:240px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:14px;line-height:1.75;display:flex;min-height:100vh;}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:14px;line-height:1.75;overflow-x:hidden;}
 
 /* ── Sidebar ── */
 .sidebar{width:var(--sidebar);flex-shrink:0;position:fixed;top:0;left:0;height:100vh;background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow-y:auto;z-index:100;}
 .sidebar-logo{padding:28px 24px 20px;border-bottom:1px solid var(--border);}
-.sidebar-logo-title{font-family:var(--sans);font-size:14px;font-weight:800;color:var(--text);letter-spacing:-0.3px;}
+.sidebar-logo-title{font-family:var(--sans);font-size:14px;font-weight:800;color:var(--text);letter-spacing:0;}
 .sidebar-logo-sub{font-size:10px;color:var(--muted);margin-top:3px;letter-spacing:0.06em;text-transform:uppercase;}
 .sidebar-nav{padding:16px 0;flex:1;}
 .nav-group-label{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);padding:12px 24px 6px;opacity:0.6;}
@@ -52,10 +52,10 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:14
 
 /* ── Main content ── */
 .content{margin-left:var(--sidebar);flex:1;min-width:0;}
-.hero{padding:64px 56px 48px;border-bottom:1px solid var(--border);max-width:760px;}
+.hero{padding:64px 56px 48px;border-bottom:1px solid var(--border);}
 .hero-eyebrow{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--green);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
 .hero-eyebrow::before{content:'';width:20px;height:2px;background:var(--green);display:block;}
-.hero h1{font-family:var(--sans);font-size:clamp(32px,4vw,50px);font-weight:800;line-height:1.08;letter-spacing:-1.5px;margin-bottom:20px;}
+.hero h1{font-family:var(--sans);font-size:clamp(32px,4vw,50px);font-weight:800;line-height:1.15;letter-spacing:-0.5px;margin-bottom:20px;padding-right:4px;}
 .hero h1 em{color:var(--green);font-style:normal;}
 .hero-lead{font-size:15px;color:var(--muted);max-width:500px;line-height:1.85;margin-bottom:28px;}
 .hero-btns{display:flex;flex-wrap:wrap;gap:10px;}
@@ -66,7 +66,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:14
 .hero-btn.secondary:hover{border-color:rgba(74,222,128,0.4);color:var(--green);text-decoration:none;}
 
 /* ── Sections ── */
-.main{padding:56px 56px 120px;max-width:760px;}
+.main{padding:56px 56px 120px;}
 .section{margin-bottom:80px;scroll-margin-top:32px;}
 .section-eyebrow{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--green);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
 .section-eyebrow::before{content:'';width:14px;height:1px;background:var(--green);}
