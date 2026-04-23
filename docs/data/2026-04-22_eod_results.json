@@ -1,0 +1,2105 @@
+{
+  "date": "2026-04-22",
+  "generated": "08:30 PM ET",
+  "sessions": {
+    "earlypremarket": [
+      {
+        "ticker": "ALP",
+        "company": "Alpha Compute Corp",
+        "sector": "Financial",
+        "scan": "Mid Cap",
+        "score": 69,
+        "tier": "watch",
+        "entry": 0.48,
+        "entry_label": "Break above $0.48",
+        "range_str": "",
+        "prev_close": 0.28,
+        "prev_high": 0.48,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.48
+          ],
+          [
+            "First target",
+            0.53
+          ],
+          [
+            "Second target",
+            0.6
+          ],
+          [
+            "Extended",
+            0.68
+          ]
+        ],
+        "price_at_scan": 0.38,
+        "gap": 24.64,
+        "rvol": 104.83,
+        "flags": [
+          "GAP QUALITY"
+        ],
+        "news_url": "https://elite.finviz.com/news/346222/alpha-compute-appoints-tom-richer-to-advisory-board-to-accelerate-ai-gpu-compute-infrastructure-and-confidential-cloud-strategy",
+        "outcome": "flat"
+      }
+    ],
+    "premarket": [
+      {
+        "ticker": "ALP",
+        "company": "Alpha Compute Corp",
+        "sector": "Financial",
+        "scan": "Mid Cap",
+        "score": 58,
+        "tier": "watch",
+        "entry": 0.48,
+        "entry_label": "Break above $0.48",
+        "range_str": "",
+        "prev_close": 0.28,
+        "prev_high": 0.48,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.48
+          ],
+          [
+            "First target",
+            0.53
+          ],
+          [
+            "Second target",
+            0.6
+          ],
+          [
+            "Extended",
+            0.68
+          ]
+        ],
+        "price_at_scan": 0.36,
+        "gap": 24.64,
+        "rvol": 1523.21,
+        "flags": [
+          "GAP QUALITY"
+        ],
+        "news_url": "https://elite.finviz.com/news/346222/alpha-compute-appoints-tom-richer-to-advisory-board-to-accelerate-ai-gpu-compute-infrastructure-and-confidential-cloud-strategy",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "POET",
+        "company": "POET Technologies Inc",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 100,
+        "tier": "watch",
+        "entry": 13.4,
+        "entry_label": "Break above $13.33",
+        "range_str": "",
+        "prev_close": 10.25,
+        "prev_high": 13.33,
+        "fib_levels": [
+          [
+            "Prev High",
+            13.33
+          ],
+          [
+            "First target",
+            14.17
+          ],
+          [
+            "Second target",
+            15.23
+          ],
+          [
+            "Extended",
+            16.41
+          ]
+        ],
+        "price_at_scan": 12.19,
+        "gap": 7.61,
+        "rvol": 14.84,
+        "flags": [
+          "CONTINUATION"
+        ],
+        "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143020968.html",
+        "outcome": "flat"
+      }
+    ],
+    "marketopen": [
+      {
+        "ticker": "ALP",
+        "company": "Alpha Compute Corp",
+        "sector": "Financial",
+        "scan": "Mid Cap",
+        "score": 52,
+        "tier": "watch",
+        "entry": 0.48,
+        "entry_label": "Break above $0.48",
+        "range_str": "",
+        "prev_close": 0.28,
+        "prev_high": 0.48,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.48
+          ],
+          [
+            "First target",
+            0.53
+          ],
+          [
+            "Second target",
+            0.6
+          ],
+          [
+            "Extended",
+            0.68
+          ]
+        ],
+        "price_at_scan": 0.34,
+        "gap": 24.64,
+        "rvol": 2505.07,
+        "flags": [
+          "GAP QUALITY",
+          "CATALYST \u00b7 FINANCING"
+        ],
+        "news_url": "https://elite.finviz.com/news/346660/alpha-compute-executes-binding-319-million-non-recourse-gpu-financing-backed-by-nvidia-b300-hardware-assets",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "DCX",
+        "company": "Digital Currency X Technology Inc",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 65,
+        "tier": "watch",
+        "entry": 2.82,
+        "entry_label": "Break above $2.81",
+        "range_str": "",
+        "prev_close": 1.93,
+        "prev_high": 2.81,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.81
+          ],
+          [
+            "First target",
+            3.05
+          ],
+          [
+            "Second target",
+            3.35
+          ],
+          [
+            "Extended",
+            3.69
+          ]
+        ],
+        "price_at_scan": 2.1,
+        "gap": 0.52,
+        "rvol": 546.11,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/317062/digital-currency-x-technology-inc-regains-compliance-with-nasdaq-bid-price-requirement-and-hearing-cancelled",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "WBUY",
+        "company": "Webuy Global Ltd",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 75,
+        "tier": "watch",
+        "entry": 1.83,
+        "entry_label": "Break above $1.82",
+        "range_str": "",
+        "prev_close": 1.21,
+        "prev_high": 1.82,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.82
+          ],
+          [
+            "First target",
+            1.99
+          ],
+          [
+            "Second target",
+            2.2
+          ],
+          [
+            "Extended",
+            2.43
+          ]
+        ],
+        "price_at_scan": 1.39,
+        "gap": 0.0,
+        "rvol": 357.52,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/346560/webuy-global-ltd-announces-record-breaking-performance-for-the-company-at-natas-fair-march-2026-with-over-us334-million-in-travel-bookings",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "VTGN",
+        "company": "Vistagen Therapeutics Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 58,
+        "tier": "watch",
+        "entry": 0.94,
+        "entry_label": "Break above $0.94",
+        "range_str": "",
+        "prev_close": 0.61,
+        "prev_high": 0.94,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.94
+          ],
+          [
+            "First target",
+            1.03
+          ],
+          [
+            "Second target",
+            1.14
+          ],
+          [
+            "Extended",
+            1.27
+          ]
+        ],
+        "price_at_scan": 0.61,
+        "gap": 0.76,
+        "rvol": 139.4,
+        "flags": [
+          "CATALYST \u00b7 FDA",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://www.businesswire.com/news/home/20260422186960/en",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SRFM",
+        "company": "Surf Air Mobility Inc",
+        "sector": "Industrials",
+        "scan": "Mid Cap",
+        "score": 46,
+        "tier": "watch",
+        "entry": 1.42,
+        "entry_label": "Break above $1.41",
+        "range_str": "",
+        "prev_close": 1.1,
+        "prev_high": 1.41,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.41
+          ],
+          [
+            "First target",
+            1.49
+          ],
+          [
+            "Second target",
+            1.6
+          ],
+          [
+            "Extended",
+            1.72
+          ]
+        ],
+        "price_at_scan": 1.21,
+        "gap": 7.27,
+        "rvol": 128.98,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://www.businesswire.com/news/home/20260421205070/en",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "POET",
+        "company": "POET Technologies Inc",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 100,
+        "tier": "watch",
+        "entry": 13.4,
+        "entry_label": "Break above $13.33",
+        "range_str": "",
+        "prev_close": 10.25,
+        "prev_high": 13.33,
+        "fib_levels": [
+          [
+            "Prev High",
+            13.33
+          ],
+          [
+            "First target",
+            14.17
+          ],
+          [
+            "Second target",
+            15.23
+          ],
+          [
+            "Extended",
+            16.41
+          ]
+        ],
+        "price_at_scan": 11.84,
+        "gap": 7.61,
+        "rvol": 26.68,
+        "flags": [
+          "CONTINUATION"
+        ],
+        "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143020968.html",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "BANL",
+        "company": "CBL International Ltd",
+        "sector": "Energy",
+        "scan": "Low Float",
+        "score": 51,
+        "tier": "watch",
+        "entry": 0.63,
+        "entry_label": "Break above $0.63",
+        "range_str": "",
+        "prev_close": 0.51,
+        "prev_high": 0.63,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.63
+          ],
+          [
+            "First target",
+            0.66
+          ],
+          [
+            "Second target",
+            0.7
+          ],
+          [
+            "Extended",
+            0.75
+          ]
+        ],
+        "price_at_scan": 0.56,
+        "gap": 0.92,
+        "rvol": 167.54,
+        "flags": [
+          "PRIOR DAY RUNNER"
+        ],
+        "news_url": "https://elite.finviz.com/news/264029/cbl-international-facilitates-xiaomo-ports-first-lng-bunkering-for-byd-in-shenzhen",
+        "outcome": "flat"
+      }
+    ],
+    "midday": [
+      {
+        "ticker": "TORO",
+        "company": "Toro Corp",
+        "sector": "Energy",
+        "scan": "Low Float",
+        "score": 94,
+        "tier": "watch",
+        "entry": 6.71,
+        "entry_label": "Break above $6.68",
+        "range_str": "",
+        "prev_close": 3.91,
+        "prev_high": 6.68,
+        "fib_levels": [
+          [
+            "Prev High",
+            6.68
+          ],
+          [
+            "First target",
+            7.43
+          ],
+          [
+            "Second target",
+            8.39
+          ],
+          [
+            "Extended",
+            9.45
+          ]
+        ],
+        "price_at_scan": 6.58,
+        "gap": 9.21,
+        "rvol": 423.41,
+        "flags": [
+          "CONTINUATION",
+          "ALREADY EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/346729/toro-corp-declares-special-dividend-of-090-per-share",
+        "outcome": "runner"
+      },
+      {
+        "ticker": "KBSX",
+        "company": "FST Corp",
+        "sector": "Basic Materials",
+        "scan": "Mid Cap",
+        "score": 81,
+        "tier": "watch",
+        "entry": 1.49,
+        "entry_label": "Break above $1.48",
+        "range_str": "",
+        "prev_close": 1.22,
+        "prev_high": 1.48,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.48
+          ],
+          [
+            "First target",
+            1.55
+          ],
+          [
+            "Second target",
+            1.64
+          ],
+          [
+            "Extended",
+            1.74
+          ]
+        ],
+        "price_at_scan": 1.41,
+        "gap": 14.75,
+        "rvol": 105.93,
+        "flags": [
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://www.newsfilecorp.com/release/293687/FST-Corp.-Announces-31-Revenue-Increase-Bottom-Line-Improvement-for-Fiscal-Year-2025-Conference-CallWebcast-Wednesday-April-22nd-at-8-am",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "DCX",
+        "company": "Digital Currency X Technology Inc",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 67,
+        "tier": "watch",
+        "entry": 2.19,
+        "entry_label": "Break above $2.18",
+        "range_str": "",
+        "prev_close": 1.93,
+        "prev_high": 2.18,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.18
+          ],
+          [
+            "First target",
+            2.25
+          ],
+          [
+            "Second target",
+            2.33
+          ],
+          [
+            "Extended",
+            2.43
+          ]
+        ],
+        "price_at_scan": 2.07,
+        "gap": 11.4,
+        "rvol": 52.13,
+        "flags": [
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/317062/digital-currency-x-technology-inc-regains-compliance-with-nasdaq-bid-price-requirement-and-hearing-cancelled",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "NMAX",
+        "company": "Newsmax Inc",
+        "sector": "Communication Services",
+        "scan": "Mid Cap",
+        "score": 89,
+        "tier": "watch",
+        "entry": 9.99,
+        "entry_label": "Momentum above VWAP $9.86",
+        "range_str": " \u2014 range to $11.2",
+        "prev_close": 7.28,
+        "prev_high": 11.2,
+        "fib_levels": [
+          [
+            "Prev High",
+            11.2
+          ],
+          [
+            "First target",
+            12.27
+          ],
+          [
+            "Second target",
+            13.62
+          ],
+          [
+            "Extended",
+            15.12
+          ]
+        ],
+        "price_at_scan": 9.94,
+        "gap": 3.16,
+        "rvol": 42.84,
+        "flags": [
+          "CONTINUATION",
+          "CATALYST \u00b7 8-K",
+          "EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://finance.yahoo.com/m/24b0088a-ac6c-3450-a5af-d5c5626782c8/newsmax%2C-inc.-q4-2025.html",
+        "outcome": "up"
+      },
+      {
+        "ticker": "WBUY",
+        "company": "Webuy Global Ltd",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 51,
+        "tier": "watch",
+        "entry": 1.34,
+        "entry_label": "Reclaim $1.33",
+        "range_str": " \u2014 range to $1.45",
+        "prev_close": 1.21,
+        "prev_high": 1.45,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.45
+          ],
+          [
+            "First target",
+            1.52
+          ],
+          [
+            "Second target",
+            1.6
+          ],
+          [
+            "Extended",
+            1.69
+          ]
+        ],
+        "price_at_scan": 1.24,
+        "gap": 15.7,
+        "rvol": 40.96,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018096.html",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "BEEM",
+        "company": "Beam Global",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 75,
+        "tier": "watch",
+        "entry": 2.04,
+        "entry_label": "Break above $2.03",
+        "range_str": "",
+        "prev_close": 1.52,
+        "prev_high": 2.03,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.03
+          ],
+          [
+            "First target",
+            2.17
+          ],
+          [
+            "Second target",
+            2.35
+          ],
+          [
+            "Extended",
+            2.54
+          ]
+        ],
+        "price_at_scan": 1.9,
+        "gap": 0.66,
+        "rvol": 27.48,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/346027/stanislaus-county-deploys-ten-beam-global-ev-arc-systems-to-support-county-fleet-electrification",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "YCBD",
+        "company": "cbdMD Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 92,
+        "tier": "watch",
+        "entry": 1.2,
+        "entry_label": "Break above $1.19",
+        "range_str": "",
+        "prev_close": 0.84,
+        "prev_high": 1.19,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.19
+          ],
+          [
+            "First target",
+            1.29
+          ],
+          [
+            "Second target",
+            1.41
+          ],
+          [
+            "Extended",
+            1.54
+          ]
+        ],
+        "price_at_scan": 1.04,
+        "gap": 0.0,
+        "rvol": 26.91,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/341686/cbdmd-launches-clinical-healthcare-channel-to-support-first-federal-pathway-for-hemp-derived-cbd-in-medicare",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SRFM",
+        "company": "Surf Air Mobility Inc",
+        "sector": "Industrials",
+        "scan": "Mid Cap",
+        "score": 48,
+        "tier": "watch",
+        "entry": 1.24,
+        "entry_label": "Momentum above VWAP $1.19",
+        "range_str": " \u2014 range to $1.27",
+        "prev_close": 1.1,
+        "prev_high": 1.27,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.27
+          ],
+          [
+            "First target",
+            1.32
+          ],
+          [
+            "Second target",
+            1.38
+          ],
+          [
+            "Extended",
+            1.44
+          ]
+        ],
+        "price_at_scan": 1.23,
+        "gap": 6.36,
+        "rvol": 22.17,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://www.businesswire.com/news/home/20260421205070/en",
+        "outcome": "up"
+      },
+      {
+        "ticker": "ASBP",
+        "company": "Aspire Biopharma Holdings Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 43,
+        "tier": "watch",
+        "entry": 0.24,
+        "entry_label": "Break above $0.24",
+        "range_str": "",
+        "prev_close": 0.2,
+        "prev_high": 0.24,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.24
+          ],
+          [
+            "First target",
+            0.25
+          ],
+          [
+            "Second target",
+            0.26
+          ],
+          [
+            "Extended",
+            0.28
+          ]
+        ],
+        "price_at_scan": 0.22,
+        "gap": 6.3,
+        "rvol": 19.95,
+        "flags": [
+          "CATALYST \u00b7 M&A",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/345788/aspire-biopharma-announces-closing-of-second-and-final-tranche-of-21-million-private-placement-by-select-investors-secures-commitment-letter-for-225m-credit-facility-to-fund-the-dcs-acquisition",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "BANL",
+        "company": "CBL International Ltd",
+        "sector": "Energy",
+        "scan": "Low Float",
+        "score": 50,
+        "tier": "watch",
+        "entry": 0.48,
+        "entry_label": "Reclaim $0.48",
+        "range_str": " \u2014 range to $0.56",
+        "prev_close": 0.51,
+        "prev_high": 0.56,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.56
+          ],
+          [
+            "First target",
+            0.57
+          ],
+          [
+            "Second target",
+            0.59
+          ],
+          [
+            "Extended",
+            0.61
+          ]
+        ],
+        "price_at_scan": 0.47,
+        "gap": 6.99,
+        "rvol": 18.1,
+        "flags": [
+          "CATALYST \u00b7 M&A",
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://finance.yahoo.com/sectors/energy/articles/cbl-international-limited-acquires-majority-150127154.html",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "VTGN",
+        "company": "Vistagen Therapeutics Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 62,
+        "tier": "watch",
+        "entry": 0.59,
+        "entry_label": "Momentum above VWAP $0.58",
+        "range_str": "",
+        "prev_close": 0.61,
+        "prev_high": 0.61,
+        "fib_levels": [],
+        "price_at_scan": 0.59,
+        "gap": 0.46,
+        "rvol": 16.59,
+        "flags": [
+          "CATALYST \u00b7 FDA",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://www.businesswire.com/news/home/20260422186960/en",
+        "outcome": "up"
+      },
+      {
+        "ticker": "ACB",
+        "company": "Aurora Cannabis Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 89,
+        "tier": "watch",
+        "entry": 3.98,
+        "entry_label": "Momentum above VWAP $3.91",
+        "range_str": " \u2014 range to $4.11",
+        "prev_close": 3.56,
+        "prev_high": 4.11,
+        "fib_levels": [
+          [
+            "Prev High",
+            4.11
+          ],
+          [
+            "First target",
+            4.26
+          ],
+          [
+            "Second target",
+            4.45
+          ],
+          [
+            "Extended",
+            4.66
+          ]
+        ],
+        "price_at_scan": 3.96,
+        "gap": 1.4,
+        "rvol": 13.81,
+        "flags": [
+          "CATALYST \u00b7 M&A",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/344691/aurora-cannabis-accelerates-global-medical-cannabis-leadership-with-accretive-acquisition-of-safari-flower-company-expanding-eu-gmp-capacity-to-serve-growing-high-margin-international-markets",
+        "outcome": "up"
+      },
+      {
+        "ticker": "ACRV",
+        "company": "Acrivon Therapeutics Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 95,
+        "tier": "watch",
+        "entry": 2.0,
+        "entry_label": "Momentum above VWAP $1.87",
+        "range_str": " \u2014 range to $2.02",
+        "prev_close": 1.76,
+        "prev_high": 2.02,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.02
+          ],
+          [
+            "First target",
+            2.09
+          ],
+          [
+            "Second target",
+            2.18
+          ],
+          [
+            "Extended",
+            2.28
+          ]
+        ],
+        "price_at_scan": 1.99,
+        "gap": 1.7,
+        "rvol": 12.97,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/345558/acrivon-to-highlight-preclinical-data-with-three-posters-at-aacr-demonstrating-strong-acr-368-and-acr-2316-synergies-with-immune-checkpoint-inhibitors-and-adc-payloads-revealing-broad-clinical-development-opportunities",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "POET",
+        "company": "POET Technologies Inc",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 100,
+        "tier": "watch",
+        "entry": 13.01,
+        "entry_label": "Break above $12.95",
+        "range_str": "",
+        "prev_close": 10.25,
+        "prev_high": 12.95,
+        "fib_levels": [
+          [
+            "Prev High",
+            12.95
+          ],
+          [
+            "First target",
+            13.68
+          ],
+          [
+            "Second target",
+            14.62
+          ],
+          [
+            "Extended",
+            15.65
+          ]
+        ],
+        "price_at_scan": 12.49,
+        "gap": 12.49,
+        "rvol": 10.54,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://finance.yahoo.com/markets/stocks/articles/poet-stock-soars-30-nvidia-165933204.html",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "FCEL",
+        "company": "Fuelcell Energy Inc",
+        "sector": "Industrials",
+        "scan": "Mid Cap",
+        "score": 100,
+        "tier": "watch",
+        "entry": 11.41,
+        "entry_label": "Momentum above VWAP $11.09",
+        "range_str": " \u2014 range to $11.74",
+        "prev_close": 9.49,
+        "prev_high": 11.74,
+        "fib_levels": [
+          [
+            "Prev High",
+            11.74
+          ],
+          [
+            "First target",
+            12.35
+          ],
+          [
+            "Second target",
+            13.13
+          ],
+          [
+            "Extended",
+            13.99
+          ]
+        ],
+        "price_at_scan": 11.35,
+        "gap": 5.37,
+        "rvol": 10.29,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://qz.com/fcel-and-ai-data-centers-can-12-5-mw-blocks-drive-scale",
+        "outcome": "up"
+      },
+      {
+        "ticker": "RETO",
+        "company": "ReTo Eco-Solutions Inc",
+        "sector": "Basic Materials",
+        "scan": "Low Float",
+        "score": 41,
+        "tier": "watch",
+        "entry": 1.37,
+        "entry_label": "Break above $1.36",
+        "range_str": "",
+        "prev_close": 1.39,
+        "prev_high": 1.36,
+        "fib_levels": [],
+        "price_at_scan": 0.81,
+        "gap": -2.16,
+        "rvol": 10.27,
+        "flags": [
+          "CATALYST \u00b7 M&A",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/329418/reto-eco-solutions-inc-announces-acquisition-of-majority-interest-in-seven-arrows-supply-chain-limited",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "GSUN",
+        "company": "Golden Sun Technology Group Ltd",
+        "sector": "Consumer Defensive",
+        "scan": "Low Float",
+        "score": 62,
+        "tier": "watch",
+        "entry": 0.84,
+        "entry_label": "Break above $0.84",
+        "range_str": "",
+        "prev_close": 0.6,
+        "prev_high": 0.84,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.84
+          ],
+          [
+            "First target",
+            0.91
+          ],
+          [
+            "Second target",
+            0.99
+          ],
+          [
+            "Extended",
+            1.08
+          ]
+        ],
+        "price_at_scan": 0.66,
+        "gap": 1.28,
+        "rvol": 8.94,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/299176/golden-sun-technology-group-limited-announces-corporate-name-change",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "GAME",
+        "company": "GameSquare Holdings Inc",
+        "sector": "Communication Services",
+        "scan": "Mid Cap",
+        "score": 65,
+        "tier": "watch",
+        "entry": 0.6,
+        "entry_label": "Momentum above VWAP $0.56",
+        "range_str": " \u2014 range to $0.62",
+        "prev_close": 0.45,
+        "prev_high": 0.62,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.62
+          ],
+          [
+            "First target",
+            0.67
+          ],
+          [
+            "Second target",
+            0.73
+          ],
+          [
+            "Extended",
+            0.79
+          ]
+        ],
+        "price_at_scan": 0.6,
+        "gap": 3.66,
+        "rvol": 8.82,
+        "flags": [
+          "CONTINUATION",
+          "EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/346586/gamesquare-announces-largest-monthly-repurchase-to-date-with-the-repurchase-of-nearly-23-million-shares-in-april-2026",
+        "outcome": "up"
+      },
+      {
+        "ticker": "SBEV",
+        "company": "Splash Beverage Group Inc",
+        "sector": "Consumer Defensive",
+        "scan": "Low Float",
+        "score": 50,
+        "tier": "watch",
+        "entry": 0.4,
+        "entry_label": "Momentum above VWAP $0.39",
+        "range_str": " \u2014 range to $0.46",
+        "prev_close": 0.33,
+        "prev_high": 0.46,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.46
+          ],
+          [
+            "First target",
+            0.5
+          ],
+          [
+            "Second target",
+            0.54
+          ],
+          [
+            "Extended",
+            0.59
+          ]
+        ],
+        "price_at_scan": 0.4,
+        "gap": -2.65,
+        "rvol": 6.22,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://finance.yahoo.com/m/1e6b5c8f-d44d-36a7-b147-1e9ebe7dded2/splash-beverage-plans-pivot.html",
+        "outcome": "runner"
+      },
+      {
+        "ticker": "OTLK",
+        "company": "Outlook Therapeutics Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 53,
+        "tier": "watch",
+        "entry": 0.31,
+        "entry_label": "Break above $0.31",
+        "range_str": "",
+        "prev_close": 0.32,
+        "prev_high": 0.31,
+        "fib_levels": [],
+        "price_at_scan": 0.3,
+        "gap": -9.27,
+        "rvol": 4.15,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/346659/outlook-therapeutics-announces-50-million-registered-direct-offering-priced-at-the-market-under-nasdaq-rules",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "HCAI",
+        "company": "Huachen AI Parking Management Technology Holding Co Ltd",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 69,
+        "tier": "watch",
+        "entry": 8.45,
+        "entry_label": "Momentum above VWAP $8.37",
+        "range_str": " \u2014 range to $9.6",
+        "prev_close": 6.79,
+        "prev_high": 9.6,
+        "fib_levels": [
+          [
+            "Prev High",
+            9.6
+          ],
+          [
+            "First target",
+            10.36
+          ],
+          [
+            "Second target",
+            11.34
+          ],
+          [
+            "Extended",
+            12.41
+          ]
+        ],
+        "price_at_scan": 8.41,
+        "gap": 27.39,
+        "rvol": 30.27,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "REVERSE SPLIT",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/343300/huachen-ai-parking-management-technology-holding-co-ltd-announces-1-for-30-reverse-stock-split-effective-april-13-2026",
+        "outcome": "runner"
+      }
+    ],
+    "afterhours": [
+      {
+        "ticker": "TORO",
+        "company": "Toro Corp",
+        "sector": "Energy",
+        "scan": "Low Float",
+        "score": 99,
+        "tier": "watch",
+        "entry": 6.79,
+        "entry_label": "Momentum above VWAP $6.40",
+        "range_str": " \u2014 range to $7.7",
+        "prev_close": 3.91,
+        "prev_high": 7.7,
+        "fib_levels": [
+          [
+            "Prev High",
+            7.7
+          ],
+          [
+            "First target",
+            8.73
+          ],
+          [
+            "Second target",
+            10.04
+          ],
+          [
+            "Extended",
+            11.49
+          ]
+        ],
+        "price_at_scan": 6.76,
+        "gap": 9.21,
+        "rvol": 391.43,
+        "flags": [
+          "CONTINUATION",
+          "ALREADY EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/346729/toro-corp-declares-special-dividend-of-090-per-share",
+        "outcome": "up"
+      },
+      {
+        "ticker": "GP",
+        "company": "GreenPower Motor Company Inc",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 45,
+        "tier": "watch",
+        "entry": 1.29,
+        "entry_label": "Reclaim $1.28",
+        "range_str": " \u2014 range to $1.51",
+        "prev_close": 0.95,
+        "prev_high": 1.51,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.51
+          ],
+          [
+            "First target",
+            1.66
+          ],
+          [
+            "Second target",
+            1.86
+          ],
+          [
+            "Extended",
+            2.07
+          ]
+        ],
+        "price_at_scan": 1.0,
+        "gap": 7.14,
+        "rvol": 117.03,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018096.html",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "KBSX",
+        "company": "FST Corp",
+        "sector": "Basic Materials",
+        "scan": "Mid Cap",
+        "score": 66,
+        "tier": "watch",
+        "entry": 1.44,
+        "entry_label": "Reclaim $1.43",
+        "range_str": " \u2014 range to $1.5",
+        "prev_close": 1.22,
+        "prev_high": 1.5,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.5
+          ],
+          [
+            "First target",
+            1.58
+          ],
+          [
+            "Second target",
+            1.67
+          ],
+          [
+            "Extended",
+            1.78
+          ]
+        ],
+        "price_at_scan": 1.41,
+        "gap": 16.39,
+        "rvol": 66.76,
+        "flags": [
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://www.newsfilecorp.com/release/293687/FST-Corp.-Announces-31-Revenue-Increase-Bottom-Line-Improvement-for-Fiscal-Year-2025-Conference-CallWebcast-Wednesday-April-22nd-at-8-am",
+        "outcome": "up"
+      },
+      {
+        "ticker": "NMAX",
+        "company": "Newsmax Inc",
+        "sector": "Communication Services",
+        "scan": "Mid Cap",
+        "score": 70,
+        "tier": "watch",
+        "entry": 9.79,
+        "entry_label": "Reclaim $9.74",
+        "range_str": " \u2014 range to $11.2",
+        "prev_close": 7.28,
+        "prev_high": 11.2,
+        "fib_levels": [
+          [
+            "Prev High",
+            11.2
+          ],
+          [
+            "First target",
+            12.27
+          ],
+          [
+            "Second target",
+            13.62
+          ],
+          [
+            "Extended",
+            15.12
+          ]
+        ],
+        "price_at_scan": 9.24,
+        "gap": 3.02,
+        "rvol": 32.34,
+        "flags": [
+          "CONTINUATION",
+          "CATALYST \u00b7 8-K",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://finance.yahoo.com/m/24b0088a-ac6c-3450-a5af-d5c5626782c8/newsmax%2C-inc.-q4-2025.html",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "DCX",
+        "company": "Digital Currency X Technology Inc",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 54,
+        "tier": "watch",
+        "entry": 2.14,
+        "entry_label": "Reclaim $2.12",
+        "range_str": " \u2014 range to $2.3",
+        "prev_close": 1.93,
+        "prev_high": 2.3,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.3
+          ],
+          [
+            "First target",
+            2.4
+          ],
+          [
+            "Second target",
+            2.53
+          ],
+          [
+            "Extended",
+            2.67
+          ]
+        ],
+        "price_at_scan": 2.09,
+        "gap": 11.4,
+        "rvol": 31.25,
+        "flags": [
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/317062/digital-currency-x-technology-inc-regains-compliance-with-nasdaq-bid-price-requirement-and-hearing-cancelled",
+        "outcome": "mover"
+      },
+      {
+        "ticker": "WBUY",
+        "company": "Webuy Global Ltd",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 51,
+        "tier": "watch",
+        "entry": 1.34,
+        "entry_label": "Reclaim $1.33",
+        "range_str": " \u2014 range to $1.45",
+        "prev_close": 1.21,
+        "prev_high": 1.45,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.45
+          ],
+          [
+            "First target",
+            1.52
+          ],
+          [
+            "Second target",
+            1.6
+          ],
+          [
+            "Extended",
+            1.69
+          ]
+        ],
+        "price_at_scan": 1.25,
+        "gap": 14.88,
+        "rvol": 24.11,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018096.html",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "YCBD",
+        "company": "cbdMD Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 72,
+        "tier": "watch",
+        "entry": 1.01,
+        "entry_label": "Reclaim $1.01",
+        "range_str": " \u2014 range to $1.19",
+        "prev_close": 0.84,
+        "prev_high": 1.19,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.19
+          ],
+          [
+            "First target",
+            1.29
+          ],
+          [
+            "Second target",
+            1.41
+          ],
+          [
+            "Extended",
+            1.54
+          ]
+        ],
+        "price_at_scan": 0.93,
+        "gap": 0.0,
+        "rvol": 23.37,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/341686/cbdmd-launches-clinical-healthcare-channel-to-support-first-federal-pathway-for-hemp-derived-cbd-in-medicare",
+        "outcome": "big_runner"
+      },
+      {
+        "ticker": "BEEM",
+        "company": "Beam Global",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 80,
+        "tier": "watch",
+        "entry": 1.98,
+        "entry_label": "Momentum above VWAP $1.86",
+        "range_str": " \u2014 range to $2.03",
+        "prev_close": 1.52,
+        "prev_high": 2.03,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.03
+          ],
+          [
+            "First target",
+            2.17
+          ],
+          [
+            "Second target",
+            2.35
+          ],
+          [
+            "Extended",
+            2.54
+          ]
+        ],
+        "price_at_scan": 1.97,
+        "gap": 0.66,
+        "rvol": 19.74,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/346027/stanislaus-county-deploys-ten-beam-global-ev-arc-systems-to-support-county-fleet-electrification",
+        "outcome": "up"
+      },
+      {
+        "ticker": "ASBP",
+        "company": "Aspire Biopharma Holdings Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 48,
+        "tier": "watch",
+        "entry": 0.22,
+        "entry_label": "Momentum above VWAP $0.22",
+        "range_str": " \u2014 range to $0.24",
+        "prev_close": 0.2,
+        "prev_high": 0.24,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.24
+          ],
+          [
+            "First target",
+            0.25
+          ],
+          [
+            "Second target",
+            0.26
+          ],
+          [
+            "Extended",
+            0.28
+          ]
+        ],
+        "price_at_scan": 0.22,
+        "gap": 6.3,
+        "rvol": 12.42,
+        "flags": [
+          "CATALYST \u00b7 M&A",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/345788/aspire-biopharma-announces-closing-of-second-and-final-tranche-of-21-million-private-placement-by-select-investors-secures-commitment-letter-for-225m-credit-facility-to-fund-the-dcs-acquisition",
+        "outcome": "big_runner"
+      },
+      {
+        "ticker": "ACB",
+        "company": "Aurora Cannabis Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 69,
+        "tier": "watch",
+        "entry": 3.92,
+        "entry_label": "Reclaim $3.90",
+        "range_str": " \u2014 range to $4.11",
+        "prev_close": 3.56,
+        "prev_high": 4.11,
+        "fib_levels": [
+          [
+            "Prev High",
+            4.11
+          ],
+          [
+            "First target",
+            4.26
+          ],
+          [
+            "Second target",
+            4.45
+          ],
+          [
+            "Extended",
+            4.66
+          ]
+        ],
+        "price_at_scan": 3.8,
+        "gap": 1.4,
+        "rvol": 10.98,
+        "flags": [
+          "CATALYST \u00b7 M&A",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/344691/aurora-cannabis-accelerates-global-medical-cannabis-leadership-with-accretive-acquisition-of-safari-flower-company-expanding-eu-gmp-capacity-to-serve-growing-high-margin-international-markets",
+        "outcome": "up"
+      },
+      {
+        "ticker": "BANL",
+        "company": "CBL International Ltd",
+        "sector": "Energy",
+        "scan": "Low Float",
+        "score": 50,
+        "tier": "watch",
+        "entry": 0.47,
+        "entry_label": "Reclaim $0.47",
+        "range_str": " \u2014 range to $0.56",
+        "prev_close": 0.51,
+        "prev_high": 0.56,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.56
+          ],
+          [
+            "First target",
+            0.57
+          ],
+          [
+            "Second target",
+            0.59
+          ],
+          [
+            "Extended",
+            0.61
+          ]
+        ],
+        "price_at_scan": 0.45,
+        "gap": 4.12,
+        "rvol": 10.97,
+        "flags": [
+          "CATALYST \u00b7 M&A",
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://finance.yahoo.com/sectors/energy/articles/cbl-international-limited-acquires-majority-150127154.html",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "VTGN",
+        "company": "Vistagen Therapeutics Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 65,
+        "tier": "watch",
+        "entry": 0.6,
+        "entry_label": "Momentum above VWAP $0.59",
+        "range_str": "",
+        "prev_close": 0.61,
+        "prev_high": 0.61,
+        "fib_levels": [],
+        "price_at_scan": 0.6,
+        "gap": -0.89,
+        "rvol": 10.15,
+        "flags": [
+          "CATALYST \u00b7 FDA",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://www.businesswire.com/news/home/20260422186960/en",
+        "outcome": "up"
+      },
+      {
+        "ticker": "TH",
+        "company": "Target Hospitality Corp",
+        "sector": "Industrials",
+        "scan": "Mid Cap",
+        "score": 84,
+        "tier": "watch",
+        "entry": 14.69,
+        "entry_label": "Reclaim $14.62",
+        "range_str": "",
+        "prev_close": 15.9,
+        "prev_high": 14.9,
+        "fib_levels": [],
+        "price_at_scan": 14.61,
+        "gap": -6.73,
+        "rvol": 10.12,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://finance.yahoo.com/markets/stocks/articles/under-surface-big-moves-building-135036120.html",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "RETO",
+        "company": "ReTo Eco-Solutions Inc",
+        "sector": "Basic Materials",
+        "scan": "Low Float",
+        "score": 68,
+        "tier": "watch",
+        "entry": 0.9,
+        "entry_label": "Momentum above VWAP $0.77",
+        "range_str": "",
+        "prev_close": 1.39,
+        "prev_high": 1.36,
+        "fib_levels": [],
+        "price_at_scan": 0.9,
+        "gap": -2.16,
+        "rvol": 6.54,
+        "flags": [
+          "CATALYST \u00b7 M&A",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/329418/reto-eco-solutions-inc-announces-acquisition-of-majority-interest-in-seven-arrows-supply-chain-limited",
+        "outcome": "mover"
+      },
+      {
+        "ticker": "FCEL",
+        "company": "Fuelcell Energy Inc",
+        "sector": "Industrials",
+        "scan": "Mid Cap",
+        "score": 100,
+        "tier": "watch",
+        "entry": 11.86,
+        "entry_label": "Momentum above VWAP $11.24",
+        "range_str": " \u2014 range to $12.53",
+        "prev_close": 9.49,
+        "prev_high": 11.88,
+        "fib_levels": [
+          [
+            "First target",
+            12.53
+          ],
+          [
+            "Second target",
+            13.36
+          ],
+          [
+            "Extended",
+            14.27
+          ]
+        ],
+        "price_at_scan": 11.8,
+        "gap": 5.27,
+        "rvol": 8.4,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://qz.com/fcel-and-ai-data-centers-can-12-5-mw-blocks-drive-scale",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "KYTX",
+        "company": "Kyverna Therapeutics Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 100,
+        "tier": "watch",
+        "entry": 10.28,
+        "entry_label": "Momentum above VWAP $9.53",
+        "range_str": " \u2014 range to $11.14",
+        "prev_close": 9.71,
+        "prev_high": 11.14,
+        "fib_levels": [
+          [
+            "Prev High",
+            11.14
+          ],
+          [
+            "First target",
+            11.53
+          ],
+          [
+            "Second target",
+            12.02
+          ],
+          [
+            "Extended",
+            12.57
+          ]
+        ],
+        "price_at_scan": 10.23,
+        "gap": 14.11,
+        "rvol": 8.24,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/346455/kyverna-presents-registrational-trial-primary-analysis-for-miv-cel-in-stiff-person-syndrome-demonstrating-statistically-significant-durable-clinical-benefit-across-all-endpoints-in-an-oral-late-breaker-session-at-aan-annual-meeting",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "ACRV",
+        "company": "Acrivon Therapeutics Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 92,
+        "tier": "watch",
+        "entry": 1.98,
+        "entry_label": "Momentum above VWAP $1.88",
+        "range_str": " \u2014 range to $2.02",
+        "prev_close": 1.76,
+        "prev_high": 2.02,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.02
+          ],
+          [
+            "First target",
+            2.09
+          ],
+          [
+            "Second target",
+            2.18
+          ],
+          [
+            "Extended",
+            2.28
+          ]
+        ],
+        "price_at_scan": 1.97,
+        "gap": 1.7,
+        "rvol": 7.97,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/345558/acrivon-to-highlight-preclinical-data-with-three-posters-at-aacr-demonstrating-strong-acr-368-and-acr-2316-synergies-with-immune-checkpoint-inhibitors-and-adc-payloads-revealing-broad-clinical-development-opportunities",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "POET",
+        "company": "POET Technologies Inc",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 100,
+        "tier": "watch",
+        "entry": 12.83,
+        "entry_label": "Momentum above VWAP $12.24",
+        "range_str": " \u2014 range to $12.95",
+        "prev_close": 10.25,
+        "prev_high": 12.95,
+        "fib_levels": [
+          [
+            "Prev High",
+            12.95
+          ],
+          [
+            "First target",
+            13.68
+          ],
+          [
+            "Second target",
+            14.62
+          ],
+          [
+            "Extended",
+            15.65
+          ]
+        ],
+        "price_at_scan": 12.77,
+        "gap": 12.44,
+        "rvol": 7.4,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://www.marketwatch.com/story/poet-technologies-stock-is-rocketing-whats-behind-the-companys-controversial-ai-powered-rise-154613a9?mod=mw_FV",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "LHSW",
+        "company": "Lianhe Sowell International Group Ltd",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 66,
+        "tier": "watch",
+        "entry": 0.27,
+        "entry_label": "Momentum above VWAP $0.26",
+        "range_str": " \u2014 range to $0.3",
+        "prev_close": 0.2,
+        "prev_high": 0.3,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.3
+          ],
+          [
+            "First target",
+            0.33
+          ],
+          [
+            "Second target",
+            0.36
+          ],
+          [
+            "Extended",
+            0.4
+          ]
+        ],
+        "price_at_scan": 0.27,
+        "gap": -1.99,
+        "rvol": 7.33,
+        "flags": [
+          "CONTINUATION",
+          "EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/340786/lianhe-sowell-international-group-ltd-announces-18-million-contract-to-develop-ai-steam-car-wash-robot-promising-significant-water-savings",
+        "outcome": "big_runner"
+      },
+      {
+        "ticker": "GAME",
+        "company": "GameSquare Holdings Inc",
+        "sector": "Communication Services",
+        "scan": "Mid Cap",
+        "score": 65,
+        "tier": "watch",
+        "entry": 0.61,
+        "entry_label": "Momentum above VWAP $0.57",
+        "range_str": " \u2014 range to $0.63",
+        "prev_close": 0.45,
+        "prev_high": 0.63,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.63
+          ],
+          [
+            "First target",
+            0.68
+          ],
+          [
+            "Second target",
+            0.74
+          ],
+          [
+            "Extended",
+            0.81
+          ]
+        ],
+        "price_at_scan": 0.61,
+        "gap": 3.66,
+        "rvol": 6.24,
+        "flags": [
+          "CONTINUATION",
+          "EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/346586/gamesquare-announces-largest-monthly-repurchase-to-date-with-the-repurchase-of-nearly-23-million-shares-in-april-2026",
+        "outcome": "up"
+      },
+      {
+        "ticker": "GSUN",
+        "company": "Golden Sun Technology Group Ltd",
+        "sector": "Consumer Defensive",
+        "scan": "Low Float",
+        "score": 47,
+        "tier": "watch",
+        "entry": 0.73,
+        "entry_label": "Reclaim $0.73",
+        "range_str": " \u2014 range to $0.84",
+        "prev_close": 0.6,
+        "prev_high": 0.84,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.84
+          ],
+          [
+            "First target",
+            0.91
+          ],
+          [
+            "Second target",
+            0.99
+          ],
+          [
+            "Extended",
+            1.08
+          ]
+        ],
+        "price_at_scan": 0.65,
+        "gap": 2.94,
+        "rvol": 5.39,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/299176/golden-sun-technology-group-limited-announces-corporate-name-change",
+        "outcome": "mover"
+      },
+      {
+        "ticker": "REPL",
+        "company": "Replimune Group Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 46,
+        "tier": "watch",
+        "entry": 2.28,
+        "entry_label": "Momentum above VWAP $2.18",
+        "range_str": " \u2014 range to $2.31",
+        "prev_close": 1.86,
+        "prev_high": 2.31,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.31
+          ],
+          [
+            "First target",
+            2.43
+          ],
+          [
+            "Second target",
+            2.59
+          ],
+          [
+            "Extended",
+            2.76
+          ]
+        ],
+        "price_at_scan": 2.27,
+        "gap": 4.3,
+        "rvol": 4.88,
+        "flags": [
+          "CATALYST \u00b7 FDA",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://www.barrons.com/articles/replimune-plans-layoffs-fda-rejects-cancer-therapy-5fc36987?mod=bar_FV",
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SBEV",
+        "company": "Splash Beverage Group Inc",
+        "sector": "Consumer Defensive",
+        "scan": "Low Float",
+        "score": 53,
+        "tier": "watch",
+        "entry": 0.41,
+        "entry_label": "Momentum above VWAP $0.39",
+        "range_str": " \u2014 range to $0.46",
+        "prev_close": 0.33,
+        "prev_high": 0.46,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.46
+          ],
+          [
+            "First target",
+            0.5
+          ],
+          [
+            "Second target",
+            0.54
+          ],
+          [
+            "Extended",
+            0.59
+          ]
+        ],
+        "price_at_scan": 0.41,
+        "gap": -2.65,
+        "rvol": 4.81,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://finance.yahoo.com/m/1e6b5c8f-d44d-36a7-b147-1e9ebe7dded2/splash-beverage-plans-pivot.html",
+        "outcome": "runner"
+      },
+      {
+        "ticker": "HCAI",
+        "company": "Huachen AI Parking Management Technology Holding Co Ltd",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 66,
+        "tier": "watch",
+        "entry": 9.79,
+        "entry_label": "Momentum above VWAP $8.60",
+        "range_str": " \u2014 range to $9.95",
+        "prev_close": 6.79,
+        "prev_high": 9.95,
+        "fib_levels": [
+          [
+            "Prev High",
+            9.95
+          ],
+          [
+            "First target",
+            10.81
+          ],
+          [
+            "Second target",
+            11.9
+          ],
+          [
+            "Extended",
+            13.11
+          ]
+        ],
+        "price_at_scan": 9.74,
+        "gap": 27.25,
+        "rvol": 18.69,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "REVERSE SPLIT",
+          "EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "news_url": "https://elite.finviz.com/news/343300/huachen-ai-parking-management-technology-holding-co-ltd-announces-1-for-30-reverse-stock-split-effective-april-13-2026",
+        "outcome": "up"
+      }
+    ]
+  }
+}
