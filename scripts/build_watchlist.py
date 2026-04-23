@@ -180,6 +180,42 @@ a{color:inherit;text-decoration:none;}
   padding:16px;color:var(--muted);font-size:12px;text-align:center;}
 .footer{text-align:center;font-size:10px;color:var(--muted);
   padding:24px;border-top:1px solid rgba(255,255,255,0.05);}
+
+/* ── Mobile ── */
+@media(max-width:768px){
+  /* Hide sidebar, show pill filter bar */
+  .sidenav{display:none;}
+  .layout{display:block;}
+  .tab-content.active{display:block;}
+  .mobile-filter{display:flex;gap:6px;overflow-x:auto;padding:10px 14px;
+    background:var(--bg2);border-bottom:1px solid rgba(255,255,255,0.06);
+    scrollbar-width:none;position:sticky;top:0;z-index:50;}
+  .mobile-filter::-webkit-scrollbar{display:none;}
+  .mf-pill{flex-shrink:0;font-size:11px;padding:6px 14px;border-radius:20px;
+    background:var(--bg3);color:var(--muted);cursor:pointer;
+    border:1px solid rgba(255,255,255,0.07);white-space:nowrap;user-select:none;}
+  .mf-pill.active{background:rgba(201,168,76,0.15);color:var(--gold);
+    border-color:rgba(201,168,76,0.4);}
+  .body{padding:10px 12px 48px;}
+  /* Card grids reflow */
+  .entry-section{grid-template-columns:1fr 1fr;}
+  .targets{grid-template-columns:1fr;}
+  .date-row{grid-template-columns:1fr;}
+  .stats{grid-template-columns:repeat(3,1fr);}
+  .sig-bar-row{grid-template-columns:80px 1fr 30px;}
+  .score-grid{grid-template-columns:repeat(3,1fr);}
+  /* Summary bar */
+  .summary{grid-template-columns:repeat(2,1fr);}
+  /* Header */
+  .hdr{padding:12px 14px 10px;}
+  .hdr-l h1{font-size:16px;}
+  .hdr-r{display:none;}
+  .legend{display:none;}
+  /* Cards full width */
+  .card{border-radius:8px;padding:12px 12px;}
+}
+@media(min-width:769px){.mobile-filter{display:none;}}
+
 """
 
 # ── Date box HTML ──────────────────────────────────────────────────────────────
@@ -432,7 +468,8 @@ def render_html(data):
 <title>Swing Watchlist · {today_fmt}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
-<style>{CSS}</style>
+<style>{CSS}
+</style>
 </head>
 <body>
 <div class="hdr">
@@ -456,6 +493,18 @@ def render_html(data):
   <div class="sum-cell"><div class="sum-n" style="color:#fb923c">{len(warm)}</div><div class="sum-l">Warm Setups</div></div>
   <div class="sum-cell"><div class="sum-n" style="color:#7ab4f5">{len(watch)}</div><div class="sum-l">Watch</div></div>
   <div class="sum-cell"><div class="sum-n">{len(tickers)}</div><div class="sum-l">Total</div></div>
+</div>
+<div class="mobile-filter" id="mobileFilter">
+  <div class="mf-pill active" data-tab="all">All</div>
+  <div class="mf-pill" data-tab="hot">🔥 Hot</div>
+  <div class="mf-pill" data-tab="warm">⚡ Warm</div>
+  <div class="mf-pill" data-tab="watch">👁 Watch</div>
+</div>
+<div class="mobile-filter" id="mobileFilter">
+  <div class="mf-pill active" data-tab="all">All</div>
+  <div class="mf-pill" data-tab="hot">🔥 Hot</div>
+  <div class="mf-pill" data-tab="warm">⚡ Warm</div>
+  <div class="mf-pill" data-tab="watch">👁 Watch</div>
 </div>
 <div class="layout">
   <div class="sidenav">
@@ -501,9 +550,37 @@ document.querySelectorAll('.nav-item').forEach(item => {{
   item.addEventListener('click', () => {{
     document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.mf-pill').forEach(p => p.classList.remove('active'));
     item.classList.add('active');
     document.getElementById('tab-' + item.dataset.tab).classList.add('active');
+    const pill = document.querySelector('.mf-pill[data-tab="' + item.dataset.tab + '"]');
+    if(pill) pill.classList.add('active');
     window.scrollTo(0, 0);
+  }});
+}});
+document.querySelectorAll('.mf-pill').forEach(pill => {{
+  pill.addEventListener('click', () => {{
+    document.querySelectorAll('.mf-pill').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    pill.classList.add('active');
+    document.getElementById('tab-' + pill.dataset.tab).classList.add('active');
+    const navItem = document.querySelector('.nav-item[data-tab="' + pill.dataset.tab + '"]');
+    if(navItem) navItem.classList.add('active');
+    window.scrollTo(0, 0);
+  }});
+}});
+// Mobile pill filter — syncs with sidebar nav
+document.querySelectorAll('.mf-pill').forEach(pill => {{
+  pill.addEventListener('click', () => {{
+    document.querySelectorAll('.mf-pill').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    pill.classList.add('active');
+    document.getElementById('tab-' + pill.dataset.tab).classList.add('active');
+    const nav = document.querySelector('.nav-item[data-tab="' + pill.dataset.tab + '"]');
+    if(nav) nav.classList.add('active');
+    window.scrollTo(0,0);
   }});
 }});
 </script>
