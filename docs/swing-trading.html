@@ -156,6 +156,43 @@ a{color:inherit;text-decoration:none;}
   padding:16px;color:var(--muted);font-size:12px;text-align:center;}
 .footer{text-align:center;font-size:10px;color:var(--muted);
   padding:24px;border-top:1px solid rgba(255,255,255,0.05);}
+
+/* ── Mobile ── */
+@media(max-width:768px){
+  /* Hide sidebar, show pill filter bar */
+  .sidenav{display:none;}
+  .layout{display:block;}
+  .tab-content.active{display:block;}
+  .mobile-filter{display:flex;gap:6px;overflow-x:auto;padding:10px 14px;
+    background:var(--bg2);border-bottom:1px solid rgba(255,255,255,0.06);
+    scrollbar-width:none;position:sticky;top:0;z-index:50;}
+  .mobile-filter::-webkit-scrollbar{display:none;}
+  .mf-pill{flex-shrink:0;font-size:11px;padding:6px 14px;border-radius:20px;
+    background:var(--bg3);color:var(--muted);cursor:pointer;
+    border:1px solid rgba(255,255,255,0.07);white-space:nowrap;user-select:none;}
+  .mf-pill.active{background:rgba(201,168,76,0.15);color:var(--gold);
+    border-color:rgba(201,168,76,0.4);}
+  .body{padding:10px 12px 48px;}
+  /* Card grids reflow */
+  .entry-section{grid-template-columns:1fr 1fr;}
+  .targets{grid-template-columns:1fr;}
+  .date-row{grid-template-columns:1fr;}
+  .stats{grid-template-columns:repeat(3,1fr);}
+  .sig-bar-row{grid-template-columns:80px 1fr 30px;}
+  .score-grid{grid-template-columns:repeat(3,1fr);}
+  /* Summary bar */
+  .summary{grid-template-columns:repeat(2,1fr);}
+  /* Header */
+  .hdr{padding:12px 14px 10px;}
+  .hdr-l h1{font-size:16px;}
+  .hdr-r{display:none;}
+  .legend{display:none;}
+  /* Cards full width */
+  .card{border-radius:8px;padding:12px 12px;}
+}
+@media(min-width:769px){.mobile-filter{display:none;}}
+
+
 </style>
 </head>
 <body>
@@ -166,7 +203,7 @@ a{color:inherit;text-decoration:none;}
   </div>
   <div class="hdr-r">
     <span class="pill">Thu Apr 23, 2026</span>
-    <span class="pill">Generated 07:08 AM ET</span>
+    <span class="pill">Generated 09:01 AM ET</span>
     <a class="pill" href="guide.html" style="color:#c9a84c;">How to Use ↗</a>
   </div>
 </div>
@@ -180,6 +217,18 @@ a{color:inherit;text-decoration:none;}
   <div class="sum-cell"><div class="sum-n" style="color:#fb923c">4</div><div class="sum-l">Warm Setups</div></div>
   <div class="sum-cell"><div class="sum-n" style="color:#7ab4f5">0</div><div class="sum-l">Watch</div></div>
   <div class="sum-cell"><div class="sum-n">4</div><div class="sum-l">Total</div></div>
+</div>
+<div class="mobile-filter" id="mobileFilter">
+  <div class="mf-pill active" data-tab="all">All</div>
+  <div class="mf-pill" data-tab="hot">🔥 Hot</div>
+  <div class="mf-pill" data-tab="warm">⚡ Warm</div>
+  <div class="mf-pill" data-tab="watch">👁 Watch</div>
+</div>
+<div class="mobile-filter" id="mobileFilter">
+  <div class="mf-pill active" data-tab="all">All</div>
+  <div class="mf-pill" data-tab="hot">🔥 Hot</div>
+  <div class="mf-pill" data-tab="warm">⚡ Warm</div>
+  <div class="mf-pill" data-tab="watch">👁 Watch</div>
 </div>
 <div class="layout">
   <div class="sidenav">
@@ -215,7 +264,7 @@ a{color:inherit;text-decoration:none;}
     <span class="co">Functional Brands Inc</span>
     <span class="scan-tag" style="background:#091830;color:#7ab4f5;border-color:rgba(122,180,245,0.2)">Low Float</span>
     <span class="rank-pill" style="background:#2a1a06;color:#fb923c">⚡ WARM</span>
-    <span class="ch neg">-7.4%</span>
+    <span class="ch neg">-7.5%</span>
     <a class="clink" href="https://finviz.com/quote.ashx?t=MEHA" target="_blank">Chart ↗</a>
   </div>
   <div class="score-bar-wrap">
@@ -225,7 +274,7 @@ a{color:inherit;text-decoration:none;}
   <div class="flags"><span class="flag" style="background:#2a1a06;color:#c9a84c">FRESH 8-K</span><span class="flag" style="background:#091a2a;color:#7ab4f5">PREV SPIKE +73%</span></div>
   <div class="stats">
     <div class="st"><div class="sl">Price</div><div class="sv">$0.12</div></div>
-    <div class="st"><div class="sl">RVol</div><div class="sv">195x</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">214x</div></div>
     <div class="st"><div class="sl">Float</div><div class="sv">19.9M</div></div>
     <div class="st"><div class="sl">Short Int</div><div class="sv">2%</div></div>
     <div class="st"><div class="sl">90d Spike</div><div class="sv">+73%</div></div>
@@ -337,7 +386,7 @@ a{color:inherit;text-decoration:none;}
     <span class="co">Pineapple Financial Inc</span>
     <span class="scan-tag" style="background:#091830;color:#7ab4f5;border-color:rgba(122,180,245,0.2)">Low Float</span>
     <span class="rank-pill" style="background:#2a1a06;color:#fb923c">⚡ WARM</span>
-    <span class="ch pos">+45.3%</span>
+    <span class="ch pos">+50.1%</span>
     <a class="clink" href="https://finviz.com/quote.ashx?t=PAPL" target="_blank">Chart ↗</a>
   </div>
   <div class="score-bar-wrap">
@@ -346,8 +395,8 @@ a{color:inherit;text-decoration:none;}
   </div>
   <div class="flags"><span class="flag" style="background:#2a1a06;color:#c9a84c">FRESH 8-K</span><span class="flag" style="background:#091a2a;color:#7ab4f5">PREV SPIKE +107%</span></div>
   <div class="stats">
-    <div class="st"><div class="sl">Price</div><div class="sv">$0.87</div></div>
-    <div class="st"><div class="sl">RVol</div><div class="sv">933x</div></div>
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.90</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">1293x</div></div>
     <div class="st"><div class="sl">Float</div><div class="sv">8.3M</div></div>
     <div class="st"><div class="sl">Short Int</div><div class="sv">2%</div></div>
     <div class="st"><div class="sl">90d Spike</div><div class="sv">+107%</div></div>
@@ -459,7 +508,7 @@ a{color:inherit;text-decoration:none;}
     <span class="co">Cheetah Net Supply Chain S</span>
     <span class="scan-tag" style="background:#1a0f28;color:#b07af5;border-color:rgba(176,122,245,0.2)">Mid Float</span>
     <span class="rank-pill" style="background:#2a1a06;color:#fb923c">⚡ WARM</span>
-    <span class="ch neg">-17.0%</span>
+    <span class="ch neg">-19.2%</span>
     <a class="clink" href="https://finviz.com/quote.ashx?t=CTNT" target="_blank">Chart ↗</a>
   </div>
   <div class="score-bar-wrap">
@@ -469,7 +518,7 @@ a{color:inherit;text-decoration:none;}
   <div class="flags"><span class="flag" style="background:#2a1a06;color:#c9a84c">FRESH 8-K</span><span class="flag" style="background:#091a2a;color:#7ab4f5">PREV SPIKE +118%</span></div>
   <div class="stats">
     <div class="st"><div class="sl">Price</div><div class="sv">$0.03</div></div>
-    <div class="st"><div class="sl">RVol</div><div class="sv">27x</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">50x</div></div>
     <div class="st"><div class="sl">Float</div><div class="sv">36.0M</div></div>
     <div class="st"><div class="sl">Short Int</div><div class="sv">0%</div></div>
     <div class="st"><div class="sl">90d Spike</div><div class="sv">+118%</div></div>
@@ -581,7 +630,7 @@ a{color:inherit;text-decoration:none;}
     <span class="co">Auddia Inc</span>
     <span class="scan-tag" style="background:#091830;color:#7ab4f5;border-color:rgba(122,180,245,0.2)">Low Float</span>
     <span class="rank-pill" style="background:#2a1a06;color:#fb923c">⚡ WARM</span>
-    <span class="ch pos">+113.7%</span>
+    <span class="ch pos">+81.6%</span>
     <a class="clink" href="https://finviz.com/quote.ashx?t=AUUD" target="_blank">Chart ↗</a>
   </div>
   <div class="score-bar-wrap">
@@ -590,8 +639,8 @@ a{color:inherit;text-decoration:none;}
   </div>
   <div class="flags"><span class="flag" style="background:#2a1a06;color:#c9a84c">CATALYST · PIVOT</span><span class="flag" style="background:#091a2a;color:#7ab4f5">PREV SPIKE +78%</span></div>
   <div class="stats">
-    <div class="st"><div class="sl">Price</div><div class="sv">$8.27</div></div>
-    <div class="st"><div class="sl">RVol</div><div class="sv">1000x</div></div>
+    <div class="st"><div class="sl">Price</div><div class="sv">$7.03</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">2478x</div></div>
     <div class="st"><div class="sl">Float</div><div class="sv">0.5M</div></div>
     <div class="st"><div class="sl">Short Int</div><div class="sv">5%</div></div>
     <div class="st"><div class="sl">90d Spike</div><div class="sv">+78%</div></div>
@@ -709,7 +758,7 @@ a{color:inherit;text-decoration:none;}
     <span class="co">Functional Brands Inc</span>
     <span class="scan-tag" style="background:#091830;color:#7ab4f5;border-color:rgba(122,180,245,0.2)">Low Float</span>
     <span class="rank-pill" style="background:#2a1a06;color:#fb923c">⚡ WARM</span>
-    <span class="ch neg">-7.4%</span>
+    <span class="ch neg">-7.5%</span>
     <a class="clink" href="https://finviz.com/quote.ashx?t=MEHA" target="_blank">Chart ↗</a>
   </div>
   <div class="score-bar-wrap">
@@ -719,7 +768,7 @@ a{color:inherit;text-decoration:none;}
   <div class="flags"><span class="flag" style="background:#2a1a06;color:#c9a84c">FRESH 8-K</span><span class="flag" style="background:#091a2a;color:#7ab4f5">PREV SPIKE +73%</span></div>
   <div class="stats">
     <div class="st"><div class="sl">Price</div><div class="sv">$0.12</div></div>
-    <div class="st"><div class="sl">RVol</div><div class="sv">195x</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">214x</div></div>
     <div class="st"><div class="sl">Float</div><div class="sv">19.9M</div></div>
     <div class="st"><div class="sl">Short Int</div><div class="sv">2%</div></div>
     <div class="st"><div class="sl">90d Spike</div><div class="sv">+73%</div></div>
@@ -831,7 +880,7 @@ a{color:inherit;text-decoration:none;}
     <span class="co">Pineapple Financial Inc</span>
     <span class="scan-tag" style="background:#091830;color:#7ab4f5;border-color:rgba(122,180,245,0.2)">Low Float</span>
     <span class="rank-pill" style="background:#2a1a06;color:#fb923c">⚡ WARM</span>
-    <span class="ch pos">+45.3%</span>
+    <span class="ch pos">+50.1%</span>
     <a class="clink" href="https://finviz.com/quote.ashx?t=PAPL" target="_blank">Chart ↗</a>
   </div>
   <div class="score-bar-wrap">
@@ -840,8 +889,8 @@ a{color:inherit;text-decoration:none;}
   </div>
   <div class="flags"><span class="flag" style="background:#2a1a06;color:#c9a84c">FRESH 8-K</span><span class="flag" style="background:#091a2a;color:#7ab4f5">PREV SPIKE +107%</span></div>
   <div class="stats">
-    <div class="st"><div class="sl">Price</div><div class="sv">$0.87</div></div>
-    <div class="st"><div class="sl">RVol</div><div class="sv">933x</div></div>
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.90</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">1293x</div></div>
     <div class="st"><div class="sl">Float</div><div class="sv">8.3M</div></div>
     <div class="st"><div class="sl">Short Int</div><div class="sv">2%</div></div>
     <div class="st"><div class="sl">90d Spike</div><div class="sv">+107%</div></div>
@@ -953,7 +1002,7 @@ a{color:inherit;text-decoration:none;}
     <span class="co">Cheetah Net Supply Chain S</span>
     <span class="scan-tag" style="background:#1a0f28;color:#b07af5;border-color:rgba(176,122,245,0.2)">Mid Float</span>
     <span class="rank-pill" style="background:#2a1a06;color:#fb923c">⚡ WARM</span>
-    <span class="ch neg">-17.0%</span>
+    <span class="ch neg">-19.2%</span>
     <a class="clink" href="https://finviz.com/quote.ashx?t=CTNT" target="_blank">Chart ↗</a>
   </div>
   <div class="score-bar-wrap">
@@ -963,7 +1012,7 @@ a{color:inherit;text-decoration:none;}
   <div class="flags"><span class="flag" style="background:#2a1a06;color:#c9a84c">FRESH 8-K</span><span class="flag" style="background:#091a2a;color:#7ab4f5">PREV SPIKE +118%</span></div>
   <div class="stats">
     <div class="st"><div class="sl">Price</div><div class="sv">$0.03</div></div>
-    <div class="st"><div class="sl">RVol</div><div class="sv">27x</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">50x</div></div>
     <div class="st"><div class="sl">Float</div><div class="sv">36.0M</div></div>
     <div class="st"><div class="sl">Short Int</div><div class="sv">0%</div></div>
     <div class="st"><div class="sl">90d Spike</div><div class="sv">+118%</div></div>
@@ -1075,7 +1124,7 @@ a{color:inherit;text-decoration:none;}
     <span class="co">Auddia Inc</span>
     <span class="scan-tag" style="background:#091830;color:#7ab4f5;border-color:rgba(122,180,245,0.2)">Low Float</span>
     <span class="rank-pill" style="background:#2a1a06;color:#fb923c">⚡ WARM</span>
-    <span class="ch pos">+113.7%</span>
+    <span class="ch pos">+81.6%</span>
     <a class="clink" href="https://finviz.com/quote.ashx?t=AUUD" target="_blank">Chart ↗</a>
   </div>
   <div class="score-bar-wrap">
@@ -1084,8 +1133,8 @@ a{color:inherit;text-decoration:none;}
   </div>
   <div class="flags"><span class="flag" style="background:#2a1a06;color:#c9a84c">CATALYST · PIVOT</span><span class="flag" style="background:#091a2a;color:#7ab4f5">PREV SPIKE +78%</span></div>
   <div class="stats">
-    <div class="st"><div class="sl">Price</div><div class="sv">$8.27</div></div>
-    <div class="st"><div class="sl">RVol</div><div class="sv">1000x</div></div>
+    <div class="st"><div class="sl">Price</div><div class="sv">$7.03</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">2478x</div></div>
     <div class="st"><div class="sl">Float</div><div class="sv">0.5M</div></div>
     <div class="st"><div class="sl">Short Int</div><div class="sv">5%</div></div>
     <div class="st"><div class="sl">90d Spike</div><div class="sv">+78%</div></div>
@@ -1201,9 +1250,37 @@ document.querySelectorAll('.nav-item').forEach(item => {
   item.addEventListener('click', () => {
     document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.mf-pill').forEach(p => p.classList.remove('active'));
     item.classList.add('active');
     document.getElementById('tab-' + item.dataset.tab).classList.add('active');
+    const pill = document.querySelector('.mf-pill[data-tab="' + item.dataset.tab + '"]');
+    if(pill) pill.classList.add('active');
     window.scrollTo(0, 0);
+  });
+});
+document.querySelectorAll('.mf-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.mf-pill').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    pill.classList.add('active');
+    document.getElementById('tab-' + pill.dataset.tab).classList.add('active');
+    const navItem = document.querySelector('.nav-item[data-tab="' + pill.dataset.tab + '"]');
+    if(navItem) navItem.classList.add('active');
+    window.scrollTo(0, 0);
+  });
+});
+// Mobile pill filter — syncs with sidebar nav
+document.querySelectorAll('.mf-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.mf-pill').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    pill.classList.add('active');
+    document.getElementById('tab-' + pill.dataset.tab).classList.add('active');
+    const nav = document.querySelector('.nav-item[data-tab="' + pill.dataset.tab + '"]');
+    if(nav) nav.classList.add('active');
+    window.scrollTo(0,0);
   });
 });
 </script>

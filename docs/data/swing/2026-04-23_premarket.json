@@ -1,7 +1,7 @@
 {
   "date": "2026-04-23",
   "session": "premarket",
-  "generated": "07:08 AM ET",
+  "generated": "09:01 AM ET",
   "tickers": [
     {
       "ticker": "MEHA",
@@ -9,8 +9,8 @@
       "company": "Functional Brands Inc",
       "sector": "Consumer Defensive",
       "price": 0.12,
-      "change": -7.44,
-      "rvol": 195.37,
+      "change": -7.52,
+      "rvol": 213.86,
       "float_m": 19.91,
       "short_pct": 2.4,
       "days_cover": 99.0,
@@ -62,7 +62,7 @@
         "target3_pct": 161.8
       },
       "price_display": "$0.12",
-      "rvol_display": "195x",
+      "rvol_display": "214x",
       "float_display": "19.9M",
       "rank": "warm"
     },
@@ -71,9 +71,9 @@
       "scan": "Low Float",
       "company": "Pineapple Financial Inc",
       "sector": "Financial",
-      "price": 0.87,
-      "change": 45.29,
-      "rvol": 932.62,
+      "price": 0.9,
+      "change": 50.15,
+      "rvol": 1292.6,
       "float_m": 8.28,
       "short_pct": 1.77,
       "days_cover": 99.0,
@@ -124,8 +124,8 @@
         "target3": 1.741,
         "target3_pct": 161.8
       },
-      "price_display": "$0.87",
-      "rvol_display": "933x",
+      "price_display": "$0.90",
+      "rvol_display": "1293x",
       "float_display": "8.3M",
       "rank": "warm"
     },
@@ -135,8 +135,8 @@
       "company": "Cheetah Net Supply Chain Service Inc",
       "sector": "Industrials",
       "price": 0.03,
-      "change": -17.0,
-      "rvol": 27.11,
+      "change": -19.25,
+      "rvol": 49.54,
       "float_m": 36.03,
       "short_pct": 0.24,
       "days_cover": 99.0,
@@ -188,7 +188,7 @@
         "target3_pct": 161.8
       },
       "price_display": "$0.03",
-      "rvol_display": "27x",
+      "rvol_display": "50x",
       "float_display": "36.0M",
       "rank": "warm"
     },
@@ -197,9 +197,9 @@
       "scan": "Low Float",
       "company": "Auddia Inc",
       "sector": "Technology",
-      "price": 8.27,
-      "change": 113.7,
-      "rvol": 1000.44,
+      "price": 7.03,
+      "change": 81.64,
+      "rvol": 2477.91,
       "float_m": 0.5,
       "short_pct": 4.96,
       "days_cover": 99.0,
@@ -250,8 +250,8 @@
         "target3": 13.1293,
         "target3_pct": 161.8
       },
-      "price_display": "$8.27",
-      "rvol_display": "1000x",
+      "price_display": "$7.03",
+      "rvol_display": "2478x",
       "float_display": "0.5M",
       "rank": "warm"
     }
