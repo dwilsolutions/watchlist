@@ -1,0 +1,118 @@
+{
+  "session": "premarket",
+  "label": "Pre-Market",
+  "date": "2026-04-23",
+  "generated": "06:55 AM ET",
+  "tickers": [
+    {
+      "ticker": "PAPL",
+      "company": "Pineapple Financial Inc",
+      "sector": "Financial",
+      "scan": "Low Float",
+      "score": 56,
+      "tier": "watch",
+      "entry": 1.06,
+      "entry_label": "Break above $1.05",
+      "range_str": "",
+      "prev_close": 0.6,
+      "prev_high": 1.05,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.05
+        ],
+        [
+          "First target",
+          1.17
+        ],
+        [
+          "Second target",
+          1.33
+        ],
+        [
+          "Extended",
+          1.5
+        ]
+      ],
+      "price_at_scan": 0.9,
+      "gap": 66.56,
+      "rvol": 887.93,
+      "flags": [],
+      "news_url": "https://elite.finviz.com/news/346878/pineapple-financial-announces-expanded-15-million-share-repurchase-program"
+    },
+    {
+      "ticker": "AUUD",
+      "company": "Auddia Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 67,
+      "tier": "watch",
+      "entry": 7.11,
+      "entry_label": "Break above $7.07",
+      "range_str": " \u2014 range to $7.94",
+      "prev_close": 3.87,
+      "prev_high": 7.07,
+      "fib_levels": [
+        [
+          "First target",
+          7.94
+        ],
+        [
+          "Second target",
+          9.05
+        ],
+        [
+          "Extended",
+          10.27
+        ]
+      ],
+      "price_at_scan": 7.06,
+      "gap": 3.88,
+      "rvol": 468.59,
+      "flags": [
+        "CONTINUATION"
+      ],
+      "news_url": "https://elite.finviz.com/news/346969/auddia-expands-ai-infrastructure-moat-with-14th-patent-supporting-distributed-edge-data-center-deployments"
+    },
+    {
+      "ticker": "YCBD",
+      "company": "cbdMD Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 71,
+      "tier": "watch",
+      "entry": 1.26,
+      "entry_label": "Break above $1.25",
+      "range_str": "",
+      "prev_close": 0.93,
+      "prev_high": 1.25,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.25
+        ],
+        [
+          "First target",
+          1.34
+        ],
+        [
+          "Second target",
+          1.45
+        ],
+        [
+          "Extended",
+          1.57
+        ]
+      ],
+      "price_at_scan": 1.17,
+      "gap": 29.03,
+      "rvol": 131.33,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "PRIOR DAY RUNNER"
+      ],
+      "news_url": "https://elite.finviz.com/news/341686/cbdmd-launches-clinical-healthcare-channel-to-support-first-federal-pathway-for-hemp-derived-cbd-in-medicare"
+    }
+  ]
+}
