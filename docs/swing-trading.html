@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Swing Watchlist · Wed Apr 22, 2026</title>
+<title>Swing Watchlist · Thu Apr 23, 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Syne:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#030c1a;--bg2:#071428;--bg3:#0a1f3d;--border:rgba(201,168,76,0.12);
---text:#eef2ff;--muted:#6b7a99;--gold:#c9a84c;--mono:'DM Mono',monospace;--sans:'Syne',sans-serif;}
+--text:#eef2ff;--muted:#6b7a99;--gold:#c9a84c;--mono:'DM Mono',monospace;--sans:'Inter',sans-serif;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.6;}
+html,body{overflow-x:hidden;}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.6;display:flex;flex-direction:column;min-height:100vh;}
 a{color:inherit;text-decoration:none;}
-.hdr{background:var(--bg2);border-bottom:2px solid var(--gold);padding:18px 20px 14px;
-  display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px;overflow:visible;}
-.hdr-l h1{font-family:var(--sans);font-size:20px;font-weight:700;letter-spacing:-0.3px;line-height:1.3;padding-bottom:2px;overflow:visible;}
+.hdr{background:var(--bg2);border-bottom:2px solid var(--gold);padding:16px 20px 22px;
+  display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.hdr-l h1{font-family:var(--sans);font-size:20px;font-weight:700;letter-spacing:0;line-height:1.5;padding-right:2px;}
 .hdr-l h1 em{color:var(--gold);font-style:normal;}
 .hdr-l .sub{font-size:11px;color:var(--muted);margin-top:3px;}
 .hdr-r{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
@@ -31,7 +32,7 @@ a{color:inherit;text-decoration:none;}
 .sum-l{font-size:10px;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:0.06em;}
 
 /* Layout */
-.layout{display:flex;flex:1;min-height:0;}
+.layout{display:flex;flex:1;min-height:calc(100vh - 130px);}
 /* Left nav */
 .sidenav{width:176px;flex-shrink:0;background:var(--bg2);
   border-right:1px solid rgba(255,255,255,0.06);padding:16px 0;
@@ -54,7 +55,7 @@ a{color:inherit;text-decoration:none;}
 /* Tab content */
 .tab-content{display:none;}
 .tab-content.active{display:block;}
-.body{padding:14px 20px 48px;flex:1;min-width:0;max-width:880px;}
+.body{padding:14px 20px 48px;flex:1;min-width:0;}
 .sec-lbl{font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;
   margin:22px 0 9px;display:flex;align-items:center;gap:8px;}
 .sec-lbl::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.05);}
@@ -164,8 +165,8 @@ a{color:inherit;text-decoration:none;}
     <div class="sub">Micro-cap momentum · 50-100% target moves · days to weeks</div>
   </div>
   <div class="hdr-r">
-    <span class="pill">Wed Apr 22, 2026</span>
-    <span class="pill">Generated 10:30 PM ET</span>
+    <span class="pill">Thu Apr 23, 2026</span>
+    <span class="pill">Generated 12:09 AM ET</span>
     <a class="pill" href="guide.html" style="color:#c9a84c;">How to Use ↗</a>
   </div>
 </div>
@@ -763,7 +764,7 @@ a{color:inherit;text-decoration:none;}
   </div>
   <div class="entry-box buy3">
     <div class="e-label">Add on Strength</div>
-    <div class="e-price">$4.72</div>
+    <div class="e-price">$4.73</div>
     <div class="e-sub">Makes new highs</div>
     <div class="e-size">25% of position</div>
   </div>
@@ -778,17 +779,17 @@ a{color:inherit;text-decoration:none;}
 <div class="targets">
   <div class="target-box">
     <div class="t-label">Target 1 — Sell 40%</div>
-    <div class="t-price">$5.22</div>
+    <div class="t-price">$5.23</div>
     <div class="t-pct">+27% from first buy</div>
   </div>
   <div class="target-box">
     <div class="t-label">Target 2 — Sell 40%</div>
-    <div class="t-price">$6.64</div>
+    <div class="t-price">$6.65</div>
     <div class="t-pct">+62% from first buy</div>
   </div>
   <div class="target-box">
     <div class="t-label">Target 3 — Sell rest</div>
-    <div class="t-price">$10.75</div>
+    <div class="t-price">$10.76</div>
     <div class="t-pct">+162% from first buy</div>
   </div>
 </div>
@@ -835,7 +836,7 @@ a{color:inherit;text-decoration:none;}
   <div class="stats">
     <div class="st"><div class="sl">Price</div><div class="sv">$10.23</div></div>
     <div class="st"><div class="sl">RVol</div><div class="sv">8x</div></div>
-    <div class="st"><div class="sl">Float</div><div class="sv">35.0M</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">36.4M</div></div>
     <div class="st"><div class="sl">Short Int</div><div class="sv">12%</div></div>
     <div class="st"><div class="sl">90d Spike</div><div class="sv">+56%</div></div>
   </div>
@@ -1323,8 +1324,8 @@ a{color:inherit;text-decoration:none;}
   <div class="stats">
     <div class="st"><div class="sl">Price</div><div class="sv">$14.61</div></div>
     <div class="st"><div class="sl">RVol</div><div class="sv">10x</div></div>
-    <div class="st"><div class="sl">Float</div><div class="sv">32.5M</div></div>
-    <div class="st"><div class="sl">Short Int</div><div class="sv">7%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">32.1M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">8%</div></div>
     <div class="st"><div class="sl">90d Spike</div><div class="sv">+43%</div></div>
   </div>
   <div class="date-section">
@@ -1811,8 +1812,8 @@ a{color:inherit;text-decoration:none;}
   <div class="stats">
     <div class="st"><div class="sl">Price</div><div class="sv">$0.27</div></div>
     <div class="st"><div class="sl">RVol</div><div class="sv">10x</div></div>
-    <div class="st"><div class="sl">Float</div><div class="sv">17.8M</div></div>
-    <div class="st"><div class="sl">Short Int</div><div class="sv">0%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">2.4M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">3%</div></div>
     <div class="st"><div class="sl">90d Spike</div><div class="sv">+83%</div></div>
   </div>
   <div class="date-section">
@@ -2300,7 +2301,7 @@ a{color:inherit;text-decoration:none;}
   <div class="stats">
     <div class="st"><div class="sl">Price</div><div class="sv">$2.27</div></div>
     <div class="st"><div class="sl">RVol</div><div class="sv">5x</div></div>
-    <div class="st"><div class="sl">Float</div><div class="sv">76.6M</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">76.1M</div></div>
     <div class="st"><div class="sl">Short Int</div><div class="sv">21%</div></div>
     <div class="st"><div class="sl">90d Spike</div><div class="sv">+24%</div></div>
   </div>
@@ -3456,7 +3457,7 @@ a{color:inherit;text-decoration:none;}
   </div>
   <div class="entry-box buy3">
     <div class="e-label">Add on Strength</div>
-    <div class="e-price">$4.72</div>
+    <div class="e-price">$4.73</div>
     <div class="e-sub">Makes new highs</div>
     <div class="e-size">25% of position</div>
   </div>
@@ -3471,17 +3472,17 @@ a{color:inherit;text-decoration:none;}
 <div class="targets">
   <div class="target-box">
     <div class="t-label">Target 1 — Sell 40%</div>
-    <div class="t-price">$5.22</div>
+    <div class="t-price">$5.23</div>
     <div class="t-pct">+27% from first buy</div>
   </div>
   <div class="target-box">
     <div class="t-label">Target 2 — Sell 40%</div>
-    <div class="t-price">$6.64</div>
+    <div class="t-price">$6.65</div>
     <div class="t-pct">+62% from first buy</div>
   </div>
   <div class="target-box">
     <div class="t-label">Target 3 — Sell rest</div>
-    <div class="t-price">$10.75</div>
+    <div class="t-price">$10.76</div>
     <div class="t-pct">+162% from first buy</div>
   </div>
 </div>
@@ -3528,7 +3529,7 @@ a{color:inherit;text-decoration:none;}
   <div class="stats">
     <div class="st"><div class="sl">Price</div><div class="sv">$10.23</div></div>
     <div class="st"><div class="sl">RVol</div><div class="sv">8x</div></div>
-    <div class="st"><div class="sl">Float</div><div class="sv">35.0M</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">36.4M</div></div>
     <div class="st"><div class="sl">Short Int</div><div class="sv">12%</div></div>
     <div class="st"><div class="sl">90d Spike</div><div class="sv">+56%</div></div>
   </div>
@@ -4016,8 +4017,8 @@ a{color:inherit;text-decoration:none;}
   <div class="stats">
     <div class="st"><div class="sl">Price</div><div class="sv">$14.61</div></div>
     <div class="st"><div class="sl">RVol</div><div class="sv">10x</div></div>
-    <div class="st"><div class="sl">Float</div><div class="sv">32.5M</div></div>
-    <div class="st"><div class="sl">Short Int</div><div class="sv">7%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">32.1M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">8%</div></div>
     <div class="st"><div class="sl">90d Spike</div><div class="sv">+43%</div></div>
   </div>
   <div class="date-section">
@@ -4504,8 +4505,8 @@ a{color:inherit;text-decoration:none;}
   <div class="stats">
     <div class="st"><div class="sl">Price</div><div class="sv">$0.27</div></div>
     <div class="st"><div class="sl">RVol</div><div class="sv">10x</div></div>
-    <div class="st"><div class="sl">Float</div><div class="sv">17.8M</div></div>
-    <div class="st"><div class="sl">Short Int</div><div class="sv">0%</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">2.4M</div></div>
+    <div class="st"><div class="sl">Short Int</div><div class="sv">3%</div></div>
     <div class="st"><div class="sl">90d Spike</div><div class="sv">+83%</div></div>
   </div>
   <div class="date-section">
@@ -4995,7 +4996,7 @@ a{color:inherit;text-decoration:none;}
   <div class="stats">
     <div class="st"><div class="sl">Price</div><div class="sv">$2.27</div></div>
     <div class="st"><div class="sl">RVol</div><div class="sv">5x</div></div>
-    <div class="st"><div class="sl">Float</div><div class="sv">76.6M</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">76.1M</div></div>
     <div class="st"><div class="sl">Short Int</div><div class="sv">21%</div></div>
     <div class="st"><div class="sl">90d Spike</div><div class="sv">+24%</div></div>
   </div>

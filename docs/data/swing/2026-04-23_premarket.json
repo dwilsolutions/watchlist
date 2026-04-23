@@ -1,0 +1,1413 @@
+{
+  "date": "2026-04-23",
+  "session": "premarket",
+  "generated": "12:09 AM ET",
+  "tickers": [
+    {
+      "ticker": "SOWG",
+      "scan": "Low Float",
+      "company": "Sow Good Inc",
+      "sector": "Consumer Defensive",
+      "price": 0.12,
+      "change": -28.35,
+      "rvol": 5.13,
+      "float_m": 0.5,
+      "short_pct": 81.57,
+      "days_cover": 99.0,
+      "spike_pct": 60.5,
+      "news": "Sow Good Posts Investor Presentation in Connection with Nachu Graphite Project Acquisition",
+      "news_url": "https://elite.finviz.com/news/346898/sow-good-posts-investor-presentation-in-connection-with-nachu-graphite-project-acquisition",
+      "score": 0.795,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 0.7,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "CATALYST \u00b7 M&A",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +60%",
+          "gap"
+        ],
+        [
+          "SHORT INT 82%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-22",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.42,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.3595,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.483,
+        "entry3_note": "Makes new highs",
+        "stop": 0.15,
+        "stop_note": "Prior day low",
+        "target1": 0.5342,
+        "target1_pct": 27.2,
+        "target2": 0.6796,
+        "target2_pct": 61.8,
+        "target3": 1.0996,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.12",
+      "rvol_display": "5x",
+      "float_display": "0.5M",
+      "rank": "hot"
+    },
+    {
+      "ticker": "ASBP",
+      "scan": "Low Float",
+      "company": "Aspire Biopharma Holdings Inc",
+      "sector": "Healthcare",
+      "price": 0.22,
+      "change": 13.01,
+      "rvol": 12.62,
+      "float_m": 4.68,
+      "short_pct": 9.21,
+      "days_cover": 99.0,
+      "spike_pct": 67.8,
+      "news": "Aspire Biopharma Announces Closing of Second and Final Tranche of $21 Million Private Placement by Select Investors; Sec",
+      "news_url": "https://elite.finviz.com/news/345788/aspire-biopharma-announces-closing-of-second-and-final-tranche-of-21-million-private-placement-by-select-investors-secures-commitment-letter-for-225m-credit-facility-to-fund-the-dcs-acquisition",
+      "score": 0.75,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "CATALYST \u00b7 M&A",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +68%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-20",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.245,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.836,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.4318,
+        "entry3_note": "Makes new highs",
+        "stop": 0.164,
+        "stop_note": "Prior day low",
+        "target1": 1.5836,
+        "target1_pct": 27.2,
+        "target2": 2.0144,
+        "target2_pct": 61.8,
+        "target3": 3.2594,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.22",
+      "rvol_display": "13x",
+      "float_display": "4.7M",
+      "rank": "hot"
+    },
+    {
+      "ticker": "SBEV",
+      "scan": "Low Float",
+      "company": "Splash Beverage Group Inc",
+      "sector": "Consumer Defensive",
+      "price": 0.41,
+      "change": 24.77,
+      "rvol": 5.14,
+      "float_m": 9.34,
+      "short_pct": 1.33,
+      "days_cover": 99.0,
+      "spike_pct": 66.2,
+      "news": "Splash Beverage plans pivot to CBD",
+      "news_url": "https://finance.yahoo.com/m/1e6b5c8f-d44d-36a7-b147-1e9ebe7dded2/splash-beverage-plans-pivot.html",
+      "score": 0.72,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.7,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "CATALYST \u00b7 NEWS",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +66%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-21",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.49,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.3834,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.5635,
+        "entry3_note": "Makes new highs",
+        "stop": 0.314,
+        "stop_note": "Prior day low",
+        "target1": 0.6233,
+        "target1_pct": 27.2,
+        "target2": 0.7928,
+        "target2_pct": 61.8,
+        "target3": 1.2828,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.41",
+      "rvol_display": "5x",
+      "float_display": "9.3M",
+      "rank": "hot"
+    },
+    {
+      "ticker": "QVCGA",
+      "scan": "Low Float",
+      "company": "QVC Group Inc",
+      "sector": "Consumer Cyclical",
+      "price": 0.45,
+      "change": 11.06,
+      "rvol": 101.37,
+      "float_m": 6.73,
+      "short_pct": 18.92,
+      "days_cover": 99.0,
+      "spike_pct": 87.5,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018096.html",
+      "score": 0.625,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +88%",
+          "gap"
+        ],
+        [
+          "SHORT INT 19%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-20",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 3.26,
+        "entry1_note": "Break above 10d high",
+        "entry2": 1.7595,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 3.749,
+        "entry3_note": "Makes new highs",
+        "stop": 0.4,
+        "stop_note": "Prior day low",
+        "target1": 4.1467,
+        "target1_pct": 27.2,
+        "target2": 5.2747,
+        "target2_pct": 61.8,
+        "target3": 8.5347,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.45",
+      "rvol_display": "101x",
+      "float_display": "6.7M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "ACB",
+      "scan": "Mid Float",
+      "company": "Aurora Cannabis Inc",
+      "sector": "Healthcare",
+      "price": 3.8,
+      "change": 6.74,
+      "rvol": 11.26,
+      "float_m": 56.41,
+      "short_pct": 12.99,
+      "days_cover": 99.0,
+      "spike_pct": 21.0,
+      "news": "Aurora Cannabis Accelerates Global Medical Cannabis Leadership with Accretive Acquisition of Safari Flower Company, Expa",
+      "news_url": "https://elite.finviz.com/news/344691/aurora-cannabis-accelerates-global-medical-cannabis-leadership-with-accretive-acquisition-of-safari-flower-company-expanding-eu-gmp-capacity-to-serve-growing-high-margin-international-markets",
+      "score": 0.625,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "CATALYST \u00b7 M&A",
+          "catalyst"
+        ],
+        [
+          "SHORT INT 13%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-20",
+        "ma_close": "Jun 14, 2026",
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 4.11,
+        "entry1_note": "Break above 10d high",
+        "entry2": 3.4645,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 4.7265,
+        "entry3_note": "Makes new highs",
+        "stop": 3.56,
+        "stop_note": "Prior day low",
+        "target1": 5.2279,
+        "target1_pct": 27.2,
+        "target2": 6.65,
+        "target2_pct": 61.8,
+        "target3": 10.76,
+        "target3_pct": 161.8
+      },
+      "price_display": "$3.80",
+      "rvol_display": "11x",
+      "float_display": "56.4M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "KYTX",
+      "scan": "Mid Float",
+      "company": "Kyverna Therapeutics Inc",
+      "sector": "Healthcare",
+      "price": 10.23,
+      "change": 5.36,
+      "rvol": 8.27,
+      "float_m": 36.4,
+      "short_pct": 11.57,
+      "days_cover": 99.0,
+      "spike_pct": 55.7,
+      "news": "Kyverna Presents Registrational Trial Primary Analysis for Miv-cel in Stiff Person Syndrome Demonstrating Statistically ",
+      "news_url": "https://elite.finviz.com/news/346455/kyverna-presents-registrational-trial-primary-analysis-for-miv-cel-in-stiff-person-syndrome-demonstrating-statistically-significant-durable-clinical-benefit-across-all-endpoints-in-an-oral-late-breaker-session-at-aan-annual-meeting",
+      "score": 0.595,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 0.7,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +56%",
+          "gap"
+        ],
+        [
+          "SHORT INT 12%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-22",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 11.62,
+        "entry1_note": "Break above 10d high",
+        "entry2": 9.1255,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 13.363,
+        "entry3_note": "Makes new highs",
+        "stop": 9.63,
+        "stop_note": "Prior day low",
+        "target1": 14.7806,
+        "target1_pct": 27.2,
+        "target2": 18.8012,
+        "target2_pct": 61.8,
+        "target3": 30.4212,
+        "target3_pct": 161.8
+      },
+      "price_display": "$10.23",
+      "rvol_display": "8x",
+      "float_display": "36.4M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "GP",
+      "scan": "Low Float",
+      "company": "GreenPower Motor Company Inc",
+      "sector": "Industrials",
+      "price": 1.0,
+      "change": 4.6,
+      "rvol": 117.77,
+      "float_m": 2.2,
+      "short_pct": 2.91,
+      "days_cover": 99.0,
+      "spike_pct": 88.8,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018096.html",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +89%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-17",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.51,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.9882,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.7365,
+        "entry3_note": "Makes new highs",
+        "stop": 0.935,
+        "stop_note": "Prior day low",
+        "target1": 1.9207,
+        "target1_pct": 27.2,
+        "target2": 2.4432,
+        "target2_pct": 61.8,
+        "target3": 3.9532,
+        "target3_pct": 161.8
+      },
+      "price_display": "$1.00",
+      "rvol_display": "118x",
+      "float_display": "2.2M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "PAPL",
+      "scan": "Low Float",
+      "company": "Pineapple Financial Inc",
+      "sector": "Financial",
+      "price": 0.6,
+      "change": 1.76,
+      "rvol": 39.87,
+      "float_m": 8.28,
+      "short_pct": 1.77,
+      "days_cover": 99.0,
+      "spike_pct": 107.2,
+      "news": "Pineapple Financial Announces Expanded $15 Million Share Repurchase Program",
+      "news_url": "https://elite.finviz.com/news/346878/pineapple-financial-announces-expanded-15-million-share-repurchase-program",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +107%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-22",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.665,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.6312,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.7647,
+        "entry3_note": "Makes new highs",
+        "stop": 0.59,
+        "stop_note": "Prior day low",
+        "target1": 0.8459,
+        "target1_pct": 27.2,
+        "target2": 1.076,
+        "target2_pct": 61.8,
+        "target3": 1.741,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.60",
+      "rvol_display": "40x",
+      "float_display": "8.3M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "CTNT",
+      "scan": "Mid Float",
+      "company": "Cheetah Net Supply Chain Service Inc",
+      "sector": "Industrials",
+      "price": 0.04,
+      "change": -10.11,
+      "rvol": 10.38,
+      "float_m": 36.03,
+      "short_pct": 0.24,
+      "days_cover": 99.0,
+      "spike_pct": 118.1,
+      "news": "Cheetah Net Supply Chain Service Inc. enters Agreement to Acquire Super International Trading Limited",
+      "news_url": "https://elite.finviz.com/news/345199/cheetah-net-supply-chain-service-inc-enters-agreement-to-acquire-super-international-trading-limited",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +118%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-16",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.7,
+        "entry1_note": "Break above 10d high",
+        "entry2": 1.0299,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.955,
+        "entry3_note": "Makes new highs",
+        "stop": 0.035,
+        "stop_note": "Prior day low",
+        "target1": 2.1624,
+        "target1_pct": 27.2,
+        "target2": 2.7506,
+        "target2_pct": 61.8,
+        "target3": 4.4506,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.04",
+      "rvol_display": "10x",
+      "float_display": "36.0M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "TH",
+      "scan": "Mid Float",
+      "company": "Target Hospitality Corp",
+      "sector": "Industrials",
+      "price": 14.61,
+      "change": -8.11,
+      "rvol": 10.13,
+      "float_m": 32.11,
+      "short_pct": 7.51,
+      "days_cover": 99.0,
+      "spike_pct": 43.2,
+      "news": "Under The Surface, Big Moves Are Building",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/under-surface-big-moves-building-135036120.html",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +43%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-22",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 16.12,
+        "entry1_note": "Break above 10d high",
+        "entry2": 13.227,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 18.538,
+        "entry3_note": "Makes new highs",
+        "stop": 14.3,
+        "stop_note": "Prior day low",
+        "target1": 20.5046,
+        "target1_pct": 27.2,
+        "target2": 26.0822,
+        "target2_pct": 61.8,
+        "target3": 42.2022,
+        "target3_pct": 161.8
+      },
+      "price_display": "$14.61",
+      "rvol_display": "10x",
+      "float_display": "32.1M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "GAME",
+      "scan": "Mid Float",
+      "company": "GameSquare Holdings Inc",
+      "sector": "Communication Services",
+      "price": 0.61,
+      "change": 33.86,
+      "rvol": 6.3,
+      "float_m": 82.06,
+      "short_pct": 3.23,
+      "days_cover": 99.0,
+      "spike_pct": 80.6,
+      "news": "GameSquare Announces Largest Monthly Repurchase to Date, with the Repurchase of Nearly 2.3 Million Shares in April 2026",
+      "news_url": "https://elite.finviz.com/news/346586/gamesquare-announces-largest-monthly-repurchase-to-date-with-the-repurchase-of-nearly-23-million-shares-in-april-2026",
+      "score": 0.52,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.7,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +81%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-17",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.626,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.3395,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.7199,
+        "entry3_note": "Makes new highs",
+        "stop": 0.433,
+        "stop_note": "Prior day low",
+        "target1": 0.7963,
+        "target1_pct": 27.2,
+        "target2": 1.0129,
+        "target2_pct": 61.8,
+        "target3": 1.6389,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.61",
+      "rvol_display": "6x",
+      "float_display": "82.1M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "BANL",
+      "scan": "Low Float",
+      "company": "CBL International Ltd",
+      "sector": "Energy",
+      "price": 0.45,
+      "change": -11.35,
+      "rvol": 11.09,
+      "float_m": 5.15,
+      "short_pct": 5.27,
+      "days_cover": 99.0,
+      "spike_pct": 66.6,
+      "news": "CBL International Limited Acquires Majority Stake in Green Marine Energy Holdings Limited",
+      "news_url": "https://finance.yahoo.com/sectors/energy/articles/cbl-international-limited-acquires-majority-150127154.html",
+      "score": 0.5,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "CATALYST \u00b7 NEWS",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +67%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.566,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.6101,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.6509,
+        "entry3_note": "Makes new highs",
+        "stop": 0.42,
+        "stop_note": "Prior day low",
+        "target1": 0.72,
+        "target1_pct": 27.2,
+        "target2": 0.9158,
+        "target2_pct": 61.8,
+        "target3": 1.4818,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.45",
+      "rvol_display": "11x",
+      "float_display": "5.2M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "HCAI",
+      "scan": "Low Float",
+      "company": "Huachen AI Parking Management Technology Holding Co Ltd",
+      "sector": "Industrials",
+      "price": 9.74,
+      "change": 43.45,
+      "rvol": 18.86,
+      "float_m": 0.63,
+      "short_pct": 0.55,
+      "days_cover": 99.0,
+      "spike_pct": 270.1,
+      "news": "Huachen AI Parking Management Technology Holding Co., Ltd Announces 1-for-30 Reverse Stock Split Effective April 13, 202",
+      "news_url": "https://elite.finviz.com/news/343300/huachen-ai-parking-management-technology-holding-co-ltd-announces-1-for-30-reverse-stock-split-effective-april-13-2026",
+      "score": 0.5,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "CATALYST \u00b7 PIVOT",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +270%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 9.95,
+        "entry1_note": "Break above 10d high",
+        "entry2": 6.0675,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 11.4425,
+        "entry3_note": "Makes new highs",
+        "stop": 5.35,
+        "stop_note": "Prior day low",
+        "target1": 12.6564,
+        "target1_pct": 27.2,
+        "target2": 16.0991,
+        "target2_pct": 61.8,
+        "target3": 26.0491,
+        "target3_pct": 161.8
+      },
+      "price_display": "$9.74",
+      "rvol_display": "19x",
+      "float_display": "0.6M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "LHSW",
+      "scan": "Low Float",
+      "company": "Lianhe Sowell International Group Ltd",
+      "sector": "Technology",
+      "price": 0.27,
+      "change": 38.27,
+      "rvol": 10.12,
+      "float_m": 2.35,
+      "short_pct": 3.47,
+      "days_cover": 99.0,
+      "spike_pct": 82.8,
+      "news": "Lianhe Sowell International Group Ltd. Announces $1.8 Million Contract to Develop AI Steam Car-Wash Robot Promising Sign",
+      "news_url": "https://elite.finviz.com/news/340786/lianhe-sowell-international-group-ltd-announces-18-million-contract-to-develop-ai-steam-car-wash-robot-promising-significant-water-savings",
+      "score": 0.5,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "CATALYST \u00b7 PIVOT",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +83%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.304,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.184,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.3496,
+        "entry3_note": "Makes new highs",
+        "stop": 0.186,
+        "stop_note": "Prior day low",
+        "target1": 0.3867,
+        "target1_pct": 27.2,
+        "target2": 0.4919,
+        "target2_pct": 61.8,
+        "target3": 0.7959,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.27",
+      "rvol_display": "10x",
+      "float_display": "2.4M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "MEHA",
+      "scan": "Low Float",
+      "company": "Functional Brands Inc",
+      "sector": "Consumer Defensive",
+      "price": 0.13,
+      "change": 3.28,
+      "rvol": 3.22,
+      "float_m": 19.91,
+      "short_pct": 2.4,
+      "days_cover": 99.0,
+      "spike_pct": 73.3,
+      "news": "Functional Brands Inc. Enters Strategic Partnership with partnrup.ai to Accelerate Growth of Tru2u.health",
+      "news_url": "https://www.newsfilecorp.com/release/293717/Functional-Brands-Inc.-Enters-Strategic-Partnership-with-partnrup.ai-to-Accelerate-Growth-of-Tru2u.health",
+      "score": 0.49,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.4,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +73%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-20",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.189,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.1513,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.2173,
+        "entry3_note": "Makes new highs",
+        "stop": 0.122,
+        "stop_note": "Prior day low",
+        "target1": 0.2404,
+        "target1_pct": 27.2,
+        "target2": 0.3058,
+        "target2_pct": 61.8,
+        "target3": 0.4948,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.13",
+      "rvol_display": "3x",
+      "float_display": "19.9M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "RETO",
+      "scan": "Low Float",
+      "company": "ReTo Eco-Solutions Inc",
+      "sector": "Basic Materials",
+      "price": 0.9,
+      "change": -35.25,
+      "rvol": 6.65,
+      "float_m": 9.6,
+      "short_pct": 0.35,
+      "days_cover": 99.0,
+      "spike_pct": 76.8,
+      "news": "ReTo Eco-Solutions, Inc. Announces Acquisition of Majority Interest in Seven Arrows Supply Chain Limited",
+      "news_url": "https://elite.finviz.com/news/329418/reto-eco-solutions-inc-announces-acquisition-of-majority-interest-in-seven-arrows-supply-chain-limited",
+      "score": 0.47,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.7,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "CATALYST \u00b7 M&A",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +77%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.57,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.8921,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.8055,
+        "entry3_note": "Makes new highs",
+        "stop": 1.239,
+        "stop_note": "Prior day low",
+        "target1": 1.997,
+        "target1_pct": 27.2,
+        "target2": 2.5403,
+        "target2_pct": 61.8,
+        "target3": 4.1103,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.90",
+      "rvol_display": "7x",
+      "float_display": "9.6M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "SRFM",
+      "scan": "Mid Float",
+      "company": "Surf Air Mobility Inc",
+      "sector": "Industrials",
+      "price": 1.2,
+      "change": 9.09,
+      "rvol": 14.98,
+      "float_m": 55.25,
+      "short_pct": 19.15,
+      "days_cover": 99.0,
+      "spike_pct": 31.2,
+      "news": "Surf Air Mobility Co-Founders, Officers, and Directors Backing 2026 Plan with Common Stock Purchases",
+      "news_url": "https://www.businesswire.com/news/home/20260421205070/en",
+      "score": 0.425,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "SHORT INT 19%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-21",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.46,
+        "entry1_note": "Break above 10d high",
+        "entry2": 1.1945,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.679,
+        "entry3_note": "Makes new highs",
+        "stop": 1.09,
+        "stop_note": "Prior day low",
+        "target1": 1.8571,
+        "target1_pct": 27.2,
+        "target2": 2.3623,
+        "target2_pct": 61.8,
+        "target3": 3.8223,
+        "target3_pct": 161.8
+      },
+      "price_display": "$1.20",
+      "rvol_display": "15x",
+      "float_display": "55.2M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "REPL",
+      "scan": "Mid Float",
+      "company": "Replimune Group Inc",
+      "sector": "Healthcare",
+      "price": 2.27,
+      "change": 22.04,
+      "rvol": 4.9,
+      "float_m": 76.12,
+      "short_pct": 21.46,
+      "days_cover": 99.0,
+      "spike_pct": 24.2,
+      "news": "Replimune Plans Layoffs After FDA Rejects Cancer Therapy Again. The Stock Craters 64%.",
+      "news_url": "https://www.barrons.com/articles/replimune-plans-layoffs-fda-rejects-cancer-therapy-5fc36987?mod=bar_FV",
+      "score": 0.415,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 0.4,
+        "fda_binary": 1.0
+      },
+      "flags": [
+        [
+          "FDA EVENT",
+          "catalyst"
+        ],
+        [
+          "SHORT INT 21%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 6.65,
+        "entry1_note": "Break above 10d high",
+        "entry2": 5.1288,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 7.6475,
+        "entry3_note": "Makes new highs",
+        "stop": 1.843,
+        "stop_note": "Prior day low",
+        "target1": 8.4588,
+        "target1_pct": 27.2,
+        "target2": 10.7597,
+        "target2_pct": 61.8,
+        "target3": 17.4097,
+        "target3_pct": 161.8
+      },
+      "price_display": "$2.27",
+      "rvol_display": "5x",
+      "float_display": "76.1M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "VTGN",
+      "scan": "Mid Float",
+      "company": "Vistagen Therapeutics Inc",
+      "sector": "Healthcare",
+      "price": 0.6,
+      "change": -0.5,
+      "rvol": 10.24,
+      "float_m": 33.78,
+      "short_pct": 4.18,
+      "days_cover": 99.0,
+      "spike_pct": 15.4,
+      "news": "Vistagen Receives FDA \"Study May Proceed\" Letter Under its Refisolone IND Application, Enabling Further Phase 2 Clinical",
+      "news_url": "https://www.businesswire.com/news/home/20260422186960/en",
+      "score": 0.4,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 1.0
+      },
+      "flags": [
+        [
+          "FDA EVENT",
+          "catalyst"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.65,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.584,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.7475,
+        "entry3_note": "Makes new highs",
+        "stop": 0.59,
+        "stop_note": "Prior day low",
+        "target1": 0.8268,
+        "target1_pct": 27.2,
+        "target2": 1.0517,
+        "target2_pct": 61.8,
+        "target3": 1.7017,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.60",
+      "rvol_display": "10x",
+      "float_display": "33.8M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "SPWR",
+      "scan": "Mid Float",
+      "company": "SunPower Inc",
+      "sector": "Technology",
+      "price": 1.01,
+      "change": -10.18,
+      "rvol": 6.16,
+      "float_m": 84.0,
+      "short_pct": 12.41,
+      "days_cover": 99.0,
+      "spike_pct": 13.3,
+      "news": "SunPower Prices $41 Million Convertible Debt",
+      "news_url": "https://elite.finviz.com/news/346618/sunpower-prices-41-million-convertible-debt",
+      "score": 0.395,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 0.7,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "SHORT INT 12%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-22",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.265,
+        "entry1_note": "Break above 10d high",
+        "entry2": 1.1973,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.4547,
+        "entry3_note": "Makes new highs",
+        "stop": 1.13,
+        "stop_note": "Prior day low",
+        "target1": 1.6091,
+        "target1_pct": 27.2,
+        "target2": 2.0468,
+        "target2_pct": 61.8,
+        "target3": 3.3118,
+        "target3_pct": 161.8
+      },
+      "price_display": "$1.01",
+      "rvol_display": "6x",
+      "float_display": "84.0M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "NMAX",
+      "scan": "Mid Float",
+      "company": "Newsmax Inc",
+      "sector": "Communication Services",
+      "price": 9.24,
+      "change": 26.92,
+      "rvol": 32.6,
+      "float_m": 65.81,
+      "short_pct": 11.32,
+      "days_cover": 99.0,
+      "spike_pct": 53.8,
+      "news": "Newsmax, Inc. Q4 2025 Earnings Call Summary",
+      "news_url": "https://finance.yahoo.com/m/24b0088a-ac6c-3450-a5af-d5c5626782c8/newsmax%2C-inc.-q4-2025.html",
+      "score": 0.375,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +54%",
+          "gap"
+        ],
+        [
+          "SHORT INT 11%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 11.2,
+        "entry1_note": "Break above 10d high",
+        "entry2": 6.239,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 12.88,
+        "entry3_note": "Makes new highs",
+        "stop": 7.034,
+        "stop_note": "Prior day low",
+        "target1": 14.2464,
+        "target1_pct": 27.2,
+        "target2": 18.1216,
+        "target2_pct": 61.8,
+        "target3": 29.3216,
+        "target3_pct": 161.8
+      },
+      "price_display": "$9.24",
+      "rvol_display": "33x",
+      "float_display": "65.8M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "MAPS",
+      "scan": "Mid Float",
+      "company": "WM Technology Inc",
+      "sector": "Technology",
+      "price": 0.39,
+      "change": 11.52,
+      "rvol": 17.34,
+      "float_m": 91.16,
+      "short_pct": 5.24,
+      "days_cover": 99.0,
+      "spike_pct": 23.1,
+      "news": "WM Technology, Inc. Reports Preliminary First Quarter 2026 Financial Results",
+      "news_url": "https://www.businesswire.com/news/home/20260417034377/en",
+      "score": 0.35,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-17",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.431,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.5049,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.4956,
+        "entry3_note": "Makes new highs",
+        "stop": 0.345,
+        "stop_note": "Prior day low",
+        "target1": 0.5482,
+        "target1_pct": 27.2,
+        "target2": 0.6974,
+        "target2_pct": 61.8,
+        "target3": 1.1284,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.39",
+      "rvol_display": "17x",
+      "float_display": "91.2M",
+      "rank": "watch"
+    }
+  ]
+}
