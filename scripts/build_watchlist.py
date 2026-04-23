@@ -20,7 +20,6 @@ RANK_CFG = {
 SCAN_COLORS = {
     "Low Float": ("#091830","#7ab4f5","rgba(122,180,245,0.2)"),
     "Mid Float": ("#1a0f28","#b07af5","rgba(176,122,245,0.2)"),
-    "Manual":    ("#091820","#4ade80","rgba(74,222,128,0.2)"),
 }
 FLAG_CFG = {
     "catalyst": ("#2a1a06","#c9a84c"),
@@ -36,9 +35,9 @@ CSS = """
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.6;}
 a{color:inherit;text-decoration:none;}
-.hdr{background:var(--bg2);border-bottom:2px solid var(--gold);padding:16px 20px;
-  display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px;}
-.hdr-l h1{font-family:var(--sans);font-size:20px;font-weight:700;letter-spacing:-0.3px;}
+.hdr{background:var(--bg2);border-bottom:2px solid var(--gold);padding:18px 20px 14px;
+  display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px;overflow:visible;}
+.hdr-l h1{font-family:var(--sans);font-size:20px;font-weight:700;letter-spacing:-0.3px;line-height:1.3;padding-bottom:2px;overflow:visible;}
 .hdr-l h1 em{color:var(--gold);font-style:normal;}
 .hdr-l .sub{font-size:11px;color:var(--muted);margin-top:3px;}
 .hdr-r{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
@@ -54,7 +53,32 @@ a{color:inherit;text-decoration:none;}
 .sum-cell{background:var(--bg2);padding:12px 16px;text-align:center;}
 .sum-n{font-family:var(--sans);font-size:26px;font-weight:700;}
 .sum-l{font-size:10px;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:0.06em;}
-.body{padding:18px 20px 48px;max-width:960px;margin:0 auto;}
+
+/* Layout */
+.layout{display:flex;flex:1;min-height:0;}
+/* Left nav */
+.sidenav{width:176px;flex-shrink:0;background:var(--bg2);
+  border-right:1px solid rgba(255,255,255,0.06);padding:16px 0;
+  position:sticky;top:0;align-self:flex-start;
+  height:calc(100vh - 130px);display:flex;flex-direction:column;}
+.sidenav-label{font-size:9px;color:#2a3a52;letter-spacing:0.14em;
+  text-transform:uppercase;padding:10px 16px 4px;}
+.nav-item{display:flex;align-items:center;gap:10px;padding:10px 16px;
+  cursor:pointer;border-left:2px solid transparent;color:var(--muted);
+  transition:all .15s;user-select:none;text-decoration:none;}
+.nav-item:hover{color:var(--text);background:rgba(255,255,255,0.03);}
+.nav-item.active{color:var(--gold);border-left-color:var(--gold);
+  background:rgba(201,168,76,0.06);}
+.nav-icon{font-size:13px;width:18px;text-align:center;flex-shrink:0;}
+.nav-label{font-size:12px;flex:1;}
+.nav-cnt{font-size:10px;padding:1px 6px;border-radius:20px;
+  background:rgba(255,255,255,0.06);color:var(--muted);}
+.nav-item.active .nav-cnt{background:rgba(201,168,76,0.15);color:var(--gold);}
+.nav-avoid{margin-top:auto;}
+/* Tab content */
+.tab-content{display:none;}
+.tab-content.active{display:block;}
+.body{padding:14px 20px 48px;flex:1;min-width:0;max-width:880px;}
 .sec-lbl{font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;
   margin:22px 0 9px;display:flex;align-items:center;gap:8px;}
 .sec-lbl::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.05);}
@@ -64,15 +88,12 @@ a{color:inherit;text-decoration:none;}
   padding:14px 16px;border-left:3px solid;}
 .card.hot{border-left-color:#c9a84c;}.card.warm{border-left-color:#fb923c;}
 .card.watch{border-left-color:#7ab4f5;}.card.avoid{border-left-color:#f87171;opacity:0.6;}
-.card.manual-pin{border-top:1px solid rgba(74,222,128,0.15);}
 /* Row 1 */
 .r1{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
 .tkr{font-family:var(--sans);font-size:15px;font-weight:700;}
 .co{font-size:11px;color:var(--muted);flex:1;}
 .scan-tag{font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid;}
 .rank-pill{font-size:11px;font-weight:600;padding:2px 10px;border-radius:20px;}
-.manual-badge{font-size:10px;padding:2px 7px;border-radius:10px;
-  background:#091820;color:#4ade80;border:1px solid rgba(74,222,128,0.2);}
 .ch{font-size:12px;font-weight:500;}.pos{color:#4ade80;}.neg{color:#f87171;}
 .clink{font-size:11px;color:#5a8fd4;margin-left:auto;}
 /* Score bar */
@@ -334,8 +355,7 @@ def card_html(t):
     chg_cls  = "pos" if chg >= 0 else "neg"
     score_pct = min(100, round(t.get("score",0) * 100))
     flags_html = "".join(flag_html(l,k) for l,k in t.get("flags",[]))
-    manual_html = '<span class="manual-badge">📌 WATCHLIST</span>' if t.get("manual") else ""
-    manual_cls  = " manual-pin" if t.get("manual") else ""
+    manual_cls  = ""
 
     short_str = f'{t["short_pct"]:.0f}%' if t.get("short_pct",0) > 0 else "—"
     spike_str = f'+{t["spike_pct"]:.0f}%' if t.get("spike_pct",0) > 0 else "—"
@@ -353,7 +373,6 @@ def card_html(t):
     <span class="co">{t.get("company","")[:26]}</span>
     <span class="scan-tag" style="background:{scan_bg};color:{scan_tx};border-color:{scan_border}">{scan}</span>
     <span class="rank-pill" style="background:{rank_bg};color:{rank_tx}">{rank_lbl}</span>
-    {manual_html}
     <span class="ch {chg_cls}">{chg_sign}{chg:.1f}%</span>
     <a class="clink" href="https://finviz.com/quote.ashx?t={ticker}" target="_blank">Chart ↗</a>
   </div>
@@ -384,11 +403,10 @@ def render_html(data):
     gen_time = data["generated"]
     session_label = "Pre-Market Scan" if session == "premarket" else "Mid-Morning Scan"
 
-    hot    = [t for t in tickers if t.get("rank")=="hot"   and not t.get("manual")]
-    warm   = [t for t in tickers if t.get("rank")=="warm"  and not t.get("manual")]
-    watch  = [t for t in tickers if t.get("rank")=="watch" and not t.get("manual")]
-    manual = [t for t in tickers if t.get("manual")]
-    avoid  = [t for t in tickers if t.get("rank")=="avoid" and not t.get("manual")]
+    hot   = [t for t in tickers if t.get("rank")=="hot"]
+    warm  = [t for t in tickers if t.get("rank")=="warm"]
+    watch = [t for t in tickers if t.get("rank")=="watch"]
+    avoid = [t for t in tickers if t.get("rank")=="avoid"]
 
     try:
         d = datetime.fromisoformat(today)
@@ -401,11 +419,10 @@ def render_html(data):
         return f"""<div class="sec-lbl">{label}</div>
 <div class="cards">{cards if cards else f'<p style="color:var(--muted);font-size:12px;">{empty_msg}</p>'}</div>"""
 
-    hot_section   = section("🔥 Hot setups — score ≥70%", hot, "No HOT setups today.")
-    warm_section  = section("⚡ Warm setups — score ≥50%", warm, "No WARM setups today.")
-    watch_section = section("👁 Watch — score ≥35%", watch, "") if watch else ""
-    manual_section = section("📌 Manual watchlist", manual, "")
-    avoid_section  = section("✗ Avoid", avoid, "") if avoid else ""
+    def ch(items):
+        return "".join(card_html(t) for t in items) or '<p style="color:var(--muted);font-size:12px;padding:16px 0;">No setups in this category today.</p>'
+
+    all_s = hot + warm + watch + avoid
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -432,7 +449,6 @@ def render_html(data):
   <span class="leg-label">Screener:</span>
   <span class="leg-item"><span class="leg-dot" style="background:#7ab4f5"></span>Low Float (&lt;$10 · &lt;20M · RVol 2x+)</span>
   <span class="leg-item"><span class="leg-dot" style="background:#b07af5"></span>Mid Float ($10-20 · 20-100M · RVol 3x+)</span>
-  <span class="leg-item"><span class="leg-dot" style="background:#4ade80"></span>Manual Watchlist</span>
 </div>
 <div class="summary">
   <div class="sum-cell"><div class="sum-n" style="color:#c9a84c">{len(hot)}</div><div class="sum-l">Hot Setups</div></div>
@@ -440,14 +456,62 @@ def render_html(data):
   <div class="sum-cell"><div class="sum-n" style="color:#7ab4f5">{len(watch)}</div><div class="sum-l">Watch</div></div>
   <div class="sum-cell"><div class="sum-n">{len(tickers)}</div><div class="sum-l">Total</div></div>
 </div>
-<div class="body">
-  {hot_section}
-  {warm_section}
-  {watch_section}
-  {manual_section}
-  {avoid_section}
+<div class="layout">
+  <div class="sidenav">
+    <div class="sidenav-label">Filter</div>
+    <div class="nav-item active" data-tab="all">
+      <span class="nav-icon">◈</span>
+      <span class="nav-label">All</span>
+      <span class="nav-cnt">{len(all_s)}</span>
+    </div>
+    <div class="nav-item" data-tab="hot">
+      <span class="nav-icon">🔥</span>
+      <span class="nav-label">Hot</span>
+      <span class="nav-cnt">{len(hot)}</span>
+    </div>
+    <div class="nav-item" data-tab="warm">
+      <span class="nav-icon">⚡</span>
+      <span class="nav-label">Warm</span>
+      <span class="nav-cnt">{len(warm)}</span>
+    </div>
+    <div class="nav-item" data-tab="watch">
+      <span class="nav-icon">👁</span>
+      <span class="nav-label">Watch</span>
+      <span class="nav-cnt">{len(watch)}</span>
+    </div>
+    {"<div class='nav-item nav-avoid' data-tab='avoid'><span class='nav-icon'>✗</span><span class='nav-label'>Avoid</span><span class='nav-cnt'>" + str(len(avoid)) + "</span></div>" if avoid else ""}
+  </div>
+  <div class="tab-content active" id="tab-all">
+    <div class="body">
+      <div class="sec-lbl">🔥 Hot — score ≥70%</div><div class="cards">{ch(hot)}</div>
+      <div class="sec-lbl">⚡ Warm — score ≥50%</div><div class="cards">{ch(warm)}</div>
+      {"<div class='sec-lbl'>👁 Watch — score ≥35%</div><div class='cards'>" + ch(watch) + "</div>" if watch else ""}
+      {"<div class='sec-lbl'>✗ Avoid</div><div class='cards'>" + ch(avoid) + "</div>" if avoid else ""}
+    </div>
+  </div>
+  <div class="tab-content" id="tab-hot">
+    <div class="body"><div class="cards">{ch(hot)}</div></div>
+  </div>
+  <div class="tab-content" id="tab-warm">
+    <div class="body"><div class="cards">{ch(warm)}</div></div>
+  </div>
+  <div class="tab-content" id="tab-watch">
+    <div class="body"><div class="cards">{ch(watch)}</div></div>
+  </div>
+  {"<div class='tab-content' id='tab-avoid'><div class='body'><div class='cards'>" + ch(avoid) + "</div></div></div>" if avoid else ""}
 </div>
 <div class="footer">Micro-Cap Momentum Swing Scanner · Not financial advice · Always confirm on live chart before entry</div>
+<script>
+document.querySelectorAll('.nav-item').forEach(item => {{
+  item.addEventListener('click', () => {{
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    item.classList.add('active');
+    document.getElementById('tab-' + item.dataset.tab).classList.add('active');
+    window.scrollTo(0, 0);
+  }});
+}});
+</script>
 </body>
 </html>"""
 

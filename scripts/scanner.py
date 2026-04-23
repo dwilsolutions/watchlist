@@ -18,7 +18,6 @@ SPIKE_DAYS   = int(os.environ.get("SWING_SPIKE_DAYS",     "90"))
 SPIKE_PCT    = float(os.environ.get("SWING_SPIKE_PCT",    "40"))
 SHORT_MIN    = float(os.environ.get("SWING_SHORT_INT_MIN","10"))
 DTC_MAX      = float(os.environ.get("SWING_DTC_MAX",      "3"))
-MANUAL       = [t.strip() for t in os.environ.get("SWING_MANUAL","BTBD,FLYX,AZTR,BFRG,UGRO,DEFT,BYAH,OXBR,SST,SER,EEIQ").split(",")]
 OUT_DIR      = os.environ.get("SWING_OUT_DIR",  "docs")
 DATA_DIR     = os.environ.get("SWING_DATA_DIR", "docs/data/swing")
 
@@ -341,7 +340,6 @@ def score_ticker(row, yf_df=None):
         "investor_day":      fmt_date(investor_day),
     }
 
-    # Display overrides for manual tickers with no data
     price_display = f"${price:.2f}" if price > 0 else "—"
     rvol_display  = f"{rvol:.0f}x"  if rvol  > 0 else "—"
     float_display = f"{safe_f(fv.get('Shares Float',0)):.1f}M" if safe_f(fv.get("Shares Float",0)) > 0 else "—"
@@ -387,10 +385,9 @@ def main():
         if t and t not in seen:
             seen.add(t); unique_rows.append((scan_label, row))
 
-    manual_missing = [t for t in MANUAL if t not in seen]
-    print(f"  [+] {len(unique_rows)} screener + {len(manual_missing)} manual tickers")
+    print(f"  [+] {len(unique_rows)} screener tickers")
 
-    all_tickers = [r[1].get("Ticker","").strip() for r in unique_rows] + manual_missing
+    all_tickers = [r[1].get("Ticker","").strip() for r in unique_rows]
     yf_data = fetch_yf_batch([t for t in all_tickers if t])
 
     results = []
@@ -398,26 +395,14 @@ def main():
         ticker = row.get("Ticker","").strip()
         if not ticker: continue
         r = score_ticker((scan_label, row), yf_df=yf_data.get(ticker))
-        r["manual"] = ticker in MANUAL
-        results.append(r)
-
-    for ticker in manual_missing:
-        dummy = {"Ticker":ticker,"Company":ticker,"Sector":"","Price":0,"Change":0,
-                 "Relative Volume":0,"News Title":"","News URL":"","Earnings Date":"",
-                 "Shares Float":0,"Short Float":0,"Short Ratio":99}
-        r = score_ticker(("Manual",dummy), yf_df=yf_data.get(ticker))
-        r["manual"] = True
         results.append(r)
 
     rank_order = {"hot":0,"warm":1,"watch":2,"avoid":3}
-    qualified  = [r for r in results if r["score"] >= MIN_SCORE or r["manual"]]
+    qualified  = [r for r in results if r["score"] >= MIN_SCORE]
     for r in qualified:
-        raw_rank = get_rank(r)
-        r["rank"] = "watch" if r.get("manual") and raw_rank == "avoid" else raw_rank
+        r["rank"] = get_rank(r)
 
-    final = (sorted([r for r in qualified if not r["manual"]],
-                    key=lambda x: (rank_order.get(x["rank"],4), -x["score"]))
-             + [r for r in qualified if r["manual"]])
+    final = sorted(qualified, key=lambda x: (rank_order.get(x["rank"],4), -x["score"]))
 
     print(f"\n  Qualified: {len(qualified)} | " +
           " | ".join(f"{rk.upper()}: {sum(1 for r in qualified if r.get('rank')==rk)}"
