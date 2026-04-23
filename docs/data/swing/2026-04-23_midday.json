@@ -1,0 +1,496 @@
+{
+  "date": "2026-04-23",
+  "session": "midday",
+  "generated": "12:17 PM ET",
+  "tickers": [
+    {
+      "ticker": "ASBP",
+      "scan": "Low Float",
+      "company": "Aspire Biopharma Holdings Inc",
+      "sector": "Healthcare",
+      "price": 0.21,
+      "change": -4.0,
+      "rvol": 2.03,
+      "float_m": 4.68,
+      "short_pct": 9.21,
+      "days_cover": 99.0,
+      "spike_pct": 67.8,
+      "news": "Aspire Biopharma Announces Closing of Second and Final Tranche of $21 Million Private Placement by Select Investors; Sec",
+      "news_url": "https://elite.finviz.com/news/345788/aspire-biopharma-announces-closing-of-second-and-final-tranche-of-21-million-private-placement-by-select-investors-secures-commitment-letter-for-225m-credit-facility-to-fund-the-dcs-acquisition",
+      "score": 0.69,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.4,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "CATALYST \u00b7 M&A",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +68%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-20",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.21,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.7901,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.3915,
+        "entry3_note": "Makes new highs",
+        "stop": 0.201,
+        "stop_note": "Prior day low",
+        "target1": 1.5391,
+        "target1_pct": 27.2,
+        "target2": 1.9578,
+        "target2_pct": 61.8,
+        "target3": 3.1678,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.21",
+      "rvol_display": "2x",
+      "float_display": "4.7M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "AUUD",
+      "scan": "Low Float",
+      "company": "Auddia Inc",
+      "sector": "Technology",
+      "price": 5.43,
+      "change": 40.31,
+      "rvol": 520.7,
+      "float_m": 0.5,
+      "short_pct": 4.96,
+      "days_cover": 99.0,
+      "spike_pct": 161.0,
+      "news": "Auddia secures approval for 14th patent tied to LT350 platform",
+      "news_url": "https://finance.yahoo.com/m/0200cc54-290a-354d-ac4d-555660dd6958/auddia-secures-approval-for.html",
+      "score": 0.6,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 1.0
+      },
+      "flags": [
+        [
+          "FDA EVENT",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +161%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 10.1,
+        "entry1_note": "Break above 10d high",
+        "entry2": 4.6682,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 11.615,
+        "entry3_note": "Makes new highs",
+        "stop": 3.8,
+        "stop_note": "Prior day low",
+        "target1": 12.8472,
+        "target1_pct": 27.2,
+        "target2": 16.3418,
+        "target2_pct": 61.8,
+        "target3": 26.4418,
+        "target3_pct": 161.8
+      },
+      "price_display": "$5.43",
+      "rvol_display": "521x",
+      "float_display": "0.5M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "MEHA",
+      "scan": "Low Float",
+      "company": "Functional Brands Inc",
+      "sector": "Consumer Defensive",
+      "price": 0.11,
+      "change": -17.91,
+      "rvol": 28.29,
+      "float_m": 19.91,
+      "short_pct": 2.4,
+      "days_cover": 99.0,
+      "spike_pct": 73.3,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143019798.html",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +73%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-20",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.177,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.1482,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.2035,
+        "entry3_note": "Makes new highs",
+        "stop": 0.123,
+        "stop_note": "Prior day low",
+        "target1": 0.2251,
+        "target1_pct": 27.2,
+        "target2": 0.2864,
+        "target2_pct": 61.8,
+        "target3": 0.4634,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.11",
+      "rvol_display": "28x",
+      "float_display": "19.9M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "PAPL",
+      "scan": "Low Float",
+      "company": "Pineapple Financial Inc",
+      "sector": "Financial",
+      "price": 0.89,
+      "change": 48.5,
+      "rvol": 323.03,
+      "float_m": 8.28,
+      "short_pct": 1.77,
+      "days_cover": 99.0,
+      "spike_pct": 107.2,
+      "news": "Pineapple Financial Announces Expanded $15 Million Share Repurchase Program",
+      "news_url": "https://elite.finviz.com/news/346878/pineapple-financial-announces-expanded-15-million-share-repurchase-program",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +107%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-22",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.9401,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.6437,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.0811,
+        "entry3_note": "Makes new highs",
+        "stop": 0.584,
+        "stop_note": "Prior day low",
+        "target1": 1.1958,
+        "target1_pct": 27.2,
+        "target2": 1.5211,
+        "target2_pct": 61.8,
+        "target3": 2.4612,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.89",
+      "rvol_display": "323x",
+      "float_display": "8.3M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "CTNT",
+      "scan": "Mid Float",
+      "company": "Cheetah Net Supply Chain Service Inc",
+      "sector": "Industrials",
+      "price": 0.04,
+      "change": -12.0,
+      "rvol": 11.73,
+      "float_m": 36.03,
+      "short_pct": 0.24,
+      "days_cover": 99.0,
+      "spike_pct": 118.1,
+      "news": "Cheetah Net Supply Chain Service Inc. enters Agreement to Acquire Super International Trading Limited",
+      "news_url": "https://elite.finviz.com/news/345199/cheetah-net-supply-chain-service-inc-enters-agreement-to-acquire-super-international-trading-limited",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +118%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-16",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.7,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.9612,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.955,
+        "entry3_note": "Makes new highs",
+        "stop": 0.033,
+        "stop_note": "Prior day low",
+        "target1": 2.1624,
+        "target1_pct": 27.2,
+        "target2": 2.7506,
+        "target2_pct": 61.8,
+        "target3": 4.4506,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.04",
+      "rvol_display": "12x",
+      "float_display": "36.0M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "REPL",
+      "scan": "Mid Float",
+      "company": "Replimune Group Inc",
+      "sector": "Healthcare",
+      "price": 2.67,
+      "change": 17.63,
+      "rvol": 5.61,
+      "float_m": 76.12,
+      "short_pct": 21.46,
+      "days_cover": 99.0,
+      "spike_pct": 24.2,
+      "news": "Replimune Plans Layoffs After FDA Rejects Cancer Therapy Again. The Stock Craters 64%.",
+      "news_url": "https://www.barrons.com/articles/replimune-plans-layoffs-fda-rejects-cancer-therapy-5fc36987?mod=bar_FV",
+      "score": 0.445,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 0.7,
+        "fda_binary": 1.0
+      },
+      "flags": [
+        [
+          "FDA EVENT",
+          "catalyst"
+        ],
+        [
+          "SHORT INT 21%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 6.65,
+        "entry1_note": "Break above 10d high",
+        "entry2": 4.8843,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 7.6475,
+        "entry3_note": "Makes new highs",
+        "stop": 1.875,
+        "stop_note": "Prior day low",
+        "target1": 8.4588,
+        "target1_pct": 27.2,
+        "target2": 10.7597,
+        "target2_pct": 61.8,
+        "target3": 17.4097,
+        "target3_pct": 161.8
+      },
+      "price_display": "$2.67",
+      "rvol_display": "6x",
+      "float_display": "76.1M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "SST",
+      "scan": "Low Float",
+      "company": "System1 Inc",
+      "sector": "Industrials",
+      "price": 3.45,
+      "change": 23.21,
+      "rvol": 17.52,
+      "float_m": 4.15,
+      "short_pct": 30.59,
+      "days_cover": 99.0,
+      "spike_pct": 246.7,
+      "news": "System1 shares jump 19% as marketing analytics group forecasts return to profitable growth",
+      "news_url": "https://finance.yahoo.com/m/8965779e-0e19-3c50-b21a-f71164b7acf1/system1-shares-jump-19%25-as.html",
+      "score": 0.375,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +247%",
+          "gap"
+        ],
+        [
+          "SHORT INT 31%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 4.03,
+        "entry1_note": "Break above 10d high",
+        "entry2": 2.8845,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 4.6345,
+        "entry3_note": "Makes new highs",
+        "stop": 2.55,
+        "stop_note": "Prior day low",
+        "target1": 5.1262,
+        "target1_pct": 27.2,
+        "target2": 6.5205,
+        "target2_pct": 61.8,
+        "target3": 10.5505,
+        "target3_pct": 161.8
+      },
+      "price_display": "$3.45",
+      "rvol_display": "18x",
+      "float_display": "4.2M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "CPIX",
+      "scan": "Low Float",
+      "company": "Cumberland Pharmaceuticals Inc",
+      "sector": "Healthcare",
+      "price": 4.23,
+      "change": 38.69,
+      "rvol": 861.21,
+      "float_m": 8.72,
+      "short_pct": 1.26,
+      "days_cover": 99.0,
+      "spike_pct": 0,
+      "news": "Cumberland Pharmaceuticals jumps on $100M Apotex transaction",
+      "news_url": "https://finance.yahoo.com/m/19bbf671-e9b4-3a4f-badd-0547410a12df/cumberland-pharmaceuticals.html",
+      "score": 0.35,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-23",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": null,
+      "price_display": "$4.23",
+      "rvol_display": "861x",
+      "float_display": "8.7M",
+      "rank": "watch"
+    }
+  ]
+}
