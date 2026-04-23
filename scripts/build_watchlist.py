@@ -31,13 +31,14 @@ FLAG_CFG = {
 
 CSS = """
 :root{--bg:#030c1a;--bg2:#071428;--bg3:#0a1f3d;--border:rgba(201,168,76,0.12);
---text:#eef2ff;--muted:#6b7a99;--gold:#c9a84c;--mono:'DM Mono',monospace;--sans:'Syne',sans-serif;}
+--text:#eef2ff;--muted:#6b7a99;--gold:#c9a84c;--mono:'DM Mono',monospace;--sans:'Inter',sans-serif;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.6;}
+html,body{overflow-x:hidden;}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.6;display:flex;flex-direction:column;min-height:100vh;}
 a{color:inherit;text-decoration:none;}
-.hdr{background:var(--bg2);border-bottom:2px solid var(--gold);padding:18px 20px 14px;
-  display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px;overflow:visible;}
-.hdr-l h1{font-family:var(--sans);font-size:20px;font-weight:700;letter-spacing:-0.3px;line-height:1.3;padding-bottom:2px;overflow:visible;}
+.hdr{background:var(--bg2);border-bottom:2px solid var(--gold);padding:16px 20px 22px;
+  display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.hdr-l h1{font-family:var(--sans);font-size:20px;font-weight:700;letter-spacing:0;line-height:1.5;padding-right:2px;}
 .hdr-l h1 em{color:var(--gold);font-style:normal;}
 .hdr-l .sub{font-size:11px;color:var(--muted);margin-top:3px;}
 .hdr-r{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
@@ -55,7 +56,7 @@ a{color:inherit;text-decoration:none;}
 .sum-l{font-size:10px;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:0.06em;}
 
 /* Layout */
-.layout{display:flex;flex:1;min-height:0;}
+.layout{display:flex;flex:1;min-height:calc(100vh - 130px);}
 /* Left nav */
 .sidenav{width:176px;flex-shrink:0;background:var(--bg2);
   border-right:1px solid rgba(255,255,255,0.06);padding:16px 0;
@@ -78,7 +79,7 @@ a{color:inherit;text-decoration:none;}
 /* Tab content */
 .tab-content{display:none;}
 .tab-content.active{display:block;}
-.body{padding:14px 20px 48px;flex:1;min-width:0;max-width:880px;}
+.body{padding:14px 20px 48px;flex:1;min-width:0;}
 .sec-lbl{font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;
   margin:22px 0 9px;display:flex;align-items:center;gap:8px;}
 .sec-lbl::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.05);}
@@ -430,7 +431,7 @@ def render_html(data):
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Swing Watchlist · {today_fmt}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Syne:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
 <style>{CSS}</style>
 </head>
 <body>
