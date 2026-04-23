@@ -1,7 +1,7 @@
 {
   "date": "2026-04-22",
   "session": "premarket",
-  "generated": "06:30 PM ET",
+  "generated": "10:30 PM ET",
   "tickers": [
     {
       "ticker": "SOWG",
@@ -10,7 +10,7 @@
       "sector": "Consumer Defensive",
       "price": 0.12,
       "change": -28.35,
-      "rvol": 5.04,
+      "rvol": 5.13,
       "float_m": 0.5,
       "short_pct": 81.57,
       "days_cover": 99.0,
@@ -72,7 +72,6 @@
       "price_display": "$0.12",
       "rvol_display": "5x",
       "float_display": "0.5M",
-      "manual": false,
       "rank": "hot"
     },
     {
@@ -82,7 +81,7 @@
       "sector": "Healthcare",
       "price": 0.22,
       "change": 13.01,
-      "rvol": 12.54,
+      "rvol": 12.62,
       "float_m": 4.68,
       "short_pct": 9.21,
       "days_cover": 99.0,
@@ -115,7 +114,7 @@
       "dates": {
         "earnings": null,
         "earnings_days": null,
-        "eightk_filed": "2026-04-15",
+        "eightk_filed": "2026-04-20",
         "ma_close": null,
         "fda": null,
         "clinical": null,
@@ -140,7 +139,6 @@
       "price_display": "$0.22",
       "rvol_display": "13x",
       "float_display": "4.7M",
-      "manual": false,
       "rank": "hot"
     },
     {
@@ -150,7 +148,7 @@
       "sector": "Consumer Defensive",
       "price": 0.41,
       "change": 24.77,
-      "rvol": 5.08,
+      "rvol": 5.14,
       "float_m": 9.31,
       "short_pct": 1.34,
       "days_cover": 99.0,
@@ -208,7 +206,6 @@
       "price_display": "$0.41",
       "rvol_display": "5x",
       "float_display": "9.3M",
-      "manual": false,
       "rank": "hot"
     },
     {
@@ -218,7 +215,7 @@
       "sector": "Consumer Cyclical",
       "price": 0.45,
       "change": 11.06,
-      "rvol": 100.99,
+      "rvol": 101.37,
       "float_m": 6.73,
       "short_pct": 18.92,
       "days_cover": 99.0,
@@ -276,7 +273,6 @@
       "price_display": "$0.45",
       "rvol_display": "101x",
       "float_display": "6.7M",
-      "manual": false,
       "rank": "warm"
     },
     {
@@ -286,7 +282,7 @@
       "sector": "Healthcare",
       "price": 3.8,
       "change": 6.74,
-      "rvol": 11.16,
+      "rvol": 11.26,
       "float_m": 56.41,
       "short_pct": 12.99,
       "days_cover": 99.0,
@@ -344,7 +340,6 @@
       "price_display": "$3.80",
       "rvol_display": "11x",
       "float_display": "56.4M",
-      "manual": false,
       "rank": "warm"
     },
     {
@@ -412,7 +407,6 @@
       "price_display": "$10.23",
       "rvol_display": "8x",
       "float_display": "35.0M",
-      "manual": false,
       "rank": "warm"
     },
     {
@@ -422,7 +416,7 @@
       "sector": "Industrials",
       "price": 1.0,
       "change": 4.6,
-      "rvol": 117.57,
+      "rvol": 117.77,
       "float_m": 2.2,
       "short_pct": 2.91,
       "days_cover": 99.0,
@@ -451,7 +445,7 @@
       "dates": {
         "earnings": null,
         "earnings_days": null,
-        "eightk_filed": "2026-04-15",
+        "eightk_filed": "2026-04-17",
         "ma_close": null,
         "fda": null,
         "clinical": null,
@@ -476,7 +470,6 @@
       "price_display": "$1.00",
       "rvol_display": "118x",
       "float_display": "2.2M",
-      "manual": false,
       "rank": "warm"
     },
     {
@@ -486,7 +479,7 @@
       "sector": "Financial",
       "price": 0.6,
       "change": 1.76,
-      "rvol": 34.89,
+      "rvol": 39.87,
       "float_m": 8.28,
       "short_pct": 1.77,
       "days_cover": 99.0,
@@ -538,73 +531,8 @@
         "target3_pct": 161.8
       },
       "price_display": "$0.60",
-      "rvol_display": "35x",
+      "rvol_display": "40x",
       "float_display": "8.3M",
-      "manual": false,
-      "rank": "warm"
-    },
-    {
-      "ticker": "YCBD",
-      "scan": "Low Float",
-      "company": "cbdMD Inc",
-      "sector": "Healthcare",
-      "price": 0.93,
-      "change": 10.15,
-      "rvol": 23.91,
-      "float_m": 9.38,
-      "short_pct": 6.03,
-      "days_cover": 99.0,
-      "spike_pct": 136.1,
-      "news": "cbdMD Launches Clinical Healthcare Channel to Support First Federal Pathway for Hemp-Derived CBD in Medicare",
-      "news_url": "https://elite.finviz.com/news/341686/cbdmd-launches-clinical-healthcare-channel-to-support-first-federal-pathway-for-hemp-derived-cbd-in-medicare",
-      "score": 0.55,
-      "components": {
-        "fresh_8k": 1.0,
-        "merger_pivot": 0.0,
-        "previous_spike": 1.0,
-        "short_squeeze": 0.0,
-        "high_rel_vol": 1.0,
-        "fda_binary": 0.0
-      },
-      "flags": [
-        [
-          "FRESH 8-K",
-          "catalyst"
-        ],
-        [
-          "PREV SPIKE +136%",
-          "gap"
-        ]
-      ],
-      "dates": {
-        "earnings": null,
-        "earnings_days": null,
-        "eightk_filed": "2026-04-15",
-        "ma_close": null,
-        "fda": null,
-        "clinical": null,
-        "investor_day": null
-      },
-      "entries": {
-        "entry1": 1.19,
-        "entry1_note": "Break above 10d high",
-        "entry2": 0.7491,
-        "entry2_note": "Pulls to 20d average",
-        "entry3": 1.3685,
-        "entry3_note": "Makes new highs",
-        "stop": 0.8,
-        "stop_note": "Prior day low",
-        "target1": 1.5137,
-        "target1_pct": 27.2,
-        "target2": 1.9254,
-        "target2_pct": 61.8,
-        "target3": 3.1154,
-        "target3_pct": 161.8
-      },
-      "price_display": "$0.93",
-      "rvol_display": "24x",
-      "float_display": "9.4M",
-      "manual": false,
       "rank": "warm"
     },
     {
@@ -614,7 +542,7 @@
       "sector": "Industrials",
       "price": 0.04,
       "change": -10.11,
-      "rvol": 10.18,
+      "rvol": 10.38,
       "float_m": 36.03,
       "short_pct": 0.24,
       "days_cover": 99.0,
@@ -668,7 +596,6 @@
       "price_display": "$0.04",
       "rvol_display": "10x",
       "float_display": "36.0M",
-      "manual": false,
       "rank": "warm"
     },
     {
@@ -732,7 +659,6 @@
       "price_display": "$14.61",
       "rvol_display": "10x",
       "float_display": "32.5M",
-      "manual": false,
       "rank": "warm"
     },
     {
@@ -742,7 +668,7 @@
       "sector": "Communication Services",
       "price": 0.61,
       "change": 33.86,
-      "rvol": 6.27,
+      "rvol": 6.3,
       "float_m": 82.06,
       "short_pct": 3.23,
       "days_cover": 99.0,
@@ -796,7 +722,6 @@
       "price_display": "$0.61",
       "rvol_display": "6x",
       "float_display": "82.1M",
-      "manual": false,
       "rank": "warm"
     },
     {
@@ -806,7 +731,7 @@
       "sector": "Energy",
       "price": 0.45,
       "change": -11.35,
-      "rvol": 11.03,
+      "rvol": 11.09,
       "float_m": 5.15,
       "short_pct": 5.27,
       "days_cover": 99.0,
@@ -860,7 +785,6 @@
       "price_display": "$0.45",
       "rvol_display": "11x",
       "float_display": "5.2M",
-      "manual": false,
       "rank": "warm"
     },
     {
@@ -870,7 +794,7 @@
       "sector": "Industrials",
       "price": 9.74,
       "change": 43.45,
-      "rvol": 18.81,
+      "rvol": 18.86,
       "float_m": 0.63,
       "short_pct": 0.55,
       "days_cover": 99.0,
@@ -924,7 +848,6 @@
       "price_display": "$9.74",
       "rvol_display": "19x",
       "float_display": "0.6M",
-      "manual": false,
       "rank": "warm"
     },
     {
@@ -934,20 +857,20 @@
       "sector": "Technology",
       "price": 0.27,
       "change": 38.27,
-      "rvol": 9.76,
+      "rvol": 10.12,
       "float_m": 17.79,
       "short_pct": 0.46,
       "days_cover": 99.0,
       "spike_pct": 82.8,
       "news": "Lianhe Sowell International Group Ltd. Announces $1.8 Million Contract to Develop AI Steam Car-Wash Robot Promising Sign",
       "news_url": "https://elite.finviz.com/news/340786/lianhe-sowell-international-group-ltd-announces-18-million-contract-to-develop-ai-steam-car-wash-robot-promising-significant-water-savings",
-      "score": 0.47,
+      "score": 0.5,
       "components": {
         "fresh_8k": 0.0,
         "merger_pivot": 1.0,
         "previous_spike": 1.0,
         "short_squeeze": 0.0,
-        "high_rel_vol": 0.7,
+        "high_rel_vol": 1.0,
         "fda_binary": 0.0
       },
       "flags": [
@@ -988,7 +911,69 @@
       "price_display": "$0.27",
       "rvol_display": "10x",
       "float_display": "17.8M",
-      "manual": false,
+      "rank": "warm"
+    },
+    {
+      "ticker": "MEHA",
+      "scan": "Low Float",
+      "company": "Functional Brands Inc",
+      "sector": "Consumer Defensive",
+      "price": 0.13,
+      "change": 3.28,
+      "rvol": 3.22,
+      "float_m": 19.91,
+      "short_pct": 2.4,
+      "days_cover": 99.0,
+      "spike_pct": 73.3,
+      "news": "Functional Brands Inc. Enters Strategic Partnership with partnrup.ai to Accelerate Growth of Tru2u.health",
+      "news_url": "https://www.newsfilecorp.com/release/293717/Functional-Brands-Inc.-Enters-Strategic-Partnership-with-partnrup.ai-to-Accelerate-Growth-of-Tru2u.health",
+      "score": 0.49,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.4,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +73%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-20",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.189,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.1513,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.2173,
+        "entry3_note": "Makes new highs",
+        "stop": 0.122,
+        "stop_note": "Prior day low",
+        "target1": 0.2404,
+        "target1_pct": 27.2,
+        "target2": 0.3058,
+        "target2_pct": 61.8,
+        "target3": 0.4948,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.13",
+      "rvol_display": "3x",
+      "float_display": "19.9M",
       "rank": "watch"
     },
     {
@@ -998,7 +983,7 @@
       "sector": "Basic Materials",
       "price": 0.9,
       "change": -35.25,
-      "rvol": 6.62,
+      "rvol": 6.65,
       "float_m": 9.6,
       "short_pct": 0.35,
       "days_cover": 99.0,
@@ -1052,7 +1037,6 @@
       "price_display": "$0.90",
       "rvol_display": "7x",
       "float_display": "9.6M",
-      "manual": false,
       "rank": "watch"
     },
     {
@@ -1062,7 +1046,7 @@
       "sector": "Industrials",
       "price": 1.2,
       "change": 9.09,
-      "rvol": 14.95,
+      "rvol": 14.98,
       "float_m": 55.25,
       "short_pct": 19.15,
       "days_cover": 99.0,
@@ -1116,7 +1100,6 @@
       "price_display": "$1.20",
       "rvol_display": "15x",
       "float_display": "55.2M",
-      "manual": false,
       "rank": "watch"
     },
     {
@@ -1126,7 +1109,7 @@
       "sector": "Healthcare",
       "price": 2.27,
       "change": 22.04,
-      "rvol": 4.89,
+      "rvol": 4.9,
       "float_m": 76.57,
       "short_pct": 21.33,
       "days_cover": 99.0,
@@ -1180,7 +1163,6 @@
       "price_display": "$2.27",
       "rvol_display": "5x",
       "float_display": "76.6M",
-      "manual": false,
       "rank": "watch"
     },
     {
@@ -1190,7 +1172,7 @@
       "sector": "Healthcare",
       "price": 0.6,
       "change": -0.5,
-      "rvol": 10.18,
+      "rvol": 10.24,
       "float_m": 33.76,
       "short_pct": 4.18,
       "days_cover": 99.0,
@@ -1240,7 +1222,6 @@
       "price_display": "$0.60",
       "rvol_display": "10x",
       "float_display": "33.8M",
-      "manual": false,
       "rank": "watch"
     },
     {
@@ -1250,7 +1231,7 @@
       "sector": "Technology",
       "price": 1.01,
       "change": -10.18,
-      "rvol": 6.12,
+      "rvol": 6.16,
       "float_m": 84.0,
       "short_pct": 12.41,
       "days_cover": 99.0,
@@ -1304,7 +1285,6 @@
       "price_display": "$1.01",
       "rvol_display": "6x",
       "float_display": "84.0M",
-      "manual": false,
       "rank": "watch"
     },
     {
@@ -1314,7 +1294,7 @@
       "sector": "Communication Services",
       "price": 9.24,
       "change": 26.92,
-      "rvol": 32.52,
+      "rvol": 32.6,
       "float_m": 65.81,
       "short_pct": 11.32,
       "days_cover": 99.0,
@@ -1368,7 +1348,6 @@
       "price_display": "$9.24",
       "rvol_display": "33x",
       "float_display": "65.8M",
-      "manual": false,
       "rank": "watch"
     },
     {
@@ -1378,7 +1357,7 @@
       "sector": "Technology",
       "price": 0.39,
       "change": 11.52,
-      "rvol": 17.25,
+      "rvol": 17.34,
       "float_m": 91.16,
       "short_pct": 5.24,
       "days_cover": 99.0,
@@ -1428,510 +1407,6 @@
       "price_display": "$0.39",
       "rvol_display": "17x",
       "float_display": "91.2M",
-      "manual": false,
-      "rank": "watch"
-    },
-    {
-      "ticker": "BTBD",
-      "scan": "Manual",
-      "company": "BTBD",
-      "sector": "",
-      "price": 0.0,
-      "change": 0.0,
-      "rvol": 0.0,
-      "float_m": 0.0,
-      "short_pct": 0.0,
-      "days_cover": 99.0,
-      "spike_pct": 31.7,
-      "news": "",
-      "news_url": "",
-      "score": 0.25,
-      "components": {
-        "fresh_8k": 1.0,
-        "merger_pivot": 0.0,
-        "previous_spike": 0.0,
-        "short_squeeze": 0.0,
-        "high_rel_vol": 0.0,
-        "fda_binary": 0.0
-      },
-      "flags": [
-        [
-          "FRESH 8-K",
-          "catalyst"
-        ]
-      ],
-      "dates": {
-        "earnings": null,
-        "earnings_days": null,
-        "eightk_filed": "2026-04-16",
-        "ma_close": null,
-        "fda": null,
-        "clinical": null,
-        "investor_day": null
-      },
-      "entries": null,
-      "price_display": "\u2014",
-      "rvol_display": "\u2014",
-      "float_display": "\u2014",
-      "manual": true,
-      "rank": "watch"
-    },
-    {
-      "ticker": "FLYX",
-      "scan": "Manual",
-      "company": "FLYX",
-      "sector": "",
-      "price": 0.0,
-      "change": 0.0,
-      "rvol": 0.0,
-      "float_m": 0.0,
-      "short_pct": 0.0,
-      "days_cover": 99.0,
-      "spike_pct": 182.8,
-      "news": "",
-      "news_url": "",
-      "score": 0.2,
-      "components": {
-        "fresh_8k": 0.0,
-        "merger_pivot": 0.0,
-        "previous_spike": 1.0,
-        "short_squeeze": 0.0,
-        "high_rel_vol": 0.0,
-        "fda_binary": 0.0
-      },
-      "flags": [
-        [
-          "PREV SPIKE +183%",
-          "gap"
-        ]
-      ],
-      "dates": {
-        "earnings": null,
-        "earnings_days": null,
-        "eightk_filed": null,
-        "ma_close": null,
-        "fda": null,
-        "clinical": null,
-        "investor_day": null
-      },
-      "entries": null,
-      "price_display": "\u2014",
-      "rvol_display": "\u2014",
-      "float_display": "\u2014",
-      "manual": true,
-      "rank": "watch"
-    },
-    {
-      "ticker": "AZTR",
-      "scan": "Manual",
-      "company": "AZTR",
-      "sector": "",
-      "price": 0.0,
-      "change": 0.0,
-      "rvol": 0.0,
-      "float_m": 0.0,
-      "short_pct": 0.0,
-      "days_cover": 99.0,
-      "spike_pct": 115.9,
-      "news": "",
-      "news_url": "",
-      "score": 0.2,
-      "components": {
-        "fresh_8k": 0.0,
-        "merger_pivot": 0.0,
-        "previous_spike": 1.0,
-        "short_squeeze": 0.0,
-        "high_rel_vol": 0.0,
-        "fda_binary": 0.0
-      },
-      "flags": [
-        [
-          "PREV SPIKE +116%",
-          "gap"
-        ]
-      ],
-      "dates": {
-        "earnings": null,
-        "earnings_days": null,
-        "eightk_filed": null,
-        "ma_close": null,
-        "fda": null,
-        "clinical": null,
-        "investor_day": null
-      },
-      "entries": null,
-      "price_display": "\u2014",
-      "rvol_display": "\u2014",
-      "float_display": "\u2014",
-      "manual": true,
-      "rank": "watch"
-    },
-    {
-      "ticker": "BFRG",
-      "scan": "Manual",
-      "company": "BFRG",
-      "sector": "",
-      "price": 0.0,
-      "change": 0.0,
-      "rvol": 0.0,
-      "float_m": 0.0,
-      "short_pct": 0.0,
-      "days_cover": 99.0,
-      "spike_pct": 205.1,
-      "news": "",
-      "news_url": "",
-      "score": 0.45,
-      "components": {
-        "fresh_8k": 1.0,
-        "merger_pivot": 0.0,
-        "previous_spike": 1.0,
-        "short_squeeze": 0.0,
-        "high_rel_vol": 0.0,
-        "fda_binary": 0.0
-      },
-      "flags": [
-        [
-          "FRESH 8-K",
-          "catalyst"
-        ],
-        [
-          "PREV SPIKE +205%",
-          "gap"
-        ]
-      ],
-      "dates": {
-        "earnings": null,
-        "earnings_days": null,
-        "eightk_filed": "2026-04-22",
-        "ma_close": null,
-        "fda": null,
-        "clinical": null,
-        "investor_day": null
-      },
-      "entries": null,
-      "price_display": "\u2014",
-      "rvol_display": "\u2014",
-      "float_display": "\u2014",
-      "manual": true,
-      "rank": "watch"
-    },
-    {
-      "ticker": "UGRO",
-      "scan": "Manual",
-      "company": "UGRO",
-      "sector": "",
-      "price": 0.0,
-      "change": 0.0,
-      "rvol": 0.0,
-      "float_m": 0.0,
-      "short_pct": 0.0,
-      "days_cover": 99.0,
-      "spike_pct": 417.1,
-      "news": "",
-      "news_url": "",
-      "score": 0.2,
-      "components": {
-        "fresh_8k": 0.0,
-        "merger_pivot": 0.0,
-        "previous_spike": 1.0,
-        "short_squeeze": 0.0,
-        "high_rel_vol": 0.0,
-        "fda_binary": 0.0
-      },
-      "flags": [
-        [
-          "PREV SPIKE +417%",
-          "gap"
-        ]
-      ],
-      "dates": {
-        "earnings": null,
-        "earnings_days": null,
-        "eightk_filed": null,
-        "ma_close": null,
-        "fda": null,
-        "clinical": null,
-        "investor_day": null
-      },
-      "entries": null,
-      "price_display": "\u2014",
-      "rvol_display": "\u2014",
-      "float_display": "\u2014",
-      "manual": true,
-      "rank": "watch"
-    },
-    {
-      "ticker": "DEFT",
-      "scan": "Manual",
-      "company": "DEFT",
-      "sector": "",
-      "price": 0.0,
-      "change": 0.0,
-      "rvol": 0.0,
-      "float_m": 0.0,
-      "short_pct": 0.0,
-      "days_cover": 99.0,
-      "spike_pct": 44.3,
-      "news": "",
-      "news_url": "",
-      "score": 0.2,
-      "components": {
-        "fresh_8k": 0.0,
-        "merger_pivot": 0.0,
-        "previous_spike": 1.0,
-        "short_squeeze": 0.0,
-        "high_rel_vol": 0.0,
-        "fda_binary": 0.0
-      },
-      "flags": [
-        [
-          "PREV SPIKE +44%",
-          "gap"
-        ]
-      ],
-      "dates": {
-        "earnings": null,
-        "earnings_days": null,
-        "eightk_filed": null,
-        "ma_close": null,
-        "fda": null,
-        "clinical": null,
-        "investor_day": null
-      },
-      "entries": null,
-      "price_display": "\u2014",
-      "rvol_display": "\u2014",
-      "float_display": "\u2014",
-      "manual": true,
-      "rank": "watch"
-    },
-    {
-      "ticker": "BYAH",
-      "scan": "Manual",
-      "company": "BYAH",
-      "sector": "",
-      "price": 0.0,
-      "change": 0.0,
-      "rvol": 0.0,
-      "float_m": 0.0,
-      "short_pct": 0.0,
-      "days_cover": 99.0,
-      "spike_pct": 74.7,
-      "news": "",
-      "news_url": "",
-      "score": 0.2,
-      "components": {
-        "fresh_8k": 0.0,
-        "merger_pivot": 0.0,
-        "previous_spike": 1.0,
-        "short_squeeze": 0.0,
-        "high_rel_vol": 0.0,
-        "fda_binary": 0.0
-      },
-      "flags": [
-        [
-          "PREV SPIKE +75%",
-          "gap"
-        ]
-      ],
-      "dates": {
-        "earnings": null,
-        "earnings_days": null,
-        "eightk_filed": null,
-        "ma_close": null,
-        "fda": null,
-        "clinical": null,
-        "investor_day": null
-      },
-      "entries": null,
-      "price_display": "\u2014",
-      "rvol_display": "\u2014",
-      "float_display": "\u2014",
-      "manual": true,
-      "rank": "watch"
-    },
-    {
-      "ticker": "OXBR",
-      "scan": "Manual",
-      "company": "OXBR",
-      "sector": "",
-      "price": 0.0,
-      "change": 0.0,
-      "rvol": 0.0,
-      "float_m": 0.0,
-      "short_pct": 0.0,
-      "days_cover": 99.0,
-      "spike_pct": 62.6,
-      "news": "",
-      "news_url": "",
-      "score": 0.2,
-      "components": {
-        "fresh_8k": 0.0,
-        "merger_pivot": 0.0,
-        "previous_spike": 1.0,
-        "short_squeeze": 0.0,
-        "high_rel_vol": 0.0,
-        "fda_binary": 0.0
-      },
-      "flags": [
-        [
-          "PREV SPIKE +63%",
-          "gap"
-        ]
-      ],
-      "dates": {
-        "earnings": null,
-        "earnings_days": null,
-        "eightk_filed": null,
-        "ma_close": null,
-        "fda": null,
-        "clinical": null,
-        "investor_day": null
-      },
-      "entries": null,
-      "price_display": "\u2014",
-      "rvol_display": "\u2014",
-      "float_display": "\u2014",
-      "manual": true,
-      "rank": "watch"
-    },
-    {
-      "ticker": "SST",
-      "scan": "Manual",
-      "company": "SST",
-      "sector": "",
-      "price": 0.0,
-      "change": 0.0,
-      "rvol": 0.0,
-      "float_m": 0.0,
-      "short_pct": 0.0,
-      "days_cover": 99.0,
-      "spike_pct": 246.7,
-      "news": "",
-      "news_url": "",
-      "score": 0.2,
-      "components": {
-        "fresh_8k": 0.0,
-        "merger_pivot": 0.0,
-        "previous_spike": 1.0,
-        "short_squeeze": 0.0,
-        "high_rel_vol": 0.0,
-        "fda_binary": 0.0
-      },
-      "flags": [
-        [
-          "PREV SPIKE +247%",
-          "gap"
-        ]
-      ],
-      "dates": {
-        "earnings": null,
-        "earnings_days": null,
-        "eightk_filed": null,
-        "ma_close": null,
-        "fda": null,
-        "clinical": null,
-        "investor_day": null
-      },
-      "entries": null,
-      "price_display": "\u2014",
-      "rvol_display": "\u2014",
-      "float_display": "\u2014",
-      "manual": true,
-      "rank": "watch"
-    },
-    {
-      "ticker": "SER",
-      "scan": "Manual",
-      "company": "SER",
-      "sector": "",
-      "price": 0.0,
-      "change": 0.0,
-      "rvol": 0.0,
-      "float_m": 0.0,
-      "short_pct": 0.0,
-      "days_cover": 99.0,
-      "spike_pct": 121.1,
-      "news": "",
-      "news_url": "",
-      "score": 0.45,
-      "components": {
-        "fresh_8k": 1.0,
-        "merger_pivot": 0.0,
-        "previous_spike": 1.0,
-        "short_squeeze": 0.0,
-        "high_rel_vol": 0.0,
-        "fda_binary": 0.0
-      },
-      "flags": [
-        [
-          "FRESH 8-K",
-          "catalyst"
-        ],
-        [
-          "PREV SPIKE +121%",
-          "gap"
-        ]
-      ],
-      "dates": {
-        "earnings": null,
-        "earnings_days": null,
-        "eightk_filed": "2026-04-21",
-        "ma_close": null,
-        "fda": null,
-        "clinical": null,
-        "investor_day": null
-      },
-      "entries": null,
-      "price_display": "\u2014",
-      "rvol_display": "\u2014",
-      "float_display": "\u2014",
-      "manual": true,
-      "rank": "watch"
-    },
-    {
-      "ticker": "EEIQ",
-      "scan": "Manual",
-      "company": "EEIQ",
-      "sector": "",
-      "price": 0.0,
-      "change": 0.0,
-      "rvol": 0.0,
-      "float_m": 0.0,
-      "short_pct": 0.0,
-      "days_cover": 99.0,
-      "spike_pct": 365.2,
-      "news": "",
-      "news_url": "",
-      "score": 0.2,
-      "components": {
-        "fresh_8k": 0.0,
-        "merger_pivot": 0.0,
-        "previous_spike": 1.0,
-        "short_squeeze": 0.0,
-        "high_rel_vol": 0.0,
-        "fda_binary": 0.0
-      },
-      "flags": [
-        [
-          "PREV SPIKE +365%",
-          "gap"
-        ]
-      ],
-      "dates": {
-        "earnings": null,
-        "earnings_days": null,
-        "eightk_filed": null,
-        "ma_close": null,
-        "fda": null,
-        "clinical": null,
-        "investor_day": null
-      },
-      "entries": null,
-      "price_display": "\u2014",
-      "rvol_display": "\u2014",
-      "float_display": "\u2014",
-      "manual": true,
       "rank": "watch"
     }
   ]
