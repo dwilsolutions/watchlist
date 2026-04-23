@@ -55,31 +55,19 @@ a{color:inherit;text-decoration:none;}
 .sum-n{font-family:var(--sans);font-size:26px;font-weight:700;}
 .sum-l{font-size:10px;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:0.06em;}
 
-/* Layout */
-.layout{display:flex;flex:1;min-height:calc(100vh - 130px);}
-/* Left nav */
-.sidenav{width:176px;flex-shrink:0;background:var(--bg2);
-  border-right:1px solid rgba(255,255,255,0.06);padding:16px 0;
-  position:sticky;top:0;align-self:flex-start;
-  height:calc(100vh - 130px);display:flex;flex-direction:column;}
-.sidenav-label{font-size:9px;color:#2a3a52;letter-spacing:0.14em;
-  text-transform:uppercase;padding:10px 16px 4px;}
-.nav-item{display:flex;align-items:center;gap:10px;padding:10px 16px;
-  cursor:pointer;border-left:2px solid transparent;color:var(--muted);
-  transition:all .15s;user-select:none;text-decoration:none;}
-.nav-item:hover{color:var(--text);background:rgba(255,255,255,0.03);}
-.nav-item.active{color:var(--gold);border-left-color:var(--gold);
-  background:rgba(201,168,76,0.06);}
-.nav-icon{font-size:13px;width:18px;text-align:center;flex-shrink:0;}
-.nav-label{font-size:12px;flex:1;}
-.nav-cnt{font-size:10px;padding:1px 6px;border-radius:20px;
-  background:rgba(255,255,255,0.06);color:var(--muted);}
-.nav-item.active .nav-cnt{background:rgba(201,168,76,0.15);color:var(--gold);}
-.nav-avoid{margin-top:auto;}
-/* Tab content */
-.tab-content{display:none;}
-.tab-content.active{display:block;}
-.body{padding:14px 20px 48px;flex:1;min-width:0;}
+/* Collapsible */
+.coll{border:1px solid rgba(201,168,76,0.15);border-radius:10px;overflow:hidden;margin-bottom:10px;}
+.coll-hdr{display:flex;align-items:center;gap:10px;padding:13px 16px;cursor:pointer;
+  background:var(--bg2);user-select:none;transition:background .15s;}
+.coll-hdr:hover{background:#0a1830;}
+.coll-title{font-family:var(--sans);font-size:13px;font-weight:700;flex:1;letter-spacing:0;}
+.coll-meta{font-size:11px;color:var(--muted);}
+.coll-cnt{font-size:10px;padding:1px 7px;border-radius:20px;background:rgba(255,255,255,0.06);margin-left:6px;}
+.coll-chev{font-size:11px;color:var(--muted);transition:transform .2s;flex-shrink:0;}
+.coll-hdr.open .coll-chev{transform:rotate(180deg);}
+.coll-body{display:none;padding:12px 16px;border-top:1px solid rgba(255,255,255,0.05);}
+.coll-body.open{display:block;}
+.body{padding:14px 24px 48px;}
 .sec-lbl{font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;
   margin:22px 0 9px;display:flex;align-items:center;gap:8px;}
 .sec-lbl::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.05);}
@@ -421,9 +409,22 @@ def render_html(data):
 <div class="cards">{cards if cards else f'<p style="color:var(--muted);font-size:12px;">{empty_msg}</p>'}</div>"""
 
     def ch(items):
-        return "".join(card_html(t) for t in items) or '<p style="color:var(--muted);font-size:12px;padding:16px 0;">No setups in this category today.</p>'
+        return "".join(card_html(t) for t in items) or '<p style="color:var(--muted);font-size:12px;padding:8px 0;">No setups in this category today.</p>'
 
-    all_s = hot + warm + watch + avoid
+    def coll_section(icon, title, color, items, open_by_default=False):
+        cnt    = len(items)
+        open_c = " open" if open_by_default else ""
+        cards  = ch(items)
+        return f'''<div class="coll">
+  <div class="coll-hdr{open_c}" onclick="toggleColl(this)">
+    <span class="coll-title" style="color:{color}">{icon} {title}</span>
+    <div class="coll-meta">
+      <span class="coll-cnt" style="background:rgba(255,255,255,0.06)">{cnt} ticker{"s" if cnt!=1 else ""}</span>
+    </div>
+    <span class="coll-chev">▼</span>
+  </div>
+  <div class="coll-body{open_c}"><div class="cards">{cards}</div></div>
+</div>'''
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -457,61 +458,18 @@ def render_html(data):
   <div class="sum-cell"><div class="sum-n" style="color:#7ab4f5">{len(watch)}</div><div class="sum-l">Watch</div></div>
   <div class="sum-cell"><div class="sum-n">{len(tickers)}</div><div class="sum-l">Total</div></div>
 </div>
-<div class="layout">
-  <div class="sidenav">
-    <div class="sidenav-label">Filter</div>
-    <div class="nav-item active" data-tab="all">
-      <span class="nav-icon">◈</span>
-      <span class="nav-label">All</span>
-      <span class="nav-cnt">{len(all_s)}</span>
-    </div>
-    <div class="nav-item" data-tab="hot">
-      <span class="nav-icon">🔥</span>
-      <span class="nav-label">Hot</span>
-      <span class="nav-cnt">{len(hot)}</span>
-    </div>
-    <div class="nav-item" data-tab="warm">
-      <span class="nav-icon">⚡</span>
-      <span class="nav-label">Warm</span>
-      <span class="nav-cnt">{len(warm)}</span>
-    </div>
-    <div class="nav-item" data-tab="watch">
-      <span class="nav-icon">👁</span>
-      <span class="nav-label">Watch</span>
-      <span class="nav-cnt">{len(watch)}</span>
-    </div>
-    {"<div class='nav-item nav-avoid' data-tab='avoid'><span class='nav-icon'>✗</span><span class='nav-label'>Avoid</span><span class='nav-cnt'>" + str(len(avoid)) + "</span></div>" if avoid else ""}
-  </div>
-  <div class="tab-content active" id="tab-all">
-    <div class="body">
-      <div class="sec-lbl">🔥 Hot — score ≥70%</div><div class="cards">{ch(hot)}</div>
-      <div class="sec-lbl">⚡ Warm — score ≥50%</div><div class="cards">{ch(warm)}</div>
-      {"<div class='sec-lbl'>👁 Watch — score ≥35%</div><div class='cards'>" + ch(watch) + "</div>" if watch else ""}
-      {"<div class='sec-lbl'>✗ Avoid</div><div class='cards'>" + ch(avoid) + "</div>" if avoid else ""}
-    </div>
-  </div>
-  <div class="tab-content" id="tab-hot">
-    <div class="body"><div class="cards">{ch(hot)}</div></div>
-  </div>
-  <div class="tab-content" id="tab-warm">
-    <div class="body"><div class="cards">{ch(warm)}</div></div>
-  </div>
-  <div class="tab-content" id="tab-watch">
-    <div class="body"><div class="cards">{ch(watch)}</div></div>
-  </div>
-  {"<div class='tab-content' id='tab-avoid'><div class='body'><div class='cards'>" + ch(avoid) + "</div></div></div>" if avoid else ""}
+<div class="body">
+  {coll_section("🔥", "Hot — score ≥70%", "#c9a84c", hot, open_by_default=True)}
+  {coll_section("⚡", "Warm — score ≥50%", "#fb923c", warm, open_by_default=True)}
+  {coll_section("👁", "Watch — score ≥35%", "#7ab4f5", watch, open_by_default=False) if watch else ""}
+  {coll_section("✗", "Avoid", "#f87171", avoid, open_by_default=False) if avoid else ""}
 </div>
 <div class="footer">Micro-Cap Momentum Swing Scanner · Not financial advice · Always confirm on live chart before entry</div>
 <script>
-document.querySelectorAll('.nav-item').forEach(item => {{
-  item.addEventListener('click', () => {{
-    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    item.classList.add('active');
-    document.getElementById('tab-' + item.dataset.tab).classList.add('active');
-    window.scrollTo(0, 0);
-  }});
-}});
+function toggleColl(hdr) {{
+  hdr.classList.toggle('open');
+  hdr.nextElementSibling.classList.toggle('open');
+}}
 </script>
 </body>
 </html>"""
