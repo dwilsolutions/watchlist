@@ -1,0 +1,87 @@
+{
+  "session": "earlypremarket",
+  "label": "Early Pre-Market",
+  "date": "2026-04-23",
+  "generated": "08:05 PM ET",
+  "tickers": [
+    {
+      "ticker": "TDIC",
+      "company": "Dreamland Ltd",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 80,
+      "tier": "watch",
+      "entry": 1.2,
+      "entry_label": "Break above $1.20",
+      "range_str": " \u2014 target $1.34",
+      "prev_close": 0,
+      "prev_high": 1.2,
+      "fib_levels": [
+        [
+          "Today's High",
+          1.2
+        ],
+        [
+          "First target",
+          1.34
+        ],
+        [
+          "Second target",
+          1.53
+        ],
+        [
+          "Extended",
+          1.73
+        ]
+      ],
+      "price_at_scan": 1.2,
+      "gap": 1.58,
+      "rvol": 52.52,
+      "flags": [
+        "RUNNER YESTERDAY",
+        "CONTINUATION",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018689.html"
+    },
+    {
+      "ticker": "BANL",
+      "company": "CBL International Ltd",
+      "sector": "Energy",
+      "scan": "Low Float",
+      "score": 80,
+      "tier": "watch",
+      "entry": 0.53,
+      "entry_label": "Break above $0.53",
+      "range_str": " \u2014 target $0.56",
+      "prev_close": 0,
+      "prev_high": 0.53,
+      "fib_levels": [
+        [
+          "Today's High",
+          0.53
+        ],
+        [
+          "First target",
+          0.56
+        ],
+        [
+          "Second target",
+          0.59
+        ],
+        [
+          "Extended",
+          0.63
+        ]
+      ],
+      "price_at_scan": 0.53,
+      "gap": 1.52,
+      "rvol": 7.87,
+      "flags": [
+        "BIG RUNNER YESTERDAY"
+      ],
+      "news_url": "https://elite.finviz.com/news/264029/cbl-international-facilitates-xiaomo-ports-first-lng-bunkering-for-byd-in-shenzhen"
+    }
+  ]
+}
