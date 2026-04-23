@@ -127,7 +127,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:14
 .rank-desc strong{color:var(--text);font-weight:500;}
 
 /* Flag grid */
-.flag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin:20px 0;}
+.flag-group-label{font-size:11px;font-weight:600;color:var(--text);margin:8px 0 8px;padding:6px 0;border-bottom:1px solid var(--border);}
+.flag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin:8px 0 0;}
 .flag-item{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
 .flag-name{font-size:11px;font-weight:600;margin-bottom:5px;letter-spacing:0.04em;}
 .flag-name.cat{color:var(--amber);}
@@ -379,6 +380,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:14
       <h2>What every flag means</h2>
       <p>Coloured pills appear below the ticker name on each card. Here's exactly what each one signals.</p>
 
+      <div class="flag-group-label">✅ Bullish signals — these are what you want to see</div>
       <div class="flag-grid">
         <div class="flag-item"><div class="flag-name cont">CONTINUATION</div><div class="flag-desc">Stock trended above its 20-day SMA and is gapping up today — multi-day momentum carry already in motion.</div></div>
         <div class="flag-item"><div class="flag-name gap">GAP QUALITY</div><div class="flag-desc">Today's gap is significantly larger than the stock's normal daily range — an unusual, outsized move.</div></div>
@@ -387,11 +389,17 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:14
         <div class="flag-item"><div class="flag-name cat">FDA EVENT</div><div class="flag-desc">FDA approval decision, PDUFA date, or trial result. Binary catalyst — can move violently in either direction.</div></div>
         <div class="flag-item"><div class="flag-name cat">NASDAQ NOTICE</div><div class="flag-desc">Minimum bid price deficiency notice. May need a reverse split — attracts momentum traders anticipating the move.</div></div>
         <div class="flag-item"><div class="flag-name sector">SECTOR MOMENTUM</div><div class="flag-desc">Two or more stocks from the same sector are moving together — a sector rotation theme is in play.</div></div>
+      </div>
+      <div class="flag-group-label" style="margin-top:16px;">⚠ Caution signals — reduce size or avoid</div>
+      <div class="flag-grid">
         <div class="flag-item"><div class="flag-name danger">PRIOR DAY RUNNER</div><div class="flag-desc">Ran big yesterday. Without a fresh catalyst, 84%+ of prior runners dump the next day. Shown in AVOID.</div></div>
         <div class="flag-item"><div class="flag-name danger">ALREADY EXTENDED</div><div class="flag-desc">Price is already up 30–75%+ from the prior close. Risk/reward is poor for a new entry at this level.</div></div>
         <div class="flag-item"><div class="flag-name danger">CRASHED · GAP DOWN</div><div class="flag-desc">Crashed or gapped down hard. Short squeeze potential exists but so does further downside — approach carefully.</div></div>
-        <div class="flag-item"><div class="flag-name gap">PREV SPIKE +X%</div><div class="flag-desc">Swing WL — made a 40%+ single-day move in the last 90 days. Proven it can run big when conditions align.</div></div>
-        <div class="flag-item"><div class="flag-name danger">SHORT SQUEEZE X%</div><div class="flag-desc">Swing WL — short interest above 10% with under 3 days to cover. Forced buying accelerates any upward move.</div></div>
+      </div>
+      <div class="flag-group-label" style="margin-top:16px;">📊 Swing WL only</div>
+      <div class="flag-grid">
+        <div class="flag-item"><div class="flag-name gap">PREV SPIKE +X%</div><div class="flag-desc">Made a 40%+ single-day move in the last 90 days. Proven it can run big when conditions align.</div></div>
+        <div class="flag-item"><div class="flag-name danger">SHORT SQUEEZE X%</div><div class="flag-desc">Short interest above 10% with under 3 days to cover. Forced buying accelerates any upward move.</div></div>
       </div>
     </div>
 
@@ -486,19 +494,26 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:14
       <h2>Key terms explained</h2>
       <p>New to small cap trading? These are the terms you'll see on every card.</p>
 
+      <div class="flag-group-label">📈 Volume & Price</div>
       <div class="gloss-grid">
         <div class="gterm"><div class="gterm-name">Relative Volume (RVol)</div><div class="gterm-def">Today's volume ÷ average daily volume. 5x means trading 5× its normal volume. The single strongest predictor of a big move.</div></div>
         <div class="gterm"><div class="gterm-name">Float</div><div class="gterm-def">Shares available to trade publicly. Low float (under 20M) means less supply — when demand spikes, price can move violently.</div></div>
         <div class="gterm"><div class="gterm-name">Gap %</div><div class="gterm-def">How much the stock opened above or below yesterday's close. A 50% gap means it opened 50% higher than yesterday's closing price.</div></div>
         <div class="gterm"><div class="gterm-name">VWAP</div><div class="gterm-def">Volume Weighted Average Price for the day. Above VWAP = bullish bias. Below VWAP = bearish bias. Key intraday level.</div></div>
+      </div>
+      <div class="flag-group-label" style="margin-top:16px;">🎯 Entry & Exit</div>
+      <div class="gloss-grid">
         <div class="gterm"><div class="gterm-name">Proposed Entry</div><div class="gterm-def">The specific price level to watch for a breakout. Wait for price to break AND hold above this level with volume confirmation.</div></div>
         <div class="gterm"><div class="gterm-name">Fib Targets</div><div class="gterm-def">Fibonacci extension levels used as upside price targets. Take partial profits at First target, Second target, and Extended.</div></div>
         <div class="gterm"><div class="gterm-name">Run & Dump</div><div class="gterm-def">Stock ran 20%+ intraday but closed near its lows. Common in low floats — someone sells hard into the spike.</div></div>
         <div class="gterm"><div class="gterm-name">Monster (50%+)</div><div class="gterm-def">An intraday move of 50%+ from the open. HOT tickers (RVol ≥100x) produce monsters 60.8% of the time based on 1,339 runner days.</div></div>
-        <div class="gterm"><div class="gterm-name">8-K Filing</div><div class="gterm-def">Mandatory SEC filing for material events — merger, bankruptcy, leadership change. Fresh 8-Ks with keywords are the top swing signal.</div></div>
-        <div class="gterm"><div class="gterm-name">Days to Cover</div><div class="gterm-def">How many days it would take short sellers to exit based on average volume. Under 3 days = squeeze risk if stock moves up.</div></div>
-        <div class="gterm"><div class="gterm-name">Short Interest</div><div class="gterm-def">Percentage of the float sold short. Above 10% is notable — shorts are forced to buy to cover if the stock moves up.</div></div>
+      </div>
+      <div class="flag-group-label" style="margin-top:16px;">📋 Events & Short Selling</div>
+      <div class="gloss-grid">
         <div class="gterm"><div class="gterm-name">Catalyst</div><div class="gterm-def">A specific event driving the move — M&A, FDA approval, AI pivot. Real catalysts sustain moves longer than pure volume plays.</div></div>
+        <div class="gterm"><div class="gterm-name">8-K Filing</div><div class="gterm-def">Mandatory SEC filing for material events — merger, bankruptcy, leadership change. Fresh 8-Ks with keywords are the top swing signal.</div></div>
+        <div class="gterm"><div class="gterm-name">Short Interest</div><div class="gterm-def">Percentage of the float sold short. Above 10% is notable — shorts are forced to buy to cover if the stock moves up.</div></div>
+        <div class="gterm"><div class="gterm-name">Days to Cover</div><div class="gterm-def">How many days it would take short sellers to exit based on average volume. Under 3 days = squeeze risk if stock moves up.</div></div>
       </div>
     </div>
 
