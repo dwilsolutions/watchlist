@@ -1,0 +1,344 @@
+{
+  "session": "midday",
+  "label": "Midday",
+  "date": "2026-04-23",
+  "generated": "01:05 PM ET",
+  "tickers": [
+    {
+      "ticker": "CPIX",
+      "company": "Cumberland Pharmaceuticals Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 87,
+      "tier": "watch",
+      "entry": 6.02,
+      "entry_label": "Break above $5.99",
+      "range_str": "",
+      "prev_close": 3.05,
+      "prev_high": 5.99,
+      "fib_levels": [
+        [
+          "Prev High",
+          5.99
+        ],
+        [
+          "First target",
+          6.79
+        ],
+        [
+          "Second target",
+          7.81
+        ],
+        [
+          "Extended",
+          8.93
+        ]
+      ],
+      "price_at_scan": 3.78,
+      "gap": 88.52,
+      "rvol": 714.75,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/m/19bbf671-e9b4-3a4f-badd-0547410a12df/cumberland-pharmaceuticals.html"
+    },
+    {
+      "ticker": "PMEC",
+      "company": "Primech Holdings Ltd",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 82,
+      "tier": "watch",
+      "entry": 0.74,
+      "entry_label": "Momentum above VWAP $0.68",
+      "range_str": " \u2014 range to $0.83",
+      "prev_close": 0.68,
+      "prev_high": 0.83,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.83
+        ],
+        [
+          "First target",
+          0.87
+        ],
+        [
+          "Second target",
+          0.92
+        ],
+        [
+          "Extended",
+          0.98
+        ]
+      ],
+      "price_at_scan": 0.74,
+      "gap": 20.51,
+      "rvol": 431.89,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/m/dd5262b1-80e3-3f9c-9224-c47ec4415e78/primech-steps-up-u.s.-rollout.html"
+    },
+    {
+      "ticker": "AUUD",
+      "company": "Auddia Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 46,
+      "tier": "watch",
+      "entry": 7.23,
+      "entry_label": "Reclaim $7.19",
+      "range_str": " \u2014 range to $10.1",
+      "prev_close": 3.87,
+      "prev_high": 10.1,
+      "fib_levels": [
+        [
+          "Prev High",
+          10.1
+        ],
+        [
+          "First target",
+          11.79
+        ],
+        [
+          "Second target",
+          13.95
+        ],
+        [
+          "Extended",
+          16.33
+        ]
+      ],
+      "price_at_scan": 5.14,
+      "gap": 76.74,
+      "rvol": 424.72,
+      "flags": [
+        "CATALYST \u00b7 FDA",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/m/0200cc54-290a-354d-ac4d-555660dd6958/auddia-secures-approval-for.html"
+    },
+    {
+      "ticker": "PAPL",
+      "company": "Pineapple Financial Inc",
+      "sector": "Financial",
+      "scan": "Low Float",
+      "score": 67,
+      "tier": "watch",
+      "entry": 1.05,
+      "entry_label": "Break above $1.04",
+      "range_str": "",
+      "prev_close": 0.6,
+      "prev_high": 1.04,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.04
+        ],
+        [
+          "First target",
+          1.16
+        ],
+        [
+          "Second target",
+          1.31
+        ],
+        [
+          "Extended",
+          1.48
+        ]
+      ],
+      "price_at_scan": 0.97,
+      "gap": 52.86,
+      "rvol": 382.08,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "ALREADY EXTENDED",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/346878/pineapple-financial-announces-expanded-15-million-share-repurchase-program"
+    },
+    {
+      "ticker": "SST",
+      "company": "System1 Inc",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 72,
+      "tier": "watch",
+      "entry": 4.05,
+      "entry_label": "Break above $4.03",
+      "range_str": "",
+      "prev_close": 2.8,
+      "prev_high": 4.03,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.03
+        ],
+        [
+          "First target",
+          4.36
+        ],
+        [
+          "Second target",
+          4.79
+        ],
+        [
+          "Extended",
+          5.26
+        ]
+      ],
+      "price_at_scan": 3.36,
+      "gap": 5.0,
+      "rvol": 15.67,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/m/8965779e-0e19-3c50-b21a-f71164b7acf1/system1-shares-jump-19%25-as.html"
+    },
+    {
+      "ticker": "FCEL",
+      "company": "Fuelcell Energy Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "watch",
+      "entry": 12.49,
+      "entry_label": "Break above $12.43",
+      "range_str": "",
+      "prev_close": 11.8,
+      "prev_high": 12.43,
+      "fib_levels": [
+        [
+          "Prev High",
+          12.43
+        ],
+        [
+          "First target",
+          12.6
+        ],
+        [
+          "Second target",
+          12.82
+        ],
+        [
+          "Extended",
+          13.06
+        ]
+      ],
+      "price_at_scan": 12.15,
+      "gap": -0.25,
+      "rvol": 5.13,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://qz.com/fcel-and-ai-data-centers-can-12-5-mw-blocks-drive-scale"
+    },
+    {
+      "ticker": "POET",
+      "company": "POET Technologies Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 68,
+      "tier": "watch",
+      "entry": 12.39,
+      "entry_label": "Break above $12.33",
+      "range_str": "",
+      "prev_close": 12.77,
+      "prev_high": 12.33,
+      "fib_levels": [],
+      "price_at_scan": 11.58,
+      "gap": -7.48,
+      "rvol": 4.88,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143019798.html"
+    },
+    {
+      "ticker": "REPL",
+      "company": "Replimune Group Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 45,
+      "tier": "watch",
+      "entry": 2.8,
+      "entry_label": "Break above $2.79",
+      "range_str": "",
+      "prev_close": 2.27,
+      "prev_high": 2.79,
+      "fib_levels": [
+        [
+          "Prev High",
+          2.79
+        ],
+        [
+          "First target",
+          2.93
+        ],
+        [
+          "Second target",
+          3.11
+        ],
+        [
+          "Extended",
+          3.31
+        ]
+      ],
+      "price_at_scan": 2.69,
+      "gap": 2.2,
+      "rvol": 4.75,
+      "flags": [
+        "CATALYST \u00b7 FDA",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://www.barrons.com/articles/replimune-plans-layoffs-fda-rejects-cancer-therapy-5fc36987?mod=bar_FV"
+    },
+    {
+      "ticker": "YCBD",
+      "company": "cbdMD Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 78,
+      "tier": "watch",
+      "entry": 1.28,
+      "entry_label": "Break above $1.27",
+      "range_str": "",
+      "prev_close": 0.93,
+      "prev_high": 1.27,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.27
+        ],
+        [
+          "First target",
+          1.36
+        ],
+        [
+          "Second target",
+          1.48
+        ],
+        [
+          "Extended",
+          1.61
+        ]
+      ],
+      "price_at_scan": 1.09,
+      "gap": 28.49,
+      "rvol": 45.07,
+      "flags": [
+        "CONTINUATION",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://elite.finviz.com/news/341686/cbdmd-launches-clinical-healthcare-channel-to-support-first-federal-pathway-for-hemp-derived-cbd-in-medicare"
+    }
+  ]
+}
