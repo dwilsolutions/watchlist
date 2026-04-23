@@ -298,10 +298,9 @@ def calc_outcome(t, quote, session_high=None, session_low=None):
 
 def load_cumulative():
     stats = {
-        "hot":   {"total": 0, "runner": 0, "big_runner": 0, "monster": 0, "dumped": 0},
-        "warm":  {"total": 0, "runner": 0, "big_runner": 0, "monster": 0, "dumped": 0},
-        "watch": {"total": 0, "runner": 0, "big_runner": 0, "monster": 0, "dumped": 0},
-        "days":  0,
+        "buy":     {"total": 0, "runner": 0, "big_runner": 0, "monster": 0, "dumped": 0},
+        "monitor": {"total": 0, "runner": 0, "big_runner": 0, "monster": 0, "dumped": 0},
+        "days":    0,
     }
     if not os.path.exists(DATA_DIR):
         return stats
@@ -318,21 +317,7 @@ def load_cumulative():
                 ticker_list = s.get("tickers", [])
             for t in ticker_list:
                 outcome = t.get("outcome", "")
-                # Derive rank from rvol (same logic as scorer get_rank)
-                rvol  = t.get("rvol", 0) or 0
-                flags = t.get("flags", [])
-                has_cat = any("CATALYST" in f or "NASDAQ" in f for f in flags)
-                is_prior = "PRIOR DAY RUNNER" in flags
-                is_danger = any(f in ("REVERSE SPLIT","CRASHED · GAP DOWN") for f in flags)
-                if is_danger or (is_prior and not has_cat) or rvol < 2:
-                    tier = "watch"
-                elif rvol >= 100 or (rvol >= 50 and has_cat):
-                    tier = "hot"
-                elif rvol >= 10 or (rvol >= 5 and has_cat):
-                    tier = "warm"
-                else:
-                    tier = "watch"
-                if tier not in stats: tier = "watch"
+                tier    = "buy" if t.get("tier") == "buy" else "monitor"
                 stats[tier]["total"] += 1
                 if outcome in ("runner", "big_runner", "monster"):
                     stats[tier]["runner"] += 1
@@ -361,12 +346,12 @@ SCAN_COLORS = {
 }
 
 CSS = """
-:root{--bg:#0c0e11;--bg2:#141618;--bg3:#1c1f23;--border:rgba(255,255,255,0.07);--text:#dde1e9;--muted:#656c7a;--green:#3a9c5f;--amber:#c07b1a;--red:#a33333;--mono:'DM Mono',monospace;--sans:'Syne',sans-serif;}
+:root{--bg:#0c0e11;--bg2:#141618;--bg3:#1c1f23;--border:rgba(255,255,255,0.07);--text:#dde1e9;--muted:#656c7a;--green:#3a9c5f;--amber:#c07b1a;--red:#a33333;--mono:'DM Mono',monospace;--sans:'Inter',sans-serif;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.5;}
 a{color:inherit;text-decoration:none;}
 .hdr{background:var(--bg2);border-bottom:1px solid var(--border);padding:16px 20px;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px;}
-.hdr-l h1{font-family:var(--sans);font-size:20px;font-weight:700;letter-spacing:-0.3px;}
+.hdr-l h1{font-family:var(--sans);font-size:20px;font-weight:700;letter-spacing:0;line-height:normal;display:block;}
 .hdr-l h1 em{color:var(--green);font-style:normal;}
 .hdr-l .sub{font-size:11px;color:var(--muted);margin-top:3px;}
 .hdr-r{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
@@ -376,10 +361,10 @@ a{color:inherit;text-decoration:none;}
 .sum-n{font-family:var(--sans);font-size:26px;font-weight:700;}
 .sum-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:0.06em;text-transform:uppercase;}
 .c-g{color:var(--green);}.c-a{color:var(--amber);}.c-r{color:var(--red);}
-.body{padding:18px 20px 48px;max-width:940px;margin:0 auto;}
+.body{padding:18px 20px 48px;}
 .cumulative{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:20px;}
 .cum-title{font-family:var(--sans);font-size:14px;font-weight:500;margin-bottom:12px;}
-.cum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.cum-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
 .cum-section{background:var(--bg3);border-radius:8px;padding:12px;}
 .cum-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;}
 .cum-row{display:flex;justify-content:space-between;font-size:12px;padding:3px 0;border-bottom:1px solid var(--border);}
@@ -391,9 +376,8 @@ a{color:inherit;text-decoration:none;}
 .session-block{margin-bottom:8px;}
 .cards{display:flex;flex-direction:column;gap:7px;margin-bottom:16px;}
 .card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:12px 15px;border-left-width:3px;}
-.card.hot{border-left-color:#6ee89a;}
-.card.warm{border-left-color:#f5c46e;}
-.card.watch{border-left-color:#7ab4f5;}
+.card.buy{border-left-color:var(--green);}
+.card.monitor{border-left-color:var(--amber);}
 .r1{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
 .tkr{font-family:var(--sans);font-size:15px;font-weight:700;min-width:46px;}
 .co{font-size:11px;color:var(--muted);flex:1;}
@@ -408,34 +392,25 @@ a{color:inherit;text-decoration:none;}
 .lv-l{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;}
 .lv-v{font-size:11px;font-weight:500;margin-top:1px;}
 .hit{color:#6ee89a;}.miss{color:var(--muted);}.stp{color:#f57a7a;}
+
+.coll{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:10px;}
+.coll-hdr{display:flex;align-items:center;gap:10px;padding:12px 16px;cursor:pointer;
+  background:var(--bg2);user-select:none;transition:background .15s;}
+.coll-hdr:hover{background:var(--bg3);}
+.coll-title{font-family:var(--sans);font-size:12px;font-weight:700;flex:1;letter-spacing:0;}
+.coll-meta{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);}
+.coll-cnt{font-size:10px;padding:1px 7px;border-radius:20px;background:var(--bg3);}
+.coll-chev{font-size:11px;color:var(--muted);transition:transform .2s;}
+.coll-hdr.open .coll-chev{transform:rotate(180deg);}
+.coll-body{display:none;padding:12px 16px;border-top:1px solid var(--border);}
+.coll-body.open{display:block;}
 .empty{color:var(--muted);font-size:12px;padding:8px 0;}
 .no-data{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:16px;color:var(--muted);font-size:12px;text-align:center;}
 .footer{text-align:center;font-size:10px;color:var(--muted);padding:24px;border-top:1px solid var(--border);}
 """
 
 def card_html(t, perf):
-    # Derive rank for display
-    rvol  = t.get("rvol", 0) or 0
-    flags = t.get("flags", [])
-    has_cat = any("CATALYST" in f or "NASDAQ" in f for f in flags)
-    is_prior = "PRIOR DAY RUNNER" in flags
-    is_danger = any(f in ("REVERSE SPLIT","CRASHED · GAP DOWN") for f in flags)
-    if is_danger or (is_prior and not has_cat) or rvol < 2:
-        tier = "watch"
-    elif rvol >= 100 or (rvol >= 50 and has_cat):
-        tier = "hot"
-    elif rvol >= 10 or (rvol >= 5 and has_cat):
-        tier = "warm"
-    else:
-        tier = "watch"
-    RANK_LABELS = {"hot": "🔥 HOT", "warm": "⚡ WARM", "watch": "👁 WATCH"}
-    rank_label = RANK_LABELS.get(tier, "👁 WATCH")
-    RANK_STYLES = {
-        "hot":   ("background:#1e3d2a;color:#6ee89a",),
-        "warm":  ("background:#3d2e1a;color:#f5c46e",),
-        "watch": ("background:#1a2a3a;color:#7ab4f5",),
-    }
-    rank_style = RANK_STYLES.get(tier, RANK_STYLES["watch"])[0]
+    tier    = t["tier"]
     ticker  = t["ticker"]
     outcome = perf["outcome"]
     entry   = t.get("entry", 0)
@@ -469,7 +444,7 @@ def card_html(t, perf):
     <span class="tkr">{ticker}</span>
     <span class="co">{t["company"][:20]}</span>
     <span class="scan-tag" style="background:{scan_bg};color:{scan_tx};border-color:{scan_tx}44">{t["scan"]}</span>
-    <span style="font-size:11px;font-weight:500;padding:2px 9px;border-radius:20px;{rank_style}">{rank_label}</span>
+    <span class="score-pill">{t["score"]}</span>
     <span class="outcome-pill" style="background:{obg};color:{otx}">{olabel}</span>
     <span class="pct {pc_cls}">{pc_sign}{pct_c:.1f}% close</span>
     <span class="pct {ph_cls}" style="margin-left:4px">{ph_sign}{pct_h:.1f}% high</span>
@@ -513,27 +488,43 @@ def render_html(today, session_results, all_quotes, cum_stats, gen_time):
     catch_rate   = f"{round(runners/total*100)}%" if total else "—"
     stopped      = 0  # no longer tracked
 
-    # Build session blocks
+    # Build collapsible session blocks
     session_html = ""
-    for session_key, label in SESSIONS_ORDER:
+    for idx, (session_key, label) in enumerate(SESSIONS_ORDER):
         tickers = session_results.get(session_key, [])
-        session_html += f'<div class="sec-lbl">{label}</div>'
+        count   = len(tickers)
+        runners_today = [t for t in tickers if t["outcome"] in ("runner","big_runner","monster")]
+        runner_txt = f"{len(runners_today)} runner{'s' if len(runners_today)!=1 else ''}" if runners_today else "no runners"
+        # First two sessions open by default
+        open_cls = " open" if idx < 2 else ""
+
         if not tickers:
-            session_html += '<div class="no-data">No data for this session today</div>'
-            continue
-        all_cards = "".join(card_html(t, t["perf"]) for t in tickers)
-        if not all_cards:
-            session_html += '<div class="no-data">No tickers tracked for this session</div>'
+            body_inner = '<div class="no-data">No data for this session today</div>'
         else:
-            session_html += f'<div class="cards">{all_cards}</div>'
+            all_cards = "".join(card_html(t, t["perf"]) for t in tickers)
+            if not all_cards:
+                body_inner = '<div class="no-data">No tickers tracked for this session</div>'
+            else:
+                body_inner = f'<div class="cards">{all_cards}</div>'
+
+        session_html += f'''<div class="coll">
+  <div class="coll-hdr{open_cls}" onclick="toggleColl(this)">
+    <span class="coll-title">{label}</span>
+    <div class="coll-meta">
+      <span class="coll-cnt">{count} tickers</span>
+      <span>{runner_txt}</span>
+    </div>
+    <span class="coll-chev">▼</span>
+  </div>
+  <div class="coll-body{open_cls}">{body_inner}</div>
+</div>'''
 
     # Cumulative block
     cum_html = f"""<div class="cumulative">
   <div class="cum-title">Cumulative Performance — {cum_stats["days"]} days tracked</div>
   <div class="cum-grid">
-    {cum_section_html("🔥 HOT (rvol ≥100x)", cum_stats["hot"])}
-    {cum_section_html("⚡ WARM (rvol ≥10x)", cum_stats["warm"])}
-    {cum_section_html("👁 WATCH", cum_stats["watch"])}
+    {cum_section_html("Buy Watch ≥65", cum_stats["buy"])}
+    {cum_section_html("Monitor 40–64", cum_stats["monitor"])}
   </div>
 </div>"""
 
@@ -543,7 +534,7 @@ def render_html(today, session_results, all_quotes, cum_stats, gen_time):
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>EOD Results · {today_str}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Syne:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
 <style>{CSS}</style>
 </head>
 <body>
@@ -568,6 +559,12 @@ def render_html(today, session_results, all_quotes, cum_stats, gen_time):
   {session_html}
 </div>
 <div class="footer">EOD Results · Final closing prices · For scoring system tuning only</div>
+<script>
+function toggleColl(hdr) {{
+  hdr.classList.toggle('open');
+  hdr.nextElementSibling.classList.toggle('open');
+}}
+</script>
 </body></html>"""
 
 # ── Main ───────────────────────────────────────────────────────────────────────
