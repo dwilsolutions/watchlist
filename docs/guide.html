@@ -177,11 +177,45 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:14
   .sess{grid-template-columns:1fr 1fr;gap:4px;}
   .sess-desc{grid-column:1/-1;}
 }
+
+/* ── Mobile ── */
+@media(max-width:768px){
+  .sidebar{transform:translateX(-100%);}
+  .content{margin-left:0;}
+  .hero{padding:32px 20px 24px;}
+  .hero h1{font-size:clamp(28px,8vw,40px);}
+  .main{padding:32px 20px 80px;}
+  .wl-cards{grid-template-columns:1fr;}
+  .screener-grid{grid-template-columns:1fr;}
+  .date-row{grid-template-columns:1fr;}
+  .signals .sig{grid-template-columns:1fr auto;}
+  .flag-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));}
+  .gloss-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));}
+  .steps .step{grid-template-columns:36px 1fr;}
+  /* Mobile top nav */
+  .mobile-topnav{display:flex;overflow-x:auto;gap:0;background:var(--bg2);
+    border-bottom:1px solid var(--border);scrollbar-width:none;position:sticky;top:0;z-index:100;}
+  .mobile-topnav::-webkit-scrollbar{display:none;}
+  .mobile-topnav a{font-size:11px;padding:12px 14px;color:var(--muted);
+    white-space:nowrap;text-decoration:none;border-bottom:2px solid transparent;}
+  .mobile-topnav a:hover{color:var(--text);}
+  .section-list{grid-template-columns:1fr;}
+}
+@media(min-width:769px){.mobile-topnav{display:none;}}
 </style>
 </head>
 <body>
 
 <!-- Sidebar -->
+<nav class="mobile-topnav">
+  <a href="#overview">Overview</a>
+  <a href="#daytrading">Day Trading</a>
+  <a href="#swing">Swing WL</a>
+  <a href="#ranks">Ranks</a>
+  <a href="#signals">Flags</a>
+  <a href="#howto">How to Use</a>
+  <a href="#glossary">Glossary</a>
+</nav>
 <aside class="sidebar">
   <div class="sidebar-logo">
     <div class="sidebar-logo-title">Watchlist System</div>
