@@ -1,0 +1,123 @@
+{
+  "session": "earlypremarket",
+  "label": "Early Pre-Market",
+  "date": "2026-04-24",
+  "generated": "08:46 PM ET",
+  "tickers": [
+    {
+      "ticker": "AUUD",
+      "company": "Auddia Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 80,
+      "tier": "watch",
+      "entry": 7.94,
+      "entry_label": "Break above $7.94",
+      "range_str": " \u2014 target $9.05",
+      "prev_close": 0,
+      "prev_high": 7.94,
+      "fib_levels": [
+        [
+          "Today's High",
+          7.94
+        ],
+        [
+          "First target",
+          9.05
+        ],
+        [
+          "Second target",
+          10.27
+        ]
+      ],
+      "price_at_scan": 7.94,
+      "gap": 3.88,
+      "rvol": 468.59,
+      "flags": [
+        "BIG RUNNER YESTERDAY",
+        "CONTINUATION"
+      ],
+      "news_url": "https://elite.finviz.com/news/346969/auddia-expands-ai-infrastructure-moat-with-14th-patent-supporting-distributed-edge-data-center-deployments"
+    },
+    {
+      "ticker": "YCBD",
+      "company": "cbdMD Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 80,
+      "tier": "watch",
+      "entry": 1.25,
+      "entry_label": "Break above $1.25",
+      "range_str": " \u2014 target $1.34",
+      "prev_close": 0,
+      "prev_high": 1.25,
+      "fib_levels": [
+        [
+          "Today's High",
+          1.25
+        ],
+        [
+          "First target",
+          1.34
+        ],
+        [
+          "Second target",
+          1.45
+        ],
+        [
+          "Extended",
+          1.57
+        ]
+      ],
+      "price_at_scan": 1.25,
+      "gap": 29.03,
+      "rvol": 131.33,
+      "flags": [
+        "RUNNER YESTERDAY",
+        "CONTINUATION",
+        "GAP QUALITY"
+      ],
+      "news_url": "https://elite.finviz.com/news/341686/cbdmd-launches-clinical-healthcare-channel-to-support-first-federal-pathway-for-hemp-derived-cbd-in-medicare"
+    },
+    {
+      "ticker": "SST",
+      "company": "System1 Inc",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 80,
+      "tier": "watch",
+      "entry": 4.03,
+      "entry_label": "Break above $4.03",
+      "range_str": " \u2014 target $4.36",
+      "prev_close": 0,
+      "prev_high": 4.03,
+      "fib_levels": [
+        [
+          "Today's High",
+          4.03
+        ],
+        [
+          "First target",
+          4.36
+        ],
+        [
+          "Second target",
+          4.79
+        ],
+        [
+          "Extended",
+          5.26
+        ]
+      ],
+      "price_at_scan": 4.03,
+      "gap": 5.0,
+      "rvol": 15.67,
+      "flags": [
+        "RUNNER YESTERDAY",
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": "https://finance.yahoo.com/m/8965779e-0e19-3c50-b21a-f71164b7acf1/system1-shares-jump-19%25-as.html"
+    }
+  ]
+}
