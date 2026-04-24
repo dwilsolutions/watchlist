@@ -36,10 +36,10 @@ MARKET_HOLIDAYS = {
 }
 
 SESSIONS = {
-    "earlypremarket": ("Early Pre-Market", "Continuation setups · tomorrow's key levels · ~8:00 PM ET"),
+    "earlypremarket": ("Early Pre-Market", "First look · overnight gappers · ~4:00 AM ET"),
     "premarket":      ("Pre-Market",       "Confirmed setups · pre-Robinhood open · ~6:55 AM ET"),
     "marketopen":     ("Market Open",      "Pre-market momentum &amp; gap ups · ~8:30 AM ET"),
-    "midday":         ("Midday",           "VWAP reclaims &amp; second entries · ~1:00 PM ET"),
+    "midday":         ("Midday",           "VWAP reclaims &amp; second entries · ~12:30 PM ET"),
     "afterhours":     ("After Hours",      "Power hour seeds &amp; HOD breakouts · ~3:30 PM ET"),
 }
 
@@ -58,11 +58,12 @@ def next_trading_day(from_date):
 
 def trading_date_for_session(session, now_et):
     today = now_et.date()
-    if session == "earlypremarket":
-        # Runs at 8PM ET — scanning for TOMORROW's continuation setups
+    if session in ("premarket", "earlypremarket"):
+        # Night scan is always for the NEXT trading day
         return next_trading_day(today)
-    # All other sessions target the current trading day
-    return today if is_trading_day(today) else next_trading_day(today)
+    else:
+        # Same-day sessions: use today if it's a trading day
+        return today if is_trading_day(today) else next_trading_day(today)
 
 def fmt_trading_date(d):
     return d.strftime("%a %b %-d, %Y")   # e.g. "Mon Apr 6, 2026"
@@ -112,6 +113,65 @@ def fetch_csv(label, filters):
         print(f"  [+] First row sample: {dict(list(rows[0].items())[:10])}")
     return rows
 
+# ── Finviz quote scraper for static fundamentals ──────────────────────────────
+
+def fetch_finviz_fundamentals(ticker):
+    """
+    Scrape the Finviz quote page for a ticker to get static fundamentals
+    that aren't available from the screener CSV after hours:
+    float, short interest, market cap, sector, industry.
+    Returns a dict of values or empty dict on failure.
+    """
+    import re
+    url = f"https://finviz.com/quote.ashx?t={ticker}"
+    req = urllib.request.Request(url, headers={
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+        "Accept": "text/html",
+        "Referer": "https://finviz.com/",
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            html = resp.read().decode("utf-8", errors="ignore")
+    except Exception as e:
+        print(f"  [!] Finviz quote fetch failed for {ticker}: {e}")
+        return {}
+
+    result = {}
+    # Extract table rows — Finviz uses pattern: <td>Label</td><td>Value</td>
+    rows = re.findall(r'<td[^>]*class="snapshot-td2-cp"[^>]*>.*?</td>\s*<td[^>]*class="snapshot-td2"[^>]*>(.*?)</td>', html, re.DOTALL)
+    if not rows:
+        # Try alternate pattern
+        cells = re.findall(r'<td[^>]*>([\w\s\./,%-]+)</td>', html)
+        # Build key-value pairs from consecutive cells
+        for i in range(0, len(cells)-1, 2):
+            k = cells[i].strip()
+            v = cells[i+1].strip()
+            if k and v:
+                result[k] = v
+
+    # Targeted regex for key fields
+    patterns = {
+        "float_m":   "Shs Float</td><td[^>]*>([^<]+)</td>",
+        "short_pct": "Short Float / Ratio</td><td[^>]*>([^<]+)</td>",
+        "mkt_cap":   "Market Cap</td><td[^>]*>([^<]+)</td>",
+    }
+    for key, pat in patterns.items():
+        m = re.search(pat, html, re.IGNORECASE)
+        if m:
+            val = m.group(1).strip().replace("%","")
+            # Convert M/B/K suffixes
+            if val.endswith("B"):
+                result[key] = float(val[:-1]) * 1000
+            elif val.endswith("M"):
+                result[key] = float(val[:-1])
+            elif val.endswith("K"):
+                result[key] = float(val[:-1]) / 1000
+            else:
+                try: result[key] = float(val)
+                except: pass
+
+    return result
+
 # ── Scoring ────────────────────────────────────────────────────────────────────
 
 def is_market_live(rows):
@@ -152,7 +212,6 @@ def score_row(row, session="", prior_runners=None):
     perf_quarter = pct(row.get("Performance (Quarter)"))
     chg_open     = pct(row.get("Change from Open"))
     news         = str(row.get("News Title", ""))
-    news_url     = str(row.get("News URL", "")).strip()
     h = safe(row.get("High")); l = safe(row.get("Low")); o = safe(row.get("Open"))
     vwap_proxy   = (h + l + o) / 3 if (h and l and o) else price
     real_vwap    = safe(row.get("_real_vwap"))
@@ -356,7 +415,6 @@ def score_row(row, session="", prior_runners=None):
         "prev_high":   round(prev_high, 2) if prev_high else None,
         "fib_levels":  fib_levels,
         "news":        news[:120],
-        "news_url":    news_url,
         "perf_week":   perf_week, "perf_month": perf_month,
         "continuation": continuation, "gap_quality": gap_quality,
     }
@@ -384,47 +442,6 @@ FLAG_CFG = {
     "vwap":     ("#3d3010", "#f5d96e"),
 }
 
-
-RANK_CFG = {
-    "hot":   ("#1e3d2a", "#6ee89a", "🔥 HOT"),
-    "warm":  ("#3d2e1a", "#f5c46e", "⚡ WARM"),
-    "watch": ("#1a2a3a", "#7ab4f5", "👁 WATCH"),
-    "avoid": ("#3d1a1a", "#f57a7a", "✗ AVOID"),
-}
-
-def get_rank(r):
-    rvol  = r.get("rvol", 0) or 0
-    gap   = r.get("gap",  0) or 0
-    flags = [l for l, _ in r.get("flags", [])]
-
-    has_catalyst    = any("CATALYST" in f or "NASDAQ NOTICE" in f for f in flags)
-    is_prior_runner = "PRIOR DAY RUNNER" in flags
-    is_danger       = any(f in ("REVERSE SPLIT", "CRASHED · GAP DOWN") for f in flags)
-
-    # AVOID — danger flag or exhausted prior runner only
-    # Gap-down stocks are NOT avoided — they can short squeeze (validated in backtest)
-    if is_danger:
-        return "avoid"
-    if is_prior_runner and not has_catalyst:
-        return "avoid"
-    if rvol < 2:
-        return "avoid"
-
-    # HOT — rvol >= 100x validated as 60.8% monster rate over 1339 runner days
-    if rvol >= 100:
-        return "hot"
-    if rvol >= 50 and has_catalyst:
-        return "hot"
-
-    # WARM — meaningful momentum
-    if rvol >= 10:
-        return "warm"
-    if rvol >= 5 and has_catalyst:
-        return "warm"
-
-    # WATCH — passes screener, low momentum
-    return "watch"
-
 SCAN_COLORS = {
     "Low Float": ("#1a2a3d", "#7ab4f5"),
     "Mid Cap":   ("#2a1e3d", "#b07af5"),
@@ -450,35 +467,37 @@ def _fib_html(fib_levels):
     return sep.join(parts)
 
 def card_html(r):
-    t         = r["ticker"]
-    gap_sign  = "+" if r["gap"] >= 0 else ""
-    chg_sign  = "+" if r["change"] >= 0 else ""
-    chg_cls   = "pos" if r["change"] >= 0 else "neg"
+    score    = r["total"]
+    tier     = "buy" if score >= 65 else ("monitor" if score >= 40 else "avoid")
+    scls     = "sbuy" if score >= 65 else ("smon" if score >= 40 else "savoid")
+    t        = r["ticker"]
+    gap_sign = "+" if r["gap"] >= 0 else ""
+    chg_sign = "+" if r["change"] >= 0 else ""
+    chg_cls  = "pos" if r["change"] >= 0 else "neg"
     scan_bg, scan_tx = SCAN_COLORS.get(r["scan"], ("#1c1f23", "#656c7a"))
     flags_out = "".join(flag_html(l, k) for l, k in r["flags"])
-    vwap_val  = r.get("real_vwap") or r["vwap_proxy"]
-    vwap_lbl  = "VWAP" if r.get("real_vwap") else "VWAP~"
-    vwap_col  = "#6ee89a" if r["above_vwap"] else "#f57a7a"
 
-    rank               = get_rank(r)
-    rank_bg, rank_tx, rank_lbl = RANK_CFG[rank]
 
-    return f"""<div class="card {rank}">
+    return f"""<div class="card {tier}">
   <div class="r1">
     <span class="tkr">{t}</span>
     <span class="co">{r["company"][:24]}</span>
     <span class="scan-tag" style="background:{scan_bg};color:{scan_tx};border-color:{scan_tx}44">{r["scan"]}</span>
-    <span class="rank-pill" style="background:{rank_bg};color:{rank_tx}">{rank_lbl}</span>
-    <span class="rvol-pill">{r["rvol"]:.0f}x RVol</span>
+    <span class="score {scls}">{score}</span>
     <span class="ch {chg_cls}">{chg_sign}{r["change"]:.1f}%</span>
     <a class="clink" href="https://finviz.com/quote.ashx?t={t}" target="_blank">Chart ↗</a>
   </div>
   <div class="flags">{flags_out}</div>
+  {bar_html("Trend",  r["trend"],       30, "#3a9c5f")}
+  {bar_html("Range",  r["range_score"], 45, "#3266ad")}
+  {bar_html("Volume", r["vol_score"],   25, "#c07b1a")}
   <div class="stats">
     <div class="st"><div class="sl">Price</div><div class="sv">${r["price"]:.2f}</div></div>
     <div class="st"><div class="sl">Gap</div><div class="sv">{gap_sign}{r["gap"]:.1f}%</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">{r["rvol"]:.0f}x</div></div>
+    <div class="st"><div class="sl">RSI</div><div class="sv">{r["rsi"]:.1f}</div></div>
     <div class="st"><div class="sl">Float</div><div class="sv">{r["float_m"]:.1f}M</div></div>
-    <div class="st"><div class="sl">{vwap_lbl}</div><div class="sv" style="color:{vwap_col}">${vwap_val}</div></div>
+    <div class="st"><div class="sl">{"VWAP" if r.get("real_vwap") else "VWAP~"}</div><div class="sv" style="color:{"#6ee89a" if r["above_vwap"] else "#f57a7a"}">${r.get("real_vwap") or r["vwap_proxy"]}</div></div>
   </div>
   <div class="entry-box">
     <span class="entry-label">▶ Proposed Entry: {r["entry_label"]}{r["range_str"]}</span>
@@ -486,14 +505,19 @@ def card_html(r):
   <div class="lvls">
     {_fib_html(r["fib_levels"])}
   </div>
-  <div class="news-line">{
-    f'<span class="news-txt">{r["news"]}</span><a class="news-btn" href="{r["news_url"]}" target="_blank">Read ↗</a>'
-    if r.get("news_url") and r["news_url"].startswith("http")
-    else f'<span class="news-txt">{r["news"]}</span>'
-  }</div>
+  <div class="news-line">{r["news"]}</div>
 </div>"""
 
-
+def chip_html(r):
+    reasons  = ", ".join(l for l, _ in r["flags"]) or "weak setup"
+    scan_bg, scan_tx = SCAN_COLORS.get(r["scan"], ("#1c1f23", "#656c7a"))
+    return (
+        f'<div class="chip">'
+        f'<div class="chip-top"><span class="chip-tkr">{r["ticker"]}</span>'
+        f'<span class="chip-scan" style="background:{scan_bg};color:{scan_tx}">{r["scan"]}</span></div>'
+        f'<span class="chip-score">{r["total"]}</span>'
+        f'<span class="chip-why">{reasons[:50]}</span></div>'
+    )
 
 CSS = """
 :root{--bg:#0c0e11;--bg2:#141618;--bg3:#1c1f23;--border:rgba(255,255,255,0.07);--text:#dde1e9;--muted:#656c7a;--green:#3a9c5f;--amber:#c07b1a;--red:#a33333;--mono:'DM Mono',monospace;--sans:'Syne',sans-serif;--session-color:{session_color};}
@@ -510,7 +534,7 @@ a{color:inherit;text-decoration:none;}
 .leg-label{font-size:10px;color:var(--muted);margin-right:4px;}
 .leg-item{display:flex;align-items:center;gap:5px;font-size:10px;}
 .leg-dot{width:8px;height:8px;border-radius:2px;}
-.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border);}
+.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border);}
 .sum-cell{background:var(--bg2);padding:12px 16px;text-align:center;}
 .sum-n{font-family:var(--sans);font-size:26px;font-weight:700;}
 .sum-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:0.06em;text-transform:uppercase;}
@@ -520,27 +544,31 @@ a{color:inherit;text-decoration:none;}
 .sec-lbl::after{content:'';flex:1;height:1px;background:var(--border);}
 .cards{display:flex;flex-direction:column;gap:9px;}
 .empty{color:var(--muted);font-size:12px;padding:8px 0;}
-.card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:13px 15px;border-left:3px solid var(--muted);}
-.card.hot{border-left-color:#6ee89a;}.card.warm{border-left-color:#f5c46e;}.card.watch{border-left-color:#7ab4f5;}.card.avoid{border-left-color:#f57a7a;opacity:0.55;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:13px 15px;border-left-width:3px;}
+.card.buy{border-left-color:var(--green);}.card.monitor{border-left-color:var(--amber);}.card.avoid{border-left-color:var(--red);opacity:0.6;}
 .r1{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:9px;}
 .tkr{font-family:var(--sans);font-size:16px;font-weight:700;min-width:46px;}
 .co{font-size:11px;color:var(--muted);flex:1;min-width:60px;}
 .scan-tag{font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid;white-space:nowrap;}
-.rank-pill{font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;letter-spacing:0.02em;}
-.rvol-pill{font-size:11px;font-weight:500;padding:2px 9px;border-radius:20px;background:#1c1f23;color:#656c7a;}
+.score{font-size:13px;font-weight:500;padding:2px 9px;border-radius:20px;}
+.sbuy{background:#1e3d2a;color:#6ee89a;}.smon{background:#3d2e1a;color:#f5c46e;}.savoid{background:#3d1a1a;color:#f57a7a;}
 .ch{font-size:12px;font-weight:500;}.pos{color:#5cc98a;}.neg{color:#e06060;}
 .clink{font-size:11px;color:#5a8fd4;margin-left:auto;white-space:nowrap;}
 .clink:hover{color:#7aaef5;}
 .flags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:9px;}
 .flag{font-size:10px;padding:2px 7px;border-radius:10px;font-weight:500;white-space:nowrap;}
-
+.bar-row{display:flex;align-items:center;gap:6px;margin-bottom:4px;}
+.bl{font-size:10px;color:var(--muted);width:44px;text-align:right;flex-shrink:0;}
+.bt{flex:1;height:5px;background:var(--bg3);border-radius:3px;overflow:hidden;}
+.bf{height:100%;border-radius:3px;}
+.bv{font-size:10px;color:var(--muted);width:30px;}
 .stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(76px,1fr));gap:5px;margin:9px 0;}
 .st{background:var(--bg3);border-radius:6px;padding:5px 8px;}
 .sl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;}
 .sv{font-size:12px;font-weight:500;color:var(--text);margin-top:1px;}
 .lvls{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:7px;font-size:11px;}
 .ll{color:var(--muted);}.lv{color:var(--text);font-weight:500;}.sep{color:var(--border);}.entry-box{background:var(--bg3);border-radius:6px;padding:7px 10px;margin:7px 0;border-left:3px solid var(--session-color);}.entry-label{font-size:12px;font-weight:500;color:var(--text);}
-.news-line{font-size:10px;color:var(--muted);font-style:italic;border-top:1px solid var(--border);padding-top:6px;margin-top:4px;display:flex;align-items:center;gap:8px;overflow:hidden;}.news-txt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;}.news-btn{flex-shrink:0;font-size:10px;font-style:normal;padding:2px 8px;border-radius:20px;background:#1a2a3d;color:#7ab4f5;border:1px solid #7ab4f533;text-decoration:none;white-space:nowrap;}
+.news-line{font-size:10px;color:var(--muted);font-style:italic;border-top:1px solid var(--border);padding-top:6px;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;}
 .chip{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:8px 10px;display:flex;flex-direction:column;gap:2px;opacity:0.65;}
 .chip-top{display:flex;align-items:center;gap:6px;margin-bottom:2px;}
@@ -562,16 +590,18 @@ SESSION_COLORS = {
 
 def render_html(results, session, trading_date, label, note, gen_time_str, market_live=True):
     session_color = SESSION_COLORS.get(session, "#3a9c5f")
+    buy     = [r for r in results if r["total"] >= 65]
+    monitor = [r for r in results if 40 <= r["total"] < 65]
+    avoid   = [r for r in results if r["total"] < 40]
     n_sec   = len({r["sector"] for r in results})
     total_n = len(results)
     lf_n    = len([r for r in results if r["scan"] == "Low Float"])
     mc_n    = len([r for r in results if r["scan"] == "Mid Cap"])
     td_str  = fmt_trading_date(trading_date)
 
-    # Sort by RVol descending — highest momentum first
-    rank_order = {"hot": 0, "warm": 1, "watch": 2, "avoid": 3}
-    sorted_results = sorted(results, key=lambda x: (rank_order.get(get_rank(x), 4), -x["rvol"]))
-    cards_out = "".join(card_html(r) for r in sorted_results) or '<p class="empty">No tickers matched screener criteria.</p>'
+    buy_out     = "".join(card_html(r) for r in buy)     or '<p class="empty">No setups reached Buy Watch threshold.</p>'
+    monitor_out = "".join(card_html(r) for r in monitor) or '<p class="empty">No setups in Monitor range.</p>'
+    avoid_out   = "".join(chip_html(r) for r in avoid)
 
     css = CSS.replace("{session_color}", session_color)
     return f"""<!DOCTYPE html>
@@ -587,7 +617,7 @@ def render_html(results, session, trading_date, label, note, gen_time_str, marke
 <div class="hdr">
   <div class="hdr-l">
     <h1>Watchlist · <em style="color:var(--session-color)">{label}</em></h1>
-    <div class="sub">{note} · Sorted by RVol · {total_n} tickers</div>
+    <div class="sub">{note} · {total_n} tickers scored ({lf_n} low float · {mc_n} mid cap)</div>
   </div>
   <div class="hdr-r">
     <span class="pill">{td_str}</span>
@@ -602,12 +632,18 @@ def render_html(results, session, trading_date, label, note, gen_time_str, marke
 </div>
 {'<div class="banner-closed">⚠ Market closed or pre-market data unavailable — intraday scores (RVol, Gap, VWAP) are estimated from prior session. Scores will update when market opens.</div>' if not market_live else ''}
 <div class="summary">
-  <div class="sum-cell"><div class="sum-n c-g">{lf_n}</div><div class="sum-l">Low Float</div></div>
-  <div class="sum-cell"><div class="sum-n c-a">{mc_n}</div><div class="sum-l">Mid Cap</div></div>
-  <div class="sum-cell"><div class="sum-n">{total_n}</div><div class="sum-l">Total Tickers</div></div>
+  <div class="sum-cell"><div class="sum-n c-g">{len(buy)}</div><div class="sum-l">Buy Watch ≥65</div></div>
+  <div class="sum-cell"><div class="sum-n c-a">{len(monitor)}</div><div class="sum-l">Monitor 40–64</div></div>
+  <div class="sum-cell"><div class="sum-n c-r">{len(avoid)}</div><div class="sum-l">Avoid &lt;40</div></div>
+  <div class="sum-cell"><div class="sum-n">{total_n}</div><div class="sum-l">Total Scored</div></div>
 </div>
 <div class="body">
-  <div class="cards">{cards_out}</div>
+  <div class="sec-lbl">Buy Watch — 65+</div>
+  <div class="cards">{buy_out}</div>
+  <div class="sec-lbl">Monitor — 40 to 64</div>
+  <div class="cards">{monitor_out}</div>
+  <div class="sec-lbl">Avoid — below 40</div>
+  <div class="chips">{avoid_out}</div>
 </div>
 <div class="footer">Trend 30% · Range 45% · Volume 25% · Not financial advice · Always confirm on live chart before entry</div>
 </body></html>"""
@@ -763,166 +799,6 @@ def load_prior_runners(trading_day, data_dir):
     print("  [-] No prior EOD results found — skipping prior-runner penalty")
     return {}
 
-def build_continuation_watchlist(tomorrow, data_dir):
-    """
-    Build tomorrow's earlypremarket watchlist from today's EOD results.
-    Finds clean runners (ran but not dumped) and sets entry at today's high.
-    Mirrors the strategy of building a continuation watchlist the night before.
-    """
-    # Find today's EOD file (tomorrow - 1 trading day)
-    check = tomorrow - timedelta(days=1)
-    eod_path = None
-    for _ in range(5):
-        p = os.path.join(data_dir, f"{check.isoformat()}_eod_results.json")
-        if os.path.exists(p):
-            eod_path = p
-            break
-        check -= timedelta(days=1)
-
-    if not eod_path:
-        print("  [-] No EOD results found for continuation watchlist")
-        return []
-
-    with open(eod_path) as f:
-        eod = json.load(f)
-
-    eod_date = eod["date"]
-    print(f"  [+] Building continuation watchlist from {eod_date} EOD results")
-
-    # Build best outcome per ticker
-    RANK = {"monster": 4, "big_runner": 3, "runner": 2, "up": 1, "flat": 0, "dumped": -1}
-    outcomes = {}
-    for sess, tickers in eod.get("sessions", {}).items():
-        if not isinstance(tickers, list):
-            continue
-        for t in tickers:
-            ticker  = t["ticker"]
-            outcome = t.get("outcome", "flat")
-            if RANK.get(outcome, 0) > RANK.get(outcomes.get(ticker, {}).get("outcome", "flat"), 0):
-                outcomes[ticker] = t
-
-    # Load all session JSONs from EOD date to get full ticker data
-    all_ticker_data = {}
-    import glob as _glob
-    for sf in sorted(_glob.glob(os.path.join(data_dir, f"{eod_date}_*.json"))):
-        if "eod_results" in sf:
-            continue
-        try:
-            with open(sf) as f:
-                sdata = json.load(f)
-            for t in sdata.get("tickers", []):
-                tkr = t["ticker"]
-                if tkr not in all_ticker_data or t.get("rvol", 0) > all_ticker_data[tkr].get("rvol", 0):
-                    all_ticker_data[tkr] = t
-        except Exception:
-            continue
-
-    # Build continuation candidates
-    results = []
-    for ticker, odata in outcomes.items():
-        outcome = odata.get("outcome", "flat")
-
-        # Only clean runners — not dumps, not flat
-        if outcome not in ("runner", "big_runner", "monster"):
-            continue
-
-        tdata = all_ticker_data.get(ticker)
-        if not tdata:
-            continue
-
-        # Entry tomorrow = today's high (the key level to break)
-        fib  = tdata.get("fib_levels", [])
-        today_high = fib[0][1] if fib else tdata.get("prev_high", 0)
-        if not today_high or today_high <= 0:
-            continue
-
-        # Targets from existing fib levels
-        fib_targets = []
-        if len(fib) > 0: fib_targets.append(("Today's High", f"{today_high:.2f}"))
-        if len(fib) > 1: fib_targets.append(("First target",  f"{fib[1][1]:.2f}"))
-        if len(fib) > 2: fib_targets.append(("Second target", f"{fib[2][1]:.2f}"))
-        if len(fib) > 3: fib_targets.append(("Extended",      f"{fib[3][1]:.2f}"))
-
-        # Build flags — add outcome badge, remove PRIOR DAY RUNNER if present
-        flags = [(l, k) for l, k in (tdata.get("flags_raw") or
-                 [(f, "cont" if f == "CONTINUATION" else
-                      "catalyst" if "CATALYST" in f or "NASDAQ" in f else
-                      "gap" if "GAP" in f else
-                      "danger" if f in ("PRIOR DAY RUNNER","CRASHED · GAP DOWN","REVERSE SPLIT","ALREADY EXTENDED") else
-                      "sector") for f in tdata.get("flags", [])])
-                 if l != "PRIOR DAY RUNNER" and l != "ALREADY EXTENDED"]
-
-        # Add outcome badge
-        outcome_labels = {
-            "monster":    ("MONSTER YESTERDAY", "catalyst"),
-            "big_runner": ("BIG RUNNER YESTERDAY", "cont"),
-            "runner":     ("RUNNER YESTERDAY", "gap"),
-        }
-        if outcome in outcome_labels:
-            flags = [outcome_labels[outcome]] + flags
-
-        results.append({
-            "ticker":       ticker,
-            "company":      tdata.get("company", ""),
-            "sector":       tdata.get("sector", ""),
-            "scan":         tdata.get("scan", "Low Float"),
-            "price":        tdata.get("price", today_high),
-            "gap":          tdata.get("gap", 0),
-            "rvol":         tdata.get("rvol", 0),
-            "float_m":      tdata.get("float_m", 0),
-            "change":       tdata.get("change", 0),
-            "above_vwap":   False,
-            "real_vwap":    None,
-            "vwap_proxy":   f"{today_high:.2f}",
-            "entry":        today_high,
-            "entry_label":  f"Break above ${today_high:.2f}",
-            "range_str":    f" — target ${fib[1][1]:.2f}" if len(fib) > 1 else "",
-            "fib_levels":   fib_targets,
-            "flags":        flags,
-            "news":         tdata.get("news", ""),
-            "news_url":     tdata.get("news_url", ""),
-            "total":        80,
-            "trend":        0, "range_score": 0, "vol_score": 0, "bonus": 0,
-            "continuation": False, "gap_quality": False,
-        })
-
-    print(f"  [+] {len(results)} continuation candidates")
-    return results
-
-
-def _write_json(results, session, trading_day, data_dir, label, gen_time):
-    """Write session JSON for EOD tracker compatibility."""
-    os.makedirs(data_dir, exist_ok=True)
-    payload = {
-        "session": session, "label": label,
-        "date": trading_day.isoformat(), "generated": gen_time,
-        "tickers": [{
-            "ticker":      r["ticker"],
-            "company":     r["company"],
-            "sector":      r["sector"],
-            "scan":        r["scan"],
-            "score":       r["total"],
-            "tier":        "watch",
-            "entry":       r["entry"],
-            "entry_label": r["entry_label"],
-            "range_str":   r["range_str"],
-            "prev_close":  r.get("prev_close", 0),
-            "prev_high":   r["entry"],
-            "fib_levels":  [[l, float(v.replace("$",""))] for l, v in r["fib_levels"]],
-            "price_at_scan": r["price"],
-            "gap":         r["gap"],
-            "rvol":        r["rvol"],
-            "flags":       [l for l, _ in r["flags"]],
-            "news_url":    r.get("news_url", ""),
-        } for r in results]
-    }
-    path = os.path.join(data_dir, f"{trading_day.isoformat()}_{session}.json")
-    with open(path, "w") as f:
-        json.dump(payload, f, indent=2)
-    print(f"  [+] JSON written → {path}")
-
-
-
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def main():
@@ -937,27 +813,6 @@ def main():
     gen_time    = now_et.strftime("%I:%M %p ET")
 
     print(f"\nWatchlist scorer · {label} · target date: {fmt_trading_date(trading_day)} · generated {gen_time}")
-
-    # ── Early pre-market: continuation watchlist from today's EOD ────────────────
-    if session == "earlypremarket":
-        results = build_continuation_watchlist(trading_day, os.path.join(OUTPUT_DIR, "data"))
-        if not results:
-            print("No continuation candidates found — check EOD results.")
-            sys.exit(1)
-        results.sort(key=lambda x: ({"hot":0,"warm":1,"watch":2,"avoid":3}.get(get_rank(x),4), -x["rvol"]))
-        live = False
-        html = render_html(results, session, trading_day, label, note, gen_time, market_live=live)
-        os.makedirs(OUTPUT_DIR, exist_ok=True)
-        filename = f"{trading_day.isoformat()}_{session}.html"
-        with open(os.path.join(OUTPUT_DIR, filename), "w") as f:
-            f.write(html)
-        print(f"  [+] Written → {os.path.join(OUTPUT_DIR, filename)}")
-        fixed = os.path.join(OUTPUT_DIR, "earlypremarket.html")
-        with open(fixed, "w") as f:
-            f.write(html)
-        print(f"  [+] Written → {fixed}")
-        _write_json(results, session, trading_day, os.path.join(OUTPUT_DIR, "data"), label, gen_time)
-        return
 
     all_rows = []
     for scan_label, filters in SCREENERS:
@@ -987,10 +842,25 @@ def main():
     # Load prior day runners for penalty
     prior_runners = load_prior_runners(trading_day, os.path.join(OUTPUT_DIR, "data"))
 
+    # For earlypremarket: enrich each ticker with fresh Finviz fundamentals
+    # since screener CSV returns 0.0 for float/short after market close
+    if session == "earlypremarket":
+        print(f"  [+] Fetching fresh fundamentals from Finviz for {len(unique)} tickers...")
+        import time as _time
+        for r in unique:
+            ticker = r.get("Ticker", "")
+            if not ticker: continue
+            fundamentals = fetch_finviz_fundamentals(ticker)
+            # Only overwrite if we got a better value
+            if fundamentals.get("float_m", 0) > 0:
+                r["Shares Float"] = str(fundamentals["float_m"])
+            if fundamentals.get("short_pct", 0) > 0:
+                r["Short Float"] = str(fundamentals["short_pct"])
+            _time.sleep(0.3)  # be polite to Finviz
+
     results = [score_row(r, session=session, prior_runners=prior_runners) for r in unique]
     results = apply_sector_bonus(results)
-    rank_order = {"hot": 0, "warm": 1, "watch": 2, "avoid": 3}
-    results.sort(key=lambda x: (rank_order.get(get_rank(x), 4), -x["rvol"]))
+    results.sort(key=lambda x: x["total"], reverse=True)
 
     live     = is_market_live(unique)
     html     = render_html(results, session, trading_day, label, note, gen_time, market_live=live)
@@ -1032,7 +902,7 @@ def main():
                 "sector": r["sector"],
                 "scan": r["scan"],
                 "score": r["total"],
-                "tier": "watch",  # all tickers are watchlist candidates
+                "tier": "buy" if r["total"] >= 65 else ("monitor" if r["total"] >= 40 else "avoid"),
                 "entry": r["entry"],
                 "entry_label": r["entry_label"],
                 "range_str": r["range_str"],
@@ -1043,7 +913,6 @@ def main():
                 "gap": r["gap"],
                 "rvol": r["rvol"],
                 "flags": [f[0] for f in r["flags"]],
-                "news_url": r.get("news_url", ""),
             }
             for r in results if r["total"] >= 40  # Buy Watch + Monitor only
         ]
