@@ -512,6 +512,7 @@ def render_html(today, session_results, all_quotes, cum_stats, gen_time):
     # Build nav items and tab content for each session
     nav_items_html = ""
     tabs_html = ""
+    all_sessions_inner = ""
     SESSION_ICONS = {
         "earlypremarket": "🌙",
         "premarket":      "🌅",
@@ -542,12 +543,27 @@ def render_html(today, session_results, all_quotes, cum_stats, gen_time):
         tabs_html += f'''<div class="tab-content{active_cls}" id="sess-{session_key}">
   <div class="body" style="padding:14px 20px 48px;">{body_inner}</div>
 </div>'''
+        if tickers:
+            _all_cards = "".join(card_html(t, t["perf"]) for t in tickers)
+            all_sessions_inner += f'''<div class="sec-lbl">{icon} {label} · {runner_txt}</div><div class="cards">{_all_cards}</div>'''
 
+    _all_total = sum(len(session_results.get(sk, [])) for sk, _ in SESSIONS_ORDER)
+    _all_body  = all_sessions_inner if all_sessions_inner else '<div class="no-data">No data today</div>'
+    _all_nav   = f'''<div class="nav-item" data-tab="sess-all">
+  <span class="nav-icon">📋</span>
+  <span class="nav-label">All Sessions</span>
+  <span class="nav-cnt">{_all_total}</span>
+</div>'''
+    _all_tab   = f'''<div class="tab-content" id="sess-all">
+  <div class="body" style="padding:14px 20px 48px;">{_all_body}</div>
+</div>'''
     session_html = f'''<div class="layout">
   <div class="sidenav">
     <div class="sidenav-label">Sessions</div>
+    {_all_nav}
     {nav_items_html}
   </div>
+  {_all_tab}
   {tabs_html}
 </div>'''
     # Serialize session results for embedding — strip perf sub-dict to keep size down
