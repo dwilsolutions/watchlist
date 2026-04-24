@@ -478,7 +478,7 @@ def card_html(t, perf):
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">${t.get("prev_high","—")}</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">${t.get("hi52_price","—")}</div></div>
   </div>
-</div></div>"""
+</div>"""
 
 def cum_section_html(label, d):
     total      = d["total"]
@@ -522,8 +522,8 @@ def render_html(today, session_results, all_quotes, cum_stats, gen_time):
     for idx, (session_key, label) in enumerate(SESSIONS_ORDER):
         tickers = session_results.get(session_key, [])
         count   = len(tickers)
-        runners = [t for t in tickers if t.get("outcome") in ("runner","big_runner","monster")]
-        runner_txt = f"{len(runners)} runner{'s' if len(runners)!=1 else ''}" if runners else "no runners"
+        sess_runners = [t for t in tickers if t.get("outcome") in ("runner","big_runner","monster")]
+        runner_txt = f"{len(sess_runners)} runner{'s' if len(sess_runners)!=1 else ''}" if sess_runners else "no runners"
         active_cls = " active" if idx == 0 else ""
         icon = SESSION_ICONS.get(session_key, "📋")
 
@@ -564,13 +564,13 @@ document.querySelectorAll('.nav-item').forEach(item => {
 
     # Cumulative block
     cum_html = f"""<div class="cum-wrap"><div class="cumulative">
-  <div class="cum-title">Cumulative Performance — {cum_stats["days"]} days tracked</div>
+  <div class="cum-title">Cumulative Performance \u2014 {cum_stats["days"]} days tracked</div>
   <div class="cum-grid">
-    {cum_section_html("🔥 HOT (rvol ≥100x)", cum_stats["hot"])}
-    {cum_section_html("⚡ WARM (rvol ≥10x)", cum_stats["warm"])}
-    {cum_section_html("👁 WATCH", cum_stats["watch"])}
+    {cum_section_html("\U0001f525 HOT (rvol \u2265100x)", cum_stats["hot"])}
+    {cum_section_html("\u26a1 WARM (rvol \u226510x)", cum_stats["warm"])}
+    {cum_section_html("\U0001f441 WATCH", cum_stats["watch"])}
   </div>
-</div>"""
+</div></div>"""
 
     return f"""<!DOCTYPE html>
 <html lang="en">
