@@ -2,122 +2,450 @@
   "session": "earlypremarket",
   "label": "Early Pre-Market",
   "date": "2026-04-24",
-  "generated": "08:46 PM ET",
+  "generated": "09:10 PM ET",
   "tickers": [
     {
-      "ticker": "AUUD",
-      "company": "Auddia Inc",
-      "sector": "Technology",
+      "ticker": "TZOO",
+      "company": "Travelzoo",
+      "sector": "Communication Services",
       "scan": "Low Float",
-      "score": 80,
-      "tier": "watch",
-      "entry": 7.94,
-      "entry_label": "Break above $7.94",
-      "range_str": " \u2014 target $9.05",
-      "prev_close": 0,
-      "prev_high": 7.94,
+      "score": 100,
+      "tier": "buy",
+      "entry": 12.04,
+      "entry_label": "Break above $11.98",
+      "range_str": "",
+      "prev_close": 7.49,
+      "prev_high": 11.98,
       "fib_levels": [
         [
-          "Today's High",
-          7.94
+          "Prev High",
+          11.98
         ],
         [
           "First target",
-          9.05
+          13.2
         ],
         [
           "Second target",
-          10.27
+          14.75
+        ],
+        [
+          "Extended",
+          16.47
         ]
       ],
-      "price_at_scan": 7.94,
-      "gap": 3.88,
-      "rvol": 468.59,
+      "price_at_scan": 9.48,
+      "gap": 30.44,
+      "rvol": 31.8,
       "flags": [
-        "BIG RUNNER YESTERDAY",
-        "CONTINUATION"
+        "CONTINUATION",
+        "GAP QUALITY",
+        "CATALYST \u00b7 8-K",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CPIX",
+      "company": "Cumberland Pharmaceuticals Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 87,
+      "tier": "buy",
+      "entry": 6.07,
+      "entry_label": "Break above $6.04",
+      "range_str": "",
+      "prev_close": 3.05,
+      "prev_high": 6.04,
+      "fib_levels": [
+        [
+          "Prev High",
+          6.04
+        ],
+        [
+          "First target",
+          6.85
+        ],
+        [
+          "Second target",
+          7.89
+        ],
+        [
+          "Extended",
+          9.03
+        ]
       ],
-      "news_url": "https://elite.finviz.com/news/346969/auddia-expands-ai-infrastructure-moat-with-14th-patent-supporting-distributed-edge-data-center-deployments"
+      "price_at_scan": 3.9,
+      "gap": 87.38,
+      "rvol": 440.43,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "PAPL",
+      "company": "Pineapple Financial Inc",
+      "sector": "Financial",
+      "scan": "Low Float",
+      "score": 77,
+      "tier": "buy",
+      "entry": 1.16,
+      "entry_label": "Break above $1.15",
+      "range_str": "",
+      "prev_close": 0.6,
+      "prev_high": 1.15,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.15
+        ],
+        [
+          "First target",
+          1.3
+        ],
+        [
+          "Second target",
+          1.49
+        ],
+        [
+          "Extended",
+          1.7
+        ]
+      ],
+      "price_at_scan": 0.87,
+      "gap": 52.32,
+      "rvol": 304.93,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
     },
     {
       "ticker": "YCBD",
       "company": "cbdMD Inc",
       "sector": "Healthcare",
       "scan": "Low Float",
-      "score": 80,
-      "tier": "watch",
-      "entry": 1.25,
-      "entry_label": "Break above $1.25",
-      "range_str": " \u2014 target $1.34",
-      "prev_close": 0,
-      "prev_high": 1.25,
+      "score": 71,
+      "tier": "buy",
+      "entry": 1.28,
+      "entry_label": "Break above $1.27",
+      "range_str": "",
+      "prev_close": 0.93,
+      "prev_high": 1.27,
       "fib_levels": [
         [
-          "Today's High",
-          1.25
+          "Prev High",
+          1.27
         ],
         [
           "First target",
-          1.34
+          1.36
         ],
         [
           "Second target",
-          1.45
+          1.48
         ],
         [
           "Extended",
-          1.57
+          1.61
         ]
       ],
-      "price_at_scan": 1.25,
+      "price_at_scan": 1.01,
       "gap": 29.03,
-      "rvol": 131.33,
+      "rvol": 29.24,
       "flags": [
-        "RUNNER YESTERDAY",
-        "CONTINUATION",
-        "GAP QUALITY"
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "TDIC",
+      "company": "Dreamland Ltd",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 68,
+      "tier": "buy",
+      "entry": 1.9,
+      "entry_label": "Break above $1.89",
+      "range_str": "",
+      "prev_close": 1.01,
+      "prev_high": 1.89,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.89
+        ],
+        [
+          "First target",
+          2.13
+        ],
+        [
+          "Second target",
+          2.43
+        ],
+        [
+          "Extended",
+          2.77
+        ]
       ],
-      "news_url": "https://elite.finviz.com/news/341686/cbdmd-launches-clinical-healthcare-channel-to-support-first-federal-pathway-for-hemp-derived-cbd-in-medicare"
+      "price_at_scan": 1.46,
+      "gap": -0.99,
+      "rvol": 4.95,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "FCEL",
+      "company": "Fuelcell Energy Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 68,
+      "tier": "buy",
+      "entry": 12.49,
+      "entry_label": "Break above $12.43",
+      "range_str": "",
+      "prev_close": 11.8,
+      "prev_high": 12.43,
+      "fib_levels": [
+        [
+          "Prev High",
+          12.43
+        ],
+        [
+          "First target",
+          12.6
+        ],
+        [
+          "Second target",
+          12.82
+        ],
+        [
+          "Extended",
+          13.06
+        ]
+      ],
+      "price_at_scan": 12.17,
+      "gap": -0.17,
+      "rvol": 4.7,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "POET",
+      "company": "POET Technologies Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 68,
+      "tier": "buy",
+      "entry": 12.4,
+      "entry_label": "Break above $12.34",
+      "range_str": "",
+      "prev_close": 12.77,
+      "prev_high": 12.34,
+      "fib_levels": [],
+      "price_at_scan": 11.72,
+      "gap": -7.48,
+      "rvol": 3.78,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
     },
     {
       "ticker": "SST",
       "company": "System1 Inc",
       "sector": "Industrials",
       "scan": "Low Float",
-      "score": 80,
-      "tier": "watch",
-      "entry": 4.03,
-      "entry_label": "Break above $4.03",
-      "range_str": " \u2014 target $4.36",
-      "prev_close": 0,
-      "prev_high": 4.03,
+      "score": 66,
+      "tier": "buy",
+      "entry": 4.35,
+      "entry_label": "Break above $4.33",
+      "range_str": "",
+      "prev_close": 2.8,
+      "prev_high": 4.33,
       "fib_levels": [
         [
-          "Today's High",
-          4.03
+          "Prev High",
+          4.33
         ],
         [
           "First target",
-          4.36
+          4.75
         ],
         [
           "Second target",
-          4.79
+          5.28
         ],
         [
           "Extended",
-          5.26
+          5.86
         ]
       ],
-      "price_at_scan": 4.03,
-      "gap": 5.0,
-      "rvol": 15.67,
+      "price_at_scan": 3.83,
+      "gap": 7.14,
+      "rvol": 12.36,
       "flags": [
-        "RUNNER YESTERDAY",
         "CONTINUATION",
+        "PRIOR DAY RUNNER",
         "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MWYN",
+      "company": "Marwynn Holdings Inc",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 61,
+      "tier": "monitor",
+      "entry": 0.76,
+      "entry_label": "Break above $0.76",
+      "range_str": "",
+      "prev_close": 0.57,
+      "prev_high": 0.76,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.76
+        ],
+        [
+          "First target",
+          0.81
+        ],
+        [
+          "Second target",
+          0.88
+        ],
+        [
+          "Extended",
+          0.95
+        ]
       ],
-      "news_url": "https://finance.yahoo.com/m/8965779e-0e19-3c50-b21a-f71164b7acf1/system1-shares-jump-19%25-as.html"
+      "price_at_scan": 0.7,
+      "gap": 21.95,
+      "rvol": 391.35,
+      "flags": [
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "AMST",
+      "company": "Amesite Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 51,
+      "tier": "monitor",
+      "entry": 2.05,
+      "entry_label": "Break above $2.04",
+      "range_str": "",
+      "prev_close": 1.08,
+      "prev_high": 2.04,
+      "fib_levels": [
+        [
+          "Prev High",
+          2.04
+        ],
+        [
+          "First target",
+          2.3
+        ],
+        [
+          "Second target",
+          2.63
+        ],
+        [
+          "Extended",
+          3.0
+        ]
+      ],
+      "price_at_scan": 1.44,
+      "gap": 0.0,
+      "rvol": 253.64,
+      "flags": [
+        "CATALYST \u00b7 DEAL",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "REPL",
+      "company": "Replimune Group Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 50,
+      "tier": "monitor",
+      "entry": 2.97,
+      "entry_label": "Break above $2.96",
+      "range_str": "",
+      "prev_close": 2.27,
+      "prev_high": 2.96,
+      "fib_levels": [
+        [
+          "Prev High",
+          2.96
+        ],
+        [
+          "First target",
+          3.15
+        ],
+        [
+          "Second target",
+          3.39
+        ],
+        [
+          "Extended",
+          3.65
+        ]
+      ],
+      "price_at_scan": 2.85,
+      "gap": 3.52,
+      "rvol": 4.92,
+      "flags": [
+        "CONTINUATION",
+        "CATALYST \u00b7 FDA",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "NMAX",
+      "company": "Newsmax Inc",
+      "sector": "Communication Services",
+      "scan": "Mid Cap",
+      "score": 48,
+      "tier": "monitor",
+      "entry": 9.64,
+      "entry_label": "Break above $9.59",
+      "range_str": "",
+      "prev_close": 9.24,
+      "prev_high": 9.59,
+      "fib_levels": [
+        [
+          "Prev High",
+          9.59
+        ],
+        [
+          "First target",
+          9.69
+        ],
+        [
+          "Second target",
+          9.81
+        ],
+        [
+          "Extended",
+          9.94
+        ]
+      ],
+      "price_at_scan": 6.71,
+      "gap": -3.19,
+      "rvol": 4.67,
+      "flags": [
+        "CATALYST \u00b7 8-K",
+        "SECTOR MOMENTUM"
+      ]
     }
   ]
 }
