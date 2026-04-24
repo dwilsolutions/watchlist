@@ -357,7 +357,8 @@ SCAN_COLORS = {
 CSS = """
 :root{--bg:#0c0e11;--bg2:#141618;--bg3:#1c1f23;--border:rgba(255,255,255,0.07);--text:#dde1e9;--muted:#656c7a;--green:#3a9c5f;--amber:#c07b1a;--red:#a33333;--mono:'DM Mono',monospace;--sans:'Inter',sans-serif;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.5;}
+html,body{min-height:100vh;}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.5;display:flex;flex-direction:column;}
 a{color:inherit;text-decoration:none;}
 .hdr{background:var(--bg2);border-bottom:1px solid var(--border);padding:16px 20px;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px;}
 .hdr-l h1{font-family:var(--sans);font-size:20px;font-weight:700;letter-spacing:0;line-height:normal;}
@@ -370,7 +371,7 @@ a{color:inherit;text-decoration:none;}
 .sum-n{font-family:var(--sans);font-size:26px;font-weight:700;}
 .sum-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:0.06em;text-transform:uppercase;}
 .c-g{color:var(--green);}.c-a{color:var(--amber);}.c-r{color:var(--red);}
-.body{padding:18px 20px 48px;max-width:940px;margin:0 auto;}
+.body{padding:18px 20px 48px;}
 .cumulative{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:20px;}
 .cum-title{font-family:var(--sans);font-size:14px;font-weight:500;margin-bottom:12px;}
 .cum-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
@@ -402,17 +403,26 @@ a{color:inherit;text-decoration:none;}
 .lv-v{font-size:11px;font-weight:500;margin-top:1px;}
 .hit{color:#6ee89a;}.miss{color:var(--muted);}.stp{color:#f57a7a;}
 
-.coll{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:10px;}
-.coll-hdr{display:flex;align-items:center;gap:10px;padding:12px 16px;cursor:pointer;
-  background:var(--bg2);user-select:none;transition:background .15s;}
-.coll-hdr:hover{background:var(--bg3);}
-.coll-title{font-family:var(--sans);font-size:12px;font-weight:700;flex:1;letter-spacing:0;}
-.coll-meta{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);}
-.coll-cnt{font-size:10px;padding:1px 7px;border-radius:20px;background:var(--bg3);}
-.coll-chev{font-size:11px;color:var(--muted);transition:transform .2s;}
-.coll-hdr.open .coll-chev{transform:rotate(180deg);}
-.coll-body{display:none;padding:12px 16px;border-top:1px solid var(--border);}
-.coll-body.open{display:block;}
+.layout{display:flex;min-height:calc(100vh - 200px);}
+.sidenav{width:168px;flex-shrink:0;background:var(--bg2);
+  border-right:1px solid var(--border);padding:16px 0;
+  position:sticky;top:0;align-self:flex-start;
+  height:calc(100vh - 200px);display:flex;flex-direction:column;}
+.sidenav-label{font-size:9px;color:#2a3a52;letter-spacing:0.14em;
+  text-transform:uppercase;padding:10px 16px 4px;}
+.nav-item{display:flex;align-items:center;gap:10px;padding:10px 16px;
+  cursor:pointer;border-left:2px solid transparent;color:var(--muted);
+  transition:all .15s;user-select:none;}
+.nav-item:hover{color:var(--text);background:rgba(255,255,255,0.03);}
+.nav-item.active{color:var(--green);border-left-color:var(--green);
+  background:rgba(58,156,95,0.06);}
+.nav-icon{font-size:13px;width:18px;text-align:center;flex-shrink:0;}
+.nav-label{font-size:12px;flex:1;}
+.nav-cnt{font-size:10px;padding:1px 6px;border-radius:20px;
+  background:rgba(255,255,255,0.06);color:var(--muted);}
+.nav-item.active .nav-cnt{background:rgba(58,156,95,0.15);color:var(--green);}
+.tab-content{display:none;flex:1;min-width:0;}
+.tab-content.active{display:block;}
 .empty{color:var(--muted);font-size:12px;padding:8px 0;}
 .no-data{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:16px;color:var(--muted);font-size:12px;text-align:center;}
 .footer{text-align:center;font-size:10px;color:var(--muted);padding:24px;border-top:1px solid var(--border);}
@@ -498,29 +508,58 @@ def render_html(today, session_results, all_quotes, cum_stats, gen_time):
     stopped      = 0  # no longer tracked
 
     # Build session blocks
-    session_html = ""
+    # Build nav items and tab content for each session
+    nav_items_html = ""
+    tabs_html = ""
+    SESSION_ICONS = {
+        "earlypremarket": "🌙",
+        "premarket":      "🌅",
+        "marketopen":     "🔔",
+        "midday":         "☀️",
+        "afterhours":     "🌆",
+    }
     for idx, (session_key, label) in enumerate(SESSIONS_ORDER):
-        tickers  = session_results.get(session_key, [])
-        count    = len(tickers)
-        runners  = [t for t in tickers if t.get("outcome") in ("runner","big_runner","monster")]
+        tickers = session_results.get(session_key, [])
+        count   = len(tickers)
+        runners = [t for t in tickers if t.get("outcome") in ("runner","big_runner","monster")]
         runner_txt = f"{len(runners)} runner{'s' if len(runners)!=1 else ''}" if runners else "no runners"
-        open_cls = " open" if idx < 2 else ""
+        active_cls = " active" if idx == 0 else ""
+        icon = SESSION_ICONS.get(session_key, "📋")
+
+        nav_items_html += f'''<div class="nav-item{active_cls}" data-tab="sess-{session_key}">
+  <span class="nav-icon">{icon}</span>
+  <span class="nav-label">{label}</span>
+  <span class="nav-cnt">{count}</span>
+</div>'''
+
         if not tickers:
             body_inner = '<div class="no-data">No data for this session today</div>'
         else:
             all_cards = "".join(card_html(t, t["perf"]) for t in tickers)
-            body_inner = f'<div class="cards">{all_cards}</div>' if all_cards else '<div class="no-data">No tickers tracked</div>'
-        session_html += f'''<div class="coll">
-  <div class="coll-hdr{open_cls}" onclick="toggleColl(this)">
-    <span class="coll-title">{label}</span>
-    <div class="coll-meta">
-      <span class="coll-cnt">{count} tickers</span>
-      <span>{runner_txt}</span>
-    </div>
-    <span class="coll-chev">▼</span>
-  </div>
-  <div class="coll-body{open_cls}">{body_inner}</div>
+            body_inner = f'<div class="sec-lbl">{label} · {runner_txt}</div><div class="cards">{all_cards}</div>' if all_cards else '<div class="no-data">No tickers tracked</div>'
+
+        tabs_html += f'''<div class="tab-content{active_cls}" id="sess-{session_key}">
+  <div class="body" style="padding:14px 20px 48px;">{body_inner}</div>
 </div>'''
+
+    session_html = f'''<div class="layout">
+  <div class="sidenav">
+    <div class="sidenav-label">Sessions</div>
+    {nav_items_html}
+  </div>
+  {tabs_html}
+</div>'''
+    js_block = """<script>
+document.querySelectorAll('.nav-item').forEach(item => {
+  item.addEventListener('click', () => {
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    item.classList.add('active');
+    document.getElementById(item.dataset.tab).classList.add('active');
+    window.scrollTo(0, 0);
+  });
+});
+</script>"""
 
     # Cumulative block
     cum_html = f"""<div class="cumulative">
@@ -560,15 +599,10 @@ def render_html(today, session_results, all_quotes, cum_stats, gen_time):
 </div>
 <div class="body">
   {cum_html}
-  {session_html}
 </div>
+  {session_html}
+  {js_block}
 <div class="footer">EOD Results · Final closing prices · For scoring system tuning only</div>
-<script>
-function toggleColl(hdr) {{
-  hdr.classList.toggle('open');
-  hdr.nextElementSibling.classList.toggle('open');
-}}
-</script>
 </body></html>"""
 
 # ── Main ───────────────────────────────────────────────────────────────────────
