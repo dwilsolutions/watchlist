@@ -45,15 +45,16 @@ def fmt_date(d):
 
 SESSION_WINDOWS = {
     # Maps session key → (window_start, window_end) ET
-    # Window is used to find the HIGH within that session period
-    # so run-and-dump stocks are correctly classified as runners.
-    "earlypremarket": ("04:00", "06:55"),  # Early Pre-Market
-    "premarket":      ("04:00", "09:30"),  # Pre-Market (covers full pre-market open)
-    "night":          ("04:00", "09:30"),  # Legacy name for premarket
-    "marketopen":     ("09:30", "12:30"),  # Market Open
-    "midday":         ("12:30", "15:30"),  # Midday
-    "afterhours":     ("15:30", "20:00"),  # After Hours
-    "powerhour":      ("15:30", "20:00"),  # Legacy name for afterhours
+    # Window covers from scan time through EOD close so outcomes reflect
+    # what was actually achievable after the watchlist was published.
+    # earlypremarket/premarket extend through 20:00 to capture full day move.
+    "earlypremarket": ("04:00", "20:00"),  # Full day — 4 AM scan through AH close
+    "premarket":      ("04:00", "20:00"),  # Full day — PM scan through AH close
+    "night":          ("04:00", "20:00"),  # Legacy alias for premarket
+    "marketopen":     ("09:30", "20:00"),  # Open through AH close
+    "midday":         ("12:30", "20:00"),  # Midday through AH close
+    "afterhours":     ("15:30", "20:00"),  # AH session only
+    "powerhour":      ("15:30", "20:00"),  # Legacy alias for afterhours
 }
 
 # ── Fetch session-specific highs via yfinance ──────────────────────────────────
@@ -130,18 +131,19 @@ def fetch_real_vwap(tickers, session_key, today):
     et = ZoneInfo("America/New_York")
     date_str = today.isoformat()
 
-    # VWAP always calculated from market open to session start
+    # VWAP calculated from 9:30 AM to regular close (16:00)
+    # earlypremarket/premarket now cover full day so full-day VWAP is meaningful
     vwap_end = {
-        "earlypremarket": None,     # 4 AM — no meaningful VWAP yet
-        "premarket":      None,     # 6:55 AM — no meaningful VWAP yet
-        "marketopen":     None,     # no meaningful VWAP at open
-        "midday":         "12:30",  # from open to midday
-        "afterhours":     "15:30",  # from open to AH start
+        "earlypremarket": "16:00",  # full day VWAP
+        "premarket":      "16:00",  # full day VWAP
+        "night":          "16:00",  # legacy alias
+        "marketopen":     "16:00",  # full day VWAP
+        "midday":         "16:00",  # full day VWAP
+        "afterhours":     "16:00",  # full day VWAP
+        "powerhour":      "16:00",  # legacy alias
     }
 
-    end_time = vwap_end.get(session_key)
-    if not end_time:
-        return {}  # no VWAP for earlypremarket/night/premarket sessions
+    end_time = vwap_end.get(session_key, "16:00")
 
     start_dt = datetime.fromisoformat(f"{date_str}T09:30:00").replace(tzinfo=et)
     end_dt   = datetime.fromisoformat(f"{date_str}T{end_time}:00").replace(tzinfo=et)
