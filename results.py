@@ -562,15 +562,24 @@ document.querySelectorAll('.nav-item').forEach(item => {
 });
 </script>"""
 
-    # Cumulative block
-    cum_html = f"""<div class="cum-wrap"><div class="cumulative">
-  <div class="cum-title">Cumulative Performance \u2014 {cum_stats["days"]} days tracked</div>
-  <div class="cum-grid">
-    {cum_section_html("\U0001f525 HOT (rvol \u2265100x)", cum_stats["hot"])}
-    {cum_section_html("\u26a1 WARM (rvol \u226510x)", cum_stats["warm"])}
-    {cum_section_html("\U0001f441 WATCH", cum_stats["watch"])}
-  </div>
-</div></div>"""
+    # Cumulative block — labels pre-built outside f-string (backslash in f-expr is a SyntaxError)
+    _lbl_hot   = "🔥 HOT (rvol ≥100x)"
+    _lbl_warm  = "⚡ WARM (rvol ≥10x)"
+    _lbl_watch = "👁 WATCH"
+    _cum_days  = cum_stats["days"]
+    _sec_hot   = cum_section_html(_lbl_hot,   cum_stats["hot"])
+    _sec_warm  = cum_section_html(_lbl_warm,  cum_stats["warm"])
+    _sec_watch = cum_section_html(_lbl_watch, cum_stats["watch"])
+    cum_html = (
+        '<div class="cum-wrap"><div class="cumulative">\n'
+        '  <div class="cum-title">Cumulative Performance — ' + str(_cum_days) + ' days tracked</div>\n'
+        '  <div class="cum-grid">\n'
+        '    ' + _sec_hot + '\n'
+        '    ' + _sec_warm + '\n'
+        '    ' + _sec_watch + '\n'
+        '  </div>\n'
+        '</div></div>'
+    )
 
     return f"""<!DOCTYPE html>
 <html lang="en">
