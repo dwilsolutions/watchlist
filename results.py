@@ -405,7 +405,7 @@ a{color:inherit;text-decoration:none;}
 .hit{color:#6ee89a;}.miss{color:var(--muted);}.stp{color:#f57a7a;}
 
 .layout{display:flex;min-height:calc(100vh - 200px);}
-.sidenav{width:168px;flex-shrink:0;background:var(--bg2);
+.sidenav{width:182px;flex-shrink:0;background:var(--bg2);
   border-right:1px solid var(--border);padding:16px 0;
   position:sticky;top:0;align-self:flex-start;
   height:calc(100vh - 200px);display:flex;flex-direction:column;}
@@ -418,7 +418,7 @@ a{color:inherit;text-decoration:none;}
 .nav-item.active{color:var(--green);border-left-color:var(--green);
   background:rgba(58,156,95,0.06);}
 .nav-icon{font-size:13px;width:18px;text-align:center;flex-shrink:0;}
-.nav-label{font-size:12px;flex:1;}
+.nav-label{font-size:11px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .nav-cnt{font-size:10px;padding:1px 6px;border-radius:20px;
   background:rgba(255,255,255,0.06);color:var(--muted);}
 .nav-item.active .nav-cnt{background:rgba(58,156,95,0.15);color:var(--green);}
@@ -426,7 +426,7 @@ a{color:inherit;text-decoration:none;}
 .tab-content.active{display:block;}
 .empty{color:var(--muted);font-size:12px;padding:8px 0;}
 .no-data{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:16px;color:var(--muted);font-size:12px;text-align:center;}
-.footer{text-align:center;font-size:10px;color:var(--muted);padding:24px;border-top:1px solid var(--border);}
+.footer{text-align:center;font-size:10px;color:var(--muted);padding:24px;border-top:1px solid var(--border);}.dl-btn{font-family:var(--mono);font-size:10px;padding:4px 11px;border-radius:20px;background:rgba(58,156,95,0.12);color:#5cc98a;border:1px solid rgba(58,156,95,0.3);cursor:pointer;letter-spacing:0.04em;transition:background .15s;}.dl-btn:hover{background:rgba(58,156,95,0.22);}
 """
 
 def card_html(t, perf):
@@ -512,6 +512,7 @@ def render_html(today, session_results, all_quotes, cum_stats, gen_time):
     # Build nav items and tab content for each session
     nav_items_html = ""
     tabs_html = ""
+    all_sessions_inner = ""
     SESSION_ICONS = {
         "earlypremarket": "🌙",
         "premarket":      "🌅",
@@ -542,14 +543,51 @@ def render_html(today, session_results, all_quotes, cum_stats, gen_time):
         tabs_html += f'''<div class="tab-content{active_cls}" id="sess-{session_key}">
   <div class="body" style="padding:14px 20px 48px;">{body_inner}</div>
 </div>'''
+        if tickers:
+            _all_cards = "".join(card_html(t, t["perf"]) for t in tickers)
+            all_sessions_inner += f'''<div class="sec-lbl">{icon} {label} · {runner_txt}</div><div class="cards">{_all_cards}</div>'''
 
+    _all_total = sum(len(session_results.get(sk, [])) for sk, _ in SESSIONS_ORDER)
+    _all_body  = all_sessions_inner if all_sessions_inner else '<div class="no-data">No data today</div>'
+    _all_nav   = f'''<div class="nav-item" data-tab="sess-all">
+  <span class="nav-icon">📋</span>
+  <span class="nav-label">All Sessions</span>
+  <span class="nav-cnt">{_all_total}</span>
+</div>'''
+    _all_tab   = f'''<div class="tab-content" id="sess-all">
+  <div class="body" style="padding:14px 20px 48px;">{_all_body}</div>
+</div>'''
     session_html = f'''<div class="layout">
   <div class="sidenav">
     <div class="sidenav-label">Sessions</div>
+    {_all_nav}
     {nav_items_html}
   </div>
+  {_all_tab}
   {tabs_html}
 </div>'''
+    import json as _json
+    export_payload = {
+        "date": today.isoformat(),
+        "generated": gen_time,
+        "summary": {
+            "total": total,
+            "monsters": monsters,
+            "big_runners": big_runners,
+            "runners": runners,
+            "catch_rate": catch_rate,
+        },
+        "cumulative": cum_stats,
+        "sessions": {
+            sk: [
+                {k: v for k, v in t.items()}
+                for t in tickers
+            ]
+            for sk, tickers in session_results.items()
+        },
+    }
+    export_json_escaped = _json.dumps(export_payload, indent=2).replace("</", "<" + "/")
+
     js_block = """<script>
 document.querySelectorAll('.nav-item').forEach(item => {
   item.addEventListener('click', () => {
@@ -560,6 +598,18 @@ document.querySelectorAll('.nav-item').forEach(item => {
     window.scrollTo(0, 0);
   });
 });
+
+const _EOD_DATA = """ + export_json_escaped + """;
+
+function downloadData() {
+  const blob = new Blob([JSON.stringify(_EOD_DATA, null, 2)], {type: 'application/json'});
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = 'eod-results-' + _EOD_DATA.date + '.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
 </script>"""
 
     # Cumulative block — labels pre-built outside f-string (backslash in f-expr is a SyntaxError)
@@ -599,6 +649,7 @@ document.querySelectorAll('.nav-item').forEach(item => {
   <div class="hdr-r">
     <span class="pill">{today_str}</span>
     <span class="pill">Generated {gen_time}</span>
+    <button class="dl-btn" onclick="downloadData()">&#8595; Download Data</button>
   </div>
 </div>
 <div class="summary">
