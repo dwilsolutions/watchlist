@@ -1,0 +1,385 @@
+{
+  "date": "2026-04-24",
+  "session": "midday",
+  "generated": "11:47 AM ET",
+  "tickers": [
+    {
+      "ticker": "CAST",
+      "scan": "Low Float",
+      "company": "Freecast Inc",
+      "sector": "Communication Services",
+      "price": 2.1,
+      "change": 25.07,
+      "rvol": 153.98,
+      "float_m": 16.31,
+      "short_pct": 0.45,
+      "days_cover": 99.0,
+      "spike_pct": 43.5,
+      "news": "FreeCast Reaches National Agreement with DIRECTV Multifamily to Sell DIRECTV Services",
+      "news_url": "https://www.businesswire.com/news/home/20260423079497/en/",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +44%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-17",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 4.09,
+        "entry1_note": "Break above 10d high",
+        "entry2": 3.646,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 4.7035,
+        "entry3_note": "Makes new highs",
+        "stop": 1.63,
+        "stop_note": "Prior day low",
+        "target1": 5.2025,
+        "target1_pct": 27.2,
+        "target2": 6.6176,
+        "target2_pct": 61.8,
+        "target3": 10.7076,
+        "target3_pct": 161.8
+      },
+      "price_display": "$2.10",
+      "rvol_display": "154x",
+      "float_display": "16.3M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "ENVB",
+      "scan": "Low Float",
+      "company": "Enveric Biosciences Inc",
+      "sector": "Healthcare",
+      "price": 5.54,
+      "change": 37.81,
+      "rvol": 28.52,
+      "float_m": 1.62,
+      "short_pct": 4.36,
+      "days_cover": 99.0,
+      "spike_pct": 198.4,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018581.html",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +198%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-20",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 7.88,
+        "entry1_note": "Break above 10d high",
+        "entry2": 2.4997,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 9.062,
+        "entry3_note": "Makes new highs",
+        "stop": 3.555,
+        "stop_note": "Prior day low",
+        "target1": 10.0234,
+        "target1_pct": 27.2,
+        "target2": 12.7498,
+        "target2_pct": 61.8,
+        "target3": 20.6298,
+        "target3_pct": 161.8
+      },
+      "price_display": "$5.54",
+      "rvol_display": "29x",
+      "float_display": "1.6M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "CMPS",
+      "scan": "Mid Float",
+      "company": "Compass Pathways Plc ADR",
+      "sector": "Healthcare",
+      "price": 9.5,
+      "change": 3.82,
+      "rvol": 4.6,
+      "float_m": 93.51,
+      "short_pct": 9.51,
+      "days_cover": 99.0,
+      "spike_pct": 53.3,
+      "news": "Compass Pathways Announces FDA Granted NDA Rolling Review Request and Awarded Commissioner's National Priority Voucher",
+      "news_url": "https://www.businesswire.com/news/home/20260424121830/en",
+      "score": 0.54,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.4,
+        "fda_binary": 1.0
+      },
+      "flags": [
+        [
+          "FDA EVENT",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +53%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 10.21,
+        "entry1_note": "Break above 10d high",
+        "entry2": 6.6282,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 11.7415,
+        "entry3_note": "Makes new highs",
+        "stop": 8.65,
+        "stop_note": "Prior day low",
+        "target1": 12.9871,
+        "target1_pct": 27.2,
+        "target2": 16.5198,
+        "target2_pct": 61.8,
+        "target3": 26.7298,
+        "target3_pct": 161.8
+      },
+      "price_display": "$9.50",
+      "rvol_display": "5x",
+      "float_display": "93.5M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "INHD",
+      "scan": "Low Float",
+      "company": "Inno Holdings Inc",
+      "sector": "Basic Materials",
+      "price": 0.15,
+      "change": -4.73,
+      "rvol": 6.11,
+      "float_m": 8.37,
+      "short_pct": 3.9,
+      "days_cover": 99.0,
+      "spike_pct": 248.8,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018601.html",
+      "score": 0.52,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.7,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +249%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-22",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.219,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.4076,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.2518,
+        "entry3_note": "Makes new highs",
+        "stop": 0.145,
+        "stop_note": "Prior day low",
+        "target1": 0.2786,
+        "target1_pct": 27.2,
+        "target2": 0.3543,
+        "target2_pct": 61.8,
+        "target3": 0.5733,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.15",
+      "rvol_display": "6x",
+      "float_display": "8.4M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "ONMD",
+      "scan": "Low Float",
+      "company": "OneMedNet Corp",
+      "sector": "Healthcare",
+      "price": 1.23,
+      "change": 37.84,
+      "rvol": 4.96,
+      "float_m": 15.72,
+      "short_pct": 4.82,
+      "days_cover": 99.0,
+      "spike_pct": 98.6,
+      "news": "OneMedNet Goes Live with 80 Million Patient Journeys and Billions of Records",
+      "news_url": "https://elite.finviz.com/news/346711/onemednet-goes-live-with-80-million-patient-journeys-and-billions-of-records",
+      "score": 0.49,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.4,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +99%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-20",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.23,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.8944,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.4145,
+        "entry3_note": "Makes new highs",
+        "stop": 0.87,
+        "stop_note": "Prior day low",
+        "target1": 1.5646,
+        "target1_pct": 27.2,
+        "target2": 1.9901,
+        "target2_pct": 61.8,
+        "target3": 3.2201,
+        "target3_pct": 161.8
+      },
+      "price_display": "$1.23",
+      "rvol_display": "5x",
+      "float_display": "15.7M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "SKLZ",
+      "scan": "Low Float",
+      "company": "Skillz Inc",
+      "sector": "Communication Services",
+      "price": 7.95,
+      "change": -36.14,
+      "rvol": 26.74,
+      "float_m": 8.46,
+      "short_pct": 17.08,
+      "days_cover": 99.0,
+      "spike_pct": 443.5,
+      "news": "Skillz Provides Statement on Jury Verdict",
+      "news_url": "https://www.businesswire.com/news/home/20260423258526/en",
+      "score": 0.375,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +444%",
+          "gap"
+        ],
+        [
+          "SHORT INT 17%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 20.0,
+        "entry1_note": "Break above 10d high",
+        "entry2": 3.6805,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 23.0,
+        "entry3_note": "Makes new highs",
+        "stop": 3.25,
+        "stop_note": "Prior day low",
+        "target1": 25.44,
+        "target1_pct": 27.2,
+        "target2": 32.36,
+        "target2_pct": 61.8,
+        "target3": 52.36,
+        "target3_pct": 161.8
+      },
+      "price_display": "$7.95",
+      "rvol_display": "27x",
+      "float_display": "8.5M",
+      "rank": "watch"
+    }
+  ]
+}
