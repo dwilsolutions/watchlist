@@ -23,7 +23,8 @@ a{color:inherit;text-decoration:none;}
 .sum-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:0.06em;text-transform:uppercase;}
 .c-g{color:var(--green);}.c-a{color:var(--amber);}.c-r{color:var(--red);}
 .body{padding:18px 20px 48px;}
-.cumulative{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:20px;}
+.cum-wrap{padding:16px 20px;}
+.cumulative{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:0;}
 .cum-title{font-family:var(--sans);font-size:14px;font-weight:500;margin-bottom:12px;}
 .cum-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
 .cum-section{background:var(--bg3);border-radius:8px;padding:12px;}
@@ -87,7 +88,7 @@ a{color:inherit;text-decoration:none;}
   </div>
   <div class="hdr-r">
     <span class="pill">Thu Apr 23, 2026</span>
-    <span class="pill">Generated 11:25 PM ET</span>
+    <span class="pill">Generated 11:35 PM ET</span>
   </div>
 </div>
 <div class="summary">
@@ -96,8 +97,7 @@ a{color:inherit;text-decoration:none;}
   <div class="sum-cell"><div class="sum-n c-g">[{'ticker': 'SST', 'company': 'System1 Inc', 'sector': 'Industrials', 'scan': 'Low Float', 'score': 73, 'tier': 'watch', 'entry': 3.85, 'entry_label': 'Momentum above VWAP $3.70', 'range_str': ' — range to $4.33', 'prev_close': 2.8, 'prev_high': 4.33, 'fib_levels': [['Prev High', 4.33], ['First target', 4.75], ['Second target', 5.28], ['Extended', 5.86]], 'price_at_scan': 3.83, 'gap': 7.14, 'rvol': 12.18, 'flags': ['CONTINUATION', 'EXTENDED', 'SECTOR MOMENTUM'], 'news_url': 'https://finance.yahoo.com/m/8965779e-0e19-3c50-b21a-f71164b7acf1/system1-shares-jump-19%25-as.html', 'perf': {'close': 3.83, 'high': 4.47, 'low': 3.38, 'pct_close': -0.5, 'pct_high': 16.1, 'outcome': 'runner', 'dumped': True, 'real_vwap': 3.661, 'above_vwap': True}, 'outcome': 'runner'}]</div><div class="sum-l">Runners 10%+</div></div>
   <div class="sum-cell"><div class="sum-n c-g">13%</div><div class="sum-l">Today Catch Rate</div></div>
 </div>
-<div class="body">
-  <div class="cumulative">
+<div class="cum-wrap"><div class="cumulative">
   <div class="cum-title">Cumulative Performance — 13 days tracked</div>
   <div class="cum-grid">
     <div class="cum-section">
@@ -126,8 +126,7 @@ a{color:inherit;text-decoration:none;}
 </div>
   </div>
 </div>
-</div>
-  <div class="layout">
+<div class="layout">
   <div class="sidenav">
     <div class="sidenav-label">Sessions</div>
     <div class="nav-item active" data-tab="sess-earlypremarket">
@@ -172,7 +171,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$1.2</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">BANL</span>
     <span class="co">CBL International Lt</span>
@@ -191,7 +190,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$0.53</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div></div></div>
+</div></div></div></div>
 </div><div class="tab-content" id="sess-premarket">
   <div class="body" style="padding:14px 20px 48px;"><div class="sec-lbl">Pre-Market · 2 runners</div><div class="cards"><div class="card watch">
   <div class="r1">
@@ -212,7 +211,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$1.05</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">AUUD</span>
     <span class="co">Auddia Inc</span>
@@ -231,7 +230,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$7.07</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">YCBD</span>
     <span class="co">cbdMD Inc</span>
@@ -250,7 +249,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$1.25</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div></div></div>
+</div></div></div></div>
 </div><div class="tab-content" id="sess-marketopen">
   <div class="body" style="padding:14px 20px 48px;"><div class="sec-lbl">Market Open · 1 runner</div><div class="cards"><div class="card watch">
   <div class="r1">
@@ -271,7 +270,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$1.05</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">AUUD</span>
     <span class="co">Auddia Inc</span>
@@ -290,7 +289,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$7.07</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">YCBD</span>
     <span class="co">cbdMD Inc</span>
@@ -309,7 +308,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$1.25</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div></div></div>
+</div></div></div></div>
 </div><div class="tab-content" id="sess-midday">
   <div class="body" style="padding:14px 20px 48px;"><div class="sec-lbl">Midday · no runners</div><div class="cards"><div class="card watch">
   <div class="r1">
@@ -330,7 +329,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$5.99</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">PMEC</span>
     <span class="co">Primech Holdings Ltd</span>
@@ -349,7 +348,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$0.83</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">AUUD</span>
     <span class="co">Auddia Inc</span>
@@ -368,7 +367,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$10.1</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">PAPL</span>
     <span class="co">Pineapple Financial </span>
@@ -387,7 +386,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$1.04</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">SST</span>
     <span class="co">System1 Inc</span>
@@ -406,7 +405,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$4.03</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">FCEL</span>
     <span class="co">Fuelcell Energy Inc</span>
@@ -425,7 +424,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$12.43</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">POET</span>
     <span class="co">POET Technologies In</span>
@@ -444,7 +443,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$12.33</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">REPL</span>
     <span class="co">Replimune Group Inc</span>
@@ -463,7 +462,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$2.79</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">YCBD</span>
     <span class="co">cbdMD Inc</span>
@@ -482,7 +481,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$1.27</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div></div></div>
+</div></div></div></div>
 </div><div class="tab-content" id="sess-afterhours">
   <div class="body" style="padding:14px 20px 48px;"><div class="sec-lbl">After Hours · 1 runner</div><div class="cards"><div class="card watch">
   <div class="r1">
@@ -503,7 +502,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$6.04</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">MWYN</span>
     <span class="co">Marwynn Holdings Inc</span>
@@ -522,7 +521,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$0.76</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">PAPL</span>
     <span class="co">Pineapple Financial </span>
@@ -541,7 +540,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$1.15</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">AUUD</span>
     <span class="co">Auddia Inc</span>
@@ -560,7 +559,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$10.1</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">TZOO</span>
     <span class="co">Travelzoo</span>
@@ -579,7 +578,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$11.98</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">SST</span>
     <span class="co">System1 Inc</span>
@@ -598,7 +597,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$4.33</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">REPL</span>
     <span class="co">Replimune Group Inc</span>
@@ -617,7 +616,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$2.96</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">TDIC</span>
     <span class="co">Dreamland Ltd</span>
@@ -636,7 +635,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$1.89</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">FCEL</span>
     <span class="co">Fuelcell Energy Inc</span>
@@ -655,7 +654,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$12.43</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">NMAX</span>
     <span class="co">Newsmax Inc</span>
@@ -674,7 +673,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$9.59</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">MAPS</span>
     <span class="co">WM Technology Inc</span>
@@ -693,7 +692,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$0.44</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">POET</span>
     <span class="co">POET Technologies In</span>
@@ -712,7 +711,7 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$12.34</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div><div class="card watch">
+</div></div><div class="card watch">
   <div class="r1">
     <span class="tkr">YCBD</span>
     <span class="co">cbdMD Inc</span>
@@ -731,10 +730,10 @@ a{color:inherit;text-decoration:none;}
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$1.27</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
   </div>
-</div></div></div>
+</div></div></div></div>
 </div>
 </div>
-  <script>
+<script>
 document.querySelectorAll('.nav-item').forEach(item => {
   item.addEventListener('click', () => {
     document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
