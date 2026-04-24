@@ -11,7 +11,7 @@
 body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.5;}
 a{color:inherit;text-decoration:none;}
 .hdr{background:var(--bg2);border-bottom:1px solid var(--border);padding:16px 20px;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px;}
-.hdr-l h1{font-family:var(--sans);font-size:20px;font-weight:700;letter-spacing:0;line-height:normal;display:block;}
+.hdr-l h1{font-family:var(--sans);font-size:20px;font-weight:700;letter-spacing:0;line-height:normal;}
 .hdr-l h1 em{color:var(--green);font-style:normal;}
 .hdr-l .sub{font-size:11px;color:var(--muted);margin-top:3px;}
 .hdr-r{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
@@ -21,7 +21,7 @@ a{color:inherit;text-decoration:none;}
 .sum-n{font-family:var(--sans);font-size:26px;font-weight:700;}
 .sum-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:0.06em;text-transform:uppercase;}
 .c-g{color:var(--green);}.c-a{color:var(--amber);}.c-r{color:var(--red);}
-.body{padding:18px 20px 48px;}
+.body{padding:18px 20px 48px;max-width:940px;margin:0 auto;}
 .cumulative{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:20px;}
 .cum-title{font-family:var(--sans);font-size:14px;font-weight:500;margin-bottom:12px;}
 .cum-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
@@ -77,13 +77,13 @@ a{color:inherit;text-decoration:none;}
   </div>
   <div class="hdr-r">
     <span class="pill">Thu Apr 23, 2026</span>
-    <span class="pill">Generated 10:40 PM ET</span>
+    <span class="pill">Generated 11:17 PM ET</span>
   </div>
 </div>
 <div class="summary">
   <div class="sum-cell"><div class="sum-n c-g">0</div><div class="sum-l">Monsters 50%+</div></div>
   <div class="sum-cell"><div class="sum-n c-g">2</div><div class="sum-l">Big Runners 20%+</div></div>
-  <div class="sum-cell"><div class="sum-n c-g">4</div><div class="sum-l">Runners 10%+</div></div>
+  <div class="sum-cell"><div class="sum-n c-g">[{'ticker': 'SST', 'company': 'System1 Inc', 'sector': 'Industrials', 'scan': 'Low Float', 'score': 73, 'tier': 'watch', 'entry': 3.85, 'entry_label': 'Momentum above VWAP $3.70', 'range_str': ' — range to $4.33', 'prev_close': 2.8, 'prev_high': 4.33, 'fib_levels': [['Prev High', 4.33], ['First target', 4.75], ['Second target', 5.28], ['Extended', 5.86]], 'price_at_scan': 3.83, 'gap': 7.14, 'rvol': 12.18, 'flags': ['CONTINUATION', 'EXTENDED', 'SECTOR MOMENTUM'], 'news_url': 'https://finance.yahoo.com/m/8965779e-0e19-3c50-b21a-f71164b7acf1/system1-shares-jump-19%25-as.html', 'perf': {'close': 3.83, 'high': 4.47, 'low': 3.38, 'pct_close': -0.5, 'pct_high': 16.1, 'outcome': 'runner', 'dumped': True, 'real_vwap': 3.661, 'above_vwap': True}, 'outcome': 'runner'}]</div><div class="sum-l">Runners 10%+</div></div>
   <div class="sum-cell"><div class="sum-n c-g">13%</div><div class="sum-l">Today Catch Rate</div></div>
 </div>
 <div class="body">
@@ -91,20 +91,28 @@ a{color:inherit;text-decoration:none;}
   <div class="cum-title">Cumulative Performance — 13 days tracked</div>
   <div class="cum-grid">
     <div class="cum-section">
-  <div class="cum-label">Buy Watch ≥65</div>
-  <div class="cum-row"><span>Total tracked</span><span>230</span></div>
-  <div class="cum-row"><span>Runners 10%+</span><span class="cum-val-g">22%</span></div>
-  <div class="cum-row"><span>Big Runners 20%+</span><span class="cum-val-g">15%</span></div>
+  <div class="cum-label">🔥 HOT (rvol ≥100x)</div>
+  <div class="cum-row"><span>Total tracked</span><span>228</span></div>
+  <div class="cum-row"><span>Runners 10%+</span><span class="cum-val-g">21%</span></div>
+  <div class="cum-row"><span>Big Runners 20%+</span><span class="cum-val-g">16%</span></div>
   <div class="cum-row"><span>Monsters 50%+</span><span class="cum-val-g">4%</span></div>
   <div class="cum-row"><span>Run &amp; Dump</span><span class="cum-val-g">14%</span></div>
 </div>
     <div class="cum-section">
-  <div class="cum-label">Monitor 40–64</div>
-  <div class="cum-row"><span>Total tracked</span><span>433</span></div>
-  <div class="cum-row"><span>Runners 10%+</span><span class="cum-val-g">16%</span></div>
+  <div class="cum-label">⚡ WARM (rvol ≥10x)</div>
+  <div class="cum-row"><span>Total tracked</span><span>227</span></div>
+  <div class="cum-row"><span>Runners 10%+</span><span class="cum-val-g">19%</span></div>
   <div class="cum-row"><span>Big Runners 20%+</span><span class="cum-val-g">9%</span></div>
   <div class="cum-row"><span>Monsters 50%+</span><span class="cum-val-g">3%</span></div>
-  <div class="cum-row"><span>Run &amp; Dump</span><span class="cum-val-g">8%</span></div>
+  <div class="cum-row"><span>Run &amp; Dump</span><span class="cum-val-g">10%</span></div>
+</div>
+    <div class="cum-section">
+  <div class="cum-label">👁 WATCH</div>
+  <div class="cum-row"><span>Total tracked</span><span>208</span></div>
+  <div class="cum-row"><span>Runners 10%+</span><span class="cum-val-g">13%</span></div>
+  <div class="cum-row"><span>Big Runners 20%+</span><span class="cum-val-g">7%</span></div>
+  <div class="cum-row"><span>Monsters 50%+</span><span class="cum-val-g">3%</span></div>
+  <div class="cum-row"><span>Run &amp; Dump</span><span class="cum-val-g">5%</span></div>
 </div>
   </div>
 </div>
