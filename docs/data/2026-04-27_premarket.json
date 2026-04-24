@@ -1,0 +1,79 @@
+{
+  "session": "premarket",
+  "label": "Pre-Market",
+  "date": "2026-04-27",
+  "generated": "06:55 AM ET",
+  "tickers": [
+    {
+      "ticker": "ITOC",
+      "company": "iTonic Holdings Ltd",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 63,
+      "tier": "monitor",
+      "entry": 0.53,
+      "entry_label": "Break above $0.53",
+      "range_str": "",
+      "prev_close": 0.3,
+      "prev_high": 0.53,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.53
+        ],
+        [
+          "First target",
+          0.59
+        ],
+        [
+          "Second target",
+          0.67
+        ],
+        [
+          "Extended",
+          0.76
+        ]
+      ],
+      "price_at_scan": 0.38,
+      "gap": 53.2,
+      "rvol": 153.61,
+      "flags": [
+        "NASDAQ NOTICE",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CTNT",
+      "company": "Cheetah Net Supply Chain Service Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 41,
+      "tier": "monitor",
+      "entry": 0.06,
+      "entry_label": "Current $0.06",
+      "range_str": " \u2014 range to $0.07",
+      "prev_close": 0.03,
+      "prev_high": 0.06,
+      "fib_levels": [
+        [
+          "First target",
+          0.07
+        ],
+        [
+          "Second target",
+          0.08
+        ],
+        [
+          "Extended",
+          0.09
+        ]
+      ],
+      "price_at_scan": 0.06,
+      "gap": 8.76,
+      "rvol": 291.65,
+      "flags": [
+        "CATALYST \u00b7 DEAL"
+      ]
+    }
+  ]
+}
