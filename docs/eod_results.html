@@ -56,7 +56,7 @@ a{color:inherit;text-decoration:none;}
 .hit{color:#6ee89a;}.miss{color:var(--muted);}.stp{color:#f57a7a;}
 
 .layout{display:flex;min-height:calc(100vh - 200px);}
-.sidenav{width:168px;flex-shrink:0;background:var(--bg2);
+.sidenav{width:182px;flex-shrink:0;background:var(--bg2);
   border-right:1px solid var(--border);padding:16px 0;
   position:sticky;top:0;align-self:flex-start;
   height:calc(100vh - 200px);display:flex;flex-direction:column;}
@@ -69,7 +69,7 @@ a{color:inherit;text-decoration:none;}
 .nav-item.active{color:var(--green);border-left-color:var(--green);
   background:rgba(58,156,95,0.06);}
 .nav-icon{font-size:13px;width:18px;text-align:center;flex-shrink:0;}
-.nav-label{font-size:12px;flex:1;}
+.nav-label{font-size:11px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .nav-cnt{font-size:10px;padding:1px 6px;border-radius:20px;
   background:rgba(255,255,255,0.06);color:var(--muted);}
 .nav-item.active .nav-cnt{background:rgba(58,156,95,0.15);color:var(--green);}
@@ -77,7 +77,7 @@ a{color:inherit;text-decoration:none;}
 .tab-content.active{display:block;}
 .empty{color:var(--muted);font-size:12px;padding:8px 0;}
 .no-data{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:16px;color:var(--muted);font-size:12px;text-align:center;}
-.footer{text-align:center;font-size:10px;color:var(--muted);padding:24px;border-top:1px solid var(--border);}
+.footer{text-align:center;font-size:10px;color:var(--muted);padding:24px;border-top:1px solid var(--border);}.dl-btn{font-family:var(--mono);font-size:10px;padding:4px 11px;border-radius:20px;background:rgba(58,156,95,0.12);color:#5cc98a;border:1px solid rgba(58,156,95,0.3);cursor:pointer;letter-spacing:0.04em;transition:background .15s;}.dl-btn:hover{background:rgba(58,156,95,0.22);}
 </style>
 </head>
 <body>
@@ -88,7 +88,8 @@ a{color:inherit;text-decoration:none;}
   </div>
   <div class="hdr-r">
     <span class="pill">Fri Apr 24, 2026</span>
-    <span class="pill">Generated 07:32 AM ET</span>
+    <span class="pill">Generated 07:53 AM ET</span>
+    <button class="dl-btn" onclick="downloadData()">&#8595; Download Data</button>
   </div>
 </div>
 <div class="summary">
@@ -129,6 +130,11 @@ a{color:inherit;text-decoration:none;}
 <div class="layout">
   <div class="sidenav">
     <div class="sidenav-label">Sessions</div>
+    <div class="nav-item" data-tab="sess-all">
+  <span class="nav-icon">📋</span>
+  <span class="nav-label">All Sessions</span>
+  <span class="nav-cnt">12</span>
+</div>
     <div class="nav-item active" data-tab="sess-earlypremarket">
   <span class="nav-icon">🌙</span>
   <span class="nav-label">Early Pre-Market</span>
@@ -151,6 +157,237 @@ a{color:inherit;text-decoration:none;}
   <span class="nav-cnt">0</span>
 </div>
   </div>
+  <div class="tab-content" id="sess-all">
+  <div class="body" style="padding:14px 20px 48px;"><div class="sec-lbl">🌙 Early Pre-Market · no runners</div><div class="cards"><div class="card buy">
+  <div class="r1">
+    <span class="tkr">TZOO</span>
+    <span class="co">Travelzoo</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="score-pill">100</span>
+    <span class="outcome-pill" style="background:#1c1f23;color:#656c7a">➖ Flat</span>
+    <span class="pct neg">-21.3% close</span>
+    <span class="pct neg" style="margin-left:4px">-20.7% high</span>
+    <span style="font-size:11px;color:#656c7a;margin-left:4px">VWAP —</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=TZOO" target="_blank">Chart ↗</a>
+  </div>
+  <div class="levels">
+    <div class="lv"><div class="lv-l">Entry</div><div class="lv-v">$12.04</div></div>
+    <div class="lv"><div class="lv-l">Close</div><div class="lv-v neg">$9.48</div></div>
+    <div class="lv"><div class="lv-l">Session High</div><div class="lv-v neg">$9.55 (-20.7%)</div></div>
+    <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$11.98</div></div>
+    <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
+  </div>
+</div><div class="card buy">
+  <div class="r1">
+    <span class="tkr">CPIX</span>
+    <span class="co">Cumberland Pharmaceu</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="score-pill">87</span>
+    <span class="outcome-pill" style="background:#1c1f23;color:#656c7a">➖ Flat</span>
+    <span class="pct neg">-35.7% close</span>
+    <span class="pct neg" style="margin-left:4px">-37.7% high</span>
+    <span style="font-size:11px;color:#656c7a;margin-left:4px">VWAP —</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=CPIX" target="_blank">Chart ↗</a>
+  </div>
+  <div class="levels">
+    <div class="lv"><div class="lv-l">Entry</div><div class="lv-v">$6.07</div></div>
+    <div class="lv"><div class="lv-l">Close</div><div class="lv-v neg">$3.9</div></div>
+    <div class="lv"><div class="lv-l">Session High</div><div class="lv-v neg">$3.78 (-37.7%)</div></div>
+    <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$6.04</div></div>
+    <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
+  </div>
+</div><div class="card buy">
+  <div class="r1">
+    <span class="tkr">PAPL</span>
+    <span class="co">Pineapple Financial </span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="score-pill">77</span>
+    <span class="outcome-pill" style="background:#1c1f23;color:#656c7a">➖ Flat</span>
+    <span class="pct neg">-25.0% close</span>
+    <span class="pct neg" style="margin-left:4px">-25.0% high</span>
+    <span style="font-size:11px;color:#656c7a;margin-left:4px">VWAP —</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=PAPL" target="_blank">Chart ↗</a>
+  </div>
+  <div class="levels">
+    <div class="lv"><div class="lv-l">Entry</div><div class="lv-v">$1.16</div></div>
+    <div class="lv"><div class="lv-l">Close</div><div class="lv-v neg">$0.87</div></div>
+    <div class="lv"><div class="lv-l">Session High</div><div class="lv-v neg">$0.87 (-25.0%)</div></div>
+    <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$1.15</div></div>
+    <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
+  </div>
+</div><div class="card buy">
+  <div class="r1">
+    <span class="tkr">YCBD</span>
+    <span class="co">cbdMD Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="score-pill">71</span>
+    <span class="outcome-pill" style="background:#1c1f23;color:#656c7a">➖ Flat</span>
+    <span class="pct neg">-21.1% close</span>
+    <span class="pct neg" style="margin-left:4px">-19.5% high</span>
+    <span style="font-size:11px;color:#656c7a;margin-left:4px">VWAP —</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=YCBD" target="_blank">Chart ↗</a>
+  </div>
+  <div class="levels">
+    <div class="lv"><div class="lv-l">Entry</div><div class="lv-v">$1.28</div></div>
+    <div class="lv"><div class="lv-l">Close</div><div class="lv-v neg">$1.01</div></div>
+    <div class="lv"><div class="lv-l">Session High</div><div class="lv-v neg">$1.03 (-19.5%)</div></div>
+    <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$1.27</div></div>
+    <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
+  </div>
+</div><div class="card buy">
+  <div class="r1">
+    <span class="tkr">TDIC</span>
+    <span class="co">Dreamland Ltd</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="score-pill">68</span>
+    <span class="outcome-pill" style="background:#1c1f23;color:#656c7a">➖ Flat</span>
+    <span class="pct neg">-23.2% close</span>
+    <span class="pct neg" style="margin-left:4px">-23.7% high</span>
+    <span style="font-size:11px;color:#656c7a;margin-left:4px">VWAP —</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=TDIC" target="_blank">Chart ↗</a>
+  </div>
+  <div class="levels">
+    <div class="lv"><div class="lv-l">Entry</div><div class="lv-v">$1.9</div></div>
+    <div class="lv"><div class="lv-l">Close</div><div class="lv-v neg">$1.46</div></div>
+    <div class="lv"><div class="lv-l">Session High</div><div class="lv-v neg">$1.45 (-23.7%)</div></div>
+    <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$1.89</div></div>
+    <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
+  </div>
+</div><div class="card buy">
+  <div class="r1">
+    <span class="tkr">FCEL</span>
+    <span class="co">Fuelcell Energy Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="score-pill">68</span>
+    <span class="outcome-pill" style="background:#1c1f23;color:#656c7a">➖ Flat</span>
+    <span class="pct neg">-2.6% close</span>
+    <span class="pct neg" style="margin-left:4px">-0.3% high</span>
+    <span style="font-size:11px;color:#656c7a;margin-left:4px">VWAP —</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=FCEL" target="_blank">Chart ↗</a>
+  </div>
+  <div class="levels">
+    <div class="lv"><div class="lv-l">Entry</div><div class="lv-v">$12.49</div></div>
+    <div class="lv"><div class="lv-l">Close</div><div class="lv-v neg">$12.17</div></div>
+    <div class="lv"><div class="lv-l">Session High</div><div class="lv-v neg">$12.45 (-0.3%)</div></div>
+    <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$12.43</div></div>
+    <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
+  </div>
+</div><div class="card buy">
+  <div class="r1">
+    <span class="tkr">POET</span>
+    <span class="co">POET Technologies In</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="score-pill">68</span>
+    <span class="outcome-pill" style="background:#1a2a3d;color:#7ab4f5">📈 Mover 5%+</span>
+    <span class="pct neg">-5.5% close</span>
+    <span class="pct pos" style="margin-left:4px">+9.2% high</span>
+    <span style="font-size:11px;color:#656c7a;margin-left:4px">VWAP —</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=POET" target="_blank">Chart ↗</a>
+  </div>
+  <div class="levels">
+    <div class="lv"><div class="lv-l">Entry</div><div class="lv-v">$12.4</div></div>
+    <div class="lv"><div class="lv-l">Close</div><div class="lv-v neg">$11.72</div></div>
+    <div class="lv"><div class="lv-l">Session High</div><div class="lv-v pos">$13.54 (+9.2%)</div></div>
+    <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$12.34</div></div>
+    <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
+  </div>
+</div><div class="card buy">
+  <div class="r1">
+    <span class="tkr">SST</span>
+    <span class="co">System1 Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="score-pill">66</span>
+    <span class="outcome-pill" style="background:#1c1f23;color:#656c7a">➖ Flat</span>
+    <span class="pct neg">-12.0% close</span>
+    <span class="pct neg" style="margin-left:4px">-11.7% high</span>
+    <span style="font-size:11px;color:#656c7a;margin-left:4px">VWAP —</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=SST" target="_blank">Chart ↗</a>
+  </div>
+  <div class="levels">
+    <div class="lv"><div class="lv-l">Entry</div><div class="lv-v">$4.35</div></div>
+    <div class="lv"><div class="lv-l">Close</div><div class="lv-v neg">$3.83</div></div>
+    <div class="lv"><div class="lv-l">Session High</div><div class="lv-v neg">$3.84 (-11.7%)</div></div>
+    <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$4.33</div></div>
+    <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
+  </div>
+</div><div class="card monitor">
+  <div class="r1">
+    <span class="tkr">MWYN</span>
+    <span class="co">Marwynn Holdings Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="score-pill">61</span>
+    <span class="outcome-pill" style="background:#1c1f23;color:#656c7a">➖ Flat</span>
+    <span class="pct neg">-7.9% close</span>
+    <span class="pct neg" style="margin-left:4px">-17.1% high</span>
+    <span style="font-size:11px;color:#656c7a;margin-left:4px">VWAP —</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=MWYN" target="_blank">Chart ↗</a>
+  </div>
+  <div class="levels">
+    <div class="lv"><div class="lv-l">Entry</div><div class="lv-v">$0.76</div></div>
+    <div class="lv"><div class="lv-l">Close</div><div class="lv-v neg">$0.7</div></div>
+    <div class="lv"><div class="lv-l">Session High</div><div class="lv-v neg">$0.63 (-17.1%)</div></div>
+    <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$0.76</div></div>
+    <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
+  </div>
+</div><div class="card monitor">
+  <div class="r1">
+    <span class="tkr">AMST</span>
+    <span class="co">Amesite Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="score-pill">51</span>
+    <span class="outcome-pill" style="background:#1c1f23;color:#656c7a">➖ Flat</span>
+    <span class="pct neg">-29.8% close</span>
+    <span class="pct neg" style="margin-left:4px">-35.1% high</span>
+    <span style="font-size:11px;color:#656c7a;margin-left:4px">VWAP —</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=AMST" target="_blank">Chart ↗</a>
+  </div>
+  <div class="levels">
+    <div class="lv"><div class="lv-l">Entry</div><div class="lv-v">$2.05</div></div>
+    <div class="lv"><div class="lv-l">Close</div><div class="lv-v neg">$1.44</div></div>
+    <div class="lv"><div class="lv-l">Session High</div><div class="lv-v neg">$1.33 (-35.1%)</div></div>
+    <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$2.04</div></div>
+    <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
+  </div>
+</div><div class="card monitor">
+  <div class="r1">
+    <span class="tkr">REPL</span>
+    <span class="co">Replimune Group Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="score-pill">50</span>
+    <span class="outcome-pill" style="background:#1c1f23;color:#656c7a">➖ Flat</span>
+    <span class="pct neg">-4.0% close</span>
+    <span class="pct neg" style="margin-left:4px">-3.0% high</span>
+    <span style="font-size:11px;color:#656c7a;margin-left:4px">VWAP —</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=REPL" target="_blank">Chart ↗</a>
+  </div>
+  <div class="levels">
+    <div class="lv"><div class="lv-l">Entry</div><div class="lv-v">$2.97</div></div>
+    <div class="lv"><div class="lv-l">Close</div><div class="lv-v neg">$2.85</div></div>
+    <div class="lv"><div class="lv-l">Session High</div><div class="lv-v neg">$2.88 (-3.0%)</div></div>
+    <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$2.96</div></div>
+    <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
+  </div>
+</div><div class="card monitor">
+  <div class="r1">
+    <span class="tkr">NMAX</span>
+    <span class="co">Newsmax Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="score-pill">48</span>
+    <span class="outcome-pill" style="background:#1c1f23;color:#656c7a">➖ Flat</span>
+    <span class="pct neg">-30.4% close</span>
+    <span class="pct neg" style="margin-left:4px">-25.9% high</span>
+    <span style="font-size:11px;color:#656c7a;margin-left:4px">VWAP —</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=NMAX" target="_blank">Chart ↗</a>
+  </div>
+  <div class="levels">
+    <div class="lv"><div class="lv-l">Entry</div><div class="lv-v">$9.64</div></div>
+    <div class="lv"><div class="lv-l">Close</div><div class="lv-v neg">$6.71</div></div>
+    <div class="lv"><div class="lv-l">Session High</div><div class="lv-v neg">$7.14 (-25.9%)</div></div>
+    <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">$9.59</div></div>
+    <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">$—</div></div>
+  </div>
+</div></div></div>
+</div>
   <div class="tab-content active" id="sess-earlypremarket">
   <div class="body" style="padding:14px 20px 48px;"><div class="sec-lbl">Early Pre-Market · no runners</div><div class="cards"><div class="card buy">
   <div class="r1">
@@ -401,6 +638,643 @@ document.querySelectorAll('.nav-item').forEach(item => {
     window.scrollTo(0, 0);
   });
 });
+
+const _EOD_DATA = {
+  "date": "2026-04-24",
+  "generated": "07:53 AM ET",
+  "summary": {
+    "total": 12,
+    "monsters": 0,
+    "big_runners": 0,
+    "runners": 0,
+    "catch_rate": "0%"
+  },
+  "cumulative": {
+    "hot": {
+      "total": 232,
+      "runner": 49,
+      "big_runner": 37,
+      "monster": 9,
+      "dumped": 33
+    },
+    "warm": {
+      "total": 230,
+      "runner": 42,
+      "big_runner": 21,
+      "monster": 7,
+      "dumped": 22
+    },
+    "watch": {
+      "total": 213,
+      "runner": 28,
+      "big_runner": 14,
+      "monster": 6,
+      "dumped": 11
+    },
+    "days": 14
+  },
+  "sessions": {
+    "earlypremarket": [
+      {
+        "ticker": "TZOO",
+        "company": "Travelzoo",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 100,
+        "tier": "buy",
+        "entry": 12.04,
+        "entry_label": "Break above $11.98",
+        "range_str": "",
+        "prev_close": 7.49,
+        "prev_high": 11.98,
+        "fib_levels": [
+          [
+            "Prev High",
+            11.98
+          ],
+          [
+            "First target",
+            13.2
+          ],
+          [
+            "Second target",
+            14.75
+          ],
+          [
+            "Extended",
+            16.47
+          ]
+        ],
+        "price_at_scan": 9.48,
+        "gap": 30.44,
+        "rvol": 31.8,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "CATALYST \u00b7 8-K",
+          "SECTOR MOMENTUM"
+        ],
+        "perf": {
+          "close": 9.48,
+          "high": 9.55,
+          "low": 9.35,
+          "pct_close": -21.3,
+          "pct_high": -20.7,
+          "outcome": "flat",
+          "dumped": false,
+          "real_vwap": null,
+          "above_vwap": null
+        },
+        "outcome": "flat"
+      },
+      {
+        "ticker": "CPIX",
+        "company": "Cumberland Pharmaceuticals Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 87,
+        "tier": "buy",
+        "entry": 6.07,
+        "entry_label": "Break above $6.04",
+        "range_str": "",
+        "prev_close": 3.05,
+        "prev_high": 6.04,
+        "fib_levels": [
+          [
+            "Prev High",
+            6.04
+          ],
+          [
+            "First target",
+            6.85
+          ],
+          [
+            "Second target",
+            7.89
+          ],
+          [
+            "Extended",
+            9.03
+          ]
+        ],
+        "price_at_scan": 3.9,
+        "gap": 87.38,
+        "rvol": 440.43,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "perf": {
+          "close": 3.9,
+          "high": 3.78,
+          "low": 3.56,
+          "pct_close": -35.7,
+          "pct_high": -37.7,
+          "outcome": "flat",
+          "dumped": false,
+          "real_vwap": null,
+          "above_vwap": null
+        },
+        "outcome": "flat"
+      },
+      {
+        "ticker": "PAPL",
+        "company": "Pineapple Financial Inc",
+        "sector": "Financial",
+        "scan": "Low Float",
+        "score": 77,
+        "tier": "buy",
+        "entry": 1.16,
+        "entry_label": "Break above $1.15",
+        "range_str": "",
+        "prev_close": 0.6,
+        "prev_high": 1.15,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.15
+          ],
+          [
+            "First target",
+            1.3
+          ],
+          [
+            "Second target",
+            1.49
+          ],
+          [
+            "Extended",
+            1.7
+          ]
+        ],
+        "price_at_scan": 0.87,
+        "gap": 52.32,
+        "rvol": 304.93,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "perf": {
+          "close": 0.87,
+          "high": 0.87,
+          "low": 0.77,
+          "pct_close": -25.0,
+          "pct_high": -25.0,
+          "outcome": "flat",
+          "dumped": false,
+          "real_vwap": null,
+          "above_vwap": null
+        },
+        "outcome": "flat"
+      },
+      {
+        "ticker": "YCBD",
+        "company": "cbdMD Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 71,
+        "tier": "buy",
+        "entry": 1.28,
+        "entry_label": "Break above $1.27",
+        "range_str": "",
+        "prev_close": 0.93,
+        "prev_high": 1.27,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.27
+          ],
+          [
+            "First target",
+            1.36
+          ],
+          [
+            "Second target",
+            1.48
+          ],
+          [
+            "Extended",
+            1.61
+          ]
+        ],
+        "price_at_scan": 1.01,
+        "gap": 29.03,
+        "rvol": 29.24,
+        "flags": [
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "perf": {
+          "close": 1.01,
+          "high": 1.03,
+          "low": 0.89,
+          "pct_close": -21.1,
+          "pct_high": -19.5,
+          "outcome": "flat",
+          "dumped": false,
+          "real_vwap": null,
+          "above_vwap": null
+        },
+        "outcome": "flat"
+      },
+      {
+        "ticker": "TDIC",
+        "company": "Dreamland Ltd",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 68,
+        "tier": "buy",
+        "entry": 1.9,
+        "entry_label": "Break above $1.89",
+        "range_str": "",
+        "prev_close": 1.01,
+        "prev_high": 1.89,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.89
+          ],
+          [
+            "First target",
+            2.13
+          ],
+          [
+            "Second target",
+            2.43
+          ],
+          [
+            "Extended",
+            2.77
+          ]
+        ],
+        "price_at_scan": 1.46,
+        "gap": -0.99,
+        "rvol": 4.95,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "perf": {
+          "close": 1.46,
+          "high": 1.45,
+          "low": 1.32,
+          "pct_close": -23.2,
+          "pct_high": -23.7,
+          "outcome": "flat",
+          "dumped": false,
+          "real_vwap": null,
+          "above_vwap": null
+        },
+        "outcome": "flat"
+      },
+      {
+        "ticker": "FCEL",
+        "company": "Fuelcell Energy Inc",
+        "sector": "Industrials",
+        "scan": "Mid Cap",
+        "score": 68,
+        "tier": "buy",
+        "entry": 12.49,
+        "entry_label": "Break above $12.43",
+        "range_str": "",
+        "prev_close": 11.8,
+        "prev_high": 12.43,
+        "fib_levels": [
+          [
+            "Prev High",
+            12.43
+          ],
+          [
+            "First target",
+            12.6
+          ],
+          [
+            "Second target",
+            12.82
+          ],
+          [
+            "Extended",
+            13.06
+          ]
+        ],
+        "price_at_scan": 12.17,
+        "gap": -0.17,
+        "rvol": 4.7,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "perf": {
+          "close": 12.17,
+          "high": 12.45,
+          "low": 12.15,
+          "pct_close": -2.6,
+          "pct_high": -0.3,
+          "outcome": "flat",
+          "dumped": false,
+          "real_vwap": null,
+          "above_vwap": null
+        },
+        "outcome": "flat"
+      },
+      {
+        "ticker": "POET",
+        "company": "POET Technologies Inc",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 68,
+        "tier": "buy",
+        "entry": 12.4,
+        "entry_label": "Break above $12.34",
+        "range_str": "",
+        "prev_close": 12.77,
+        "prev_high": 12.34,
+        "fib_levels": [],
+        "price_at_scan": 11.72,
+        "gap": -7.48,
+        "rvol": 3.78,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "perf": {
+          "close": 11.72,
+          "high": 13.54,
+          "low": 11.85,
+          "pct_close": -5.5,
+          "pct_high": 9.2,
+          "outcome": "mover",
+          "dumped": false,
+          "real_vwap": null,
+          "above_vwap": null
+        },
+        "outcome": "mover"
+      },
+      {
+        "ticker": "SST",
+        "company": "System1 Inc",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 66,
+        "tier": "buy",
+        "entry": 4.35,
+        "entry_label": "Break above $4.33",
+        "range_str": "",
+        "prev_close": 2.8,
+        "prev_high": 4.33,
+        "fib_levels": [
+          [
+            "Prev High",
+            4.33
+          ],
+          [
+            "First target",
+            4.75
+          ],
+          [
+            "Second target",
+            5.28
+          ],
+          [
+            "Extended",
+            5.86
+          ]
+        ],
+        "price_at_scan": 3.83,
+        "gap": 7.14,
+        "rvol": 12.36,
+        "flags": [
+          "CONTINUATION",
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "perf": {
+          "close": 3.83,
+          "high": 3.84,
+          "low": 3.59,
+          "pct_close": -12.0,
+          "pct_high": -11.7,
+          "outcome": "flat",
+          "dumped": false,
+          "real_vwap": null,
+          "above_vwap": null
+        },
+        "outcome": "flat"
+      },
+      {
+        "ticker": "MWYN",
+        "company": "Marwynn Holdings Inc",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 61,
+        "tier": "monitor",
+        "entry": 0.76,
+        "entry_label": "Break above $0.76",
+        "range_str": "",
+        "prev_close": 0.57,
+        "prev_high": 0.76,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.76
+          ],
+          [
+            "First target",
+            0.81
+          ],
+          [
+            "Second target",
+            0.88
+          ],
+          [
+            "Extended",
+            0.95
+          ]
+        ],
+        "price_at_scan": 0.7,
+        "gap": 21.95,
+        "rvol": 391.35,
+        "flags": [
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "perf": {
+          "close": 0.7,
+          "high": 0.63,
+          "low": 0.6,
+          "pct_close": -7.9,
+          "pct_high": -17.1,
+          "outcome": "flat",
+          "dumped": false,
+          "real_vwap": null,
+          "above_vwap": null
+        },
+        "outcome": "flat"
+      },
+      {
+        "ticker": "AMST",
+        "company": "Amesite Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 51,
+        "tier": "monitor",
+        "entry": 2.05,
+        "entry_label": "Break above $2.04",
+        "range_str": "",
+        "prev_close": 1.08,
+        "prev_high": 2.04,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.04
+          ],
+          [
+            "First target",
+            2.3
+          ],
+          [
+            "Second target",
+            2.63
+          ],
+          [
+            "Extended",
+            3.0
+          ]
+        ],
+        "price_at_scan": 1.44,
+        "gap": 0.0,
+        "rvol": 253.64,
+        "flags": [
+          "CATALYST \u00b7 DEAL",
+          "SECTOR MOMENTUM"
+        ],
+        "perf": {
+          "close": 1.44,
+          "high": 1.33,
+          "low": 1.24,
+          "pct_close": -29.8,
+          "pct_high": -35.1,
+          "outcome": "flat",
+          "dumped": false,
+          "real_vwap": null,
+          "above_vwap": null
+        },
+        "outcome": "flat"
+      },
+      {
+        "ticker": "REPL",
+        "company": "Replimune Group Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 50,
+        "tier": "monitor",
+        "entry": 2.97,
+        "entry_label": "Break above $2.96",
+        "range_str": "",
+        "prev_close": 2.27,
+        "prev_high": 2.96,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.96
+          ],
+          [
+            "First target",
+            3.15
+          ],
+          [
+            "Second target",
+            3.39
+          ],
+          [
+            "Extended",
+            3.65
+          ]
+        ],
+        "price_at_scan": 2.85,
+        "gap": 3.52,
+        "rvol": 4.92,
+        "flags": [
+          "CONTINUATION",
+          "CATALYST \u00b7 FDA",
+          "SECTOR MOMENTUM"
+        ],
+        "perf": {
+          "close": 2.85,
+          "high": 2.88,
+          "low": 2.78,
+          "pct_close": -4.0,
+          "pct_high": -3.0,
+          "outcome": "flat",
+          "dumped": false,
+          "real_vwap": null,
+          "above_vwap": null
+        },
+        "outcome": "flat"
+      },
+      {
+        "ticker": "NMAX",
+        "company": "Newsmax Inc",
+        "sector": "Communication Services",
+        "scan": "Mid Cap",
+        "score": 48,
+        "tier": "monitor",
+        "entry": 9.64,
+        "entry_label": "Break above $9.59",
+        "range_str": "",
+        "prev_close": 9.24,
+        "prev_high": 9.59,
+        "fib_levels": [
+          [
+            "Prev High",
+            9.59
+          ],
+          [
+            "First target",
+            9.69
+          ],
+          [
+            "Second target",
+            9.81
+          ],
+          [
+            "Extended",
+            9.94
+          ]
+        ],
+        "price_at_scan": 6.71,
+        "gap": -3.19,
+        "rvol": 4.67,
+        "flags": [
+          "CATALYST \u00b7 8-K",
+          "SECTOR MOMENTUM"
+        ],
+        "perf": {
+          "close": 6.71,
+          "high": 7.14,
+          "low": 6.77,
+          "pct_close": -30.4,
+          "pct_high": -25.9,
+          "outcome": "flat",
+          "dumped": false,
+          "real_vwap": null,
+          "above_vwap": null
+        },
+        "outcome": "flat"
+      }
+    ]
+  }
+};
+
+function downloadData() {
+  const blob = new Blob([JSON.stringify(_EOD_DATA, null, 2)], {type: 'application/json'});
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = 'eod-results-' + _EOD_DATA.date + '.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
 </script>
 <div class="footer">EOD Results · Final closing prices · For scoring system tuning only</div>
 </body></html>
