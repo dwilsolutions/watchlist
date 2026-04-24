@@ -1,0 +1,196 @@
+{
+  "date": "2026-04-24",
+  "session": "premarket",
+  "generated": "07:06 AM ET",
+  "tickers": [
+    {
+      "ticker": "CAST",
+      "scan": "Low Float",
+      "company": "Freecast Inc",
+      "sector": "Communication Services",
+      "price": 2.43,
+      "change": 44.65,
+      "rvol": 533.24,
+      "float_m": 16.31,
+      "short_pct": 0.45,
+      "days_cover": 99.0,
+      "spike_pct": 41.5,
+      "news": "FreeCast Reaches National Agreement with DIRECTV Multifamily to Sell DIRECTV Services",
+      "news_url": "https://www.businesswire.com/news/home/20260423079497/en/",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +42%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-17",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 4.1,
+        "entry1_note": "Break above 10d high",
+        "entry2": 3.7645,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 4.715,
+        "entry3_note": "Makes new highs",
+        "stop": 2.25,
+        "stop_note": "Prior day low",
+        "target1": 5.2152,
+        "target1_pct": 27.2,
+        "target2": 6.6338,
+        "target2_pct": 61.8,
+        "target3": 10.7338,
+        "target3_pct": 161.8
+      },
+      "price_display": "$2.43",
+      "rvol_display": "533x",
+      "float_display": "16.3M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "INHD",
+      "scan": "Low Float",
+      "company": "Inno Holdings Inc",
+      "sector": "Basic Materials",
+      "price": 0.15,
+      "change": -3.07,
+      "rvol": 35.71,
+      "float_m": 8.37,
+      "short_pct": 3.9,
+      "days_cover": 99.0,
+      "spike_pct": 248.8,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018601.html",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +249%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-22",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.219,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.4512,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.2518,
+        "entry3_note": "Makes new highs",
+        "stop": 0.161,
+        "stop_note": "Prior day low",
+        "target1": 0.2786,
+        "target1_pct": 27.2,
+        "target2": 0.3543,
+        "target2_pct": 61.8,
+        "target3": 0.5733,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.15",
+      "rvol_display": "36x",
+      "float_display": "8.4M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "FCHL",
+      "scan": "Low Float",
+      "company": "Fitness Champs Holdings Ltd",
+      "sector": "Consumer Defensive",
+      "price": 0.2,
+      "change": 17.79,
+      "rvol": 52.14,
+      "float_m": 0.35,
+      "short_pct": 292.17,
+      "days_cover": 99.0,
+      "spike_pct": 249.2,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143020968.html",
+      "score": 0.375,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +249%",
+          "gap"
+        ],
+        [
+          "SHORT INT 292%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 2.2,
+        "entry1_note": "Break above 10d high",
+        "entry2": 1.5569,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 2.53,
+        "entry3_note": "Makes new highs",
+        "stop": 0.22,
+        "stop_note": "Prior day low",
+        "target1": 2.7984,
+        "target1_pct": 27.2,
+        "target2": 3.5596,
+        "target2_pct": 61.8,
+        "target3": 5.7596,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.20",
+      "rvol_display": "52x",
+      "float_display": "0.3M",
+      "rank": "watch"
+    }
+  ]
+}
