@@ -372,7 +372,8 @@ a{color:inherit;text-decoration:none;}
 .sum-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:0.06em;text-transform:uppercase;}
 .c-g{color:var(--green);}.c-a{color:var(--amber);}.c-r{color:var(--red);}
 .body{padding:18px 20px 48px;}
-.cumulative{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:20px;}
+.cum-wrap{padding:16px 20px;}
+.cumulative{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:0;}
 .cum-title{font-family:var(--sans);font-size:14px;font-weight:500;margin-bottom:12px;}
 .cum-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
 .cum-section{background:var(--bg3);border-radius:8px;padding:12px;}
@@ -477,7 +478,7 @@ def card_html(t, perf):
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">${t.get("prev_high","—")}</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">${t.get("hi52_price","—")}</div></div>
   </div>
-</div>"""
+</div></div>"""
 
 def cum_section_html(label, d):
     total      = d["total"]
@@ -562,7 +563,7 @@ document.querySelectorAll('.nav-item').forEach(item => {
 </script>"""
 
     # Cumulative block
-    cum_html = f"""<div class="cumulative">
+    cum_html = f"""<div class="cum-wrap"><div class="cumulative">
   <div class="cum-title">Cumulative Performance — {cum_stats["days"]} days tracked</div>
   <div class="cum-grid">
     {cum_section_html("🔥 HOT (rvol ≥100x)", cum_stats["hot"])}
@@ -597,11 +598,9 @@ document.querySelectorAll('.nav-item').forEach(item => {
   <div class="sum-cell"><div class="sum-n c-g">{runners}</div><div class="sum-l">Runners 10%+</div></div>
   <div class="sum-cell"><div class="sum-n c-g">{catch_rate}</div><div class="sum-l">Today Catch Rate</div></div>
 </div>
-<div class="body">
-  {cum_html}
-</div>
-  {session_html}
-  {js_block}
+{cum_html}
+{session_html}
+{js_block}
 <div class="footer">EOD Results · Final closing prices · For scoring system tuning only</div>
 </body></html>"""
 
