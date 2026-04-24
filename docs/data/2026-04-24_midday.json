@@ -1,0 +1,453 @@
+{
+  "session": "midday",
+  "label": "Midday",
+  "date": "2026-04-24",
+  "generated": "01:05 PM ET",
+  "tickers": [
+    {
+      "ticker": "ATOM",
+      "company": "Atomera Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "buy",
+      "entry": 8.97,
+      "entry_label": "Momentum above VWAP $8.60",
+      "range_str": " \u2014 range to $9.45",
+      "prev_close": 6.19,
+      "prev_high": 9.45,
+      "fib_levels": [
+        [
+          "Prev High",
+          9.45
+        ],
+        [
+          "First target",
+          10.34
+        ],
+        [
+          "Second target",
+          11.46
+        ],
+        [
+          "Extended",
+          12.71
+        ]
+      ],
+      "price_at_scan": 8.93,
+      "gap": 5.01,
+      "rvol": 10.96,
+      "flags": [
+        "CONTINUATION",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CMPS",
+      "company": "Compass Pathways Plc ADR",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "buy",
+      "entry": 9.47,
+      "entry_label": "Momentum above VWAP $9.15",
+      "range_str": " \u2014 range to $9.9",
+      "prev_close": 9.15,
+      "prev_high": 9.9,
+      "fib_levels": [
+        [
+          "Prev High",
+          9.9
+        ],
+        [
+          "First target",
+          10.1
+        ],
+        [
+          "Second target",
+          10.36
+        ],
+        [
+          "Extended",
+          10.65
+        ]
+      ],
+      "price_at_scan": 9.42,
+      "gap": 6.56,
+      "rvol": 3.53,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MX",
+      "company": "MagnaChip Semiconductor Corp",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "buy",
+      "entry": 5.45,
+      "entry_label": "Momentum above VWAP $5.29",
+      "range_str": " \u2014 range to $5.64",
+      "prev_close": 4.27,
+      "prev_high": 5.64,
+      "fib_levels": [
+        [
+          "Prev High",
+          5.64
+        ],
+        [
+          "First target",
+          6.01
+        ],
+        [
+          "Second target",
+          6.49
+        ],
+        [
+          "Extended",
+          7.01
+        ]
+      ],
+      "price_at_scan": 5.42,
+      "gap": 4.22,
+      "rvol": 21.27,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ONMD",
+      "company": "OneMedNet Corp",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 80,
+      "tier": "buy",
+      "entry": 1.28,
+      "entry_label": "Break above $1.27",
+      "range_str": "",
+      "prev_close": 0.89,
+      "prev_high": 1.27,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.27
+        ],
+        [
+          "First target",
+          1.37
+        ],
+        [
+          "Second target",
+          1.5
+        ],
+        [
+          "Extended",
+          1.65
+        ]
+      ],
+      "price_at_scan": 1.22,
+      "gap": 14.77,
+      "rvol": 4.44,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "LIDR",
+      "company": "AEye Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 74,
+      "tier": "buy",
+      "entry": 2.6,
+      "entry_label": "Reclaim $2.59",
+      "range_str": " \u2014 range to $3.05",
+      "prev_close": 1.69,
+      "prev_high": 3.05,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.05
+        ],
+        [
+          "First target",
+          3.42
+        ],
+        [
+          "Second target",
+          3.89
+        ],
+        [
+          "Extended",
+          4.41
+        ]
+      ],
+      "price_at_scan": 2.25,
+      "gap": 31.95,
+      "rvol": 62.61,
+      "flags": [
+        "GAP QUALITY",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SST",
+      "company": "System1 Inc",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 73,
+      "tier": "buy",
+      "entry": 4.33,
+      "entry_label": "Momentum above VWAP $4.28",
+      "range_str": " \u2014 range to $4.97",
+      "prev_close": 3.83,
+      "prev_high": 4.97,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.97
+        ],
+        [
+          "First target",
+          5.28
+        ],
+        [
+          "Second target",
+          5.67
+        ],
+        [
+          "Extended",
+          6.11
+        ]
+      ],
+      "price_at_scan": 4.31,
+      "gap": 22.98,
+      "rvol": 4.61,
+      "flags": [
+        "CONTINUATION",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ITOC",
+      "company": "iTonic Holdings Ltd",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 68,
+      "tier": "buy",
+      "entry": 0.37,
+      "entry_label": "Break above $0.37",
+      "range_str": "",
+      "prev_close": 0.3,
+      "prev_high": 0.37,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.37
+        ],
+        [
+          "First target",
+          0.39
+        ],
+        [
+          "Second target",
+          0.41
+        ],
+        [
+          "Extended",
+          0.44
+        ]
+      ],
+      "price_at_scan": 0.36,
+      "gap": 16.15,
+      "rvol": 18.6,
+      "flags": [
+        "GAP QUALITY",
+        "NASDAQ NOTICE",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ENVB",
+      "company": "Enveric Biosciences Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 59,
+      "tier": "monitor",
+      "entry": 6.46,
+      "entry_label": "Reclaim $6.43",
+      "range_str": " \u2014 range to $7.88",
+      "prev_close": 4.02,
+      "prev_high": 7.88,
+      "fib_levels": [
+        [
+          "Prev High",
+          7.88
+        ],
+        [
+          "First target",
+          8.93
+        ],
+        [
+          "Second target",
+          10.27
+        ],
+        [
+          "Extended",
+          11.74
+        ]
+      ],
+      "price_at_scan": 5.11,
+      "gap": 1.12,
+      "rvol": 20.9,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "NTIP",
+      "company": "Network-1 Technologies Inc",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 57,
+      "tier": "monitor",
+      "entry": 1.5,
+      "entry_label": "Reclaim $1.50",
+      "range_str": " \u2014 range to $1.75",
+      "prev_close": 1.46,
+      "prev_high": 1.75,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.75
+        ],
+        [
+          "First target",
+          1.83
+        ],
+        [
+          "Second target",
+          1.93
+        ],
+        [
+          "Extended",
+          2.04
+        ]
+      ],
+      "price_at_scan": 1.43,
+      "gap": 16.44,
+      "rvol": 1134.7,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SCNI",
+      "company": "Scinai Immunotherapeutics Ltd ADR",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 56,
+      "tier": "monitor",
+      "entry": 1.06,
+      "entry_label": "Break above $1.05",
+      "range_str": "",
+      "prev_close": 0.46,
+      "prev_high": 1.05,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.05
+        ],
+        [
+          "First target",
+          1.21
+        ],
+        [
+          "Second target",
+          1.41
+        ],
+        [
+          "Extended",
+          1.64
+        ]
+      ],
+      "price_at_scan": 0.75,
+      "gap": 73.25,
+      "rvol": 6050.37,
+      "flags": [
+        "CONTINUATION",
+        "CATALYST \u00b7 FINANCING",
+        "ALREADY EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SKLZ",
+      "company": "Skillz Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 52,
+      "tier": "monitor",
+      "entry": 7.99,
+      "entry_label": "Reclaim $7.95",
+      "range_str": "",
+      "prev_close": 12.45,
+      "prev_high": 9.2,
+      "fib_levels": [],
+      "price_at_scan": 7.36,
+      "gap": -30.84,
+      "rvol": 20.72,
+      "flags": [
+        "CRASHED \u00b7 GAP DOWN",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "WIMI",
+      "company": "Wimi Hologram Cloud Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 40,
+      "tier": "monitor",
+      "entry": 2.08,
+      "entry_label": "Break above $2.07",
+      "range_str": "",
+      "prev_close": 1.78,
+      "prev_high": 2.07,
+      "fib_levels": [
+        [
+          "Prev High",
+          2.07
+        ],
+        [
+          "First target",
+          2.15
+        ],
+        [
+          "Second target",
+          2.25
+        ],
+        [
+          "Extended",
+          2.36
+        ]
+      ],
+      "price_at_scan": 1.78,
+      "gap": 10.67,
+      "rvol": 283.06,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
