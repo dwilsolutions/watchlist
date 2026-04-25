@@ -35,6 +35,21 @@ FDA_KEYWORDS = [
     "fda","nda","bla","pdufa","approval","clinical trial",
     "phase 3","fast track","breakthrough therapy",
 ]
+
+# Dilutive financing — these HURT the stock, exclude from catalyst scoring
+DILUTION_KEYWORDS = [
+    "reverse split","share consolidation","1-for-","1 for ",
+    "best efforts offering","public offering","registered direct",
+    "at-the-market","atm program","prospectus supplement",
+    "private placement","s-1 effective","warrant","uplisting",
+    "equity line","committed equity",
+]
+
+# Real M&A catalysts — override dilution if present
+REAL_MA_KEYWORDS = [
+    "merger","acquisition","acquires","letter of intent","loi",
+    "definitive agreement","strategic alternative","going private",
+]
 FDA_DATE_PATTERNS = [
     r"PDUFA\s+date\s+of\s+([A-Za-z]+ \d{1,2},?\s*\d{4})",
     r"PDUFA\s+date[:\s]+([A-Za-z]+ \d{1,2},?\s*\d{4})",
@@ -247,6 +262,15 @@ def check_news(title):
         if kw in text: return True, kw
     return False, ""
 
+def is_dilutive(news_title, eightk_text=""):
+    """Returns True if the catalyst is a dilutive financing event."""
+    text = (news_title + " " + eightk_text).lower()
+    has_dilution = any(kw in text for kw in DILUTION_KEYWORDS)
+    has_real_ma  = any(kw in text for kw in REAL_MA_KEYWORDS)
+    # Real M&A overrides dilution signal
+    return has_dilution and not has_real_ma
+
+
 # ── Scoring ────────────────────────────────────────────────────────────────────
 
 def score_ticker(row, yf_df=None):
@@ -276,7 +300,13 @@ def score_ticker(row, yf_df=None):
     # 2. Catalyst
     has_cat, cat_kw = check_news(news_title)
     kw_used = cat_kw or kw
-    if has_cat or has_kw:
+    dilutive = is_dilutive(news_title)
+    if dilutive:
+        # Dilutive offering — penalise score and flag as danger
+        scores["merger_pivot"] = 0.0
+        scores["fresh_8k"]     = 0.0  # 8-K from offering doesn't count
+        flags.append(("⚠ DILUTIVE OFFERING", "danger"))
+    elif has_cat or has_kw:
         scores["merger_pivot"] = 1.0
         if any(k in kw_used for k in ["merger","acquisition","loi","letter of intent","reverse merger"]):
             flags.append(("CATALYST · M&A","catalyst"))
@@ -357,11 +387,16 @@ def score_ticker(row, yf_df=None):
     }
 
 def get_rank(t):
+    # Force AVOID for dilutive offerings and reverse splits regardless of score
+    flags_text = " ".join(f[0] for f in t.get("flags", []))
+    if "DILUTIVE OFFERING" in flags_text or "REVERSE SPLIT" in flags_text:
+        return "avoid"
     s = t["score"]
     if s >= 0.70: return "hot"
     if s >= 0.50: return "warm"
     if s >= 0.35: return "watch"
     return "avoid"
+
 
 # ── Main ───────────────────────────────────────────────────────────────────────
 
