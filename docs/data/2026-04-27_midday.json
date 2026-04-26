@@ -373,6 +373,45 @@
       ]
     },
     {
+      "ticker": "ELPW",
+      "company": "Elong Power Holding Ltd",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 48,
+      "tier": "monitor",
+      "entry": 4.39,
+      "entry_label": "Break above $4.37",
+      "range_str": "",
+      "prev_close": 2.67,
+      "prev_high": 4.37,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.37
+        ],
+        [
+          "First target",
+          4.83
+        ],
+        [
+          "Second target",
+          5.42
+        ],
+        [
+          "Extended",
+          6.07
+        ]
+      ],
+      "price_at_scan": 3.62,
+      "gap": 46.44,
+      "rvol": 23.9,
+      "flags": [
+        "CONTINUATION",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
       "ticker": "WIMI",
       "company": "Wimi Hologram Cloud Inc",
       "sector": "Communication Services",
