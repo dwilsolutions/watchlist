@@ -5,330 +5,229 @@
   "generated": "09:25 AM ET",
   "tickers": [
     {
-      "ticker": "ATOM",
-      "company": "Atomera Inc",
-      "sector": "Technology",
-      "scan": "Mid Cap",
-      "score": 100,
-      "tier": "buy",
-      "entry": 9.64,
-      "entry_label": "Break above $9.59",
-      "range_str": "",
-      "prev_close": 6.19,
-      "prev_high": 9.59,
-      "fib_levels": [
-        [
-          "Prev High",
-          9.59
-        ],
-        [
-          "First target",
-          10.51
-        ],
-        [
-          "Second target",
-          11.69
-        ],
-        [
-          "Extended",
-          12.99
-        ]
-      ],
-      "price_at_scan": 8.6,
-      "gap": 5.01,
-      "rvol": 11.71,
-      "flags": [
-        "CONTINUATION",
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "MX",
-      "company": "MagnaChip Semiconductor Corp",
-      "sector": "Technology",
-      "scan": "Mid Cap",
-      "score": 100,
-      "tier": "buy",
-      "entry": 5.67,
-      "entry_label": "Break above $5.64",
-      "range_str": "",
-      "prev_close": 4.27,
-      "prev_high": 5.64,
-      "fib_levels": [
-        [
-          "Prev High",
-          5.64
-        ],
-        [
-          "First target",
-          6.01
-        ],
-        [
-          "Second target",
-          6.49
-        ],
-        [
-          "Extended",
-          7.01
-        ]
-      ],
-      "price_at_scan": 5.25,
-      "gap": 4.22,
-      "rvol": 16.77,
-      "flags": [
-        "CONTINUATION",
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "NTIP",
-      "company": "Network-1 Technologies Inc",
-      "sector": "Industrials",
-      "scan": "Low Float",
-      "score": 87,
-      "tier": "buy",
-      "entry": 1.76,
-      "entry_label": "Break above $1.75",
-      "range_str": "",
-      "prev_close": 1.46,
-      "prev_high": 1.75,
-      "fib_levels": [
-        [
-          "Prev High",
-          1.75
-        ],
-        [
-          "First target",
-          1.83
-        ],
-        [
-          "Second target",
-          1.93
-        ],
-        [
-          "Extended",
-          2.04
-        ]
-      ],
-      "price_at_scan": 1.47,
-      "gap": 15.07,
-      "rvol": 686.07,
-      "flags": [
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "ENVB",
-      "company": "Enveric Biosciences Inc",
+      "ticker": "SGMT",
+      "company": "Sagimet Biosciences Inc",
       "sector": "Healthcare",
-      "scan": "Low Float",
-      "score": 74,
+      "scan": "Mid Cap",
+      "score": 98,
       "tier": "buy",
-      "entry": 7.92,
-      "entry_label": "Break above $7.88",
+      "entry": 9.04,
+      "entry_label": "Break above $9.00",
       "range_str": "",
-      "prev_close": 4.02,
-      "prev_high": 7.88,
+      "prev_close": 5.86,
+      "prev_high": 9.0,
       "fib_levels": [
         [
           "Prev High",
-          7.88
+          9.0
         ],
         [
           "First target",
-          8.93
+          9.85
         ],
         [
           "Second target",
-          10.27
+          10.94
         ],
         [
           "Extended",
-          11.74
+          12.14
         ]
       ],
-      "price_at_scan": 5.04,
-      "gap": 1.74,
-      "rvol": 12.89,
+      "price_at_scan": 7.29,
+      "gap": 0.51,
+      "rvol": 443.2,
       "flags": [
-        "CONTINUATION",
         "SECTOR MOMENTUM"
       ]
     },
     {
-      "ticker": "ONMD",
-      "company": "OneMedNet Corp",
-      "sector": "Healthcare",
+      "ticker": "RMAX",
+      "company": "RE/MAX Holdings Inc",
+      "sector": "Real Estate",
       "scan": "Low Float",
-      "score": 73,
+      "score": 97,
       "tier": "buy",
-      "entry": 1.28,
-      "entry_label": "Break above $1.27",
+      "entry": 11.85,
+      "entry_label": "Break above $11.79",
       "range_str": "",
-      "prev_close": 0.89,
-      "prev_high": 1.27,
+      "prev_close": 7.99,
+      "prev_high": 11.79,
       "fib_levels": [
         [
           "Prev High",
-          1.27
+          11.79
         ],
         [
           "First target",
-          1.37
+          12.82
         ],
         [
           "Second target",
-          1.5
+          14.14
         ],
         [
           "Extended",
+          15.59
+        ]
+      ],
+      "price_at_scan": 9.57,
+      "gap": 0.28,
+      "rvol": 473.14,
+      "flags": [
+        "CONTINUATION"
+      ]
+    },
+    {
+      "ticker": "USEG",
+      "company": "U.S. Energy Corp",
+      "sector": "Energy",
+      "scan": "Mid Cap",
+      "score": 96,
+      "tier": "buy",
+      "entry": 1.66,
+      "entry_label": "Break above $1.65",
+      "range_str": "",
+      "prev_close": 0.93,
+      "prev_high": 1.65,
+      "fib_levels": [
+        [
+          "Prev High",
           1.65
+        ],
+        [
+          "First target",
+          1.85
+        ],
+        [
+          "Second target",
+          2.09
+        ],
+        [
+          "Extended",
+          2.37
         ]
       ],
-      "price_at_scan": 1.1,
-      "gap": 14.77,
-      "rvol": 2.94,
+      "price_at_scan": 1.37,
+      "gap": -7.24,
+      "rvol": 297.36,
       "flags": [
-        "GAP QUALITY",
+        "CONTINUATION",
+        "CATALYST \u00b7 DEAL",
         "SECTOR MOMENTUM"
       ]
     },
     {
-      "ticker": "LIDR",
-      "company": "AEye Inc",
+      "ticker": "POET",
+      "company": "POET Technologies Inc",
       "sector": "Technology",
       "scan": "Mid Cap",
-      "score": 72,
+      "score": 82,
       "tier": "buy",
-      "entry": 3.07,
-      "entry_label": "Break above $3.05",
+      "entry": 17.46,
+      "entry_label": "Break above $17.37",
       "range_str": "",
-      "prev_close": 1.69,
-      "prev_high": 3.05,
+      "prev_close": 15.1,
+      "prev_high": 17.37,
       "fib_levels": [
         [
           "Prev High",
-          3.05
+          17.37
         ],
         [
           "First target",
-          3.42
+          17.99
         ],
         [
           "Second target",
-          3.89
+          18.77
         ],
         [
           "Extended",
-          4.41
+          19.64
         ]
       ],
-      "price_at_scan": 2.19,
-      "gap": 32.54,
-      "rvol": 38.83,
+      "price_at_scan": 9.26,
+      "gap": 7.22,
+      "rvol": 52.39,
       "flags": [
-        "GAP QUALITY",
         "PRIOR DAY RUNNER",
         "SECTOR MOMENTUM"
       ]
     },
     {
-      "ticker": "SCNI",
-      "company": "Scinai Immunotherapeutics Ltd ADR",
-      "sector": "Healthcare",
+      "ticker": "YAAS",
+      "company": "Youxin Technology Ltd",
+      "sector": "Technology",
       "scan": "Low Float",
-      "score": 71,
+      "score": 75,
       "tier": "buy",
-      "entry": 1.06,
-      "entry_label": "Break above $1.05",
+      "entry": 1.6,
+      "entry_label": "Break above $1.59",
       "range_str": "",
-      "prev_close": 0.46,
-      "prev_high": 1.05,
+      "prev_close": 0.93,
+      "prev_high": 1.59,
       "fib_levels": [
         [
           "Prev High",
-          1.05
+          1.59
         ],
         [
           "First target",
-          1.21
+          1.77
         ],
         [
           "Second target",
-          1.41
+          2.0
         ],
         [
           "Extended",
-          1.64
+          2.25
         ]
       ],
-      "price_at_scan": 0.74,
-      "gap": 74.61,
-      "rvol": 3885.16,
+      "price_at_scan": 1.37,
+      "gap": 2.97,
+      "rvol": 13371.45,
       "flags": [
         "CONTINUATION",
-        "CATALYST \u00b7 FINANCING",
         "SECTOR MOMENTUM"
       ]
     },
     {
-      "ticker": "ITOC",
-      "company": "iTonic Holdings Ltd",
-      "sector": "Healthcare",
+      "ticker": "GLND",
+      "company": "Greenland Energy Co",
+      "sector": "Energy",
       "scan": "Low Float",
-      "score": 68,
+      "score": 72,
       "tier": "buy",
-      "entry": 0.39,
-      "entry_label": "Break above $0.39",
+      "entry": 9.22,
+      "entry_label": "Break above $9.17",
       "range_str": "",
-      "prev_close": 0.3,
-      "prev_high": 0.39,
+      "prev_close": 6.21,
+      "prev_high": 9.17,
       "fib_levels": [
         [
           "Prev High",
-          0.39
+          9.17
         ],
         [
           "First target",
-          0.41
+          9.98
         ],
         [
           "Second target",
-          0.45
+          11.0
         ],
         [
           "Extended",
-          0.48
+          12.13
         ]
       ],
-      "price_at_scan": 0.37,
-      "gap": 16.15,
-      "rvol": 11.58,
-      "flags": [
-        "GAP QUALITY",
-        "NASDAQ NOTICE",
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "SKLZ",
-      "company": "Skillz Inc",
-      "sector": "Communication Services",
-      "scan": "Low Float",
-      "score": 62,
-      "tier": "monitor",
-      "entry": 9.25,
-      "entry_label": "Break above $9.20",
-      "range_str": "",
-      "prev_close": 12.45,
-      "prev_high": 9.2,
-      "fib_levels": [],
-      "price_at_scan": 7.91,
-      "gap": -30.92,
-      "rvol": 15.49,
+      "price_at_scan": 7.64,
+      "gap": 3.22,
+      "rvol": 164.86,
       "flags": [
         "CONTINUATION",
-        "CRASHED \u00b7 GAP DOWN",
         "SECTOR MOMENTUM"
       ]
     },
@@ -337,110 +236,184 @@
       "company": "Elong Power Holding Ltd",
       "sector": "Industrials",
       "scan": "Low Float",
-      "score": 56,
-      "tier": "monitor",
-      "entry": 4.39,
-      "entry_label": "Break above $4.37",
+      "score": 66,
+      "tier": "buy",
+      "entry": 4.73,
+      "entry_label": "Break above $4.71",
       "range_str": "",
-      "prev_close": 2.67,
-      "prev_high": 4.37,
+      "prev_close": 3.62,
+      "prev_high": 4.71,
       "fib_levels": [
         [
           "Prev High",
-          4.37
+          4.71
         ],
         [
           "First target",
-          4.83
+          5.01
         ],
         [
           "Second target",
-          5.42
+          5.38
         ],
         [
           "Extended",
-          6.07
+          5.8
         ]
       ],
-      "price_at_scan": 3.62,
-      "gap": 46.44,
-      "rvol": 23.9,
+      "price_at_scan": 4.3,
+      "gap": 9.39,
+      "rvol": 32.51,
       "flags": [
         "CONTINUATION",
         "SECTOR MOMENTUM"
       ]
     },
     {
-      "ticker": "SST",
-      "company": "System1 Inc",
-      "sector": "Industrials",
+      "ticker": "DKI",
+      "company": "Darkiris Inc",
+      "sector": "Communication Services",
       "scan": "Low Float",
-      "score": 51,
+      "score": 64,
       "tier": "monitor",
-      "entry": 4.99,
-      "entry_label": "Break above $4.97",
+      "entry": 0.72,
+      "entry_label": "Break above $0.72",
       "range_str": "",
-      "prev_close": 3.83,
-      "prev_high": 4.97,
+      "prev_close": 0.46,
+      "prev_high": 0.72,
       "fib_levels": [
         [
           "Prev High",
-          4.97
+          0.72
         ],
         [
           "First target",
-          5.28
+          0.79
         ],
         [
           "Second target",
-          5.67
+          0.88
         ],
         [
           "Extended",
-          6.11
+          0.98
         ]
       ],
-      "price_at_scan": 3.9,
-      "gap": 22.72,
-      "rvol": 3.03,
+      "price_at_scan": 0.57,
+      "gap": 46.71,
+      "rvol": 30.12,
       "flags": [
-        "PRIOR DAY RUNNER",
+        "CATALYST \u00b7 M&A"
+      ]
+    },
+    {
+      "ticker": "HCWB",
+      "company": "HCW Biologics Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 50,
+      "tier": "monitor",
+      "entry": 0.65,
+      "entry_label": "Break above $0.65",
+      "range_str": "",
+      "prev_close": 0.38,
+      "prev_high": 0.65,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.65
+        ],
+        [
+          "First target",
+          0.72
+        ],
+        [
+          "Second target",
+          0.82
+        ],
+        [
+          "Extended",
+          0.92
+        ]
+      ],
+      "price_at_scan": 0.39,
+      "gap": 10.94,
+      "rvol": 61.87,
+      "flags": [
         "SECTOR MOMENTUM"
       ]
     },
     {
-      "ticker": "WIMI",
-      "company": "Wimi Hologram Cloud Inc",
-      "sector": "Communication Services",
+      "ticker": "ONCO",
+      "company": "Onconetix Inc",
+      "sector": "Healthcare",
       "scan": "Low Float",
-      "score": 40,
+      "score": 47,
       "tier": "monitor",
-      "entry": 2.08,
-      "entry_label": "Break above $2.07",
+      "entry": 1.0,
+      "entry_label": "Break above $1.00",
       "range_str": "",
-      "prev_close": 1.78,
-      "prev_high": 2.07,
+      "prev_close": 0.59,
+      "prev_high": 1.0,
       "fib_levels": [
         [
           "Prev High",
-          2.07
+          1.0
         ],
         [
           "First target",
-          2.15
+          1.11
         ],
         [
           "Second target",
-          2.25
+          1.25
         ],
         [
           "Extended",
-          2.36
+          1.41
         ]
       ],
-      "price_at_scan": 1.76,
-      "gap": 10.11,
-      "rvol": 169.52,
+      "price_at_scan": 0.79,
+      "gap": 29.29,
+      "rvol": 209.74,
+      "flags": [
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ASBP",
+      "company": "Aspire Biopharma Holdings Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 41,
+      "tier": "monitor",
+      "entry": 0.29,
+      "entry_label": "Break above $0.29",
+      "range_str": "",
+      "prev_close": 0.2,
+      "prev_high": 0.29,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.29
+        ],
+        [
+          "First target",
+          0.31
+        ],
+        [
+          "Second target",
+          0.35
+        ],
+        [
+          "Extended",
+          0.38
+        ]
+      ],
+      "price_at_scan": 0.25,
+      "gap": -2.54,
+      "rvol": 124.61,
       "flags": [
         "SECTOR MOMENTUM"
       ]
