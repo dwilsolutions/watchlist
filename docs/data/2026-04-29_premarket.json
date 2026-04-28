@@ -1,0 +1,120 @@
+{
+  "session": "premarket",
+  "label": "Pre-Market",
+  "date": "2026-04-29",
+  "generated": "06:55 AM ET",
+  "tickers": [
+    {
+      "ticker": "CLDI",
+      "company": "Calidi Biotherapeutics Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 67,
+      "tier": "buy",
+      "entry": 0.35,
+      "entry_label": "Break above $0.35",
+      "range_str": "",
+      "prev_close": 0.24,
+      "prev_high": 0.35,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.35
+        ],
+        [
+          "First target",
+          0.38
+        ],
+        [
+          "Second target",
+          0.42
+        ],
+        [
+          "Extended",
+          0.46
+        ]
+      ],
+      "price_at_scan": 0.29,
+      "gap": 10.15,
+      "rvol": 1839.81,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "POET",
+      "company": "POET Technologies Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 59,
+      "tier": "monitor",
+      "entry": 8.23,
+      "entry_label": "Break above $8.19",
+      "range_str": "",
+      "prev_close": 7.95,
+      "prev_high": 8.19,
+      "fib_levels": [
+        [
+          "Prev High",
+          8.19
+        ],
+        [
+          "First target",
+          8.26
+        ],
+        [
+          "Second target",
+          8.34
+        ],
+        [
+          "Extended",
+          8.43
+        ]
+      ],
+      "price_at_scan": 7.84,
+      "gap": -10.8,
+      "rvol": 6.63,
+      "flags": []
+    },
+    {
+      "ticker": "PFSA",
+      "company": "Profusa Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 45,
+      "tier": "monitor",
+      "entry": 0.81,
+      "entry_label": "Break above $0.81",
+      "range_str": "",
+      "prev_close": 0.51,
+      "prev_high": 0.81,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.81
+        ],
+        [
+          "First target",
+          0.89
+        ],
+        [
+          "Second target",
+          1.0
+        ],
+        [
+          "Extended",
+          1.11
+        ]
+      ],
+      "price_at_scan": 0.61,
+      "gap": 24.69,
+      "rvol": 69.87,
+      "flags": [
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
