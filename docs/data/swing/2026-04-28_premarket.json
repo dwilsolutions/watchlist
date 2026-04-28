@@ -1,0 +1,370 @@
+{
+  "date": "2026-04-28",
+  "session": "premarket",
+  "generated": "07:44 AM ET",
+  "tickers": [
+    {
+      "ticker": "SKYQ",
+      "scan": "Low Float",
+      "company": "Sky Quarry Inc",
+      "sector": "Energy",
+      "price": 6.55,
+      "change": 20.17,
+      "rvol": 20.67,
+      "float_m": 2.98,
+      "short_pct": 79.76,
+      "days_cover": 99.0,
+      "spike_pct": 132.8,
+      "news": "Sky Quarry Positioned to Benefit as Trump Administration Prioritizes Domestic Refining Capacity",
+      "news_url": "https://elite.finviz.com/news/347045/sky-quarry-positioned-to-benefit-as-trump-administration-prioritizes-domestic-refining-capacity",
+      "score": 0.625,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +133%",
+          "gap"
+        ],
+        [
+          "SHORT INT 80%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-22",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 11.29,
+        "entry1_note": "Break above 10d high",
+        "entry2": 7.2495,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 12.9835,
+        "entry3_note": "Makes new highs",
+        "stop": 5.81,
+        "stop_note": "Prior day low",
+        "target1": 14.3609,
+        "target1_pct": 27.2,
+        "target2": 18.2672,
+        "target2_pct": 61.8,
+        "target3": 29.5572,
+        "target3_pct": 161.8
+      },
+      "price_display": "$6.55",
+      "rvol_display": "21x",
+      "float_display": "3.0M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "DRCT",
+      "scan": "Low Float",
+      "company": "Direct Digital Holdings Inc",
+      "sector": "Communication Services",
+      "price": 3.1,
+      "change": 26.53,
+      "rvol": 2008.98,
+      "float_m": 0.64,
+      "short_pct": 1.13,
+      "days_cover": 99.0,
+      "spike_pct": 161.5,
+      "news": "Direct Digital Holdings Announces Reverse Stock Split",
+      "news_url": "https://elite.finviz.com/news/347136/direct-digital-holdings-announces-reverse-stock-split",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +162%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-23",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 3.12,
+        "entry1_note": "Break above 10d high",
+        "entry2": 2.8483,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 3.588,
+        "entry3_note": "Makes new highs",
+        "stop": 2.408,
+        "stop_note": "Prior day low",
+        "target1": 3.9686,
+        "target1_pct": 27.2,
+        "target2": 5.0482,
+        "target2_pct": 61.8,
+        "target3": 8.1682,
+        "target3_pct": 161.8
+      },
+      "price_display": "$3.10",
+      "rvol_display": "2009x",
+      "float_display": "0.6M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "KIDZ",
+      "scan": "Low Float",
+      "company": "Classover Holdings Inc",
+      "sector": "Consumer Defensive",
+      "price": 1.16,
+      "change": 19.97,
+      "rvol": 159.21,
+      "float_m": 0.99,
+      "short_pct": 6.74,
+      "days_cover": 99.0,
+      "spike_pct": 111.7,
+      "news": "Classover Named to TIME's America's Top EdTech Companies of 2026",
+      "news_url": "https://elite.finviz.com/news/347755/classover-named-to-times-americas-top-edtech-companies-of-2026",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +112%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-27",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 2.25,
+        "entry1_note": "Break above 10d high",
+        "entry2": 2.1569,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 2.5875,
+        "entry3_note": "Makes new highs",
+        "stop": 0.926,
+        "stop_note": "Prior day low",
+        "target1": 2.862,
+        "target1_pct": 27.2,
+        "target2": 3.6405,
+        "target2_pct": 61.8,
+        "target3": 5.8905,
+        "target3_pct": 161.8
+      },
+      "price_display": "$1.16",
+      "rvol_display": "159x",
+      "float_display": "1.0M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "PFSA",
+      "scan": "Low Float",
+      "company": "Profusa Inc",
+      "sector": "Healthcare",
+      "price": 0.52,
+      "change": 1.36,
+      "rvol": 80.83,
+      "float_m": 4.22,
+      "short_pct": 0.89,
+      "days_cover": 99.0,
+      "spike_pct": 196.8,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143017599.html",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +197%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-27",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.72,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.7811,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.828,
+        "entry3_note": "Makes new highs",
+        "stop": 0.56,
+        "stop_note": "Prior day low",
+        "target1": 0.9158,
+        "target1_pct": 27.2,
+        "target2": 1.165,
+        "target2_pct": 61.8,
+        "target3": 1.885,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.52",
+      "rvol_display": "81x",
+      "float_display": "4.2M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "SAFX",
+      "scan": "Mid Float",
+      "company": "XCF Global Inc",
+      "sector": "Utilities",
+      "price": 0.42,
+      "change": 17.15,
+      "rvol": 36.38,
+      "float_m": 32.88,
+      "short_pct": 32.85,
+      "days_cover": 99.0,
+      "spike_pct": 137.5,
+      "news": "XCF Global Highlights Strategic Relevance of Modular SAF Model in Australia as Asia Pacific Jet Fuel Prices Surge from ~",
+      "news_url": "https://elite.finviz.com/news/348099/xcf-global-highlights-strategic-relevance-of-modular-saf-model-in-australia-as-asia-pacific-jet-fuel-prices-surge-from-90-to-230-per-barrel-a-155-increase-in-late-feb-early-march-2026",
+      "score": 0.375,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +138%",
+          "gap"
+        ],
+        [
+          "SHORT INT 33%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": "Feb 25, 2026",
+        "earnings_days": -62,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.02,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.5003,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.173,
+        "entry3_note": "Makes new highs",
+        "stop": 0.34,
+        "stop_note": "Prior day low",
+        "target1": 1.2974,
+        "target1_pct": 27.2,
+        "target2": 1.6504,
+        "target2_pct": 61.8,
+        "target3": 2.6704,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.42",
+      "rvol_display": "36x",
+      "float_display": "32.9M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "CTNT",
+      "scan": "Mid Float",
+      "company": "Cheetah Net Supply Chain Service Inc",
+      "sector": "Industrials",
+      "price": 0.03,
+      "change": 2.14,
+      "rvol": 25.23,
+      "float_m": 36.03,
+      "short_pct": 1.56,
+      "days_cover": 99.0,
+      "spike_pct": 0,
+      "news": "Cheetah Net Supply Chain Service Inc. enters Agreement to Acquire Super International Trading Limited",
+      "news_url": "https://elite.finviz.com/news/345199/cheetah-net-supply-chain-service-inc-enters-agreement-to-acquire-super-international-trading-limited",
+      "score": 0.35,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-24",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": null,
+      "price_display": "$0.03",
+      "rvol_display": "25x",
+      "float_display": "36.0M",
+      "rank": "watch"
+    }
+  ]
+}
