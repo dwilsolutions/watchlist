@@ -1,0 +1,259 @@
+{
+  "date": "2026-04-29",
+  "session": "premarket",
+  "generated": "07:28 AM ET",
+  "tickers": [
+    {
+      "ticker": "INHD",
+      "scan": "Low Float",
+      "company": "Inno Holdings Inc",
+      "sector": "Basic Materials",
+      "price": 0.13,
+      "change": 65.62,
+      "rvol": 607.26,
+      "float_m": 8.37,
+      "short_pct": 12.1,
+      "days_cover": 99.0,
+      "spike_pct": 248.8,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018601.html",
+      "score": 0.625,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +249%",
+          "gap"
+        ],
+        [
+          "SHORT INT 12%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-22",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.201,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.3238,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.2311,
+        "entry3_note": "Makes new highs",
+        "stop": 0.13,
+        "stop_note": "Prior day low",
+        "target1": 0.2557,
+        "target1_pct": 27.2,
+        "target2": 0.3252,
+        "target2_pct": 61.8,
+        "target3": 0.5262,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.13",
+      "rvol_display": "607x",
+      "float_display": "8.4M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "GCTK",
+      "scan": "Low Float",
+      "company": "GlucoTrack Inc",
+      "sector": "Healthcare",
+      "price": 1.21,
+      "change": 43.97,
+      "rvol": 338.1,
+      "float_m": 1.82,
+      "short_pct": 36.84,
+      "days_cover": 99.0,
+      "spike_pct": 53.2,
+      "news": "Study Supports GlucoTracks Blood Glucose Monitoring Implant",
+      "news_url": "https://finance.yahoo.com/sectors/healthcare/articles/study-supports-glucotrack-blood-glucose-155946442.html",
+      "score": 0.375,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +53%",
+          "gap"
+        ],
+        [
+          "SHORT INT 37%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.04,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.75,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.196,
+        "entry3_note": "Makes new highs",
+        "stop": 0.704,
+        "stop_note": "Prior day low",
+        "target1": 1.3229,
+        "target1_pct": 27.2,
+        "target2": 1.6827,
+        "target2_pct": 61.8,
+        "target3": 2.7227,
+        "target3_pct": 161.8
+      },
+      "price_display": "$1.21",
+      "rvol_display": "338x",
+      "float_display": "1.8M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "SAGT",
+      "scan": "Low Float",
+      "company": "Sagtec Global Ltd",
+      "sector": "Technology",
+      "price": 2.2,
+      "change": 29.41,
+      "rvol": 691.66,
+      "float_m": 0.34,
+      "short_pct": 19.78,
+      "days_cover": 99.0,
+      "spike_pct": 51.6,
+      "news": "Sagtec Global Limited Achieves Record Revenue of US$19.1 Million in Fiscal Year 2025, Marking 49% Year-over-Year Growth",
+      "news_url": "https://elite.finviz.com/news/348664/sagtec-global-limited-achieves-record-revenue-of-us191-million-in-fiscal-year-2025-marking-49-year-over-year-growth",
+      "score": 0.375,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +52%",
+          "gap"
+        ],
+        [
+          "SHORT INT 20%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 2.06,
+        "entry1_note": "Break above 10d high",
+        "entry2": 1.9125,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 2.369,
+        "entry3_note": "Makes new highs",
+        "stop": 1.75,
+        "stop_note": "Prior day low",
+        "target1": 2.6203,
+        "target1_pct": 27.2,
+        "target2": 3.3331,
+        "target2_pct": 61.8,
+        "target3": 5.3931,
+        "target3_pct": 161.8
+      },
+      "price_display": "$2.20",
+      "rvol_display": "692x",
+      "float_display": "0.3M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "WALD",
+      "scan": "Mid Float",
+      "company": "Waldencast plc",
+      "sector": "Consumer Defensive",
+      "price": 1.03,
+      "change": 32.23,
+      "rvol": 1738.32,
+      "float_m": 47.1,
+      "short_pct": 2.09,
+      "days_cover": 99.0,
+      "spike_pct": 19.1,
+      "news": "Waldencast announces conclusion of SEC investigation",
+      "news_url": "https://elite.finviz.com/news/348539/waldencast-announces-conclusion-of-sec-investigation",
+      "score": 0.35,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-27",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.096,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.9632,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.2604,
+        "entry3_note": "Makes new highs",
+        "stop": 0.75,
+        "stop_note": "Prior day low",
+        "target1": 1.3941,
+        "target1_pct": 27.2,
+        "target2": 1.7733,
+        "target2_pct": 61.8,
+        "target3": 2.8693,
+        "target3_pct": 161.8
+      },
+      "price_display": "$1.03",
+      "rvol_display": "1738x",
+      "float_display": "47.1M",
+      "rank": "watch"
+    }
+  ]
+}
