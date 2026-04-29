@@ -1,0 +1,1888 @@
+{
+  "date": "2026-04-28",
+  "generated": "08:15 PM ET",
+  "sessions": {
+    "earlypremarket": [
+      {
+        "ticker": "RMAX",
+        "company": "RE/MAX Holdings Inc",
+        "sector": "Real Estate",
+        "scan": "Low Float",
+        "score": 100,
+        "tier": "buy",
+        "entry": 10.35,
+        "entry_label": "Break above $10.30",
+        "range_str": "",
+        "prev_close": 7.99,
+        "prev_high": 10.3,
+        "fib_levels": [
+          [
+            "Prev High",
+            10.3
+          ],
+          [
+            "First target",
+            10.93
+          ],
+          [
+            "Second target",
+            11.73
+          ],
+          [
+            "Extended",
+            12.61
+          ]
+        ],
+        "price_at_scan": 9.94,
+        "gap": 19.77,
+        "rvol": 55.66,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY"
+        ],
+        "outcome": "runner"
+      },
+      {
+        "ticker": "SGMT",
+        "company": "Sagimet Biosciences Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 100,
+        "tier": "buy",
+        "entry": 9.42,
+        "entry_label": "Break above $9.37",
+        "range_str": "",
+        "prev_close": 5.86,
+        "prev_high": 9.37,
+        "fib_levels": [
+          [
+            "Prev High",
+            9.37
+          ],
+          [
+            "First target",
+            10.32
+          ],
+          [
+            "Second target",
+            11.54
+          ],
+          [
+            "Extended",
+            12.88
+          ]
+        ],
+        "price_at_scan": 8.12,
+        "gap": 23.04,
+        "rvol": 96.33,
+        "flags": [
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "MX",
+        "company": "MagnaChip Semiconductor Corp",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 86,
+        "tier": "buy",
+        "entry": 5.65,
+        "entry_label": "Break above $5.62",
+        "range_str": "",
+        "prev_close": 5.25,
+        "prev_high": 5.62,
+        "fib_levels": [
+          [
+            "Prev High",
+            5.62
+          ],
+          [
+            "First target",
+            5.72
+          ],
+          [
+            "Second target",
+            5.85
+          ],
+          [
+            "Extended",
+            5.99
+          ]
+        ],
+        "price_at_scan": 5.21,
+        "gap": 6.86,
+        "rvol": 11.09,
+        "flags": [
+          "CONTINUATION",
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "USEG",
+        "company": "U.S. Energy Corp",
+        "sector": "Energy",
+        "scan": "Mid Cap",
+        "score": 78,
+        "tier": "buy",
+        "entry": 1.5,
+        "entry_label": "Break above $1.49",
+        "range_str": "",
+        "prev_close": 0.93,
+        "prev_high": 1.49,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.49
+          ],
+          [
+            "First target",
+            1.64
+          ],
+          [
+            "Second target",
+            1.84
+          ],
+          [
+            "Extended",
+            2.05
+          ]
+        ],
+        "price_at_scan": 1.06,
+        "gap": 47.23,
+        "rvol": 30.82,
+        "flags": [
+          "CATALYST \u00b7 DEAL",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SKLZ",
+        "company": "Skillz Inc",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 74,
+        "tier": "buy",
+        "entry": 9.15,
+        "entry_label": "Break above $9.10",
+        "range_str": "",
+        "prev_close": 7.91,
+        "prev_high": 9.1,
+        "fib_levels": [
+          [
+            "Prev High",
+            9.1
+          ],
+          [
+            "First target",
+            9.42
+          ],
+          [
+            "Second target",
+            9.84
+          ],
+          [
+            "Extended",
+            10.29
+          ]
+        ],
+        "price_at_scan": 6.36,
+        "gap": -0.88,
+        "rvol": 7.38,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SEGG",
+        "company": "Sports Entertainment Gaming Global Corp",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 69,
+        "tier": "buy",
+        "entry": 1.05,
+        "entry_label": "Break above $1.04",
+        "range_str": "",
+        "prev_close": 0.65,
+        "prev_high": 1.04,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.04
+          ],
+          [
+            "First target",
+            1.15
+          ],
+          [
+            "Second target",
+            1.28
+          ],
+          [
+            "Extended",
+            1.43
+          ]
+        ],
+        "price_at_scan": 0.93,
+        "gap": 0.46,
+        "rvol": 8.57,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "monster"
+      },
+      {
+        "ticker": "LPTH",
+        "company": "Lightpath Technologies Inc",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 68,
+        "tier": "buy",
+        "entry": 16.13,
+        "entry_label": "Break above $16.05",
+        "range_str": "",
+        "prev_close": 16.09,
+        "prev_high": 16.05,
+        "fib_levels": [],
+        "price_at_scan": 13.99,
+        "gap": -0.5,
+        "rvol": 3.56,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "CRML",
+        "company": "Critical Metals Corp",
+        "sector": "Basic Materials",
+        "scan": "Mid Cap",
+        "score": 65,
+        "tier": "buy",
+        "entry": 14.58,
+        "entry_label": "Break above $14.51",
+        "range_str": " \u2014 range to $15.33",
+        "prev_close": 11.51,
+        "prev_high": 14.51,
+        "fib_levels": [
+          [
+            "First target",
+            15.33
+          ],
+          [
+            "Second target",
+            16.36
+          ],
+          [
+            "Extended",
+            17.51
+          ]
+        ],
+        "price_at_scan": 14.45,
+        "gap": 7.95,
+        "rvol": 3.83,
+        "flags": [
+          "PRIOR DAY RUNNER"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "YAAS",
+        "company": "Youxin Technology Ltd",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 63,
+        "tier": "monitor",
+        "entry": 2.58,
+        "entry_label": "Break above $2.57",
+        "range_str": "",
+        "prev_close": 0.93,
+        "prev_high": 2.57,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.57
+          ],
+          [
+            "First target",
+            3.02
+          ],
+          [
+            "Second target",
+            3.58
+          ],
+          [
+            "Extended",
+            4.21
+          ]
+        ],
+        "price_at_scan": 2.32,
+        "gap": 55.48,
+        "rvol": 3111.51,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "DKI",
+        "company": "Darkiris Inc",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 60,
+        "tier": "monitor",
+        "entry": 0.6,
+        "entry_label": "Break above $0.60",
+        "range_str": "",
+        "prev_close": 0.46,
+        "prev_high": 0.6,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.6
+          ],
+          [
+            "First target",
+            0.64
+          ],
+          [
+            "Second target",
+            0.69
+          ],
+          [
+            "Extended",
+            0.74
+          ]
+        ],
+        "price_at_scan": 0.52,
+        "gap": 20.82,
+        "rvol": 2.8,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "mover"
+      },
+      {
+        "ticker": "PAPL",
+        "company": "Pineapple Financial Inc",
+        "sector": "Financial",
+        "scan": "Low Float",
+        "score": 58,
+        "tier": "monitor",
+        "entry": 1.54,
+        "entry_label": "Break above $1.53",
+        "range_str": "",
+        "prev_close": 0.92,
+        "prev_high": 1.53,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.53
+          ],
+          [
+            "First target",
+            1.7
+          ],
+          [
+            "Second target",
+            1.91
+          ],
+          [
+            "Extended",
+            2.14
+          ]
+        ],
+        "price_at_scan": 1.38,
+        "gap": 3.28,
+        "rvol": 7.26,
+        "flags": [
+          "CONTINUATION",
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "ONCY",
+        "company": "Oncolytics Biotech Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 58,
+        "tier": "monitor",
+        "entry": 1.18,
+        "entry_label": "Break above $1.17",
+        "range_str": "",
+        "prev_close": 1.03,
+        "prev_high": 1.17,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.17
+          ],
+          [
+            "First target",
+            1.21
+          ],
+          [
+            "Second target",
+            1.26
+          ],
+          [
+            "Extended",
+            1.31
+          ]
+        ],
+        "price_at_scan": 0.97,
+        "gap": 13.59,
+        "rvol": 4.81,
+        "flags": [
+          "CATALYST \u00b7 FDA",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "POET",
+        "company": "POET Technologies Inc",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 58,
+        "tier": "monitor",
+        "entry": 10.47,
+        "entry_label": "Break above $10.42",
+        "range_str": "",
+        "prev_close": 15.1,
+        "prev_high": 10.42,
+        "fib_levels": [],
+        "price_at_scan": 7.95,
+        "gap": -36.66,
+        "rvol": 14.56,
+        "flags": [
+          "CRASHED \u00b7 GAP DOWN",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "UCAR",
+        "company": "U Power Ltd",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 56,
+        "tier": "monitor",
+        "entry": 2.72,
+        "entry_label": "Break above $2.71",
+        "range_str": "",
+        "prev_close": 1.64,
+        "prev_high": 2.71,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.71
+          ],
+          [
+            "First target",
+            3.0
+          ],
+          [
+            "Second target",
+            3.37
+          ],
+          [
+            "Extended",
+            3.78
+          ]
+        ],
+        "price_at_scan": 1.81,
+        "gap": -0.61,
+        "rvol": 3.81,
+        "flags": [
+          "CATALYST \u00b7 FINANCING",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "HCWB",
+        "company": "HCW Biologics Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 54,
+        "tier": "monitor",
+        "entry": 0.48,
+        "entry_label": "Break above $0.48",
+        "range_str": "",
+        "prev_close": 0.38,
+        "prev_high": 0.48,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.48
+          ],
+          [
+            "First target",
+            0.51
+          ],
+          [
+            "Second target",
+            0.54
+          ],
+          [
+            "Extended",
+            0.58
+          ]
+        ],
+        "price_at_scan": 0.44,
+        "gap": 2.77,
+        "rvol": 3.93,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "ELPW",
+        "company": "Elong Power Holding Ltd",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 51,
+        "tier": "monitor",
+        "entry": 4.91,
+        "entry_label": "Break above $4.89",
+        "range_str": "",
+        "prev_close": 3.62,
+        "prev_high": 4.89,
+        "fib_levels": [
+          [
+            "Prev High",
+            4.89
+          ],
+          [
+            "First target",
+            5.24
+          ],
+          [
+            "Second target",
+            5.67
+          ],
+          [
+            "Extended",
+            6.16
+          ]
+        ],
+        "price_at_scan": 4.3,
+        "gap": 23.76,
+        "rvol": 3.01,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "BBBY",
+        "company": "Bed Bath & Beyond Inc",
+        "sector": "Consumer Cyclical",
+        "scan": "Mid Cap",
+        "score": 50,
+        "tier": "monitor",
+        "entry": 5.92,
+        "entry_label": "Break above $5.89",
+        "range_str": "",
+        "prev_close": 5.61,
+        "prev_high": 5.89,
+        "fib_levels": [
+          [
+            "Prev High",
+            5.89
+          ],
+          [
+            "First target",
+            5.97
+          ],
+          [
+            "Second target",
+            6.06
+          ],
+          [
+            "Extended",
+            6.17
+          ]
+        ],
+        "price_at_scan": 5.34,
+        "gap": 0.18,
+        "rvol": 7.79,
+        "flags": [
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "big_runner"
+      }
+    ],
+    "premarket": [
+      {
+        "ticker": "DKI",
+        "company": "Darkiris Inc",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 64,
+        "tier": "monitor",
+        "entry": 0.72,
+        "entry_label": "Break above $0.72",
+        "range_str": "",
+        "prev_close": 0.46,
+        "prev_high": 0.72,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.72
+          ],
+          [
+            "First target",
+            0.79
+          ],
+          [
+            "Second target",
+            0.88
+          ],
+          [
+            "Extended",
+            0.98
+          ]
+        ],
+        "price_at_scan": 0.59,
+        "gap": 46.71,
+        "rvol": 22.14,
+        "flags": [
+          "CATALYST \u00b7 M&A"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "ONCO",
+        "company": "Onconetix Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 52,
+        "tier": "monitor",
+        "entry": 1.0,
+        "entry_label": "Break above $1.00",
+        "range_str": "",
+        "prev_close": 0.59,
+        "prev_high": 1.0,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.0
+          ],
+          [
+            "First target",
+            1.11
+          ],
+          [
+            "Second target",
+            1.25
+          ],
+          [
+            "Extended",
+            1.41
+          ]
+        ],
+        "price_at_scan": 0.9,
+        "gap": 29.29,
+        "rvol": 148.62,
+        "flags": [
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      }
+    ],
+    "marketopen": [
+      {
+        "ticker": "ATER",
+        "company": "Aterian Inc",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 100,
+        "tier": "buy",
+        "entry": 1.24,
+        "entry_label": "Break above $1.23",
+        "range_str": "",
+        "prev_close": 0.66,
+        "prev_high": 1.23,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.23
+          ],
+          [
+            "First target",
+            1.39
+          ],
+          [
+            "Second target",
+            1.58
+          ],
+          [
+            "Extended",
+            1.8
+          ]
+        ],
+        "price_at_scan": 1.12,
+        "gap": 0.53,
+        "rvol": 12651.11,
+        "flags": [
+          "CONTINUATION",
+          "CATALYST \u00b7 DEAL",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "monster"
+      },
+      {
+        "ticker": "BBBY",
+        "company": "Bed Bath & Beyond Inc",
+        "sector": "Consumer Cyclical",
+        "scan": "Mid Cap",
+        "score": 88,
+        "tier": "buy",
+        "entry": 7.49,
+        "entry_label": "Break above $7.45",
+        "range_str": "",
+        "prev_close": 5.34,
+        "prev_high": 7.45,
+        "fib_levels": [
+          [
+            "Prev High",
+            7.45
+          ],
+          [
+            "First target",
+            8.02
+          ],
+          [
+            "Second target",
+            8.75
+          ],
+          [
+            "Extended",
+            9.56
+          ]
+        ],
+        "price_at_scan": 7.04,
+        "gap": 24.16,
+        "rvol": 72.58,
+        "flags": [
+          "GAP QUALITY",
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
+      },
+      {
+        "ticker": "NEXR",
+        "company": "Nexera Technologies Ltd",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 79,
+        "tier": "buy",
+        "entry": 5.48,
+        "entry_label": "Break above $5.45",
+        "range_str": "",
+        "prev_close": 2.0,
+        "prev_high": 5.45,
+        "fib_levels": [
+          [
+            "Prev High",
+            5.45
+          ],
+          [
+            "First target",
+            6.39
+          ],
+          [
+            "Second target",
+            7.58
+          ],
+          [
+            "Extended",
+            8.9
+          ]
+        ],
+        "price_at_scan": 3.33,
+        "gap": 9.99,
+        "rvol": 4218.85,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SEGG",
+        "company": "Sports Entertainment Gaming Global Corp",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 75,
+        "tier": "buy",
+        "entry": 1.37,
+        "entry_label": "Break above $1.36",
+        "range_str": "",
+        "prev_close": 0.93,
+        "prev_high": 1.36,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.36
+          ],
+          [
+            "First target",
+            1.48
+          ],
+          [
+            "Second target",
+            1.63
+          ],
+          [
+            "Extended",
+            1.79
+          ]
+        ],
+        "price_at_scan": 1.12,
+        "gap": 3.09,
+        "rvol": 123.45,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "runner"
+      },
+      {
+        "ticker": "SKYQ",
+        "company": "Sky Quarry Inc",
+        "sector": "Energy",
+        "scan": "Low Float",
+        "score": 64,
+        "tier": "monitor",
+        "entry": 7.78,
+        "entry_label": "Break above $7.74",
+        "range_str": "",
+        "prev_close": 5.45,
+        "prev_high": 7.74,
+        "fib_levels": [
+          [
+            "Prev High",
+            7.74
+          ],
+          [
+            "First target",
+            8.36
+          ],
+          [
+            "Second target",
+            9.16
+          ],
+          [
+            "Extended",
+            10.03
+          ]
+        ],
+        "price_at_scan": 6.29,
+        "gap": 0.73,
+        "rvol": 25.5,
+        "flags": [],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SNBR",
+        "company": "Sleep Number Corp",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 63,
+        "tier": "monitor",
+        "entry": 3.27,
+        "entry_label": "Break above $3.25",
+        "range_str": "",
+        "prev_close": 2.21,
+        "prev_high": 3.25,
+        "fib_levels": [
+          [
+            "Prev High",
+            3.25
+          ],
+          [
+            "First target",
+            3.53
+          ],
+          [
+            "Second target",
+            3.89
+          ],
+          [
+            "Extended",
+            4.29
+          ]
+        ],
+        "price_at_scan": 2.8,
+        "gap": 0.0,
+        "rvol": 79.89,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "big_runner"
+      },
+      {
+        "ticker": "POET",
+        "company": "POET Technologies Inc",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 62,
+        "tier": "monitor",
+        "entry": 8.23,
+        "entry_label": "Break above $8.19",
+        "range_str": "",
+        "prev_close": 7.95,
+        "prev_high": 8.19,
+        "fib_levels": [
+          [
+            "Prev High",
+            8.19
+          ],
+          [
+            "First target",
+            8.26
+          ],
+          [
+            "Second target",
+            8.34
+          ],
+          [
+            "Extended",
+            8.43
+          ]
+        ],
+        "price_at_scan": 7.61,
+        "gap": -10.8,
+        "rvol": 11.08,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "mover"
+      },
+      {
+        "ticker": "SAFX",
+        "company": "XCF Global Inc",
+        "sector": "Utilities",
+        "scan": "Mid Cap",
+        "score": 57,
+        "tier": "monitor",
+        "entry": 0.53,
+        "entry_label": "Break above $0.53",
+        "range_str": "",
+        "prev_close": 0.36,
+        "prev_high": 0.53,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.53
+          ],
+          [
+            "First target",
+            0.58
+          ],
+          [
+            "Second target",
+            0.64
+          ],
+          [
+            "Extended",
+            0.7
+          ]
+        ],
+        "price_at_scan": 0.41,
+        "gap": 5.55,
+        "rvol": 48.42,
+        "flags": [],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "BIYA",
+        "company": "Baiya International Group Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 55,
+        "tier": "monitor",
+        "entry": 1.46,
+        "entry_label": "Break above $1.45",
+        "range_str": "",
+        "prev_close": 0.78,
+        "prev_high": 1.45,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.45
+          ],
+          [
+            "First target",
+            1.63
+          ],
+          [
+            "Second target",
+            1.86
+          ],
+          [
+            "Extended",
+            2.12
+          ]
+        ],
+        "price_at_scan": 1.29,
+        "gap": 1.46,
+        "rvol": 396.3,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "monster"
+      },
+      {
+        "ticker": "CLDI",
+        "company": "Calidi Biotherapeutics Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 50,
+        "tier": "monitor",
+        "entry": 0.35,
+        "entry_label": "Break above $0.35",
+        "range_str": "",
+        "prev_close": 0.24,
+        "prev_high": 0.35,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.35
+          ],
+          [
+            "First target",
+            0.38
+          ],
+          [
+            "Second target",
+            0.42
+          ],
+          [
+            "Extended",
+            0.46
+          ]
+        ],
+        "price_at_scan": 0.25,
+        "gap": 10.15,
+        "rvol": 2563.74,
+        "flags": [
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      }
+    ],
+    "midday": [
+      {
+        "ticker": "POET",
+        "company": "POET Technologies Inc",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 85,
+        "tier": "buy",
+        "entry": 8.88,
+        "entry_label": "Break above $8.84",
+        "range_str": "",
+        "prev_close": 7.95,
+        "prev_high": 8.84,
+        "fib_levels": [
+          [
+            "Prev High",
+            8.84
+          ],
+          [
+            "First target",
+            9.08
+          ],
+          [
+            "Second target",
+            9.39
+          ],
+          [
+            "Extended",
+            9.73
+          ]
+        ],
+        "price_at_scan": 8.02,
+        "gap": -5.16,
+        "rvol": 6.48,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "ATER",
+        "company": "Aterian Inc",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 84,
+        "tier": "buy",
+        "entry": 1.52,
+        "entry_label": "Break above $1.51",
+        "range_str": "",
+        "prev_close": 0.66,
+        "prev_high": 1.51,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.51
+          ],
+          [
+            "First target",
+            1.74
+          ],
+          [
+            "Second target",
+            2.04
+          ],
+          [
+            "Extended",
+            2.36
+          ]
+        ],
+        "price_at_scan": 1.27,
+        "gap": 67.56,
+        "rvol": 6244.22,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "ALREADY EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "big_runner"
+      },
+      {
+        "ticker": "SEGG",
+        "company": "Sports Entertainment Gaming Global Corp",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 79,
+        "tier": "buy",
+        "entry": 1.24,
+        "entry_label": "Break above $1.23",
+        "range_str": "",
+        "prev_close": 0.93,
+        "prev_high": 1.23,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.23
+          ],
+          [
+            "First target",
+            1.31
+          ],
+          [
+            "Second target",
+            1.42
+          ],
+          [
+            "Extended",
+            1.53
+          ]
+        ],
+        "price_at_scan": 1.18,
+        "gap": 16.23,
+        "rvol": 29.05,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "big_runner"
+      },
+      {
+        "ticker": "SBLX",
+        "company": "StableX Technologies Inc",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 74,
+        "tier": "buy",
+        "entry": 5.02,
+        "entry_label": "Break above $5.00",
+        "range_str": "",
+        "prev_close": 2.51,
+        "prev_high": 5.0,
+        "fib_levels": [
+          [
+            "Prev High",
+            5.0
+          ],
+          [
+            "First target",
+            5.68
+          ],
+          [
+            "Second target",
+            6.54
+          ],
+          [
+            "Extended",
+            7.49
+          ]
+        ],
+        "price_at_scan": 3.88,
+        "gap": 7.57,
+        "rvol": 1203.08,
+        "flags": [
+          "CONTINUATION",
+          "ALREADY EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SKYQ",
+        "company": "Sky Quarry Inc",
+        "sector": "Energy",
+        "scan": "Low Float",
+        "score": 67,
+        "tier": "buy",
+        "entry": 5.58,
+        "entry_label": "Momentum above VWAP $5.55",
+        "range_str": " \u2014 range to $6.21",
+        "prev_close": 5.45,
+        "prev_high": 6.21,
+        "fib_levels": [
+          [
+            "Prev High",
+            6.21
+          ],
+          [
+            "First target",
+            6.42
+          ],
+          [
+            "Second target",
+            6.68
+          ],
+          [
+            "Extended",
+            6.97
+          ]
+        ],
+        "price_at_scan": 5.55,
+        "gap": 13.76,
+        "rvol": 2.78,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "runner"
+      },
+      {
+        "ticker": "BIYA",
+        "company": "Baiya International Group Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 57,
+        "tier": "monitor",
+        "entry": 2.2,
+        "entry_label": "Break above $2.19",
+        "range_str": "",
+        "prev_close": 0.78,
+        "prev_high": 2.19,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.19
+          ],
+          [
+            "First target",
+            2.57
+          ],
+          [
+            "Second target",
+            3.06
+          ],
+          [
+            "Extended",
+            3.6
+          ]
+        ],
+        "price_at_scan": 1.63,
+        "gap": 72.02,
+        "rvol": 295.24,
+        "flags": [
+          "GAP QUALITY",
+          "ALREADY EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "BBBY",
+        "company": "Bed Bath & Beyond Inc",
+        "sector": "Consumer Cyclical",
+        "scan": "Mid Cap",
+        "score": 50,
+        "tier": "monitor",
+        "entry": 7.73,
+        "entry_label": "Break above $7.69",
+        "range_str": "",
+        "prev_close": 5.34,
+        "prev_high": 7.69,
+        "fib_levels": [
+          [
+            "Prev High",
+            7.69
+          ],
+          [
+            "First target",
+            8.33
+          ],
+          [
+            "Second target",
+            9.14
+          ],
+          [
+            "Extended",
+            10.04
+          ]
+        ],
+        "price_at_scan": 4.92,
+        "gap": 33.33,
+        "rvol": 31.36,
+        "flags": [
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "NEXR",
+        "company": "Nexera Technologies Ltd",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 49,
+        "tier": "monitor",
+        "entry": 2.82,
+        "entry_label": "Reclaim $2.80",
+        "range_str": " \u2014 range to $3.38",
+        "prev_close": 2.0,
+        "prev_high": 3.38,
+        "fib_levels": [
+          [
+            "Prev High",
+            3.38
+          ],
+          [
+            "First target",
+            3.76
+          ],
+          [
+            "Second target",
+            4.23
+          ],
+          [
+            "Extended",
+            4.76
+          ]
+        ],
+        "price_at_scan": 2.49,
+        "gap": 67.5,
+        "rvol": 643.02,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SAFX",
+        "company": "XCF Global Inc",
+        "sector": "Utilities",
+        "scan": "Mid Cap",
+        "score": 48,
+        "tier": "monitor",
+        "entry": 0.44,
+        "entry_label": "Break above $0.44",
+        "range_str": "",
+        "prev_close": 0.36,
+        "prev_high": 0.44,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.44
+          ],
+          [
+            "First target",
+            0.46
+          ],
+          [
+            "Second target",
+            0.49
+          ],
+          [
+            "Extended",
+            0.52
+          ]
+        ],
+        "price_at_scan": 0.39,
+        "gap": 11.44,
+        "rvol": 6.5,
+        "flags": [
+          "GAP QUALITY"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SNBR",
+        "company": "Sleep Number Corp",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 47,
+        "tier": "monitor",
+        "entry": 3.56,
+        "entry_label": "Reclaim $3.54",
+        "range_str": " \u2014 range to $4.24",
+        "prev_close": 2.21,
+        "prev_high": 4.24,
+        "fib_levels": [
+          [
+            "Prev High",
+            4.24
+          ],
+          [
+            "First target",
+            4.79
+          ],
+          [
+            "Second target",
+            5.49
+          ],
+          [
+            "Extended",
+            6.27
+          ]
+        ],
+        "price_at_scan": 3.13,
+        "gap": 26.7,
+        "rvol": 54.6,
+        "flags": [
+          "GAP QUALITY",
+          "EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "DRCT",
+        "company": "Direct Digital Holdings Inc",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 44,
+        "tier": "monitor",
+        "entry": 3.1,
+        "entry_label": "Momentum above VWAP $2.93",
+        "range_str": " \u2014 range to $3.3",
+        "prev_close": 2.45,
+        "prev_high": 3.3,
+        "fib_levels": [
+          [
+            "Prev High",
+            3.3
+          ],
+          [
+            "First target",
+            3.53
+          ],
+          [
+            "Second target",
+            3.83
+          ],
+          [
+            "Extended",
+            4.15
+          ]
+        ],
+        "price_at_scan": 3.08,
+        "gap": 20.79,
+        "rvol": 276.89,
+        "flags": [
+          "GAP QUALITY",
+          "REVERSE SPLIT"
+        ],
+        "outcome": "up"
+      }
+    ],
+    "afterhours": [
+      {
+        "ticker": "ATER",
+        "company": "Aterian Inc",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 77,
+        "tier": "buy",
+        "entry": 1.27,
+        "entry_label": "Reclaim $1.27",
+        "range_str": " \u2014 range to $1.87",
+        "prev_close": 0.66,
+        "prev_high": 1.87,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.87
+          ],
+          [
+            "First target",
+            2.2
+          ],
+          [
+            "Second target",
+            2.62
+          ],
+          [
+            "Extended",
+            3.08
+          ]
+        ],
+        "price_at_scan": 1.11,
+        "gap": 67.56,
+        "rvol": 4649.39,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "ALREADY EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "mover"
+      },
+      {
+        "ticker": "SEGG",
+        "company": "Sports Entertainment Gaming Global Corp",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 71,
+        "tier": "buy",
+        "entry": 1.47,
+        "entry_label": "Momentum above VWAP $1.21",
+        "range_str": " \u2014 range to $1.56",
+        "prev_close": 0.93,
+        "prev_high": 1.56,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.56
+          ],
+          [
+            "First target",
+            1.73
+          ],
+          [
+            "Second target",
+            1.95
+          ],
+          [
+            "Extended",
+            2.19
+          ]
+        ],
+        "price_at_scan": 1.46,
+        "gap": 13.55,
+        "rvol": 26.22,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "ALREADY EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "mover"
+      },
+      {
+        "ticker": "POET",
+        "company": "POET Technologies Inc",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 68,
+        "tier": "buy",
+        "entry": 8.19,
+        "entry_label": "Reclaim $8.15",
+        "range_str": " \u2014 range to $8.84",
+        "prev_close": 7.95,
+        "prev_high": 8.84,
+        "fib_levels": [
+          [
+            "Prev High",
+            8.84
+          ],
+          [
+            "First target",
+            9.08
+          ],
+          [
+            "Second target",
+            9.39
+          ],
+          [
+            "Extended",
+            9.73
+          ]
+        ],
+        "price_at_scan": 8.03,
+        "gap": -5.16,
+        "rvol": 4.82,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SGMT",
+        "company": "Sagimet Biosciences Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 68,
+        "tier": "buy",
+        "entry": 8.79,
+        "entry_label": "Momentum above VWAP $8.65",
+        "range_str": " \u2014 range to $9.16",
+        "prev_close": 8.12,
+        "prev_high": 9.16,
+        "fib_levels": [
+          [
+            "Prev High",
+            9.16
+          ],
+          [
+            "First target",
+            9.44
+          ],
+          [
+            "Second target",
+            9.8
+          ],
+          [
+            "Extended",
+            10.2
+          ]
+        ],
+        "price_at_scan": 8.75,
+        "gap": 3.33,
+        "rvol": 4.02,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SBLX",
+        "company": "StableX Technologies Inc",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 64,
+        "tier": "monitor",
+        "entry": 3.92,
+        "entry_label": "Reclaim $3.90",
+        "range_str": " \u2014 range to $5.06",
+        "prev_close": 2.51,
+        "prev_high": 5.06,
+        "fib_levels": [
+          [
+            "Prev High",
+            5.06
+          ],
+          [
+            "First target",
+            5.75
+          ],
+          [
+            "Second target",
+            6.64
+          ],
+          [
+            "Extended",
+            7.61
+          ]
+        ],
+        "price_at_scan": 3.1,
+        "gap": 7.57,
+        "rvol": 826.1,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "BBBY",
+        "company": "Bed Bath & Beyond Inc",
+        "sector": "Consumer Cyclical",
+        "scan": "Mid Cap",
+        "score": 50,
+        "tier": "monitor",
+        "entry": 5.67,
+        "entry_label": "Reclaim $5.64",
+        "range_str": " \u2014 range to $7.7",
+        "prev_close": 5.34,
+        "prev_high": 7.7,
+        "fib_levels": [
+          [
+            "Prev High",
+            7.7
+          ],
+          [
+            "First target",
+            8.34
+          ],
+          [
+            "Second target",
+            9.16
+          ],
+          [
+            "Extended",
+            10.06
+          ]
+        ],
+        "price_at_scan": 4.74,
+        "gap": 33.33,
+        "rvol": 21.93,
+        "flags": [
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SNBR",
+        "company": "Sleep Number Corp",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 49,
+        "tier": "monitor",
+        "entry": 3.52,
+        "entry_label": "Reclaim $3.50",
+        "range_str": " \u2014 range to $4.24",
+        "prev_close": 2.21,
+        "prev_high": 4.24,
+        "fib_levels": [
+          [
+            "Prev High",
+            4.24
+          ],
+          [
+            "First target",
+            4.79
+          ],
+          [
+            "Second target",
+            5.49
+          ],
+          [
+            "Extended",
+            6.27
+          ]
+        ],
+        "price_at_scan": 3.25,
+        "gap": 26.7,
+        "rvol": 35.2,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "NEXR",
+        "company": "Nexera Technologies Ltd",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 44,
+        "tier": "monitor",
+        "entry": 2.75,
+        "entry_label": "Reclaim $2.74",
+        "range_str": " \u2014 range to $3.4",
+        "prev_close": 2.0,
+        "prev_high": 3.4,
+        "fib_levels": [
+          [
+            "Prev High",
+            3.4
+          ],
+          [
+            "First target",
+            3.78
+          ],
+          [
+            "Second target",
+            4.27
+          ],
+          [
+            "Extended",
+            4.8
+          ]
+        ],
+        "price_at_scan": 2.3,
+        "gap": 67.0,
+        "rvol": 390.59,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "BIYA",
+        "company": "Baiya International Group Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 42,
+        "tier": "monitor",
+        "entry": 1.73,
+        "entry_label": "Reclaim $1.72",
+        "range_str": " \u2014 range to $2.19",
+        "prev_close": 0.78,
+        "prev_high": 2.19,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.19
+          ],
+          [
+            "First target",
+            2.57
+          ],
+          [
+            "Second target",
+            3.06
+          ],
+          [
+            "Extended",
+            3.6
+          ]
+        ],
+        "price_at_scan": 1.53,
+        "gap": 72.02,
+        "rvol": 190.72,
+        "flags": [
+          "GAP QUALITY",
+          "ALREADY EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      }
+    ]
+  }
+}
