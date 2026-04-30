@@ -1,0 +1,82 @@
+{
+  "session": "premarket",
+  "label": "Pre-Market",
+  "date": "2026-05-01",
+  "generated": "06:55 AM ET",
+  "tickers": [
+    {
+      "ticker": "VSME",
+      "company": "Vs Media Holdings Ltd",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 59,
+      "tier": "monitor",
+      "entry": 1.38,
+      "entry_label": "Break above $1.37",
+      "range_str": "",
+      "prev_close": 0.93,
+      "prev_high": 1.37,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.37
+        ],
+        [
+          "First target",
+          1.49
+        ],
+        [
+          "Second target",
+          1.64
+        ],
+        [
+          "Extended",
+          1.81
+        ]
+      ],
+      "price_at_scan": 1.12,
+      "gap": 37.95,
+      "rvol": 138.48,
+      "flags": [
+        "NASDAQ NOTICE"
+      ]
+    },
+    {
+      "ticker": "ABTS",
+      "company": "Abits Group Inc",
+      "sector": "Financial",
+      "scan": "Low Float",
+      "score": 54,
+      "tier": "monitor",
+      "entry": 1.79,
+      "entry_label": "Break above $1.78",
+      "range_str": "",
+      "prev_close": 1.11,
+      "prev_high": 1.78,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.78
+        ],
+        [
+          "First target",
+          1.96
+        ],
+        [
+          "Second target",
+          2.19
+        ],
+        [
+          "Extended",
+          2.45
+        ]
+      ],
+      "price_at_scan": 1.59,
+      "gap": 52.19,
+      "rvol": 209.65,
+      "flags": [
+        "CONTINUATION"
+      ]
+    }
+  ]
+}
