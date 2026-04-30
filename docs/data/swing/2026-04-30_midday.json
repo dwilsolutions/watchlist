@@ -1,0 +1,196 @@
+{
+  "date": "2026-04-30",
+  "session": "midday",
+  "generated": "12:01 PM ET",
+  "tickers": [
+    {
+      "ticker": "TOMZ",
+      "scan": "Low Float",
+      "company": "TOMI Environmental Solutions Inc",
+      "sector": "Industrials",
+      "price": 0.73,
+      "change": -0.67,
+      "rvol": 22.36,
+      "float_m": 11.66,
+      "short_pct": 0.56,
+      "days_cover": 99.0,
+      "spike_pct": 41.0,
+      "news": "TOMI Environmental Solutions Signs Letter of Intent for a Merger with Carbonium Core, Inc., a U.S.-Based Producer of Nuc",
+      "news_url": "https://elite.finviz.com/news/349340/tomi-environmental-solutions-signs-letter-of-intent-for-a-merger-with-carbonium-core-inc-a-us-based-producer-of-nuclear-grade-graphite-for-advanced-reactors-and-infrastructure-demands-of-ai-data-centers",
+      "score": 0.5,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "CATALYST \u00b7 M&A",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +41%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.86,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.5988,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.989,
+        "entry3_note": "Makes new highs",
+        "stop": 0.62,
+        "stop_note": "Prior day low",
+        "target1": 1.0939,
+        "target1_pct": 27.2,
+        "target2": 1.3915,
+        "target2_pct": 61.8,
+        "target3": 2.2515,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.73",
+      "rvol_display": "22x",
+      "float_display": "11.7M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "RPGL",
+      "scan": "Mid Float",
+      "company": "Republic Power Group Ltd",
+      "sector": "Technology",
+      "price": 2.08,
+      "change": 45.39,
+      "rvol": 4.62,
+      "float_m": 35.52,
+      "short_pct": 0.95,
+      "days_cover": 99.0,
+      "spike_pct": 331.7,
+      "news": "Republic Power Group Limited Announces Strategic Investment and Technology Access Agreement to Enter High-Growth RWA Tok",
+      "news_url": "https://elite.finviz.com/news/347912/republic-power-group-limited-announces-strategic-investment-and-technology-access-agreement-to-enter-high-growth-rwa-tokenization-and-blockchain-infrastructure-markets",
+      "score": 0.44,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.4,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "CATALYST \u00b7 PIVOT",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +332%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 2.28,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.7367,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 2.622,
+        "entry3_note": "Makes new highs",
+        "stop": 1.0,
+        "stop_note": "Prior day low",
+        "target1": 2.9002,
+        "target1_pct": 27.2,
+        "target2": 3.689,
+        "target2_pct": 61.8,
+        "target3": 5.969,
+        "target3_pct": 161.8
+      },
+      "price_display": "$2.08",
+      "rvol_display": "5x",
+      "float_display": "35.5M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "WNW",
+      "scan": "Low Float",
+      "company": "Meiwu Technology Company Ltd",
+      "sector": "Consumer Cyclical",
+      "price": 3.92,
+      "change": 25.25,
+      "rvol": 29.4,
+      "float_m": 0.18,
+      "short_pct": 26.26,
+      "days_cover": 99.0,
+      "spike_pct": 651.1,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018380.html",
+      "score": 0.375,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +651%",
+          "gap"
+        ],
+        [
+          "SHORT INT 26%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 6.65,
+        "entry1_note": "Break above 10d high",
+        "entry2": 3.9,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 7.6475,
+        "entry3_note": "Makes new highs",
+        "stop": 3.03,
+        "stop_note": "Prior day low",
+        "target1": 8.4588,
+        "target1_pct": 27.2,
+        "target2": 10.7597,
+        "target2_pct": 61.8,
+        "target3": 17.4097,
+        "target3_pct": 161.8
+      },
+      "price_display": "$3.92",
+      "rvol_display": "29x",
+      "float_display": "0.2M",
+      "rank": "watch"
+    }
+  ]
+}
