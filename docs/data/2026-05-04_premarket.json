@@ -1,0 +1,121 @@
+{
+  "session": "premarket",
+  "label": "Pre-Market",
+  "date": "2026-05-04",
+  "generated": "06:55 AM ET",
+  "tickers": [
+    {
+      "ticker": "SHPH",
+      "company": "Shuttle Pharmaceuticals Holdings Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 72,
+      "tier": "buy",
+      "entry": 1.38,
+      "entry_label": "Break above $1.37",
+      "range_str": "",
+      "prev_close": 1.03,
+      "prev_high": 1.37,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.37
+        ],
+        [
+          "First target",
+          1.46
+        ],
+        [
+          "Second target",
+          1.58
+        ],
+        [
+          "Extended",
+          1.71
+        ]
+      ],
+      "price_at_scan": 1.24,
+      "gap": 26.21,
+      "rvol": 323.14,
+      "flags": [
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "XXII",
+      "company": "22nd Century Group Inc",
+      "sector": "Consumer Defensive",
+      "scan": "Low Float",
+      "score": 67,
+      "tier": "buy",
+      "entry": 3.59,
+      "entry_label": "Break above $3.57",
+      "range_str": "",
+      "prev_close": 1.56,
+      "prev_high": 3.57,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.57
+        ],
+        [
+          "First target",
+          4.12
+        ],
+        [
+          "Second target",
+          4.81
+        ],
+        [
+          "Extended",
+          5.58
+        ]
+      ],
+      "price_at_scan": 2.46,
+      "gap": 32.41,
+      "rvol": 9902.28,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY"
+      ]
+    },
+    {
+      "ticker": "TOVX",
+      "company": "Theriva Biologics Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 66,
+      "tier": "buy",
+      "entry": 0.42,
+      "entry_label": "Break above $0.42",
+      "range_str": "",
+      "prev_close": 0.36,
+      "prev_high": 0.42,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.42
+        ],
+        [
+          "First target",
+          0.44
+        ],
+        [
+          "Second target",
+          0.46
+        ],
+        [
+          "Extended",
+          0.48
+        ]
+      ],
+      "price_at_scan": 0.36,
+      "gap": 9.01,
+      "rvol": 4.34,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
