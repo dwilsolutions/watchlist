@@ -1,0 +1,531 @@
+{
+  "date": "2026-05-01",
+  "session": "midday",
+  "generated": "11:33 AM ET",
+  "tickers": [
+    {
+      "ticker": "SOAR",
+      "scan": "Low Float",
+      "company": "Volato Group Inc",
+      "sector": "Industrials",
+      "price": 0.26,
+      "change": 10.13,
+      "rvol": 2.22,
+      "float_m": 15.61,
+      "short_pct": 19.32,
+      "days_cover": 99.0,
+      "spike_pct": 55.0,
+      "news": "M2i Global shareholder backs Volato merger ahead of May vote",
+      "news_url": "https://finance.yahoo.com/m/75dd6835-d0bc-3b76-94d4-c32074d567de/m2i-global-shareholder-backs.html",
+      "score": 0.765,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 0.4,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "CATALYST \u00b7 M&A",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +55%",
+          "gap"
+        ],
+        [
+          "SHORT INT 19%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-29",
+        "ma_close": "Jun 7, 2026",
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.272,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.2415,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.3128,
+        "entry3_note": "Makes new highs",
+        "stop": 0.223,
+        "stop_note": "Prior day low",
+        "target1": 0.346,
+        "target1_pct": 27.2,
+        "target2": 0.4401,
+        "target2_pct": 61.8,
+        "target3": 0.7121,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.26",
+      "rvol_display": "2x",
+      "float_display": "15.6M",
+      "rank": "hot"
+    },
+    {
+      "ticker": "SST",
+      "scan": "Low Float",
+      "company": "System1 Inc",
+      "sector": "Industrials",
+      "price": 3.95,
+      "change": 22.07,
+      "rvol": 7.63,
+      "float_m": 4.14,
+      "short_pct": 11.86,
+      "days_cover": 99.0,
+      "spike_pct": 246.7,
+      "news": "System1 shares jump 19% as marketing analytics group forecasts return to profitable growth",
+      "news_url": "https://finance.yahoo.com/m/8965779e-0e19-3c50-b21a-f71164b7acf1/system1-shares-jump-19%25-as.html",
+      "score": 0.595,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 0.7,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +247%",
+          "gap"
+        ],
+        [
+          "SHORT INT 12%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-29",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 4.97,
+        "entry1_note": "Break above 10d high",
+        "entry2": 3.0577,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 5.7155,
+        "entry3_note": "Makes new highs",
+        "stop": 3.15,
+        "stop_note": "Prior day low",
+        "target1": 6.3218,
+        "target1_pct": 27.2,
+        "target2": 8.0415,
+        "target2_pct": 61.8,
+        "target3": 13.0115,
+        "target3_pct": 161.8
+      },
+      "price_display": "$3.95",
+      "rvol_display": "8x",
+      "float_display": "4.1M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "ATOM",
+      "scan": "Mid Float",
+      "company": "Atomera Inc",
+      "sector": "Technology",
+      "price": 10.59,
+      "change": 29.4,
+      "rvol": 5.01,
+      "float_m": 36.64,
+      "short_pct": 13.52,
+      "days_cover": 99.0,
+      "spike_pct": 68.2,
+      "news": "Atomera Extends Collaboration With Synopsys to Accelerate GaN Modeling in High-Value RF and Power Devices",
+      "news_url": "https://www.businesswire.com/news/home/20260423812031/en",
+      "score": 0.595,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 0.7,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +68%",
+          "gap"
+        ],
+        [
+          "SHORT INT 14%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-30",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 11.11,
+        "entry1_note": "Break above 10d high",
+        "entry2": 6.1823,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 12.7765,
+        "entry3_note": "Makes new highs",
+        "stop": 6.98,
+        "stop_note": "Prior day low",
+        "target1": 14.1319,
+        "target1_pct": 27.2,
+        "target2": 17.976,
+        "target2_pct": 61.8,
+        "target3": 29.086,
+        "target3_pct": 161.8
+      },
+      "price_display": "$10.59",
+      "rvol_display": "5x",
+      "float_display": "36.6M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "SDOT",
+      "scan": "Low Float",
+      "company": "Sadot Group Inc",
+      "sector": "Consumer Defensive",
+      "price": 0.56,
+      "change": -42.67,
+      "rvol": 468.23,
+      "float_m": 1.54,
+      "short_pct": 2.92,
+      "days_cover": 99.0,
+      "spike_pct": 103.3,
+      "news": "Sadot Group Inc. Announces Receipt of Nasdaq Notice Regarding Late Form 10-K Filing",
+      "news_url": "https://elite.finviz.com/news/346786/sadot-group-inc-announces-receipt-of-nasdaq-notice-regarding-late-form-10-k-filing",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +103%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-30",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.79,
+        "entry1_note": "Break above 10d high",
+        "entry2": 1.4859,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 2.0585,
+        "entry3_note": "Makes new highs",
+        "stop": 0.91,
+        "stop_note": "Prior day low",
+        "target1": 2.2769,
+        "target1_pct": 27.2,
+        "target2": 2.8962,
+        "target2_pct": 61.8,
+        "target3": 4.6862,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.56",
+      "rvol_display": "468x",
+      "float_display": "1.5M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "SHPH",
+      "scan": "Low Float",
+      "company": "Shuttle Pharmaceuticals Holdings Inc",
+      "sector": "Healthcare",
+      "price": 0.96,
+      "change": -6.99,
+      "rvol": 119.22,
+      "float_m": 4.84,
+      "short_pct": 1.47,
+      "days_cover": 99.0,
+      "spike_pct": 172.4,
+      "news": "Shuttle to Acquire United Dogecoin in Push to Build Public DOGE Mining Platform",
+      "news_url": "https://finance.yahoo.com/m/a0d75ad2-12a3-38b2-ba79-c0761c1cf237/shuttle-to-acquire-united.html",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +172%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-01",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.14,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.9103,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.311,
+        "entry3_note": "Makes new highs",
+        "stop": 0.958,
+        "stop_note": "Prior day low",
+        "target1": 1.4501,
+        "target1_pct": 27.2,
+        "target2": 1.8445,
+        "target2_pct": 61.8,
+        "target3": 2.9845,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.96",
+      "rvol_display": "119x",
+      "float_display": "4.8M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "OSRH",
+      "scan": "Low Float",
+      "company": "OSR Holdings Inc",
+      "sector": "Healthcare",
+      "price": 0.67,
+      "change": -4.71,
+      "rvol": 5.0,
+      "float_m": 12.84,
+      "short_pct": 1.78,
+      "days_cover": 99.0,
+      "spike_pct": 82.8,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143018681.html",
+      "score": 0.52,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.7,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +83%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": "Dec 3, 2025",
+        "earnings_days": -149,
+        "eightk_filed": "2026-04-30",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.9,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.5821,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.035,
+        "entry3_note": "Makes new highs",
+        "stop": 0.52,
+        "stop_note": "Prior day low",
+        "target1": 1.1448,
+        "target1_pct": 27.2,
+        "target2": 1.4562,
+        "target2_pct": 61.8,
+        "target3": 2.3562,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.67",
+      "rvol_display": "5x",
+      "float_display": "12.8M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "XXII",
+      "scan": "Low Float",
+      "company": "22nd Century Group Inc",
+      "sector": "Consumer Defensive",
+      "price": 1.4,
+      "change": -10.26,
+      "rvol": 2553.82,
+      "float_m": 0.7,
+      "short_pct": 16.96,
+      "days_cover": 99.0,
+      "spike_pct": 26.3,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143017426.html",
+      "score": 0.425,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "SHORT INT 17%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-28",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 2.55,
+        "entry1_note": "Break above 10d high",
+        "entry2": 1.912,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 2.9325,
+        "entry3_note": "Makes new highs",
+        "stop": 1.53,
+        "stop_note": "Prior day low",
+        "target1": 3.2436,
+        "target1_pct": 27.2,
+        "target2": 4.1259,
+        "target2_pct": 61.8,
+        "target3": 6.6759,
+        "target3_pct": 161.8
+      },
+      "price_display": "$1.40",
+      "rvol_display": "2554x",
+      "float_display": "0.7M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "ISPC",
+      "scan": "Low Float",
+      "company": "iSpecimen Inc",
+      "sector": "Healthcare",
+      "price": 6.2,
+      "change": 18.55,
+      "rvol": 30.78,
+      "float_m": 0.74,
+      "short_pct": 18.68,
+      "days_cover": 99.0,
+      "spike_pct": 94.6,
+      "news": "iSpecimen Announces 1-for-40 Reverse Stock Split",
+      "news_url": "https://www.newsfilecorp.com/release/293159/iSpecimen-Announces-1for40-Reverse-Stock-Split",
+      "score": 0.375,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "\u26a0 DILUTIVE OFFERING",
+          "danger"
+        ],
+        [
+          "PREV SPIKE +95%",
+          "gap"
+        ],
+        [
+          "SHORT INT 19%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 7.28,
+        "entry1_note": "Break above 10d high",
+        "entry2": 5.283,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 8.372,
+        "entry3_note": "Makes new highs",
+        "stop": 4.18,
+        "stop_note": "Prior day low",
+        "target1": 9.2602,
+        "target1_pct": 27.2,
+        "target2": 11.779,
+        "target2_pct": 61.8,
+        "target3": 19.059,
+        "target3_pct": 161.8
+      },
+      "price_display": "$6.20",
+      "rvol_display": "31x",
+      "float_display": "0.7M",
+      "rank": "avoid"
+    }
+  ]
+}
