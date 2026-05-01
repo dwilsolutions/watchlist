@@ -1,0 +1,1426 @@
+{
+  "date": "2026-04-30",
+  "generated": "08:15 PM ET",
+  "sessions": {
+    "earlypremarket": [
+      {
+        "ticker": "FCEL",
+        "company": "Fuelcell Energy Inc",
+        "sector": "Industrials",
+        "scan": "Mid Cap",
+        "score": 97,
+        "tier": "buy",
+        "entry": 13.73,
+        "entry_label": "Break above $13.66",
+        "range_str": " \u2014 range to $14.67",
+        "prev_close": 9.94,
+        "prev_high": 13.66,
+        "fib_levels": [
+          [
+            "First target",
+            14.67
+          ],
+          [
+            "Second target",
+            15.96
+          ],
+          [
+            "Extended",
+            17.38
+          ]
+        ],
+        "price_at_scan": 13.64,
+        "gap": 14.64,
+        "rvol": 7.78,
+        "flags": [
+          "GAP QUALITY",
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "runner"
+      },
+      {
+        "ticker": "PRCH",
+        "company": "Porch Group Inc",
+        "sector": "Financial",
+        "scan": "Mid Cap",
+        "score": 92,
+        "tier": "buy",
+        "entry": 10.88,
+        "entry_label": "Break above $10.83",
+        "range_str": "",
+        "prev_close": 8.59,
+        "prev_high": 10.83,
+        "fib_levels": [
+          [
+            "Prev High",
+            10.83
+          ],
+          [
+            "First target",
+            11.44
+          ],
+          [
+            "Second target",
+            12.21
+          ],
+          [
+            "Extended",
+            13.07
+          ]
+        ],
+        "price_at_scan": 10.13,
+        "gap": 17.58,
+        "rvol": 4.3,
+        "flags": [
+          "GAP QUALITY",
+          "CATALYST \u00b7 8-K",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SAGT",
+        "company": "Sagtec Global Ltd",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 80,
+        "tier": "buy",
+        "entry": 3.41,
+        "entry_label": "Break above $3.39",
+        "range_str": "",
+        "prev_close": 1.7,
+        "prev_high": 3.39,
+        "fib_levels": [
+          [
+            "Prev High",
+            3.39
+          ],
+          [
+            "First target",
+            3.85
+          ],
+          [
+            "Second target",
+            4.43
+          ],
+          [
+            "Extended",
+            5.08
+          ]
+        ],
+        "price_at_scan": 2.17,
+        "gap": 80.29,
+        "rvol": 597.33,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "AXIL",
+        "company": "AXIL Brands Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 76,
+        "tier": "buy",
+        "entry": 7.55,
+        "entry_label": "Break above $7.51",
+        "range_str": "",
+        "prev_close": 6.75,
+        "prev_high": 7.51,
+        "fib_levels": [
+          [
+            "Prev High",
+            7.51
+          ],
+          [
+            "First target",
+            7.72
+          ],
+          [
+            "Second target",
+            7.98
+          ],
+          [
+            "Extended",
+            8.27
+          ]
+        ],
+        "price_at_scan": 6.89,
+        "gap": 3.7,
+        "rvol": 574.71,
+        "flags": [
+          "CATALYST \u00b7 DEAL",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "XTLB",
+        "company": "X.T.L. Biopharmaceuticals Ltd ADR",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 72,
+        "tier": "buy",
+        "entry": 4.89,
+        "entry_label": "Break above $4.87",
+        "range_str": "",
+        "prev_close": 2.3,
+        "prev_high": 4.87,
+        "fib_levels": [
+          [
+            "Prev High",
+            4.87
+          ],
+          [
+            "First target",
+            5.57
+          ],
+          [
+            "Second target",
+            6.46
+          ],
+          [
+            "Extended",
+            7.44
+          ]
+        ],
+        "price_at_scan": 3.56,
+        "gap": 63.91,
+        "rvol": 9970.64,
+        "flags": [
+          "CONTINUATION",
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "BRLS",
+        "company": "Borealis Foods Inc",
+        "sector": "Consumer Defensive",
+        "scan": "Low Float",
+        "score": 70,
+        "tier": "buy",
+        "entry": 2.04,
+        "entry_label": "Break above $2.03",
+        "range_str": "",
+        "prev_close": 1.13,
+        "prev_high": 2.03,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.03
+          ],
+          [
+            "First target",
+            2.27
+          ],
+          [
+            "Second target",
+            2.59
+          ],
+          [
+            "Extended",
+            2.93
+          ]
+        ],
+        "price_at_scan": 1.89,
+        "gap": 8.85,
+        "rvol": 7.1,
+        "flags": [
+          "CONTINUATION",
+          "CATALYST \u00b7 FINANCING",
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "mover"
+      },
+      {
+        "ticker": "SPPL",
+        "company": "Simpple Ltd",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 70,
+        "tier": "buy",
+        "entry": 2.46,
+        "entry_label": "Break above $2.45",
+        "range_str": "",
+        "prev_close": 2.42,
+        "prev_high": 2.45,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.45
+          ],
+          [
+            "First target",
+            2.46
+          ],
+          [
+            "Second target",
+            2.47
+          ],
+          [
+            "Extended",
+            2.48
+          ]
+        ],
+        "price_at_scan": 2.39,
+        "gap": 0.41,
+        "rvol": 20.21,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
+      },
+      {
+        "ticker": "MX",
+        "company": "MagnaChip Semiconductor Corp",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 70,
+        "tier": "buy",
+        "entry": 4.62,
+        "entry_label": "Break above $4.60",
+        "range_str": "",
+        "prev_close": 4.87,
+        "prev_high": 4.6,
+        "fib_levels": [],
+        "price_at_scan": 3.32,
+        "gap": -7.19,
+        "rvol": 7.43,
+        "flags": [
+          "CATALYST \u00b7 8-K",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "PAPL",
+        "company": "Pineapple Financial Inc",
+        "sector": "Financial",
+        "scan": "Low Float",
+        "score": 68,
+        "tier": "buy",
+        "entry": 2.07,
+        "entry_label": "Break above $2.06",
+        "range_str": "",
+        "prev_close": 1.35,
+        "prev_high": 2.06,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.06
+          ],
+          [
+            "First target",
+            2.25
+          ],
+          [
+            "Second target",
+            2.5
+          ],
+          [
+            "Extended",
+            2.77
+          ]
+        ],
+        "price_at_scan": 1.73,
+        "gap": 3.7,
+        "rvol": 3.33,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "BIYA",
+        "company": "Baiya International Group Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 54,
+        "tier": "monitor",
+        "entry": 2.12,
+        "entry_label": "Break above $2.11",
+        "range_str": "",
+        "prev_close": 1.53,
+        "prev_high": 2.11,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.11
+          ],
+          [
+            "First target",
+            2.27
+          ],
+          [
+            "Second target",
+            2.47
+          ],
+          [
+            "Extended",
+            2.69
+          ]
+        ],
+        "price_at_scan": 1.9,
+        "gap": -3.27,
+        "rvol": 3.19,
+        "flags": [
+          "CONTINUATION",
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "runner"
+      },
+      {
+        "ticker": "SEGG",
+        "company": "Sports Entertainment Gaming Global Corp",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 54,
+        "tier": "monitor",
+        "entry": 1.64,
+        "entry_label": "Break above $1.63",
+        "range_str": "",
+        "prev_close": 1.46,
+        "prev_high": 1.63,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.63
+          ],
+          [
+            "First target",
+            1.68
+          ],
+          [
+            "Second target",
+            1.74
+          ],
+          [
+            "Extended",
+            1.8
+          ]
+        ],
+        "price_at_scan": 1.18,
+        "gap": -7.53,
+        "rvol": 4.17,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "GCTK",
+        "company": "GlucoTrack Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 52,
+        "tier": "monitor",
+        "entry": 1.29,
+        "entry_label": "Break above $1.28",
+        "range_str": "",
+        "prev_close": 0.84,
+        "prev_high": 1.28,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.28
+          ],
+          [
+            "First target",
+            1.4
+          ],
+          [
+            "Second target",
+            1.55
+          ],
+          [
+            "Extended",
+            1.72
+          ]
+        ],
+        "price_at_scan": 0.92,
+        "gap": 23.06,
+        "rvol": 68.22,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "POET",
+        "company": "POET Technologies Inc",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 52,
+        "tier": "monitor",
+        "entry": 7.84,
+        "entry_label": "Break above $7.80",
+        "range_str": "",
+        "prev_close": 8.03,
+        "prev_high": 7.8,
+        "fib_levels": [],
+        "price_at_scan": 6.6,
+        "gap": -2.86,
+        "rvol": 3.98,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      }
+    ],
+    "premarket": [
+      {
+        "ticker": "GCTK",
+        "company": "GlucoTrack Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 70,
+        "tier": "buy",
+        "entry": 1.15,
+        "entry_label": "Break above $1.14",
+        "range_str": "",
+        "prev_close": 0.84,
+        "prev_high": 1.14,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.14
+          ],
+          [
+            "First target",
+            1.22
+          ],
+          [
+            "Second target",
+            1.33
+          ],
+          [
+            "Extended",
+            1.44
+          ]
+        ],
+        "price_at_scan": 0.97,
+        "gap": 15.77,
+        "rvol": 163.06,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "WALD",
+        "company": "Waldencast plc",
+        "sector": "Consumer Defensive",
+        "scan": "Mid Cap",
+        "score": 52,
+        "tier": "monitor",
+        "entry": 1.29,
+        "entry_label": "Break above $1.28",
+        "range_str": "",
+        "prev_close": 0.78,
+        "prev_high": 1.28,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.28
+          ],
+          [
+            "First target",
+            1.42
+          ],
+          [
+            "Second target",
+            1.59
+          ],
+          [
+            "Extended",
+            1.78
+          ]
+        ],
+        "price_at_scan": 1.09,
+        "gap": 64.23,
+        "rvol": 1467.23,
+        "flags": [],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "ASBP",
+        "company": "Aspire Biopharma Holdings Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 41,
+        "tier": "monitor",
+        "entry": 0.26,
+        "entry_label": "Break above $0.26",
+        "range_str": "",
+        "prev_close": 0.21,
+        "prev_high": 0.26,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.26
+          ],
+          [
+            "First target",
+            0.27
+          ],
+          [
+            "Second target",
+            0.29
+          ],
+          [
+            "Extended",
+            0.31
+          ]
+        ],
+        "price_at_scan": 0.23,
+        "gap": 8.86,
+        "rvol": 30.89,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "INHD",
+        "company": "Inno Holdings Inc",
+        "sector": "Basic Materials",
+        "scan": "Low Float",
+        "score": 40,
+        "tier": "monitor",
+        "entry": 0.16,
+        "entry_label": "Break above $0.16",
+        "range_str": "",
+        "prev_close": 0.08,
+        "prev_high": 0.16,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.16
+          ],
+          [
+            "First target",
+            0.18
+          ],
+          [
+            "Second target",
+            0.21
+          ],
+          [
+            "Extended",
+            0.24
+          ]
+        ],
+        "price_at_scan": 0.14,
+        "gap": 29.0,
+        "rvol": 511.83,
+        "flags": [
+          "GAP QUALITY"
+        ],
+        "outcome": "flat"
+      }
+    ],
+    "marketopen": [
+      {
+        "ticker": "FATN",
+        "company": "Fatpipe Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 81,
+        "tier": "buy",
+        "entry": 3.78,
+        "entry_label": "Break above $3.76",
+        "range_str": "",
+        "prev_close": 2.48,
+        "prev_high": 3.76,
+        "fib_levels": [
+          [
+            "Prev High",
+            3.76
+          ],
+          [
+            "First target",
+            4.11
+          ],
+          [
+            "Second target",
+            4.55
+          ],
+          [
+            "Extended",
+            5.04
+          ]
+        ],
+        "price_at_scan": 3.6,
+        "gap": 6.85,
+        "rvol": 364.49,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "BIYA",
+        "company": "Baiya International Group Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 62,
+        "tier": "monitor",
+        "entry": 2.43,
+        "entry_label": "Break above $2.42",
+        "range_str": "",
+        "prev_close": 1.9,
+        "prev_high": 2.42,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.42
+          ],
+          [
+            "First target",
+            2.56
+          ],
+          [
+            "Second target",
+            2.74
+          ],
+          [
+            "Extended",
+            2.94
+          ]
+        ],
+        "price_at_scan": 2.21,
+        "gap": 1.56,
+        "rvol": 36.0,
+        "flags": [
+          "CONTINUATION",
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
+      },
+      {
+        "ticker": "VSME",
+        "company": "Vs Media Holdings Ltd",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 40,
+        "tier": "monitor",
+        "entry": 1.38,
+        "entry_label": "Break above $1.37",
+        "range_str": "",
+        "prev_close": 0.93,
+        "prev_high": 1.37,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.37
+          ],
+          [
+            "First target",
+            1.49
+          ],
+          [
+            "Second target",
+            1.64
+          ],
+          [
+            "Extended",
+            1.81
+          ]
+        ],
+        "price_at_scan": 0.98,
+        "gap": 37.95,
+        "rvol": 182.06,
+        "flags": [
+          "NASDAQ NOTICE"
+        ],
+        "outcome": "flat"
+      }
+    ],
+    "midday": [
+      {
+        "ticker": "FCEL",
+        "company": "Fuelcell Energy Inc",
+        "sector": "Industrials",
+        "scan": "Mid Cap",
+        "score": 100,
+        "tier": "buy",
+        "entry": 13.09,
+        "entry_label": "Momentum above VWAP $12.53",
+        "range_str": "",
+        "prev_close": 13.64,
+        "prev_high": 13.37,
+        "fib_levels": [],
+        "price_at_scan": 13.02,
+        "gap": -2.42,
+        "rvol": 6.14,
+        "flags": [
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
+      },
+      {
+        "ticker": "VLN",
+        "company": "Valens Semiconductor Ltd",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 90,
+        "tier": "buy",
+        "entry": 2.56,
+        "entry_label": "Break above $2.55",
+        "range_str": "",
+        "prev_close": 1.51,
+        "prev_high": 2.55,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.55
+          ],
+          [
+            "First target",
+            2.83
+          ],
+          [
+            "Second target",
+            3.19
+          ],
+          [
+            "Extended",
+            3.59
+          ]
+        ],
+        "price_at_scan": 2.02,
+        "gap": 1.32,
+        "rvol": 79.05,
+        "flags": [
+          "EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "OSRH",
+        "company": "OSR Holdings Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 74,
+        "tier": "buy",
+        "entry": 0.78,
+        "entry_label": "Break above $0.78",
+        "range_str": "",
+        "prev_close": 0.46,
+        "prev_high": 0.78,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.78
+          ],
+          [
+            "First target",
+            0.87
+          ],
+          [
+            "Second target",
+            0.98
+          ],
+          [
+            "Extended",
+            1.1
+          ]
+        ],
+        "price_at_scan": 0.7,
+        "gap": 17.39,
+        "rvol": 369.99,
+        "flags": [
+          "GAP QUALITY",
+          "ALREADY EXTENDED"
+        ],
+        "outcome": "mover"
+      },
+      {
+        "ticker": "TOMZ",
+        "company": "TOMI Environmental Solutions Inc",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 74,
+        "tier": "buy",
+        "entry": 0.77,
+        "entry_label": "Break above $0.77",
+        "range_str": "",
+        "prev_close": 0.73,
+        "prev_high": 0.77,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.77
+          ],
+          [
+            "First target",
+            0.78
+          ],
+          [
+            "Second target",
+            0.79
+          ],
+          [
+            "Extended",
+            0.81
+          ]
+        ],
+        "price_at_scan": 0.69,
+        "gap": 0.49,
+        "rvol": 16.75,
+        "flags": [
+          "CATALYST \u00b7 M&A",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "VSME",
+        "company": "Vs Media Holdings Ltd",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 67,
+        "tier": "buy",
+        "entry": 1.08,
+        "entry_label": "Momentum above VWAP $1.03",
+        "range_str": " \u2014 range to $1.11",
+        "prev_close": 0.93,
+        "prev_high": 1.11,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.11
+          ],
+          [
+            "First target",
+            1.16
+          ],
+          [
+            "Second target",
+            1.22
+          ],
+          [
+            "Extended",
+            1.29
+          ]
+        ],
+        "price_at_scan": 1.07,
+        "gap": 11.0,
+        "rvol": 19.5,
+        "flags": [
+          "GAP QUALITY",
+          "NASDAQ NOTICE"
+        ],
+        "outcome": "runner"
+      },
+      {
+        "ticker": "FATN",
+        "company": "Fatpipe Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 64,
+        "tier": "monitor",
+        "entry": 3.25,
+        "entry_label": "Reclaim $3.23",
+        "range_str": " \u2014 range to $3.64",
+        "prev_close": 2.48,
+        "prev_high": 3.64,
+        "fib_levels": [
+          [
+            "Prev High",
+            3.64
+          ],
+          [
+            "First target",
+            3.96
+          ],
+          [
+            "Second target",
+            4.36
+          ],
+          [
+            "Extended",
+            4.8
+          ]
+        ],
+        "price_at_scan": 2.87,
+        "gap": 39.92,
+        "rvol": 57.32,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "BIYA",
+        "company": "Baiya International Group Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 50,
+        "tier": "monitor",
+        "entry": 2.51,
+        "entry_label": "Break above $2.50",
+        "range_str": "",
+        "prev_close": 1.9,
+        "prev_high": 2.5,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.5
+          ],
+          [
+            "First target",
+            2.66
+          ],
+          [
+            "Second target",
+            2.87
+          ],
+          [
+            "Extended",
+            3.1
+          ]
+        ],
+        "price_at_scan": 2.0,
+        "gap": 19.5,
+        "rvol": 8.12,
+        "flags": [
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "RPGL",
+        "company": "Republic Power Group Ltd",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 50,
+        "tier": "monitor",
+        "entry": 1.99,
+        "entry_label": "Reclaim $1.98",
+        "range_str": " \u2014 range to $2.28",
+        "prev_close": 1.43,
+        "prev_high": 2.28,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.28
+          ],
+          [
+            "First target",
+            2.51
+          ],
+          [
+            "Second target",
+            2.81
+          ],
+          [
+            "Extended",
+            3.13
+          ]
+        ],
+        "price_at_scan": 1.98,
+        "gap": 5.59,
+        "rvol": 4.04,
+        "flags": [
+          "CONTINUATION",
+          "CATALYST \u00b7 DEAL",
+          "EXTENDED",
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
+      }
+    ],
+    "afterhours": [
+      {
+        "ticker": "FCEL",
+        "company": "Fuelcell Energy Inc",
+        "sector": "Industrials",
+        "scan": "Mid Cap",
+        "score": 100,
+        "tier": "buy",
+        "entry": 13.06,
+        "entry_label": "Momentum above VWAP $12.59",
+        "range_str": "",
+        "prev_close": 13.64,
+        "prev_high": 13.37,
+        "fib_levels": [],
+        "price_at_scan": 13.0,
+        "gap": -2.49,
+        "rvol": 5.11,
+        "flags": [
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
+      },
+      {
+        "ticker": "VLN",
+        "company": "Valens Semiconductor Ltd",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 100,
+        "tier": "buy",
+        "entry": 2.18,
+        "entry_label": "Momentum above VWAP $2.12",
+        "range_str": " \u2014 range to $2.55",
+        "prev_close": 1.51,
+        "prev_high": 2.55,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.55
+          ],
+          [
+            "First target",
+            2.83
+          ],
+          [
+            "Second target",
+            3.19
+          ],
+          [
+            "Extended",
+            3.59
+          ]
+        ],
+        "price_at_scan": 2.17,
+        "gap": 1.99,
+        "rvol": 57.71,
+        "flags": [
+          "CONTINUATION",
+          "EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "mover"
+      },
+      {
+        "ticker": "ONEG",
+        "company": "OneConstruction Group Ltd",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 96,
+        "tier": "buy",
+        "entry": 8.88,
+        "entry_label": "Momentum above VWAP $8.76",
+        "range_str": " \u2014 range to $9.69",
+        "prev_close": 8.56,
+        "prev_high": 9.69,
+        "fib_levels": [
+          [
+            "Prev High",
+            9.69
+          ],
+          [
+            "First target",
+            10.0
+          ],
+          [
+            "Second target",
+            10.39
+          ],
+          [
+            "Extended",
+            10.82
+          ]
+        ],
+        "price_at_scan": 8.84,
+        "gap": 1.87,
+        "rvol": 7.82,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
+      },
+      {
+        "ticker": "SKLZ",
+        "company": "Skillz Inc",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 80,
+        "tier": "buy",
+        "entry": 8.1,
+        "entry_label": "Momentum above VWAP $7.14",
+        "range_str": " \u2014 range to $8.47",
+        "prev_close": 5.78,
+        "prev_high": 8.47,
+        "fib_levels": [
+          [
+            "Prev High",
+            8.47
+          ],
+          [
+            "First target",
+            9.2
+          ],
+          [
+            "Second target",
+            10.13
+          ],
+          [
+            "Extended",
+            11.16
+          ]
+        ],
+        "price_at_scan": 8.06,
+        "gap": 0.35,
+        "rvol": 10.04,
+        "flags": [
+          "EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "mover"
+      },
+      {
+        "ticker": "TOMZ",
+        "company": "TOMI Environmental Solutions Inc",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 69,
+        "tier": "buy",
+        "entry": 0.7,
+        "entry_label": "Reclaim $0.70",
+        "range_str": " \u2014 range to $0.77",
+        "prev_close": 0.73,
+        "prev_high": 0.77,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.77
+          ],
+          [
+            "First target",
+            0.78
+          ],
+          [
+            "Second target",
+            0.79
+          ],
+          [
+            "Extended",
+            0.81
+          ]
+        ],
+        "price_at_scan": 0.67,
+        "gap": 1.37,
+        "rvol": 10.46,
+        "flags": [
+          "CATALYST \u00b7 M&A",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "OSRH",
+        "company": "OSR Holdings Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 67,
+        "tier": "buy",
+        "entry": 0.72,
+        "entry_label": "Reclaim $0.72",
+        "range_str": " \u2014 range to $0.84",
+        "prev_close": 0.46,
+        "prev_high": 0.84,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.84
+          ],
+          [
+            "First target",
+            0.94
+          ],
+          [
+            "Second target",
+            1.07
+          ],
+          [
+            "Extended",
+            1.22
+          ]
+        ],
+        "price_at_scan": 0.7,
+        "gap": 17.39,
+        "rvol": 274.41,
+        "flags": [
+          "GAP QUALITY",
+          "ALREADY EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
+      },
+      {
+        "ticker": "FATN",
+        "company": "Fatpipe Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 64,
+        "tier": "monitor",
+        "entry": 3.22,
+        "entry_label": "Reclaim $3.21",
+        "range_str": " \u2014 range to $3.67",
+        "prev_close": 2.48,
+        "prev_high": 3.67,
+        "fib_levels": [
+          [
+            "Prev High",
+            3.67
+          ],
+          [
+            "First target",
+            3.99
+          ],
+          [
+            "Second target",
+            4.41
+          ],
+          [
+            "Extended",
+            4.86
+          ]
+        ],
+        "price_at_scan": 3.04,
+        "gap": 40.12,
+        "rvol": 35.28,
+        "flags": [
+          "CATALYST \u00b7 8-K",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "BIYA",
+        "company": "Baiya International Group Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 50,
+        "tier": "monitor",
+        "entry": 2.14,
+        "entry_label": "Reclaim $2.13",
+        "range_str": " \u2014 range to $2.5",
+        "prev_close": 1.9,
+        "prev_high": 2.5,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.5
+          ],
+          [
+            "First target",
+            2.66
+          ],
+          [
+            "Second target",
+            2.87
+          ],
+          [
+            "Extended",
+            3.1
+          ]
+        ],
+        "price_at_scan": 1.98,
+        "gap": 19.74,
+        "rvol": 4.95,
+        "flags": [
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "PSNL",
+        "company": "Personalis Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 48,
+        "tier": "monitor",
+        "entry": 5.55,
+        "entry_label": "Momentum above VWAP $5.39",
+        "range_str": " \u2014 range to $5.69",
+        "prev_close": 5.04,
+        "prev_high": 5.69,
+        "fib_levels": [
+          [
+            "Prev High",
+            5.69
+          ],
+          [
+            "First target",
+            5.87
+          ],
+          [
+            "Second target",
+            6.09
+          ],
+          [
+            "Extended",
+            6.34
+          ]
+        ],
+        "price_at_scan": 5.52,
+        "gap": 1.19,
+        "rvol": 3.64,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
+      },
+      {
+        "ticker": "VSME",
+        "company": "Vs Media Holdings Ltd",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 40,
+        "tier": "monitor",
+        "entry": 1.08,
+        "entry_label": "Reclaim $1.08",
+        "range_str": " \u2014 range to $1.2",
+        "prev_close": 0.93,
+        "prev_high": 1.2,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.2
+          ],
+          [
+            "First target",
+            1.27
+          ],
+          [
+            "Second target",
+            1.37
+          ],
+          [
+            "Extended",
+            1.47
+          ]
+        ],
+        "price_at_scan": 0.97,
+        "gap": 11.0,
+        "rvol": 13.02,
+        "flags": [
+          "NASDAQ NOTICE",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "runner"
+      }
+    ]
+  }
+}
