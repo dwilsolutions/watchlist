@@ -1,0 +1,1171 @@
+{
+  "date": "2026-05-01",
+  "generated": "08:15 PM ET",
+  "sessions": {
+    "earlypremarket": [
+      {
+        "ticker": "VLN",
+        "company": "Valens Semiconductor Ltd",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 100,
+        "tier": "buy",
+        "entry": 2.56,
+        "entry_label": "Break above $2.55",
+        "range_str": "",
+        "prev_close": 1.51,
+        "prev_high": 2.55,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.55
+          ],
+          [
+            "First target",
+            2.83
+          ],
+          [
+            "Second target",
+            3.19
+          ],
+          [
+            "Extended",
+            3.59
+          ]
+        ],
+        "price_at_scan": 2.17,
+        "gap": 1.99,
+        "rvol": 58.56,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "OSRH",
+        "company": "OSR Holdings Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 97,
+        "tier": "buy",
+        "entry": 0.84,
+        "entry_label": "Break above $0.84",
+        "range_str": "",
+        "prev_close": 0.46,
+        "prev_high": 0.84,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.84
+          ],
+          [
+            "First target",
+            0.94
+          ],
+          [
+            "Second target",
+            1.07
+          ],
+          [
+            "Extended",
+            1.22
+          ]
+        ],
+        "price_at_scan": 0.7,
+        "gap": 17.39,
+        "rvol": 278.32,
+        "flags": [
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "ONEG",
+        "company": "OneConstruction Group Ltd",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 91,
+        "tier": "buy",
+        "entry": 9.74,
+        "entry_label": "Break above $9.69",
+        "range_str": "",
+        "prev_close": 8.56,
+        "prev_high": 9.69,
+        "fib_levels": [
+          [
+            "Prev High",
+            9.69
+          ],
+          [
+            "First target",
+            10.0
+          ],
+          [
+            "Second target",
+            10.39
+          ],
+          [
+            "Extended",
+            10.82
+          ]
+        ],
+        "price_at_scan": 8.84,
+        "gap": 1.87,
+        "rvol": 7.87,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "monster"
+      },
+      {
+        "ticker": "FCEL",
+        "company": "Fuelcell Energy Inc",
+        "sector": "Industrials",
+        "scan": "Mid Cap",
+        "score": 85,
+        "tier": "buy",
+        "entry": 13.44,
+        "entry_label": "Break above $13.37",
+        "range_str": "",
+        "prev_close": 13.64,
+        "prev_high": 13.37,
+        "fib_levels": [],
+        "price_at_scan": 13.0,
+        "gap": -2.49,
+        "rvol": 5.19,
+        "flags": [
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "mover"
+      },
+      {
+        "ticker": "SKLZ",
+        "company": "Skillz Inc",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 83,
+        "tier": "buy",
+        "entry": 8.51,
+        "entry_label": "Break above $8.47",
+        "range_str": "",
+        "prev_close": 5.78,
+        "prev_high": 8.47,
+        "fib_levels": [
+          [
+            "Prev High",
+            8.47
+          ],
+          [
+            "First target",
+            9.2
+          ],
+          [
+            "Second target",
+            10.13
+          ],
+          [
+            "Extended",
+            11.16
+          ]
+        ],
+        "price_at_scan": 8.06,
+        "gap": 0.35,
+        "rvol": 10.29,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
+      },
+      {
+        "ticker": "TOMZ",
+        "company": "TOMI Environmental Solutions Inc",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 74,
+        "tier": "buy",
+        "entry": 0.77,
+        "entry_label": "Break above $0.77",
+        "range_str": "",
+        "prev_close": 0.73,
+        "prev_high": 0.77,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.77
+          ],
+          [
+            "First target",
+            0.78
+          ],
+          [
+            "Second target",
+            0.79
+          ],
+          [
+            "Extended",
+            0.81
+          ]
+        ],
+        "price_at_scan": 0.67,
+        "gap": 1.37,
+        "rvol": 10.55,
+        "flags": [
+          "CATALYST \u00b7 M&A",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SHPH",
+        "company": "Shuttle Pharmaceuticals Holdings Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 70,
+        "tier": "buy",
+        "entry": 1.06,
+        "entry_label": "Break above $1.05",
+        "range_str": "",
+        "prev_close": 1.0,
+        "prev_high": 1.05,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.05
+          ],
+          [
+            "First target",
+            1.06
+          ],
+          [
+            "Second target",
+            1.08
+          ],
+          [
+            "Extended",
+            1.1
+          ]
+        ],
+        "price_at_scan": 1.03,
+        "gap": -3.15,
+        "rvol": 54.86,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "big_runner"
+      },
+      {
+        "ticker": "FATN",
+        "company": "Fatpipe Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 69,
+        "tier": "buy",
+        "entry": 3.69,
+        "entry_label": "Break above $3.67",
+        "range_str": "",
+        "prev_close": 2.48,
+        "prev_high": 3.67,
+        "fib_levels": [
+          [
+            "Prev High",
+            3.67
+          ],
+          [
+            "First target",
+            3.99
+          ],
+          [
+            "Second target",
+            4.41
+          ],
+          [
+            "Extended",
+            4.86
+          ]
+        ],
+        "price_at_scan": 3.04,
+        "gap": 40.12,
+        "rvol": 35.55,
+        "flags": [
+          "CATALYST \u00b7 8-K",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "BIYA",
+        "company": "Baiya International Group Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 50,
+        "tier": "monitor",
+        "entry": 2.51,
+        "entry_label": "Break above $2.50",
+        "range_str": "",
+        "prev_close": 1.9,
+        "prev_high": 2.5,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.5
+          ],
+          [
+            "First target",
+            2.66
+          ],
+          [
+            "Second target",
+            2.87
+          ],
+          [
+            "Extended",
+            3.1
+          ]
+        ],
+        "price_at_scan": 1.98,
+        "gap": 19.74,
+        "rvol": 5.1,
+        "flags": [
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "VSME",
+        "company": "Vs Media Holdings Ltd",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 50,
+        "tier": "monitor",
+        "entry": 1.21,
+        "entry_label": "Break above $1.20",
+        "range_str": "",
+        "prev_close": 0.93,
+        "prev_high": 1.2,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.2
+          ],
+          [
+            "First target",
+            1.27
+          ],
+          [
+            "Second target",
+            1.37
+          ],
+          [
+            "Extended",
+            1.47
+          ]
+        ],
+        "price_at_scan": 0.97,
+        "gap": 11.0,
+        "rvol": 13.15,
+        "flags": [
+          "NASDAQ NOTICE",
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "big_runner"
+      },
+      {
+        "ticker": "WNW",
+        "company": "Meiwu Technology Company Ltd",
+        "sector": "Consumer Cyclical",
+        "scan": "Low Float",
+        "score": 50,
+        "tier": "monitor",
+        "entry": 5.73,
+        "entry_label": "Break above $5.70",
+        "range_str": "",
+        "prev_close": 3.13,
+        "prev_high": 5.7,
+        "fib_levels": [
+          [
+            "Prev High",
+            5.7
+          ],
+          [
+            "First target",
+            6.4
+          ],
+          [
+            "Second target",
+            7.29
+          ],
+          [
+            "Extended",
+            8.27
+          ]
+        ],
+        "price_at_scan": 4.27,
+        "gap": 4.38,
+        "rvol": 15.69,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "PSNL",
+        "company": "Personalis Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 43,
+        "tier": "monitor",
+        "entry": 5.72,
+        "entry_label": "Break above $5.69",
+        "range_str": "",
+        "prev_close": 5.04,
+        "prev_high": 5.69,
+        "fib_levels": [
+          [
+            "Prev High",
+            5.69
+          ],
+          [
+            "First target",
+            5.87
+          ],
+          [
+            "Second target",
+            6.09
+          ],
+          [
+            "Extended",
+            6.34
+          ]
+        ],
+        "price_at_scan": 5.52,
+        "gap": 1.19,
+        "rvol": 3.64,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "mover"
+      }
+    ],
+    "premarket": [
+      {
+        "ticker": "VSME",
+        "company": "Vs Media Holdings Ltd",
+        "sector": "Communication Services",
+        "scan": "Low Float",
+        "score": 59,
+        "tier": "monitor",
+        "entry": 1.38,
+        "entry_label": "Break above $1.37",
+        "range_str": "",
+        "prev_close": 0.93,
+        "prev_high": 1.37,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.37
+          ],
+          [
+            "First target",
+            1.49
+          ],
+          [
+            "Second target",
+            1.64
+          ],
+          [
+            "Extended",
+            1.81
+          ]
+        ],
+        "price_at_scan": 1.12,
+        "gap": 37.95,
+        "rvol": 138.48,
+        "flags": [
+          "NASDAQ NOTICE"
+        ],
+        "outcome": "mover"
+      },
+      {
+        "ticker": "ABTS",
+        "company": "Abits Group Inc",
+        "sector": "Financial",
+        "scan": "Low Float",
+        "score": 54,
+        "tier": "monitor",
+        "entry": 1.79,
+        "entry_label": "Break above $1.78",
+        "range_str": "",
+        "prev_close": 1.11,
+        "prev_high": 1.78,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.78
+          ],
+          [
+            "First target",
+            1.96
+          ],
+          [
+            "Second target",
+            2.19
+          ],
+          [
+            "Extended",
+            2.45
+          ]
+        ],
+        "price_at_scan": 1.59,
+        "gap": 52.19,
+        "rvol": 209.65,
+        "flags": [
+          "CONTINUATION"
+        ],
+        "outcome": "flat"
+      }
+    ],
+    "marketopen": [
+      {
+        "ticker": "SOBR",
+        "company": "Sobr Safe Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 74,
+        "tier": "buy",
+        "entry": 0.97,
+        "entry_label": "Break above $0.97",
+        "range_str": "",
+        "prev_close": 0.55,
+        "prev_high": 0.97,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.97
+          ],
+          [
+            "First target",
+            1.08
+          ],
+          [
+            "Second target",
+            1.23
+          ],
+          [
+            "Extended",
+            1.39
+          ]
+        ],
+        "price_at_scan": 0.89,
+        "gap": 23.85,
+        "rvol": 2801.27,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY"
+        ],
+        "outcome": "big_runner"
+      },
+      {
+        "ticker": "SHPH",
+        "company": "Shuttle Pharmaceuticals Holdings Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 70,
+        "tier": "buy",
+        "entry": 1.38,
+        "entry_label": "Break above $1.37",
+        "range_str": "",
+        "prev_close": 1.03,
+        "prev_high": 1.37,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.37
+          ],
+          [
+            "First target",
+            1.46
+          ],
+          [
+            "Second target",
+            1.58
+          ],
+          [
+            "Extended",
+            1.71
+          ]
+        ],
+        "price_at_scan": 1.1,
+        "gap": 26.21,
+        "rvol": 592.49,
+        "flags": [
+          "CATALYST \u00b7 M&A",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "TOVX",
+        "company": "Theriva Biologics Inc",
+        "sector": "Healthcare",
+        "scan": "Mid Cap",
+        "score": 66,
+        "tier": "buy",
+        "entry": 0.42,
+        "entry_label": "Break above $0.42",
+        "range_str": "",
+        "prev_close": 0.36,
+        "prev_high": 0.42,
+        "fib_levels": [
+          [
+            "Prev High",
+            0.42
+          ],
+          [
+            "First target",
+            0.44
+          ],
+          [
+            "Second target",
+            0.46
+          ],
+          [
+            "Extended",
+            0.48
+          ]
+        ],
+        "price_at_scan": 0.37,
+        "gap": 9.01,
+        "rvol": 5.05,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      }
+    ],
+    "midday": [
+      {
+        "ticker": "ATOM",
+        "company": "Atomera Inc",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 68,
+        "tier": "buy",
+        "entry": 11.17,
+        "entry_label": "Break above $11.11",
+        "range_str": "",
+        "prev_close": 8.18,
+        "prev_high": 11.11,
+        "fib_levels": [
+          [
+            "Prev High",
+            11.11
+          ],
+          [
+            "First target",
+            11.91
+          ],
+          [
+            "Second target",
+            12.92
+          ],
+          [
+            "Extended",
+            14.04
+          ]
+        ],
+        "price_at_scan": 10.51,
+        "gap": 2.2,
+        "rvol": 3.63,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "FCEL",
+        "company": "Fuelcell Energy Inc",
+        "sector": "Industrials",
+        "scan": "Mid Cap",
+        "score": 68,
+        "tier": "buy",
+        "entry": 14.37,
+        "entry_label": "Break above $14.30",
+        "range_str": "",
+        "prev_close": 13.0,
+        "prev_high": 14.3,
+        "fib_levels": [
+          [
+            "Prev High",
+            14.3
+          ],
+          [
+            "First target",
+            14.65
+          ],
+          [
+            "Second target",
+            15.1
+          ],
+          [
+            "Extended",
+            15.6
+          ]
+        ],
+        "price_at_scan": 12.78,
+        "gap": 2.38,
+        "rvol": 3.82,
+        "flags": [
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "TLIH",
+        "company": "Ten League International Holdings Ltd",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 67,
+        "tier": "buy",
+        "entry": 4.63,
+        "entry_label": "Break above $4.61",
+        "range_str": "",
+        "prev_close": 2.43,
+        "prev_high": 4.61,
+        "fib_levels": [
+          [
+            "Prev High",
+            4.61
+          ],
+          [
+            "First target",
+            5.2
+          ],
+          [
+            "Second target",
+            5.96
+          ],
+          [
+            "Extended",
+            6.79
+          ]
+        ],
+        "price_at_scan": 3.69,
+        "gap": 14.13,
+        "rvol": 154.38,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "ALREADY EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "OSRH",
+        "company": "OSR Holdings Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 65,
+        "tier": "buy",
+        "entry": 0.67,
+        "entry_label": "Reclaim $0.67",
+        "range_str": "",
+        "prev_close": 0.7,
+        "prev_high": 0.7,
+        "fib_levels": [],
+        "price_at_scan": 0.66,
+        "gap": -3.26,
+        "rvol": 3.33,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
+      },
+      {
+        "ticker": "ULCC",
+        "company": "Frontier Group Holdings Inc",
+        "sector": "Industrials",
+        "scan": "Mid Cap",
+        "score": 60,
+        "tier": "monitor",
+        "entry": 3.99,
+        "entry_label": "Reclaim $3.97",
+        "range_str": " \u2014 range to $4.18",
+        "prev_close": 3.63,
+        "prev_high": 4.18,
+        "fib_levels": [
+          [
+            "Prev High",
+            4.18
+          ],
+          [
+            "First target",
+            4.33
+          ],
+          [
+            "Second target",
+            4.52
+          ],
+          [
+            "Extended",
+            4.73
+          ]
+        ],
+        "price_at_scan": 3.95,
+        "gap": -0.28,
+        "rvol": 4.58,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
+      },
+      {
+        "ticker": "SST",
+        "company": "System1 Inc",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 52,
+        "tier": "monitor",
+        "entry": 4.03,
+        "entry_label": "Reclaim $4.01",
+        "range_str": " \u2014 range to $4.3",
+        "prev_close": 3.24,
+        "prev_high": 4.3,
+        "fib_levels": [
+          [
+            "Prev High",
+            4.3
+          ],
+          [
+            "First target",
+            4.59
+          ],
+          [
+            "Second target",
+            4.96
+          ],
+          [
+            "Extended",
+            5.36
+          ]
+        ],
+        "price_at_scan": 3.95,
+        "gap": 13.89,
+        "rvol": 5.11,
+        "flags": [
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
+      },
+      {
+        "ticker": "SOBR",
+        "company": "Sobr Safe Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 47,
+        "tier": "monitor",
+        "entry": 1.1,
+        "entry_label": "Reclaim $1.10",
+        "range_str": " \u2014 range to $1.26",
+        "prev_close": 0.55,
+        "prev_high": 1.26,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.26
+          ],
+          [
+            "First target",
+            1.45
+          ],
+          [
+            "Second target",
+            1.7
+          ],
+          [
+            "Extended",
+            1.97
+          ]
+        ],
+        "price_at_scan": 1.0,
+        "gap": 68.5,
+        "rvol": 884.15,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "ALREADY EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
+      }
+    ],
+    "afterhours": [
+      {
+        "ticker": "FCEL",
+        "company": "Fuelcell Energy Inc",
+        "sector": "Industrials",
+        "scan": "Mid Cap",
+        "score": 68,
+        "tier": "buy",
+        "entry": 13.38,
+        "entry_label": "Momentum above VWAP $13.22",
+        "range_str": " \u2014 range to $14.3",
+        "prev_close": 13.0,
+        "prev_high": 14.3,
+        "fib_levels": [
+          [
+            "Prev High",
+            14.3
+          ],
+          [
+            "First target",
+            14.65
+          ],
+          [
+            "Second target",
+            15.1
+          ],
+          [
+            "Extended",
+            15.6
+          ]
+        ],
+        "price_at_scan": 13.31,
+        "gap": 2.0,
+        "rvol": 3.55,
+        "flags": [
+          "PRIOR DAY RUNNER",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "ULCC",
+        "company": "Frontier Group Holdings Inc",
+        "sector": "Industrials",
+        "scan": "Mid Cap",
+        "score": 68,
+        "tier": "buy",
+        "entry": 4.02,
+        "entry_label": "Momentum above VWAP $3.98",
+        "range_str": " \u2014 range to $4.18",
+        "prev_close": 3.63,
+        "prev_high": 4.18,
+        "fib_levels": [
+          [
+            "Prev High",
+            4.18
+          ],
+          [
+            "First target",
+            4.33
+          ],
+          [
+            "Second target",
+            4.52
+          ],
+          [
+            "Extended",
+            4.73
+          ]
+        ],
+        "price_at_scan": 4.0,
+        "gap": -0.83,
+        "rvol": 3.49,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
+      },
+      {
+        "ticker": "VLN",
+        "company": "Valens Semiconductor Ltd",
+        "sector": "Technology",
+        "scan": "Mid Cap",
+        "score": 68,
+        "tier": "buy",
+        "entry": 2.35,
+        "entry_label": "Momentum above VWAP $2.25",
+        "range_str": " \u2014 range to $2.37",
+        "prev_close": 2.17,
+        "prev_high": 2.37,
+        "fib_levels": [
+          [
+            "Prev High",
+            2.37
+          ],
+          [
+            "First target",
+            2.42
+          ],
+          [
+            "Second target",
+            2.49
+          ],
+          [
+            "Extended",
+            2.57
+          ]
+        ],
+        "price_at_scan": 2.34,
+        "gap": -4.61,
+        "rvol": 4.48,
+        "flags": [
+          "CONTINUATION",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "OSRH",
+        "company": "OSR Holdings Inc",
+        "sector": "Healthcare",
+        "scan": "Low Float",
+        "score": 62,
+        "tier": "monitor",
+        "entry": 0.67,
+        "entry_label": "Reclaim $0.66",
+        "range_str": "",
+        "prev_close": 0.7,
+        "prev_high": 0.7,
+        "fib_levels": [],
+        "price_at_scan": 0.64,
+        "gap": -1.89,
+        "rvol": 2.26,
+        "flags": [
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SST",
+        "company": "System1 Inc",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 52,
+        "tier": "monitor",
+        "entry": 4.02,
+        "entry_label": "Reclaim $4.00",
+        "range_str": " \u2014 range to $4.3",
+        "prev_close": 3.24,
+        "prev_high": 4.3,
+        "fib_levels": [
+          [
+            "Prev High",
+            4.3
+          ],
+          [
+            "First target",
+            4.59
+          ],
+          [
+            "Second target",
+            4.96
+          ],
+          [
+            "Extended",
+            5.36
+          ]
+        ],
+        "price_at_scan": 3.94,
+        "gap": 13.89,
+        "rvol": 3.27,
+        "flags": [
+          "GAP QUALITY",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "TLIH",
+        "company": "Ten League International Holdings Ltd",
+        "sector": "Industrials",
+        "scan": "Low Float",
+        "score": 52,
+        "tier": "monitor",
+        "entry": 3.98,
+        "entry_label": "Reclaim $3.96",
+        "range_str": " \u2014 range to $4.61",
+        "prev_close": 2.43,
+        "prev_high": 4.61,
+        "fib_levels": [
+          [
+            "Prev High",
+            4.61
+          ],
+          [
+            "First target",
+            5.2
+          ],
+          [
+            "Second target",
+            5.96
+          ],
+          [
+            "Extended",
+            6.79
+          ]
+        ],
+        "price_at_scan": 3.66,
+        "gap": 14.13,
+        "rvol": 92.76,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "ALREADY EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "flat"
+      },
+      {
+        "ticker": "SOBR",
+        "company": "Sobr Safe Inc",
+        "sector": "Technology",
+        "scan": "Low Float",
+        "score": 47,
+        "tier": "monitor",
+        "entry": 1.09,
+        "entry_label": "Reclaim $1.08",
+        "range_str": " \u2014 range to $1.26",
+        "prev_close": 0.55,
+        "prev_high": 1.26,
+        "fib_levels": [
+          [
+            "Prev High",
+            1.26
+          ],
+          [
+            "First target",
+            1.45
+          ],
+          [
+            "Second target",
+            1.7
+          ],
+          [
+            "Extended",
+            1.97
+          ]
+        ],
+        "price_at_scan": 0.98,
+        "gap": 70.24,
+        "rvol": 611.23,
+        "flags": [
+          "CONTINUATION",
+          "GAP QUALITY",
+          "ALREADY EXTENDED",
+          "SECTOR MOMENTUM"
+        ],
+        "outcome": "up"
+      }
+    ]
+  }
+}
