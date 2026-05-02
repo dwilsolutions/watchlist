@@ -1,0 +1,371 @@
+{
+  "session": "earlypremarket",
+  "label": "Early Pre-Market",
+  "date": "2026-05-04",
+  "generated": "08:30 PM ET",
+  "tickers": [
+    {
+      "ticker": "TLIH",
+      "company": "Ten League International Holdings Ltd",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 82,
+      "tier": "buy",
+      "entry": 4.63,
+      "entry_label": "Break above $4.61",
+      "range_str": "",
+      "prev_close": 2.43,
+      "prev_high": 4.61,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.61
+        ],
+        [
+          "First target",
+          5.2
+        ],
+        [
+          "Second target",
+          5.96
+        ],
+        [
+          "Extended",
+          6.79
+        ]
+      ],
+      "price_at_scan": 3.66,
+      "gap": 14.13,
+      "rvol": 93.37,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "FCEL",
+      "company": "Fuelcell Energy Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 68,
+      "tier": "buy",
+      "entry": 14.37,
+      "entry_label": "Break above $14.30",
+      "range_str": "",
+      "prev_close": 13.0,
+      "prev_high": 14.3,
+      "fib_levels": [
+        [
+          "Prev High",
+          14.3
+        ],
+        [
+          "First target",
+          14.65
+        ],
+        [
+          "Second target",
+          15.1
+        ],
+        [
+          "Extended",
+          15.6
+        ]
+      ],
+      "price_at_scan": 13.31,
+      "gap": 2.0,
+      "rvol": 3.62,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ULCC",
+      "company": "Frontier Group Holdings Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 68,
+      "tier": "buy",
+      "entry": 4.2,
+      "entry_label": "Break above $4.18",
+      "range_str": "",
+      "prev_close": 3.63,
+      "prev_high": 4.18,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.18
+        ],
+        [
+          "First target",
+          4.33
+        ],
+        [
+          "Second target",
+          4.52
+        ],
+        [
+          "Extended",
+          4.73
+        ]
+      ],
+      "price_at_scan": 4.0,
+      "gap": -0.83,
+      "rvol": 3.5,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "VLN",
+      "company": "Valens Semiconductor Ltd",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 68,
+      "tier": "buy",
+      "entry": 2.38,
+      "entry_label": "Break above $2.37",
+      "range_str": "",
+      "prev_close": 2.17,
+      "prev_high": 2.37,
+      "fib_levels": [
+        [
+          "Prev High",
+          2.37
+        ],
+        [
+          "First target",
+          2.42
+        ],
+        [
+          "Second target",
+          2.49
+        ],
+        [
+          "Extended",
+          2.57
+        ]
+      ],
+      "price_at_scan": 2.34,
+      "gap": -4.61,
+      "rvol": 4.55,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "OSRH",
+      "company": "OSR Holdings Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 67,
+      "tier": "buy",
+      "entry": 0.7,
+      "entry_label": "Break above $0.70",
+      "range_str": "",
+      "prev_close": 0.7,
+      "prev_high": 0.7,
+      "fib_levels": [],
+      "price_at_scan": 0.64,
+      "gap": -1.89,
+      "rvol": 2.34,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SOBR",
+      "company": "Sobr Safe Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 67,
+      "tier": "buy",
+      "entry": 1.27,
+      "entry_label": "Break above $1.26",
+      "range_str": "",
+      "prev_close": 0.55,
+      "prev_high": 1.26,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.26
+        ],
+        [
+          "First target",
+          1.45
+        ],
+        [
+          "Second target",
+          1.7
+        ],
+        [
+          "Extended",
+          1.97
+        ]
+      ],
+      "price_at_scan": 0.98,
+      "gap": 70.24,
+      "rvol": 621.47,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "SST",
+      "company": "System1 Inc",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 67,
+      "tier": "buy",
+      "entry": 4.32,
+      "entry_label": "Break above $4.30",
+      "range_str": "",
+      "prev_close": 3.24,
+      "prev_high": 4.3,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.3
+        ],
+        [
+          "First target",
+          4.59
+        ],
+        [
+          "Second target",
+          4.96
+        ],
+        [
+          "Extended",
+          5.36
+        ]
+      ],
+      "price_at_scan": 3.94,
+      "gap": 13.89,
+      "rvol": 3.29,
+      "flags": [
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "PN",
+      "company": "Skycorp Solar Group Ltd",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 53,
+      "tier": "monitor",
+      "entry": 3.45,
+      "entry_label": "Break above $3.43",
+      "range_str": "",
+      "prev_close": 2.24,
+      "prev_high": 3.43,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.43
+        ],
+        [
+          "First target",
+          3.75
+        ],
+        [
+          "Second target",
+          4.17
+        ],
+        [
+          "Extended",
+          4.62
+        ]
+      ],
+      "price_at_scan": 2.87,
+      "gap": 10.56,
+      "rvol": 380.92,
+      "flags": [
+        "GAP QUALITY",
+        "CATALYST \u00b7 M&A",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "STEX",
+      "company": "Streamex Corp",
+      "sector": "Financial",
+      "scan": "Mid Cap",
+      "score": 52,
+      "tier": "monitor",
+      "entry": 1.21,
+      "entry_label": "Break above $1.20",
+      "range_str": "",
+      "prev_close": 0.77,
+      "prev_high": 1.2,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.2
+        ],
+        [
+          "First target",
+          1.32
+        ],
+        [
+          "Second target",
+          1.47
+        ],
+        [
+          "Extended",
+          1.63
+        ]
+      ],
+      "price_at_scan": 1.18,
+      "gap": 1.95,
+      "rvol": 3.07,
+      "flags": [
+        "CATALYST \u00b7 8-K"
+      ]
+    },
+    {
+      "ticker": "SHPH",
+      "company": "Shuttle Pharmaceuticals Holdings Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 50,
+      "tier": "monitor",
+      "entry": 1.15,
+      "entry_label": "Break above $1.14",
+      "range_str": "",
+      "prev_close": 1.03,
+      "prev_high": 1.14,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.14
+        ],
+        [
+          "First target",
+          1.17
+        ],
+        [
+          "Second target",
+          1.21
+        ],
+        [
+          "Extended",
+          1.25
+        ]
+      ],
+      "price_at_scan": 0.69,
+      "gap": 8.74,
+      "rvol": 53.7,
+      "flags": [
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
