@@ -1,0 +1,120 @@
+{
+  "session": "premarket",
+  "label": "Pre-Market",
+  "date": "2026-05-05",
+  "generated": "06:55 AM ET",
+  "tickers": [
+    {
+      "ticker": "CRE",
+      "company": "Cre8 Enterprise Ltd",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 76,
+      "tier": "buy",
+      "entry": 4.98,
+      "entry_label": "Break above $4.96",
+      "range_str": "",
+      "prev_close": 2.41,
+      "prev_high": 4.96,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.96
+        ],
+        [
+          "First target",
+          5.65
+        ],
+        [
+          "Second target",
+          6.54
+        ],
+        [
+          "Extended",
+          7.51
+        ]
+      ],
+      "price_at_scan": 2.83,
+      "gap": 1.93,
+      "rvol": 242.72,
+      "flags": [
+        "CATALYST \u00b7 M&A",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "PN",
+      "company": "Skycorp Solar Group Ltd",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 73,
+      "tier": "buy",
+      "entry": 6.79,
+      "entry_label": "Break above $6.76",
+      "range_str": "",
+      "prev_close": 2.87,
+      "prev_high": 6.76,
+      "fib_levels": [
+        [
+          "Prev High",
+          6.76
+        ],
+        [
+          "First target",
+          7.82
+        ],
+        [
+          "Second target",
+          9.16
+        ],
+        [
+          "Extended",
+          10.65
+        ]
+      ],
+      "price_at_scan": 5.76,
+      "gap": 59.16,
+      "rvol": 1110.52,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "CATALYST \u00b7 M&A"
+      ]
+    },
+    {
+      "ticker": "LNAI",
+      "company": "Lunai Bioworks Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 49,
+      "tier": "monitor",
+      "entry": 0.44,
+      "entry_label": "Break above $0.44",
+      "range_str": "",
+      "prev_close": 0.32,
+      "prev_high": 0.44,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.44
+        ],
+        [
+          "First target",
+          0.47
+        ],
+        [
+          "Second target",
+          0.51
+        ],
+        [
+          "Extended",
+          0.56
+        ]
+      ],
+      "price_at_scan": 0.37,
+      "gap": 29.73,
+      "rvol": 45.2,
+      "flags": []
+    }
+  ]
+}
