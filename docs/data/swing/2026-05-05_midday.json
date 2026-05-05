@@ -1,0 +1,838 @@
+{
+  "date": "2026-05-05",
+  "session": "midday",
+  "generated": "12:10 PM ET",
+  "tickers": [
+    {
+      "ticker": "VRDN",
+      "scan": "Mid Float",
+      "company": "Viridian Therapeutics Inc",
+      "sector": "Healthcare",
+      "price": 18.31,
+      "change": 30.23,
+      "rvol": 11.0,
+      "float_m": 93.72,
+      "short_pct": 11.37,
+      "days_cover": 99.0,
+      "spike_pct": 42.2,
+      "news": "PDUFA Decision Nears as Viridian Therapeutics (VRDN) Advances TED Pipeline and Reports Q1 Results",
+      "news_url": "https://finance.yahoo.com/m/11d60f1e-592a-3270-a6e2-cdc8a45f1600/pdufa-decision-nears-as.html",
+      "score": 0.925,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 1.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "FDA EVENT",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +42%",
+          "gap"
+        ],
+        [
+          "SHORT INT 11%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-05",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 20.0,
+        "entry1_note": "Break above 10d high",
+        "entry2": 14.5042,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 23.0,
+        "entry3_note": "Makes new highs",
+        "stop": 13.384,
+        "stop_note": "Prior day low",
+        "target1": 25.44,
+        "target1_pct": 27.2,
+        "target2": 32.36,
+        "target2_pct": 61.8,
+        "target3": 52.36,
+        "target3_pct": 161.8
+      },
+      "price_display": "$18.31",
+      "rvol_display": "11x",
+      "float_display": "93.7M",
+      "rank": "hot"
+    },
+    {
+      "ticker": "DEVS",
+      "scan": "Low Float",
+      "company": "DevvStream Corp",
+      "sector": "Industrials",
+      "price": 0.19,
+      "change": -13.78,
+      "rvol": 7.87,
+      "float_m": 4.62,
+      "short_pct": 12.22,
+      "days_cover": 99.0,
+      "spike_pct": 57.3,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143017315.html",
+      "score": 0.595,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 0.7,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +57%",
+          "gap"
+        ],
+        [
+          "SHORT INT 12%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-01",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.52,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.4873,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.598,
+        "entry3_note": "Makes new highs",
+        "stop": 0.205,
+        "stop_note": "Prior day low",
+        "target1": 0.6614,
+        "target1_pct": 27.2,
+        "target2": 0.8414,
+        "target2_pct": 61.8,
+        "target3": 1.3614,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.19",
+      "rvol_display": "8x",
+      "float_display": "4.6M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "MASK",
+      "scan": "Low Float",
+      "company": "3 E Network Technology Group Ltd",
+      "sector": "Technology",
+      "price": 2.12,
+      "change": 46.2,
+      "rvol": 21.81,
+      "float_m": 0.82,
+      "short_pct": 5.59,
+      "days_cover": 99.0,
+      "spike_pct": 167.7,
+      "news": "3 E Network Technology Signs 1.3M Convertible Note Agreement with Institutional Investor",
+      "news_url": "https://elite.finviz.com/news/350368/3-e-network-technology-signs-13m-convertible-note-agreement-with-institutional-investor",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +168%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-04",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 2.2,
+        "entry1_note": "Break above 10d high",
+        "entry2": 1.6905,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 2.53,
+        "entry3_note": "Makes new highs",
+        "stop": 1.25,
+        "stop_note": "Prior day low",
+        "target1": 2.7984,
+        "target1_pct": 27.2,
+        "target2": 3.5596,
+        "target2_pct": 61.8,
+        "target3": 5.7596,
+        "target3_pct": 161.8
+      },
+      "price_display": "$2.12",
+      "rvol_display": "22x",
+      "float_display": "0.8M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "PN",
+      "scan": "Low Float",
+      "company": "Skycorp Solar Group Ltd",
+      "sector": "Technology",
+      "price": 8.94,
+      "change": 64.94,
+      "rvol": 12.12,
+      "float_m": 1.07,
+      "short_pct": 1.34,
+      "days_cover": 99.0,
+      "spike_pct": 146.9,
+      "news": "Skycorp Solar Soars Over 125% On $20.2 Million Nanjing Cesun Deal",
+      "news_url": "https://finance.yahoo.com/sectors/energy/articles/skycorp-solar-soars-over-125-175741460.html",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +147%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-30",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 10.63,
+        "entry1_note": "Break above 10d high",
+        "entry2": 3.3323,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 12.2245,
+        "entry3_note": "Makes new highs",
+        "stop": 4.61,
+        "stop_note": "Prior day low",
+        "target1": 13.5214,
+        "target1_pct": 27.2,
+        "target2": 17.1993,
+        "target2_pct": 61.8,
+        "target3": 27.8293,
+        "target3_pct": 161.8
+      },
+      "price_display": "$8.94",
+      "rvol_display": "12x",
+      "float_display": "1.1M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "SDOT",
+      "scan": "Low Float",
+      "company": "Sadot Group Inc",
+      "sector": "Consumer Defensive",
+      "price": 0.5,
+      "change": 94.67,
+      "rvol": 1362.43,
+      "float_m": 1.53,
+      "short_pct": 2.94,
+      "days_cover": 99.0,
+      "spike_pct": 145.2,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143017809.html",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +145%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-30",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.79,
+        "entry1_note": "Break above 10d high",
+        "entry2": 1.3607,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 2.0585,
+        "entry3_note": "Makes new highs",
+        "stop": 0.242,
+        "stop_note": "Prior day low",
+        "target1": 2.2769,
+        "target1_pct": 27.2,
+        "target2": 2.8962,
+        "target2_pct": 61.8,
+        "target3": 4.6862,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.50",
+      "rvol_display": "1362x",
+      "float_display": "1.5M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "SOBR",
+      "scan": "Low Float",
+      "company": "Sobr Safe Inc",
+      "sector": "Technology",
+      "price": 1.14,
+      "change": 34.12,
+      "rvol": 23.59,
+      "float_m": 1.97,
+      "short_pct": 1.44,
+      "days_cover": 99.0,
+      "spike_pct": 130.8,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143017809.html",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +131%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-30",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.5,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.6396,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.725,
+        "entry3_note": "Makes new highs",
+        "stop": 0.825,
+        "stop_note": "Prior day low",
+        "target1": 1.908,
+        "target1_pct": 27.2,
+        "target2": 2.427,
+        "target2_pct": 61.8,
+        "target3": 3.927,
+        "target3_pct": 161.8
+      },
+      "price_display": "$1.14",
+      "rvol_display": "24x",
+      "float_display": "2.0M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "SOWG",
+      "scan": "Low Float",
+      "company": "Sow Good Inc",
+      "sector": "Consumer Defensive",
+      "price": 1.52,
+      "change": -13.64,
+      "rvol": 210.07,
+      "float_m": 0.75,
+      "short_pct": 3.29,
+      "days_cover": 99.0,
+      "spike_pct": 60.5,
+      "news": "Sow Good (SOWG) Secures $20M Credit Facility to Fund Critical Minerals Strategy Transition",
+      "news_url": "https://finance.yahoo.com/m/2ac027cc-d8c7-34d9-a80c-4c2d6ae5fa41/sow-good-%28sowg%29-secures-%2420m.html",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +60%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-05",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 2.25,
+        "entry1_note": "Break above 10d high",
+        "entry2": 3.2041,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 2.5875,
+        "entry3_note": "Makes new highs",
+        "stop": 1.65,
+        "stop_note": "Prior day low",
+        "target1": 2.862,
+        "target1_pct": 27.2,
+        "target2": 3.6405,
+        "target2_pct": 61.8,
+        "target3": 5.8905,
+        "target3_pct": 161.8
+      },
+      "price_display": "$1.52",
+      "rvol_display": "210x",
+      "float_display": "0.8M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "BLZE",
+      "scan": "Mid Float",
+      "company": "Backblaze Inc",
+      "sector": "Technology",
+      "price": 7.36,
+      "change": 58.73,
+      "rvol": 78.49,
+      "float_m": 56.66,
+      "short_pct": 2.46,
+      "days_cover": 99.0,
+      "spike_pct": 81.5,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143017809.html",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +82%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-04",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 8.4199,
+        "entry1_note": "Break above 10d high",
+        "entry2": 4.182,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 9.6829,
+        "entry3_note": "Makes new highs",
+        "stop": 4.43,
+        "stop_note": "Prior day low",
+        "target1": 10.7101,
+        "target1_pct": 27.2,
+        "target2": 13.6234,
+        "target2_pct": 61.8,
+        "target3": 22.0433,
+        "target3_pct": 161.8
+      },
+      "price_display": "$7.36",
+      "rvol_display": "78x",
+      "float_display": "56.7M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "PMI",
+      "scan": "Mid Float",
+      "company": "Picard Medical Inc",
+      "sector": "Healthcare",
+      "price": 0.2,
+      "change": -44.48,
+      "rvol": 16.61,
+      "float_m": 24.95,
+      "short_pct": 2.38,
+      "days_cover": 99.0,
+      "spike_pct": 62.2,
+      "news": "Picard Medical Announces Pricing of $5 Million Offering",
+      "news_url": "https://elite.finviz.com/news/350663/picard-medical-announces-pricing-of-5-million-offering",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +62%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-04-29",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.92,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.755,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.058,
+        "entry3_note": "Makes new highs",
+        "stop": 0.352,
+        "stop_note": "Prior day low",
+        "target1": 1.1702,
+        "target1_pct": 27.2,
+        "target2": 1.4886,
+        "target2_pct": 61.8,
+        "target3": 2.4086,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.20",
+      "rvol_display": "17x",
+      "float_display": "24.9M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "SKK",
+      "scan": "Low Float",
+      "company": "SKK Holdings Ltd",
+      "sector": "Industrials",
+      "price": 5.04,
+      "change": -58.65,
+      "rvol": 26.88,
+      "float_m": 1.03,
+      "short_pct": 1.36,
+      "days_cover": 99.0,
+      "spike_pct": 925.7,
+      "news": "SKK Holdings (SKK) $258.8M Asset Acquisition of Rantizo Drone Assets Signals Strategic Shift",
+      "news_url": "https://finance.yahoo.com/m/6cebe161-a60c-377e-812d-30fb9b13694e/skk-holdings-%28skk%29-%24258.8m.html",
+      "score": 0.5,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "CATALYST \u00b7 M&A",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +926%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 17.95,
+        "entry1_note": "Break above 10d high",
+        "entry2": 2.6709,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 20.6425,
+        "entry3_note": "Makes new highs",
+        "stop": 1.68,
+        "stop_note": "Prior day low",
+        "target1": 22.8324,
+        "target1_pct": 27.2,
+        "target2": 29.0431,
+        "target2_pct": 61.8,
+        "target3": 46.9931,
+        "target3_pct": 161.8
+      },
+      "price_display": "$5.04",
+      "rvol_display": "27x",
+      "float_display": "1.0M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "RENX",
+      "scan": "Low Float",
+      "company": "RenX Enterprises Corp",
+      "sector": "Real Estate",
+      "price": 2.04,
+      "change": -20.62,
+      "rvol": 4.14,
+      "float_m": 2.3,
+      "short_pct": 7.92,
+      "days_cover": 99.0,
+      "spike_pct": 150.0,
+      "news": "RenX Enterprises Corp. Secures Initial $13 Million of PIPE Financing; Up to $87 Million in Additional Financing Availabl",
+      "news_url": "https://elite.finviz.com/news/350764/renx-enterprises-corp-secures-initial-13-million-of-pipe-financing-up-to-87-million-in-additional-financing-available",
+      "score": 0.49,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.4,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +150%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-05",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 2.9,
+        "entry1_note": "Break above 10d high",
+        "entry2": 2.6013,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 3.335,
+        "entry3_note": "Makes new highs",
+        "stop": 2.47,
+        "stop_note": "Prior day low",
+        "target1": 3.6888,
+        "target1_pct": 27.2,
+        "target2": 4.6922,
+        "target2_pct": 61.8,
+        "target3": 7.5922,
+        "target3_pct": 161.8
+      },
+      "price_display": "$2.04",
+      "rvol_display": "4x",
+      "float_display": "2.3M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "EMBC",
+      "scan": "Mid Float",
+      "company": "Embecta Corp",
+      "sector": "Healthcare",
+      "price": 4.16,
+      "change": -54.97,
+      "rvol": 23.73,
+      "float_m": 54.38,
+      "short_pct": 10.67,
+      "days_cover": 99.0,
+      "spike_pct": 18.5,
+      "news": "Embecta Corp. Reports Second Quarter Fiscal 2026 Financial Results",
+      "news_url": "https://elite.finviz.com/news/350499/embecta-corp-reports-second-quarter-fiscal-2026-financial-results",
+      "score": 0.425,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "SHORT INT 11%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-05",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 9.43,
+        "entry1_note": "Break above 10d high",
+        "entry2": 8.9647,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 10.8445,
+        "entry3_note": "Makes new highs",
+        "stop": 9.14,
+        "stop_note": "Prior day low",
+        "target1": 11.995,
+        "target1_pct": 27.2,
+        "target2": 15.2577,
+        "target2_pct": 61.8,
+        "target3": 24.6877,
+        "target3_pct": 161.8
+      },
+      "price_display": "$4.16",
+      "rvol_display": "24x",
+      "float_display": "54.4M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "CABA",
+      "scan": "Mid Float",
+      "company": "Cabaletta Bio Inc",
+      "sector": "Healthcare",
+      "price": 3.95,
+      "change": 3.26,
+      "rvol": 4.39,
+      "float_m": 97.48,
+      "short_pct": 20.15,
+      "days_cover": 99.0,
+      "spike_pct": 38.9,
+      "news": "Cabaletta Bio Announces Pricing of $150 Million Underwritten Offering",
+      "news_url": "https://elite.finviz.com/news/350037/cabaletta-bio-announces-pricing-of-150-million-underwritten-offering",
+      "score": 0.365,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 0.4,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "SHORT INT 20%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-04",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 4.14,
+        "entry1_note": "Break above 10d high",
+        "entry2": 3.2037,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 4.761,
+        "entry3_note": "Makes new highs",
+        "stop": 3.16,
+        "stop_note": "Prior day low",
+        "target1": 5.2661,
+        "target1_pct": 27.2,
+        "target2": 6.6985,
+        "target2_pct": 61.8,
+        "target3": 10.8385,
+        "target3_pct": 161.8
+      },
+      "price_display": "$3.95",
+      "rvol_display": "4x",
+      "float_display": "97.5M",
+      "rank": "watch"
+    }
+  ]
+}
