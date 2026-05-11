@@ -590,12 +590,31 @@ document.querySelectorAll('.mf-pill').forEach(pill => {{
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def main():
+    from datetime import date as _date, datetime as _datetime
+    import pytz as _pytz
+    _et   = _pytz.timezone("America/New_York")
+    _today = _datetime.now(_et).date().isoformat()
+
     files = sorted(glob.glob(os.path.join(DATA_DIR, "*.json")))
     if not files:
-        print("No data files found. Run scanner.py first."); sys.exit(1)
-    with open(files[-1]) as f:
+        print("No swing data files found. Run scanner.py first."); sys.exit(1)
+
+    # Prefer today's file; fall back to latest with a warning
+    today_files = [f for f in files if os.path.basename(f).startswith(_today)]
+    if today_files:
+        chosen = today_files[-1]
+    else:
+        chosen = files[-1]
+        print(f"  [!] No swing data for {_today} — using {os.path.basename(chosen)} (stale)")
+
+    with open(chosen) as f:
         data = json.load(f)
+
     html = render_html(data)
+    # Stamp every build so git always sees a change
+    now_str = _datetime.now(_et).strftime("%Y-%m-%dT%H:%M:%S")
+    html = html.replace("</head>", f"<!-- built {now_str} --></head>", 1)
+
     os.makedirs(OUT_DIR, exist_ok=True)
     out  = os.path.join(OUT_DIR, "swing-trading.html")
     with open(out,"w") as f: f.write(html)

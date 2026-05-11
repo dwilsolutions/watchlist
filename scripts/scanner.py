@@ -450,5 +450,10 @@ def main():
                    "generated":gen_time,"tickers":final}, f, indent=2)
     print(f"  [+] JSON → {path}")
 
+    # Trigger build_watchlist.py immediately after scan so the page is fresh
+    import subprocess, sys
+    bw = os.path.join(os.path.dirname(__file__), "build_watchlist.py")
+    subprocess.run([sys.executable, bw], check=True)
+
 if __name__ == "__main__":
     main()
