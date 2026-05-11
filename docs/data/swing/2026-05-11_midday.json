@@ -1,0 +1,834 @@
+{
+  "date": "2026-05-11",
+  "session": "midday",
+  "generated": "01:08 PM ET",
+  "tickers": [
+    {
+      "ticker": "MEHA",
+      "scan": "Mid Float",
+      "company": "Functional Brands Inc",
+      "sector": "Consumer Defensive",
+      "price": 0.17,
+      "change": 78.44,
+      "rvol": 234.14,
+      "float_m": 20.98,
+      "short_pct": 1.15,
+      "days_cover": 99.0,
+      "spike_pct": 131.6,
+      "news": "Gold-Backed DeFi Acquisition Could Transform Functional Brands (MEHA) Into Blockchain Finance Player",
+      "news_url": "https://finance.yahoo.com/m/441fdc7c-f5ec-3a79-9d6a-cd2834f86313/gold-backed-defi-acquisition.html",
+      "score": 0.75,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "CATALYST \u00b7 M&A",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +132%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-11",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.22,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.1123,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.253,
+        "entry3_note": "Makes new highs",
+        "stop": 0.083,
+        "stop_note": "Prior day low",
+        "target1": 0.2798,
+        "target1_pct": 27.2,
+        "target2": 0.356,
+        "target2_pct": 61.8,
+        "target3": 0.576,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.17",
+      "rvol_display": "234x",
+      "float_display": "21.0M",
+      "rank": "hot"
+    },
+    {
+      "ticker": "MNTS",
+      "scan": "Low Float",
+      "company": "Momentus Inc",
+      "sector": "Industrials",
+      "price": 6.65,
+      "change": 21.79,
+      "rvol": 5.56,
+      "float_m": 5.69,
+      "short_pct": 27.29,
+      "days_cover": 99.0,
+      "spike_pct": 103.8,
+      "news": "Momentus Publishes Letter to Shareholders Highlighting Progress",
+      "news_url": "https://www.businesswire.com/news/home/20260505776152/en",
+      "score": 0.595,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 0.7,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +104%",
+          "gap"
+        ],
+        [
+          "SHORT INT 27%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-05",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 7.3,
+        "entry1_note": "Break above 10d high",
+        "entry2": 5.5763,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 8.395,
+        "entry3_note": "Makes new highs",
+        "stop": 4.46,
+        "stop_note": "Prior day low",
+        "target1": 9.2856,
+        "target1_pct": 27.2,
+        "target2": 11.8114,
+        "target2_pct": 61.8,
+        "target3": 19.1114,
+        "target3_pct": 161.8
+      },
+      "price_display": "$6.65",
+      "rvol_display": "6x",
+      "float_display": "5.7M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "SLNH",
+      "scan": "Mid Float",
+      "company": "Soluna Holdings Inc",
+      "sector": "Financial",
+      "price": 1.8,
+      "change": -1.64,
+      "rvol": 3.36,
+      "float_m": 78.0,
+      "short_pct": 23.29,
+      "days_cover": 99.0,
+      "spike_pct": 42.1,
+      "news": "Soluna Announces Monthly Business Update",
+      "news_url": "https://www.businesswire.com/news/home/20260507466082/en",
+      "score": 0.565,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 0.4,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +42%",
+          "gap"
+        ],
+        [
+          "SHORT INT 23%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-07",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.95,
+        "entry1_note": "Break above 10d high",
+        "entry2": 1.3737,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 2.2425,
+        "entry3_note": "Makes new highs",
+        "stop": 1.38,
+        "stop_note": "Prior day low",
+        "target1": 2.4804,
+        "target1_pct": 27.2,
+        "target2": 3.1551,
+        "target2_pct": 61.8,
+        "target3": 5.1051,
+        "target3_pct": 161.8
+      },
+      "price_display": "$1.80",
+      "rvol_display": "3x",
+      "float_display": "78.0M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "DGXX",
+      "scan": "Mid Float",
+      "company": "Digi Power X Inc",
+      "sector": "Utilities",
+      "price": 7.62,
+      "change": 14.93,
+      "rvol": 10.74,
+      "float_m": 61.92,
+      "short_pct": 5.45,
+      "days_cover": 99.0,
+      "spike_pct": 43.8,
+      "news": "Digi Power X to Announce 2026 Q1 Financial Results and Provide Operations Update on May 15th",
+      "news_url": "https://elite.finviz.com/news/352813/digi-power-x-to-announce-2026-q1-financial-results-and-provide-operations-update-on-may-15th",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +44%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-08",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 8.08,
+        "entry1_note": "Break above 10d high",
+        "entry2": 4.0745,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 9.292,
+        "entry3_note": "Makes new highs",
+        "stop": 5.9,
+        "stop_note": "Prior day low",
+        "target1": 10.2778,
+        "target1_pct": 27.2,
+        "target2": 13.0734,
+        "target2_pct": 61.8,
+        "target3": 21.1534,
+        "target3_pct": 161.8
+      },
+      "price_display": "$7.62",
+      "rvol_display": "11x",
+      "float_display": "61.9M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "GDC",
+      "scan": "Mid Float",
+      "company": "GD Culture Group Limited",
+      "sector": "Communication Services",
+      "price": 0.13,
+      "change": -16.5,
+      "rvol": 10.33,
+      "float_m": 51.69,
+      "short_pct": 0.24,
+      "days_cover": 99.0,
+      "spike_pct": 53.6,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143017491.html",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +54%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-06",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 8.18,
+        "entry1_note": "Break above 10d high",
+        "entry2": 3.377,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 9.407,
+        "entry3_note": "Makes new highs",
+        "stop": 0.119,
+        "stop_note": "Prior day low",
+        "target1": 10.405,
+        "target1_pct": 27.2,
+        "target2": 13.2352,
+        "target2_pct": 61.8,
+        "target3": 21.4152,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.13",
+      "rvol_display": "10x",
+      "float_display": "51.7M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "GSIT",
+      "scan": "Mid Float",
+      "company": "GSI Technology Inc",
+      "sector": "Technology",
+      "price": 12.08,
+      "change": 42.95,
+      "rvol": 18.88,
+      "float_m": 28.62,
+      "short_pct": 8.42,
+      "days_cover": 99.0,
+      "spike_pct": 47.0,
+      "news": "GSI Technology, Inc. Q4 2026 Earnings Call Summary",
+      "news_url": "https://finance.yahoo.com/m/5f03c8e2-d708-311b-acf2-cd1f96008e45/gsi-technology%2C-inc.-q4-2026.html",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +47%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-07",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 12.42,
+        "entry1_note": "Break above 10d high",
+        "entry2": 7.543,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 14.283,
+        "entry3_note": "Makes new highs",
+        "stop": 7.53,
+        "stop_note": "Prior day low",
+        "target1": 15.7982,
+        "target1_pct": 27.2,
+        "target2": 20.0956,
+        "target2_pct": 61.8,
+        "target3": 32.5156,
+        "target3_pct": 161.8
+      },
+      "price_display": "$12.08",
+      "rvol_display": "19x",
+      "float_display": "28.6M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "HPAI",
+      "scan": "Low Float",
+      "company": "Helport AI Ltd",
+      "sector": "Technology",
+      "price": 1.35,
+      "change": 36.4,
+      "rvol": 256.24,
+      "float_m": 7.88,
+      "short_pct": 0.83,
+      "days_cover": 99.0,
+      "spike_pct": 52.7,
+      "news": "Helport AI and QuickCEP Forge Strategic Alliance, Aiming to Accelerate AI Workforce Infrastructure for Global Brands",
+      "news_url": "https://elite.finviz.com/news/343501/helport-ai-and-quickcep-forge-strategic-alliance-aiming-to-accelerate-ai-workforce-infrastructure-for-global-brands",
+      "score": 0.5,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "CATALYST \u00b7 PIVOT",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +53%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.55,
+        "entry1_note": "Break above 10d high",
+        "entry2": 1.4055,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.7825,
+        "entry3_note": "Makes new highs",
+        "stop": 0.925,
+        "stop_note": "Prior day low",
+        "target1": 1.9716,
+        "target1_pct": 27.2,
+        "target2": 2.5079,
+        "target2_pct": 61.8,
+        "target3": 4.0579,
+        "target3_pct": 161.8
+      },
+      "price_display": "$1.35",
+      "rvol_display": "256x",
+      "float_display": "7.9M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "NTCL",
+      "scan": "Low Float",
+      "company": "NetClass Technology Inc",
+      "sector": "Technology",
+      "price": 0.37,
+      "change": -0.62,
+      "rvol": 69.77,
+      "float_m": 11.79,
+      "short_pct": 0.82,
+      "days_cover": 99.0,
+      "spike_pct": 88.7,
+      "news": "NETCLASS TECHNOLOGY INC Advances AI Business with Phased Progress",
+      "news_url": "https://elite.finviz.com/news/300924/netclass-technology-inc-advances-ai-business-with-phased-progress",
+      "score": 0.5,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "CATALYST \u00b7 PIVOT",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +89%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.43,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.3976,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.4945,
+        "entry3_note": "Makes new highs",
+        "stop": 0.367,
+        "stop_note": "Prior day low",
+        "target1": 0.547,
+        "target1_pct": 27.2,
+        "target2": 0.6957,
+        "target2_pct": 61.8,
+        "target3": 1.1257,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.37",
+      "rvol_display": "70x",
+      "float_display": "11.8M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "ODYS",
+      "scan": "Low Float",
+      "company": "Odysight.ai Inc",
+      "sector": "Technology",
+      "price": 5.53,
+      "change": 23.99,
+      "rvol": 2981.2,
+      "float_m": 8.43,
+      "short_pct": 0.08,
+      "days_cover": 99.0,
+      "spike_pct": 149.3,
+      "news": "U.S. Navy AI Maintenance Partnership Puts Odysight.ai (ODYS) in Focus",
+      "news_url": "https://finance.yahoo.com/m/6a2e1ba6-3ba1-34b7-b220-06e5a8d1f4e6/u.s.-navy-ai-maintenance.html",
+      "score": 0.5,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "CATALYST \u00b7 PIVOT",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +149%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 11.119,
+        "entry1_note": "Break above 10d high",
+        "entry2": 5.0325,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 12.7868,
+        "entry3_note": "Makes new highs",
+        "stop": 4.46,
+        "stop_note": "Prior day low",
+        "target1": 14.1434,
+        "target1_pct": 27.2,
+        "target2": 17.9905,
+        "target2_pct": 61.8,
+        "target3": 29.1095,
+        "target3_pct": 161.8
+      },
+      "price_display": "$5.53",
+      "rvol_display": "2981x",
+      "float_display": "8.4M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "AIIO",
+      "scan": "Low Float",
+      "company": "Robo.ai Inc",
+      "sector": "Consumer Cyclical",
+      "price": 1.06,
+      "change": 23.26,
+      "rvol": 5.89,
+      "float_m": 13.53,
+      "short_pct": 2.49,
+      "days_cover": 99.0,
+      "spike_pct": 120.7,
+      "news": "Robo.ai to acquire Neurovia in $100m deal for AI data growth",
+      "news_url": "https://finance.yahoo.com/m/cc60a87a-b2f5-38df-910d-ac80afb1b8ad/robo.ai-to-acquire-neurovia.html",
+      "score": 0.47,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.7,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "CATALYST \u00b7 PIVOT",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +121%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.3,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.6763,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.495,
+        "entry3_note": "Makes new highs",
+        "stop": 0.854,
+        "stop_note": "Prior day low",
+        "target1": 1.6536,
+        "target1_pct": 27.2,
+        "target2": 2.1034,
+        "target2_pct": 61.8,
+        "target3": 3.4034,
+        "target3_pct": 161.8
+      },
+      "price_display": "$1.06",
+      "rvol_display": "6x",
+      "float_display": "13.5M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "RPGL",
+      "scan": "Mid Float",
+      "company": "Republic Power Group Ltd",
+      "sector": "Technology",
+      "price": 0.47,
+      "change": -43.46,
+      "rvol": 3.2,
+      "float_m": 35.52,
+      "short_pct": 0.95,
+      "days_cover": 99.0,
+      "spike_pct": 331.7,
+      "news": "Republic Power Group Limited Announces Strategic Investment and Technology Access Agreement to Enter High-Growth RWA Tok",
+      "news_url": "https://elite.finviz.com/news/347912/republic-power-group-limited-announces-strategic-investment-and-technology-access-agreement-to-enter-high-growth-rwa-tokenization-and-blockchain-infrastructure-markets",
+      "score": 0.44,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 0.4,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "CATALYST \u00b7 PIVOT",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +332%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 2.67,
+        "entry1_note": "Break above 10d high",
+        "entry2": 1.0248,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 3.0705,
+        "entry3_note": "Makes new highs",
+        "stop": 0.827,
+        "stop_note": "Prior day low",
+        "target1": 3.3962,
+        "target1_pct": 27.2,
+        "target2": 4.3201,
+        "target2_pct": 61.8,
+        "target3": 6.9901,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.47",
+      "rvol_display": "3x",
+      "float_display": "35.5M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "HUBC",
+      "scan": "Low Float",
+      "company": "Hub Cyber Security Ltd",
+      "sector": "Technology",
+      "price": 0.19,
+      "change": -25.18,
+      "rvol": 56.65,
+      "float_m": 1.06,
+      "short_pct": 17.21,
+      "days_cover": 99.0,
+      "spike_pct": 178.7,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143017491.html",
+      "score": 0.375,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +179%",
+          "gap"
+        ],
+        [
+          "SHORT INT 17%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.45,
+        "entry1_note": "Break above 10d high",
+        "entry2": 2.8389,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.6675,
+        "entry3_note": "Makes new highs",
+        "stop": 0.223,
+        "stop_note": "Prior day low",
+        "target1": 1.8444,
+        "target1_pct": 27.2,
+        "target2": 2.3461,
+        "target2_pct": 61.8,
+        "target3": 3.7961,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.19",
+      "rvol_display": "57x",
+      "float_display": "1.1M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "CCTG",
+      "scan": "Low Float",
+      "company": "CCSC Technology International Holdings Ltd",
+      "sector": "Industrials",
+      "price": 0.43,
+      "change": -23.09,
+      "rvol": 159.6,
+      "float_m": 3.01,
+      "short_pct": 2.85,
+      "days_cover": 99.0,
+      "spike_pct": 29.2,
+      "news": "CCSC Technology International Holdings Limited Launches eNaviX, Expanding Access to Carbon Monitoring and Carbon Credit ",
+      "news_url": "https://elite.finviz.com/news/289940/ccsc-technology-international-holdings-limited-launches-enavix-expanding-access-to-carbon-monitoring-and-carbon-credit-monetization-for-smes",
+      "score": 0.35,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-11",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.65,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.5689,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.7475,
+        "entry3_note": "Makes new highs",
+        "stop": 0.51,
+        "stop_note": "Prior day low",
+        "target1": 0.8268,
+        "target1_pct": 27.2,
+        "target2": 1.0517,
+        "target2_pct": 61.8,
+        "target3": 1.7017,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.43",
+      "rvol_display": "160x",
+      "float_display": "3.0M",
+      "rank": "watch"
+    }
+  ]
+}
