@@ -57,12 +57,8 @@ def next_trading_day(from_date):
 
 def trading_date_for_session(session, now_et):
     today = now_et.date()
-    if session == "premarket":
-        # Pre-market scan is for the NEXT trading day
-        return next_trading_day(today)
-    else:
-        # Same-day sessions: use today if it's a trading day
-        return today if is_trading_day(today) else next_trading_day(today)
+    # All sessions are same-day — use today if it's a trading day
+    return today if is_trading_day(today) else next_trading_day(today)
 
 def fmt_trading_date(d):
     return d.strftime("%a %b %-d, %Y")   # e.g. "Mon Apr 6, 2026"
@@ -771,29 +767,30 @@ def fetch_vwap(tickers, session, now_et):
 
 def load_prior_runners(trading_day, data_dir):
     """
-    Return a dict of {ticker: best_outcome} for any ticker that was a runner,
-    big_runner, or monster in the most recent EOD results before trading_day.
-    Looks back up to 5 calendar days to handle weekends and holidays.
+    Load yesterday's runners from the single eod_results.json file.
+    Only applies the penalty if the EOD data is from a previous trading day.
     """
-    check = trading_day - timedelta(days=1)
-    for _ in range(5):
-        fname = os.path.join(data_dir, f"{check.isoformat()}_eod_results.json")
-        if os.path.exists(fname):
-            with open(fname) as f:
-                eod = json.load(f)
-            RANK = {"monster": 3, "big_runner": 2, "runner": 1}
-            runners = {}
-            for session_tickers in eod.get("sessions", {}).values():
-                if isinstance(session_tickers, list):
-                    for t in session_tickers:
-                        ticker  = t.get("ticker", "")
-                        outcome = t.get("outcome", "")
-                        if outcome in RANK:
-                            if RANK[outcome] > RANK.get(runners.get(ticker, ""), 0):
-                                runners[ticker] = outcome
-            print(f"  [+] Prior runners loaded from {check.isoformat()}: {len(runners)} tickers ({sorted(runners.keys())})")
-            return runners
-        check -= timedelta(days=1)
+    fname = os.path.join(data_dir, "eod_results.json")
+    if os.path.exists(fname):
+        with open(fname) as f:
+            eod = json.load(f)
+        # Skip if this is today's EOD (not prior day)
+        eod_date = eod.get("date", "")
+        if eod_date >= trading_day.isoformat():
+            print("  [-] EOD results are from today — skipping prior-runner penalty")
+            return {}
+        RANK = {"monster": 3, "big_runner": 2, "runner": 1}
+        runners = {}
+        for session_tickers in eod.get("sessions", {}).values():
+            if isinstance(session_tickers, list):
+                for t in session_tickers:
+                    ticker  = t.get("ticker", "")
+                    outcome = t.get("outcome", "")
+                    if outcome in RANK:
+                        if RANK[outcome] > RANK.get(runners.get(ticker, ""), 0):
+                            runners[ticker] = outcome
+        print(f"  [+] Prior runners loaded from {eod_date}: {len(runners)} tickers ({sorted(runners.keys())})")
+        return runners
     print("  [-] No prior EOD results found — skipping prior-runner penalty")
     return {}
 
@@ -849,14 +846,7 @@ def main():
     html     = html.replace("</head>", f"<!-- built {now_et.strftime('%Y-%m-%dT%H:%M:%S')} --></head>", 1)
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    # 1. Dated archive copy — keeps history, powers index page
-    filename = f"{trading_day.isoformat()}_{session}.html"
-    filepath = os.path.join(OUTPUT_DIR, filename)
-    with open(filepath, "w") as f:
-        f.write(html)
-    print(f"  [+] Written → {filepath}")
-
-    # 2. Fixed permanent URL — WHOP embeds always point here, never changes
+    # Write to fixed URL only — no archives, overwritten each run
     FIXED_NAMES = {
         "premarket":  "premarket.html",
         "marketopen": "marketopen.html",
@@ -867,9 +857,9 @@ def main():
     fixed_path = os.path.join(OUTPUT_DIR, fixed_name)
     with open(fixed_path, "w") as f:
         f.write(html)
-    print(f"  [+] Fixed URL → {fixed_path}")
+    print(f"  [+] Written → {fixed_path}")
 
-    # 3. Save JSON data file for results tracker
+    # 2. Save JSON data file for results tracker
     data_dir = os.path.join(OUTPUT_DIR, "data")
     os.makedirs(data_dir, exist_ok=True)
     json_data = {
@@ -899,7 +889,7 @@ def main():
             for r in results if r["total"] >= 40  # Buy Watch + Monitor only
         ]
     }
-    json_path = os.path.join(data_dir, f"{trading_day.isoformat()}_{session}.json")
+    json_path = os.path.join(data_dir, f"{session}.json")
     with open(json_path, "w") as f:
         json.dump(json_data, f, indent=2)
     print(f"  [+] JSON data → {json_path}")

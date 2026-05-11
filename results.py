@@ -231,7 +231,7 @@ def load_today_sessions(today):
         candidates = [session_key] + SESSION_LEGACY_NAMES.get(session_key, [])
         loaded = False
         for name in candidates:
-            fname = f"{today.isoformat()}_{name}.json"
+            fname = f"{name}.json"
             fpath = os.path.join(DATA_DIR, fname)
             if os.path.exists(fpath):
                 with open(fpath) as f:
@@ -671,7 +671,7 @@ def main():
 
     # Save EOD results JSON for cumulative tracking
     os.makedirs(DATA_DIR, exist_ok=True)
-    eod_path = os.path.join(DATA_DIR, f"{today.isoformat()}_eod_results.json")
+    eod_path = os.path.join(DATA_DIR, "eod_results.json")
     with open(eod_path, "w") as f:
         json.dump(eod_save, f, indent=2)
     print(f"  [+] EOD JSON → {eod_path}")
