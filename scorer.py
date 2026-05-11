@@ -896,8 +896,7 @@ def main():
 
     update_index(OUTPUT_DIR)
     print(f"\nDone.")
-    print(f"  Archive URL : https://YOUR_USERNAME.github.io/watchlist/{filename}")
-    print(f"  WHOP embed  : https://YOUR_USERNAME.github.io/watchlist/{fixed_name}\n")
+    print(f"  URL : https://dwilsolutions.github.io/watchlist/{fixed_name}\n")
 
 if __name__ == "__main__":
     main()
