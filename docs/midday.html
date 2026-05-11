@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Midday · Mon May 11, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Syne:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0e11;--bg2:#141618;--bg3:#1c1f23;--border:rgba(255,255,255,0.07);--text:#dde1e9;--muted:#656c7a;--green:#3a9c5f;--amber:#c07b1a;--red:#a33333;--mono:'DM Mono',monospace;--sans:'Syne',sans-serif;--session-color:#3a9c5f;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.5;}
+a{color:inherit;text-decoration:none;}
+.hdr{background:var(--bg2);border-bottom:2px solid var(--session-color);padding:16px 20px;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.hdr-l h1{font-family:var(--sans);font-size:20px;font-weight:700;letter-spacing:-0.3px;}
+.hdr-l h1 em{color:var(--green);font-style:normal;}
+.hdr-l .sub{font-size:11px;color:var(--muted);margin-top:3px;}
+.hdr-r{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.pill{font-size:10px;padding:3px 9px;border-radius:20px;background:var(--bg3);color:var(--muted);border:1px solid var(--border);}
+.legend{display:flex;gap:14px;padding:8px 20px;background:var(--bg2);border-bottom:1px solid var(--border);flex-wrap:wrap;align-items:center;}
+.leg-label{font-size:10px;color:var(--muted);margin-right:4px;}
+.leg-item{display:flex;align-items:center;gap:5px;font-size:10px;}
+.leg-dot{width:8px;height:8px;border-radius:2px;}
+.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border);}
+.sum-cell{background:var(--bg2);padding:12px 16px;text-align:center;}
+.sum-n{font-family:var(--sans);font-size:26px;font-weight:700;}
+.sum-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:0.06em;text-transform:uppercase;}
+.c-g{color:var(--session-color);}.c-a{color:var(--amber);}.c-r{color:var(--red);}
+.body{padding:18px 20px 48px;max-width:940px;margin:0 auto;}
+.sec-lbl{font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin:22px 0 9px;display:flex;align-items:center;gap:8px;}
+.sec-lbl::after{content:'';flex:1;height:1px;background:var(--border);}
+.cards{display:flex;flex-direction:column;gap:9px;}
+.empty{color:var(--muted);font-size:12px;padding:8px 0;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:13px 15px;border-left-width:3px;}
+.card.buy{border-left-color:var(--green);}.card.monitor{border-left-color:var(--amber);}.card.avoid{border-left-color:var(--red);opacity:0.6;}
+.r1{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:9px;}
+.tkr{font-family:var(--sans);font-size:16px;font-weight:700;min-width:46px;}
+.co{font-size:11px;color:var(--muted);flex:1;min-width:60px;}
+.scan-tag{font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid;white-space:nowrap;}
+.score{font-size:13px;font-weight:500;padding:2px 9px;border-radius:20px;}
+.sbuy{background:#1e3d2a;color:#6ee89a;}.smon{background:#3d2e1a;color:#f5c46e;}.savoid{background:#3d1a1a;color:#f57a7a;}
+.ch{font-size:12px;font-weight:500;}.pos{color:#5cc98a;}.neg{color:#e06060;}
+.clink{font-size:11px;color:#5a8fd4;margin-left:auto;white-space:nowrap;}
+.clink:hover{color:#7aaef5;}
+.flags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:9px;}
+.flag{font-size:10px;padding:2px 7px;border-radius:10px;font-weight:500;white-space:nowrap;}
+.bar-row{display:flex;align-items:center;gap:6px;margin-bottom:4px;}
+.bl{font-size:10px;color:var(--muted);width:44px;text-align:right;flex-shrink:0;}
+.bt{flex:1;height:5px;background:var(--bg3);border-radius:3px;overflow:hidden;}
+.bf{height:100%;border-radius:3px;}
+.bv{font-size:10px;color:var(--muted);width:30px;}
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(76px,1fr));gap:5px;margin:9px 0;}
+.st{background:var(--bg3);border-radius:6px;padding:5px 8px;}
+.sl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;}
+.sv{font-size:12px;font-weight:500;color:var(--text);margin-top:1px;}
+.lvls{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:7px;font-size:11px;}
+.ll{color:var(--muted);}.lv{color:var(--text);font-weight:500;}.sep{color:var(--border);}.entry-box{background:var(--bg3);border-radius:6px;padding:7px 10px;margin:7px 0;border-left:3px solid var(--session-color);}.entry-label{font-size:12px;font-weight:500;color:var(--text);}
+.news-line{font-size:10px;color:var(--muted);font-style:italic;border-top:1px solid var(--border);padding-top:6px;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;}
+.chip{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:8px 10px;display:flex;flex-direction:column;gap:2px;opacity:0.65;}
+.chip-top{display:flex;align-items:center;gap:6px;margin-bottom:2px;}
+.chip-tkr{font-family:var(--sans);font-size:13px;font-weight:700;}
+.chip-scan{font-size:9px;padding:1px 5px;border-radius:8px;}
+.chip-score{font-size:10px;color:var(--red);}
+.chip-why{font-size:10px;color:var(--muted);}
+.footer{text-align:center;font-size:10px;color:var(--muted);padding:24px;border-top:1px solid var(--border);}
+.banner-closed{background:#3d2e1a;color:#f5c46e;font-size:11px;padding:10px 20px;text-align:center;border-bottom:1px solid #5a4010;}
+</style>
+<!-- built 2026-05-11T13:05:27 --></head>
+<body>
+<div class="hdr">
+  <div class="hdr-l">
+    <h1>Watchlist · <em style="color:var(--session-color)">Midday</em></h1>
+    <div class="sub">VWAP reclaims &amp; second entries · ~12:30 PM ET · 32 tickers scored (17 low float · 15 mid cap)</div>
+  </div>
+  <div class="hdr-r">
+    <span class="pill">Mon May 11, 2026</span>
+    <span class="pill">Generated 01:05 PM ET</span>
+    <span class="pill">9 sectors</span>
+  </div>
+</div>
+<div class="legend">
+  <span class="leg-label">Screener:</span>
+  <span class="leg-item"><span class="leg-dot" style="background:#7ab4f5"></span>Low Float (&lt;$10 · &lt;20M float · RVol 2x+)</span>
+  <span class="leg-item"><span class="leg-dot" style="background:#b07af5"></span>Mid Cap (&lt;$20 · 20–100M float · RVol 3x+)</span>
+</div>
+
+<div class="summary">
+  <div class="sum-cell"><div class="sum-n c-g">10</div><div class="sum-l">Buy Watch ≥65</div></div>
+  <div class="sum-cell"><div class="sum-n c-a">8</div><div class="sum-l">Monitor 40–64</div></div>
+  <div class="sum-cell"><div class="sum-n c-r">14</div><div class="sum-l">Avoid &lt;40</div></div>
+  <div class="sum-cell"><div class="sum-n">32</div><div class="sum-l">Total Scored</div></div>
+</div>
+<div class="body">
+  <div class="sec-lbl">Buy Watch — 65+</div>
+  <div class="cards"><div class="card buy">
+  <div class="r1">
+    <span class="tkr">GCTS</span>
+    <span class="co">GCT Semiconductor Holdin</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="score sbuy">100</span>
+    <span class="ch neg">-1.2%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=GCTS" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:100%;background:#3a9c5f"></div></div><span class="bv">30/30</span></div>
+  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:82%;background:#3266ad"></div></div><span class="bv">37/45</span></div>
+  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:76%;background:#c07b1a"></div></div><span class="bv">19/25</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$1.68</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+6.8%</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">11x</div></div>
+    <div class="st"><div class="sl">RSI</div><div class="sv">70.5</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">55.9M</div></div>
+    <div class="st"><div class="sl">VWAP</div><div class="sv" style="color:#6ee89a">$1.662</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Proposed Entry: Momentum above VWAP $1.66 — range to $1.82</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$1.82</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$1.85</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$1.89</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$1.94</span></span>
+  </div>
+  <div class="news-line">GCT Semiconductor Signs Reference Platform Contract with Major Satellite Communications Provider to Fast-Track Global 5G</div>
+</div><div class="card buy">
+  <div class="r1">
+    <span class="tkr">PRSO</span>
+    <span class="co">Peraso Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="score sbuy">96</span>
+    <span class="ch pos">+49.6%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=PRSO" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">GAP QUALITY</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">EXTENDED</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:100%;background:#3a9c5f"></div></div><span class="bv">30/30</span></div>
+  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:82%;background:#3266ad"></div></div><span class="bv">37/45</span></div>
+  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:76%;background:#c07b1a"></div></div><span class="bv">19/25</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$1.48</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+15.0%</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">7x</div></div>
+    <div class="st"><div class="sl">RSI</div><div class="sv">73.9</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">12.1M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$1.29</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Proposed Entry: Break above $1.59</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$1.59</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$1.75</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$1.96</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$2.19</span></span>
+  </div>
+  <div class="news-line">Peraso to Announce First Quarter 2026 Financial Results</div>
+</div><div class="card buy">
+  <div class="r1">
+    <span class="tkr">GSIT</span>
+    <span class="co">GSI Technology Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="score sbuy">96</span>
+    <span class="ch pos">+43.8%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=GSIT" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#3d2e1a;color:#f5c46e">CATALYST · 8-K</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">EXTENDED</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:100%;background:#3a9c5f"></div></div><span class="bv">30/30</span></div>
+  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:82%;background:#3266ad"></div></div><span class="bv">37/45</span></div>
+  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:64%;background:#c07b1a"></div></div><span class="bv">16/25</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$12.15</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+9.8%</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">19x</div></div>
+    <div class="st"><div class="sl">RSI</div><div class="sv">76.8</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">28.6M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$10.333</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Proposed Entry: Break above $12.42</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$12.42</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$13.5</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$14.87</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$16.39</span></span>
+  </div>
+  <div class="news-line">GSI Technology, Inc. Q4 2026 Earnings Call Summary</div>
+</div><div class="card buy">
+  <div class="r1">
+    <span class="tkr">ODYS</span>
+    <span class="co">Odysight.ai Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="score sbuy">93</span>
+    <span class="ch pos">+24.9%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=ODYS" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">CATALYST · DEAL</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:63%;background:#3a9c5f"></div></div><span class="bv">19/30</span></div>
+  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:100%;background:#3266ad"></div></div><span class="bv">45/45</span></div>
+  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:88%;background:#c07b1a"></div></div><span class="bv">22/25</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$5.57</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+118.4%</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">3013x</div></div>
+    <div class="st"><div class="sl">RSI</div><div class="sv">54.1</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">8.4M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$8.76</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Proposed Entry: Break above $11.12</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$11.12</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$12.93</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$15.24</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$17.78</span></span>
+  </div>
+  <div class="news-line">U.S. Navy AI Maintenance Partnership Puts Odysight.ai (ODYS) in Focus</div>
+</div><div class="card buy">
+  <div class="r1">
+    <span class="tkr">TRAW</span>
+    <span class="co">Traws Pharma Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="score sbuy">90</span>
+    <span class="ch pos">+7.3%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=TRAW" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:100%;background:#3a9c5f"></div></div><span class="bv">30/30</span></div>
+  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:100%;background:#3266ad"></div></div><span class="bv">45/45</span></div>
+  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:48%;background:#c07b1a"></div></div><span class="bv">12/25</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$2.34</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+1.8%</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">25x</div></div>
+    <div class="st"><div class="sl">RSI</div><div class="sv">75.9</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">10.4M</div></div>
+    <div class="st"><div class="sl">VWAP</div><div class="sv" style="color:#f57a7a">$2.724</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Proposed Entry: Reclaim $2.72 — range to $3.23</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$3.23</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$3.52</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$3.88</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$4.28</span></span>
+  </div>
+  <div class="news-line">There are no hantavirus treatments. The deadly cruise-ship outbreak is a 'wake-up call' to develop some.</div>
+</div><div class="card buy">
+  <div class="r1">
+    <span class="tkr">DGXX</span>
+    <span class="co">Digi Power X Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="score sbuy">86</span>
+    <span class="ch pos">+15.2%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=DGXX" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">GAP QUALITY</span></div>
+  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:100%;background:#3a9c5f"></div></div><span class="bv">30/30</span></div>
+  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:100%;background:#3266ad"></div></div><span class="bv">45/45</span></div>
+  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:64%;background:#c07b1a"></div></div><span class="bv">16/25</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$7.64</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+11.9%</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">11x</div></div>
+    <div class="st"><div class="sl">RSI</div><div class="sv">89.5</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">61.9M</div></div>
+    <div class="st"><div class="sl">VWAP</div><div class="sv" style="color:#f57a7a">$7.692</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Proposed Entry: Reclaim $7.69 — range to $8.08</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$8.08</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$8.47</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$8.98</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$9.53</span></span>
+  </div>
+  <div class="news-line">Digi Power X to Announce 2026 Q1 Financial Results and Provide Operations Update on May 15th</div>
+</div><div class="card buy">
+  <div class="r1">
+    <span class="tkr">MNTS</span>
+    <span class="co">Momentus Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="score sbuy">78</span>
+    <span class="ch pos">+21.8%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=MNTS" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:77%;background:#3a9c5f"></div></div><span class="bv">23/30</span></div>
+  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:47%;background:#3266ad"></div></div><span class="bv">21/45</span></div>
+  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:64%;background:#c07b1a"></div></div><span class="bv">16/25</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$6.65</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+8.8%</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">6x</div></div>
+    <div class="st"><div class="sl">RSI</div><div class="sv">62.3</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">5.7M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$6.273</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Proposed Entry: Break above $7.30</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$7.3</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$7.8</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$8.44</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$9.14</span></span>
+  </div>
+  <div class="news-line">Momentus Publishes Letter to Shareholders Highlighting Progress</div>
+</div><div class="card buy">
+  <div class="r1">
+    <span class="tkr">AEHL</span>
+    <span class="co">Antelope Enterprise Hold</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="score sbuy">69</span>
+    <span class="ch pos">+18.3%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=AEHL" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:77%;background:#3a9c5f"></div></div><span class="bv">23/30</span></div>
+  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:36%;background:#3266ad"></div></div><span class="bv">16/45</span></div>
+  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:48%;background:#c07b1a"></div></div><span class="bv">12/25</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$1.42</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">-1.7%</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">10x</div></div>
+    <div class="st"><div class="sl">RSI</div><div class="sv">65.8</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">2.2M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$1.23</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Proposed Entry: Break above $1.45</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$1.45</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$1.52</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$1.6</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$1.7</span></span>
+  </div>
+  <div class="news-line">Bitcoin Treasury Strategy Generates $190,000 Gain as Antelope (AEHL) Authorizes Share Buyback</div>
+</div><div class="card buy">
+  <div class="r1">
+    <span class="tkr">MEHA</span>
+    <span class="co">Functional Brands Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="score sbuy">69</span>
+    <span class="ch pos">+72.0%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=MEHA" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">GAP QUALITY</span><span class="flag" style="background:#3d2e1a;color:#f5c46e">CATALYST · M&A</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">ALREADY EXTENDED</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:63%;background:#3a9c5f"></div></div><span class="bv">19/30</span></div>
+  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:36%;background:#3266ad"></div></div><span class="bv">16/45</span></div>
+  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:100%;background:#c07b1a"></div></div><span class="bv">25/25</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.16</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+66.1%</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">237x</div></div>
+    <div class="st"><div class="sl">RSI</div><div class="sv">62.6</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">21.0M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$0.173</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Proposed Entry: Break above $0.22</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$0.22</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$0.25</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$0.29</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$0.34</span></span>
+  </div>
+  <div class="news-line">Gold-Backed DeFi Acquisition Could Transform Functional Brands (MEHA) Into Blockchain Finance Player</div>
+</div><div class="card buy">
+  <div class="r1">
+    <span class="tkr">FCEL</span>
+    <span class="co">Fuelcell Energy Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="score sbuy">68</span>
+    <span class="ch pos">+18.8%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=FCEL" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:100%;background:#3a9c5f"></div></div><span class="bv">30/30</span></div>
+  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:100%;background:#3266ad"></div></div><span class="bv">45/45</span></div>
+  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:48%;background:#c07b1a"></div></div><span class="bv">12/25</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$16.27</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">-0.5%</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">5x</div></div>
+    <div class="st"><div class="sl">RSI</div><div class="sv">73.8</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">52.8M</div></div>
+    <div class="st"><div class="sl">VWAP</div><div class="sv" style="color:#6ee89a">$15.768</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Proposed Entry: Momentum above VWAP $15.77 — range to $16.84</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$16.84</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$17.69</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$18.78</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$19.98</span></span>
+  </div>
+  <div class="news-line">FCEL and AI Data Centers: Can 12.5 MW Blocks Drive Scale?</div>
+</div></div>
+  <div class="sec-lbl">Monitor — 40 to 64</div>
+  <div class="cards"><div class="card monitor">
+  <div class="r1">
+    <span class="tkr">GAMB</span>
+    <span class="co">Gambling.com Group Ltd</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="score smon">64</span>
+    <span class="ch pos">+2.3%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=GAMB" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:77%;background:#3a9c5f"></div></div><span class="bv">23/30</span></div>
+  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:53%;background:#3266ad"></div></div><span class="bv">24/45</span></div>
+  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:76%;background:#c07b1a"></div></div><span class="bv">19/25</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$4.61</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+16.2%</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">24x</div></div>
+    <div class="st"><div class="sl">RSI</div><div class="sv">74.0</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">20.6M</div></div>
+    <div class="st"><div class="sl">VWAP</div><div class="sv" style="color:#f57a7a">$4.845</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Proposed Entry: Reclaim $4.84 — range to $5.5</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$5.5</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$5.77</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$6.11</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$6.49</span></span>
+  </div>
+  <div class="news-line">Gambling.com Group to Report 2026 First Quarter Results on May 14 and Host Conference Call and Webcast</div>
+</div><div class="card monitor">
+  <div class="r1">
+    <span class="tkr">AIIO</span>
+    <span class="co">Robo.ai Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="score smon">62</span>
+    <span class="ch pos">+23.8%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=AIIO" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:53%;background:#3a9c5f"></div></div><span class="bv">16/30</span></div>
+  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:36%;background:#3266ad"></div></div><span class="bv">16/45</span></div>
+  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:48%;background:#c07b1a"></div></div><span class="bv">12/25</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$1.07</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">-7.0%</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">6x</div></div>
+    <div class="st"><div class="sl">RSI</div><div class="sv">55.2</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">13.5M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$0.907</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Proposed Entry: Break above $1.16</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$1.16</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$1.24</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$1.35</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$1.46</span></span>
+  </div>
+  <div class="news-line">Robo.ai to acquire Neurovia in $100m deal for AI data growth</div>
+</div><div class="card monitor">
+  <div class="r1">
+    <span class="tkr">YMAT</span>
+    <span class="co">J-Star Holding Co Ltd</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="score smon">60</span>
+    <span class="ch pos">+17.1%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=YMAT" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#3d2e1a;color:#f5c46e">CATALYST · FINANCING</span></div>
+  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:77%;background:#3a9c5f"></div></div><span class="bv">23/30</span></div>
+  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:47%;background:#3266ad"></div></div><span class="bv">21/45</span></div>
+  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:36%;background:#c07b1a"></div></div><span class="bv">9/25</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$0.59</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">-1.8%</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">4x</div></div>
+    <div class="st"><div class="sl">RSI</div><div class="sv">78.6</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">2.5M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#6ee89a">$0.523</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Proposed Entry: Break above $0.63</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$0.63</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$0.66</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$0.7</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$0.75</span></span>
+  </div>
+  <div class="news-line">J-Star Holding Signs MOU with White Group to Advance Financing for Texas Solid-State Battery Facility</div>
+</div><div class="card monitor">
+  <div class="r1">
+    <span class="tkr">SLNH</span>
+    <span class="co">Soluna Holdings Inc</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="score smon">60</span>
+    <span class="ch neg">-0.6%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=SLNH" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span></div>
+  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:100%;background:#3a9c5f"></div></div><span class="bv">30/30</span></div>
+  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:64%;background:#3266ad"></div></div><span class="bv">29/45</span></div>
+  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:48%;background:#c07b1a"></div></div><span class="bv">12/25</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$1.82</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+1.6%</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">3x</div></div>
+    <div class="st"><div class="sl">RSI</div><div class="sv">66.2</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">78.0M</div></div>
+    <div class="st"><div class="sl">VWAP~</div><div class="sv" style="color:#f57a7a">$1.853</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Proposed Entry: Break above $1.95</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$1.95</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$1.98</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$2.02</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$2.07</span></span>
+  </div>
+  <div class="news-line">Soluna Announces Monthly Business Update</div>
+</div><div class="card monitor">
+  <div class="r1">
+    <span class="tkr">INO</span>
+    <span class="co">Inovio Pharmaceuticals I</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="score smon">56</span>
+    <span class="ch neg">-2.4%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=INO" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:77%;background:#3a9c5f"></div></div><span class="bv">23/30</span></div>
+  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:42%;background:#3266ad"></div></div><span class="bv">19/45</span></div>
+  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:64%;background:#c07b1a"></div></div><span class="bv">16/25</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$1.42</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+10.3%</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">5x</div></div>
+    <div class="st"><div class="sl">RSI</div><div class="sv">62.8</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">81.5M</div></div>
+    <div class="st"><div class="sl">VWAP</div><div class="sv" style="color:#f57a7a">$1.454</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Proposed Entry: Reclaim $1.45 — range to $1.63</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$1.63</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$1.68</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$1.74</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$1.8</span></span>
+  </div>
+  <div class="news-line">INOVIO to Participate in Upcoming Scientific Conferences</div>
+</div><div class="card monitor">
+  <div class="r1">
+    <span class="tkr">JZXN</span>
+    <span class="co">Jiuzi Holdings Inc</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="score smon">54</span>
+    <span class="ch pos">+62.4%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=JZXN" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1e3d2a;color:#6ee89a">CONTINUATION</span><span class="flag" style="background:#1a2a3d;color:#7ab4f5">GAP QUALITY</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">ALREADY EXTENDED</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:77%;background:#3a9c5f"></div></div><span class="bv">23/30</span></div>
+  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:47%;background:#3266ad"></div></div><span class="bv">21/45</span></div>
+  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:88%;background:#c07b1a"></div></div><span class="bv">22/25</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$1.47</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+38.1%</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">48x</div></div>
+    <div class="st"><div class="sl">RSI</div><div class="sv">72.1</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">1.4M</div></div>
+    <div class="st"><div class="sl">VWAP</div><div class="sv" style="color:#f57a7a">$1.528</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Proposed Entry: Reclaim $1.53 — range to $1.88</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$1.88</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$2.15</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$2.49</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$2.86</span></span>
+  </div>
+  <div class="news-line">BC-Most Active Stocks</div>
+</div><div class="card monitor">
+  <div class="r1">
+    <span class="tkr">XNDU</span>
+    <span class="co">Xanadu Quantum Technolog</span>
+    <span class="scan-tag" style="background:#2a1e3d;color:#b07af5;border-color:#b07af544">Mid Cap</span>
+    <span class="score smon">54</span>
+    <span class="ch neg">-5.2%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=XNDU" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#3d2e1a;color:#f5c46e">CATALYST · 8-K</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:50%;background:#3a9c5f"></div></div><span class="bv">15/30</span></div>
+  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:64%;background:#3266ad"></div></div><span class="bv">29/45</span></div>
+  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:36%;background:#c07b1a"></div></div><span class="bv">9/25</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$14.90</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">-5.7%</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">3x</div></div>
+    <div class="st"><div class="sl">RSI</div><div class="sv">44.7</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">20.7M</div></div>
+    <div class="st"><div class="sl">VWAP</div><div class="sv" style="color:#f57a7a">$15.086</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Proposed Entry: Reclaim $15.09 — range to $15.85</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$15.85</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$15.89</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$15.94</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$15.99</span></span>
+  </div>
+  <div class="news-line">These Quantum Companies Post Earnings This Week.  Expect More Innovation and Less Profit.</div>
+</div><div class="card monitor">
+  <div class="r1">
+    <span class="tkr">HPAI</span>
+    <span class="co">Helport AI Ltd</span>
+    <span class="scan-tag" style="background:#1a2a3d;color:#7ab4f5;border-color:#7ab4f544">Low Float</span>
+    <span class="score smon">47</span>
+    <span class="ch pos">+35.9%</span>
+    <a class="clink" href="https://finviz.com/quote.ashx?t=HPAI" target="_blank">Chart ↗</a>
+  </div>
+  <div class="flags"><span class="flag" style="background:#1a2a3d;color:#7ab4f5">GAP QUALITY</span><span class="flag" style="background:#3d1a1a;color:#f57a7a">EXTENDED</span><span class="flag" style="background:#2a1e3d;color:#b07af5">SECTOR MOMENTUM</span></div>
+  <div class="bar-row"><span class="bl">Trend</span><div class="bt"><div class="bf" style="width:13%;background:#3a9c5f"></div></div><span class="bv">4/30</span></div>
+  <div class="bar-row"><span class="bl">Range</span><div class="bt"><div class="bf" style="width:24%;background:#3266ad"></div></div><span class="bv">11/45</span></div>
+  <div class="bar-row"><span class="bl">Volume</span><div class="bt"><div class="bf" style="width:88%;background:#c07b1a"></div></div><span class="bv">22/25</span></div>
+  <div class="stats">
+    <div class="st"><div class="sl">Price</div><div class="sv">$1.34</div></div>
+    <div class="st"><div class="sl">Gap</div><div class="sv">+28.8%</div></div>
+    <div class="st"><div class="sl">RVol</div><div class="sv">259x</div></div>
+    <div class="st"><div class="sl">RSI</div><div class="sv">42.7</div></div>
+    <div class="st"><div class="sl">Float</div><div class="sv">7.9M</div></div>
+    <div class="st"><div class="sl">VWAP</div><div class="sv" style="color:#6ee89a">$1.327</div></div>
+  </div>
+  <div class="entry-box">
+    <span class="entry-label">▶ Proposed Entry: Momentum above VWAP $1.33 — range to $1.39</span>
+  </div>
+  <div class="lvls">
+    <span><span class="ll">Prev High</span> <span class="lv">$1.39</span></span><span class="sep">·</span><span><span class="ll">First target</span> <span class="lv">$1.5</span></span><span class="sep">·</span><span><span class="ll">Second target</span> <span class="lv">$1.64</span></span><span class="sep">·</span><span><span class="ll">Extended</span> <span class="lv">$1.79</span></span>
+  </div>
+  <div class="news-line">Helport AI and QuickCEP Forge Strategic Alliance, Aiming to Accelerate AI Workforce Infrastructure for Global Brands</div>
+</div></div>
+  <div class="sec-lbl">Avoid — below 40</div>
+  <div class="chips"><div class="chip"><div class="chip-top"><span class="chip-tkr">ENSC</span><span class="chip-scan" style="background:#1a2a3d;color:#7ab4f5">Low Float</span></div><span class="chip-score">29</span><span class="chip-why">weak setup</span></div><div class="chip"><div class="chip-top"><span class="chip-tkr">CLIK</span><span class="chip-scan" style="background:#1a2a3d;color:#7ab4f5">Low Float</span></div><span class="chip-score">25</span><span class="chip-why">weak setup</span></div><div class="chip"><div class="chip-top"><span class="chip-tkr">AMZE</span><span class="chip-scan" style="background:#2a1e3d;color:#b07af5">Mid Cap</span></div><span class="chip-score">22</span><span class="chip-why">weak setup</span></div><div class="chip"><div class="chip-top"><span class="chip-tkr">GAUZ</span><span class="chip-scan" style="background:#1a2a3d;color:#7ab4f5">Low Float</span></div><span class="chip-score">21</span><span class="chip-why">CATALYST · 8-K</span></div><div class="chip"><div class="chip-top"><span class="chip-tkr">NTCL</span><span class="chip-scan" style="background:#1a2a3d;color:#7ab4f5">Low Float</span></div><span class="chip-score">21</span><span class="chip-why">CRASHED · GAP DOWN</span></div><div class="chip"><div class="chip-top"><span class="chip-tkr">WOK</span><span class="chip-scan" style="background:#1a2a3d;color:#7ab4f5">Low Float</span></div><span class="chip-score">21</span><span class="chip-why">CATALYST · DEAL</span></div><div class="chip"><div class="chip-top"><span class="chip-tkr">EZGO</span><span class="chip-scan" style="background:#2a1e3d;color:#b07af5">Mid Cap</span></div><span class="chip-score">17</span><span class="chip-why">weak setup</span></div><div class="chip"><div class="chip-top"><span class="chip-tkr">DAIC</span><span class="chip-scan" style="background:#2a1e3d;color:#b07af5">Mid Cap</span></div><span class="chip-score">13</span><span class="chip-why">CATALYST · 8-K</span></div><div class="chip"><div class="chip-top"><span class="chip-tkr">KIDZ</span><span class="chip-scan" style="background:#1a2a3d;color:#7ab4f5">Low Float</span></div><span class="chip-score">10</span><span class="chip-why">weak setup</span></div><div class="chip"><div class="chip-top"><span class="chip-tkr">RPGL</span><span class="chip-scan" style="background:#2a1e3d;color:#b07af5">Mid Cap</span></div><span class="chip-score">9</span><span class="chip-why">CATALYST · DEAL</span></div><div class="chip"><div class="chip-top"><span class="chip-tkr">CCTG</span><span class="chip-scan" style="background:#1a2a3d;color:#7ab4f5">Low Float</span></div><span class="chip-score">8</span><span class="chip-why">CRASHED · GAP DOWN</span></div><div class="chip"><div class="chip-top"><span class="chip-tkr">HUBC</span><span class="chip-scan" style="background:#1a2a3d;color:#7ab4f5">Low Float</span></div><span class="chip-score">0</span><span class="chip-why">CRASHED · GAP DOWN</span></div><div class="chip"><div class="chip-top"><span class="chip-tkr">GDC</span><span class="chip-scan" style="background:#2a1e3d;color:#b07af5">Mid Cap</span></div><span class="chip-score">0</span><span class="chip-why">weak setup</span></div><div class="chip"><div class="chip-top"><span class="chip-tkr">HAO</span><span class="chip-scan" style="background:#2a1e3d;color:#b07af5">Mid Cap</span></div><span class="chip-score">0</span><span class="chip-why">CRASHED · GAP DOWN</span></div></div>
+</div>
+<div class="footer">Trend 30% · Range 45% · Volume 25% · Not financial advice · Always confirm on live chart before entry</div>
+</body></html>
