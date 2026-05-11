@@ -1,0 +1,902 @@
+{
+  "session": "afterhours",
+  "label": "After Hours",
+  "date": "2026-05-11",
+  "generated": "04:30 PM ET",
+  "tickers": [
+    {
+      "ticker": "EVC",
+      "company": "Entravision Communications Corp",
+      "sector": "Communication Services",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "buy",
+      "entry": 8.91,
+      "entry_label": "Momentum above VWAP $8.42",
+      "range_str": " \u2014 range to $9.34",
+      "prev_close": 7.16,
+      "prev_high": 8.87,
+      "fib_levels": [
+        [
+          "First target",
+          9.34
+        ],
+        [
+          "Second target",
+          9.93
+        ],
+        [
+          "Extended",
+          10.58
+        ]
+      ],
+      "price_at_scan": 8.87,
+      "gap": 2.51,
+      "rvol": 5.89,
+      "flags": [
+        "CONTINUATION",
+        "CATALYST \u00b7 8-K",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "GSIT",
+      "company": "GSI Technology Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "buy",
+      "entry": 11.78,
+      "entry_label": "Momentum above VWAP $11.62",
+      "range_str": " \u2014 range to $12.42",
+      "prev_close": 8.45,
+      "prev_high": 12.42,
+      "fib_levels": [
+        [
+          "Prev High",
+          12.42
+        ],
+        [
+          "First target",
+          13.5
+        ],
+        [
+          "Second target",
+          14.87
+        ],
+        [
+          "Extended",
+          16.39
+        ]
+      ],
+      "price_at_scan": 11.72,
+      "gap": 9.94,
+      "rvol": 13.95,
+      "flags": [
+        "CONTINUATION",
+        "CATALYST \u00b7 8-K",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "TH",
+      "company": "Target Hospitality Corp",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 100,
+      "tier": "buy",
+      "entry": 18.17,
+      "entry_label": "Momentum above VWAP $17.65",
+      "range_str": " \u2014 range to $19.02",
+      "prev_close": 15.33,
+      "prev_high": 18.23,
+      "fib_levels": [
+        [
+          "First target",
+          19.02
+        ],
+        [
+          "Second target",
+          20.02
+        ],
+        [
+          "Extended",
+          21.13
+        ]
+      ],
+      "price_at_scan": 18.08,
+      "gap": 6.23,
+      "rvol": 4.98,
+      "flags": [
+        "CATALYST \u00b7 8-K",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "EEX",
+      "company": "Emerald Holding Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 98,
+      "tier": "buy",
+      "entry": 5.03,
+      "entry_label": "Reclaim $5.00",
+      "range_str": " \u2014 range to $5.08",
+      "prev_close": 4.57,
+      "prev_high": 5.08,
+      "fib_levels": [
+        [
+          "Prev High",
+          5.08
+        ],
+        [
+          "First target",
+          5.22
+        ],
+        [
+          "Second target",
+          5.4
+        ],
+        [
+          "Extended",
+          5.59
+        ]
+      ],
+      "price_at_scan": 4.99,
+      "gap": 10.5,
+      "rvol": 190.54,
+      "flags": [
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "TRAW",
+      "company": "Traws Pharma Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 85,
+      "tier": "buy",
+      "entry": 2.68,
+      "entry_label": "Reclaim $2.67",
+      "range_str": " \u2014 range to $3.23",
+      "prev_close": 2.18,
+      "prev_high": 3.23,
+      "fib_levels": [
+        [
+          "Prev High",
+          3.23
+        ],
+        [
+          "First target",
+          3.52
+        ],
+        [
+          "Second target",
+          3.88
+        ],
+        [
+          "Extended",
+          4.28
+        ]
+      ],
+      "price_at_scan": 2.02,
+      "gap": 1.83,
+      "rvol": 16.29,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "DGXX",
+      "company": "Digi Power X Inc",
+      "sector": "Utilities",
+      "scan": "Mid Cap",
+      "score": 83,
+      "tier": "buy",
+      "entry": 7.69,
+      "entry_label": "Reclaim $7.65",
+      "range_str": " \u2014 range to $8.08",
+      "prev_close": 6.63,
+      "prev_high": 8.08,
+      "fib_levels": [
+        [
+          "Prev High",
+          8.08
+        ],
+        [
+          "First target",
+          8.47
+        ],
+        [
+          "Second target",
+          8.98
+        ],
+        [
+          "Extended",
+          9.53
+        ]
+      ],
+      "price_at_scan": 7.43,
+      "gap": 11.92,
+      "rvol": 7.92,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY"
+      ]
+    },
+    {
+      "ticker": "PRSO",
+      "company": "Peraso Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 81,
+      "tier": "buy",
+      "entry": 1.41,
+      "entry_label": "Reclaim $1.40",
+      "range_str": " \u2014 range to $1.59",
+      "prev_close": 0.99,
+      "prev_high": 1.59,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.59
+        ],
+        [
+          "First target",
+          1.75
+        ],
+        [
+          "Second target",
+          1.96
+        ],
+        [
+          "Extended",
+          2.19
+        ]
+      ],
+      "price_at_scan": 1.38,
+      "gap": 14.99,
+      "rvol": 5.05,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "XGN",
+      "company": "Exagen Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 81,
+      "tier": "buy",
+      "entry": 4.0,
+      "entry_label": "Momentum above VWAP $3.74",
+      "range_str": " \u2014 range to $4.13",
+      "prev_close": 2.95,
+      "prev_high": 4.13,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.13
+        ],
+        [
+          "First target",
+          4.45
+        ],
+        [
+          "Second target",
+          4.86
+        ],
+        [
+          "Extended",
+          5.31
+        ]
+      ],
+      "price_at_scan": 3.98,
+      "gap": 13.9,
+      "rvol": 22.85,
+      "flags": [
+        "GAP QUALITY",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "GCTS",
+      "company": "GCT Semiconductor Holding Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 81,
+      "tier": "buy",
+      "entry": 1.67,
+      "entry_label": "Reclaim $1.66",
+      "range_str": " \u2014 range to $1.83",
+      "prev_close": 1.7,
+      "prev_high": 1.83,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.83
+        ],
+        [
+          "First target",
+          1.87
+        ],
+        [
+          "Second target",
+          1.91
+        ],
+        [
+          "Extended",
+          1.96
+        ]
+      ],
+      "price_at_scan": 1.6,
+      "gap": 7.06,
+      "rvol": 7.78,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "AEHL",
+      "company": "Antelope Enterprise Holdings Ltd",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 74,
+      "tier": "buy",
+      "entry": 1.44,
+      "entry_label": "Momentum above VWAP $1.40",
+      "range_str": " \u2014 range to $1.69",
+      "prev_close": 1.2,
+      "prev_high": 1.69,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.69
+        ],
+        [
+          "First target",
+          1.82
+        ],
+        [
+          "Second target",
+          1.99
+        ],
+        [
+          "Extended",
+          2.18
+        ]
+      ],
+      "price_at_scan": 1.43,
+      "gap": -2.5,
+      "rvol": 8.22,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "WOK",
+      "company": "Work Medical Technology Group Ltd",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 73,
+      "tier": "buy",
+      "entry": 3.94,
+      "entry_label": "Momentum above VWAP $1.41",
+      "range_str": " \u2014 range to $4.09",
+      "prev_close": 1.28,
+      "prev_high": 4.09,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.09
+        ],
+        [
+          "First target",
+          4.85
+        ],
+        [
+          "Second target",
+          5.83
+        ],
+        [
+          "Extended",
+          6.9
+        ]
+      ],
+      "price_at_scan": 3.92,
+      "gap": 23.44,
+      "rvol": 3734.92,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "CATALYST \u00b7 DEAL",
+        "ALREADY EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "FCEL",
+      "company": "Fuelcell Energy Inc",
+      "sector": "Industrials",
+      "scan": "Mid Cap",
+      "score": 68,
+      "tier": "buy",
+      "entry": 16.02,
+      "entry_label": "Momentum above VWAP $15.84",
+      "range_str": " \u2014 range to $16.84",
+      "prev_close": 13.7,
+      "prev_high": 16.84,
+      "fib_levels": [
+        [
+          "Prev High",
+          16.84
+        ],
+        [
+          "First target",
+          17.69
+        ],
+        [
+          "Second target",
+          18.78
+        ],
+        [
+          "Extended",
+          19.98
+        ]
+      ],
+      "price_at_scan": 15.94,
+      "gap": -0.51,
+      "rvol": 3.66,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ODYS",
+      "company": "Odysight.ai Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 64,
+      "tier": "monitor",
+      "entry": 6.87,
+      "entry_label": "Reclaim $6.83",
+      "range_str": " \u2014 range to $11.3",
+      "prev_close": 4.46,
+      "prev_high": 11.3,
+      "fib_levels": [
+        [
+          "Prev High",
+          11.3
+        ],
+        [
+          "First target",
+          13.16
+        ],
+        [
+          "Second target",
+          15.53
+        ],
+        [
+          "Extended",
+          18.14
+        ]
+      ],
+      "price_at_scan": 4.75,
+      "gap": 119.73,
+      "rvol": 1945.74,
+      "flags": [
+        "CATALYST \u00b7 DEAL",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "YMAT",
+      "company": "J-Star Holding Co Ltd",
+      "sector": "Basic Materials",
+      "scan": "Low Float",
+      "score": 60,
+      "tier": "monitor",
+      "entry": 0.68,
+      "entry_label": "Momentum above VWAP $0.59",
+      "range_str": " \u2014 range to $0.73",
+      "prev_close": 0.51,
+      "prev_high": 0.68,
+      "fib_levels": [
+        [
+          "First target",
+          0.73
+        ],
+        [
+          "Second target",
+          0.79
+        ],
+        [
+          "Extended",
+          0.85
+        ]
+      ],
+      "price_at_scan": 0.68,
+      "gap": 0.02,
+      "rvol": 3.14,
+      "flags": [
+        "CONTINUATION",
+        "CATALYST \u00b7 FINANCING",
+        "EXTENDED"
+      ]
+    },
+    {
+      "ticker": "AIIO",
+      "company": "Robo.ai Inc",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 59,
+      "tier": "monitor",
+      "entry": 1.14,
+      "entry_label": "Momentum above VWAP $0.99",
+      "range_str": " \u2014 range to $1.16",
+      "prev_close": 0.86,
+      "prev_high": 1.16,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.16
+        ],
+        [
+          "First target",
+          1.24
+        ],
+        [
+          "Second target",
+          1.35
+        ],
+        [
+          "Extended",
+          1.46
+        ]
+      ],
+      "price_at_scan": 1.13,
+      "gap": -6.98,
+      "rvol": 4.15,
+      "flags": [
+        "CONTINUATION",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "JZXN",
+      "company": "Jiuzi Holdings Inc",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 56,
+      "tier": "monitor",
+      "entry": 1.54,
+      "entry_label": "Reclaim $1.53",
+      "range_str": " \u2014 range to $1.88",
+      "prev_close": 0.9,
+      "prev_high": 1.88,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.88
+        ],
+        [
+          "First target",
+          2.15
+        ],
+        [
+          "Second target",
+          2.49
+        ],
+        [
+          "Extended",
+          2.86
+        ]
+      ],
+      "price_at_scan": 1.34,
+      "gap": 37.57,
+      "rvol": 31.04,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "EXTENDED",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "INO",
+      "company": "Inovio Pharmaceuticals Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 56,
+      "tier": "monitor",
+      "entry": 1.46,
+      "entry_label": "Reclaim $1.45",
+      "range_str": " \u2014 range to $1.63",
+      "prev_close": 1.46,
+      "prev_high": 1.63,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.63
+        ],
+        [
+          "First target",
+          1.68
+        ],
+        [
+          "Second target",
+          1.74
+        ],
+        [
+          "Extended",
+          1.8
+        ]
+      ],
+      "price_at_scan": 1.43,
+      "gap": 11.64,
+      "rvol": 3.84,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MNTS",
+      "company": "Momentus Inc",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 53,
+      "tier": "monitor",
+      "entry": 6.51,
+      "entry_label": "Reclaim $6.48",
+      "range_str": " \u2014 range to $7.3",
+      "prev_close": 5.46,
+      "prev_high": 7.3,
+      "fib_levels": [
+        [
+          "Prev High",
+          7.3
+        ],
+        [
+          "First target",
+          7.8
+        ],
+        [
+          "Second target",
+          8.44
+        ],
+        [
+          "Extended",
+          9.14
+        ]
+      ],
+      "price_at_scan": 5.62,
+      "gap": 7.88,
+      "rvol": 4.22,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "NTCL",
+      "company": "NetClass Technology Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 53,
+      "tier": "monitor",
+      "entry": 0.45,
+      "entry_label": "Momentum above VWAP $0.31",
+      "range_str": " \u2014 range to $0.47",
+      "prev_close": 0.37,
+      "prev_high": 0.45,
+      "fib_levels": [
+        [
+          "First target",
+          0.47
+        ],
+        [
+          "Second target",
+          0.5
+        ],
+        [
+          "Extended",
+          0.53
+        ]
+      ],
+      "price_at_scan": 0.45,
+      "gap": -36.22,
+      "rvol": 41.97,
+      "flags": [
+        "CRASHED \u00b7 GAP DOWN",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "GAMB",
+      "company": "Gambling.com Group Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Mid Cap",
+      "score": 51,
+      "tier": "monitor",
+      "entry": 4.75,
+      "entry_label": "Reclaim $4.73",
+      "range_str": " \u2014 range to $5.5",
+      "prev_close": 4.51,
+      "prev_high": 5.5,
+      "fib_levels": [
+        [
+          "Prev High",
+          5.5
+        ],
+        [
+          "First target",
+          5.77
+        ],
+        [
+          "Second target",
+          6.11
+        ],
+        [
+          "Extended",
+          6.49
+        ]
+      ],
+      "price_at_scan": 4.36,
+      "gap": 16.19,
+      "rvol": 16.05,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MEHA",
+      "company": "Functional Brands Inc",
+      "sector": "Consumer Defensive",
+      "scan": "Mid Cap",
+      "score": 46,
+      "tier": "monitor",
+      "entry": 0.18,
+      "entry_label": "Reclaim $0.18",
+      "range_str": " \u2014 range to $0.22",
+      "prev_close": 0.1,
+      "prev_high": 0.22,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.22
+        ],
+        [
+          "First target",
+          0.25
+        ],
+        [
+          "Second target",
+          0.29
+        ],
+        [
+          "Extended",
+          0.34
+        ]
+      ],
+      "price_at_scan": 0.12,
+      "gap": 67.51,
+      "rvol": 147.66,
+      "flags": [
+        "CATALYST \u00b7 M&A",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "ENSC",
+      "company": "Ensysce Biosciences Inc",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 45,
+      "tier": "monitor",
+      "entry": 0.38,
+      "entry_label": "Momentum above VWAP $0.34",
+      "range_str": " \u2014 range to $0.4",
+      "prev_close": 0.35,
+      "prev_high": 0.4,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.4
+        ],
+        [
+          "First target",
+          0.41
+        ],
+        [
+          "Second target",
+          0.43
+        ],
+        [
+          "Extended",
+          0.45
+        ]
+      ],
+      "price_at_scan": 0.38,
+      "gap": 7.57,
+      "rvol": 14.75,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CCTG",
+      "company": "CCSC Technology International Holdings Ltd",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 43,
+      "tier": "monitor",
+      "entry": 0.57,
+      "entry_label": "Momentum above VWAP $0.44",
+      "range_str": " \u2014 range to $0.59",
+      "prev_close": 0.56,
+      "prev_high": 0.59,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.59
+        ],
+        [
+          "First target",
+          0.6
+        ],
+        [
+          "Second target",
+          0.61
+        ],
+        [
+          "Extended",
+          0.62
+        ]
+      ],
+      "price_at_scan": 0.57,
+      "gap": -32.71,
+      "rvol": 96.61,
+      "flags": [
+        "CRASHED \u00b7 GAP DOWN",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "AMZE",
+      "company": "Amaze Holdings Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 42,
+      "tier": "monitor",
+      "entry": 0.14,
+      "entry_label": "Momentum above VWAP $0.14",
+      "range_str": " \u2014 range to $0.15",
+      "prev_close": 0.13,
+      "prev_high": 0.14,
+      "fib_levels": [
+        [
+          "Second target",
+          0.15
+        ],
+        [
+          "Extended",
+          0.15
+        ]
+      ],
+      "price_at_scan": 0.14,
+      "gap": 0.0,
+      "rvol": 5.26,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
