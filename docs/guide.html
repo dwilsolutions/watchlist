@@ -262,7 +262,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:14
         <div class="wl-card day">
           <div class="wl-card-icon">📈</div>
           <div class="wl-card-title">Day Trading Watchlist</div>
-          <div class="wl-card-desc">Intraday momentum plays. Stocks moving right now with high relative volume and catalysts. Runs 5 times daily from 8PM the night before through after hours.</div>
+          <div class="wl-card-desc">Intraday momentum plays. Stocks moving right now with high relative volume and catalysts. Runs 4 times daily from pre-market through after hours.</div>
           <span class="wl-card-tag">Hold: minutes to hours</span>
         </div>
         <div class="wl-card swing">
@@ -283,15 +283,10 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:14
     <!-- DAY TRADING -->
     <div class="section" id="daytrading">
       <div class="section-eyebrow">Day Trading Watchlist</div>
-      <h2>Five sessions, one day</h2>
-      <p>The scanner runs five times every market day, pulling whatever stocks pass the screener filters at that moment. Each session has a different focus based on where we are in the trading day.</p>
+      <h2>Four sessions, one day</h2>
+      <p>The scanner runs four times every market day, pulling whatever stocks pass the screener filters at that moment. Each session has a different focus based on where we are in the trading day.</p>
 
       <div class="session-list">
-        <div class="sess">
-          <div><div class="sess-name">Early Pre-Market</div></div>
-          <div class="sess-time">~8:00 PM</div>
-          <div class="sess-desc">Built the night before — yesterday's clean runners setting up for continuation. Entry levels are already set so you start the next morning fully prepared.</div>
-        </div>
         <div class="sess">
           <div><div class="sess-name">Pre-Market</div></div>
           <div class="sess-time">~6:55 AM</div>
@@ -443,31 +438,31 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:14
           <div class="step-connector"></div>
           <div class="step-num">1</div>
           <div class="step-body">
-            <div class="step-title">Check Early Pre-Market the night before (8PM)</div>
-            <div class="step-desc">This is tomorrow's continuation list — stocks that ran cleanly today and are setting up to go again. Note the entry levels on each card and have them ready before the morning opens.</div>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-connector"></div>
-          <div class="step-num">2</div>
-          <div class="step-body">
             <div class="step-title">Check Pre-Market at 6:55 AM</div>
             <div class="step-desc">Look for HOT and WARM tickers with catalyst flags. Click "Read ↗" on each HOT ticker to understand the actual catalyst before the market opens.</div>
           </div>
         </div>
         <div class="step">
           <div class="step-connector"></div>
-          <div class="step-num">3</div>
+          <div class="step-num">2</div>
           <div class="step-body">
             <div class="step-title">At Market Open — confirm, don't chase</div>
             <div class="step-desc">Wait for price to break above the Proposed Entry level with volume confirmation — not before. The entry box on every card shows the exact level to watch.</div>
           </div>
         </div>
         <div class="step">
+          <div class="step-connector"></div>
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-title">Midday — VWAP reclaims and second entries</div>
+            <div class="step-desc">Stocks that pulled back after the open and are setting up for a second leg. 25% of runners peak in this window. Look for a clean VWAP reclaim with volume.</div>
+          </div>
+        </div>
+        <div class="step">
           <div class="step-num">4</div>
           <div class="step-body">
-            <div class="step-title">Midday and After Hours — second entries</div>
-            <div class="step-desc">25% of runners peak in the midday window. Look for VWAP reclaims. After hours is historically the best session — 25% runner rate based on tracked data.</div>
+            <div class="step-title">After Hours — historically the best session</div>
+            <div class="step-desc">25% runner rate based on tracked data. Power hour setups and HOD breakouts. Check the After Hours watchlist at 3:30 PM for fresh setups into the close.</div>
           </div>
         </div>
       </div>
