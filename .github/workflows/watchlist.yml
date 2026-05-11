@@ -12,7 +12,6 @@ on:
         default: 'premarket'
         type: choice
         options:
-          - earlypremarket
           - premarket
           - marketopen
           - midday
@@ -57,7 +56,7 @@ jobs:
           if [ "$SESSION" = "backtest" ]; then
             pip install yfinance databento pandas --quiet
           elif [ "$SESSION" = "swing-premarket" ] || [ "$SESSION" = "swing-midday" ] || [ "${{ github.event_name }}" = "schedule" ]; then
-            pip install yfinance pandas requests beautifulsoup4 --quiet
+            pip install yfinance pandas requests beautifulsoup4 pytz --quiet
           else
             pip install yfinance pandas --quiet
           fi
