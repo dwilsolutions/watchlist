@@ -1,0 +1,235 @@
+{
+  "session": "premarket",
+  "label": "Pre-Market",
+  "date": "2026-05-12",
+  "generated": "08:16 AM ET",
+  "tickers": [
+    {
+      "ticker": "DGXX",
+      "company": "Digi Power X Inc",
+      "sector": "Utilities",
+      "scan": "Mid Cap",
+      "score": 98,
+      "tier": "buy",
+      "entry": 8.63,
+      "entry_label": "Break above $8.59",
+      "range_str": "",
+      "prev_close": 6.63,
+      "prev_high": 8.59,
+      "fib_levels": [
+        [
+          "Prev High",
+          8.59
+        ],
+        [
+          "First target",
+          9.12
+        ],
+        [
+          "Second target",
+          9.8
+        ],
+        [
+          "Extended",
+          10.55
+        ]
+      ],
+      "price_at_scan": 7.66,
+      "gap": 7.69,
+      "rvol": 25.76,
+      "flags": [
+        "CONTINUATION"
+      ]
+    },
+    {
+      "ticker": "RXT",
+      "company": "Rackspace Technology Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 93,
+      "tier": "buy",
+      "entry": 6.69,
+      "entry_label": "Break above $6.66",
+      "range_str": "",
+      "prev_close": 5.49,
+      "prev_high": 6.66,
+      "fib_levels": [
+        [
+          "Prev High",
+          6.66
+        ],
+        [
+          "First target",
+          6.98
+        ],
+        [
+          "Second target",
+          7.38
+        ],
+        [
+          "Extended",
+          7.83
+        ]
+      ],
+      "price_at_scan": 5.68,
+      "gap": 11.29,
+      "rvol": 4.92,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MEHA",
+      "company": "Functional Brands Inc",
+      "sector": "Consumer Defensive",
+      "scan": "Mid Cap",
+      "score": 81,
+      "tier": "buy",
+      "entry": 0.23,
+      "entry_label": "Break above $0.23",
+      "range_str": "",
+      "prev_close": 0.1,
+      "prev_high": 0.23,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.23
+        ],
+        [
+          "First target",
+          0.27
+        ],
+        [
+          "Second target",
+          0.31
+        ],
+        [
+          "Extended",
+          0.36
+        ]
+      ],
+      "price_at_scan": 0.2,
+      "gap": -3.26,
+      "rvol": 291.39,
+      "flags": [
+        "CONTINUATION",
+        "CATALYST \u00b7 M&A",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "CLIK",
+      "company": "Click Holdings Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 80,
+      "tier": "buy",
+      "entry": 5.29,
+      "entry_label": "Break above $5.26",
+      "range_str": "",
+      "prev_close": 2.23,
+      "prev_high": 5.26,
+      "fib_levels": [
+        [
+          "Prev High",
+          5.26
+        ],
+        [
+          "First target",
+          6.08
+        ],
+        [
+          "Second target",
+          7.13
+        ],
+        [
+          "Extended",
+          8.29
+        ]
+      ],
+      "price_at_scan": 4.02,
+      "gap": -2.24,
+      "rvol": 383.25,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "AEHL",
+      "company": "Antelope Enterprise Holdings Ltd",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 57,
+      "tier": "monitor",
+      "entry": 1.67,
+      "entry_label": "Break above $1.66",
+      "range_str": "",
+      "prev_close": 1.2,
+      "prev_high": 1.66,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.66
+        ],
+        [
+          "First target",
+          1.79
+        ],
+        [
+          "Second target",
+          1.94
+        ],
+        [
+          "Extended",
+          2.12
+        ]
+      ],
+      "price_at_scan": 1.12,
+      "gap": 20.0,
+      "rvol": 69.33,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "EZGO",
+      "company": "EZGO Technologies Ltd",
+      "sector": "Consumer Cyclical",
+      "scan": "Mid Cap",
+      "score": 43,
+      "tier": "monitor",
+      "entry": 0.1,
+      "entry_label": "Break above $0.10",
+      "range_str": "",
+      "prev_close": 0.04,
+      "prev_high": 0.1,
+      "fib_levels": [
+        [
+          "Prev High",
+          0.1
+        ],
+        [
+          "First target",
+          0.12
+        ],
+        [
+          "Second target",
+          0.14
+        ],
+        [
+          "Extended",
+          0.16
+        ]
+      ],
+      "price_at_scan": 0.06,
+      "gap": 14.75,
+      "rvol": 1655.8,
+      "flags": [
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ]
+    }
+  ]
+}
