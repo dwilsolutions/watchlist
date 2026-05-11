@@ -373,9 +373,6 @@ def score_row(row, session="", prior_runners=None):
         fib_levels = [(l, v) for l, v in fib_levels if v > price * 1.01]
 
     # Suggested entry + range
-    # earlypremarket: no real VWAP yet (market hasn't opened), prev_high is
-    # yesterday's session high — already exceeded and faded by 4 AM. Use
-    # current price momentum instead so entries are actually achievable.
     if real_vwap:
         if above_vwap:
             entry_label = f"Momentum above VWAP ${real_vwap:.2f}"
@@ -383,18 +380,6 @@ def score_row(row, session="", prior_runners=None):
         else:
             entry_label = f"Reclaim ${real_vwap:.2f}"
             entry_price = round(real_vwap * 1.005, 2)
-    elif session == "earlypremarket":
-        # Use vwap_proxy (H+L+O/3) if available and above price, else momentum entry
-        if vwap_proxy and vwap_proxy > price:
-            entry_label = f"Reclaim ${vwap_proxy:.2f}"
-            entry_price = round(vwap_proxy * 1.005, 2)
-        elif prev_high and price < prev_high <= price * 1.15:
-            # prev_high is within 15% — realistic breakout level
-            entry_label = f"Break above ${prev_high:.2f}"
-            entry_price = round(prev_high * 1.005, 2)
-        else:
-            entry_label = f"Momentum above ${price:.2f}"
-            entry_price = round(price * 1.005, 2)
     else:
         if prev_high and prev_high > price:
             entry_label = f"Break above ${prev_high:.2f}"
@@ -879,6 +864,8 @@ def main():
 
     live     = is_market_live(unique)
     html     = render_html(results, session, trading_day, label, note, gen_time, market_live=live)
+    # Stamp every build so git always sees a real change and never skips the commit
+    html     = html.replace("</head>", f"<!-- built {now_et.strftime('%Y-%m-%dT%H:%M:%S')} --></head>", 1)
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     # 1. Dated archive copy — keeps history, powers index page
