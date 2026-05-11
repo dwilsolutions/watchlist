@@ -17,9 +17,6 @@ on:
           - midday
           - afterhours
           - eod
-          - analyze
-          - backfill
-          - backtest
           - swing-premarket
           - swing-midday
 
@@ -53,9 +50,7 @@ jobs:
       - name: Install dependencies
         run: |
           SESSION="${{ github.event.inputs.session }}"
-          if [ "$SESSION" = "backtest" ]; then
-            pip install yfinance databento pandas --quiet
-          elif [ "$SESSION" = "swing-premarket" ] || [ "$SESSION" = "swing-midday" ] || [ "${{ github.event_name }}" = "schedule" ]; then
+          if [ "$SESSION" = "swing-premarket" ] || [ "$SESSION" = "swing-midday" ] || [ "${{ github.event_name }}" = "schedule" ]; then
             pip install yfinance pandas requests beautifulsoup4 pytz --quiet
           else
             pip install yfinance pandas --quiet
@@ -75,7 +70,6 @@ jobs:
       - name: Run scorer or results
         env:
           FINVIZ_TOKEN: ${{ secrets.FINVIZ_TOKEN }}
-          DATABENTO_API_KEY: ${{ secrets.DATABENTO_API_KEY }}
         run: |
           SESSION="${{ github.event.inputs.session }}"
 
@@ -84,21 +78,13 @@ jobs:
             python scripts/scanner.py --session ${{ steps.swing_session.outputs.name }}
             python scripts/build_watchlist.py
           elif [ "$SESSION" = "swing-premarket" ]; then
-            echo "Running swing scanner: premarket..."
             python scripts/scanner.py --session premarket
             python scripts/build_watchlist.py
           elif [ "$SESSION" = "swing-midday" ]; then
-            echo "Running swing scanner: midday..."
             python scripts/scanner.py --session midday
             python scripts/build_watchlist.py
           elif [ "$SESSION" = "eod" ]; then
             python results.py
-          elif [ "$SESSION" = "analyze" ]; then
-            python analyze_timing.py
-          elif [ "$SESSION" = "backfill" ]; then
-            python backfill.py
-          elif [ "$SESSION" = "backtest" ]; then
-            python build_backtest.py
           else
             python scorer.py --session $SESSION
           fi
@@ -107,8 +93,8 @@ jobs:
         run: |
           git config user.name  "Watchlist Bot"
           git config user.email "bot@watchlist"
-          git add -A docs/ backtest_runners.csv 2>/dev/null || true
-          if git diff --staged --quiet; then
+          git add -A docs/ 2>/dev/null || true
+          if [ -z "$(git status --porcelain)" ]; then
             echo "Nothing to commit"
           else
             git commit -m "Watchlist: ${{ github.event.inputs.session || 'swing-cron' }} $(date -u +'%Y-%m-%d %H:%M UTC')"
