@@ -20,7 +20,6 @@ OUTPUT_DIR = "docs"
 DATA_DIR   = os.path.join(OUTPUT_DIR, "data")
 
 SESSIONS_ORDER = [
-    ("earlypremarket", "Early Pre-Market"),
     ("premarket",      "Pre-Market"),
     ("marketopen",     "Market Open"),
     ("midday",         "Midday"),
@@ -44,17 +43,14 @@ def fmt_date(d):
 # ── Session time windows (ET) ─────────────────────────────────────────────────
 
 SESSION_WINDOWS = {
-    # Maps session key → (window_start, window_end) ET
-    # Window covers from scan time through EOD close so outcomes reflect
+    # Window covers from scan time through EOD so outcomes reflect
     # what was actually achievable after the watchlist was published.
-    # earlypremarket/premarket extend through 20:00 to capture full day move.
-    "earlypremarket": ("04:00", "20:00"),  # Full day — 4 AM scan through AH close
-    "premarket":      ("04:00", "20:00"),  # Full day — PM scan through AH close
-    "night":          ("04:00", "20:00"),  # Legacy alias for premarket
+    "premarket": ("04:00", "20:00"),  # Full day — PM scan through AH close
+    "night":     ("04:00", "20:00"),  # Legacy alias
     "marketopen":     ("09:30", "20:00"),  # Open through AH close
     "midday":         ("12:30", "20:00"),  # Midday through AH close
     "afterhours":     ("15:30", "20:00"),  # AH session only
-    "powerhour":      ("15:30", "20:00"),  # Legacy alias for afterhours
+    "powerhour":      ("15:30", "20:00"),  # Legacy alias
 }
 
 # ── Fetch session-specific highs via yfinance ──────────────────────────────────
@@ -131,19 +127,17 @@ def fetch_real_vwap(tickers, session_key, today):
     et = ZoneInfo("America/New_York")
     date_str = today.isoformat()
 
-    # VWAP calculated from 9:30 AM to regular close (16:00)
-    # earlypremarket/premarket now cover full day so full-day VWAP is meaningful
+    # VWAP always calculated from market open to session start
     vwap_end = {
-        "earlypremarket": "16:00",  # full day VWAP
-        "premarket":      "16:00",  # full day VWAP
-        "night":          "16:00",  # legacy alias
-        "marketopen":     "16:00",  # full day VWAP
-        "midday":         "16:00",  # full day VWAP
-        "afterhours":     "16:00",  # full day VWAP
-        "powerhour":      "16:00",  # legacy alias
+        "premarket":      None,     # 6:55 AM — no meaningful VWAP yet
+        "marketopen":     None,     # no meaningful VWAP at open
+        "midday":         "12:30",  # from open to midday
+        "afterhours":     "15:30",  # from open to AH start
     }
 
-    end_time = vwap_end.get(session_key, "16:00")
+    end_time = vwap_end.get(session_key)
+    if not end_time:
+        return {}  # no VWAP before market open
 
     start_dt = datetime.fromisoformat(f"{date_str}T09:30:00").replace(tzinfo=et)
     end_dt   = datetime.fromisoformat(f"{date_str}T{end_time}:00").replace(tzinfo=et)
@@ -222,7 +216,6 @@ def fetch_quotes(tickers):
 
 # Fallback names for backward compatibility with old naming convention
 SESSION_LEGACY_NAMES = {
-    "earlypremarket": [],
     "premarket":      ["night"],
     "marketopen":     ["premarket"],
     "midday":         ["midday"],
@@ -407,7 +400,7 @@ a{color:inherit;text-decoration:none;}
 .hit{color:#6ee89a;}.miss{color:var(--muted);}.stp{color:#f57a7a;}
 
 .layout{display:flex;min-height:calc(100vh - 200px);}
-.sidenav{width:182px;flex-shrink:0;background:var(--bg2);
+.sidenav{width:168px;flex-shrink:0;background:var(--bg2);
   border-right:1px solid var(--border);padding:16px 0;
   position:sticky;top:0;align-self:flex-start;
   height:calc(100vh - 200px);display:flex;flex-direction:column;}
@@ -420,7 +413,7 @@ a{color:inherit;text-decoration:none;}
 .nav-item.active{color:var(--green);border-left-color:var(--green);
   background:rgba(58,156,95,0.06);}
 .nav-icon{font-size:13px;width:18px;text-align:center;flex-shrink:0;}
-.nav-label{font-size:11px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.nav-label{font-size:12px;flex:1;}
 .nav-cnt{font-size:10px;padding:1px 6px;border-radius:20px;
   background:rgba(255,255,255,0.06);color:var(--muted);}
 .nav-item.active .nav-cnt{background:rgba(58,156,95,0.15);color:var(--green);}
@@ -428,7 +421,7 @@ a{color:inherit;text-decoration:none;}
 .tab-content.active{display:block;}
 .empty{color:var(--muted);font-size:12px;padding:8px 0;}
 .no-data{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:16px;color:var(--muted);font-size:12px;text-align:center;}
-.footer{text-align:center;font-size:10px;color:var(--muted);padding:24px;border-top:1px solid var(--border);}.dl-btn{font-family:var(--mono);font-size:10px;padding:4px 11px;border-radius:20px;background:rgba(58,156,95,0.12);color:#5cc98a;border:1px solid rgba(58,156,95,0.3);cursor:pointer;letter-spacing:0.04em;transition:background .15s;}.dl-btn:hover{background:rgba(58,156,95,0.22);}
+.footer{text-align:center;font-size:10px;color:var(--muted);padding:24px;border-top:1px solid var(--border);}
 """
 
 def card_html(t, perf):
@@ -480,7 +473,7 @@ def card_html(t, perf):
     <div class="lv"><div class="lv-l">Prev High</div><div class="lv-v">${t.get("prev_high","—")}</div></div>
     <div class="lv"><div class="lv-l">52W High</div><div class="lv-v">${t.get("hi52_price","—")}</div></div>
   </div>
-</div>"""
+</div></div>"""
 
 def cum_section_html(label, d):
     total      = d["total"]
@@ -514,9 +507,7 @@ def render_html(today, session_results, all_quotes, cum_stats, gen_time):
     # Build nav items and tab content for each session
     nav_items_html = ""
     tabs_html = ""
-    all_sessions_inner = ""
     SESSION_ICONS = {
-        "earlypremarket": "🌙",
         "premarket":      "🌅",
         "marketopen":     "🔔",
         "midday":         "☀️",
@@ -545,51 +536,14 @@ def render_html(today, session_results, all_quotes, cum_stats, gen_time):
         tabs_html += f'''<div class="tab-content{active_cls}" id="sess-{session_key}">
   <div class="body" style="padding:14px 20px 48px;">{body_inner}</div>
 </div>'''
-        if tickers:
-            _all_cards = "".join(card_html(t, t["perf"]) for t in tickers)
-            all_sessions_inner += f'''<div class="sec-lbl">{icon} {label} · {runner_txt}</div><div class="cards">{_all_cards}</div>'''
 
-    _all_total = sum(len(session_results.get(sk, [])) for sk, _ in SESSIONS_ORDER)
-    _all_body  = all_sessions_inner if all_sessions_inner else '<div class="no-data">No data today</div>'
-    _all_nav   = f'''<div class="nav-item" data-tab="sess-all">
-  <span class="nav-icon">📋</span>
-  <span class="nav-label">All Sessions</span>
-  <span class="nav-cnt">{_all_total}</span>
-</div>'''
-    _all_tab   = f'''<div class="tab-content" id="sess-all">
-  <div class="body" style="padding:14px 20px 48px;">{_all_body}</div>
-</div>'''
     session_html = f'''<div class="layout">
   <div class="sidenav">
     <div class="sidenav-label">Sessions</div>
-    {_all_nav}
     {nav_items_html}
   </div>
-  {_all_tab}
   {tabs_html}
 </div>'''
-    import json as _json
-    export_payload = {
-        "date": today.isoformat(),
-        "generated": gen_time,
-        "summary": {
-            "total": total,
-            "monsters": monsters,
-            "big_runners": big_runners,
-            "runners": runners,
-            "catch_rate": catch_rate,
-        },
-        "cumulative": cum_stats,
-        "sessions": {
-            sk: [
-                {k: v for k, v in t.items()}
-                for t in tickers
-            ]
-            for sk, tickers in session_results.items()
-        },
-    }
-    export_json_escaped = _json.dumps(export_payload, indent=2).replace("</", "<" + "/")
-
     js_block = """<script>
 document.querySelectorAll('.nav-item').forEach(item => {
   item.addEventListener('click', () => {
@@ -600,38 +554,17 @@ document.querySelectorAll('.nav-item').forEach(item => {
     window.scrollTo(0, 0);
   });
 });
-
-const _EOD_DATA = """ + export_json_escaped + """;
-
-function downloadData() {
-  const blob = new Blob([JSON.stringify(_EOD_DATA, null, 2)], {type: 'application/json'});
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement('a');
-  a.href     = url;
-  a.download = 'eod-results-' + _EOD_DATA.date + '.json';
-  a.click();
-  URL.revokeObjectURL(url);
-}
 </script>"""
 
-    # Cumulative block — labels pre-built outside f-string (backslash in f-expr is a SyntaxError)
-    _lbl_hot   = "🔥 HOT (rvol ≥100x)"
-    _lbl_warm  = "⚡ WARM (rvol ≥10x)"
-    _lbl_watch = "👁 WATCH"
-    _cum_days  = cum_stats["days"]
-    _sec_hot   = cum_section_html(_lbl_hot,   cum_stats["hot"])
-    _sec_warm  = cum_section_html(_lbl_warm,  cum_stats["warm"])
-    _sec_watch = cum_section_html(_lbl_watch, cum_stats["watch"])
-    cum_html = (
-        '<div class="cum-wrap"><div class="cumulative">\n'
-        '  <div class="cum-title">Cumulative Performance — ' + str(_cum_days) + ' days tracked</div>\n'
-        '  <div class="cum-grid">\n'
-        '    ' + _sec_hot + '\n'
-        '    ' + _sec_warm + '\n'
-        '    ' + _sec_watch + '\n'
-        '  </div>\n'
-        '</div></div>'
-    )
+    # Cumulative block
+    cum_html = f"""<div class="cum-wrap"><div class="cumulative">
+  <div class="cum-title">Cumulative Performance — {cum_stats["days"]} days tracked</div>
+  <div class="cum-grid">
+    {cum_section_html("🔥 HOT (rvol ≥100x)", cum_stats["hot"])}
+    {cum_section_html("⚡ WARM (rvol ≥10x)", cum_stats["warm"])}
+    {cum_section_html("👁 WATCH", cum_stats["watch"])}
+  </div>
+</div>"""
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -651,7 +584,6 @@ function downloadData() {
   <div class="hdr-r">
     <span class="pill">{today_str}</span>
     <span class="pill">Generated {gen_time}</span>
-    <button class="dl-btn" onclick="downloadData()">&#8595; Download Data</button>
   </div>
 </div>
 <div class="summary">

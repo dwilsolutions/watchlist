@@ -36,7 +36,6 @@ MARKET_HOLIDAYS = {
 }
 
 SESSIONS = {
-    "earlypremarket": ("Early Pre-Market", "First look · overnight gappers · ~4:00 AM ET"),
     "premarket":      ("Pre-Market",       "Confirmed setups · pre-Robinhood open · ~6:55 AM ET"),
     "marketopen":     ("Market Open",      "Pre-market momentum &amp; gap ups · ~8:30 AM ET"),
     "midday":         ("Midday",           "VWAP reclaims &amp; second entries · ~12:30 PM ET"),
@@ -58,8 +57,8 @@ def next_trading_day(from_date):
 
 def trading_date_for_session(session, now_et):
     today = now_et.date()
-    if session in ("premarket", "earlypremarket"):
-        # Night scan is always for the NEXT trading day
+    if session == "premarket":
+        # Pre-market scan is for the NEXT trading day
         return next_trading_day(today)
     else:
         # Same-day sessions: use today if it's a trading day
@@ -332,7 +331,7 @@ def score_row(row, session="", prior_runners=None):
         if _prior_outcome:
             _base_penalty = {"monster": -18, "big_runner": -15, "runner": -10}.get(_prior_outcome, 0)
             _session_mult = {
-                "earlypremarket": 1.0, "premarket": 1.0,
+                "premarket": 1.0,
                 "marketopen": 0.7, "midday": 0.5, "afterhours": 0.4,
             }.get(session, 1.0)
             _penalty = round(_base_penalty * _session_mult)
@@ -581,7 +580,6 @@ a{color:inherit;text-decoration:none;}
 """
 
 SESSION_COLORS = {
-    "earlypremarket": "#1a4a8a",   # deep blue — night sky
     "premarket":      "#6b3fa0",   # purple — dawn
     "marketopen":     "#c07b1a",   # amber — sunrise
     "midday":         "#3a9c5f",   # green — midday
@@ -723,7 +721,7 @@ body{{background:var(--bg);color:var(--text);font-family:var(--mono);}}
 def fetch_vwap(tickers, session, now_et):
     """Fetch real VWAP for each ticker. Only meaningful for midday and powerhour sessions."""
     # Night and premarket run before/at market open — no meaningful intraday VWAP yet
-    if session in ("earlypremarket", "premarket", "marketopen"):
+    if session in ("premarket", "marketopen"):
         return {}
     try:
         import yfinance as yf
@@ -842,29 +840,12 @@ def main():
     # Load prior day runners for penalty
     prior_runners = load_prior_runners(trading_day, os.path.join(OUTPUT_DIR, "data"))
 
-    # For earlypremarket: enrich each ticker with fresh Finviz fundamentals
-    # since screener CSV returns 0.0 for float/short after market close
-    if session == "earlypremarket":
-        print(f"  [+] Fetching fresh fundamentals from Finviz for {len(unique)} tickers...")
-        import time as _time
-        for r in unique:
-            ticker = r.get("Ticker", "")
-            if not ticker: continue
-            fundamentals = fetch_finviz_fundamentals(ticker)
-            # Only overwrite if we got a better value
-            if fundamentals.get("float_m", 0) > 0:
-                r["Shares Float"] = str(fundamentals["float_m"])
-            if fundamentals.get("short_pct", 0) > 0:
-                r["Short Float"] = str(fundamentals["short_pct"])
-            _time.sleep(0.3)  # be polite to Finviz
-
     results = [score_row(r, session=session, prior_runners=prior_runners) for r in unique]
     results = apply_sector_bonus(results)
     results.sort(key=lambda x: x["total"], reverse=True)
 
     live     = is_market_live(unique)
     html     = render_html(results, session, trading_day, label, note, gen_time, market_live=live)
-    # Stamp every build so git always sees a real change and never skips the commit
     html     = html.replace("</head>", f"<!-- built {now_et.strftime('%Y-%m-%dT%H:%M:%S')} --></head>", 1)
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -877,11 +858,10 @@ def main():
 
     # 2. Fixed permanent URL — WHOP embeds always point here, never changes
     FIXED_NAMES = {
-        "earlypremarket": "earlypremarket.html",
-        "premarket":      "premarket.html",
-        "marketopen":     "marketopen.html",
-        "midday":         "midday.html",
-        "afterhours":     "afterhours.html",
+        "premarket":  "premarket.html",
+        "marketopen": "marketopen.html",
+        "midday":     "midday.html",
+        "afterhours": "afterhours.html",
     }
     fixed_name = FIXED_NAMES[session]
     fixed_path = os.path.join(OUTPUT_DIR, fixed_name)
