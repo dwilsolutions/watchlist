@@ -1,46 +1,45 @@
 {
   "session": "marketopen",
   "label": "Market Open",
-  "date": "2026-05-12",
+  "date": "2026-05-13",
   "generated": "09:25 AM ET",
   "tickers": [
     {
-      "ticker": "BZFD",
-      "company": "BuzzFeed Inc",
-      "sector": "Communication Services",
-      "scan": "Mid Cap",
-      "score": 100,
+      "ticker": "QUCY",
+      "company": "Quantum Cyber NV",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 77,
       "tier": "buy",
-      "entry": 1.84,
-      "entry_label": "Break above $1.83",
+      "entry": 0.65,
+      "entry_label": "Break above $0.65",
       "range_str": "",
-      "prev_close": 0.73,
-      "prev_high": 1.83,
+      "prev_close": 0.32,
+      "prev_high": 0.65,
       "fib_levels": [
         [
           "Prev High",
-          1.83
+          0.65
         ],
         [
           "First target",
-          2.13
+          0.74
         ],
         [
           "Second target",
-          2.51
+          0.85
         ],
         [
           "Extended",
-          2.93
+          0.98
         ]
       ],
-      "price_at_scan": 1.68,
-      "gap": 105.51,
-      "rvol": 1348.0,
+      "price_at_scan": 0.56,
+      "gap": -2.2,
+      "rvol": 2442.43,
       "flags": [
         "CONTINUATION",
-        "GAP QUALITY",
-        "CATALYST \u00b7 8-K",
+        "CATALYST \u00b7 M&A",
         "SECTOR MOMENTUM"
       ]
     },
@@ -49,181 +48,150 @@
       "company": "Dreamland Ltd",
       "sector": "Communication Services",
       "scan": "Low Float",
-      "score": 80,
-      "tier": "buy",
-      "entry": 2.62,
-      "entry_label": "Break above $2.61",
+      "score": 62,
+      "tier": "monitor",
+      "entry": 3.73,
+      "entry_label": "Break above $3.71",
       "range_str": "",
-      "prev_close": 1.04,
-      "prev_high": 2.61,
+      "prev_close": 2.36,
+      "prev_high": 3.71,
       "fib_levels": [
         [
           "Prev High",
-          2.61
+          3.71
         ],
         [
           "First target",
-          3.04
+          4.08
         ],
         [
           "Second target",
-          3.58
+          4.54
         ],
         [
           "Extended",
-          4.18
+          5.06
         ]
       ],
-      "price_at_scan": 1.72,
-      "gap": 0.0,
-      "rvol": 348.03,
+      "price_at_scan": 2.94,
+      "gap": 38.3,
+      "rvol": 82.97,
       "flags": [
         "CONTINUATION",
+        "CATALYST \u00b7 DEAL",
+        "PRIOR DAY RUNNER",
         "SECTOR MOMENTUM"
       ]
     },
     {
-      "ticker": "CNCK",
-      "company": "Coincheck Group NV",
-      "sector": "Financial",
-      "scan": "Low Float",
-      "score": 75,
-      "tier": "buy",
-      "entry": 2.81,
-      "entry_label": "Break above $2.80",
-      "range_str": "",
-      "prev_close": 1.75,
-      "prev_high": 2.8,
-      "fib_levels": [
-        [
-          "Prev High",
-          2.8
-        ],
-        [
-          "First target",
-          3.09
-        ],
-        [
-          "Second target",
-          3.45
-        ],
-        [
-          "Extended",
-          3.85
-        ]
-      ],
-      "price_at_scan": 2.47,
-      "gap": 0.57,
-      "rvol": 5041.69,
-      "flags": [
-        "CONTINUATION",
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "XOS",
-      "company": "Xos Inc",
+      "ticker": "AEHL",
+      "company": "Antelope Enterprise Holdings Ltd",
       "sector": "Industrials",
       "scan": "Low Float",
-      "score": 67,
-      "tier": "buy",
-      "entry": 2.91,
-      "entry_label": "Break above $2.90",
+      "score": 61,
+      "tier": "monitor",
+      "entry": 3.34,
+      "entry_label": "Break above $3.32",
       "range_str": "",
-      "prev_close": 1.89,
-      "prev_high": 2.9,
+      "prev_close": 2.11,
+      "prev_high": 3.32,
       "fib_levels": [
         [
           "Prev High",
-          2.9
+          3.32
         ],
         [
           "First target",
-          3.17
+          3.65
         ],
         [
           "Second target",
-          3.52
+          4.07
         ],
         [
           "Extended",
-          3.91
+          4.53
         ]
       ],
-      "price_at_scan": 2.1,
-      "gap": 39.15,
-      "rvol": 963.62,
+      "price_at_scan": 2.89,
+      "gap": 10.43,
+      "rvol": 54.21,
       "flags": [
-        "SECTOR MOMENTUM"
+        "CONTINUATION",
+        "GAP QUALITY",
+        "PRIOR DAY RUNNER"
       ]
     },
     {
-      "ticker": "AIIO",
-      "company": "Robo.ai Inc",
+      "ticker": "OCG",
+      "company": "Oriental Culture Holding Ltd",
       "sector": "Consumer Cyclical",
       "scan": "Low Float",
-      "score": 65,
-      "tier": "buy",
-      "entry": 1.44,
-      "entry_label": "Current $1.43",
-      "range_str": " \u2014 range to $1.51",
-      "prev_close": 1.13,
-      "prev_high": 1.43,
+      "score": 61,
+      "tier": "monitor",
+      "entry": 2.99,
+      "entry_label": "Break above $2.98",
+      "range_str": "",
+      "prev_close": 1.86,
+      "prev_high": 2.98,
       "fib_levels": [
         [
+          "Prev High",
+          2.98
+        ],
+        [
           "First target",
-          1.51
+          3.28
         ],
         [
           "Second target",
-          1.62
+          3.67
         ],
         [
           "Extended",
-          1.73
+          4.1
         ]
       ],
-      "price_at_scan": 1.43,
-      "gap": -3.54,
-      "rvol": 25.26,
+      "price_at_scan": 2.3,
+      "gap": 50.54,
+      "rvol": 504.93,
       "flags": [
-        "CONTINUATION",
         "SECTOR MOMENTUM"
       ]
     },
     {
-      "ticker": "HTCO",
-      "company": "High-Trend International Group",
-      "sector": "Industrials",
-      "scan": "Low Float",
-      "score": 53,
+      "ticker": "WGRX",
+      "company": "Wellgistics Health Inc",
+      "sector": "Healthcare",
+      "scan": "Mid Cap",
+      "score": 59,
       "tier": "monitor",
-      "entry": 11.03,
-      "entry_label": "Break above $10.98",
+      "entry": 0.14,
+      "entry_label": "Break above $0.14",
       "range_str": "",
-      "prev_close": 7.05,
-      "prev_high": 10.98,
+      "prev_close": 0.08,
+      "prev_high": 0.14,
       "fib_levels": [
         [
           "Prev High",
-          10.98
+          0.14
         ],
         [
           "First target",
-          12.05
+          0.16
         ],
         [
           "Second target",
-          13.41
+          0.18
         ],
         [
           "Extended",
-          14.91
+          0.2
         ]
       ],
-      "price_at_scan": 9.08,
-      "gap": 3.26,
-      "rvol": 162.26,
+      "price_at_scan": 0.12,
+      "gap": 1.4,
+      "rvol": 83.99,
       "flags": [
         "SECTOR MOMENTUM"
       ]
@@ -233,21 +201,35 @@
       "company": "Work Medical Technology Group Ltd",
       "sector": "Healthcare",
       "scan": "Low Float",
-      "score": 51,
+      "score": 50,
       "tier": "monitor",
-      "entry": 2.79,
-      "entry_label": "Break above $2.78",
+      "entry": 11.72,
+      "entry_label": "Break above $11.66",
       "range_str": "",
-      "prev_close": 3.92,
-      "prev_high": 2.78,
-      "fib_levels": [],
-      "price_at_scan": 2.56,
-      "gap": -38.7,
-      "rvol": 66.47,
+      "prev_close": 6.66,
+      "prev_high": 11.66,
+      "fib_levels": [
+        [
+          "Prev High",
+          11.66
+        ],
+        [
+          "First target",
+          13.02
+        ],
+        [
+          "Second target",
+          14.75
+        ],
+        [
+          "Extended",
+          16.66
+        ]
+      ],
+      "price_at_scan": 1.2,
+      "gap": 55.26,
+      "rvol": 362.48,
       "flags": [
-        "CONTINUATION",
-        "CATALYST \u00b7 DEAL",
-        "CRASHED \u00b7 GAP DOWN",
         "PRIOR DAY RUNNER",
         "SECTOR MOMENTUM"
       ]
