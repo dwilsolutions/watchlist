@@ -1,0 +1,204 @@
+{
+  "date": "2026-05-13",
+  "session": "premarket",
+  "generated": "08:03 AM ET",
+  "tickers": [
+    {
+      "ticker": "ALP",
+      "scan": "Low Float",
+      "company": "Alpha Compute Corp",
+      "sector": "Financial",
+      "price": 0.25,
+      "change": -9.02,
+      "rvol": 13.9,
+      "float_m": 19.64,
+      "short_pct": 4.5,
+      "days_cover": 99.0,
+      "spike_pct": 262.6,
+      "news": "Alpha Compute Closes $32.2 Million Revenue Contract with AI Lab Customer",
+      "news_url": "https://elite.finviz.com/news/353471/alpha-compute-closes-322-million-revenue-contract-with-ai-lab-customer",
+      "score": 0.75,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "CATALYST \u00b7 PIVOT",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +263%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": "Feb 26, 2026",
+        "earnings_days": -76,
+        "eightk_filed": "2026-05-12",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.33,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.2583,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.3795,
+        "entry3_note": "Makes new highs",
+        "stop": 0.208,
+        "stop_note": "Prior day low",
+        "target1": 0.4198,
+        "target1_pct": 27.2,
+        "target2": 0.5339,
+        "target2_pct": 61.8,
+        "target3": 0.8639,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.25",
+      "rvol_display": "14x",
+      "float_display": "19.6M",
+      "rank": "hot"
+    },
+    {
+      "ticker": "QUCY",
+      "scan": "Low Float",
+      "company": "Quantum Cyber NV",
+      "sector": "Healthcare",
+      "price": 0.52,
+      "change": 62.58,
+      "rvol": 201.83,
+      "float_m": 10.68,
+      "short_pct": 8.99,
+      "days_cover": 99.0,
+      "spike_pct": 35.6,
+      "news": "Quantum Cyber Aligns Strategy With Trump Administration's National Cyber Security Framework, Targets Acquisitions in Qua",
+      "news_url": "https://elite.finviz.com/news/337909/quantum-cyber-aligns-strategy-with-trump-administrations-national-cyber-security-framework-targets-acquisitions-in-quantum-and-cyber-defense-sectors",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "CATALYST \u00b7 M&A",
+          "catalyst"
+        ]
+      ],
+      "dates": {
+        "earnings": "Apr 14, 2026",
+        "earnings_days": -29,
+        "eightk_filed": "2026-05-08",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.48,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.4473,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.552,
+        "entry3_note": "Makes new highs",
+        "stop": 0.321,
+        "stop_note": "Prior day low",
+        "target1": 0.6106,
+        "target1_pct": 27.2,
+        "target2": 0.7766,
+        "target2_pct": 61.8,
+        "target3": 1.2566,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.52",
+      "rvol_display": "202x",
+      "float_display": "10.7M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "FCHL",
+      "scan": "Low Float",
+      "company": "Fitness Champs Holdings Ltd",
+      "sector": "Consumer Defensive",
+      "price": 1.87,
+      "change": 40.7,
+      "rvol": 455.95,
+      "float_m": 0.38,
+      "short_pct": 10.36,
+      "days_cover": 99.0,
+      "spike_pct": 249.2,
+      "news": "FCHL to Effect Share Consolidation on May 4, 2026",
+      "news_url": "https://elite.finviz.com/news/349456/fchl-to-effect-share-consolidation-on-may-4-2026",
+      "score": 0.375,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "\u26a0 DILUTIVE OFFERING",
+          "danger"
+        ],
+        [
+          "PREV SPIKE +249%",
+          "gap"
+        ],
+        [
+          "SHORT INT 10%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 4.41,
+        "entry1_note": "Break above 10d high",
+        "entry2": 8.407,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 5.0715,
+        "entry3_note": "Makes new highs",
+        "stop": 1.52,
+        "stop_note": "Prior day low",
+        "target1": 5.6095,
+        "target1_pct": 27.2,
+        "target2": 7.1354,
+        "target2_pct": 61.8,
+        "target3": 11.5454,
+        "target3_pct": 161.8
+      },
+      "price_display": "$1.87",
+      "rvol_display": "456x",
+      "float_display": "0.4M",
+      "rank": "avoid"
+    }
+  ]
+}
