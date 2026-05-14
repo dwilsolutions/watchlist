@@ -1,84 +1,162 @@
 {
   "session": "marketopen",
   "label": "Market Open",
-  "date": "2026-05-13",
+  "date": "2026-05-14",
   "generated": "09:25 AM ET",
   "tickers": [
+    {
+      "ticker": "SNAL",
+      "company": "Snail Inc",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 100,
+      "tier": "buy",
+      "entry": 1.6,
+      "entry_label": "Break above $1.59",
+      "range_str": "",
+      "prev_close": 0.5,
+      "prev_high": 1.59,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.59
+        ],
+        [
+          "First target",
+          1.89
+        ],
+        [
+          "Second target",
+          2.26
+        ],
+        [
+          "Extended",
+          2.68
+        ]
+      ],
+      "price_at_scan": 1.4,
+      "gap": 75.26,
+      "rvol": 144.74,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "CATALYST \u00b7 DEAL",
+        "SECTOR MOMENTUM"
+      ]
+    },
     {
       "ticker": "QUCY",
       "company": "Quantum Cyber NV",
       "sector": "Healthcare",
       "scan": "Low Float",
-      "score": 77,
+      "score": 99,
       "tier": "buy",
-      "entry": 0.65,
-      "entry_label": "Break above $0.65",
+      "entry": 2.12,
+      "entry_label": "Break above $2.11",
       "range_str": "",
-      "prev_close": 0.32,
-      "prev_high": 0.65,
+      "prev_close": 1.34,
+      "prev_high": 2.11,
       "fib_levels": [
         [
           "Prev High",
-          0.65
+          2.11
         ],
         [
           "First target",
-          0.74
+          2.32
         ],
         [
           "Second target",
-          0.85
+          2.59
         ],
         [
           "Extended",
-          0.98
+          2.88
         ]
       ],
-      "price_at_scan": 0.56,
-      "gap": -2.2,
-      "rvol": 2442.43,
+      "price_at_scan": 1.9,
+      "gap": 12.63,
+      "rvol": 75.71,
       "flags": [
         "CONTINUATION",
-        "CATALYST \u00b7 M&A",
+        "GAP QUALITY",
+        "PRIOR DAY RUNNER",
         "SECTOR MOMENTUM"
       ]
     },
     {
-      "ticker": "TDIC",
-      "company": "Dreamland Ltd",
-      "sector": "Communication Services",
+      "ticker": "ALP",
+      "company": "Alpha Compute Corp",
+      "sector": "Financial",
       "scan": "Low Float",
-      "score": 62,
-      "tier": "monitor",
-      "entry": 3.73,
-      "entry_label": "Break above $3.71",
+      "score": 74,
+      "tier": "buy",
+      "entry": 0.52,
+      "entry_label": "Break above $0.52",
       "range_str": "",
-      "prev_close": 2.36,
-      "prev_high": 3.71,
+      "prev_close": 0.27,
+      "prev_high": 0.52,
       "fib_levels": [
         [
           "Prev High",
-          3.71
+          0.52
         ],
         [
           "First target",
-          4.08
+          0.59
         ],
         [
           "Second target",
-          4.54
+          0.67
         ],
         [
           "Extended",
-          5.06
+          0.77
         ]
       ],
-      "price_at_scan": 2.94,
-      "gap": 38.3,
-      "rvol": 82.97,
+      "price_at_scan": 0.43,
+      "gap": 25.83,
+      "rvol": 423.1,
       "flags": [
         "CONTINUATION",
-        "CATALYST \u00b7 DEAL",
+        "GAP QUALITY"
+      ]
+    },
+    {
+      "ticker": "AIIO",
+      "company": "Robo.ai Inc",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 68,
+      "tier": "buy",
+      "entry": 4.91,
+      "entry_label": "Break above $4.89",
+      "range_str": "",
+      "prev_close": 2.61,
+      "prev_high": 4.89,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.89
+        ],
+        [
+          "First target",
+          5.51
+        ],
+        [
+          "Second target",
+          6.3
+        ],
+        [
+          "Extended",
+          7.17
+        ]
+      ],
+      "price_at_scan": 4.24,
+      "gap": 6.9,
+      "rvol": 135.59,
+      "flags": [
+        "CONTINUATION",
         "PRIOR DAY RUNNER",
         "SECTOR MOMENTUM"
       ]
@@ -88,21 +166,57 @@
       "company": "Antelope Enterprise Holdings Ltd",
       "sector": "Industrials",
       "scan": "Low Float",
-      "score": 61,
-      "tier": "monitor",
-      "entry": 3.34,
-      "entry_label": "Break above $3.32",
+      "score": 65,
+      "tier": "buy",
+      "entry": 6.3,
+      "entry_label": "Break above $6.27",
       "range_str": "",
-      "prev_close": 2.11,
-      "prev_high": 3.32,
+      "prev_close": 3.62,
+      "prev_high": 6.27,
       "fib_levels": [
         [
           "Prev High",
-          3.32
+          6.27
         ],
         [
           "First target",
-          3.65
+          6.99
+        ],
+        [
+          "Second target",
+          7.91
+        ],
+        [
+          "Extended",
+          8.92
+        ]
+      ],
+      "price_at_scan": 5.18,
+      "gap": 19.59,
+      "rvol": 41.73,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "MOBX",
+      "company": "Mobix Labs Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 65,
+      "tier": "buy",
+      "entry": 3.2,
+      "entry_label": "Break above $3.18",
+      "range_str": " \u2014 range to $3.57",
+      "prev_close": 1.74,
+      "prev_high": 3.18,
+      "fib_levels": [
+        [
+          "First target",
+          3.57
         ],
         [
           "Second target",
@@ -110,90 +224,14 @@
         ],
         [
           "Extended",
-          4.53
+          4.62
         ]
       ],
-      "price_at_scan": 2.89,
-      "gap": 10.43,
-      "rvol": 54.21,
+      "price_at_scan": 3.17,
+      "gap": 3.45,
+      "rvol": 81.55,
       "flags": [
-        "CONTINUATION",
-        "GAP QUALITY",
-        "PRIOR DAY RUNNER"
-      ]
-    },
-    {
-      "ticker": "OCG",
-      "company": "Oriental Culture Holding Ltd",
-      "sector": "Consumer Cyclical",
-      "scan": "Low Float",
-      "score": 61,
-      "tier": "monitor",
-      "entry": 2.99,
-      "entry_label": "Break above $2.98",
-      "range_str": "",
-      "prev_close": 1.86,
-      "prev_high": 2.98,
-      "fib_levels": [
-        [
-          "Prev High",
-          2.98
-        ],
-        [
-          "First target",
-          3.28
-        ],
-        [
-          "Second target",
-          3.67
-        ],
-        [
-          "Extended",
-          4.1
-        ]
-      ],
-      "price_at_scan": 2.3,
-      "gap": 50.54,
-      "rvol": 504.93,
-      "flags": [
-        "SECTOR MOMENTUM"
-      ]
-    },
-    {
-      "ticker": "WGRX",
-      "company": "Wellgistics Health Inc",
-      "sector": "Healthcare",
-      "scan": "Mid Cap",
-      "score": 59,
-      "tier": "monitor",
-      "entry": 0.14,
-      "entry_label": "Break above $0.14",
-      "range_str": "",
-      "prev_close": 0.08,
-      "prev_high": 0.14,
-      "fib_levels": [
-        [
-          "Prev High",
-          0.14
-        ],
-        [
-          "First target",
-          0.16
-        ],
-        [
-          "Second target",
-          0.18
-        ],
-        [
-          "Extended",
-          0.2
-        ]
-      ],
-      "price_at_scan": 0.12,
-      "gap": 1.4,
-      "rvol": 83.99,
-      "flags": [
-        "SECTOR MOMENTUM"
+        "CONTINUATION"
       ]
     },
     {
@@ -203,34 +241,55 @@
       "scan": "Low Float",
       "score": 50,
       "tier": "monitor",
-      "entry": 11.72,
-      "entry_label": "Break above $11.66",
+      "entry": 2.49,
+      "entry_label": "Break above $2.48",
       "range_str": "",
-      "prev_close": 6.66,
-      "prev_high": 11.66,
+      "prev_close": 2.76,
+      "prev_high": 2.48,
+      "fib_levels": [],
+      "price_at_scan": 2.21,
+      "gap": -13.41,
+      "rvol": 52.42,
+      "flags": [
+        "CONTINUATION",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ]
+    },
+    {
+      "ticker": "LNKS",
+      "company": "Linkers Industries Ltd",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 42,
+      "tier": "monitor",
+      "entry": 2.48,
+      "entry_label": "Break above $2.47",
+      "range_str": "",
+      "prev_close": 1.35,
+      "prev_high": 2.47,
       "fib_levels": [
         [
           "Prev High",
-          11.66
+          2.47
         ],
         [
           "First target",
-          13.02
+          2.77
         ],
         [
           "Second target",
-          14.75
+          3.16
         ],
         [
           "Extended",
-          16.66
+          3.59
         ]
       ],
-      "price_at_scan": 1.2,
-      "gap": 55.26,
-      "rvol": 362.48,
+      "price_at_scan": 1.8,
+      "gap": 47.41,
+      "rvol": 206.54,
       "flags": [
-        "PRIOR DAY RUNNER",
         "SECTOR MOMENTUM"
       ]
     }
