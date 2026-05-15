@@ -368,7 +368,9 @@ def render_html(buckets, gen_time, market_status):
             '<div class="dp-hdr-r">'
             '{}'.format(score_html) +
             '<span class="bucket-badge" style="color:{c};border-color:{c}">{}</span>'.format(bucket_label, c=bucket_color) +
-            '<a class="chart-link" href="https://finviz.com/quote.ashx?t={}" target="_blank">Chart &#8599;</a>'.format(sym) +
+            '<a class="chart-link info" href="https://finviz.com/chart.ashx?t={}&ty=c&ta=0&p=i5&s=l" target="_blank">Chart &#8599;</a>'.format(sym) +
+            '<a class="chart-link" href="https://www.tradingview.com/chart/?symbol={}" target="_blank">TV &#8599;</a>'.format(sym) +
+            '<a class="chart-link" href="https://finviz.com/quote.ashx?t={}" target="_blank">Quote &#8599;</a>'.format(sym) +
             '</div></div>'
             '<div class="dp-metrics">'
             '<div class="met-card"><div class="met-lbl">Live Price</div><div class="met-val">${:.2f}</div></div>'.format(price) +
@@ -379,7 +381,6 @@ def render_html(buckets, gen_time, market_status):
             '<div class="dp-signals">{}</div>'.format(sigs_html) +
             flags_section +
             '<div class="dp-entry">{}</div>'.format(entry_lbl) +
-            '<div class="dp-chart"><img src="https://finviz.com/chart.ashx?t={}&ty=c&ta=0&p=i5&s=l" alt="{} chart" onerror="this.style.display=\'none\'"></div>'.format(sym, sym) +
             '</div>'
         )
 
@@ -459,9 +460,10 @@ body { background:var(--bg); color:var(--text); font-family:var(--sans); font-si
 .dp-hdr-r { display:flex; align-items:center; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
 .score-badge { font-family:var(--mono); font-size:12px; font-weight:700; background:rgba(92,201,138,0.12); color:var(--green); border:1px solid rgba(92,201,138,0.25); border-radius:20px; padding:3px 10px; }
 .bucket-badge { font-size:10px; font-weight:700; letter-spacing:0.05em; padding:3px 10px; border-radius:20px; border:1px solid; }
-.chart-link { font-family:var(--mono); font-size:10px; color:var(--muted); text-decoration:none; padding:3px 8px; border:1px solid var(--bd); border-radius:4px; }
+.chart-link { font-family:var(--mono); font-size:11px; color:var(--muted); text-decoration:none; padding:3px 8px; border:1px solid var(--bd); border-radius:4px; }
 .chart-link:hover { color:var(--text); border-color:var(--muted); }
-.scan-pill { font-size:9px; font-weight:700; padding:2px 8px; border-radius:10px; letter-spacing:0.04em; vertical-align:middle; }
+.chart-link.info { color:var(--blue); border-color:rgba(74,158,218,0.3); }
+.chart-link.info:hover { color:#7dbee8; }.scan-pill { font-size:9px; font-weight:700; padding:2px 8px; border-radius:10px; letter-spacing:0.04em; vertical-align:middle; }
 .scan-pill.lf { background:rgba(92,201,138,0.12); color:var(--green); }
 .scan-pill.mc { background:rgba(74,158,218,0.12); color:var(--blue); }
 .scan-pill.live { background:rgba(201,125,212,0.12); color:#c97dd4; }
@@ -476,7 +478,6 @@ body { background:var(--bg); color:var(--text); font-family:var(--sans); font-si
 .dp-flags { display:flex; flex-wrap:wrap; gap:6px; }
 .flag { font-size:10px; background:var(--bg3); color:var(--muted); border:1px solid var(--bd); border-radius:4px; padding:2px 8px; }
 .dp-entry { font-size:12px; color:var(--muted); background:var(--bg3); border:1px solid var(--bd); border-radius:6px; padding:8px 12px; font-family:var(--mono); }
-.dp-chart { max-height:280px; overflow:hidden; border-radius:6px; border:1px solid var(--bd); }.dp-chart img { width:100%; display:block; }
 .no-data { padding:40px; text-align:center; color:var(--muted); font-size:12px; }.help-btn { font-family:var(--mono); font-size:10px; padding:3px 10px; border-radius:20px; background:rgba(74,158,218,0.1); color:var(--blue); border:1px solid rgba(74,158,218,0.25); cursor:pointer; margin-left:4px; }.help-btn:hover { background:rgba(74,158,218,0.2); }.help-panel { display:none; background:var(--bg2); border-bottom:1px solid var(--bd); padding:14px 20px; flex-shrink:0; }.help-panel.open { display:block; }.help-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:8px; }.help-item { display:flex; flex-direction:column; gap:3px; padding:8px 10px; background:var(--bg3); border-radius:6px; border:1px solid var(--bd); }.hk { font-size:11px; font-weight:700; font-family:var(--mono); }.hv { font-size:11px; color:var(--muted); line-height:1.4; }
 @media(max-width:700px) {
   html,body { overflow:auto; }
