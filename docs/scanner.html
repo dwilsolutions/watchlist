@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="300">
+<title>Watchlist · Scanner</title>
+<style>
+:root {
+  --bg:      #0a0f0a;
+  --bg2:     #0f160f;
+  --bg3:     #141c14;
+  --border:  #1e2a1e;
+  --green:   #5cc98a;
+  --blue:    #4a9eda;
+  --gold:    #e6a817;
+  --red:     #e05c5c;
+  --muted:   #4a5a4a;
+  --text:    #c8d8c8;
+  --mono:    'SF Mono','Fira Mono',monospace;
+  --sans:    'Inter','Helvetica Neue',sans-serif;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:var(--bg); color:var(--text); font-family:var(--sans); font-size:13px; }
+
+/* Header */
+.hdr { background:var(--bg2); border-bottom:1px solid var(--border); padding:14px 20px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+.hdr-title { display:flex; align-items:center; gap:10px; }
+.hdr-brand { font-size:13px; color:var(--muted); letter-spacing:0.05em; }
+.hdr-name { font-size:15px; font-weight:700; color:var(--green); letter-spacing:0.03em; }
+.hdr-r { display:flex; align-items:center; gap:8px; }
+.status-dot { width:7px; height:7px; border-radius:50%; background:#5cc98a; display:inline-block; }
+.status-lbl { font-family:var(--mono); font-size:10px; color:#5cc98a; letter-spacing:0.08em; }
+.pill { font-family:var(--mono); font-size:10px; color:var(--muted); background:var(--bg3); border:1px solid var(--border); border-radius:20px; padding:3px 9px; }
+
+/* Summary bar */
+.summary { display:flex; gap:0; border-bottom:1px solid var(--border); }
+.sum-item { flex:1; padding:14px 20px; text-align:center; border-right:1px solid var(--border); }
+.sum-item:last-child { border-right:none; }
+.sum-num { font-size:26px; font-weight:700; font-family:var(--mono); }
+.sum-num.green { color:var(--green); }
+.sum-num.gold  { color:var(--gold); }
+.sum-num.blue  { color:var(--blue); }
+.sum-num.white { color:#fff; }
+.sum-lbl { font-size:9px; letter-spacing:0.1em; color:var(--muted); margin-top:3px; text-transform:uppercase; }
+
+/* Main layout */
+.main { padding:20px; max-width:1100px; margin:0 auto; display:flex; flex-direction:column; gap:24px; }
+
+/* Sections */
+.section { display:flex; flex-direction:column; gap:12px; }
+.sec-hdr { display:flex; align-items:center; justify-content:space-between; padding:8px 12px; background:var(--bg2); border:1px solid var(--border); border-radius:6px; font-size:11px; font-weight:600; letter-spacing:0.06em; color:var(--muted); text-transform:uppercase; }
+.sec-cnt { background:var(--bg3); border:1px solid var(--border); border-radius:10px; padding:1px 8px; font-family:var(--mono); font-size:10px; color:var(--text); }
+.no-data { font-size:11px; color:var(--muted); padding:16px; text-align:center; }
+.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:10px; }
+
+/* Cards */
+.card { background:var(--bg2); border:1px solid var(--border); border-radius:8px; padding:14px; display:flex; flex-direction:column; gap:10px; }
+.card-triggered { border-color:rgba(92,201,138,0.4); background:rgba(92,201,138,0.04); }
+.card-watch      { border-color:rgba(230,168,23,0.3); background:rgba(230,168,23,0.03); }
+.card-top { display:flex; align-items:flex-start; justify-content:space-between; }
+.card-left { display:flex; flex-direction:column; gap:2px; }
+.card-right { display:flex; align-items:center; gap:6px; }
+.sym { font-size:16px; font-weight:800; color:#fff; font-family:var(--mono); letter-spacing:0.04em; }
+.co  { font-size:10px; color:var(--muted); }
+.scan-pill { font-size:9px; padding:2px 7px; border-radius:10px; letter-spacing:0.04em; font-weight:600; }
+.scan-pill.low-float { background:rgba(92,201,138,0.12); color:var(--green); border:1px solid rgba(92,201,138,0.2); }
+.scan-pill.mid-cap   { background:rgba(74,158,218,0.12); color:var(--blue);  border:1px solid rgba(74,158,218,0.2); }
+.scan-pill.live      { background:rgba(201,125,212,0.12); color:#c97dd4;     border:1px solid rgba(201,125,212,0.2); }
+.score-pill { font-size:10px; font-family:var(--mono); font-weight:700; padding:2px 7px; border-radius:10px; }
+.score-pill.hot  { background:rgba(92,201,138,0.15); color:var(--green); }
+.score-pill.warm { background:rgba(230,168,23,0.15);  color:var(--gold); }
+.score-pill.watch{ background:rgba(74,158,218,0.15);  color:var(--blue); }
+.signals { display:flex; flex-wrap:wrap; gap:5px; }
+.sig-badge { font-size:9px; font-weight:700; letter-spacing:0.06em; padding:2px 7px; border-radius:10px; border:1px solid; }
+.metrics { display:grid; grid-template-columns:1fr 1fr; gap:6px; }
+.met { background:var(--bg3); border-radius:5px; padding:6px 8px; display:flex; justify-content:space-between; align-items:center; }
+.met-l { font-size:9px; color:var(--muted); letter-spacing:0.05em; text-transform:uppercase; }
+.met-v { font-family:var(--mono); font-size:11px; font-weight:600; color:#fff; }
+.met-v.green { color:var(--green); }
+.met-v.red   { color:var(--red); }
+.pct { font-size:9px; color:var(--muted); font-weight:400; }
+
+/* Refresh bar */
+.refresh-bar { text-align:center; font-size:10px; color:var(--muted); padding:16px; border-top:1px solid var(--border); margin-top:8px; }
+
+@media(max-width:600px) {
+  .cards { grid-template-columns:1fr; }
+  .summary { flex-wrap:wrap; }
+  .sum-item { min-width:50%; }
+}
+</style>
+<!-- built 2026-05-15T10:24:36 --></head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-title">
+    <span class="hdr-brand">Watchlist ·</span>
+    <span class="hdr-name">Intraday Scanner</span>
+  </div>
+  <div class="hdr-r">
+    <span class="status-dot"></span>
+    <span class="status-lbl">MARKET OPEN</span>
+    <span class="pill">Updated 10:24 AM ET</span>
+    <span class="pill">32 tickers</span>
+  </div>
+</div>
+
+<div class="summary">
+  <div class="sum-item">
+    <div class="sum-num green">3</div>
+    <div class="sum-lbl">🔥 Triggered</div>
+  </div>
+  <div class="sum-item">
+    <div class="sum-num gold">13</div>
+    <div class="sum-lbl">⚡ Watching</div>
+  </div>
+  <div class="sum-item">
+    <div class="sum-num blue">16</div>
+    <div class="sum-lbl">👁 On Deck</div>
+  </div>
+  <div class="sum-item">
+    <div class="sum-num white">32</div>
+    <div class="sum-lbl">Total Universe</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="section"><div class="sec-hdr"><span>🔥 Triggered — Entry Break</span><span class="sec-cnt">3</span></div><div class="cards"><div class="card card-triggered">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">QUCY</span>
+      <span class="co">Quantum Cyber NV</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill low-float">Low Float</span>
+      <span class="score-pill hot">87</span>
+    </div>
+  </div>
+  <div class="signals"><span class="sig-badge" style="border-color:#5cc98a;color:#5cc98a">ENTRY BREAK</span><span class="sig-badge" style="border-color:#4a9eda;color:#4a9eda">ABOVE VWAP</span><span class="sig-badge" style="border-color:#e6a817;color:#e6a817">NEAR HOD</span></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$4.03</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v green">$3.01 <span class="pct">(+33.9% above entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$2.84</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$4.03</div></div>
+  </div>
+</div><div class="card card-triggered">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">HCWB</span>
+      <span class="co">HCW Biologics Inc</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill low-float">Low Float</span>
+      <span class="score-pill hot">84</span>
+    </div>
+  </div>
+  <div class="signals"><span class="sig-badge" style="border-color:#5cc98a;color:#5cc98a">ENTRY BREAK</span><span class="sig-badge" style="border-color:#4a9eda;color:#4a9eda">ABOVE VWAP</span></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$1.35</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v green">$1.20 <span class="pct">(+12.5% above entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$1.23</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$1.42</div></div>
+  </div>
+</div><div class="card card-triggered">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">BIYA</span>
+      <span class="co">Baiya International Group In</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill low-float">Low Float</span>
+      <span class="score-pill watch">64</span>
+    </div>
+  </div>
+  <div class="signals"><span class="sig-badge" style="border-color:#5cc98a;color:#5cc98a">ENTRY BREAK</span><span class="sig-badge" style="border-color:#4a9eda;color:#4a9eda">ABOVE VWAP</span></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$1.35</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v green">$1.31 <span class="pct">(+2.7% above entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$1.27</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$1.40</div></div>
+  </div>
+</div></div></div>
+  <div class="section"><div class="sec-hdr"><span>⚡ Watching — Approaching Entry</span><span class="sec-cnt">13</span></div><div class="cards"><div class="card card-watch">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">AUUD</span>
+      <span class="co">Auddia Inc</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill live">Live Mover</span>
+      
+    </div>
+  </div>
+  <div class="signals"><span class="sig-badge" style="border-color:#c97dd4;color:#c97dd4">LIVE MOVER</span></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$1.94</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$1.95 <span class="pct">(-0.4% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$2.02</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$2.28</div></div>
+  </div>
+</div><div class="card card-watch">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">ORGN</span>
+      <span class="co">Origin Materials Inc</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill live">Live Mover</span>
+      
+    </div>
+  </div>
+  <div class="signals"><span class="sig-badge" style="border-color:#c97dd4;color:#c97dd4">LIVE MOVER</span></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$1.62</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$1.63 <span class="pct">(-0.4% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$1.90</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$2.33</div></div>
+  </div>
+</div><div class="card card-watch">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">PIII</span>
+      <span class="co">P3 Health Partners Inc</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill live">Live Mover</span>
+      
+    </div>
+  </div>
+  <div class="signals"><span class="sig-badge" style="border-color:#4a9eda;color:#4a9eda">ABOVE VWAP</span><span class="sig-badge" style="border-color:#c97dd4;color:#c97dd4">LIVE MOVER</span></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$8.02</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$8.06 <span class="pct">(-0.5% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$8.02</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$9.82</div></div>
+  </div>
+</div><div class="card card-watch">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">GEMI</span>
+      <span class="co">Gemini Space Station Inc</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill live">Live Mover</span>
+      
+    </div>
+  </div>
+  <div class="signals"><span class="sig-badge" style="border-color:#c97dd4;color:#c97dd4">LIVE MOVER</span></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$5.99</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$6.03 <span class="pct">(-0.6% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$6.56</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$6.96</div></div>
+  </div>
+</div><div class="card card-watch">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">HUBC</span>
+      <span class="co">Hub Cyber Security Ltd</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill live">Live Mover</span>
+      
+    </div>
+  </div>
+  <div class="signals"><span class="sig-badge" style="border-color:#4a9eda;color:#4a9eda">ABOVE VWAP</span><span class="sig-badge" style="border-color:#c97dd4;color:#c97dd4">LIVE MOVER</span></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$0.17</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$0.18 <span class="pct">(-2.8% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$0.18</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$0.21</div></div>
+  </div>
+</div><div class="card card-watch">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">KULR</span>
+      <span class="co">KULR Technology Group Inc</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill mid-cap">Mid Cap</span>
+      <span class="score-pill watch">62</span>
+    </div>
+  </div>
+  <div class="signals"><span class="sig-badge" style="border-color:#4a9eda;color:#4a9eda">ABOVE VWAP</span><span class="sig-badge" style="border-color:#e6a817;color:#e6a817">NEAR HOD</span></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$3.78</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$3.89 <span class="pct">(-2.8% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$3.64</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$3.84</div></div>
+  </div>
+</div><div class="card card-watch">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">CSIQ</span>
+      <span class="co">Canadian Solar Inc</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill mid-cap">Mid Cap</span>
+      <span class="score-pill warm">68</span>
+    </div>
+  </div>
+  <div class="signals"></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$17.22</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$18.08 <span class="pct">(-4.8% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$17.37</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$17.93</div></div>
+  </div>
+</div><div class="card card-watch">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">GGRP</span>
+      <span class="co">Glimpse Group Inc</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill low-float">Low Float</span>
+      <span class="score-pill watch">44</span>
+    </div>
+  </div>
+  <div class="signals"><span class="sig-badge" style="border-color:#4a9eda;color:#4a9eda">ABOVE VWAP</span></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$0.55</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$0.58 <span class="pct">(-5.2% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$0.54</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$0.58</div></div>
+  </div>
+</div><div class="card card-watch">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">AEHL</span>
+      <span class="co">Antelope Enterprise Holdings</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill low-float">Low Float</span>
+      <span class="score-pill warm">65</span>
+    </div>
+  </div>
+  <div class="signals"><span class="sig-badge" style="border-color:#4a9eda;color:#4a9eda">ABOVE VWAP</span><span class="sig-badge" style="border-color:#e6a817;color:#e6a817">NEAR HOD</span></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$4.28</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$4.55 <span class="pct">(-5.9% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$3.87</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$4.28</div></div>
+  </div>
+</div><div class="card card-watch">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">AIIO</span>
+      <span class="co">Robo.ai Inc</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill low-float">Low Float</span>
+      <span class="score-pill watch">57</span>
+    </div>
+  </div>
+  <div class="signals"><span class="sig-badge" style="border-color:#4a9eda;color:#4a9eda">ABOVE VWAP</span></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$5.03</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$5.67 <span class="pct">(-11.3% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$4.74</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$5.50</div></div>
+  </div>
+</div><div class="card card-watch">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">SNAL</span>
+      <span class="co">Snail Inc</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill low-float">Low Float</span>
+      <span class="score-pill hot">94</span>
+    </div>
+  </div>
+  <div class="signals"><span class="sig-badge" style="border-color:#4a9eda;color:#4a9eda">ABOVE VWAP</span></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$1.28</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$1.53 <span class="pct">(-16.4% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$1.26</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$1.40</div></div>
+  </div>
+</div><div class="card card-watch">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">LNKS</span>
+      <span class="co">Linkers Industries Ltd</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill low-float">Low Float</span>
+      <span class="score-pill watch">59</span>
+    </div>
+  </div>
+  <div class="signals"><span class="sig-badge" style="border-color:#4a9eda;color:#4a9eda">ABOVE VWAP</span></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$1.68</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$2.15 <span class="pct">(-21.6% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$1.64</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$1.79</div></div>
+  </div>
+</div><div class="card card-watch">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">MLGO</span>
+      <span class="co">MicroAlgo Inc</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill low-float">Low Float</span>
+      <span class="score-pill warm">74</span>
+    </div>
+  </div>
+  <div class="signals"><span class="sig-badge" style="border-color:#4a9eda;color:#4a9eda">ABOVE VWAP</span></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$4.32</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$6.93 <span class="pct">(-37.6% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$4.05</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$4.50</div></div>
+  </div>
+</div></div></div>
+  <div class="section"><div class="sec-hdr"><span>👁 On Deck — On Watchlist</span><span class="sec-cnt">16</span></div><div class="cards"><div class="card card-ondeck">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">ARBE</span>
+      <span class="co">Arbe Robotics Ltd</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill mid-cap">Mid Cap</span>
+      <span class="score-pill hot">94</span>
+    </div>
+  </div>
+  <div class="signals"></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$1.04</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$1.16 <span class="pct">(-10.3% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$1.04</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$1.09</div></div>
+  </div>
+</div><div class="card card-ondeck">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">DGXX</span>
+      <span class="co">Digi Power X Inc</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill mid-cap">Mid Cap</span>
+      <span class="score-pill hot">85</span>
+    </div>
+  </div>
+  <div class="signals"></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$7.14</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$7.85 <span class="pct">(-9.0% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$7.20</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$7.75</div></div>
+  </div>
+</div><div class="card card-ondeck">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">SLE</span>
+      <span class="co">Super League Enterprise Inc</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill low-float">Low Float</span>
+      <span class="score-pill hot">80</span>
+    </div>
+  </div>
+  <div class="signals"></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$5.74</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$7.14 <span class="pct">(-19.6% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$6.24</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$7.06</div></div>
+  </div>
+</div><div class="card card-ondeck">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">LESL</span>
+      <span class="co">Leslies Inc</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill low-float">Low Float</span>
+      <span class="score-pill warm">74</span>
+    </div>
+  </div>
+  <div class="signals"></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$3.08</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$4.77 <span class="pct">(-35.4% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$3.75</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$4.19</div></div>
+  </div>
+</div><div class="card card-ondeck">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">JZXN</span>
+      <span class="co">Jiuzi Holdings Inc</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill low-float">Low Float</span>
+      <span class="score-pill warm">72</span>
+    </div>
+  </div>
+  <div class="signals"></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$1.20</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$1.75 <span class="pct">(-31.4% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$1.33</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$1.39</div></div>
+  </div>
+</div><div class="card card-ondeck">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">GTBP</span>
+      <span class="co">GT Biopharma Inc</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill mid-cap">Mid Cap</span>
+      <span class="score-pill warm">71</span>
+    </div>
+  </div>
+  <div class="signals"></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$0.40</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$0.44 <span class="pct">(-8.7% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$0.43</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$0.46</div></div>
+  </div>
+</div><div class="card card-ondeck">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">MRNO</span>
+      <span class="co">Murano Global Investments PL</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill low-float">Low Float</span>
+      <span class="score-pill warm">70</span>
+    </div>
+  </div>
+  <div class="signals"></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$0.43</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$0.61 <span class="pct">(-30.3% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$0.48</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$0.52</div></div>
+  </div>
+</div><div class="card card-ondeck">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">VLN</span>
+      <span class="co">Valens Semiconductor Ltd</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill mid-cap">Mid Cap</span>
+      <span class="score-pill warm">68</span>
+    </div>
+  </div>
+  <div class="signals"></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$3.20</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$3.39 <span class="pct">(-5.6% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$3.29</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$3.48</div></div>
+  </div>
+</div><div class="card card-ondeck">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">TDIC</span>
+      <span class="co">Dreamland Ltd</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill low-float">Low Float</span>
+      <span class="score-pill watch">58</span>
+    </div>
+  </div>
+  <div class="signals"></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$1.40</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$2.14 <span class="pct">(-34.6% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$1.53</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$1.76</div></div>
+  </div>
+</div><div class="card card-ondeck">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">EDBL</span>
+      <span class="co">Edible Garden AG Inc</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill low-float">Low Float</span>
+      <span class="score-pill watch">57</span>
+    </div>
+  </div>
+  <div class="signals"></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$0.42</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$0.65 <span class="pct">(-35.0% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$0.51</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$0.56</div></div>
+  </div>
+</div><div class="card card-ondeck">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">CREG</span>
+      <span class="co">Smart Powerr Corp</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill mid-cap">Mid Cap</span>
+      <span class="score-pill watch">57</span>
+    </div>
+  </div>
+  <div class="signals"></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$0.50</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$0.71 <span class="pct">(-29.9% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$0.53</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$0.59</div></div>
+  </div>
+</div><div class="card card-ondeck">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">MOBX</span>
+      <span class="co">Mobix Labs Inc</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill low-float">Low Float</span>
+      <span class="score-pill watch">57</span>
+    </div>
+  </div>
+  <div class="signals"></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$2.56</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$4.27 <span class="pct">(-40.2% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$2.60</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$2.71</div></div>
+  </div>
+</div><div class="card card-ondeck">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">ALP</span>
+      <span class="co">Alpha Compute Corp</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill low-float">Low Float</span>
+      <span class="score-pill watch">56</span>
+    </div>
+  </div>
+  <div class="signals"></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$0.32</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$0.43 <span class="pct">(-24.8% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$0.33</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$0.35</div></div>
+  </div>
+</div><div class="card card-ondeck">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">AMZE</span>
+      <span class="co">Amaze Holdings Inc</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill mid-cap">Mid Cap</span>
+      <span class="score-pill watch">54</span>
+    </div>
+  </div>
+  <div class="signals"></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$0.17</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$0.25 <span class="pct">(-30.5% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$0.18</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$0.20</div></div>
+  </div>
+</div><div class="card card-ondeck">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">WOK</span>
+      <span class="co">Work Medical Technology Grou</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill low-float">Low Float</span>
+      <span class="score-pill watch">50</span>
+    </div>
+  </div>
+  <div class="signals"></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$0.88</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$1.77 <span class="pct">(-50.4% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$0.99</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$1.06</div></div>
+  </div>
+</div><div class="card card-ondeck">
+  <div class="card-top">
+    <div class="card-left">
+      <span class="sym">YMAT</span>
+      <span class="co">J-Star Holding Co Ltd</span>
+    </div>
+    <div class="card-right">
+      <span class="scan-pill low-float">Low Float</span>
+      <span class="score-pill watch">47</span>
+    </div>
+  </div>
+  <div class="signals"></div>
+  <div class="metrics">
+    <div class="met"><div class="met-l">Price</div><div class="met-v">$1.74</div></div>
+    <div class="met"><div class="met-l">Entry</div><div class="met-v red">$1.88 <span class="pct">(-7.7% below entry)</span></div></div>
+    <div class="met"><div class="met-l">VWAP</div><div class="met-v">$1.86</div></div>
+    <div class="met"><div class="met-l">HOD</div><div class="met-v">$2.25</div></div>
+  </div>
+</div></div></div>
+</div>
+
+<div class="refresh-bar">Auto-refreshes every 5 minutes · 10:24 AM ET · For scoring system tuning only</div>
+
+</body>
+</html>

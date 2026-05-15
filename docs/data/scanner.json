@@ -1,0 +1,43 @@
+{
+  "date": "2026-05-15",
+  "generated": "10:24 AM ET",
+  "status": "open",
+  "triggered": [
+    "QUCY",
+    "HCWB",
+    "BIYA"
+  ],
+  "watch": [
+    "AUUD",
+    "ORGN",
+    "PIII",
+    "GEMI",
+    "HUBC",
+    "KULR",
+    "CSIQ",
+    "GGRP",
+    "AEHL",
+    "AIIO",
+    "SNAL",
+    "LNKS",
+    "MLGO"
+  ],
+  "ondeck": [
+    "ARBE",
+    "DGXX",
+    "SLE",
+    "LESL",
+    "JZXN",
+    "GTBP",
+    "MRNO",
+    "VLN",
+    "TDIC",
+    "EDBL",
+    "CREG",
+    "MOBX",
+    "ALP",
+    "AMZE",
+    "WOK",
+    "YMAT"
+  ]
+}
