@@ -1,29 +1,27 @@
 {
   "date": "2026-05-15",
-  "generated": "3:12 PM ET",
+  "generated": "3:33 PM ET",
   "status": "open",
   "triggered": [
     "QUCY",
     "GGRP",
-    "GPUS",
     "JZXN",
     "HCWB",
-    "DGXX",
-    "FCUV"
+    "CSIQ",
+    "DGXX"
   ],
   "watch": [
-    "PIII",
     "HYLN",
     "BLDP",
-    "CSIQ",
+    "PIII",
     "AUUD",
     "TOPS",
+    "GPUS",
     "ORGN",
+    "FCUV",
     "MRNO",
-    "LZMH",
-    "KULR",
     "SKK",
-    "AIIO",
+    "ALP",
     "CREG",
     "MLGO"
   ],
@@ -36,13 +34,15 @@
     "AEHL",
     "BIYA",
     "LESL",
+    "KULR",
     "TDIC",
     "EDBL",
+    "AIIO",
     "GEMI",
     "AMZE",
-    "ALP",
     "WOK",
     "YMAT",
-    "MOBX"
+    "MOBX",
+    "LZMH"
   ]
 }
