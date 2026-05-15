@@ -379,7 +379,7 @@ def render_html(buckets, gen_time, market_status):
             '<div class="dp-signals">{}</div>'.format(sigs_html) +
             flags_section +
             '<div class="dp-entry">{}</div>'.format(entry_lbl) +
-            '<div class="dp-chart"><img src="https://finviz.com/chart.ashx?t={}&ty=c&ta=1&p=5&s=l" alt="{} chart" onerror="this.style.display=\'none\'"></div>'.format(sym, sym) +
+            '<div class="dp-chart"><img src="https://finviz.com/chart.ashx?t={}&ty=c&ta=0&p=i5&s=l" alt="{} chart" onerror="this.style.display=\'none\'"></div>'.format(sym, sym) +
             '</div>'
         )
 
@@ -476,8 +476,8 @@ body { background:var(--bg); color:var(--text); font-family:var(--sans); font-si
 .dp-flags { display:flex; flex-wrap:wrap; gap:6px; }
 .flag { font-size:10px; background:var(--bg3); color:var(--muted); border:1px solid var(--bd); border-radius:4px; padding:2px 8px; }
 .dp-entry { font-size:12px; color:var(--muted); background:var(--bg3); border:1px solid var(--bd); border-radius:6px; padding:8px 12px; font-family:var(--mono); }
-.dp-chart img { width:100%; border-radius:6px; border:1px solid var(--bd); }
-.no-data { padding:40px; text-align:center; color:var(--muted); font-size:12px; }
+.dp-chart { max-height:280px; overflow:hidden; border-radius:6px; border:1px solid var(--bd); }.dp-chart img { width:100%; display:block; }
+.no-data { padding:40px; text-align:center; color:var(--muted); font-size:12px; }.help-btn { font-family:var(--mono); font-size:10px; padding:3px 10px; border-radius:20px; background:rgba(74,158,218,0.1); color:var(--blue); border:1px solid rgba(74,158,218,0.25); cursor:pointer; margin-left:4px; }.help-btn:hover { background:rgba(74,158,218,0.2); }.help-panel { display:none; background:var(--bg2); border-bottom:1px solid var(--bd); padding:14px 20px; flex-shrink:0; }.help-panel.open { display:block; }.help-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:8px; }.help-item { display:flex; flex-direction:column; gap:3px; padding:8px 10px; background:var(--bg3); border-radius:6px; border:1px solid var(--bd); }.hk { font-size:11px; font-weight:700; font-family:var(--mono); }.hv { font-size:11px; color:var(--muted); line-height:1.4; }
 @media(max-width:700px) {
   html,body { overflow:auto; }
   .main { flex-direction:column; overflow:visible; }
@@ -486,7 +486,7 @@ body { background:var(--bg); color:var(--text); font-family:var(--sans); font-si
   .dp-metrics { grid-template-columns:1fr 1fr; }
 }"""
 
-    js = """function selectTicker(idx) {
+    js = """function toggleHelp() {var p = document.getElementById("help-panel");p.classList.toggle("open");}function selectTicker(idx) {
   document.querySelectorAll(".sr").forEach(r => r.classList.remove("active"));
   document.querySelectorAll(".dp").forEach(p => p.classList.remove("active"));
   var row = document.querySelector(".sr[data-idx='" + idx + "']");
@@ -510,7 +510,8 @@ body { background:var(--bg); color:var(--text); font-family:var(--sans); font-si
         "<span class=\"status-lbl\" style=\"color:{sc}\">{sl}</span>"
         "<span class=\"pill\">Updated {gt}</span>"
         "<span class=\"pill\">{tot} tickers</span>"
-        "</div></div>\n".format(sc=status_color, sl=status_label, gt=gen_time, tot=total) +
+        "</div><button class=\"help-btn\" onclick=\"toggleHelp()\">? How to use</button></div></div>\n".format(sc=status_color, sl=status_label, gt=gen_time, tot=total) +
+        "<div class=\"help-panel\" id=\"help-panel\"><div class=\"help-grid\"><div class=\"help-item\"><span class=\"hk\" style=\"color:#5cc98a\">Triggered</span><span class=\"hv\">Price broke above the proposed entry level. Actionable now.</span></div><div class=\"help-item\"><span class=\"hk\" style=\"color:#e6a817\">Watching</span><span class=\"hv\">Within 5% of entry or above VWAP. Set an alert.</span></div><div class=\"help-item\"><span class=\"hk\" style=\"color:#4a9eda\">On Deck</span><span class=\"hv\">On the morning WL but not yet moving. Watch for a volume spike.</span></div><div class=\"help-item\"><span class=\"hk\">Entry Break</span><span class=\"hv\">Price crossed above the morning scorer entry level.</span></div><div class=\"help-item\"><span class=\"hk\">Above VWAP</span><span class=\"hv\">Holding above volume-weighted average price — bullish intraday.</span></div><div class=\"help-item\"><span class=\"hk\">Near HOD</span><span class=\"hv\">Within 2% of high of day — momentum intact.</span></div><div class=\"help-item\"><span class=\"hk\">Live Mover</span><span class=\"hv\">Not on morning list — found by live RVol sweep. Extra caution.</span></div><div class=\"help-item\"><span class=\"hk\">LF / MC / LV</span><span class=\"hv\">Low Float / Mid Cap / Live Mover. LF moves fastest, highest risk/reward.</span></div></div></div>\n" +
         "<div class=\"strip\">"
         "<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--green)\">{}</span><span class=\"strip-lbl\">Triggered</span></div>"
         "<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--gold)\">{}</span><span class=\"strip-lbl\">Watching</span></div>"
