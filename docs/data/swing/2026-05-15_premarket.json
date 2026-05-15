@@ -1,0 +1,645 @@
+{
+  "date": "2026-05-15",
+  "session": "premarket",
+  "generated": "07:56 AM ET",
+  "tickers": [
+    {
+      "ticker": "ALP",
+      "scan": "Low Float",
+      "company": "Alpha Compute Corp",
+      "sector": "Financial",
+      "price": 0.36,
+      "change": 8.33,
+      "rvol": 48.35,
+      "float_m": 19.64,
+      "short_pct": 4.5,
+      "days_cover": 99.0,
+      "spike_pct": 262.6,
+      "news": "Alpha Compute Closes $32.2 Million Revenue Contract with AI Lab Customer",
+      "news_url": "https://elite.finviz.com/news/353471/alpha-compute-closes-322-million-revenue-contract-with-ai-lab-customer",
+      "score": 0.75,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "CATALYST \u00b7 PIVOT",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +263%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": "Feb 26, 2026",
+        "earnings_days": -78,
+        "eightk_filed": "2026-05-12",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.431,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.2552,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.4956,
+        "entry3_note": "Makes new highs",
+        "stop": 0.24,
+        "stop_note": "Prior day low",
+        "target1": 0.5482,
+        "target1_pct": 27.2,
+        "target2": 0.6974,
+        "target2_pct": 61.8,
+        "target3": 1.1284,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.36",
+      "rvol_display": "48x",
+      "float_display": "19.6M",
+      "rank": "hot"
+    },
+    {
+      "ticker": "HCWB",
+      "scan": "Low Float",
+      "company": "HCW Biologics Inc",
+      "sector": "Healthcare",
+      "price": 1.0,
+      "change": 196.74,
+      "rvol": 193.96,
+      "float_m": 5.1,
+      "short_pct": 11.19,
+      "days_cover": 99.0,
+      "spike_pct": 126.7,
+      "news": "HCW Biologics Reports First Quarter 2026 Business Highlights and Financial Results",
+      "news_url": "https://elite.finviz.com/news/354693/hcw-biologics-reports-first-quarter-2026-business-highlights-and-financial-results",
+      "score": 0.625,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +127%",
+          "gap"
+        ],
+        [
+          "SHORT INT 11%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-14",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.505,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.3868,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.5807,
+        "entry3_note": "Makes new highs",
+        "stop": 0.335,
+        "stop_note": "Prior day low",
+        "target1": 0.6424,
+        "target1_pct": 27.2,
+        "target2": 0.8171,
+        "target2_pct": 61.8,
+        "target3": 1.3221,
+        "target3_pct": 161.8
+      },
+      "price_display": "$1.00",
+      "rvol_display": "194x",
+      "float_display": "5.1M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "SNAL",
+      "scan": "Low Float",
+      "company": "Snail Inc",
+      "sector": "Communication Services",
+      "price": 1.25,
+      "change": 15.74,
+      "rvol": 14.81,
+      "float_m": 13.29,
+      "short_pct": 11.46,
+      "days_cover": 99.0,
+      "spike_pct": 472.9,
+      "news": "Snail beats estimates and returns to profit with ambitious release pipeline ahead",
+      "news_url": "https://finance.yahoo.com/m/52e65a28-e238-3ad4-8998-9c84a9f0ada4/snail-beats-estimates-and.html",
+      "score": 0.625,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +473%",
+          "gap"
+        ],
+        [
+          "SHORT INT 11%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-13",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.67,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.6465,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 1.9205,
+        "entry3_note": "Makes new highs",
+        "stop": 0.502,
+        "stop_note": "Prior day low",
+        "target1": 2.1242,
+        "target1_pct": 27.2,
+        "target2": 2.7021,
+        "target2_pct": 61.8,
+        "target3": 4.3721,
+        "target3_pct": 161.8
+      },
+      "price_display": "$1.25",
+      "rvol_display": "15x",
+      "float_display": "13.3M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "EDBL",
+      "scan": "Low Float",
+      "company": "Edible Garden AG Inc",
+      "sector": "Consumer Defensive",
+      "price": 0.42,
+      "change": 2.28,
+      "rvol": 50.55,
+      "float_m": 4.96,
+      "short_pct": 1.71,
+      "days_cover": 99.0,
+      "spike_pct": 97.1,
+      "news": "Edible Garden Reports 22.9% First Quarter 2026 Revenue Growth and Advancement of Ready-to-Drink (RTD) Nutrition Platform",
+      "news_url": "https://elite.finviz.com/news/354826/edible-garden-reports-229-first-quarter-2026-revenue-growth-and-advancement-of-ready-to-drink-rtd-nutrition-platform",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +97%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-15",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.51,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.5093,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.5865,
+        "entry3_note": "Makes new highs",
+        "stop": 0.333,
+        "stop_note": "Prior day low",
+        "target1": 0.6487,
+        "target1_pct": 27.2,
+        "target2": 0.8252,
+        "target2_pct": 61.8,
+        "target3": 1.3352,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.42",
+      "rvol_display": "51x",
+      "float_display": "5.0M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "SLE",
+      "scan": "Low Float",
+      "company": "Super League Enterprise Inc",
+      "sector": "Communication Services",
+      "price": 5.68,
+      "change": 39.56,
+      "rvol": 5832.33,
+      "float_m": 1.41,
+      "short_pct": 1.59,
+      "days_cover": 99.0,
+      "spike_pct": 41.5,
+      "news": "Super League Enterprise: Q1 Earnings Snapshot",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/super-league-enterprise-q1-earnings-113816407.html",
+      "score": 0.55,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +42%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-14",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 4.27,
+        "entry1_note": "Break above 10d high",
+        "entry2": 4.0255,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 4.9105,
+        "entry3_note": "Makes new highs",
+        "stop": 3.88,
+        "stop_note": "Prior day low",
+        "target1": 5.4314,
+        "target1_pct": 27.2,
+        "target2": 6.9089,
+        "target2_pct": 61.8,
+        "target3": 11.1789,
+        "target3_pct": 161.8
+      },
+      "price_display": "$5.68",
+      "rvol_display": "5832x",
+      "float_display": "1.4M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "AIIO",
+      "scan": "Low Float",
+      "company": "Robo.ai Inc",
+      "sector": "Consumer Cyclical",
+      "price": 4.73,
+      "change": -16.13,
+      "rvol": 11.35,
+      "float_m": 13.53,
+      "short_pct": 2.6,
+      "days_cover": 99.0,
+      "spike_pct": 252.5,
+      "news": "AI Video Compression Platform Launch Positions Robo.ai for Physical AI Infrastructure Push",
+      "news_url": "https://finance.yahoo.com/m/85a110a3-3ed9-3b94-9227-0e099ff3a762/ai-video-compression-platform.html",
+      "score": 0.5,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 1.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "CATALYST \u00b7 PIVOT",
+          "catalyst"
+        ],
+        [
+          "PREV SPIKE +252%",
+          "gap"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 9.2,
+        "entry1_note": "Break above 10d high",
+        "entry2": 1.0589,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 10.58,
+        "entry3_note": "Makes new highs",
+        "stop": 1.4,
+        "stop_note": "Prior day low",
+        "target1": 11.7024,
+        "target1_pct": 27.2,
+        "target2": 14.8856,
+        "target2_pct": 61.8,
+        "target3": 24.0856,
+        "target3_pct": 161.8
+      },
+      "price_display": "$4.73",
+      "rvol_display": "11x",
+      "float_display": "13.5M",
+      "rank": "warm"
+    },
+    {
+      "ticker": "BIYA",
+      "scan": "Low Float",
+      "company": "Baiya International Group Inc",
+      "sector": "Technology",
+      "price": 1.12,
+      "change": 44.82,
+      "rvol": 18.85,
+      "float_m": 1.57,
+      "short_pct": 23.56,
+      "days_cover": 99.0,
+      "spike_pct": 181.1,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143017809.html",
+      "score": 0.375,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +181%",
+          "gap"
+        ],
+        [
+          "SHORT INT 24%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 1.87,
+        "entry1_note": "Break above 10d high",
+        "entry2": 1.1576,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 2.1505,
+        "entry3_note": "Makes new highs",
+        "stop": 0.776,
+        "stop_note": "Prior day low",
+        "target1": 2.3786,
+        "target1_pct": 27.2,
+        "target2": 3.0257,
+        "target2_pct": 61.8,
+        "target3": 4.8957,
+        "target3_pct": 161.8
+      },
+      "price_display": "$1.12",
+      "rvol_display": "19x",
+      "float_display": "1.6M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "HUBC",
+      "scan": "Low Float",
+      "company": "Hub Cyber Security Ltd",
+      "sector": "Technology",
+      "price": 0.17,
+      "change": 16.74,
+      "rvol": 273.01,
+      "float_m": 0.74,
+      "short_pct": 44.24,
+      "days_cover": 99.0,
+      "spike_pct": 178.7,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/news/bc-most-active-stocks-143018813.html",
+      "score": 0.375,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +179%",
+          "gap"
+        ],
+        [
+          "SHORT INT 44%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.671,
+        "entry1_note": "Break above 10d high",
+        "entry2": 1.438,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.7716,
+        "entry3_note": "Makes new highs",
+        "stop": 0.131,
+        "stop_note": "Prior day low",
+        "target1": 0.8535,
+        "target1_pct": 27.2,
+        "target2": 1.0857,
+        "target2_pct": 61.8,
+        "target3": 1.7567,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.17",
+      "rvol_display": "273x",
+      "float_display": "0.7M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "MRNO",
+      "scan": "Low Float",
+      "company": "Murano Global Investments PLC",
+      "sector": "Real Estate",
+      "price": 0.49,
+      "change": 68.0,
+      "rvol": 587.79,
+      "float_m": 1.35,
+      "short_pct": 10.3,
+      "days_cover": 99.0,
+      "spike_pct": 114.0,
+      "news": "Real Estate Firm Murano to Build Bitcoin Treasury With $500M Equity Deal",
+      "news_url": "https://finance.yahoo.com/m/ce55ca3d-fbfc-3c0e-aa1e-5fcfecaa3190/real-estate-firm-murano-to.html",
+      "score": 0.375,
+      "components": {
+        "fresh_8k": 0.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 1.0,
+        "short_squeeze": 0.5,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "PREV SPIKE +114%",
+          "gap"
+        ],
+        [
+          "SHORT INT 10%",
+          "danger"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": null,
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.35,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.315,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.4025,
+        "entry3_note": "Makes new highs",
+        "stop": 0.279,
+        "stop_note": "Prior day low",
+        "target1": 0.4452,
+        "target1_pct": 27.2,
+        "target2": 0.5663,
+        "target2_pct": 61.8,
+        "target3": 0.9163,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.49",
+      "rvol_display": "588x",
+      "float_display": "1.4M",
+      "rank": "watch"
+    },
+    {
+      "ticker": "HAO",
+      "scan": "Mid Float",
+      "company": "Haoxi Health Technology Ltd",
+      "sector": "Communication Services",
+      "price": 0.02,
+      "change": -13.69,
+      "rvol": 37.03,
+      "float_m": 58.32,
+      "short_pct": 0.08,
+      "days_cover": 99.0,
+      "spike_pct": 29.6,
+      "news": "BC-Most Active Stocks",
+      "news_url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-143019750.html",
+      "score": 0.35,
+      "components": {
+        "fresh_8k": 1.0,
+        "merger_pivot": 0.0,
+        "previous_spike": 0.0,
+        "short_squeeze": 0.0,
+        "high_rel_vol": 1.0,
+        "fda_binary": 0.0
+      },
+      "flags": [
+        [
+          "FRESH 8-K",
+          "catalyst"
+        ]
+      ],
+      "dates": {
+        "earnings": null,
+        "earnings_days": null,
+        "eightk_filed": "2026-05-13",
+        "ma_close": null,
+        "fda": null,
+        "clinical": null,
+        "investor_day": null
+      },
+      "entries": {
+        "entry1": 0.843,
+        "entry1_note": "Break above 10d high",
+        "entry2": 0.7474,
+        "entry2_note": "Pulls to 20d average",
+        "entry3": 0.9694,
+        "entry3_note": "Makes new highs",
+        "stop": 0.028,
+        "stop_note": "Prior day low",
+        "target1": 1.0723,
+        "target1_pct": 27.2,
+        "target2": 1.364,
+        "target2_pct": 61.8,
+        "target3": 2.207,
+        "target3_pct": 161.8
+      },
+      "price_display": "$0.02",
+      "rvol_display": "37x",
+      "float_display": "58.3M",
+      "rank": "watch"
+    }
+  ]
+}
