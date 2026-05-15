@@ -283,157 +283,248 @@ def render_html(buckets, gen_time, market_status):
     triggered = buckets.get("triggered", [])
     watch     = buckets.get("watch", [])
     ondeck    = buckets.get("ondeck", [])
-    total     = sum(len(v) for v in buckets.values())
-
-    def section(label, icon, items, bucket):
-        if not items:
-            return f'<div class="section"><div class="sec-hdr"><span>{icon} {label}</span><span class="sec-cnt">0</span></div><div class="no-data">None right now</div></div>'
-        cards = "".join(scanner_card(t, meta, bucket) for t, meta in items)
-        return f'<div class="section"><div class="sec-hdr"><span>{icon} {label}</span><span class="sec-cnt">{len(items)}</span></div><div class="cards">{cards}</div></div>'
+    all_items = triggered + watch + ondeck
+    total     = len(all_items)
 
     status_color = "#5cc98a" if market_status == "open" else "#e6a817"
-    status_label = "MARKET OPEN" if market_status == "open" else ("PRE-MARKET" if market_status == "pre" else "AFTER HOURS" if market_status == "after" else "MARKET CLOSED")
+    status_label = {"open": "MARKET OPEN", "pre": "PRE-MARKET", "after": "AFTER HOURS"}.get(market_status, "CLOSED")
 
-    now = datetime.now(ET)
-    next_refresh = now.strftime("%-I:%M %p ET") 
+    def sidebar_row(t, meta, bucket, idx, is_first):
+        sym       = t.get("ticker", "")
+        score     = t.get("score", 0)
+        scan      = t.get("scan", "")
+        price     = meta.get("price", 0)
+        pct       = meta.get("pct_from_entry", 0)
+        pct_str   = ("+{:.1f}%".format(pct*100)) if pct >= 0 else ("{:.1f}%".format(pct*100))
+        pct_color = "#5cc98a" if pct >= 0 else "#e05c5c"
+        scan_short= "LF" if "Low" in scan else ("MC" if "Mid" in scan else "LV")
+        score_str = " \xb7 {}".format(score) if score else ""
+        active_cls= " active" if is_first else ""
+        return (
+            '<div class="sr{}" data-idx="{}" onclick="selectTicker({})">'.format(active_cls, idx, idx) +
+            '<div class="sr-top"><span class="sr-sym">{}</span><span class="sr-price">${:.2f}</span></div>'.format(sym, price) +
+            '<div class="sr-bot"><span class="sr-meta">{}{}</span><span class="sr-pct" style="color:{}">{}</span></div>'.format(scan_short, score_str, pct_color, pct_str) +
+            '</div>'
+        )
 
-    return f'''<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="refresh" content="300">
-<title>Watchlist · Scanner</title>
-<style>
-:root {{
-  --bg:      #0a0f0a;
-  --bg2:     #0f160f;
-  --bg3:     #141c14;
-  --border:  #1e2a1e;
-  --green:   #5cc98a;
-  --blue:    #4a9eda;
-  --gold:    #e6a817;
-  --red:     #e05c5c;
-  --muted:   #4a5a4a;
-  --text:    #c8d8c8;
-  --mono:    'SF Mono','Fira Mono',monospace;
-  --sans:    'Inter','Helvetica Neue',sans-serif;
-}}
-* {{ box-sizing:border-box; margin:0; padding:0; }}
-body {{ background:var(--bg); color:var(--text); font-family:var(--sans); font-size:13px; }}
+    def detail_panel(t, meta, bucket, idx, is_first):
+        sym        = t.get("ticker", "")
+        company    = t.get("company", "")
+        score      = t.get("score", 0)
+        scan       = t.get("scan", "")
+        entry      = float(t.get("entry", 0) or 0)
+        entry_lbl  = t.get("entry_label", "Break above ${:.2f}".format(entry))
+        source     = t.get("source", "wl")
+        flags      = t.get("flags", [])
 
-/* Header */
-.hdr {{ background:var(--bg2); border-bottom:1px solid var(--border); padding:14px 20px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }}
-.hdr-title {{ display:flex; align-items:center; gap:10px; }}
-.hdr-brand {{ font-size:13px; color:var(--muted); letter-spacing:0.05em; }}
-.hdr-name {{ font-size:15px; font-weight:700; color:var(--green); letter-spacing:0.03em; }}
-.hdr-r {{ display:flex; align-items:center; gap:8px; }}
-.status-dot {{ width:7px; height:7px; border-radius:50%; background:{status_color}; display:inline-block; }}
-.status-lbl {{ font-family:var(--mono); font-size:10px; color:{status_color}; letter-spacing:0.08em; }}
-.pill {{ font-family:var(--mono); font-size:10px; color:var(--muted); background:var(--bg3); border:1px solid var(--border); border-radius:20px; padding:3px 9px; }}
+        price      = meta.get("price", 0)
+        vwap       = meta.get("vwap", 0)
+        hod        = meta.get("hod", 0)
+        pct        = meta.get("pct_from_entry", 0)
+        signals    = meta.get("signals", [])
+        above_vwap = meta.get("above_vwap", False)
 
-/* Summary bar */
-.summary {{ display:flex; gap:0; border-bottom:1px solid var(--border); }}
-.sum-item {{ flex:1; padding:14px 20px; text-align:center; border-right:1px solid var(--border); }}
-.sum-item:last-child {{ border-right:none; }}
-.sum-num {{ font-size:26px; font-weight:700; font-family:var(--mono); }}
-.sum-num.green {{ color:var(--green); }}
-.sum-num.gold  {{ color:var(--gold); }}
-.sum-num.blue  {{ color:var(--blue); }}
-.sum-num.white {{ color:#fff; }}
-.sum-lbl {{ font-size:9px; letter-spacing:0.1em; color:var(--muted); margin-top:3px; text-transform:uppercase; }}
+        pct_str    = ("+{:.1f}%".format(pct*100)) if pct >= 0 else ("{:.1f}%".format(pct*100))
+        pct_color  = "#5cc98a" if pct >= 0 else "#e05c5c"
+        vwap_lbl   = "above VWAP" if above_vwap else "below VWAP"
+        vwap_color = "#5cc98a" if above_vwap else "#e05c5c"
+        hod_pct    = (price - hod) / hod * 100 if hod else 0
+        hod_lbl    = "at HOD" if abs(hod_pct) < 1 else "{:.1f}% from HOD".format(hod_pct)
+        hod_color  = "#e6a817" if abs(hod_pct) < 2 else "#4a5a4a"
 
-/* Main layout */
-.main {{ padding:20px; max-width:1100px; margin:0 auto; display:flex; flex-direction:column; gap:24px; }}
+        bucket_label = {"triggered": "Entry Break", "watch": "Approaching Entry", "ondeck": "On Deck"}.get(bucket, "")
+        bucket_color = {"triggered": "#5cc98a", "watch": "#e6a817", "ondeck": "#4a9eda"}.get(bucket, "#888")
+        scan_cls     = "lf" if "Low" in scan else ("mc" if "Mid" in scan else "live")
 
-/* Sections */
-.section {{ display:flex; flex-direction:column; gap:12px; }}
-.sec-hdr {{ display:flex; align-items:center; justify-content:space-between; padding:8px 12px; background:var(--bg2); border:1px solid var(--border); border-radius:6px; font-size:11px; font-weight:600; letter-spacing:0.06em; color:var(--muted); text-transform:uppercase; }}
-.sec-cnt {{ background:var(--bg3); border:1px solid var(--border); border-radius:10px; padding:1px 8px; font-family:var(--mono); font-size:10px; color:var(--text); }}
-.no-data {{ font-size:11px; color:var(--muted); padding:16px; text-align:center; }}
-.cards {{ display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:10px; }}
+        sig_colors   = ["#5cc98a", "#4a9eda", "#e6a817", "#c97dd4"]
+        sigs_html    = "".join(
+            '<span class="sig" style="color:{c};border-color:{c}">{s}</span>'.format(c=sig_colors[i % 4], s=s)
+            for i, s in enumerate(signals)
+        )
+        if source == "live":
+            sigs_html += '<span class="sig" style="color:#c97dd4;border-color:#c97dd4">LIVE MOVER</span>'
 
-/* Cards */
-.card {{ background:var(--bg2); border:1px solid var(--border); border-radius:8px; padding:14px; display:flex; flex-direction:column; gap:10px; }}
-.card-triggered {{ border-color:rgba(92,201,138,0.4); background:rgba(92,201,138,0.04); }}
-.card-watch      {{ border-color:rgba(230,168,23,0.3); background:rgba(230,168,23,0.03); }}
-.card-top {{ display:flex; align-items:flex-start; justify-content:space-between; }}
-.card-left {{ display:flex; flex-direction:column; gap:2px; }}
-.card-right {{ display:flex; align-items:center; gap:6px; }}
-.sym {{ font-size:16px; font-weight:800; color:#fff; font-family:var(--mono); letter-spacing:0.04em; }}
-.co  {{ font-size:10px; color:var(--muted); }}
-.scan-pill {{ font-size:9px; padding:2px 7px; border-radius:10px; letter-spacing:0.04em; font-weight:600; }}
-.scan-pill.low-float {{ background:rgba(92,201,138,0.12); color:var(--green); border:1px solid rgba(92,201,138,0.2); }}
-.scan-pill.mid-cap   {{ background:rgba(74,158,218,0.12); color:var(--blue);  border:1px solid rgba(74,158,218,0.2); }}
-.scan-pill.live      {{ background:rgba(201,125,212,0.12); color:#c97dd4;     border:1px solid rgba(201,125,212,0.2); }}
-.score-pill {{ font-size:10px; font-family:var(--mono); font-weight:700; padding:2px 7px; border-radius:10px; }}
-.score-pill.hot  {{ background:rgba(92,201,138,0.15); color:var(--green); }}
-.score-pill.warm {{ background:rgba(230,168,23,0.15);  color:var(--gold); }}
-.score-pill.watch{{ background:rgba(74,158,218,0.15);  color:var(--blue); }}
-.signals {{ display:flex; flex-wrap:wrap; gap:5px; }}
-.sig-badge {{ font-size:9px; font-weight:700; letter-spacing:0.06em; padding:2px 7px; border-radius:10px; border:1px solid; }}
-.metrics {{ display:grid; grid-template-columns:1fr 1fr; gap:6px; }}
-.met {{ background:var(--bg3); border-radius:5px; padding:6px 8px; display:flex; justify-content:space-between; align-items:center; }}
-.met-l {{ font-size:9px; color:var(--muted); letter-spacing:0.05em; text-transform:uppercase; }}
-.met-v {{ font-family:var(--mono); font-size:11px; font-weight:600; color:#fff; }}
-.met-v.green {{ color:var(--green); }}
-.met-v.red   {{ color:var(--red); }}
-.pct {{ font-size:9px; color:var(--muted); font-weight:400; }}
+        flags_html = "".join('<span class="flag">{}</span>'.format(f) for f in flags[:4])
 
-/* Refresh bar */
-.refresh-bar {{ text-align:center; font-size:10px; color:var(--muted); padding:16px; border-top:1px solid var(--border); margin-top:8px; }}
+        score_html = '<span class="score-badge">{}</span>'.format(score) if score else ""
+        flags_section = '<div class="dp-flags">{}</div>'.format(flags_html) if flags_html else ""
 
-@media(max-width:600px) {{
-  .cards {{ grid-template-columns:1fr; }}
-  .summary {{ flex-wrap:wrap; }}
-  .sum-item {{ min-width:50%; }}
-}}
-</style>
-</head>
-<body>
+        active_cls = " active" if is_first else ""
 
-<div class="hdr">
-  <div class="hdr-title">
-    <span class="hdr-brand">Watchlist ·</span>
-    <span class="hdr-name">Intraday Scanner</span>
-  </div>
-  <div class="hdr-r">
-    <span class="status-dot"></span>
-    <span class="status-lbl">{status_label}</span>
-    <span class="pill">Updated {gen_time}</span>
-    <span class="pill">{total} tickers</span>
-  </div>
-</div>
+        # Entry label — strip the dollar sign part for display
+        if "$" in entry_lbl:
+            entry_display = entry_lbl.split("$")[-1]
+            entry_display = "${:.2f}".format(entry)
+        else:
+            entry_display = "${:.2f}".format(entry)
 
-<div class="summary">
-  <div class="sum-item">
-    <div class="sum-num green">{len(triggered)}</div>
-    <div class="sum-lbl">🔥 Triggered</div>
-  </div>
-  <div class="sum-item">
-    <div class="sum-num gold">{len(watch)}</div>
-    <div class="sum-lbl">⚡ Watching</div>
-  </div>
-  <div class="sum-item">
-    <div class="sum-num blue">{len(ondeck)}</div>
-    <div class="sum-lbl">👁 On Deck</div>
-  </div>
-  <div class="sum-item">
-    <div class="sum-num white">{total}</div>
-    <div class="sum-lbl">Total Universe</div>
-  </div>
-</div>
+        return (
+            '<div class="dp{}" id="dp-{}">'.format(active_cls, idx) +
+            '<div class="dp-hdr">'
+            '<div class="dp-title">'
+            '<div class="dp-sym">{} <span class="scan-pill {}">{}</span></div>'.format(sym, scan_cls, scan) +
+            '<div class="dp-co">{}</div>'.format(company) +
+            '</div>'
+            '<div class="dp-hdr-r">'
+            '{}'.format(score_html) +
+            '<span class="bucket-badge" style="color:{c};border-color:{c}">{}</span>'.format(bucket_label, c=bucket_color) +
+            '<a class="chart-link" href="https://finviz.com/quote.ashx?t={}" target="_blank">Chart &#8599;</a>'.format(sym) +
+            '</div></div>'
+            '<div class="dp-metrics">'
+            '<div class="met-card"><div class="met-lbl">Live Price</div><div class="met-val">${:.2f}</div></div>'.format(price) +
+            '<div class="met-card accent" style="--ac:{c}"><div class="met-lbl">vs Entry ({e})</div><div class="met-val" style="color:{c}">{p}</div></div>'.format(c=pct_color, e=entry_display, p=pct_str) +
+            '<div class="met-card"><div class="met-lbl">VWAP</div><div class="met-val">${:.2f}</div><div class="met-sub" style="color:{}">{}</div></div>'.format(vwap, vwap_color, vwap_lbl) +
+            '<div class="met-card"><div class="met-lbl">HOD</div><div class="met-val">${:.2f}</div><div class="met-sub" style="color:{}">{}</div></div>'.format(hod, hod_color, hod_lbl) +
+            '</div>'
+            '<div class="dp-signals">{}</div>'.format(sigs_html) +
+            flags_section +
+            '<div class="dp-entry">{}</div>'.format(entry_lbl) +
+            '<div class="dp-chart"><img src="https://finviz.com/chart.ashx?t={}&ty=c&ta=1&p=5&s=l" alt="{} chart" onerror="this.style.display=\'none\'"></div>'.format(sym, sym) +
+            '</div>'
+        )
 
-<div class="main">
-  {section("Triggered — Entry Break", "🔥", triggered, "triggered")}
-  {section("Watching — Approaching Entry", "⚡", watch, "watch")}
-  {section("On Deck — On Watchlist", "👁", ondeck, "ondeck")}
-</div>
+    def sidebar_section(label, color, items, bucket, id_offset):
+        if not items:
+            return ""
+        rows = "".join(sidebar_row(t, meta, bucket, id_offset + i, id_offset == 0 and i == 0)
+                       for i, (t, meta) in enumerate(items))
+        return '<div class="sec-hdr" style="color:{}">{} <span class="sec-cnt">{}</span></div>{}'.format(
+            color, label, len(items), rows)
 
-<div class="refresh-bar">Auto-refreshes every 5 minutes · {gen_time} · For scoring system tuning only</div>
+    t_offset = 0
+    w_offset = len(triggered)
+    o_offset = len(triggered) + len(watch)
 
-</body>
-</html>'''
+    sidebar_html = (
+        sidebar_section("Triggered", "#5cc98a", triggered, "triggered", t_offset) +
+        sidebar_section("Watching",  "#e6a817", watch,     "watch",     w_offset) +
+        sidebar_section("On Deck",   "#4a9eda", ondeck,    "ondeck",    o_offset)
+    )
+
+    panels_html = ""
+    for i, (t, meta) in enumerate(triggered):
+        panels_html += detail_panel(t, meta, "triggered", i, i == 0)
+    for i, (t, meta) in enumerate(watch):
+        panels_html += detail_panel(t, meta, "watch", w_offset + i, w_offset + i == 0)
+    for i, (t, meta) in enumerate(ondeck):
+        panels_html += detail_panel(t, meta, "ondeck", o_offset + i, o_offset + i == 0)
+
+    if not panels_html:
+        panels_html = '<div class="no-data">No tickers in universe yet. Run premarket scorer first.</div>'
+
+    css = """
+:root {
+  --bg:    #0a0f0a; --bg2: #0f160f; --bg3: #141c14; --bd: #1e2a1e;
+  --green: #5cc98a; --gold: #e6a817; --blue: #4a9eda; --red: #e05c5c;
+  --muted: #4a5a4a; --text: #c8d8c8;
+  --mono: "SF Mono","Fira Mono",monospace;
+  --sans: "Inter","Helvetica Neue",sans-serif;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html,body { height:100%; overflow:hidden; }
+body { background:var(--bg); color:var(--text); font-family:var(--sans); font-size:13px; display:flex; flex-direction:column; }
+.hdr { background:var(--bg2); border-bottom:1px solid var(--bd); padding:10px 16px; display:flex; align-items:center; justify-content:space-between; flex-shrink:0; }
+.hdr-l { display:flex; align-items:center; gap:8px; }
+.hdr-brand { font-size:12px; color:var(--muted); }
+.hdr-name { font-size:14px; font-weight:700; color:var(--green); letter-spacing:0.03em; }
+.hdr-r { display:flex; align-items:center; gap:8px; }
+.status-dot { width:6px; height:6px; border-radius:50%; }
+.status-lbl { font-family:var(--mono); font-size:9px; letter-spacing:0.1em; }
+.pill { font-family:var(--mono); font-size:10px; color:var(--muted); background:var(--bg3); border:1px solid var(--bd); border-radius:20px; padding:2px 8px; }
+.strip { display:flex; border-bottom:1px solid var(--bd); flex-shrink:0; }
+.strip-item { flex:1; padding:8px 16px; display:flex; align-items:center; gap:8px; border-right:1px solid var(--bd); }
+.strip-item:last-child { border-right:none; }
+.strip-num { font-size:20px; font-weight:700; font-family:var(--mono); }
+.strip-lbl { font-size:10px; color:var(--muted); letter-spacing:0.06em; text-transform:uppercase; }
+.main { display:flex; flex:1; overflow:hidden; }
+.sidebar { width:200px; flex-shrink:0; border-right:1px solid var(--bd); overflow-y:auto; background:var(--bg2); }
+.sec-hdr { font-size:9px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:10px 12px 6px; border-top:1px solid var(--bd); }
+.sec-hdr:first-child { border-top:none; }
+.sec-cnt { font-size:9px; color:var(--muted); font-weight:400; }
+.sr { padding:9px 12px; border-bottom:1px solid var(--bd); cursor:pointer; transition:background .1s; }
+.sr:hover { background:var(--bg3); }
+.sr.active { background:var(--bg3); border-left:2px solid var(--green); }
+.sr-top { display:flex; justify-content:space-between; align-items:baseline; }
+.sr-sym { font-size:13px; font-weight:700; color:#fff; font-family:var(--mono); }
+.sr-price { font-size:12px; font-weight:600; font-family:var(--mono); color:#fff; }
+.sr-bot { display:flex; justify-content:space-between; margin-top:2px; }
+.sr-meta { font-size:10px; color:var(--muted); }
+.sr-pct { font-size:10px; font-weight:600; font-family:var(--mono); }
+.detail { flex:1; overflow-y:auto; padding:20px 24px; }
+.dp { display:none; flex-direction:column; gap:16px; }
+.dp.active { display:flex; }
+.dp-hdr { display:flex; justify-content:space-between; align-items:flex-start; }
+.dp-sym { font-size:24px; font-weight:800; color:#fff; font-family:var(--mono); letter-spacing:0.03em; display:flex; align-items:center; gap:10px; }
+.dp-co { font-size:12px; color:var(--muted); margin-top:3px; }
+.dp-hdr-r { display:flex; align-items:center; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
+.score-badge { font-family:var(--mono); font-size:12px; font-weight:700; background:rgba(92,201,138,0.12); color:var(--green); border:1px solid rgba(92,201,138,0.25); border-radius:20px; padding:3px 10px; }
+.bucket-badge { font-size:10px; font-weight:700; letter-spacing:0.05em; padding:3px 10px; border-radius:20px; border:1px solid; }
+.chart-link { font-family:var(--mono); font-size:10px; color:var(--muted); text-decoration:none; padding:3px 8px; border:1px solid var(--bd); border-radius:4px; }
+.chart-link:hover { color:var(--text); border-color:var(--muted); }
+.scan-pill { font-size:9px; font-weight:700; padding:2px 8px; border-radius:10px; letter-spacing:0.04em; vertical-align:middle; }
+.scan-pill.lf { background:rgba(92,201,138,0.12); color:var(--green); }
+.scan-pill.mc { background:rgba(74,158,218,0.12); color:var(--blue); }
+.scan-pill.live { background:rgba(201,125,212,0.12); color:#c97dd4; }
+.dp-metrics { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:10px; }
+.met-card { background:var(--bg2); border:1px solid var(--bd); border-radius:8px; padding:12px 14px; }
+.met-card.accent { border-color:rgba(92,201,138,0.2); background:rgba(92,201,138,0.04); }
+.met-lbl { font-size:9px; color:var(--muted); text-transform:uppercase; letter-spacing:0.07em; margin-bottom:6px; }
+.met-val { font-size:22px; font-weight:700; font-family:var(--mono); color:#fff; }
+.met-sub { font-size:10px; margin-top:3px; }
+.dp-signals { display:flex; flex-wrap:wrap; gap:6px; }
+.sig { font-size:10px; font-weight:700; letter-spacing:0.06em; padding:3px 9px; border-radius:10px; border:1px solid; }
+.dp-flags { display:flex; flex-wrap:wrap; gap:6px; }
+.flag { font-size:10px; background:var(--bg3); color:var(--muted); border:1px solid var(--bd); border-radius:4px; padding:2px 8px; }
+.dp-entry { font-size:12px; color:var(--muted); background:var(--bg3); border:1px solid var(--bd); border-radius:6px; padding:8px 12px; font-family:var(--mono); }
+.dp-chart img { width:100%; border-radius:6px; border:1px solid var(--bd); }
+.no-data { padding:40px; text-align:center; color:var(--muted); font-size:12px; }
+@media(max-width:700px) {
+  html,body { overflow:auto; }
+  .main { flex-direction:column; overflow:visible; }
+  .sidebar { width:100%; border-right:none; border-bottom:1px solid var(--bd); overflow-y:visible; }
+  .detail { overflow:visible; }
+  .dp-metrics { grid-template-columns:1fr 1fr; }
+}"""
+
+    js = """function selectTicker(idx) {
+  document.querySelectorAll(".sr").forEach(r => r.classList.remove("active"));
+  document.querySelectorAll(".dp").forEach(p => p.classList.remove("active"));
+  var row = document.querySelector(".sr[data-idx='" + idx + "']");
+  var panel = document.getElementById("dp-" + idx);
+  if (row) row.classList.add("active");
+  if (panel) panel.classList.add("active");
+}"""
+
+    return (
+        "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n"
+        "<meta charset=\"UTF-8\">\n"
+        "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n"
+        "<meta http-equiv=\"refresh\" content=\"300\">\n"
+        "<title>Watchlist \xb7 Scanner</title>\n"
+        "<style>{}</style>\n".format(css) +
+        "</head>\n<body>\n"
+        "<div class=\"hdr\">"
+        "<div class=\"hdr-l\"><span class=\"hdr-brand\">Watchlist \xb7</span><span class=\"hdr-name\">Intraday Scanner</span></div>"
+        "<div class=\"hdr-r\">"
+        "<span class=\"status-dot\" style=\"background:{sc}\"></span>"
+        "<span class=\"status-lbl\" style=\"color:{sc}\">{sl}</span>"
+        "<span class=\"pill\">Updated {gt}</span>"
+        "<span class=\"pill\">{tot} tickers</span>"
+        "</div></div>\n".format(sc=status_color, sl=status_label, gt=gen_time, tot=total) +
+        "<div class=\"strip\">"
+        "<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--green)\">{}</span><span class=\"strip-lbl\">Triggered</span></div>"
+        "<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--gold)\">{}</span><span class=\"strip-lbl\">Watching</span></div>"
+        "<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--blue)\">{}</span><span class=\"strip-lbl\">On Deck</span></div>"
+        "<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:#fff\">{}</span><span class=\"strip-lbl\">Universe</span></div>"
+        "</div>\n".format(len(triggered), len(watch), len(ondeck), total) +
+        "<div class=\"main\">"
+        "<div class=\"sidebar\">{}</div>"
+        "<div class=\"detail\">{}</div>"
+        "</div>\n".format(sidebar_html, panels_html) +
+        "<script>{}</script>\n".format(js) +
+        "</body>\n</html>"
+    )
+
 
 # ── Main ─────────────────────────────────────────────────────────────────────
 
