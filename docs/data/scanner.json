@@ -1,46 +1,48 @@
 {
   "date": "2026-05-15",
-  "generated": "2:22 PM ET",
+  "generated": "3:12 PM ET",
   "status": "open",
   "triggered": [
     "QUCY",
     "GGRP",
     "GPUS",
     "JZXN",
-    "HCWB"
+    "HCWB",
+    "DGXX",
+    "FCUV"
   ],
   "watch": [
-    "TOPS",
-    "HYLN",
     "PIII",
-    "AUUD",
-    "FCUV",
-    "ORGN",
+    "HYLN",
+    "BLDP",
     "CSIQ",
-    "DGXX",
-    "KULR",
+    "AUUD",
+    "TOPS",
+    "ORGN",
     "MRNO",
-    "VLN",
-    "ARBE",
+    "LZMH",
+    "KULR",
     "SKK",
-    "SNAL",
     "AIIO",
-    "MOBX",
+    "CREG",
     "MLGO"
   ],
   "ondeck": [
+    "SNAL",
+    "ARBE",
     "SLE",
     "GTBP",
+    "VLN",
     "AEHL",
     "BIYA",
     "LESL",
     "TDIC",
     "EDBL",
-    "CREG",
     "GEMI",
     "AMZE",
     "ALP",
     "WOK",
-    "YMAT"
+    "YMAT",
+    "MOBX"
   ]
 }
