@@ -301,7 +301,7 @@ def render_html(buckets, gen_time, market_status):
         score_str = " \xb7 {}".format(score) if score else ""
         active_cls= " active" if is_first else ""
         return (
-            '<div class="sr{}" data-idx="{}" onclick="selectTicker({})">'.format(active_cls, idx, idx) +
+            '<div class="sr{}" data-idx="{}" data-bucket="{}" onclick="selectTicker({})">'.format(active_cls, idx, bucket, idx) +
             '<div class="sr-top"><span class="sr-sym">{}</span><span class="sr-price">${:.2f}</span></div>'.format(sym, price) +
             '<div class="sr-bot"><span class="sr-meta">{}{}</span><span class="sr-pct" style="color:{}">{}</span></div>'.format(scan_short, score_str, pct_color, pct_str) +
             '</div>'
@@ -438,10 +438,16 @@ body { background:var(--bg); color:var(--text); font-family:var(--sans); font-si
 .strip-num { font-size:20px; font-weight:700; font-family:var(--mono); }
 .strip-lbl { font-size:10px; color:var(--muted); letter-spacing:0.06em; text-transform:uppercase; }
 .main { display:flex; flex:1; overflow:hidden; }
-.sidebar { width:200px; flex-shrink:0; border-right:1px solid var(--bd); overflow-y:auto; background:var(--bg2); }
-.sec-hdr { font-size:9px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:10px 12px 6px; border-top:1px solid var(--bd); }
-.sec-hdr:first-child { border-top:none; }
-.sec-cnt { font-size:9px; color:var(--muted); font-weight:400; }
+.cat-panel { width:130px; flex-shrink:0; border-right:1px solid var(--bd); background:var(--bg2); display:flex; flex-direction:column; padding:8px 0; gap:2px; }
+.cat-item { padding:10px 14px; font-size:12px; font-weight:600; color:var(--muted); cursor:pointer; transition:background .1s; display:flex; justify-content:space-between; align-items:center; }
+.cat-item:hover { background:var(--bg3); color:var(--text); }
+.cat-item.active { background:var(--bg3); color:#fff; }
+.cat-item.triggered.active,.cat-item.triggered:hover { color:#5cc98a; }
+.cat-item.watching.active,.cat-item.watching:hover { color:#e6a817; }
+.cat-item.ondeck.active,.cat-item.ondeck:hover { color:#4a9eda; }
+.cat-cnt { font-size:10px; font-family:var(--mono); color:var(--muted); font-weight:400; }
+.ticker-panel { width:180px; flex-shrink:0; border-right:1px solid var(--bd); overflow-y:auto; background:var(--bg2); }
+.sec-hdr { display:none; }
 .sr { padding:9px 12px; border-bottom:1px solid var(--bd); cursor:pointer; transition:background .1s; }
 .sr:hover { background:var(--bg3); }
 .sr.active { background:var(--bg3); border-left:2px solid var(--green); }
@@ -482,18 +488,33 @@ body { background:var(--bg); color:var(--text); font-family:var(--sans); font-si
 @media(max-width:700px) {
   html,body { overflow:auto; }
   .main { flex-direction:column; overflow:visible; }
-  .sidebar { width:100%; border-right:none; border-bottom:1px solid var(--bd); overflow-y:visible; }
+  .cat-panel { width:100%; flex-direction:row; border-right:none; border-bottom:1px solid var(--bd); }
+  .ticker-panel { width:100%; border-right:none; border-bottom:1px solid var(--bd); overflow-y:visible; }
   .detail { overflow:visible; }
   .dp-metrics { grid-template-columns:1fr 1fr; }
 }"""
 
-    js = """function toggleHelp() {var p = document.getElementById("help-panel");p.classList.toggle("open");}function selectTicker(idx) {
-  document.querySelectorAll(".sr").forEach(r => r.classList.remove("active"));
-  document.querySelectorAll(".dp").forEach(p => p.classList.remove("active"));
-  var row = document.querySelector(".sr[data-idx='" + idx + "']");
-  var panel = document.getElementById("dp-" + idx);
-  if (row) row.classList.add("active");
-  if (panel) panel.classList.add("active");
+    js = """function toggleHelp(){var p=document.getElementById("help-panel");p.classList.toggle("open");}
+function selectCat(el,bucket){
+  document.querySelectorAll(".cat-item").forEach(c=>c.classList.remove("active"));
+  el.classList.add("active");
+  var rows=document.querySelectorAll(".sr");
+  var first=null;
+  rows.forEach(r=>{
+    var show=bucket==="all"||r.dataset.bucket===bucket;
+    r.style.display=show?"block":"none";
+    if(show&&!first)first=r;
+  });
+  if(first)selectTicker(parseInt(first.dataset.idx));
+}
+function selectTicker(idx){
+  document.querySelectorAll(".sr").forEach(r=>r.classList.remove("active"));
+  document.querySelectorAll(".dp").forEach(p=>p.classList.remove("active"));
+  var row=document.querySelector(".sr[data-idx='"+idx+"']");
+  var panel=document.getElementById("dp-"+idx);
+  if(row)row.classList.add("active");
+  if(panel)panel.classList.add("active");
+}
 }"""
 
     return (
@@ -520,9 +541,15 @@ body { background:var(--bg); color:var(--text); font-family:var(--sans); font-si
         "<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:#fff\">{}</span><span class=\"strip-lbl\">Universe</span></div>"
         "</div>\n".format(len(triggered), len(watch), len(ondeck), total) +
         "<div class=\"main\">"
-        "<div class=\"sidebar\">{}</div>"
-        "<div class=\"detail\">{}</div>"
-        "</div>\n".format(sidebar_html, panels_html) +
+        "<div class=\"cat-panel\">"
+        "<div class=\"cat-item active\" data-bucket=\"all\" onclick=\"selectCat(this,'all')\">All<span class=\"cat-cnt\">{tot}</span></div>"
+        "<div class=\"cat-item triggered\" data-bucket=\"triggered\" onclick=\"selectCat(this,'triggered')\">Triggered<span class=\"cat-cnt\">{tr}</span></div>"
+        "<div class=\"cat-item watching\" data-bucket=\"watch\" onclick=\"selectCat(this,'watch')\">Watching<span class=\"cat-cnt\">{wt}</span></div>"
+        "<div class=\"cat-item ondeck\" data-bucket=\"ondeck\" onclick=\"selectCat(this,'ondeck')\">On Deck<span class=\"cat-cnt\">{od}</span></div>"
+        "</div>"
+        "<div class=\"ticker-panel\">{sb}</div>"
+        "<div class=\"detail\">{pn}</div>"
+        "</div>\n".format(tot=total, tr=len(triggered), wt=len(watch), od=len(ondeck), sb=sidebar_html, pn=panels_html) +
         "<script>{}</script>\n".format(js) +
         "</body>\n</html>"
     )
