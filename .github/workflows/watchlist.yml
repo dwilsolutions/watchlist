@@ -2,8 +2,7 @@ name: Watchlist Auto-Score
 
 on:
   schedule:
-    - cron: '0 10 * * 1-5'
-    - cron: '30 14 * * 1-5'
+    - cron: '*/15 13-20 * * 1-5'  # Every 15 min 9:00 AM–4:00 PM ET — intraday scanner
   workflow_dispatch:
     inputs:
       session:
@@ -17,22 +16,7 @@ on:
           - midday
           - afterhours
           - eod
-          - swing-premarket
-          - swing-midday
-
-env:
-  SWING_PRICE_MIN: "0.20"
-  SWING_PRICE_MAX: "5.00"
-  SWING_FLOAT_MAX_M: "10"
-  SWING_MKTCAP_MAX_M: "50"
-  SWING_AVG_VOL_MIN: "100000"
-  SWING_MIN_SCORE: "0.35"
-  SWING_SPIKE_DAYS: "90"
-  SWING_SPIKE_PCT: "40"
-  SWING_SHORT_INT_MIN: "10"
-  SWING_DTC_MAX: "3"
-  SWING_OUT_DIR: "docs"
-  SWING_DATA_DIR: "docs/data/swing"
+          - intraday
 
 jobs:
   score-and-publish:
@@ -50,21 +34,10 @@ jobs:
       - name: Install dependencies
         run: |
           SESSION="${{ github.event.inputs.session }}"
-          if [ "$SESSION" = "swing-premarket" ] || [ "$SESSION" = "swing-midday" ] || [ "${{ github.event_name }}" = "schedule" ]; then
+          if [ "$SESSION" = "intraday" ] || [ "${{ github.event_name }}" = "schedule" ]; then
             pip install yfinance pandas requests beautifulsoup4 pytz --quiet
           else
             pip install yfinance pandas --quiet
-          fi
-
-      - name: Determine swing session (cron only)
-        id: swing_session
-        if: github.event_name == 'schedule'
-        run: |
-          HOUR=$(date -u +%H)
-          if [ "$HOUR" -lt "13" ]; then
-            echo "name=premarket" >> $GITHUB_OUTPUT
-          else
-            echo "name=midday" >> $GITHUB_OUTPUT
           fi
 
       - name: Run scorer or results
@@ -74,15 +47,9 @@ jobs:
           SESSION="${{ github.event.inputs.session }}"
 
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            echo "Running swing scanner via cron..."
-            python scripts/scanner.py --session ${{ steps.swing_session.outputs.name }}
-            python scripts/build_watchlist.py
-          elif [ "$SESSION" = "swing-premarket" ]; then
-            python scripts/scanner.py --session premarket
-            python scripts/build_watchlist.py
-          elif [ "$SESSION" = "swing-midday" ]; then
-            python scripts/scanner.py --session midday
-            python scripts/build_watchlist.py
+            python scripts/intraday_scanner.py
+          elif [ "$SESSION" = "intraday" ]; then
+            python scripts/intraday_scanner.py
           elif [ "$SESSION" = "eod" ]; then
             python results.py
           else
@@ -97,6 +64,6 @@ jobs:
           if [ -z "$(git status --porcelain)" ]; then
             echo "Nothing to commit"
           else
-            git commit -m "Watchlist: ${{ github.event.inputs.session || 'swing-cron' }} $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git commit -m "Watchlist: ${{ github.event.inputs.session || 'intraday' }} $(date -u +'%Y-%m-%d %H:%M UTC')"
             git push
           fi
