@@ -421,7 +421,7 @@ a{color:inherit;text-decoration:none;}
 .tab-content.active{display:block;}
 .empty{color:var(--muted);font-size:12px;padding:8px 0;}
 .no-data{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:16px;color:var(--muted);font-size:12px;text-align:center;}
-.footer{text-align:center;font-size:10px;color:var(--muted);padding:24px;border-top:1px solid var(--border);}
+.footer{text-align:center;font-size:10px;color:var(--muted);padding:24px;border-top:1px solid var(--border);}.dl-btn{font-family:var(--mono);font-size:10px;padding:4px 11px;border-radius:20px;background:rgba(58,156,95,0.12);color:#5cc98a;border:1px solid rgba(58,156,95,0.3);cursor:pointer;letter-spacing:0.04em;transition:background .15s;}.dl-btn:hover{background:rgba(58,156,95,0.22);}
 """
 
 def card_html(t, perf):
@@ -507,6 +507,7 @@ def render_html(today, session_results, all_quotes, cum_stats, gen_time):
     # Build nav items and tab content for each session
     nav_items_html = ""
     tabs_html = ""
+    all_sessions_inner = ""
     SESSION_ICONS = {
         "premarket":      "🌅",
         "marketopen":     "🔔",
@@ -536,14 +537,33 @@ def render_html(today, session_results, all_quotes, cum_stats, gen_time):
         tabs_html += f'''<div class="tab-content{active_cls}" id="sess-{session_key}">
   <div class="body" style="padding:14px 20px 48px;">{body_inner}</div>
 </div>'''
+        if tickers:
+            _all_cards = "".join(card_html(t, t["perf"]) for t in tickers)
+            all_sessions_inner += f'''<div class="sec-lbl">{icon} {label} · {runner_txt}</div><div class="cards">{_all_cards}</div>'''
 
+    _all_total = sum(len(session_results.get(sk, [])) for sk, _ in SESSIONS_ORDER)
+    _all_body  = all_sessions_inner if all_sessions_inner else '<div class="no-data">No data today</div>'
+    _all_nav   = f'''<div class="nav-item" data-tab="sess-all"><span class="nav-icon">📋</span><span class="nav-label">All Sessions</span><span class="nav-cnt">{_all_total}</span></div>'''
+    _all_tab   = f'''<div class="tab-content" id="sess-all"><div class="body" style="padding:14px 20px 48px;">{_all_body}</div></div>'''
     session_html = f'''<div class="layout">
   <div class="sidenav">
     <div class="sidenav-label">Sessions</div>
+    {_all_nav}
     {nav_items_html}
   </div>
+  {_all_tab}
   {tabs_html}
 </div>'''
+    import json as _json
+    export_payload = {
+        "date": today.isoformat(),
+        "generated": gen_time,
+        "summary": {"total": total, "monsters": monsters, "big_runners": big_runners, "runners": runners, "catch_rate": catch_rate},
+        "cumulative": cum_stats,
+        "sessions": {sk: list(tickers) for sk, tickers in session_results.items()},
+    }
+    export_json_escaped = _json.dumps(export_payload, indent=2).replace("</", "<" + "/")
+
     js_block = """<script>
 document.querySelectorAll('.nav-item').forEach(item => {
   item.addEventListener('click', () => {
@@ -554,6 +574,14 @@ document.querySelectorAll('.nav-item').forEach(item => {
     window.scrollTo(0, 0);
   });
 });
+const _EOD_DATA = """ + export_json_escaped + """;
+function downloadData() {
+  const blob = new Blob([JSON.stringify(_EOD_DATA, null, 2)], {type: 'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'eod-results-' + _EOD_DATA.date + '.json'; a.click();
+  URL.revokeObjectURL(url);
+}
 </script>"""
 
     # Cumulative block
@@ -584,6 +612,7 @@ document.querySelectorAll('.nav-item').forEach(item => {
   <div class="hdr-r">
     <span class="pill">{today_str}</span>
     <span class="pill">Generated {gen_time}</span>
+    <button class="dl-btn" onclick="downloadData()">&#8595; Download Data</button>
   </div>
 </div>
 <div class="summary">
@@ -684,6 +713,11 @@ def main():
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     out_path = os.path.join(OUTPUT_DIR, "eod_results.html")
+    import pytz as _ptz
+    _et2 = _ptz.timezone("America/New_York")
+    from datetime import datetime as _dtt
+    _ts = _dtt.now(_et2).strftime("%Y-%m-%dT%H:%M:%S")
+    html = html.replace("</head>", f"<!-- built {_ts} --></head>", 1)
     with open(out_path, "w") as f:
         f.write(html)
     print(f"  [+] Results page → {out_path}")
