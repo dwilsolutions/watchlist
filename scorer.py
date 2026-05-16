@@ -885,6 +885,7 @@ def main():
                 "gap": r["gap"],
                 "rvol": r["rvol"],
                 "flags": [f[0] for f in r["flags"]],
+                "news_url": r.get("news_url", ""),
             }
             for r in results if r["total"] >= 40  # Buy Watch + Monitor only
         ]
