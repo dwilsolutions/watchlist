@@ -288,7 +288,13 @@ def render_html(buckets, gen_time, market_status):
     status_color = "#5cc98a" if market_status == "open" else "#e6a817"
     status_label = {"open": "MARKET OPEN", "pre": "PRE-MARKET", "after": "AFTER HOURS"}.get(market_status, "CLOSED")
 
-    def col_row(t, meta):
+    BUCKET_STYLES = {
+        "triggered": ("rgba(92,201,138,0.08)",  "rgba(92,201,138,0.25)"),
+        "watch":     ("rgba(230,168,23,0.06)",  "rgba(230,168,23,0.2)"),
+        "ondeck":    ("rgba(74,158,218,0.06)",  "rgba(74,158,218,0.2)"),
+    }
+
+    def tile(t, meta, bucket):
         sym        = t.get("ticker", "")
         score      = t.get("score", 0)
         scan       = t.get("scan", "")
@@ -300,6 +306,7 @@ def render_html(buckets, gen_time, market_status):
         pct        = meta.get("pct_from_entry", 0)
         above_vwap = meta.get("above_vwap", False)
         signals    = meta.get("signals", [])
+        hod        = meta.get("hod", 0)
 
         pct_str    = ("+{:.1f}%".format(pct * 100)) if pct >= 0 else ("{:.1f}%".format(pct * 100))
         pct_color  = "#5cc98a" if pct >= 0 else "#e05c5c"
@@ -316,27 +323,32 @@ def render_html(buckets, gen_time, market_status):
         if source == "live":
             sigs_html += '<span class="sig" style="color:#c97dd4;border-color:#c97dd4">LIVE</span>'
 
+        bg, bd = BUCKET_STYLES.get(bucket, ("rgba(255,255,255,0.03)", "#1e2a1e"))
+
         out = []
-        out.append('<div class="cr">')
-        out.append('<div class="cr-top">')
-        out.append('<div><span class="cr-sym">{}</span> <span class="cr-meta">{}{}</span></div>'.format(sym, scan_short, score_str))
-        out.append('<div style="text-align:right"><div class="cr-price">${:.2f}</div>'.format(price))
-        out.append('<div class="cr-pct" style="color:{c}">{p}</div></div>'.format(c=pct_color, p=pct_str))
+        out.append('<a class="tile" href="https://finviz.com/quote.ashx?t={s}" target="_blank" style="background:{bg};border-color:{bd}">'.format(s=sym, bg=bg, bd=bd))
+        out.append('<div class="tile-top">')
+        out.append('<span class="tile-sym">{}</span>'.format(sym))
+        out.append('<span class="tile-scan">{}{}</span>'.format(scan_short, score_str))
         out.append('</div>')
+        out.append('<div class="tile-pct" style="color:{c}">{p}</div>'.format(c=pct_color, p=pct_str))
+        out.append('<div class="tile-price">${:.2f}</div>'.format(price))
+        out.append('<div class="tile-vwap" style="color:{c}">VWAP ${:.2f} {l}</div>'.format(vwap, l=vwap_lbl, c=vwap_color))
         if sigs_html:
-            out.append('<div class="cr-sigs">{}</div>'.format(sigs_html))
-        out.append('<div class="cr-vwap" style="color:{c}">VWAP ${:.2f} {l}</div>'.format(vwap, l=vwap_lbl, c=vwap_color))
-        out.append('<div class="cr-footer">')
-        if entry_lbl:
-            out.append('<span class="cr-entry">{}</span>'.format(entry_lbl))
-        out.append('<a class="cr-link" href="https://finviz.com/quote.ashx?t={s}" target="_blank">Finviz &#8599;</a>'.format(s=sym))
-        out.append('</div></div>')
+            out.append('<div class="tile-sigs">{}</div>'.format(sigs_html))
+        out.append('</a>')
         return "".join(out)
 
-    def build_col(label, color, items):
-        hdr  = '<div class="col-hdr" style="color:{c}">{l} <span class="col-cnt">{n}</span></div>'.format(c=color, l=label, n=len(items))
-        body = "".join(col_row(t, meta) for t, meta in items) if items else '<div class="col-empty">None right now</div>'
-        return '<div class="col"><div class="col-inner">{}{}</div></div>'.format(hdr, body)
+    def section(label, color, items, bucket):
+        if not items:
+            return ""
+        tiles = "".join(tile(t, meta, bucket) for t, meta in items)
+        return (
+            '<div class="section">'
+            '<div class="sec-hdr" style="color:{c}">{l} <span class="sec-cnt">{n}</span></div>'
+            '<div class="tiles">{t}</div>'
+            '</div>'
+        ).format(c=color, l=label, n=len(items), t=tiles)
 
     css = "".join([
         ":root{--bg:#0a0f0a;--bg2:#0f160f;--bg3:#141c14;--bd:#1e2a1e;",
@@ -367,29 +379,22 @@ def render_html(buckets, gen_time, market_status):
         ".strip-item:last-child{border-right:none;}",
         ".strip-num{font-size:20px;font-weight:700;font-family:var(--mono);}",
         ".strip-lbl{font-size:10px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;}",
-        ".cols{display:grid;grid-template-columns:1fr 1fr 1fr;flex:1;overflow:hidden;}",
-        ".col{border-right:1px solid var(--bd);display:flex;flex-direction:column;overflow:hidden;}",
-        ".col:last-child{border-right:none;}",
-        ".col-inner{overflow-y:auto;flex:1;}",
-        ".col-hdr{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:9px 12px;border-bottom:1px solid var(--bd);background:var(--bg2);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;}",
-        ".col-cnt{font-size:10px;font-weight:400;color:var(--muted);font-family:var(--mono);}",
-        ".col-empty{padding:24px 12px;font-size:11px;color:var(--muted);text-align:center;}",
-        ".cr{padding:10px 12px;border-bottom:1px solid var(--bd);display:flex;flex-direction:column;gap:5px;cursor:default;}",
-        ".cr:hover{background:var(--bg3);}",
-        ".cr-top{display:flex;justify-content:space-between;align-items:flex-start;}",
-        ".cr-sym{font-size:14px;font-weight:700;color:#fff;font-family:var(--mono);}",
-        ".cr-meta{font-size:10px;color:var(--muted);}",
-        ".cr-price{font-size:13px;font-weight:700;color:#fff;font-family:var(--mono);}",
-        ".cr-pct{font-size:12px;font-weight:700;font-family:var(--mono);}",
-        ".cr-sigs{display:flex;flex-wrap:wrap;gap:3px;}",
-        ".sig{font-size:9px;font-weight:700;letter-spacing:0.05em;padding:1px 5px;border-radius:6px;border:1px solid;}",
-        ".cr-vwap{font-size:10px;}",
-        ".cr-footer{display:flex;justify-content:space-between;align-items:center;}",
-        ".cr-entry{font-size:10px;color:var(--muted);font-family:var(--mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;margin-right:8px;}",
-        ".cr-link{font-family:var(--mono);font-size:10px;color:var(--blue);text-decoration:none;flex-shrink:0;}",
-        ".cr-link:hover{color:#7dbee8;}",
-        "@media(max-width:700px){html,body{overflow:auto;}.cols{grid-template-columns:1fr;overflow:visible;}",
-        ".col{border-right:none;border-bottom:1px solid var(--bd);overflow:visible;}.col-inner{overflow:visible;}}",
+        ".main{flex:1;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:20px;}",
+        ".section{display:flex;flex-direction:column;gap:10px;}",
+        ".sec-hdr{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;}",
+        ".sec-cnt{font-size:10px;font-weight:400;color:var(--muted);font-family:var(--mono);}",
+        ".tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;}",
+        ".tile{border:1px solid;border-radius:8px;padding:11px 12px;display:flex;flex-direction:column;gap:5px;text-decoration:none;transition:filter .15s;}",
+        ".tile:hover{filter:brightness(1.15);}",
+        ".tile-top{display:flex;justify-content:space-between;align-items:baseline;}",
+        ".tile-sym{font-size:14px;font-weight:700;color:#fff;font-family:var(--mono);}",
+        ".tile-scan{font-size:9px;color:var(--muted);}",
+        ".tile-pct{font-size:22px;font-weight:700;font-family:var(--mono);line-height:1;}",
+        ".tile-price{font-size:11px;color:var(--text);font-family:var(--mono);}",
+        ".tile-vwap{font-size:10px;}",
+        ".tile-sigs{display:flex;flex-wrap:wrap;gap:3px;margin-top:2px;}",
+        ".sig{font-size:8px;font-weight:700;letter-spacing:0.05em;padding:1px 4px;border-radius:4px;border:1px solid;}",
+        "@media(max-width:700px){html,body{overflow:auto;}.tiles{grid-template-columns:repeat(auto-fill,minmax(110px,1fr));}}",
     ])
 
     help_items = [
@@ -432,10 +437,12 @@ def render_html(buckets, gen_time, market_status):
     out.append("<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--blue)\">{}</span><span class=\"strip-lbl\">On Deck</span></div>".format(len(ondeck)))
     out.append("<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:#fff\">{}</span><span class=\"strip-lbl\">Universe</span></div>".format(total))
     out.append("</div>\n")
-    out.append("<div class=\"cols\">")
-    out.append(build_col("Triggered", "#5cc98a", triggered))
-    out.append(build_col("Watching",  "#e6a817", watch))
-    out.append(build_col("On Deck",   "#4a9eda", ondeck))
+    out.append("<div class=\"main\">")
+    out.append(section("Triggered", "#5cc98a", triggered, "triggered"))
+    out.append(section("Watching",  "#e6a817", watch,     "watch"))
+    out.append(section("On Deck",   "#4a9eda", ondeck,    "ondeck"))
+    if not total:
+        out.append('<div style="padding:40px;text-align:center;color:var(--muted);font-size:12px;">No tickers yet. Run premarket scorer first.</div>')
     out.append("</div>\n")
     out.append("<script>{}</script>\n</body>\n</html>".format(js))
     return "".join(out)
