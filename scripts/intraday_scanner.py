@@ -288,29 +288,25 @@ def render_html(buckets, gen_time, market_status):
     status_color = "#5cc98a" if market_status == "open" else "#e6a817"
     status_label = {"open": "MARKET OPEN", "pre": "PRE-MARKET", "after": "AFTER HOURS"}.get(market_status, "CLOSED")
 
-    def row_html(t, meta, bucket, idx):
-        sym       = t.get("ticker", "")
-        score     = t.get("score", 0)
-        scan      = t.get("scan", "")
-        entry_lbl = t.get("entry_label", "")
-        source    = t.get("source", "wl")
-        flags     = t.get("flags", [])
+    def col_row(t, meta):
+        sym        = t.get("ticker", "")
+        score      = t.get("score", 0)
+        scan       = t.get("scan", "")
+        entry_lbl  = t.get("entry_label", "")
+        source     = t.get("source", "wl")
 
         price      = meta.get("price", 0)
         vwap       = meta.get("vwap", 0)
-        hod        = meta.get("hod", 0)
         pct        = meta.get("pct_from_entry", 0)
-        signals    = meta.get("signals", [])
         above_vwap = meta.get("above_vwap", False)
+        signals    = meta.get("signals", [])
 
         pct_str    = ("+{:.1f}%".format(pct * 100)) if pct >= 0 else ("{:.1f}%".format(pct * 100))
         pct_color  = "#5cc98a" if pct >= 0 else "#e05c5c"
         vwap_color = "#5cc98a" if above_vwap else "#e05c5c"
         vwap_lbl   = "above" if above_vwap else "below"
-
-        bucket_color = {"triggered": "#5cc98a", "watch": "#e6a817", "ondeck": "#4a9eda"}.get(bucket, "#888")
-        scan_short   = "LF" if "Low" in scan else ("MC" if "Mid" in scan else "LV")
-        score_str    = " \xb7 {}".format(score) if score else ""
+        scan_short = "LF" if "Low" in scan else ("MC" if "Mid" in scan else "LV")
+        score_str  = " \xb7 {}".format(score) if score else ""
 
         sig_colors = ["#5cc98a", "#4a9eda", "#e6a817", "#c97dd4"]
         sigs_html  = "".join(
@@ -319,50 +315,30 @@ def render_html(buckets, gen_time, market_status):
         )
         if source == "live":
             sigs_html += '<span class="sig" style="color:#c97dd4;border-color:#c97dd4">LIVE</span>'
-        if not sigs_html:
-            sigs_html = '<span class="row-nosig">\u2014</span>'
 
-        flags_html = " \xb7 ".join(flags[:3]) if flags else ""
+        out = []
+        out.append('<div class="cr">')
+        out.append('<div class="cr-top">')
+        out.append('<div><span class="cr-sym">{}</span> <span class="cr-meta">{}{}</span></div>'.format(sym, scan_short, score_str))
+        out.append('<div style="text-align:right"><div class="cr-price">${:.2f}</div>'.format(price))
+        out.append('<div class="cr-pct" style="color:{c}">{p}</div></div>'.format(c=pct_color, p=pct_str))
+        out.append('</div>')
+        if sigs_html:
+            out.append('<div class="cr-sigs">{}</div>'.format(sigs_html))
+        out.append('<div class="cr-vwap" style="color:{c}">VWAP ${:.2f} {l}</div>'.format(vwap, l=vwap_lbl, c=vwap_color))
+        out.append('<div class="cr-footer">')
+        if entry_lbl:
+            out.append('<span class="cr-entry">{}</span>'.format(entry_lbl))
+        out.append('<a class="cr-link" href="https://finviz.com/quote.ashx?t={s}" target="_blank">Finviz &#8599;</a>'.format(s=sym))
+        out.append('</div></div>')
+        return "".join(out)
 
-        parts = []
-        parts.append('<div class="row" data-bucket="{bk}">'.format(bk=bucket))
-        parts.append('<div class="row-main" onclick="toggleRow({idx})">'.format(idx=idx))
-        parts.append('<div class="row-ticker" style="border-left-color:{bc}">'.format(bc=bucket_color))
-        parts.append('<div class="row-sym">{}</div>'.format(sym))
-        parts.append('<div class="row-meta">{}{}</div>'.format(scan_short, score_str))
-        parts.append('</div>')
-        parts.append('<div class="row-sigs">{}</div>'.format(sigs_html))
-        parts.append('<div class="row-price">')
-        parts.append('<div class="row-pv">${:.2f}</div>'.format(price))
-        parts.append('<div class="row-sub" style="color:{c}">VWAP ${:.2f} {l}</div>'.format(vwap, l=vwap_lbl, c=vwap_color))
-        parts.append('</div>')
-        parts.append('<div class="row-pct">')
-        parts.append('<div class="row-pv" style="color:{c}">{p}</div>'.format(c=pct_color, p=pct_str))
-        parts.append('<div class="row-sub">vs entry</div>')
-        parts.append('</div></div>')
-        parts.append('<div class="row-detail" id="rd-{idx}">'.format(idx=idx))
-        parts.append('<div class="rd-inner">')
-        parts.append('<div class="rd-item"><span class="rd-lbl">Entry</span><span class="rd-val">{}</span></div>'.format(entry_lbl))
-        parts.append('<div class="rd-item"><span class="rd-lbl">HOD</span><span class="rd-val">${:.2f}</span></div>'.format(hod))
-        if flags_html:
-            parts.append('<div class="rd-item"><span class="rd-lbl">Flags</span><span class="rd-val rd-flags">{}</span></div>'.format(flags_html))
-        parts.append('<div class="rd-links">')
-        parts.append('<a class="rl info" href="https://finviz.com/chart.ashx?t={s}&ty=c&ta=0&p=i5&s=l" target="_blank">Chart &#8599;</a>'.format(s=sym))
-        parts.append('<a class="rl" href="https://www.tradingview.com/chart/?symbol={s}" target="_blank">TV &#8599;</a>'.format(s=sym))
-        parts.append('<a class="rl" href="https://finviz.com/quote.ashx?t={s}" target="_blank">Quote &#8599;</a>'.format(s=sym))
-        parts.append('</div></div></div></div>')
-        return "".join(parts)
+    def build_col(label, color, items):
+        hdr  = '<div class="col-hdr" style="color:{c}">{l} <span class="col-cnt">{n}</span></div>'.format(c=color, l=label, n=len(items))
+        body = "".join(col_row(t, meta) for t, meta in items) if items else '<div class="col-empty">None right now</div>'
+        return '<div class="col"><div class="col-inner">{}{}</div></div>'.format(hdr, body)
 
-    rows_html = ""
-    idx = 0
-    for t, meta in triggered: rows_html += row_html(t, meta, "triggered", idx); idx += 1
-    for t, meta in watch:     rows_html += row_html(t, meta, "watch",     idx); idx += 1
-    for t, meta in ondeck:    rows_html += row_html(t, meta, "ondeck",    idx); idx += 1
-
-    if not rows_html:
-        rows_html = '<div class="no-data">No tickers yet. Run premarket scorer first.</div>'
-
-    css_parts = [
+    css = "".join([
         ":root{--bg:#0a0f0a;--bg2:#0f160f;--bg3:#141c14;--bd:#1e2a1e;",
         "--green:#5cc98a;--gold:#e6a817;--blue:#4a9eda;--red:#e05c5c;",
         "--muted:#4a5a4a;--text:#c8d8c8;",
@@ -391,66 +367,29 @@ def render_html(buckets, gen_time, market_status):
         ".strip-item:last-child{border-right:none;}",
         ".strip-num{font-size:20px;font-weight:700;font-family:var(--mono);}",
         ".strip-lbl{font-size:10px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;}",
-        ".main{display:flex;flex:1;overflow:hidden;}",
-        ".cat-panel{width:110px;flex-shrink:0;border-right:1px solid var(--bd);background:var(--bg2);display:flex;flex-direction:column;padding:8px 0;gap:2px;}",
-        ".cat-item{padding:10px 12px;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;transition:background .1s;display:flex;justify-content:space-between;align-items:center;}",
-        ".cat-item:hover,.cat-item.active{background:var(--bg3);color:#fff;}",
-        ".cat-item.triggered:hover,.cat-item.triggered.active{color:#5cc98a;}",
-        ".cat-item.watching:hover,.cat-item.watching.active{color:#e6a817;}",
-        ".cat-item.ondeck:hover,.cat-item.ondeck.active{color:#4a9eda;}",
-        ".cat-cnt{font-size:10px;font-family:var(--mono);color:var(--muted);font-weight:400;}",
-        ".list-panel{flex:1;overflow-y:auto;}",
-        ".col-hdr{display:flex;align-items:center;padding:6px 16px;border-bottom:1px solid var(--bd);background:var(--bg2);position:sticky;top:0;z-index:10;}",
-        ".ch-ticker{width:90px;flex-shrink:0;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;}",
-        ".ch-sigs{flex:1;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;}",
-        ".ch-price{width:130px;flex-shrink:0;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;text-align:right;}",
-        ".ch-pct{width:80px;flex-shrink:0;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;text-align:right;}",
-        ".row{border-bottom:1px solid var(--bd);}",
-        ".row-main{display:flex;align-items:center;padding:9px 16px;cursor:pointer;transition:background .1s;}",
-        ".row-main:hover{background:var(--bg3);}",
-        ".row-ticker{width:90px;flex-shrink:0;border-left:2px solid;padding-left:8px;}",
-        ".row-sym{font-size:14px;font-weight:700;color:#fff;font-family:var(--mono);}",
-        ".row-meta{font-size:10px;color:var(--muted);margin-top:1px;}",
-        ".row-sigs{flex:1;display:flex;flex-wrap:wrap;gap:4px;padding:0 16px;}",
-        ".row-nosig{color:var(--muted);font-size:12px;}",
-        ".sig{font-size:9px;font-weight:700;letter-spacing:0.05em;padding:2px 6px;border-radius:8px;border:1px solid;white-space:nowrap;}",
-        ".row-price{width:130px;flex-shrink:0;text-align:right;}",
-        ".row-pct{width:80px;flex-shrink:0;text-align:right;}",
-        ".row-pv{font-size:13px;font-weight:700;font-family:var(--mono);color:#fff;}",
-        ".row-sub{font-size:10px;color:var(--muted);margin-top:1px;white-space:nowrap;}",
-        ".row-detail{display:none;border-top:1px solid var(--bd);background:var(--bg3);}",
-        ".row-detail.open{display:block;}",
-        ".rd-inner{display:flex;align-items:center;gap:16px;padding:9px 16px 9px 28px;flex-wrap:wrap;}",
-        ".rd-item{display:flex;align-items:baseline;gap:6px;}",
-        ".rd-lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;white-space:nowrap;}",
-        ".rd-val{font-size:11px;color:var(--text);font-family:var(--mono);}",
-        ".rd-flags{color:var(--muted);font-family:var(--sans);}",
-        ".rd-links{display:flex;gap:6px;margin-left:auto;}",
-        ".rl{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none;padding:3px 8px;border:1px solid var(--bd);border-radius:4px;}",
-        ".rl:hover{color:var(--text);}",
-        ".rl.info{color:var(--blue);border-color:rgba(74,158,218,0.3);}",
-        ".no-data{padding:40px;text-align:center;color:var(--muted);font-size:12px;}",
-        "@media(max-width:700px){html,body{overflow:auto;}.main{flex-direction:column;overflow:visible;}",
-        ".cat-panel{width:100%;flex-direction:row;border-right:none;border-bottom:1px solid var(--bd);}",
-        ".list-panel{overflow:visible;}.row-pct,.ch-pct{display:none;}.row-price,.ch-price{width:90px;}}",
-    ]
-    css = "".join(css_parts)
-
-    js = "\n".join([
-        "function toggleHelp(){var p=document.getElementById('help-panel');p.classList.toggle('open');}",
-        "function selectCat(el,bucket){",
-        "  document.querySelectorAll('.cat-item').forEach(c=>c.classList.remove('active'));",
-        "  el.classList.add('active');",
-        "  document.querySelectorAll('.row').forEach(r=>{",
-        "    r.style.display=(bucket==='all'||r.dataset.bucket===bucket)?'block':'none';",
-        "  });",
-        "}",
-        "function toggleRow(idx){",
-        "  var d=document.getElementById('rd-'+idx);",
-        "  var was=d.classList.contains('open');",
-        "  document.querySelectorAll('.row-detail').forEach(x=>x.classList.remove('open'));",
-        "  if(!was)d.classList.add('open');",
-        "}",
+        ".cols{display:grid;grid-template-columns:1fr 1fr 1fr;flex:1;overflow:hidden;}",
+        ".col{border-right:1px solid var(--bd);display:flex;flex-direction:column;overflow:hidden;}",
+        ".col:last-child{border-right:none;}",
+        ".col-inner{overflow-y:auto;flex:1;}",
+        ".col-hdr{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:9px 12px;border-bottom:1px solid var(--bd);background:var(--bg2);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;}",
+        ".col-cnt{font-size:10px;font-weight:400;color:var(--muted);font-family:var(--mono);}",
+        ".col-empty{padding:24px 12px;font-size:11px;color:var(--muted);text-align:center;}",
+        ".cr{padding:10px 12px;border-bottom:1px solid var(--bd);display:flex;flex-direction:column;gap:5px;cursor:default;}",
+        ".cr:hover{background:var(--bg3);}",
+        ".cr-top{display:flex;justify-content:space-between;align-items:flex-start;}",
+        ".cr-sym{font-size:14px;font-weight:700;color:#fff;font-family:var(--mono);}",
+        ".cr-meta{font-size:10px;color:var(--muted);}",
+        ".cr-price{font-size:13px;font-weight:700;color:#fff;font-family:var(--mono);}",
+        ".cr-pct{font-size:12px;font-weight:700;font-family:var(--mono);}",
+        ".cr-sigs{display:flex;flex-wrap:wrap;gap:3px;}",
+        ".sig{font-size:9px;font-weight:700;letter-spacing:0.05em;padding:1px 5px;border-radius:6px;border:1px solid;}",
+        ".cr-vwap{font-size:10px;}",
+        ".cr-footer{display:flex;justify-content:space-between;align-items:center;}",
+        ".cr-entry{font-size:10px;color:var(--muted);font-family:var(--mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;margin-right:8px;}",
+        ".cr-link{font-family:var(--mono);font-size:10px;color:var(--blue);text-decoration:none;flex-shrink:0;}",
+        ".cr-link:hover{color:#7dbee8;}",
+        "@media(max-width:700px){html,body{overflow:auto;}.cols{grid-template-columns:1fr;overflow:visible;}",
+        ".col{border-right:none;border-bottom:1px solid var(--bd);overflow:visible;}.col-inner{overflow:visible;}}",
     ])
 
     help_items = [
@@ -468,49 +407,38 @@ def render_html(buckets, gen_time, market_status):
         help_html += '<div class="help-item">{}<span class="hv">{}</span></div>'.format(title, desc)
     help_html += '</div></div>'
 
-    html_parts = [
-        "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n",
-        "<meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n",
-        "<meta http-equiv=\"refresh\" content=\"300\">\n",
-        "<title>Watchlist \xb7 Scanner</title>\n",
-        "<style>{}</style>\n</head>\n<body>\n".format(css),
-        "<div class=\"hdr\">",
-        "<div class=\"hdr-l\"><span class=\"hdr-brand\">Watchlist \xb7</span>",
-        "<span class=\"hdr-name\">Intraday Scanner</span></div>",
-        "<div class=\"hdr-r\">",
-        "<span class=\"status-dot\" style=\"background:{sc}\"></span>".format(sc=status_color),
-        "<span class=\"status-lbl\" style=\"color:{sc}\">{sl}</span>".format(sc=status_color, sl=status_label),
-        "<span class=\"pill\">Updated {gt}</span>".format(gt=gen_time),
-        "<span class=\"pill\">{tot} tickers</span>".format(tot=total),
-        "<button class=\"help-btn\" onclick=\"toggleHelp()\">? How to use</button>",
-        "</div></div>\n",
-        help_html,
-        "<div class=\"strip\">",
-        "<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--green)\">{tr}</span><span class=\"strip-lbl\">Triggered</span></div>".format(tr=len(triggered)),
-        "<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--gold)\">{wt}</span><span class=\"strip-lbl\">Watching</span></div>".format(wt=len(watch)),
-        "<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--blue)\">{od}</span><span class=\"strip-lbl\">On Deck</span></div>".format(od=len(ondeck)),
-        "<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:#fff\">{tot}</span><span class=\"strip-lbl\">Universe</span></div>".format(tot=total),
-        "</div>\n",
-        "<div class=\"main\">",
-        "<div class=\"cat-panel\">",
-        "<div class=\"cat-item active\" onclick=\"selectCat(this,'all')\">All<span class=\"cat-cnt\">{tot}</span></div>".format(tot=total),
-        "<div class=\"cat-item triggered\" onclick=\"selectCat(this,'triggered')\">Triggered<span class=\"cat-cnt\">{tr}</span></div>".format(tr=len(triggered)),
-        "<div class=\"cat-item watching\" onclick=\"selectCat(this,'watch')\">Watching<span class=\"cat-cnt\">{wt}</span></div>".format(wt=len(watch)),
-        "<div class=\"cat-item ondeck\" onclick=\"selectCat(this,'ondeck')\">On Deck<span class=\"cat-cnt\">{od}</span></div>".format(od=len(ondeck)),
-        "</div>",
-        "<div class=\"list-panel\">",
-        "<div class=\"col-hdr\">",
-        "<span class=\"ch-ticker\">Ticker</span>",
-        "<span class=\"ch-sigs\">Signals</span>",
-        "<span class=\"ch-price\">Price / VWAP</span>",
-        "<span class=\"ch-pct\">vs Entry</span>",
-        "</div>",
-        rows_html,
-        "</div></div>\n",
-        "<script>{}</script>\n</body>\n</html>".format(js),
-    ]
+    js = "function toggleHelp(){document.getElementById('help-panel').classList.toggle('open');}"
 
-    return "".join(html_parts)
+    out = []
+    out.append("<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n")
+    out.append("<meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n")
+    out.append("<meta http-equiv=\"refresh\" content=\"300\">\n")
+    out.append("<title>Watchlist \xb7 Scanner</title>\n")
+    out.append("<style>{}</style>\n</head>\n<body>\n".format(css))
+    out.append("<div class=\"hdr\">")
+    out.append("<div class=\"hdr-l\"><span class=\"hdr-brand\">Watchlist \xb7</span>")
+    out.append("<span class=\"hdr-name\">Intraday Scanner</span></div>")
+    out.append("<div class=\"hdr-r\">")
+    out.append("<span class=\"status-dot\" style=\"background:{sc}\"></span>".format(sc=status_color))
+    out.append("<span class=\"status-lbl\" style=\"color:{sc}\">{sl}</span>".format(sc=status_color, sl=status_label))
+    out.append("<span class=\"pill\">Updated {gt}</span>".format(gt=gen_time))
+    out.append("<span class=\"pill\">{tot} tickers</span>".format(tot=total))
+    out.append("<button class=\"help-btn\" onclick=\"toggleHelp()\">? How to use</button>")
+    out.append("</div></div>\n")
+    out.append(help_html)
+    out.append("<div class=\"strip\">")
+    out.append("<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--green)\">{}</span><span class=\"strip-lbl\">Triggered</span></div>".format(len(triggered)))
+    out.append("<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--gold)\">{}</span><span class=\"strip-lbl\">Watching</span></div>".format(len(watch)))
+    out.append("<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--blue)\">{}</span><span class=\"strip-lbl\">On Deck</span></div>".format(len(ondeck)))
+    out.append("<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:#fff\">{}</span><span class=\"strip-lbl\">Universe</span></div>".format(total))
+    out.append("</div>\n")
+    out.append("<div class=\"cols\">")
+    out.append(build_col("Triggered", "#5cc98a", triggered))
+    out.append(build_col("Watching",  "#e6a817", watch))
+    out.append(build_col("On Deck",   "#4a9eda", ondeck))
+    out.append("</div>\n")
+    out.append("<script>{}</script>\n</body>\n</html>".format(js))
+    return "".join(out)
 
 
 # ── Main ─────────────────────────────────────────────────────────────────────
