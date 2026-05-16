@@ -289,20 +289,30 @@ def render_html(buckets, gen_time, market_status):
     status_label = {"open": "MARKET OPEN", "pre": "PRE-MARKET", "after": "AFTER HOURS"}.get(market_status, "CLOSED")
 
     BUCKET_STYLES = {
-        "triggered": ("rgba(92,201,138,0.08)",  "rgba(92,201,138,0.25)"),
-        "watch":     ("rgba(230,168,23,0.06)",  "rgba(230,168,23,0.2)"),
-        "ondeck":    ("rgba(74,158,218,0.06)",  "rgba(74,158,218,0.2)"),
+        "triggered": ("rgba(92,201,138,0.08)", "rgba(92,201,138,0.25)"),
+        "watch":     ("rgba(230,168,23,0.06)", "rgba(230,168,23,0.2)"),
+        "ondeck":    ("rgba(74,158,218,0.06)", "rgba(74,158,218,0.2)"),
     }
 
-    def tile(t, meta, bucket):
+    all_tiles = []  # collect (sym, detail_html) for JS
+
+    def tile(t, meta, bucket, tile_id):
         sym        = t.get("ticker", "")
         score      = t.get("score", 0)
         scan       = t.get("scan", "")
         source     = t.get("source", "wl")
+        sector     = t.get("sector", "")
+        entry_lbl  = t.get("entry_label", "")
+        flags      = t.get("flags", [])
+        fib_levels = t.get("fib_levels", [])
+        gap        = t.get("gap", 0)
+        rvol_scan  = t.get("rvol", 0)
+        news_url   = t.get("news_url", "")
 
         price      = meta.get("price", 0)
         vwap       = meta.get("vwap", 0)
         pct        = meta.get("pct_from_entry", 0)
+        hod        = meta.get("hod", 0)
         above_vwap = meta.get("above_vwap", False)
         signals    = meta.get("signals", [])
 
@@ -323,30 +333,88 @@ def render_html(buckets, gen_time, market_status):
 
         bg, bd = BUCKET_STYLES.get(bucket, ("rgba(255,255,255,0.03)", "#1e2a1e"))
 
-        out = []
-        out.append('<a class="tile" href="https://finviz.com/quote.ashx?t={s}" target="_blank" style="background:{bg};border-color:{bd}">'.format(s=sym, bg=bg, bd=bd))
-        out.append('<div class="tile-top">')
-        out.append('<span class="tile-sym">{}</span>'.format(sym))
-        out.append('<span class="tile-scan">{}{}</span>'.format(scan_short, score_str))
-        out.append('</div>')
-        out.append('<div class="tile-pct" style="color:{c}">{p}</div>'.format(c=pct_color, p=pct_str))
-        out.append('<div class="tile-price">${:.2f}</div>'.format(price))
-        out.append('<div class="tile-vwap" style="color:{c}">VWAP ${:.2f} {l}</div>'.format(vwap, l=vwap_lbl, c=vwap_color))
+        # Tile HTML
+        t_out = []
+        t_out.append('<div class="tile" data-id="{}" style="background:{};border-color:{}" onclick="openDetail(\'{}\')">'.format(tile_id, bg, bd, tile_id))
+        t_out.append('<div class="tile-top"><span class="tile-sym">{}</span><span class="tile-scan">{}{}</span></div>'.format(sym, scan_short, score_str))
+        t_out.append('<div class="tile-pct" style="color:{c}">{p}</div>'.format(c=pct_color, p=pct_str))
+        t_out.append('<div class="tile-price">${:.2f}</div>'.format(price))
+        t_out.append('<div class="tile-vwap" style="color:{c}">VWAP ${:.2f} {l}</div>'.format(vwap, l=vwap_lbl, c=vwap_color))
         if sigs_html:
-            out.append('<div class="tile-sigs">{}</div>'.format(sigs_html))
-        out.append('</a>')
-        return "".join(out)
+            t_out.append('<div class="tile-sigs">{}</div>'.format(sigs_html))
+        t_out.append('</div>')
+
+        # Detail panel HTML
+        d_out = []
+        d_out.append('<div class="detail-panel" id="detail-{}" style="display:none">'.format(tile_id))
+        d_out.append('<div class="dp-hdr">')
+        d_out.append('<div class="dp-title"><span class="dp-sym">{}</span> <span class="dp-co">{}</span></div>'.format(sym, sector))
+        d_out.append('<button class="dp-close" onclick="closeDetail(\'{}\')">&#10005;</button>'.format(tile_id))
+        d_out.append('</div>')
+
+        # Key metrics row
+        d_out.append('<div class="dp-metrics">')
+        d_out.append('<div class="dp-met"><div class="dp-ml">Price</div><div class="dp-mv">${:.2f}</div></div>'.format(price))
+        d_out.append('<div class="dp-met"><div class="dp-ml">vs Entry</div><div class="dp-mv" style="color:{c}">{p}</div></div>'.format(c=pct_color, p=pct_str))
+        d_out.append('<div class="dp-met"><div class="dp-ml">VWAP</div><div class="dp-mv" style="color:{c}">${:.2f} {l}</div></div>'.format(vwap, l=vwap_lbl, c=vwap_color))
+        d_out.append('<div class="dp-met"><div class="dp-ml">HOD</div><div class="dp-mv">${:.2f}</div></div>'.format(hod))
+        if gap:
+            d_out.append('<div class="dp-met"><div class="dp-ml">Gap</div><div class="dp-mv">{:+.1f}%</div></div>'.format(gap))
+        if rvol_scan:
+            d_out.append('<div class="dp-met"><div class="dp-ml">RVol at scan</div><div class="dp-mv">{:.1f}x</div></div>'.format(rvol_scan))
+        d_out.append('</div>')
+
+        # Entry label
+        if entry_lbl:
+            d_out.append('<div class="dp-entry">{}</div>'.format(entry_lbl))
+
+        # Fib targets
+        if fib_levels:
+            d_out.append('<div class="dp-fibs">')
+            for name, lvl in fib_levels:
+                d_out.append('<div class="dp-fib"><span class="dp-fl">{}</span><span class="dp-fv">${:.2f}</span></div>'.format(name, lvl))
+            d_out.append('</div>')
+
+        # Flags
+        if flags:
+            d_out.append('<div class="dp-flags">')
+            for f in flags:
+                d_out.append('<span class="dp-flag">{}</span>'.format(f))
+            d_out.append('</div>')
+
+        # Signals
+        if sigs_html:
+            d_out.append('<div class="dp-sigs">{}</div>'.format(sigs_html))
+
+        # Links row
+        d_out.append('<div class="dp-links">')
+        if news_url:
+            d_out.append('<a class="dp-link news" href="{}" target="_blank">&#128240; Read News &#8599;</a>'.format(news_url))
+        else:
+            d_out.append('<span class="dp-link news-ph">&#128240; News link coming soon</span>')
+        d_out.append('<a class="dp-link chart" href="https://finviz.com/quote.ashx?t={s}" target="_blank">Finviz &#8599;</a>'.format(s=sym))
+        d_out.append('</div>')
+
+        d_out.append('</div>')
+        return "".join(t_out), "".join(d_out)
 
     def section(label, color, items, bucket):
         if not items:
             return ""
-        tiles = "".join(tile(t, meta, bucket) for t, meta in items)
+        tiles_html = ""
+        details_html = ""
+        for i, (t, meta) in enumerate(items):
+            tile_id = "{}-{}".format(bucket, i)
+            t_html, d_html = tile(t, meta, bucket, tile_id)
+            tiles_html  += t_html
+            details_html += d_html
         return (
-            '<div class="section">'
+            '<div class="section" data-bucket="{bk}">'
             '<div class="sec-hdr" style="color:{c}">{l} <span class="sec-cnt">{n}</span></div>'
             '<div class="tiles">{t}</div>'
+            '{d}'
             '</div>'
-        ).format(c=color, l=label, n=len(items), t=tiles)
+        ).format(bk=bucket, c=color, l=label, n=len(items), t=tiles_html, d=details_html)
 
     css = "".join([
         ":root{--bg:#0a0f0a;--bg2:#0f160f;--bg3:#141c14;--bd:#1e2a1e;",
@@ -372,25 +440,30 @@ def render_html(buckets, gen_time, market_status):
         ".help-item{display:flex;flex-direction:column;gap:3px;padding:8px 10px;background:var(--bg3);border-radius:6px;border:1px solid var(--bd);}",
         ".hk{font-size:11px;font-weight:700;font-family:var(--mono);}",
         ".hv{font-size:11px;color:var(--muted);line-height:1.4;}",
-        # Main layout — sidebar left, content right
+        ".strip{display:flex;border-bottom:1px solid var(--bd);flex-shrink:0;}",
+        ".strip-item{flex:1;padding:8px 16px;display:flex;align-items:center;gap:8px;border-right:1px solid var(--bd);}",
+        ".strip-item:last-child{border-right:none;}",
+        ".strip-num{font-size:20px;font-weight:700;font-family:var(--mono);}",
+        ".strip-lbl{font-size:10px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;}",
+        # Layout
         ".main{display:flex;flex:1;overflow:hidden;}",
         ".sidebar{width:120px;flex-shrink:0;border-right:1px solid var(--bd);background:var(--bg2);display:flex;flex-direction:column;padding:8px 0;}",
-        ".sb-strip{padding:10px 12px;border-bottom:1px solid var(--bd);margin-bottom:8px;}",
-        ".sb-num{font-size:11px;font-family:var(--mono);display:flex;justify-content:space-between;padding:2px 0;}",
         ".cat-item{padding:10px 12px;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;transition:background .1s;display:flex;justify-content:space-between;align-items:center;}",
         ".cat-item:hover,.cat-item.active{background:var(--bg3);color:#fff;}",
         ".cat-item.triggered:hover,.cat-item.triggered.active{color:#5cc98a;}",
         ".cat-item.watching:hover,.cat-item.watching.active{color:#e6a817;}",
         ".cat-item.ondeck:hover,.cat-item.ondeck.active{color:#4a9eda;}",
         ".cat-cnt{font-size:10px;font-family:var(--mono);color:var(--muted);font-weight:400;}",
-        # Content area
         ".content{flex:1;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:20px;}",
+        # Sections
         ".section{display:flex;flex-direction:column;gap:10px;}",
         ".sec-hdr{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;}",
         ".sec-cnt{font-size:10px;font-weight:400;color:var(--muted);font-family:var(--mono);}",
         ".tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;}",
-        ".tile{border:1px solid;border-radius:8px;padding:11px 12px;display:flex;flex-direction:column;gap:5px;text-decoration:none;transition:filter .15s;}",
-        ".tile:hover{filter:brightness(1.15);}",
+        # Tiles
+        ".tile{border:1px solid;border-radius:8px;padding:11px 12px;display:flex;flex-direction:column;gap:5px;cursor:pointer;transition:filter .15s;}",
+        ".tile:hover{filter:brightness(1.2);}",
+        ".tile.active{outline:2px solid #fff;outline-offset:2px;}",
         ".tile-top{display:flex;justify-content:space-between;align-items:baseline;}",
         ".tile-sym{font-size:14px;font-weight:700;color:#fff;font-family:var(--mono);}",
         ".tile-scan{font-size:9px;color:var(--muted);}",
@@ -399,10 +472,62 @@ def render_html(buckets, gen_time, market_status):
         ".tile-vwap{font-size:10px;}",
         ".tile-sigs{display:flex;flex-wrap:wrap;gap:3px;margin-top:2px;}",
         ".sig{font-size:8px;font-weight:700;letter-spacing:0.05em;padding:1px 4px;border-radius:4px;border:1px solid;}",
+        # Detail panel
+        ".detail-panel{background:var(--bg3);border:1px solid var(--bd);border-radius:10px;padding:16px;margin-top:4px;display:flex;flex-direction:column;gap:12px;}",
+        ".dp-hdr{display:flex;justify-content:space-between;align-items:flex-start;}",
+        ".dp-title{display:flex;align-items:baseline;gap:8px;}",
+        ".dp-sym{font-size:20px;font-weight:700;color:#fff;font-family:var(--mono);}",
+        ".dp-co{font-size:12px;color:var(--muted);}",
+        ".dp-close{background:none;border:1px solid var(--bd);border-radius:4px;color:var(--muted);cursor:pointer;font-size:11px;padding:2px 7px;}",
+        ".dp-close:hover{color:var(--text);border-color:var(--muted);}",
+        ".dp-metrics{display:flex;flex-wrap:wrap;gap:8px;}",
+        ".dp-met{background:var(--bg2);border:1px solid var(--bd);border-radius:6px;padding:8px 12px;min-width:100px;}",
+        ".dp-ml{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:3px;}",
+        ".dp-mv{font-size:14px;font-weight:700;font-family:var(--mono);color:#fff;}",
+        ".dp-entry{font-size:11px;color:var(--muted);font-family:var(--mono);background:var(--bg2);border:1px solid var(--bd);border-radius:6px;padding:7px 10px;}",
+        ".dp-fibs{display:flex;flex-wrap:wrap;gap:6px;}",
+        ".dp-fib{display:flex;gap:6px;background:var(--bg2);border:1px solid var(--bd);border-radius:6px;padding:5px 10px;align-items:baseline;}",
+        ".dp-fl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;}",
+        ".dp-fv{font-size:12px;font-weight:700;color:#fff;font-family:var(--mono);}",
+        ".dp-flags{display:flex;flex-wrap:wrap;gap:5px;}",
+        ".dp-flag{font-size:10px;color:#5cc98a;border:1px solid rgba(92,201,138,0.3);border-radius:4px;padding:2px 8px;}",
+        ".dp-sigs{display:flex;flex-wrap:wrap;gap:5px;}",
+        ".dp-links{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}",
+        ".dp-link{font-family:var(--mono);font-size:11px;padding:6px 14px;border-radius:6px;text-decoration:none;font-weight:600;}",
+        ".dp-link.news{background:rgba(92,201,138,0.12);color:var(--green);border:1px solid rgba(92,201,138,0.3);}",
+        ".dp-link.news:hover{background:rgba(92,201,138,0.2);}",
+        ".dp-link.chart{background:rgba(74,158,218,0.1);color:var(--blue);border:1px solid rgba(74,158,218,0.25);}",
+        ".dp-link.chart:hover{background:rgba(74,158,218,0.2);}",
+        ".news-ph{font-family:var(--mono);font-size:11px;color:var(--muted);padding:6px 14px;border-radius:6px;border:1px solid var(--bd);font-style:italic;}",
         ".no-data{padding:40px;text-align:center;color:var(--muted);font-size:12px;}",
         "@media(max-width:700px){html,body{overflow:auto;}.main{flex-direction:column;overflow:visible;}",
-        ".sidebar{width:100%;flex-direction:row;border-right:none;border-bottom:1px solid var(--bd);padding:4px 0;}",
+        ".sidebar{width:100%;flex-direction:row;border-right:none;border-bottom:1px solid var(--bd);}",
         ".content{overflow:visible;}.tiles{grid-template-columns:repeat(auto-fill,minmax(110px,1fr));}}",
+    ])
+
+    js = "\n".join([
+        "function toggleHelp(){document.getElementById('help-panel').classList.toggle('open');}",
+        "function selectCat(el,bucket){",
+        "  document.querySelectorAll('.cat-item').forEach(c=>c.classList.remove('active'));",
+        "  el.classList.add('active');",
+        "  document.querySelectorAll('.section').forEach(s=>{",
+        "    s.style.display=(bucket==='all'||s.dataset.bucket===bucket)?'flex':'none';",
+        "  });",
+        "}",
+        "function openDetail(id){",
+        "  document.querySelectorAll('.tile').forEach(t=>t.classList.remove('active'));",
+        "  document.querySelectorAll('.detail-panel').forEach(d=>d.style.display='none');",
+        "  var t=document.querySelector('.tile[data-id=\"'+id+'\"]');",
+        "  var d=document.getElementById('detail-'+id);",
+        "  if(t)t.classList.add('active');",
+        "  if(d){d.style.display='flex';d.scrollIntoView({behavior:'smooth',block:'nearest'});}",
+        "}",
+        "function closeDetail(id){",
+        "  var t=document.querySelector('.tile[data-id=\"'+id+'\"]');",
+        "  var d=document.getElementById('detail-'+id);",
+        "  if(t)t.classList.remove('active');",
+        "  if(d)d.style.display='none';",
+        "}",
     ])
 
     help_items = [
@@ -420,17 +545,6 @@ def render_html(buckets, gen_time, market_status):
         help_html += '<div class="help-item">{}<span class="hv">{}</span></div>'.format(title, desc)
     help_html += '</div></div>'
 
-    js = "\n".join([
-        "function toggleHelp(){document.getElementById('help-panel').classList.toggle('open');}",
-        "function selectCat(el,bucket){",
-        "  document.querySelectorAll('.cat-item').forEach(c=>c.classList.remove('active'));",
-        "  el.classList.add('active');",
-        "  document.querySelectorAll('.section').forEach(s=>{",
-        "    s.style.display=(bucket==='all'||s.dataset.bucket===bucket)?'flex':'none';",
-        "  });",
-        "}",
-    ])
-
     content_html = (
         section("Triggered", "#5cc98a", triggered, "triggered") +
         section("Watching",  "#e6a817", watch,     "watch") +
@@ -438,18 +552,6 @@ def render_html(buckets, gen_time, market_status):
     )
     if not content_html:
         content_html = '<div class="no-data">No tickers yet. Run premarket scorer first.</div>'
-
-    # Add data-bucket to sections for filtering
-    content_html = content_html.replace(
-        'class="section"><div class="sec-hdr" style="color:#5cc98a"',
-        'class="section" data-bucket="triggered"><div class="sec-hdr" style="color:#5cc98a"'
-    ).replace(
-        'class="section"><div class="sec-hdr" style="color:#e6a817"',
-        'class="section" data-bucket="watch"><div class="sec-hdr" style="color:#e6a817"'
-    ).replace(
-        'class="section"><div class="sec-hdr" style="color:#4a9eda"',
-        'class="section" data-bucket="ondeck"><div class="sec-hdr" style="color:#4a9eda"'
-    )
 
     out = []
     out.append("<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n")
@@ -468,6 +570,12 @@ def render_html(buckets, gen_time, market_status):
     out.append("<button class=\"help-btn\" onclick=\"toggleHelp()\">? How to use</button>")
     out.append("</div></div>\n")
     out.append(help_html)
+    out.append("<div class=\"strip\">")
+    out.append("<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--green)\">{}</span><span class=\"strip-lbl\">Triggered</span></div>".format(len(triggered)))
+    out.append("<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--gold)\">{}</span><span class=\"strip-lbl\">Watching</span></div>".format(len(watch)))
+    out.append("<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--blue)\">{}</span><span class=\"strip-lbl\">On Deck</span></div>".format(len(ondeck)))
+    out.append("<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:#fff\">{}</span><span class=\"strip-lbl\">Universe</span></div>".format(total))
+    out.append("</div>\n")
     out.append("<div class=\"main\">")
     out.append("<div class=\"sidebar\">")
     out.append("<div class=\"cat-item active\" onclick=\"selectCat(this,'all')\">All<span class=\"cat-cnt\">{}</span></div>".format(total))
