@@ -298,7 +298,6 @@ def render_html(buckets, gen_time, market_status):
         sym        = t.get("ticker", "")
         score      = t.get("score", 0)
         scan       = t.get("scan", "")
-        entry_lbl  = t.get("entry_label", "")
         source     = t.get("source", "wl")
 
         price      = meta.get("price", 0)
@@ -306,7 +305,6 @@ def render_html(buckets, gen_time, market_status):
         pct        = meta.get("pct_from_entry", 0)
         above_vwap = meta.get("above_vwap", False)
         signals    = meta.get("signals", [])
-        hod        = meta.get("hod", 0)
 
         pct_str    = ("+{:.1f}%".format(pct * 100)) if pct >= 0 else ("{:.1f}%".format(pct * 100))
         pct_color  = "#5cc98a" if pct >= 0 else "#e05c5c"
@@ -374,12 +372,19 @@ def render_html(buckets, gen_time, market_status):
         ".help-item{display:flex;flex-direction:column;gap:3px;padding:8px 10px;background:var(--bg3);border-radius:6px;border:1px solid var(--bd);}",
         ".hk{font-size:11px;font-weight:700;font-family:var(--mono);}",
         ".hv{font-size:11px;color:var(--muted);line-height:1.4;}",
-        ".strip{display:flex;border-bottom:1px solid var(--bd);flex-shrink:0;}",
-        ".strip-item{flex:1;padding:8px 16px;display:flex;align-items:center;gap:8px;border-right:1px solid var(--bd);}",
-        ".strip-item:last-child{border-right:none;}",
-        ".strip-num{font-size:20px;font-weight:700;font-family:var(--mono);}",
-        ".strip-lbl{font-size:10px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;}",
-        ".main{flex:1;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:20px;}",
+        # Main layout — sidebar left, content right
+        ".main{display:flex;flex:1;overflow:hidden;}",
+        ".sidebar{width:120px;flex-shrink:0;border-right:1px solid var(--bd);background:var(--bg2);display:flex;flex-direction:column;padding:8px 0;}",
+        ".sb-strip{padding:10px 12px;border-bottom:1px solid var(--bd);margin-bottom:8px;}",
+        ".sb-num{font-size:11px;font-family:var(--mono);display:flex;justify-content:space-between;padding:2px 0;}",
+        ".cat-item{padding:10px 12px;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;transition:background .1s;display:flex;justify-content:space-between;align-items:center;}",
+        ".cat-item:hover,.cat-item.active{background:var(--bg3);color:#fff;}",
+        ".cat-item.triggered:hover,.cat-item.triggered.active{color:#5cc98a;}",
+        ".cat-item.watching:hover,.cat-item.watching.active{color:#e6a817;}",
+        ".cat-item.ondeck:hover,.cat-item.ondeck.active{color:#4a9eda;}",
+        ".cat-cnt{font-size:10px;font-family:var(--mono);color:var(--muted);font-weight:400;}",
+        # Content area
+        ".content{flex:1;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:20px;}",
         ".section{display:flex;flex-direction:column;gap:10px;}",
         ".sec-hdr{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;}",
         ".sec-cnt{font-size:10px;font-weight:400;color:var(--muted);font-family:var(--mono);}",
@@ -394,7 +399,10 @@ def render_html(buckets, gen_time, market_status):
         ".tile-vwap{font-size:10px;}",
         ".tile-sigs{display:flex;flex-wrap:wrap;gap:3px;margin-top:2px;}",
         ".sig{font-size:8px;font-weight:700;letter-spacing:0.05em;padding:1px 4px;border-radius:4px;border:1px solid;}",
-        "@media(max-width:700px){html,body{overflow:auto;}.tiles{grid-template-columns:repeat(auto-fill,minmax(110px,1fr));}}",
+        ".no-data{padding:40px;text-align:center;color:var(--muted);font-size:12px;}",
+        "@media(max-width:700px){html,body{overflow:auto;}.main{flex-direction:column;overflow:visible;}",
+        ".sidebar{width:100%;flex-direction:row;border-right:none;border-bottom:1px solid var(--bd);padding:4px 0;}",
+        ".content{overflow:visible;}.tiles{grid-template-columns:repeat(auto-fill,minmax(110px,1fr));}}",
     ])
 
     help_items = [
@@ -412,7 +420,36 @@ def render_html(buckets, gen_time, market_status):
         help_html += '<div class="help-item">{}<span class="hv">{}</span></div>'.format(title, desc)
     help_html += '</div></div>'
 
-    js = "function toggleHelp(){document.getElementById('help-panel').classList.toggle('open');}"
+    js = "\n".join([
+        "function toggleHelp(){document.getElementById('help-panel').classList.toggle('open');}",
+        "function selectCat(el,bucket){",
+        "  document.querySelectorAll('.cat-item').forEach(c=>c.classList.remove('active'));",
+        "  el.classList.add('active');",
+        "  document.querySelectorAll('.section').forEach(s=>{",
+        "    s.style.display=(bucket==='all'||s.dataset.bucket===bucket)?'flex':'none';",
+        "  });",
+        "}",
+    ])
+
+    content_html = (
+        section("Triggered", "#5cc98a", triggered, "triggered") +
+        section("Watching",  "#e6a817", watch,     "watch") +
+        section("On Deck",   "#4a9eda", ondeck,    "ondeck")
+    )
+    if not content_html:
+        content_html = '<div class="no-data">No tickers yet. Run premarket scorer first.</div>'
+
+    # Add data-bucket to sections for filtering
+    content_html = content_html.replace(
+        'class="section"><div class="sec-hdr" style="color:#5cc98a"',
+        'class="section" data-bucket="triggered"><div class="sec-hdr" style="color:#5cc98a"'
+    ).replace(
+        'class="section"><div class="sec-hdr" style="color:#e6a817"',
+        'class="section" data-bucket="watch"><div class="sec-hdr" style="color:#e6a817"'
+    ).replace(
+        'class="section"><div class="sec-hdr" style="color:#4a9eda"',
+        'class="section" data-bucket="ondeck"><div class="sec-hdr" style="color:#4a9eda"'
+    )
 
     out = []
     out.append("<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n")
@@ -431,18 +468,14 @@ def render_html(buckets, gen_time, market_status):
     out.append("<button class=\"help-btn\" onclick=\"toggleHelp()\">? How to use</button>")
     out.append("</div></div>\n")
     out.append(help_html)
-    out.append("<div class=\"strip\">")
-    out.append("<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--green)\">{}</span><span class=\"strip-lbl\">Triggered</span></div>".format(len(triggered)))
-    out.append("<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--gold)\">{}</span><span class=\"strip-lbl\">Watching</span></div>".format(len(watch)))
-    out.append("<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--blue)\">{}</span><span class=\"strip-lbl\">On Deck</span></div>".format(len(ondeck)))
-    out.append("<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:#fff\">{}</span><span class=\"strip-lbl\">Universe</span></div>".format(total))
-    out.append("</div>\n")
     out.append("<div class=\"main\">")
-    out.append(section("Triggered", "#5cc98a", triggered, "triggered"))
-    out.append(section("Watching",  "#e6a817", watch,     "watch"))
-    out.append(section("On Deck",   "#4a9eda", ondeck,    "ondeck"))
-    if not total:
-        out.append('<div style="padding:40px;text-align:center;color:var(--muted);font-size:12px;">No tickers yet. Run premarket scorer first.</div>')
+    out.append("<div class=\"sidebar\">")
+    out.append("<div class=\"cat-item active\" onclick=\"selectCat(this,'all')\">All<span class=\"cat-cnt\">{}</span></div>".format(total))
+    out.append("<div class=\"cat-item triggered\" onclick=\"selectCat(this,'triggered')\">Triggered<span class=\"cat-cnt\">{}</span></div>".format(len(triggered)))
+    out.append("<div class=\"cat-item watching\" onclick=\"selectCat(this,'watch')\">Watching<span class=\"cat-cnt\">{}</span></div>".format(len(watch)))
+    out.append("<div class=\"cat-item ondeck\" onclick=\"selectCat(this,'ondeck')\">On Deck<span class=\"cat-cnt\">{}</span></div>".format(len(ondeck)))
+    out.append("</div>")
+    out.append("<div class=\"content\">{}</div>".format(content_html))
     out.append("</div>\n")
     out.append("<script>{}</script>\n</body>\n</html>".format(js))
     return "".join(out)
