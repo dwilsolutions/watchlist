@@ -289,13 +289,12 @@ def render_html(buckets, gen_time, market_status):
     status_label = {"open": "MARKET OPEN", "pre": "PRE-MARKET", "after": "AFTER HOURS"}.get(market_status, "CLOSED")
 
     def row_html(t, meta, bucket, idx):
-        sym        = t.get("ticker", "")
-        company    = t.get("company", "")
-        score      = t.get("score", 0)
-        scan       = t.get("scan", "")
-        entry_lbl  = t.get("entry_label", "")
-        source     = t.get("source", "wl")
-        flags      = t.get("flags", [])
+        sym       = t.get("ticker", "")
+        score     = t.get("score", 0)
+        scan      = t.get("scan", "")
+        entry_lbl = t.get("entry_label", "")
+        source    = t.get("source", "wl")
+        flags     = t.get("flags", [])
 
         price      = meta.get("price", 0)
         vwap       = meta.get("vwap", 0)
@@ -320,196 +319,198 @@ def render_html(buckets, gen_time, market_status):
         )
         if source == "live":
             sigs_html += '<span class="sig" style="color:#c97dd4;border-color:#c97dd4">LIVE</span>'
+        if not sigs_html:
+            sigs_html = '<span class="row-nosig">\u2014</span>'
 
         flags_html = " \xb7 ".join(flags[:3]) if flags else ""
 
-        row = '<div class="row" data-bucket="{bk}">'.format(bk=bucket)
-        row += '<div class="row-main" onclick="toggleRow({idx})">'.format(idx=idx)
-        row += '<div class="row-left" style="border-left-color:{bc}">'.format(bc=bucket_color)
-        row += '<div class="row-sym">{}</div>'.format(sym)
-        row += '<div class="row-meta">{}{}</div>'.format(scan_short, score_str)
-        row += '</div>'
-        row += '<div class="row-sigs">{}</div>'.format(sigs_html)
-        row += '<div class="row-price">'
-        row += '<div class="row-pv">${:.2f}</div>'.format(price)
-        row += '<div class="row-sub" style="color:{c}">VWAP ${:.2f} {l}</div>'.format(vwap, l=vwap_lbl, c=vwap_color)
-        row += '</div>'
-        row += '<div class="row-pct">'
-        row += '<div class="row-pv" style="color:{c}">{p}</div>'.format(c=pct_color, p=pct_str)
-        row += '<div class="row-sub">vs entry</div>'
-        row += '</div>'
-        row += '</div>'
-        row += '<div class="row-detail" id="rd-{idx}">'.format(idx=idx)
-        row += '<div class="rd-inner">'
-        row += '<div class="rd-item"><span class="rd-lbl">Entry</span><span class="rd-val">{}</span></div>'.format(entry_lbl)
-        row += '<div class="rd-item"><span class="rd-lbl">HOD</span><span class="rd-val">${:.2f}</span></div>'.format(hod)
+        parts = []
+        parts.append('<div class="row" data-bucket="{bk}">'.format(bk=bucket))
+        parts.append('<div class="row-main" onclick="toggleRow({idx})">'.format(idx=idx))
+        parts.append('<div class="row-ticker" style="border-left-color:{bc}">'.format(bc=bucket_color))
+        parts.append('<div class="row-sym">{}</div>'.format(sym))
+        parts.append('<div class="row-meta">{}{}</div>'.format(scan_short, score_str))
+        parts.append('</div>')
+        parts.append('<div class="row-sigs">{}</div>'.format(sigs_html))
+        parts.append('<div class="row-price">')
+        parts.append('<div class="row-pv">${:.2f}</div>'.format(price))
+        parts.append('<div class="row-sub" style="color:{c}">VWAP ${:.2f} {l}</div>'.format(vwap, l=vwap_lbl, c=vwap_color))
+        parts.append('</div>')
+        parts.append('<div class="row-pct">')
+        parts.append('<div class="row-pv" style="color:{c}">{p}</div>'.format(c=pct_color, p=pct_str))
+        parts.append('<div class="row-sub">vs entry</div>')
+        parts.append('</div></div>')
+        parts.append('<div class="row-detail" id="rd-{idx}">'.format(idx=idx))
+        parts.append('<div class="rd-inner">')
+        parts.append('<div class="rd-item"><span class="rd-lbl">Entry</span><span class="rd-val">{}</span></div>'.format(entry_lbl))
+        parts.append('<div class="rd-item"><span class="rd-lbl">HOD</span><span class="rd-val">${:.2f}</span></div>'.format(hod))
         if flags_html:
-            row += '<div class="rd-item"><span class="rd-lbl">Flags</span><span class="rd-val rd-flags">{}</span></div>'.format(flags_html)
-        row += '<div class="rd-links">'
-        row += '<a class="rl info" href="https://finviz.com/chart.ashx?t={s}&ty=c&ta=0&p=i5&s=l" target="_blank">Chart &#8599;</a>'.format(s=sym)
-        row += '<a class="rl" href="https://www.tradingview.com/chart/?symbol={s}" target="_blank">TV &#8599;</a>'.format(s=sym)
-        row += '<a class="rl" href="https://finviz.com/quote.ashx?t={s}" target="_blank">Quote &#8599;</a>'.format(s=sym)
-        row += '</div></div></div></div>'
-        return row
+            parts.append('<div class="rd-item"><span class="rd-lbl">Flags</span><span class="rd-val rd-flags">{}</span></div>'.format(flags_html))
+        parts.append('<div class="rd-links">')
+        parts.append('<a class="rl info" href="https://finviz.com/chart.ashx?t={s}&ty=c&ta=0&p=i5&s=l" target="_blank">Chart &#8599;</a>'.format(s=sym))
+        parts.append('<a class="rl" href="https://www.tradingview.com/chart/?symbol={s}" target="_blank">TV &#8599;</a>'.format(s=sym))
+        parts.append('<a class="rl" href="https://finviz.com/quote.ashx?t={s}" target="_blank">Quote &#8599;</a>'.format(s=sym))
+        parts.append('</div></div></div></div>')
+        return "".join(parts)
 
     rows_html = ""
     idx = 0
-    for t, meta in triggered:
-        rows_html += row_html(t, meta, "triggered", idx); idx += 1
-    for t, meta in watch:
-        rows_html += row_html(t, meta, "watch",     idx); idx += 1
-    for t, meta in ondeck:
-        rows_html += row_html(t, meta, "ondeck",    idx); idx += 1
+    for t, meta in triggered: rows_html += row_html(t, meta, "triggered", idx); idx += 1
+    for t, meta in watch:     rows_html += row_html(t, meta, "watch",     idx); idx += 1
+    for t, meta in ondeck:    rows_html += row_html(t, meta, "ondeck",    idx); idx += 1
 
     if not rows_html:
         rows_html = '<div class="no-data">No tickers yet. Run premarket scorer first.</div>'
 
-    css = (
-        ":root{"
-        "--bg:#0a0f0a;--bg2:#0f160f;--bg3:#141c14;--bd:#1e2a1e;"
-        "--green:#5cc98a;--gold:#e6a817;--blue:#4a9eda;--red:#e05c5c;"
-        "--muted:#4a5a4a;--text:#c8d8c8;"
-        "--mono:'SF Mono','Fira Mono',monospace;"
-        "--sans:'Inter','Helvetica Neue',sans-serif;}"
-        "*{box-sizing:border-box;margin:0;padding:0;}"
-        "html,body{height:100%;overflow:hidden;}"
-        "body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:13px;display:flex;flex-direction:column;}"
-        ".hdr{background:var(--bg2);border-bottom:1px solid var(--bd);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}"
-        ".hdr-l{display:flex;align-items:center;gap:8px;}"
-        ".hdr-brand{font-size:12px;color:var(--muted);}"
-        ".hdr-name{font-size:14px;font-weight:700;color:var(--green);letter-spacing:0.03em;}"
-        ".hdr-r{display:flex;align-items:center;gap:8px;}"
-        ".status-dot{width:6px;height:6px;border-radius:50%;}"
-        ".status-lbl{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;}"
-        ".pill{font-family:var(--mono);font-size:10px;color:var(--muted);background:var(--bg3);border:1px solid var(--bd);border-radius:20px;padding:2px 8px;}"
-        ".help-btn{font-family:var(--mono);font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(74,158,218,0.1);color:var(--blue);border:1px solid rgba(74,158,218,0.25);cursor:pointer;}"
-        ".help-btn:hover{background:rgba(74,158,218,0.2);}"
-        ".help-panel{display:none;background:var(--bg2);border-bottom:1px solid var(--bd);padding:14px 20px;flex-shrink:0;}"
-        ".help-panel.open{display:block;}"
-        ".help-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;}"
-        ".help-item{display:flex;flex-direction:column;gap:3px;padding:8px 10px;background:var(--bg3);border-radius:6px;border:1px solid var(--bd);}"
-        ".hk{font-size:11px;font-weight:700;font-family:var(--mono);}"
-        ".hv{font-size:11px;color:var(--muted);line-height:1.4;}"
-        ".strip{display:flex;border-bottom:1px solid var(--bd);flex-shrink:0;}"
-        ".strip-item{flex:1;padding:8px 16px;display:flex;align-items:center;gap:8px;border-right:1px solid var(--bd);}"
-        ".strip-item:last-child{border-right:none;}"
-        ".strip-num{font-size:20px;font-weight:700;font-family:var(--mono);}"
-        ".strip-lbl{font-size:10px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;}"
-        ".main{display:flex;flex:1;overflow:hidden;}"
-        ".cat-panel{width:120px;flex-shrink:0;border-right:1px solid var(--bd);background:var(--bg2);display:flex;flex-direction:column;padding:8px 0;gap:2px;}"
-        ".cat-item{padding:10px 14px;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;transition:background .1s;display:flex;justify-content:space-between;align-items:center;}"
-        ".cat-item:hover,.cat-item.active{background:var(--bg3);color:#fff;}"
-        ".cat-item.triggered:hover,.cat-item.triggered.active{color:#5cc98a;}"
-        ".cat-item.watching:hover,.cat-item.watching.active{color:#e6a817;}"
-        ".cat-item.ondeck:hover,.cat-item.ondeck.active{color:#4a9eda;}"
-        ".cat-cnt{font-size:10px;font-family:var(--mono);color:var(--muted);font-weight:400;}"
-        ".list-panel{flex:1;overflow-y:auto;}"
-        ".col-hdr{display:grid;grid-template-columns:100px auto 130px 90px;align-items:center;padding:6px 16px;border-bottom:1px solid var(--bd);background:var(--bg2);position:sticky;top:0;z-index:10;}"
-        ".col-hdr span{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;}"
-        ".col-hdr span:nth-child(3),.col-hdr span:nth-child(4){text-align:right;}"
-        ".row{border-bottom:1px solid var(--bd);}"
-        ".row-main{display:grid;grid-template-columns:100px auto 130px 90px;align-items:center;padding:10px 16px;cursor:pointer;transition:background .1s;}"
-        ".row-main:hover{background:var(--bg3);}"
-        ".row-left{border-left:2px solid;padding-left:10px;}"
-        ".row-sym{font-size:14px;font-weight:700;color:#fff;font-family:var(--mono);}"
-        ".row-meta{font-size:10px;color:var(--muted);margin-top:1px;}"
-        ".row-sigs{display:flex;flex-wrap:wrap;gap:4px;}"
-        ".sig{font-size:9px;font-weight:700;letter-spacing:0.05em;padding:2px 6px;border-radius:8px;border:1px solid;}"
-        ".row-price,.row-pct{text-align:right;}"
-        ".row-pv{font-size:13px;font-weight:700;font-family:var(--mono);color:#fff;}"
-        ".row-sub{font-size:10px;color:var(--muted);margin-top:1px;}"
-        ".row-detail{display:none;border-top:1px solid var(--bd);background:var(--bg3);}"
-        ".row-detail.open{display:block;}"
-        ".rd-inner{display:flex;align-items:center;gap:16px;padding:10px 16px 10px 30px;flex-wrap:wrap;}"
-        ".rd-item{display:flex;align-items:baseline;gap:6px;}"
-        ".rd-lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;white-space:nowrap;}"
-        ".rd-val{font-size:11px;color:var(--text);font-family:var(--mono);}"
-        ".rd-flags{color:var(--muted);font-family:var(--sans);}"
-        ".rd-links{display:flex;gap:6px;margin-left:auto;}"
-        ".rl{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none;padding:3px 8px;border:1px solid var(--bd);border-radius:4px;}"
-        ".rl:hover{color:var(--text);}"
-        ".rl.info{color:var(--blue);border-color:rgba(74,158,218,0.3);}"
-        ".no-data{padding:40px;text-align:center;color:var(--muted);font-size:12px;}"
-        "@media(max-width:700px){"
-        "html,body{overflow:auto;}"
-        ".main{flex-direction:column;overflow:visible;}"
-        ".cat-panel{width:100%;flex-direction:row;border-right:none;border-bottom:1px solid var(--bd);}"
-        ".list-panel{overflow:visible;}"
-        ".col-hdr,.row-main{grid-template-columns:80px auto 80px;}"
-        ".row-pct{display:none;}}"
-    )
+    css_parts = [
+        ":root{--bg:#0a0f0a;--bg2:#0f160f;--bg3:#141c14;--bd:#1e2a1e;",
+        "--green:#5cc98a;--gold:#e6a817;--blue:#4a9eda;--red:#e05c5c;",
+        "--muted:#4a5a4a;--text:#c8d8c8;",
+        "--mono:'SF Mono','Fira Mono',monospace;--sans:'Inter','Helvetica Neue',sans-serif;}",
+        "*{box-sizing:border-box;margin:0;padding:0;}",
+        "html,body{height:100%;overflow:hidden;}",
+        "body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:13px;display:flex;flex-direction:column;}",
+        ".hdr{background:var(--bg2);border-bottom:1px solid var(--bd);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}",
+        ".hdr-l{display:flex;align-items:center;gap:8px;}",
+        ".hdr-brand{font-size:12px;color:var(--muted);}",
+        ".hdr-name{font-size:14px;font-weight:700;color:var(--green);letter-spacing:0.03em;}",
+        ".hdr-r{display:flex;align-items:center;gap:8px;}",
+        ".status-dot{width:6px;height:6px;border-radius:50%;}",
+        ".status-lbl{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;}",
+        ".pill{font-family:var(--mono);font-size:10px;color:var(--muted);background:var(--bg3);border:1px solid var(--bd);border-radius:20px;padding:2px 8px;}",
+        ".help-btn{font-family:var(--mono);font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(74,158,218,0.1);color:var(--blue);border:1px solid rgba(74,158,218,0.25);cursor:pointer;}",
+        ".help-btn:hover{background:rgba(74,158,218,0.2);}",
+        ".help-panel{display:none;background:var(--bg2);border-bottom:1px solid var(--bd);padding:14px 20px;flex-shrink:0;}",
+        ".help-panel.open{display:block;}",
+        ".help-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px;}",
+        ".help-item{display:flex;flex-direction:column;gap:3px;padding:8px 10px;background:var(--bg3);border-radius:6px;border:1px solid var(--bd);}",
+        ".hk{font-size:11px;font-weight:700;font-family:var(--mono);}",
+        ".hv{font-size:11px;color:var(--muted);line-height:1.4;}",
+        ".strip{display:flex;border-bottom:1px solid var(--bd);flex-shrink:0;}",
+        ".strip-item{flex:1;padding:8px 16px;display:flex;align-items:center;gap:8px;border-right:1px solid var(--bd);}",
+        ".strip-item:last-child{border-right:none;}",
+        ".strip-num{font-size:20px;font-weight:700;font-family:var(--mono);}",
+        ".strip-lbl{font-size:10px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;}",
+        ".main{display:flex;flex:1;overflow:hidden;}",
+        ".cat-panel{width:110px;flex-shrink:0;border-right:1px solid var(--bd);background:var(--bg2);display:flex;flex-direction:column;padding:8px 0;gap:2px;}",
+        ".cat-item{padding:10px 12px;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;transition:background .1s;display:flex;justify-content:space-between;align-items:center;}",
+        ".cat-item:hover,.cat-item.active{background:var(--bg3);color:#fff;}",
+        ".cat-item.triggered:hover,.cat-item.triggered.active{color:#5cc98a;}",
+        ".cat-item.watching:hover,.cat-item.watching.active{color:#e6a817;}",
+        ".cat-item.ondeck:hover,.cat-item.ondeck.active{color:#4a9eda;}",
+        ".cat-cnt{font-size:10px;font-family:var(--mono);color:var(--muted);font-weight:400;}",
+        ".list-panel{flex:1;overflow-y:auto;}",
+        ".col-hdr{display:flex;align-items:center;padding:6px 16px;border-bottom:1px solid var(--bd);background:var(--bg2);position:sticky;top:0;z-index:10;}",
+        ".ch-ticker{width:90px;flex-shrink:0;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;}",
+        ".ch-sigs{flex:1;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;}",
+        ".ch-price{width:130px;flex-shrink:0;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;text-align:right;}",
+        ".ch-pct{width:80px;flex-shrink:0;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;text-align:right;}",
+        ".row{border-bottom:1px solid var(--bd);}",
+        ".row-main{display:flex;align-items:center;padding:9px 16px;cursor:pointer;transition:background .1s;}",
+        ".row-main:hover{background:var(--bg3);}",
+        ".row-ticker{width:90px;flex-shrink:0;border-left:2px solid;padding-left:8px;}",
+        ".row-sym{font-size:14px;font-weight:700;color:#fff;font-family:var(--mono);}",
+        ".row-meta{font-size:10px;color:var(--muted);margin-top:1px;}",
+        ".row-sigs{flex:1;display:flex;flex-wrap:wrap;gap:4px;padding:0 16px;}",
+        ".row-nosig{color:var(--muted);font-size:12px;}",
+        ".sig{font-size:9px;font-weight:700;letter-spacing:0.05em;padding:2px 6px;border-radius:8px;border:1px solid;white-space:nowrap;}",
+        ".row-price{width:130px;flex-shrink:0;text-align:right;}",
+        ".row-pct{width:80px;flex-shrink:0;text-align:right;}",
+        ".row-pv{font-size:13px;font-weight:700;font-family:var(--mono);color:#fff;}",
+        ".row-sub{font-size:10px;color:var(--muted);margin-top:1px;white-space:nowrap;}",
+        ".row-detail{display:none;border-top:1px solid var(--bd);background:var(--bg3);}",
+        ".row-detail.open{display:block;}",
+        ".rd-inner{display:flex;align-items:center;gap:16px;padding:9px 16px 9px 28px;flex-wrap:wrap;}",
+        ".rd-item{display:flex;align-items:baseline;gap:6px;}",
+        ".rd-lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;white-space:nowrap;}",
+        ".rd-val{font-size:11px;color:var(--text);font-family:var(--mono);}",
+        ".rd-flags{color:var(--muted);font-family:var(--sans);}",
+        ".rd-links{display:flex;gap:6px;margin-left:auto;}",
+        ".rl{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none;padding:3px 8px;border:1px solid var(--bd);border-radius:4px;}",
+        ".rl:hover{color:var(--text);}",
+        ".rl.info{color:var(--blue);border-color:rgba(74,158,218,0.3);}",
+        ".no-data{padding:40px;text-align:center;color:var(--muted);font-size:12px;}",
+        "@media(max-width:700px){html,body{overflow:auto;}.main{flex-direction:column;overflow:visible;}",
+        ".cat-panel{width:100%;flex-direction:row;border-right:none;border-bottom:1px solid var(--bd);}",
+        ".list-panel{overflow:visible;}.row-pct,.ch-pct{display:none;}.row-price,.ch-price{width:90px;}}",
+    ]
+    css = "".join(css_parts)
 
-    js = (
-        "function toggleHelp(){var p=document.getElementById('help-panel');p.classList.toggle('open');}"
-        "function selectCat(el,bucket){"
-        "document.querySelectorAll('.cat-item').forEach(c=>c.classList.remove('active'));"
-        "el.classList.add('active');"
-        "document.querySelectorAll('.row').forEach(r=>{"
-        "r.style.display=(bucket==='all'||r.dataset.bucket===bucket)?'block':'none';});"
-        "}"
-        "function toggleRow(idx){"
-        "var d=document.getElementById('rd-'+idx);"
-        "var was=d.classList.contains('open');"
-        "document.querySelectorAll('.row-detail').forEach(x=>x.classList.remove('open'));"
-        "if(!was)d.classList.add('open');}"
-    )
+    js = "\n".join([
+        "function toggleHelp(){var p=document.getElementById('help-panel');p.classList.toggle('open');}",
+        "function selectCat(el,bucket){",
+        "  document.querySelectorAll('.cat-item').forEach(c=>c.classList.remove('active'));",
+        "  el.classList.add('active');",
+        "  document.querySelectorAll('.row').forEach(r=>{",
+        "    r.style.display=(bucket==='all'||r.dataset.bucket===bucket)?'block':'none';",
+        "  });",
+        "}",
+        "function toggleRow(idx){",
+        "  var d=document.getElementById('rd-'+idx);",
+        "  var was=d.classList.contains('open');",
+        "  document.querySelectorAll('.row-detail').forEach(x=>x.classList.remove('open'));",
+        "  if(!was)d.classList.add('open');",
+        "}",
+    ])
 
-    help_html = (
-        '<div class="help-panel" id="help-panel"><div class="help-grid">'
-        '<div class="help-item"><span class="hk" style="color:#5cc98a">Triggered</span><span class="hv">Price broke above the proposed entry. Actionable now.</span></div>'
-        '<div class="help-item"><span class="hk" style="color:#e6a817">Watching</span><span class="hv">Within 5% of entry or above VWAP. Set an alert.</span></div>'
-        '<div class="help-item"><span class="hk" style="color:#4a9eda">On Deck</span><span class="hv">On the morning WL, not yet moving. Watch for a volume spike.</span></div>'
-        '<div class="help-item"><span class="hk">Entry Break</span><span class="hv">Price crossed the morning scorer entry level.</span></div>'
-        '<div class="help-item"><span class="hk">Above VWAP</span><span class="hv">Holding above volume-weighted average price.</span></div>'
-        '<div class="help-item"><span class="hk">Near HOD</span><span class="hv">Within 2% of the high of day.</span></div>'
-        '<div class="help-item"><span class="hk">Live Mover</span><span class="hv">Not on morning list, found by live RVol sweep.</span></div>'
-        '<div class="help-item"><span class="hk">LF / MC / LV</span><span class="hv">Low Float / Mid Cap / Live Mover scan type.</span></div>'
-        '</div></div>'
-    )
+    help_items = [
+        ('<span class="hk" style="color:#5cc98a">Triggered</span>', "Price broke above the proposed entry. Actionable now."),
+        ('<span class="hk" style="color:#e6a817">Watching</span>', "Within 5% of entry or above VWAP. Set an alert."),
+        ('<span class="hk" style="color:#4a9eda">On Deck</span>', "On the morning WL, not yet moving. Watch for a volume spike."),
+        ('<span class="hk">Entry Break</span>', "Price crossed the morning scorer entry level."),
+        ('<span class="hk">Above VWAP</span>', "Holding above volume-weighted average price."),
+        ('<span class="hk">Near HOD</span>', "Within 2% of the high of day."),
+        ('<span class="hk">Live Mover</span>', "Not on morning list, found by live RVol sweep."),
+        ('<span class="hk">LF / MC / LV</span>', "Low Float / Mid Cap / Live Mover scan type."),
+    ]
+    help_html = '<div class="help-panel" id="help-panel"><div class="help-grid">'
+    for title, desc in help_items:
+        help_html += '<div class="help-item">{}<span class="hv">{}</span></div>'.format(title, desc)
+    help_html += '</div></div>'
 
-    out = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n"
-    out += "<meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n"
-    out += "<meta http-equiv=\"refresh\" content=\"300\">\n"
-    out += "<title>Watchlist \xb7 Scanner</title>\n"
-    out += "<style>{}</style>\n</head>\n<body>\n".format(css)
-    out += (
-        "<div class=\"hdr\">"
-        "<div class=\"hdr-l\"><span class=\"hdr-brand\">Watchlist \xb7</span>"
-        "<span class=\"hdr-name\">Intraday Scanner</span></div>"
-        "<div class=\"hdr-r\">"
-        "<span class=\"status-dot\" style=\"background:{sc}\"></span>"
-        "<span class=\"status-lbl\" style=\"color:{sc}\">{sl}</span>"
-        "<span class=\"pill\">Updated {gt}</span>"
-        "<span class=\"pill\">{tot} tickers</span>"
-        "<button class=\"help-btn\" onclick=\"toggleHelp()\">? How to use</button>"
-        "</div></div>\n"
-    ).format(sc=status_color, sl=status_label, gt=gen_time, tot=total)
-    out += help_html
-    out += (
-        "<div class=\"strip\">"
-        "<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--green)\">{tr}</span><span class=\"strip-lbl\">Triggered</span></div>"
-        "<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--gold)\">{wt}</span><span class=\"strip-lbl\">Watching</span></div>"
-        "<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--blue)\">{od}</span><span class=\"strip-lbl\">On Deck</span></div>"
-        "<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:#fff\">{tot}</span><span class=\"strip-lbl\">Universe</span></div>"
-        "</div>\n"
-    ).format(tr=len(triggered), wt=len(watch), od=len(ondeck), tot=total)
-    out += (
-        "<div class=\"main\">"
-        "<div class=\"cat-panel\">"
-        "<div class=\"cat-item active\" onclick=\"selectCat(this,'all')\">All<span class=\"cat-cnt\">{tot}</span></div>"
-        "<div class=\"cat-item triggered\" onclick=\"selectCat(this,'triggered')\">Triggered<span class=\"cat-cnt\">{tr}</span></div>"
-        "<div class=\"cat-item watching\" onclick=\"selectCat(this,'watch')\">Watching<span class=\"cat-cnt\">{wt}</span></div>"
-        "<div class=\"cat-item ondeck\" onclick=\"selectCat(this,'ondeck')\">On Deck<span class=\"cat-cnt\">{od}</span></div>"
-        "</div>"
-        "<div class=\"list-panel\">"
-        "<div class=\"col-hdr\"><span>Ticker</span><span>Signals</span><span>Price / VWAP</span><span>vs Entry</span></div>"
-        "{rows}"
-        "</div></div>\n"
-        "<script>{js}</script>\n</body>\n</html>"
-    ).format(tot=total, tr=len(triggered), wt=len(watch), od=len(ondeck), rows=rows_html, js=js)
+    html_parts = [
+        "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n",
+        "<meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n",
+        "<meta http-equiv=\"refresh\" content=\"300\">\n",
+        "<title>Watchlist \xb7 Scanner</title>\n",
+        "<style>{}</style>\n</head>\n<body>\n".format(css),
+        "<div class=\"hdr\">",
+        "<div class=\"hdr-l\"><span class=\"hdr-brand\">Watchlist \xb7</span>",
+        "<span class=\"hdr-name\">Intraday Scanner</span></div>",
+        "<div class=\"hdr-r\">",
+        "<span class=\"status-dot\" style=\"background:{sc}\"></span>".format(sc=status_color),
+        "<span class=\"status-lbl\" style=\"color:{sc}\">{sl}</span>".format(sc=status_color, sl=status_label),
+        "<span class=\"pill\">Updated {gt}</span>".format(gt=gen_time),
+        "<span class=\"pill\">{tot} tickers</span>".format(tot=total),
+        "<button class=\"help-btn\" onclick=\"toggleHelp()\">? How to use</button>",
+        "</div></div>\n",
+        help_html,
+        "<div class=\"strip\">",
+        "<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--green)\">{tr}</span><span class=\"strip-lbl\">Triggered</span></div>".format(tr=len(triggered)),
+        "<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--gold)\">{wt}</span><span class=\"strip-lbl\">Watching</span></div>".format(wt=len(watch)),
+        "<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:var(--blue)\">{od}</span><span class=\"strip-lbl\">On Deck</span></div>".format(od=len(ondeck)),
+        "<div class=\"strip-item\"><span class=\"strip-num\" style=\"color:#fff\">{tot}</span><span class=\"strip-lbl\">Universe</span></div>".format(tot=total),
+        "</div>\n",
+        "<div class=\"main\">",
+        "<div class=\"cat-panel\">",
+        "<div class=\"cat-item active\" onclick=\"selectCat(this,'all')\">All<span class=\"cat-cnt\">{tot}</span></div>".format(tot=total),
+        "<div class=\"cat-item triggered\" onclick=\"selectCat(this,'triggered')\">Triggered<span class=\"cat-cnt\">{tr}</span></div>".format(tr=len(triggered)),
+        "<div class=\"cat-item watching\" onclick=\"selectCat(this,'watch')\">Watching<span class=\"cat-cnt\">{wt}</span></div>".format(wt=len(watch)),
+        "<div class=\"cat-item ondeck\" onclick=\"selectCat(this,'ondeck')\">On Deck<span class=\"cat-cnt\">{od}</span></div>".format(od=len(ondeck)),
+        "</div>",
+        "<div class=\"list-panel\">",
+        "<div class=\"col-hdr\">",
+        "<span class=\"ch-ticker\">Ticker</span>",
+        "<span class=\"ch-sigs\">Signals</span>",
+        "<span class=\"ch-price\">Price / VWAP</span>",
+        "<span class=\"ch-pct\">vs Entry</span>",
+        "</div>",
+        rows_html,
+        "</div></div>\n",
+        "<script>{}</script>\n</body>\n</html>".format(js),
+    ]
 
-    return out
-
+    return "".join(html_parts)
 
 
 # ── Main ─────────────────────────────────────────────────────────────────────
