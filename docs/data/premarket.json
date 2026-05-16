@@ -1,7 +1,7 @@
 {
   "session": "premarket",
   "label": "Pre-Market",
-  "date": "2026-05-15",
+  "date": "2026-05-18",
   "generated": "06:55 AM ET",
   "tickers": [
     {
@@ -9,263 +9,731 @@
       "company": "Snail Inc",
       "sector": "Communication Services",
       "scan": "Low Float",
-      "score": 89,
+      "score": 93,
       "tier": "buy",
-      "entry": 1.53,
-      "entry_label": "Break above $1.52",
+      "entry": 1.46,
+      "entry_label": "Break above $1.45",
       "range_str": "",
       "prev_close": 1.08,
-      "prev_high": 1.52,
+      "prev_high": 1.45,
       "fib_levels": [
         [
           "Prev High",
-          1.52
+          1.45
         ],
         [
           "First target",
-          1.64
+          1.55
         ],
         [
           "Second target",
-          1.79
+          1.68
         ],
         [
           "Extended",
-          1.96
+          1.82
         ]
       ],
-      "price_at_scan": 1.29,
-      "gap": 5.56,
-      "rvol": 12.24,
+      "price_at_scan": 1.16,
+      "gap": 9.72,
+      "rvol": 2.57,
       "flags": [
         "CONTINUATION",
-        "PRIOR DAY RUNNER",
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": ""
     },
     {
-      "ticker": "MLGO",
-      "company": "MicroAlgo Inc",
-      "sector": "Technology",
+      "ticker": "QUCY",
+      "company": "Quantum Cyber NV",
+      "sector": "Healthcare",
+      "scan": "Low Float",
+      "score": 89,
+      "tier": "buy",
+      "entry": 4.95,
+      "entry_label": "Break above $4.93",
+      "range_str": "",
+      "prev_close": 3.0,
+      "prev_high": 4.93,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.93
+        ],
+        [
+          "First target",
+          5.45
+        ],
+        [
+          "Second target",
+          6.12
+        ],
+        [
+          "Extended",
+          6.86
+        ]
+      ],
+      "price_at_scan": 3.46,
+      "gap": -17.97,
+      "rvol": 5.93,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": ""
+    },
+    {
+      "ticker": "SKK",
+      "company": "SKK Holdings Ltd",
+      "sector": "Industrials",
+      "scan": "Low Float",
+      "score": 81,
+      "tier": "buy",
+      "entry": 5.53,
+      "entry_label": "Break above $5.50",
+      "range_str": "",
+      "prev_close": 3.39,
+      "prev_high": 5.5,
+      "fib_levels": [
+        [
+          "Prev High",
+          5.5
+        ],
+        [
+          "First target",
+          6.07
+        ],
+        [
+          "Second target",
+          6.8
+        ],
+        [
+          "Extended",
+          7.61
+        ]
+      ],
+      "price_at_scan": 4.77,
+      "gap": 3.24,
+      "rvol": 11.26,
+      "flags": [
+        "CATALYST \u00b7 M&A",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": ""
+    },
+    {
+      "ticker": "NEWP",
+      "company": "New Pacific Metals Corp",
+      "sector": "Basic Materials",
+      "scan": "Mid Cap",
+      "score": 81,
+      "tier": "buy",
+      "entry": 5.4,
+      "entry_label": "Break above $5.37",
+      "range_str": "",
+      "prev_close": 5.57,
+      "prev_high": 5.37,
+      "fib_levels": [],
+      "price_at_scan": 5.33,
+      "gap": -5.39,
+      "rvol": 6.24,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": ""
+    },
+    {
+      "ticker": "SLE",
+      "company": "Super League Enterprise Inc",
+      "sector": "Communication Services",
       "scan": "Low Float",
       "score": 74,
       "tier": "buy",
-      "entry": 6.93,
-      "entry_label": "Break above $6.90",
+      "entry": 7.11,
+      "entry_label": "Break above $7.07",
       "range_str": "",
-      "prev_close": 4.55,
-      "prev_high": 6.9,
+      "prev_close": 4.07,
+      "prev_high": 7.07,
       "fib_levels": [
         [
           "Prev High",
-          6.9
+          7.07
         ],
         [
           "First target",
-          7.54
+          7.89
         ],
         [
           "Second target",
-          8.35
+          8.92
         ],
         [
           "Extended",
-          9.25
+          10.07
         ]
       ],
-      "price_at_scan": 4.68,
-      "gap": 7.03,
-      "rvol": 949.45,
+      "price_at_scan": 6.04,
+      "gap": 63.64,
+      "rvol": 2395.8,
+      "flags": [
+        "CONTINUATION",
+        "CATALYST \u00b7 8-K",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": ""
+    },
+    {
+      "ticker": "JZXN",
+      "company": "Jiuzi Holdings Inc",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 71,
+      "tier": "buy",
+      "entry": 1.4,
+      "entry_label": "Break above $1.39",
+      "range_str": "",
+      "prev_close": 1.18,
+      "prev_high": 1.39,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.39
+        ],
+        [
+          "First target",
+          1.45
+        ],
+        [
+          "Second target",
+          1.52
+        ],
+        [
+          "Extended",
+          1.6
+        ]
+      ],
+      "price_at_scan": 1.35,
+      "gap": 15.25,
+      "rvol": 3.18,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": ""
+    },
+    {
+      "ticker": "SEGG",
+      "company": "Sports Entertainment Gaming Global Corp",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 68,
+      "tier": "buy",
+      "entry": 2.09,
+      "entry_label": "Break above $2.08",
+      "range_str": "",
+      "prev_close": 1.51,
+      "prev_high": 2.08,
+      "fib_levels": [
+        [
+          "Prev High",
+          2.08
+        ],
+        [
+          "First target",
+          2.24
+        ],
+        [
+          "Second target",
+          2.43
+        ],
+        [
+          "Extended",
+          2.65
+        ]
+      ],
+      "price_at_scan": 1.87,
+      "gap": -5.96,
+      "rvol": 2.0,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": ""
+    },
+    {
+      "ticker": "DGXX",
+      "company": "Digi Power X Inc",
+      "sector": "Utilities",
+      "scan": "Mid Cap",
+      "score": 68,
+      "tier": "buy",
+      "entry": 8.08,
+      "entry_label": "Break above $8.04",
+      "range_str": "",
+      "prev_close": 7.22,
+      "prev_high": 8.04,
+      "fib_levels": [
+        [
+          "Prev High",
+          8.04
+        ],
+        [
+          "First target",
+          8.26
+        ],
+        [
+          "Second target",
+          8.55
+        ],
+        [
+          "Extended",
+          8.86
+        ]
+      ],
+      "price_at_scan": 7.54,
+      "gap": -4.71,
+      "rvol": 3.33,
       "flags": [
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": ""
+    },
+    {
+      "ticker": "GCTS",
+      "company": "GCT Semiconductor Holding Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 68,
+      "tier": "buy",
+      "entry": 1.88,
+      "entry_label": "Break above $1.87",
+      "range_str": "",
+      "prev_close": 1.44,
+      "prev_high": 1.87,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.87
+        ],
+        [
+          "First target",
+          1.99
+        ],
+        [
+          "Second target",
+          2.14
+        ],
+        [
+          "Extended",
+          2.3
+        ]
+      ],
+      "price_at_scan": 1.83,
+      "gap": -6.25,
+      "rvol": 4.85,
+      "flags": [
+        "CATALYST \u00b7 8-K",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": ""
+    },
+    {
+      "ticker": "SLNH",
+      "company": "Soluna Holdings Inc",
+      "sector": "Financial",
+      "scan": "Mid Cap",
+      "score": 68,
+      "tier": "buy",
+      "entry": 2.37,
+      "entry_label": "Break above $2.36",
+      "range_str": "",
+      "prev_close": 2.16,
+      "prev_high": 2.36,
+      "fib_levels": [
+        [
+          "Prev High",
+          2.36
+        ],
+        [
+          "First target",
+          2.41
+        ],
+        [
+          "Second target",
+          2.48
+        ],
+        [
+          "Extended",
+          2.56
+        ]
+      ],
+      "price_at_scan": 2.22,
+      "gap": -7.41,
+      "rvol": 3.09,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": ""
+    },
+    {
+      "ticker": "LESL",
+      "company": "Leslies Inc",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 66,
+      "tier": "buy",
+      "entry": 4.21,
+      "entry_label": "Break above $4.19",
+      "range_str": "",
+      "prev_close": 3.5,
+      "prev_high": 4.19,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.19
+        ],
+        [
+          "First target",
+          4.38
+        ],
+        [
+          "Second target",
+          4.62
+        ],
+        [
+          "Extended",
+          4.88
+        ]
+      ],
+      "price_at_scan": 3.03,
+      "gap": 10.86,
+      "rvol": 6.9,
+      "flags": [
+        "CATALYST \u00b7 8-K",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": ""
     },
     {
       "ticker": "HCWB",
       "company": "HCW Biologics Inc",
       "sector": "Healthcare",
       "scan": "Low Float",
-      "score": 69,
-      "tier": "buy",
-      "entry": 0.9,
-      "entry_label": "Break above $0.90",
+      "score": 63,
+      "tier": "monitor",
+      "entry": 1.43,
+      "entry_label": "Break above $1.42",
       "range_str": "",
       "prev_close": 0.34,
-      "prev_high": 0.9,
+      "prev_high": 1.42,
       "fib_levels": [
         [
           "Prev High",
-          0.9
+          1.42
         ],
         [
           "First target",
-          1.05
+          1.71
         ],
         [
           "Second target",
-          1.25
+          2.09
         ],
         [
           "Extended",
-          1.46
+          2.5
         ]
       ],
-      "price_at_scan": 0.75,
-      "gap": 154.78,
-      "rvol": 83.6,
+      "price_at_scan": 1.22,
+      "gap": 229.38,
+      "rvol": 41.81,
+      "flags": [
+        "CONTINUATION",
+        "GAP QUALITY",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": ""
+    },
+    {
+      "ticker": "MLGO",
+      "company": "MicroAlgo Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 60,
+      "tier": "monitor",
+      "entry": 4.7,
+      "entry_label": "Break above $4.68",
+      "range_str": "",
+      "prev_close": 4.55,
+      "prev_high": 4.68,
+      "fib_levels": [
+        [
+          "Prev High",
+          4.68
+        ],
+        [
+          "First target",
+          4.72
+        ],
+        [
+          "Second target",
+          4.76
+        ],
+        [
+          "Extended",
+          4.81
+        ]
+      ],
+      "price_at_scan": 4.34,
+      "gap": -12.09,
+      "rvol": 67.15,
       "flags": [
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": ""
     },
     {
       "ticker": "MRNO",
       "company": "Murano Global Investments PLC",
       "sector": "Real Estate",
-      "scan": "Low Float",
-      "score": 58,
+      "scan": "Mid Cap",
+      "score": 59,
       "tier": "monitor",
-      "entry": 0.61,
-      "entry_label": "Break above $0.61",
+      "entry": 0.82,
+      "entry_label": "Break above $0.82",
       "range_str": "",
       "prev_close": 0.29,
-      "prev_high": 0.61,
+      "prev_high": 0.82,
       "fib_levels": [
         [
           "Prev High",
-          0.61
+          0.82
         ],
         [
           "First target",
-          0.7
+          0.96
         ],
         [
           "Second target",
-          0.81
+          1.15
         ],
         [
           "Extended",
-          0.93
+          1.35
         ]
       ],
-      "price_at_scan": 0.44,
-      "gap": 56.79,
-      "rvol": 458.65,
+      "price_at_scan": 0.57,
+      "gap": 71.47,
+      "rvol": 160.62,
       "flags": [
         "CONTINUATION",
-        "GAP QUALITY"
-      ]
-    },
-    {
-      "ticker": "TDIC",
-      "company": "Dreamland Ltd",
-      "sector": "Communication Services",
-      "scan": "Low Float",
-      "score": 58,
-      "tier": "monitor",
-      "entry": 2.14,
-      "entry_label": "Break above $2.13",
-      "range_str": "",
-      "prev_close": 0.8,
-      "prev_high": 2.13,
-      "fib_levels": [
-        [
-          "Prev High",
-          2.13
-        ],
-        [
-          "First target",
-          2.49
-        ],
-        [
-          "Second target",
-          2.95
-        ],
-        [
-          "Extended",
-          3.46
-        ]
+        "GAP QUALITY",
+        "PRIOR DAY RUNNER"
       ],
-      "price_at_scan": 1.5,
-      "gap": 135.0,
-      "rvol": 91.91,
-      "flags": [
-        "SECTOR MOMENTUM"
-      ]
+      "news_url": ""
     },
     {
-      "ticker": "AMZE",
-      "company": "Amaze Holdings Inc",
-      "sector": "Technology",
+      "ticker": "GEMI",
+      "company": "Gemini Space Station Inc",
+      "sector": "Financial",
       "scan": "Mid Cap",
-      "score": 51,
+      "score": 56,
       "tier": "monitor",
-      "entry": 0.25,
-      "entry_label": "Break above $0.25",
+      "entry": 6.99,
+      "entry_label": "Break above $6.96",
       "range_str": "",
-      "prev_close": 0.21,
-      "prev_high": 0.25,
+      "prev_close": 5.26,
+      "prev_high": 6.96,
       "fib_levels": [
         [
           "Prev High",
-          0.25
+          6.96
         ],
         [
           "First target",
-          0.26
+          7.42
         ],
         [
           "Second target",
-          0.27
+          8.01
         ],
         [
           "Extended",
-          0.29
+          8.66
         ]
       ],
-      "price_at_scan": 0.2,
-      "gap": 9.98,
-      "rvol": 27.16,
+      "price_at_scan": 5.58,
+      "gap": 28.23,
+      "rvol": 9.22,
       "flags": [
-        "PRIOR DAY RUNNER",
+        "CATALYST \u00b7 8-K",
         "SECTOR MOMENTUM"
-      ]
+      ],
+      "news_url": ""
     },
     {
       "ticker": "ALP",
       "company": "Alpha Compute Corp",
       "sector": "Financial",
       "scan": "Low Float",
-      "score": 42,
+      "score": 54,
       "tier": "monitor",
-      "entry": 0.41,
-      "entry_label": "Break above $0.41",
+      "entry": 0.35,
+      "entry_label": "Break above $0.35",
       "range_str": "",
       "prev_close": 0.33,
-      "prev_high": 0.41,
+      "prev_high": 0.35,
       "fib_levels": [
         [
           "Prev High",
-          0.41
+          0.35
         ],
         [
           "First target",
-          0.43
+          0.36
         ],
         [
           "Second target",
-          0.46
+          0.36
         ],
         [
           "Extended",
-          0.49
+          0.37
         ]
       ],
-      "price_at_scan": 0.32,
-      "gap": 12.15,
-      "rvol": 41.39,
+      "price_at_scan": 0.33,
+      "gap": 4.3,
+      "rvol": 5.55,
       "flags": [
-        "PRIOR DAY RUNNER"
-      ]
+        "CONTINUATION",
+        "PRIOR DAY RUNNER",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": ""
+    },
+    {
+      "ticker": "AUUD",
+      "company": "Auddia Inc",
+      "sector": "Technology",
+      "scan": "Low Float",
+      "score": 47,
+      "tier": "monitor",
+      "entry": 2.29,
+      "entry_label": "Break above $2.28",
+      "range_str": "",
+      "prev_close": 1.22,
+      "prev_high": 2.28,
+      "fib_levels": [
+        [
+          "Prev High",
+          2.28
+        ],
+        [
+          "First target",
+          2.57
+        ],
+        [
+          "Second target",
+          2.94
+        ],
+        [
+          "Extended",
+          3.34
+        ]
+      ],
+      "price_at_scan": 1.96,
+      "gap": 71.31,
+      "rvol": 71.84,
+      "flags": [
+        "CONTINUATION",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": ""
+    },
+    {
+      "ticker": "TDIC",
+      "company": "Dreamland Ltd",
+      "sector": "Communication Services",
+      "scan": "Low Float",
+      "score": 44,
+      "tier": "monitor",
+      "entry": 1.77,
+      "entry_label": "Break above $1.76",
+      "range_str": "",
+      "prev_close": 0.8,
+      "prev_high": 1.76,
+      "fib_levels": [
+        [
+          "Prev High",
+          1.76
+        ],
+        [
+          "First target",
+          2.02
+        ],
+        [
+          "Second target",
+          2.35
+        ],
+        [
+          "Extended",
+          2.72
+        ]
+      ],
+      "price_at_scan": 1.04,
+      "gap": 93.75,
+      "rvol": 21.34,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": ""
+    },
+    {
+      "ticker": "AMZE",
+      "company": "Amaze Holdings Inc",
+      "sector": "Technology",
+      "scan": "Mid Cap",
+      "score": 43,
+      "tier": "monitor",
+      "entry": 0.21,
+      "entry_label": "Break above $0.21",
+      "range_str": "",
+      "prev_close": 0.21,
+      "prev_high": 0.21,
+      "fib_levels": [],
+      "price_at_scan": 0.17,
+      "gap": -4.96,
+      "rvol": 5.22,
+      "flags": [
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": ""
+    },
+    {
+      "ticker": "AIIO",
+      "company": "Robo.ai Inc",
+      "sector": "Consumer Cyclical",
+      "scan": "Low Float",
+      "score": 41,
+      "tier": "monitor",
+      "entry": 5.53,
+      "entry_label": "Break above $5.50",
+      "range_str": "",
+      "prev_close": 5.64,
+      "prev_high": 5.5,
+      "fib_levels": [],
+      "price_at_scan": 4.02,
+      "gap": -23.67,
+      "rvol": 2.79,
+      "flags": [
+        "CONTINUATION",
+        "CRASHED \u00b7 GAP DOWN",
+        "SECTOR MOMENTUM"
+      ],
+      "news_url": ""
     }
   ]
 }
