@@ -513,29 +513,24 @@ async function fetchPrices() {
   const syms = SEED.map(t => t.ticker);
   if(!syms.length) return;
 
-  // Fetch one ticker at a time using Yahoo chart API (CORS-friendly)
-  // Use spark endpoint which is lightweight and browser-accessible
+  // Finnhub — free tier, 60 calls/min, real-time, CORS-friendly
+  const FINNHUB_KEY = 'd84srd1r01qrqbnnfrogd84srd1r01qrqbnnfrp0'; // <-- paste your free key from finnhub.io
+
   const fetchOne = async (sym) => {
-    const url = `https://query1.finance.yahoo.com/v8/finance/chart/${sym}?interval=1d&range=1d`;
+    const url = `https://finnhub.io/api/v1/quote?symbol=${sym}&token=${FINNHUB_KEY}`;
     try {
-      const res = await fetch(url, {headers:{'Accept':'application/json'}});
+      const res = await fetch(url);
       if(!res.ok) return null;
       const json = await res.json();
-      const meta = json?.chart?.result?.[0]?.meta;
-      return meta ? {symbol: sym, regularMarketPrice: meta.regularMarketPrice || meta.previousClose || 0} : null;
+      // Finnhub returns: c=current, h=high, l=low, o=open, pc=prev close
+      return json.c ? {symbol: sym, regularMarketPrice: json.c, high: json.h} : null;
     } catch(e) { return null; }
   };
 
   try {
-    // Batch in groups of 5 with small delay to avoid rate limiting
-    const results = [];
-    for(let i = 0; i < syms.length; i += 5) {
-      const batch = syms.slice(i, i+5);
-      const batchResults = await Promise.all(batch.map(fetchOne));
-      results.push(...batchResults.filter(Boolean));
-      if(i + 5 < syms.length) await new Promise(r => setTimeout(r, 200));
-    }
-    const quotes = results;
+    // Fetch all in parallel — Finnhub allows 60 calls/min on free tier
+    const results = await Promise.all(syms.map(fetchOne));
+    const quotes = results.filter(Boolean);
     quotes.forEach(q => {
       const sym = q.symbol;
       const price = q.regularMarketPrice || 0;
@@ -551,7 +546,8 @@ async function fetchPrices() {
       const signals = [];
       if(price >= entry && entry > 0) signals.push('ENTRY BREAK');
       if(aboveVwap) signals.push('ABOVE VWAP');
-      if(seed.hod_static && price >= seed.hod_static * 0.98) signals.push('NEAR HOD');
+      const liveHod = q.high || seed.hod_static || price;
+      if(liveHod && price >= liveHod * 0.98) signals.push('NEAR HOD');
 
       liveData[sym] = {price, vwap, pct, aboveVwap, signals};
       updateTile(sym, seed);
