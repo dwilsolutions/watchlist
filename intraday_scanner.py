@@ -280,101 +280,44 @@ def scanner_card(t, meta, bucket):
 </div>'''
 
 def render_html(buckets, gen_time, market_status):
+    """
+    Renders a static shell page. On load the browser fetches scanner.json
+    for ticker/entry data, then polls Yahoo Finance every 60s for live prices.
+    No page reload needed — tiles update in place.
+    """
     triggered = buckets.get("triggered", [])
     watch     = buckets.get("watch", [])
     ondeck    = buckets.get("ondeck", [])
     total     = len(triggered) + len(watch) + len(ondeck)
 
-    status_color = "#5cc98a" if market_status == "open" else "#e6a817"
-    status_label = {"open": "MARKET OPEN", "pre": "PRE-MARKET", "after": "AFTER HOURS"}.get(market_status, "CLOSED")
+    # Embed bucket membership so the page knows which section each ticker belongs to
+    import json as _json
+    def ticker_seed(t, meta, bucket):
+        return {
+            "ticker":      t.get("ticker", ""),
+            "company":     t.get("company", ""),
+            "scan":        t.get("scan", ""),
+            "score":       t.get("score", 0),
+            "entry":       float(t.get("entry", 0) or 0),
+            "entry_label": t.get("entry_label", ""),
+            "flags":       t.get("flags", []),
+            "fib_levels":  t.get("fib_levels", []),
+            "gap":         t.get("gap", 0),
+            "rvol":        t.get("rvol", 0),
+            "sector":      t.get("sector", ""),
+            "news_url":    t.get("news_url", ""),
+            "source":      t.get("source", "wl"),
+            "bucket":      bucket,
+            "vwap_static": meta.get("vwap", 0),
+            "hod_static":  meta.get("hod", 0),
+        }
 
-    BUCKET_STYLES = {
-        "triggered": ("rgba(92,201,138,0.08)",  "rgba(92,201,138,0.25)"),
-        "watch":     ("rgba(230,168,23,0.06)",  "rgba(230,168,23,0.2)"),
-        "ondeck":    ("rgba(74,158,218,0.06)",  "rgba(74,158,218,0.2)"),
-    }
-
-    def tile(t, meta, bucket):
-        sym        = t.get("ticker", "")
-        score      = t.get("score", 0)
-        scan       = t.get("scan", "")
-        source     = t.get("source", "wl")
-        sector     = t.get("sector", "")
-        entry_lbl  = t.get("entry_label", "")
-        flags      = t.get("flags", [])
-        fib_levels = t.get("fib_levels", [])
-        gap        = t.get("gap", 0)
-        rvol_scan  = t.get("rvol", 0)
-
-        price      = meta.get("price", 0)
-        vwap       = meta.get("vwap", 0)
-        pct        = meta.get("pct_from_entry", 0)
-        above_vwap = meta.get("above_vwap", False)
-        signals    = meta.get("signals", [])
-
-        pct_str    = ("+{:.1f}%".format(pct * 100)) if pct >= 0 else ("{:.1f}%".format(pct * 100))
-        pct_color  = "#5cc98a" if pct >= 0 else "#e05c5c"
-        vwap_color = "#5cc98a" if above_vwap else "#e05c5c"
-        vwap_lbl   = "above" if above_vwap else "below"
-        scan_short = "LF" if "Low" in scan else ("MC" if "Mid" in scan else "LV")
-        score_str  = " \xb7 {}".format(score) if score else ""
-
-        sig_colors = ["#5cc98a", "#4a9eda", "#e6a817", "#c97dd4"]
-        sigs_html  = "".join(
-            '<span class="sig" style="color:{c};border-color:{c}">{s}</span>'.format(c=sig_colors[i % 4], s=s)
-            for i, s in enumerate(signals)
-        )
-        if source == "live":
-            sigs_html += '<span class="sig" style="color:#c97dd4;border-color:#c97dd4">LIVE</span>'
-
-        bg, bd = BUCKET_STYLES.get(bucket, ("rgba(255,255,255,0.03)", "#1e2a1e"))
-
-        out = []
-        # Build tooltip content
-        tt_parts = []
-        if sector:
-            tt_parts.append('<div class="tt-row"><span class="tt-lbl">Sector</span><span class="tt-val">{}</span></div>'.format(sector))
-        if entry_lbl:
-            tt_parts.append('<div class="tt-row"><span class="tt-lbl">Entry</span><span class="tt-val">{}</span></div>'.format(entry_lbl))
-        if gap:
-            tt_parts.append('<div class="tt-row"><span class="tt-lbl">Gap</span><span class="tt-val">{:+.1f}%</span></div>'.format(gap))
-        if rvol_scan:
-            tt_parts.append('<div class="tt-row"><span class="tt-lbl">RVol at scan</span><span class="tt-val">{:.1f}x</span></div>'.format(rvol_scan))
-        if fib_levels:
-            for name, lvl in fib_levels[:3]:
-                tt_parts.append('<div class="tt-row"><span class="tt-lbl">{}</span><span class="tt-val">${:.2f}</span></div>'.format(name, lvl))
-        if flags:
-            tt_parts.append('<div class="tt-flags">{}</div>'.format(
-                "".join('<span class="tt-flag">{}</span>'.format(f) for f in flags)
-            ))
-        tooltip_html = '<div class="tooltip">{}</div>'.format("".join(tt_parts)) if tt_parts else ""
-
-        out.append('<div class="tile-wrap">')
-        out.append('<a class="tile" href="https://finviz.com/quote.ashx?t={s}" target="_blank" style="background:{bg};border-color:{bd}">'.format(s=sym, bg=bg, bd=bd))
-        out.append('<div class="tile-top">')
-        out.append('<span class="tile-sym">{}</span>'.format(sym))
-        out.append('<span class="tile-scan">{}{}</span>'.format(scan_short, score_str))
-        out.append('</div>')
-        out.append('<div class="tile-pct" style="color:{c}">{p}</div>'.format(c=pct_color, p=pct_str))
-        out.append('<div class="tile-price">${:.2f}</div>'.format(price))
-        out.append('<div class="tile-vwap" style="color:{c}">VWAP ${:.2f} {l}</div>'.format(vwap, l=vwap_lbl, c=vwap_color))
-        if sigs_html:
-            out.append('<div class="tile-sigs">{}</div>'.format(sigs_html))
-        out.append('</a>')
-        out.append(tooltip_html)
-        out.append('</div>')  # tile-wrap
-        return "".join(out)
-
-    def section(label, color, items, bucket):
-        if not items:
-            return ""
-        tiles = "".join(tile(t, meta, bucket) for t, meta in items)
-        return (
-            '<div class="section">'
-            '<div class="sec-hdr" style="color:{c}">{l} <span class="sec-cnt">{n}</span></div>'
-            '<div class="tiles">{t}</div>'
-            '</div>'
-        ).format(c=color, l=label, n=len(items), t=tiles)
+    seed_data = (
+        [ticker_seed(t, m, "triggered") for t, m in triggered] +
+        [ticker_seed(t, m, "watch")     for t, m in watch] +
+        [ticker_seed(t, m, "ondeck")    for t, m in ondeck]
+    )
+    seed_json = _json.dumps(seed_data).replace("</", "<\\/")
 
     css = "".join([
         ":root{--bg:#0a0f0a;--bg2:#0f160f;--bg3:#141c14;--bd:#1e2a1e;",
@@ -389,9 +332,11 @@ def render_html(buckets, gen_time, market_status):
         ".hdr-brand{font-size:12px;color:var(--muted);}",
         ".hdr-name{font-size:14px;font-weight:700;color:var(--green);letter-spacing:0.03em;}",
         ".hdr-r{display:flex;align-items:center;gap:8px;}",
-        ".status-dot{width:6px;height:6px;border-radius:50%;}",
-        ".status-lbl{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;}",
+        ".status-dot{width:6px;height:6px;border-radius:50%;background:var(--green);}",
+        ".status-lbl{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;color:var(--green);}",
         ".pill{font-family:var(--mono);font-size:10px;color:var(--muted);background:var(--bg3);border:1px solid var(--bd);border-radius:20px;padding:2px 8px;}",
+        ".live-badge{font-family:var(--mono);font-size:9px;padding:2px 8px;border-radius:20px;background:rgba(92,201,138,0.12);color:var(--green);border:1px solid rgba(92,201,138,0.3);letter-spacing:0.06em;}",
+        ".last-update{font-family:var(--mono);font-size:10px;color:var(--muted);}",
         ".help-btn{font-family:var(--mono);font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(74,158,218,0.1);color:var(--blue);border:1px solid rgba(74,158,218,0.25);cursor:pointer;}",
         ".help-btn:hover{background:rgba(74,158,218,0.2);}",
         ".help-panel{display:none;background:var(--bg2);border-bottom:1px solid var(--bd);padding:14px 20px;flex-shrink:0;}",
@@ -400,52 +345,318 @@ def render_html(buckets, gen_time, market_status):
         ".help-item{display:flex;flex-direction:column;gap:3px;padding:8px 10px;background:var(--bg3);border-radius:6px;border:1px solid var(--bd);}",
         ".hk{font-size:11px;font-weight:700;font-family:var(--mono);}",
         ".hv{font-size:11px;color:var(--muted);line-height:1.4;}",
-        # Main layout — sidebar left, content right
+        ".strip{display:flex;border-bottom:1px solid var(--bd);flex-shrink:0;}",
+        ".strip-item{flex:1;padding:8px 16px;display:flex;align-items:center;gap:8px;border-right:1px solid var(--bd);}",
+        ".strip-item:last-child{border-right:none;}",
+        ".strip-num{font-size:20px;font-weight:700;font-family:var(--mono);}",
+        ".strip-lbl{font-size:10px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;}",
         ".main{display:flex;flex:1;overflow:hidden;}",
         ".sidebar{width:120px;flex-shrink:0;border-right:1px solid var(--bd);background:var(--bg2);display:flex;flex-direction:column;padding:8px 0;}",
-        ".sb-strip{padding:10px 12px;border-bottom:1px solid var(--bd);margin-bottom:8px;}",
-        ".sb-num{font-size:11px;font-family:var(--mono);display:flex;justify-content:space-between;padding:2px 0;}",
         ".cat-item{padding:10px 12px;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;transition:background .1s;display:flex;justify-content:space-between;align-items:center;}",
         ".cat-item:hover,.cat-item.active{background:var(--bg3);color:#fff;}",
         ".cat-item.triggered:hover,.cat-item.triggered.active{color:#5cc98a;}",
         ".cat-item.watching:hover,.cat-item.watching.active{color:#e6a817;}",
         ".cat-item.ondeck:hover,.cat-item.ondeck.active{color:#4a9eda;}",
         ".cat-cnt{font-size:10px;font-family:var(--mono);color:var(--muted);font-weight:400;}",
-        # Content area
         ".content{flex:1;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:20px;}",
         ".section{display:flex;flex-direction:column;gap:10px;}",
         ".sec-hdr{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;}",
         ".sec-cnt{font-size:10px;font-weight:400;color:var(--muted);font-family:var(--mono);}",
         ".tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;}",
-        ".tile{border:1px solid;border-radius:8px;padding:11px 12px;display:flex;flex-direction:column;gap:5px;text-decoration:none;transition:filter .15s;}",
-        ".tile:hover{filter:brightness(1.15);}",
-".tile-wrap{position:relative;}",
-".tooltip{display:none;position:absolute;z-index:100;left:0;top:calc(100% + 6px);width:220px;background:#1a2a1a;border:1px solid #2e4a2e;border-radius:8px;padding:10px 12px;box-shadow:0 4px 20px rgba(0,0,0,0.6);pointer-events:none;}",
-".tile-wrap:hover .tooltip{display:block;}",
-".tt-row{display:flex;justify-content:space-between;align-items:baseline;padding:2px 0;gap:8px;}",
-".tt-lbl{font-size:9px;color:#4a5a4a;text-transform:uppercase;letter-spacing:0.06em;white-space:nowrap;}",
-".tt-val{font-size:10px;color:#c8d8c8;font-family:var(--mono);text-align:right;}",
-".tt-flags{display:flex;flex-wrap:wrap;gap:3px;margin-top:6px;border-top:1px solid #1e2a1e;padding-top:6px;}",
-".tt-flag{font-size:8px;color:#5cc98a;border:1px solid rgba(92,201,138,0.3);border-radius:4px;padding:1px 5px;}",
-
+        ".tile{border:1px solid;border-radius:8px;padding:11px 12px;display:flex;flex-direction:column;gap:5px;cursor:pointer;transition:filter .15s;}",
+        ".tile:hover{filter:brightness(1.2);}",
+        ".tile.active{outline:2px solid rgba(255,255,255,0.4);outline-offset:2px;}",
+        ".tile.stale{opacity:0.5;}",
         ".tile-top{display:flex;justify-content:space-between;align-items:baseline;}",
         ".tile-sym{font-size:14px;font-weight:700;color:#fff;font-family:var(--mono);}",
         ".tile-scan{font-size:9px;color:var(--muted);}",
-        ".tile-pct{font-size:22px;font-weight:700;font-family:var(--mono);line-height:1;}",
+        ".tile-pct{font-size:22px;font-weight:700;font-family:var(--mono);line-height:1;transition:color .3s;}",
         ".tile-price{font-size:11px;color:var(--text);font-family:var(--mono);}",
         ".tile-vwap{font-size:10px;}",
         ".tile-sigs{display:flex;flex-wrap:wrap;gap:3px;margin-top:2px;}",
         ".sig{font-size:8px;font-weight:700;letter-spacing:0.05em;padding:1px 4px;border-radius:4px;border:1px solid;}",
-        ".no-data{padding:40px;text-align:center;color:var(--muted);font-size:12px;}",
+        ".detail-panel{background:var(--bg3);border:1px solid var(--bd);border-radius:10px;padding:16px;margin-top:4px;display:flex;flex-direction:column;gap:12px;}",
+        ".dp-hdr{display:flex;justify-content:space-between;align-items:flex-start;}",
+        ".dp-title{display:flex;align-items:baseline;gap:8px;}",
+        ".dp-sym{font-size:20px;font-weight:700;color:#fff;font-family:var(--mono);}",
+        ".dp-co{font-size:12px;color:var(--muted);}",
+        ".dp-close{background:none;border:1px solid var(--bd);border-radius:4px;color:var(--muted);cursor:pointer;font-size:11px;padding:2px 7px;}",
+        ".dp-close:hover{color:var(--text);}",
+        ".dp-metrics{display:flex;flex-wrap:wrap;gap:8px;}",
+        ".dp-met{background:var(--bg2);border:1px solid var(--bd);border-radius:6px;padding:8px 12px;min-width:90px;}",
+        ".dp-ml{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:3px;}",
+        ".dp-mv{font-size:14px;font-weight:700;font-family:var(--mono);color:#fff;}",
+        ".dp-entry{font-size:11px;color:var(--muted);font-family:var(--mono);background:var(--bg2);border:1px solid var(--bd);border-radius:6px;padding:7px 10px;}",
+        ".dp-fibs{display:flex;flex-wrap:wrap;gap:6px;}",
+        ".dp-fib{display:flex;gap:6px;background:var(--bg2);border:1px solid var(--bd);border-radius:6px;padding:5px 10px;align-items:baseline;}",
+        ".dp-fl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;}",
+        ".dp-fv{font-size:12px;font-weight:700;color:#fff;font-family:var(--mono);}",
+        ".dp-flags{display:flex;flex-wrap:wrap;gap:5px;}",
+        ".dp-flag{font-size:10px;color:#5cc98a;border:1px solid rgba(92,201,138,0.3);border-radius:4px;padding:2px 8px;}",
+        ".dp-links{display:flex;gap:8px;flex-wrap:wrap;}",
+        ".dp-link{font-family:var(--mono);font-size:11px;padding:6px 14px;border-radius:6px;text-decoration:none;font-weight:600;}",
+        ".dp-link.news{background:rgba(92,201,138,0.12);color:var(--green);border:1px solid rgba(92,201,138,0.3);}",
+        ".dp-link.news:hover{background:rgba(92,201,138,0.2);}",
+        ".dp-link.finviz{background:rgba(74,158,218,0.1);color:var(--blue);border:1px solid rgba(74,158,218,0.25);}",
+        ".dp-link.finviz:hover{background:rgba(74,158,218,0.2);}",
+        ".news-ph{font-family:var(--mono);font-size:11px;color:var(--muted);padding:6px 14px;border-radius:6px;border:1px solid var(--bd);font-style:italic;}",
+        ".loading{padding:40px;text-align:center;color:var(--muted);font-size:12px;}",
+        ".error{padding:12px 16px;background:rgba(224,92,92,0.1);border:1px solid rgba(224,92,92,0.3);border-radius:6px;font-size:11px;color:var(--red);}",
         "@media(max-width:700px){html,body{overflow:auto;}.main{flex-direction:column;overflow:visible;}",
-        ".sidebar{width:100%;flex-direction:row;border-right:none;border-bottom:1px solid var(--bd);padding:4px 0;}",
+        ".sidebar{width:100%;flex-direction:row;border-right:none;border-bottom:1px solid var(--bd);}",
         ".content{overflow:visible;}.tiles{grid-template-columns:repeat(auto-fill,minmax(110px,1fr));}}",
     ])
 
+    js = r"""
+const SEED = """ + seed_json + r""";
+const REFRESH_MS = 60000; // 60 seconds
+const BUCKET_COLORS = {triggered:'rgba(92,201,138,0.08)',watch:'rgba(230,168,23,0.06)',ondeck:'rgba(74,158,218,0.06)'};
+const BUCKET_BORDERS = {triggered:'rgba(92,201,138,0.25)',watch:'rgba(230,168,23,0.2)',ondeck:'rgba(74,158,218,0.2)'};
+const SIG_COLORS = ['#5cc98a','#4a9eda','#e6a817','#c97dd4'];
+
+let liveData = {}; // sym -> {price, vwap, pct, above_vwap, signals}
+let activeTile = null;
+
+// ── Build initial DOM from seed data ────────────────────────────────────────
+function buildUI() {
+  const sections = {triggered:[], watch:[], ondeck:[]};
+  SEED.forEach(t => { if(sections[t.bucket]) sections[t.bucket].push(t); });
+
+  const content = document.getElementById('content');
+  const labels = {triggered:['Triggered','#5cc98a'], watch:['Watching','#e6a817'], ondeck:['On Deck','#4a9eda']};
+
+  ['triggered','watch','ondeck'].forEach(bucket => {
+    const items = sections[bucket];
+    if(!items.length) return;
+    const [label, color] = labels[bucket];
+    const sec = document.createElement('div');
+    sec.className = 'section';
+    sec.dataset.bucket = bucket;
+    sec.innerHTML = `<div class="sec-hdr" style="color:${color}">${label} <span class="sec-cnt">${items.length}</span></div>`;
+    const tilesDiv = document.createElement('div');
+    tilesDiv.className = 'tiles';
+    items.forEach(t => {
+      tilesDiv.appendChild(buildTile(t));
+      const det = buildDetail(t);
+      sec.appendChild(tilesDiv);
+      sec.appendChild(det);
+    });
+    if(!sec.contains(tilesDiv)) sec.appendChild(tilesDiv);
+    content.appendChild(sec);
+  });
+
+  updateCounts();
+}
+
+function buildTile(t) {
+  const el = document.createElement('div');
+  el.className = 'tile stale';
+  el.id = 'tile-' + t.ticker;
+  el.dataset.ticker = t.ticker;
+  el.dataset.bucket = t.bucket;
+  el.style.background = BUCKET_COLORS[t.bucket] || 'transparent';
+  el.style.borderColor = BUCKET_BORDERS[t.bucket] || '#1e2a1e';
+  el.style.border = '1px solid';
+  el.onclick = () => openDetail(t.ticker);
+  const scanShort = t.scan.includes('Low') ? 'LF' : (t.scan.includes('Mid') ? 'MC' : 'LV');
+  const scoreStr = t.score ? ` \u00b7 ${t.score}` : '';
+  el.innerHTML = `
+    <div class="tile-top"><span class="tile-sym">${t.ticker}</span><span class="tile-scan">${scanShort}${scoreStr}</span></div>
+    <div class="tile-pct" id="pct-${t.ticker}" style="color:var(--muted)">--</div>
+    <div class="tile-price" id="price-${t.ticker}">--</div>
+    <div class="tile-vwap" id="vwap-${t.ticker}" style="color:var(--muted)">VWAP --</div>
+    <div class="tile-sigs" id="sigs-${t.ticker}"></div>`;
+  return el;
+}
+
+function buildDetail(t) {
+  const el = document.createElement('div');
+  el.className = 'detail-panel';
+  el.id = 'detail-' + t.ticker;
+  el.style.display = 'none';
+
+  const fibs = t.fib_levels.slice(0,4).map(([name,lvl]) =>
+    `<div class="dp-fib"><span class="dp-fl">${name}</span><span class="dp-fv">$${Number(lvl).toFixed(2)}</span></div>`
+  ).join('');
+
+  const flags = t.flags.map(f => `<span class="dp-flag">${f}</span>`).join('');
+
+  const newsLink = t.news_url
+    ? `<a class="dp-link news" href="${t.news_url}" target="_blank">&#128240; Read News &#8599;</a>`
+    : `<span class="news-ph">&#128240; News link coming soon</span>`;
+
+  el.innerHTML = `
+    <div class="dp-hdr">
+      <div class="dp-title"><span class="dp-sym">${t.ticker}</span><span class="dp-co">${t.sector}</span></div>
+      <button class="dp-close" onclick="closeDetail('${t.ticker}')">&#10005;</button>
+    </div>
+    <div class="dp-metrics" id="dp-metrics-${t.ticker}">
+      <div class="dp-met"><div class="dp-ml">Price</div><div class="dp-mv" id="dp-price-${t.ticker}">--</div></div>
+      <div class="dp-met"><div class="dp-ml">vs Entry</div><div class="dp-mv" id="dp-pct-${t.ticker}">--</div></div>
+      <div class="dp-met"><div class="dp-ml">VWAP</div><div class="dp-mv" id="dp-vwap-${t.ticker}">--</div></div>
+      <div class="dp-met"><div class="dp-ml">HOD</div><div class="dp-mv" id="dp-hod-${t.ticker}">$${Number(t.hod_static).toFixed(2)}</div></div>
+      ${t.gap ? `<div class="dp-met"><div class="dp-ml">Gap</div><div class="dp-mv">${t.gap > 0 ? '+' : ''}${Number(t.gap).toFixed(1)}%</div></div>` : ''}
+      ${t.rvol ? `<div class="dp-met"><div class="dp-ml">RVol at scan</div><div class="dp-mv">${Number(t.rvol).toFixed(1)}x</div></div>` : ''}
+    </div>
+    ${t.entry_label ? `<div class="dp-entry">${t.entry_label}</div>` : ''}
+    ${fibs ? `<div class="dp-fibs">${fibs}</div>` : ''}
+    ${flags ? `<div class="dp-flags">${flags}</div>` : ''}
+    <div class="dp-links">
+      ${newsLink}
+      <a class="dp-link finviz" href="https://finviz.com/quote.ashx?t=${t.ticker}" target="_blank">Finviz &#8599;</a>
+    </div>`;
+  return el;
+}
+
+// ── Live price fetching via Yahoo Finance ────────────────────────────────────
+async function fetchPrices() {
+  const syms = SEED.map(t => t.ticker);
+  if(!syms.length) return;
+
+  // Fetch one ticker at a time using Yahoo chart API (CORS-friendly)
+  // Use spark endpoint which is lightweight and browser-accessible
+  const fetchOne = async (sym) => {
+    const url = `https://query1.finance.yahoo.com/v8/finance/chart/${sym}?interval=1d&range=1d`;
+    try {
+      const res = await fetch(url, {headers:{'Accept':'application/json'}});
+      if(!res.ok) return null;
+      const json = await res.json();
+      const meta = json?.chart?.result?.[0]?.meta;
+      return meta ? {symbol: sym, regularMarketPrice: meta.regularMarketPrice || meta.previousClose || 0} : null;
+    } catch(e) { return null; }
+  };
+
+  try {
+    // Batch in groups of 5 with small delay to avoid rate limiting
+    const results = [];
+    for(let i = 0; i < syms.length; i += 5) {
+      const batch = syms.slice(i, i+5);
+      const batchResults = await Promise.all(batch.map(fetchOne));
+      results.push(...batchResults.filter(Boolean));
+      if(i + 5 < syms.length) await new Promise(r => setTimeout(r, 200));
+    }
+    const quotes = results;
+    quotes.forEach(q => {
+      const sym = q.symbol;
+      const price = q.regularMarketPrice || 0;
+      const seed  = SEED.find(t => t.ticker === sym);
+      if(!seed || !price) return;
+
+      const entry = seed.entry || 0;
+      const vwap  = seed.vwap_static || price; // use static VWAP as proxy
+      const pct   = entry > 0 ? (price - entry) / entry : 0;
+      const aboveVwap = price >= vwap;
+
+      // Classify signals
+      const signals = [];
+      if(price >= entry && entry > 0) signals.push('ENTRY BREAK');
+      if(aboveVwap) signals.push('ABOVE VWAP');
+      if(seed.hod_static && price >= seed.hod_static * 0.98) signals.push('NEAR HOD');
+
+      liveData[sym] = {price, vwap, pct, aboveVwap, signals};
+      updateTile(sym, seed);
+    });
+    document.getElementById('last-update').textContent = 'Live · ' + new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true});
+  } catch(e) {
+    console.warn('Price fetch failed:', e);
+    document.getElementById('last-update').textContent = 'Fetch failed · retrying...';
+  }
+}
+
+function updateTile(sym, seed) {
+  const d = liveData[sym];
+  if(!d) return;
+  const tile = document.getElementById('tile-' + sym);
+  if(tile) tile.classList.remove('stale');
+
+  const pctStr = (d.pct >= 0 ? '+' : '') + (d.pct * 100).toFixed(1) + '%';
+  const pctColor = d.pct >= 0 ? '#5cc98a' : '#e05c5c';
+  const vwapColor = d.aboveVwap ? '#5cc98a' : '#e05c5c';
+  const vwapLbl = d.aboveVwap ? 'above' : 'below';
+
+  const sig_colors = ['#5cc98a','#4a9eda','#e6a817','#c97dd4'];
+  const sigsHtml = d.signals.map((s,i) =>
+    `<span class="sig" style="color:${sig_colors[i%4]};border-color:${sig_colors[i%4]}">${s}</span>`
+  ).join('') + (seed.source === 'live' ? '<span class="sig" style="color:#c97dd4;border-color:#c97dd4">LIVE</span>' : '');
+
+  // Reclassify bucket based on live price
+  const newBucket = d.pct >= 0 ? 'triggered' : (d.pct >= -0.05 || d.aboveVwap ? 'watch' : 'ondeck');
+  if(tile) {
+    tile.style.background = BUCKET_COLORS[newBucket];
+    tile.style.borderColor = BUCKET_BORDERS[newBucket];
+  }
+
+  const pEl = document.getElementById('pct-' + sym);
+  if(pEl){ pEl.textContent = pctStr; pEl.style.color = pctColor; }
+  const prEl = document.getElementById('price-' + sym);
+  if(prEl) prEl.textContent = '$' + d.price.toFixed(2);
+  const vEl = document.getElementById('vwap-' + sym);
+  if(vEl){ vEl.textContent = `VWAP $${d.vwap.toFixed(2)} ${vwapLbl}`; vEl.style.color = vwapColor; }
+  const sEl = document.getElementById('sigs-' + sym);
+  if(sEl) sEl.innerHTML = sigsHtml;
+
+  // Update detail panel if open
+  const dpPrice = document.getElementById('dp-price-' + sym);
+  const dpPct   = document.getElementById('dp-pct-' + sym);
+  const dpVwap  = document.getElementById('dp-vwap-' + sym);
+  if(dpPrice) dpPrice.textContent = '$' + d.price.toFixed(2);
+  if(dpPct){ dpPct.textContent = pctStr; dpPct.style.color = pctColor; }
+  if(dpVwap){ dpVwap.textContent = `$${d.vwap.toFixed(2)} ${vwapLbl}`; dpVwap.style.color = vwapColor; }
+}
+
+// ── UI interactions ──────────────────────────────────────────────────────────
+function openDetail(sym) {
+  if(activeTile) {
+    document.getElementById('tile-' + activeTile)?.classList.remove('active');
+    document.getElementById('detail-' + activeTile).style.display = 'none';
+  }
+  if(activeTile === sym){ activeTile = null; return; }
+  activeTile = sym;
+  document.getElementById('tile-' + sym)?.classList.add('active');
+  const det = document.getElementById('detail-' + sym);
+  det.style.display = 'flex';
+  det.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+function closeDetail(sym) {
+  document.getElementById('tile-' + sym)?.classList.remove('active');
+  document.getElementById('detail-' + sym).style.display = 'none';
+  if(activeTile === sym) activeTile = null;
+}
+
+function selectCat(el, bucket) {
+  document.querySelectorAll('.cat-item').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.section').forEach(s => {
+    s.style.display = (bucket === 'all' || s.dataset.bucket === bucket) ? 'flex' : 'none';
+  });
+}
+
+function updateCounts() {
+  const counts = {triggered:0, watch:0, ondeck:0};
+  SEED.forEach(t => { if(counts[t.bucket] !== undefined) counts[t.bucket]++; });
+  document.getElementById('cnt-all').textContent = SEED.length;
+  document.getElementById('cnt-triggered').textContent = counts.triggered;
+  document.getElementById('cnt-watch').textContent = counts.watch;
+  document.getElementById('cnt-ondeck').textContent = counts.ondeck;
+  document.getElementById('strip-triggered').textContent = counts.triggered;
+  document.getElementById('strip-watch').textContent = counts.watch;
+  document.getElementById('strip-ondeck').textContent = counts.ondeck;
+  document.getElementById('strip-total').textContent = SEED.length;
+}
+
+function toggleHelp() { document.getElementById('help-panel').classList.toggle('open'); }
+
+// ── Init ─────────────────────────────────────────────────────────────────────
+buildUI();
+fetchPrices();
+setInterval(fetchPrices, REFRESH_MS);
+"""
+
     help_items = [
-        ('<span class="hk" style="color:#5cc98a">Triggered</span>', "Price broke above the proposed entry. Actionable now."),
+        ('<span class="hk" style="color:#5cc98a">Triggered</span>', "Price broke above the proposed entry. Updates live every 60s."),
         ('<span class="hk" style="color:#e6a817">Watching</span>', "Within 5% of entry or above VWAP. Set an alert."),
-        ('<span class="hk" style="color:#4a9eda">On Deck</span>', "On the morning WL, not yet moving. Watch for a volume spike."),
+        ('<span class="hk" style="color:#4a9eda">On Deck</span>', "On the morning WL, not yet moving."),
         ('<span class="hk">Entry Break</span>', "Price crossed the morning scorer entry level."),
         ('<span class="hk">Above VWAP</span>', "Holding above volume-weighted average price."),
         ('<span class="hk">Near HOD</span>', "Within 2% of the high of day."),
@@ -457,62 +668,37 @@ def render_html(buckets, gen_time, market_status):
         help_html += '<div class="help-item">{}<span class="hv">{}</span></div>'.format(title, desc)
     help_html += '</div></div>'
 
-    js = "\n".join([
-        "function toggleHelp(){document.getElementById('help-panel').classList.toggle('open');}",
-        "function selectCat(el,bucket){",
-        "  document.querySelectorAll('.cat-item').forEach(c=>c.classList.remove('active'));",
-        "  el.classList.add('active');",
-        "  document.querySelectorAll('.section').forEach(s=>{",
-        "    s.style.display=(bucket==='all'||s.dataset.bucket===bucket)?'flex':'none';",
-        "  });",
-        "}",
-    ])
-
-    content_html = (
-        section("Triggered", "#5cc98a", triggered, "triggered") +
-        section("Watching",  "#e6a817", watch,     "watch") +
-        section("On Deck",   "#4a9eda", ondeck,    "ondeck")
-    )
-    if not content_html:
-        content_html = '<div class="no-data">No tickers yet. Run premarket scorer first.</div>'
-
-    # Add data-bucket to sections for filtering
-    content_html = content_html.replace(
-        'class="section"><div class="sec-hdr" style="color:#5cc98a"',
-        'class="section" data-bucket="triggered"><div class="sec-hdr" style="color:#5cc98a"'
-    ).replace(
-        'class="section"><div class="sec-hdr" style="color:#e6a817"',
-        'class="section" data-bucket="watch"><div class="sec-hdr" style="color:#e6a817"'
-    ).replace(
-        'class="section"><div class="sec-hdr" style="color:#4a9eda"',
-        'class="section" data-bucket="ondeck"><div class="sec-hdr" style="color:#4a9eda"'
-    )
-
     out = []
     out.append("<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n")
     out.append("<meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n")
-    out.append("<meta http-equiv=\"refresh\" content=\"300\">\n")
     out.append("<title>Watchlist \xb7 Scanner</title>\n")
     out.append("<style>{}</style>\n</head>\n<body>\n".format(css))
     out.append("<div class=\"hdr\">")
     out.append("<div class=\"hdr-l\"><span class=\"hdr-brand\">Watchlist \xb7</span>")
     out.append("<span class=\"hdr-name\">Intraday Scanner</span></div>")
     out.append("<div class=\"hdr-r\">")
-    out.append("<span class=\"status-dot\" style=\"background:{sc}\"></span>".format(sc=status_color))
-    out.append("<span class=\"status-lbl\" style=\"color:{sc}\">{sl}</span>".format(sc=status_color, sl=status_label))
-    out.append("<span class=\"pill\">Updated {gt}</span>".format(gt=gen_time))
-    out.append("<span class=\"pill\">{tot} tickers</span>".format(tot=total))
+    out.append("<span class=\"status-dot\"></span>")
+    out.append("<span class=\"status-lbl\">LIVE</span>")
+    out.append("<span class=\"live-badge\">&#9679; 60s refresh</span>")
+    out.append("<span class=\"last-update\" id=\"last-update\">Fetching...</span>")
+    out.append("<span class=\"pill\">Built {gt}</span>".format(gt=gen_time))
     out.append("<button class=\"help-btn\" onclick=\"toggleHelp()\">? How to use</button>")
     out.append("</div></div>\n")
     out.append(help_html)
+    out.append("<div class=\"strip\">")
+    out.append("<div class=\"strip-item\"><span class=\"strip-num\" id=\"strip-triggered\" style=\"color:var(--green)\">{}</span><span class=\"strip-lbl\">Triggered</span></div>".format(len(triggered)))
+    out.append("<div class=\"strip-item\"><span class=\"strip-num\" id=\"strip-watch\" style=\"color:var(--gold)\">{}</span><span class=\"strip-lbl\">Watching</span></div>".format(len(watch)))
+    out.append("<div class=\"strip-item\"><span class=\"strip-num\" id=\"strip-ondeck\" style=\"color:var(--blue)\">{}</span><span class=\"strip-lbl\">On Deck</span></div>".format(len(ondeck)))
+    out.append("<div class=\"strip-item\"><span class=\"strip-num\" id=\"strip-total\" style=\"color:#fff\">{}</span><span class=\"strip-lbl\">Universe</span></div>".format(total))
+    out.append("</div>\n")
     out.append("<div class=\"main\">")
     out.append("<div class=\"sidebar\">")
-    out.append("<div class=\"cat-item active\" onclick=\"selectCat(this,'all')\">All<span class=\"cat-cnt\">{}</span></div>".format(total))
-    out.append("<div class=\"cat-item triggered\" onclick=\"selectCat(this,'triggered')\">Triggered<span class=\"cat-cnt\">{}</span></div>".format(len(triggered)))
-    out.append("<div class=\"cat-item watching\" onclick=\"selectCat(this,'watch')\">Watching<span class=\"cat-cnt\">{}</span></div>".format(len(watch)))
-    out.append("<div class=\"cat-item ondeck\" onclick=\"selectCat(this,'ondeck')\">On Deck<span class=\"cat-cnt\">{}</span></div>".format(len(ondeck)))
+    out.append("<div class=\"cat-item active\" onclick=\"selectCat(this,'all')\">All<span class=\"cat-cnt\" id=\"cnt-all\">{}</span></div>".format(total))
+    out.append("<div class=\"cat-item triggered\" onclick=\"selectCat(this,'triggered')\">Triggered<span class=\"cat-cnt\" id=\"cnt-triggered\">{}</span></div>".format(len(triggered)))
+    out.append("<div class=\"cat-item watching\" onclick=\"selectCat(this,'watch')\">Watching<span class=\"cat-cnt\" id=\"cnt-watch\">{}</span></div>".format(len(watch)))
+    out.append("<div class=\"cat-item ondeck\" onclick=\"selectCat(this,'ondeck')\">On Deck<span class=\"cat-cnt\" id=\"cnt-ondeck\">{}</span></div>".format(len(ondeck)))
     out.append("</div>")
-    out.append("<div class=\"content\">{}</div>".format(content_html))
+    out.append("<div class=\"content\" id=\"content\"></div>")
     out.append("</div>\n")
     out.append("<script>{}</script>\n</body>\n</html>".format(js))
     return "".join(out)
@@ -591,13 +777,32 @@ def main():
 
     # Save JSON snapshot
     os.makedirs(DATA_DIR, exist_ok=True)
+    def ticker_snap(t, meta):
+        return {
+            "ticker":      t.get("ticker", ""),
+            "company":     t.get("company", ""),
+            "scan":        t.get("scan", ""),
+            "score":       t.get("score", 0),
+            "entry":       float(t.get("entry", 0) or 0),
+            "entry_label": t.get("entry_label", ""),
+            "flags":       t.get("flags", []),
+            "fib_levels":  t.get("fib_levels", []),
+            "gap":         t.get("gap", 0),
+            "rvol":        t.get("rvol", 0),
+            "sector":      t.get("sector", ""),
+            "news_url":    t.get("news_url", ""),
+            "source":      t.get("source", "wl"),
+            "vwap_static": meta.get("vwap", 0),
+            "hod_static":  meta.get("hod", 0),
+        }
+
     snap = {
         "date":      today.isoformat(),
         "generated": gen_time,
         "status":    market_status,
-        "triggered": [t[0]["ticker"] for t in buckets["triggered"]],
-        "watch":     [t[0]["ticker"] for t in buckets["watch"]],
-        "ondeck":    [t[0]["ticker"] for t in buckets["ondeck"]],
+        "triggered": [ticker_snap(t, meta) for t, meta in buckets["triggered"]],
+        "watch":     [ticker_snap(t, meta) for t, meta in buckets["watch"]],
+        "ondeck":    [ticker_snap(t, meta) for t, meta in buckets["ondeck"]],
     }
     with open(os.path.join(DATA_DIR, "scanner.json"), "w") as f:
         json.dump(snap, f, indent=2)
