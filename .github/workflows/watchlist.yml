@@ -1,13 +1,12 @@
 name: Watchlist Auto-Score
 
 on:
-  schedule:
-    - cron: '*/15 13-20 * * 1-5'  # Every 15 min 9:00 AM–4:00 PM ET — intraday scanner
   workflow_dispatch:
     inputs:
       session:
         description: 'Session to run'
         required: true
+        default: 'premarket'
         default: 'premarket'
         type: choice
         options:
@@ -16,7 +15,6 @@ on:
           - midday
           - afterhours
           - eod
-          - intraday
 
 jobs:
   score-and-publish:
@@ -33,24 +31,14 @@ jobs:
 
       - name: Install dependencies
         run: |
-          SESSION="${{ github.event.inputs.session }}"
-          if [ "$SESSION" = "intraday" ] || [ "${{ github.event_name }}" = "schedule" ]; then
-            pip install yfinance pandas requests beautifulsoup4 pytz --quiet
-          else
-            pip install yfinance pandas --quiet
-          fi
+          pip install yfinance pandas --quiet
 
       - name: Run scorer or results
         env:
           FINVIZ_TOKEN: ${{ secrets.FINVIZ_TOKEN }}
         run: |
           SESSION="${{ github.event.inputs.session }}"
-
-          if [ "${{ github.event_name }}" = "schedule" ]; then
-            python scripts/intraday_scanner.py
-          elif [ "$SESSION" = "intraday" ]; then
-            python scripts/intraday_scanner.py
-          elif [ "$SESSION" = "eod" ]; then
+          if [ "$SESSION" = "eod" ]; then
             python results.py
           else
             python scorer.py --session $SESSION
@@ -64,6 +52,6 @@ jobs:
           if [ -z "$(git status --porcelain)" ]; then
             echo "Nothing to commit"
           else
-            git commit -m "Watchlist: ${{ github.event.inputs.session || 'intraday' }} $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git commit -m "Watchlist: ${{ github.event.inputs.session }} $(date -u +'%Y-%m-%d %H:%M UTC')"
             git push
           fi
