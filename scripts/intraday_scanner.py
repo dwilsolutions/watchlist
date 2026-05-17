@@ -508,53 +508,39 @@ function buildDetail(t) {
   return el;
 }
 
-// ── Live price fetching via Yahoo Finance ────────────────────────────────────
+// ── Live data from PythonAnywhere API ────────────────────────────────────────
+const API_URL = 'https://duanewilson.pythonanywhere.com/api/scan';
+
 async function fetchPrices() {
-  const syms = SEED.map(t => t.ticker);
-  if(!syms.length) return;
-
-  // Finnhub — free tier, 60 calls/min, real-time, CORS-friendly
-  const FINNHUB_KEY = 'd84srd1r01qrqbnnfrogd84srd1r01qrqbnnfrp0'; // <-- paste your free key from finnhub.io
-
-  const fetchOne = async (sym) => {
-    const url = `https://finnhub.io/api/v1/quote?symbol=${sym}&token=${FINNHUB_KEY}`;
-    try {
-      const res = await fetch(url);
-      if(!res.ok) return null;
-      const json = await res.json();
-      // Finnhub returns: c=current, h=high, l=low, o=open, pc=prev close
-      return json.c ? {symbol: sym, regularMarketPrice: json.c, high: json.h} : null;
-    } catch(e) { return null; }
-  };
-
   try {
-    // Fetch all in parallel — Finnhub allows 60 calls/min on free tier
-    const results = await Promise.all(syms.map(fetchOne));
-    const quotes = results.filter(Boolean);
-    quotes.forEach(q => {
-      const sym = q.symbol;
-      const price = q.regularMarketPrice || 0;
-      const seed  = SEED.find(t => t.ticker === sym);
-      if(!seed || !price) return;
+    const res = await fetch(API_URL + '?t=' + Date.now());
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
 
-      const entry = seed.entry || 0;
-      const vwap  = seed.vwap_static || price; // use static VWAP as proxy
-      const pct   = entry > 0 ? (price - entry) / entry : 0;
-      const aboveVwap = price >= vwap;
+    if(data.status === 'closed') {
+      document.getElementById('last-update').textContent = 'Market closed · prices paused';
+      return;
+    }
+    if(data.error) throw new Error(data.error);
 
-      // Classify signals
-      const signals = [];
-      if(price >= entry && entry > 0) signals.push('ENTRY BREAK');
-      if(aboveVwap) signals.push('ABOVE VWAP');
-      const liveHod = q.high || seed.hod_static || price;
-      if(liveHod && price >= liveHod * 0.98) signals.push('NEAR HOD');
+    const allTickers = [...(data.triggered||[]), ...(data.watch||[]), ...(data.ondeck||[])];
+    allTickers.forEach(q => {
+      const sym   = q.ticker;
+      const price = q.price || 0;
+      const seed  = SEED.find(t => t.ticker === sym) || {ticker: sym, entry: q.entry||0, vwap_static: q.vwap||0, hod_static: q.hod||0, source: q.source||'wl'};
+      if(!price) return;
+
+      const vwap      = q.vwap || seed.vwap_static || price;
+      const pct       = q.pct_from_entry !== undefined ? q.pct_from_entry : (seed.entry > 0 ? (price - seed.entry) / seed.entry : 0);
+      const aboveVwap = q.above_vwap !== undefined ? q.above_vwap : price >= vwap;
+      const signals   = q.signals || [];
 
       liveData[sym] = {price, vwap, pct, aboveVwap, signals};
       updateTile(sym, seed);
     });
     document.getElementById('last-update').textContent = 'Live · ' + new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true});
   } catch(e) {
-    console.warn('Price fetch failed:', e);
+    console.warn('Fetch failed:', e);
     document.getElementById('last-update').textContent = 'Fetch failed · retrying...';
   }
 }
@@ -659,8 +645,28 @@ async function checkForUpdate() {
 }
 
 buildUI();
-fetchPrices();
-setInterval(fetchPrices, REFRESH_MS);
+
+function isMarketHours() {
+  const now = new Date();
+  const et  = new Date(now.toLocaleString('en-US', {timeZone:'America/New_York'}));
+  const day = et.getDay(); // 0=Sun, 6=Sat
+  const h   = et.getHours();
+  const m   = et.getMinutes();
+  const mins = h * 60 + m;
+  // Mon-Fri, 4:00 AM - 8:00 PM ET (pre-market through after hours)
+  return day >= 1 && day <= 5 && mins >= 240 && mins < 1200;
+}
+
+function maybeFetchPrices() {
+  if(isMarketHours()) {
+    fetchPrices();
+  } else {
+    document.getElementById('last-update').textContent = 'Market closed · prices paused';
+  }
+}
+
+maybeFetchPrices();
+setInterval(maybeFetchPrices, REFRESH_MS);
 setInterval(checkForUpdate, 60000);
 """
 
