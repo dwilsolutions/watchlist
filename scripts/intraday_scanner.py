@@ -513,15 +513,30 @@ async function fetchPrices() {
   const syms = SEED.map(t => t.ticker);
   if(!syms.length) return;
 
-  // Yahoo Finance v8 chart endpoint — no API key needed, CORS allowed
-  const chunk = syms.join(',');
-  const url = `https://query1.finance.yahoo.com/v7/finance/quote?symbols=${chunk}&fields=regularMarketPrice,regularMarketVolume`;
+  // Route through allorigins.win CORS proxy to reach Yahoo Finance
+  const fetchOne = async (sym) => {
+    const yahooUrl = `https://query1.finance.yahoo.com/v8/finance/chart/${sym}?interval=1d&range=1d`;
+    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(yahooUrl)}`;
+    try {
+      const res = await fetch(proxyUrl);
+      if(!res.ok) return null;
+      const outer = await res.json();
+      const json  = JSON.parse(outer.contents);
+      const meta  = json?.chart?.result?.[0]?.meta;
+      return meta ? {symbol: sym, regularMarketPrice: meta.regularMarketPrice || meta.previousClose || 0} : null;
+    } catch(e) { return null; }
+  };
 
   try {
-    const res = await fetch(url);
-    if(!res.ok) throw new Error('HTTP ' + res.status);
-    const json = await res.json();
-    const quotes = json?.quoteResponse?.result || [];
+    // Batch in groups of 3 — proxy has rate limits
+    const results = [];
+    for(let i = 0; i < syms.length; i += 3) {
+      const batch = syms.slice(i, i+3);
+      const batchResults = await Promise.all(batch.map(fetchOne));
+      results.push(...batchResults.filter(Boolean));
+      if(i + 3 < syms.length) await new Promise(r => setTimeout(r, 300));
+    }
+    const quotes = results;
     quotes.forEach(q => {
       const sym = q.symbol;
       const price = q.regularMarketPrice || 0;
