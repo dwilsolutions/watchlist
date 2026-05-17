@@ -513,30 +513,24 @@ async function fetchPrices() {
   const syms = SEED.map(t => t.ticker);
   if(!syms.length) return;
 
-  // Route through allorigins.win CORS proxy to reach Yahoo Finance
+  // Finnhub — free tier, 60 calls/min, real-time, CORS-friendly
+  const FINNHUB_KEY = 'd84srd1r01qrqbnnfrogd84srd1r01qrqbnnfrp0'; // <-- paste your free key from finnhub.io
+
   const fetchOne = async (sym) => {
-    const yahooUrl = `https://query1.finance.yahoo.com/v8/finance/chart/${sym}?interval=1d&range=1d`;
-    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(yahooUrl)}`;
+    const url = `https://finnhub.io/api/v1/quote?symbol=${sym}&token=${FINNHUB_KEY}`;
     try {
-      const res = await fetch(proxyUrl);
+      const res = await fetch(url);
       if(!res.ok) return null;
-      const outer = await res.json();
-      const json  = JSON.parse(outer.contents);
-      const meta  = json?.chart?.result?.[0]?.meta;
-      return meta ? {symbol: sym, regularMarketPrice: meta.regularMarketPrice || meta.previousClose || 0} : null;
+      const json = await res.json();
+      // Finnhub returns: c=current, h=high, l=low, o=open, pc=prev close
+      return json.c ? {symbol: sym, regularMarketPrice: json.c, high: json.h} : null;
     } catch(e) { return null; }
   };
 
   try {
-    // Batch in groups of 3 — proxy has rate limits
-    const results = [];
-    for(let i = 0; i < syms.length; i += 3) {
-      const batch = syms.slice(i, i+3);
-      const batchResults = await Promise.all(batch.map(fetchOne));
-      results.push(...batchResults.filter(Boolean));
-      if(i + 3 < syms.length) await new Promise(r => setTimeout(r, 300));
-    }
-    const quotes = results;
+    // Fetch all in parallel — Finnhub allows 60 calls/min on free tier
+    const results = await Promise.all(syms.map(fetchOne));
+    const quotes = results.filter(Boolean);
     quotes.forEach(q => {
       const sym = q.symbol;
       const price = q.regularMarketPrice || 0;
@@ -552,7 +546,8 @@ async function fetchPrices() {
       const signals = [];
       if(price >= entry && entry > 0) signals.push('ENTRY BREAK');
       if(aboveVwap) signals.push('ABOVE VWAP');
-      if(seed.hod_static && price >= seed.hod_static * 0.98) signals.push('NEAR HOD');
+      const liveHod = q.high || seed.hod_static || price;
+      if(liveHod && price >= liveHod * 0.98) signals.push('NEAR HOD');
 
       liveData[sym] = {price, vwap, pct, aboveVwap, signals};
       updateTile(sym, seed);
@@ -649,9 +644,24 @@ function updateCounts() {
 function toggleHelp() { document.getElementById('help-panel').classList.toggle('open'); }
 
 // ── Init ─────────────────────────────────────────────────────────────────────
+const BUILD_TIME = "SCANNER_BUILD_TIME";
+
+async function checkForUpdate() {
+  try {
+    const res = await fetch('/watchlist/data/scanner.json?t=' + Date.now());
+    if(!res.ok) return;
+    const json = await res.json();
+    // If scanner.json date or generated time changed, reload to get fresh tickers
+    if(json.generated && json.generated !== BUILD_TIME) {
+      window.location.reload();
+    }
+  } catch(e) {}
+}
+
 buildUI();
 fetchPrices();
 setInterval(fetchPrices, REFRESH_MS);
+setInterval(checkForUpdate, 60000);
 """
 
     help_items = [
@@ -701,7 +711,7 @@ setInterval(fetchPrices, REFRESH_MS);
     out.append("</div>")
     out.append("<div class=\"content\" id=\"content\"></div>")
     out.append("</div>\n")
-    out.append("<script>{}</script>\n</body>\n</html>".format(js))
+    out.append("<script>{}</script>\n</body>\n</html>".format(js.replace("SCANNER_BUILD_TIME", gen_time)))
     return "".join(out)
 
 
