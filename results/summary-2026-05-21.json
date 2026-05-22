@@ -4,7 +4,7 @@
     "n_evaluated": 14,
     "wins": 12,
     "success_rate_pct": 85.7,
-    "avg_max_gain_pct": 18.51,
+    "avg_max_gain_pct": 18.52,
     "median_max_gain_pct": 18.2,
     "best_run_pct": 54.08,
     "worst_run_pct": -11.31,
@@ -24,7 +24,7 @@
         "count": 6,
         "wins": 4,
         "success_rate": 66.7,
-        "avg_max_gain": 18.06,
+        "avg_max_gain": 18.08,
         "best": 54.08
       },
       {
@@ -53,7 +53,7 @@
         "count": 7,
         "wins": 7,
         "success_rate": 100.0,
-        "avg_max_gain": 12.99,
+        "avg_max_gain": 13.0,
         "best": 22.89
       },
       {
@@ -73,7 +73,7 @@
         "count": 11,
         "wins": 9,
         "success_rate": 81.8,
-        "avg_max_gain": 20.18,
+        "avg_max_gain": 20.19,
         "best": 54.08
       },
       {
@@ -102,7 +102,7 @@
         "count": 3,
         "wins": 3,
         "success_rate": 100.0,
-        "avg_max_gain": 11.31,
+        "avg_max_gain": 11.34,
         "best": 12.9
       },
       {
@@ -149,7 +149,7 @@
         "count": 10,
         "wins": 9,
         "success_rate": 90.0,
-        "avg_max_gain": 16.77,
+        "avg_max_gain": 16.78,
         "best": 53.85
       },
       {
@@ -223,7 +223,7 @@
         "count": 3,
         "wins": 3,
         "success_rate": 100.0,
-        "avg_max_gain": 11.37,
+        "avg_max_gain": 11.41,
         "best": 12.9
       }
     ],
@@ -234,7 +234,7 @@
         "count": 11,
         "wins": 9,
         "success_rate": 81.8,
-        "avg_max_gain": 20.18,
+        "avg_max_gain": 20.19,
         "best": 54.08
       },
       {
@@ -261,7 +261,7 @@
         "count": 7,
         "wins": 6,
         "success_rate": 85.7,
-        "avg_max_gain": 10.87,
+        "avg_max_gain": 10.88,
         "best": 22.89
       },
       {
@@ -270,7 +270,7 @@
         "count": 3,
         "wins": 3,
         "success_rate": 100.0,
-        "avg_max_gain": 11.31,
+        "avg_max_gain": 11.34,
         "best": 12.9
       }
     ]
