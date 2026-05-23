@@ -21,7 +21,7 @@ from datetime import datetime
 import yfinance as yf
 
 
-SUCCESS_THRESHOLD_PCT = 5.0  # ran ≥5% from sighting = success
+SUCCESS_THRESHOLD_PCT = 2.0  # ran ≥2% from sighting = success
 
 
 def load_log(path):
