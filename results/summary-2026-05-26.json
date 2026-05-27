@@ -4,9 +4,9 @@
     "n_evaluated": 22,
     "wins": 18,
     "success_rate_pct": 81.8,
-    "avg_max_gain_pct": 15.54,
+    "avg_max_gain_pct": 15.57,
     "median_max_gain_pct": 8.5,
-    "best_run_pct": 113.18,
+    "best_run_pct": 113.19,
     "worst_run_pct": -4.42,
     "by_bucket": [
       {
@@ -33,7 +33,7 @@
         "count": 4,
         "wins": 4,
         "success_rate": 100.0,
-        "avg_max_gain": 7.22,
+        "avg_max_gain": 7.38,
         "best": 12.86
       },
       {
@@ -43,7 +43,7 @@
         "wins": 8,
         "success_rate": 88.9,
         "avg_max_gain": 20.0,
-        "best": 113.18
+        "best": 113.19
       }
     ],
     "by_score_range": [
@@ -53,7 +53,7 @@
         "count": 9,
         "wins": 8,
         "success_rate": 88.9,
-        "avg_max_gain": 5.85,
+        "avg_max_gain": 5.93,
         "best": 12.86
       },
       {
@@ -63,7 +63,7 @@
         "wins": 10,
         "success_rate": 76.9,
         "avg_max_gain": 22.25,
-        "best": 113.18
+        "best": 113.19
       }
     ],
     "by_price_range": [
@@ -73,8 +73,8 @@
         "count": 15,
         "wins": 11,
         "success_rate": 73.3,
-        "avg_max_gain": 16.64,
-        "best": 113.18
+        "avg_max_gain": 16.69,
+        "best": 113.19
       },
       {
         "factor": "price_range",
@@ -93,8 +93,8 @@
         "count": 4,
         "wins": 3,
         "success_rate": 75.0,
-        "avg_max_gain": 7.26,
-        "best": 10.46
+        "avg_max_gain": 7.42,
+        "best": 11.11
       },
       {
         "factor": "change_range",
@@ -102,8 +102,8 @@
         "count": 3,
         "wins": 2,
         "success_rate": 66.7,
-        "avg_max_gain": 41.16,
-        "best": 113.18
+        "avg_max_gain": 41.17,
+        "best": 113.19
       },
       {
         "factor": "change_range",
@@ -140,8 +140,8 @@
         "count": 3,
         "wins": 3,
         "success_rate": 100.0,
-        "avg_max_gain": 5.45,
-        "best": 10.46
+        "avg_max_gain": 5.67,
+        "best": 11.11
       },
       {
         "factor": "session",
@@ -150,7 +150,7 @@
         "wins": 10,
         "success_rate": 90.9,
         "avg_max_gain": 17.72,
-        "best": 113.18
+        "best": 113.19
       },
       {
         "factor": "session",
@@ -196,7 +196,7 @@
         "count": 6,
         "wins": 4,
         "success_rate": 66.7,
-        "avg_max_gain": 6.64,
+        "avg_max_gain": 6.75,
         "best": 22.17
       },
       {
@@ -215,7 +215,7 @@
         "wins": 6,
         "success_rate": 100.0,
         "avg_max_gain": 26.62,
-        "best": 113.18
+        "best": 113.19
       },
       {
         "factor": "sector",
@@ -235,7 +235,7 @@
         "wins": 13,
         "success_rate": 86.7,
         "avg_max_gain": 20.26,
-        "best": 113.18
+        "best": 113.19
       },
       {
         "factor": "flag",
@@ -243,8 +243,8 @@
         "count": 15,
         "wins": 11,
         "success_rate": 73.3,
-        "avg_max_gain": 16.64,
-        "best": 113.18
+        "avg_max_gain": 16.69,
+        "best": 113.19
       },
       {
         "factor": "flag",
@@ -253,7 +253,7 @@
         "wins": 9,
         "success_rate": 75.0,
         "avg_max_gain": 23.37,
-        "best": 113.18
+        "best": 113.19
       },
       {
         "factor": "flag",
@@ -261,7 +261,7 @@
         "count": 7,
         "wins": 5,
         "success_rate": 71.4,
-        "avg_max_gain": 5.44,
+        "avg_max_gain": 5.54,
         "best": 12.23
       },
       {
@@ -270,8 +270,8 @@
         "count": 4,
         "wins": 3,
         "success_rate": 75.0,
-        "avg_max_gain": 7.26,
-        "best": 10.46
+        "avg_max_gain": 7.42,
+        "best": 11.11
       }
     ]
   }
