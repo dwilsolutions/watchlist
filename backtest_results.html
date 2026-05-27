@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<title>QQQ Backtest — 2026-05-27T12:14:00</title>
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; background: #0f172a; color: #e2e8f0; max-width: 1100px; margin: 0 auto; padding: 20px; }
+  h1 { color: #38bdf8; margin-bottom: 4px; }
+  h2 { color: #94a3b8; margin-top: 32px; }
+  h3 { color: #cbd5e1; margin-top: 24px; font-size: 16px; }
+  .ts { color: #64748b; font-size: 13px; margin-bottom: 16px; }
+  .config { background: #1e293b; padding: 12px 16px; border-radius: 8px; font-size: 13px; margin-bottom: 24px; }
+  .config span { color: #38bdf8; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 13px; }
+  th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid #334155; }
+  th { background: #1e293b; color: #94a3b8; font-weight: 500; text-transform: uppercase; font-size: 11px; }
+  tr:hover { background: #1e293b; }
+  .caveat { background: #422006; border-left: 3px solid #f59e0b; padding: 12px 16px; border-radius: 4px; font-size: 13px; margin: 20px 0; }
+</style>
+</head><body>
+<h1>QQQ Backtest</h1>
+<div class="ts">Generated 2026-05-27T12:14:00</div>
+
+<div class="config">
+  <span>Target:</span> +0.5% underlying ≈ +25% option &nbsp;|&nbsp;
+  <span>Stop:</span> -0.3% &nbsp;|&nbsp;
+  <span>Trail:</span> 0.3% &nbsp;|&nbsp;
+  <span>Scale-out:</span> 50% &nbsp;|&nbsp;
+  <span>Leverage proxy:</span> 50x &nbsp;|&nbsp;
+  <span>EOD exit:</span> 15:55
+</div>
+
+<div class="caveat">
+  <b>⚠ Model limitations:</b> Symmetric leverage proxy — does not model theta decay (real 0DTE bleeds ~2%/hr on flat moves), IV changes, or bid-ask slippage. Real-world option P&L will be worse than shown, especially for trades that chop sideways. Use as relative comparison between strategies, not absolute expectations.
+</div>
+
+<h2>Intraday Entry Strategies (Option P&L est., long calls)</h2>
+
+        <h3>Intraday — 30d window (5-min bars)</h3>
+        <table>
+          <thead><tr>
+            <th>Strategy</th><th>N</th><th>Win%</th><th>Avg</th>
+            <th>AvgW</th><th>AvgL</th><th>Best</th><th>Worst</th>
+            <th>PF</th><th>Sum</th>
+          </tr></thead>
+          <tbody><tr><td><b>vwap_pullback</b></td><td>21</td><td>57.1%</td><td>4.97%</td><td>19.95%</td><td>-15.0%</td><td>34.32%</td><td>-15.0%</td><td>1.77</td><td style='color:#22c55e;font-weight:600'>104.35%</td></tr><tr><td><b>orb_15min</b></td><td>17</td><td>52.9%</td><td>3.53%</td><td>18.55%</td><td>-13.36%</td><td>32.99%</td><td>-15.0%</td><td>1.56</td><td style='color:#22c55e;font-weight:600'>60.02%</td></tr><tr><td><b>time_1100am_et</b></td><td>20</td><td>65.0%</td><td>6.83%</td><td>18.58%</td><td>-15.0%</td><td>32.18%</td><td>-15.0%</td><td>2.3</td><td style='color:#22c55e;font-weight:600'>136.58%</td></tr><tr><td><b>ema9_pullback</b></td><td>21</td><td>42.9%</td><td>-0.69%</td><td>18.4%</td><td>-15.0%</td><td>27.08%</td><td>-15.0%</td><td>0.92</td><td style='color:#ef4444;font-weight:600'>-14.39%</td></tr></tbody>
+        </table>
+        <h3>Intraday — 60d window (5-min bars)</h3>
+        <table>
+          <thead><tr>
+            <th>Strategy</th><th>N</th><th>Win%</th><th>Avg</th>
+            <th>AvgW</th><th>AvgL</th><th>Best</th><th>Worst</th>
+            <th>PF</th><th>Sum</th>
+          </tr></thead>
+          <tbody><tr><td><b>vwap_pullback</b></td><td>40</td><td>50.0%</td><td>3.74%</td><td>22.49%</td><td>-15.0%</td><td>34.32%</td><td>-15.0%</td><td>1.5</td><td style='color:#22c55e;font-weight:600'>149.76%</td></tr><tr><td><b>orb_15min</b></td><td>33</td><td>57.6%</td><td>5.74%</td><td>20.34%</td><td>-14.06%</td><td>35.72%</td><td>-15.0%</td><td>1.96</td><td style='color:#22c55e;font-weight:600'>189.53%</td></tr><tr><td><b>time_1100am_et</b></td><td>40</td><td>60.0%</td><td>7.79%</td><td>22.98%</td><td>-15.0%</td><td>46.69%</td><td>-15.0%</td><td>2.3</td><td style='color:#22c55e;font-weight:600'>311.45%</td></tr><tr><td><b>ema9_pullback</b></td><td>40</td><td>45.0%</td><td>2.98%</td><td>24.95%</td><td>-15.0%</td><td>45.16%</td><td>-15.0%</td><td>1.36</td><td style='color:#22c55e;font-weight:600'>119.08%</td></tr></tbody>
+        </table>
+
+<h2>Daily Bias Baseline (Open → Close, no entry timing)</h2>
+<table>
+  <thead><tr>
+    <th>Window</th><th>Days</th><th>Green%</th>
+    <th>Avg O→C</th><th>Median O→C</th>
+    <th>Best Day</th><th>Worst Day</th><th>Avg Opt%</th>
+  </tr></thead>
+  <tbody><tr><td>30d</td><td>30</td><td>70.0%</td><td>0.389%</td><td>0.429%</td><td>1.62%</td><td>-0.8%</td><td style='color:#22c55e;font-weight:600'>19.47%</td></tr><tr><td>60d</td><td>60</td><td>60.0%</td><td>0.254%</td><td>0.247%</td><td>2.28%</td><td>-1.6%</td><td style='color:#22c55e;font-weight:600'>12.7%</td></tr><tr><td>90d</td><td>83</td><td>57.8%</td><td>0.171%</td><td>0.246%</td><td>2.28%</td><td>-2.29%</td><td style='color:#22c55e;font-weight:600'>8.56%</td></tr><tr><td>120d</td><td>102</td><td>54.9%</td><td>0.131%</td><td>0.125%</td><td>2.28%</td><td>-2.29%</td><td style='color:#22c55e;font-weight:600'>6.56%</td></tr><tr><td>360d</td><td>267</td><td>56.2%</td><td>0.059%</td><td>0.144%</td><td>2.28%</td><td>-4.24%</td><td style='color:#22c55e;font-weight:600'>2.95%</td></tr></tbody>
+</table>
+
+<p style="color:#64748b;font-size:12px;margin-top:32px">
+  Backtest run at 2026-05-27T12:14:00. yfinance 5-min data limited to 60 days; longer windows use daily bars.
+</p>
+</body></html>
