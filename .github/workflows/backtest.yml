@@ -32,7 +32,7 @@ jobs:
 
       - name: Run backtest
         run: |
-          python scripts/backtest.py \
+          python backtest.py \
             --ticker "${{ github.event.inputs.ticker }}" \
             --windows "${{ github.event.inputs.windows }}" \
             --output-dir .
