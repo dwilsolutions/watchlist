@@ -37,14 +37,34 @@ jobs:
             --windows "${{ github.event.inputs.windows }}" \
             --output-dir .
 
+      - name: Upload results as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: backtest-results
+          path: |
+            backtest_results.html
+            backtest_results.json
+          retention-days: 30
+
       - name: Commit results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add backtest_results.html backtest_results.json
-          if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "backtest: ${{ github.event.inputs.ticker }} @ $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-            git push
-          else
+          if [ -z "$(git status --porcelain)" ]; then
             echo "No changes to commit"
+            exit 0
           fi
+          git commit -m "backtest: ${{ github.event.inputs.ticker }} @ $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          # Retry push with rebase up to 3 times (handles transient GitHub errors)
+          for i in 1 2 3; do
+            if git pull --rebase origin main && git push; then
+              echo "Pushed on attempt $i"
+              exit 0
+            fi
+            echo "Push attempt $i failed, retrying in $((i * 5))s..."
+            sleep $((i * 5))
+          done
+          echo "All push attempts failed — results still available as workflow artifact"
+          exit 1
