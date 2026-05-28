@@ -7,7 +7,7 @@
     "avg_max_gain_pct": 12.0,
     "median_max_gain_pct": 5.3,
     "best_run_pct": 165.46,
-    "worst_run_pct": -34.95,
+    "worst_run_pct": -34.91,
     "by_bucket": [
       {
         "factor": "bucket",
@@ -129,7 +129,7 @@
         "count": 11,
         "wins": 4,
         "success_rate": 36.4,
-        "avg_max_gain": 12.38,
+        "avg_max_gain": 12.39,
         "best": 165.46
       }
     ],
@@ -169,8 +169,8 @@
         "count": 1,
         "wins": 0,
         "success_rate": 0.0,
-        "avg_max_gain": -34.95,
-        "best": -34.95
+        "avg_max_gain": -34.91,
+        "best": -34.91
       },
       {
         "factor": "sector",
