@@ -2,8 +2,8 @@
   "date": "2026-05-22",
   "summary": {
     "n_evaluated": 18,
-    "wins": 16,
-    "success_rate_pct": 88.9,
+    "wins": 12,
+    "success_rate_pct": 66.7,
     "avg_max_gain_pct": 27.47,
     "median_max_gain_pct": 10.26,
     "best_run_pct": 183.22,
@@ -22,8 +22,8 @@
         "factor": "bucket",
         "value": "running",
         "count": 5,
-        "wins": 5,
-        "success_rate": 100.0,
+        "wins": 4,
+        "success_rate": 80.0,
         "avg_max_gain": 19.19,
         "best": 52.67
       },
@@ -31,8 +31,8 @@
         "factor": "bucket",
         "value": "triggered",
         "count": 5,
-        "wins": 5,
-        "success_rate": 100.0,
+        "wins": 3,
+        "success_rate": 60.0,
         "avg_max_gain": 34.65,
         "best": 113.6
       },
@@ -40,8 +40,8 @@
         "factor": "bucket",
         "value": "watch",
         "count": 7,
-        "wins": 6,
-        "success_rate": 85.7,
+        "wins": 5,
+        "success_rate": 71.4,
         "avg_max_gain": 31.95,
         "best": 183.22
       }
@@ -60,8 +60,8 @@
         "factor": "score_range",
         "value": "50-69",
         "count": 16,
-        "wins": 15,
-        "success_rate": 93.8,
+        "wins": 11,
+        "success_rate": 68.8,
         "avg_max_gain": 30.16,
         "best": 183.22
       }
@@ -71,8 +71,8 @@
         "factor": "price_range",
         "value": "$1-$5",
         "count": 11,
-        "wins": 10,
-        "success_rate": 90.9,
+        "wins": 7,
+        "success_rate": 63.6,
         "avg_max_gain": 30.73,
         "best": 183.22
       },
@@ -89,8 +89,8 @@
         "factor": "price_range",
         "value": "$5-$20",
         "count": 6,
-        "wins": 5,
-        "success_rate": 83.3,
+        "wins": 4,
+        "success_rate": 66.7,
         "avg_max_gain": 24.36,
         "best": 113.6
       }
@@ -109,8 +109,8 @@
         "factor": "change_range",
         "value": "20-30%",
         "count": 3,
-        "wins": 3,
-        "success_rate": 100.0,
+        "wins": 2,
+        "success_rate": 66.7,
         "avg_max_gain": 11.19,
         "best": 23.85
       },
@@ -127,8 +127,8 @@
         "factor": "change_range",
         "value": "\u226530%",
         "count": 11,
-        "wins": 11,
-        "success_rate": 100.0,
+        "wins": 8,
+        "success_rate": 72.7,
         "avg_max_gain": 40.09,
         "best": 183.22
       }
@@ -147,8 +147,8 @@
         "factor": "session",
         "value": "open",
         "count": 12,
-        "wins": 11,
-        "success_rate": 91.7,
+        "wins": 8,
+        "success_rate": 66.7,
         "avg_max_gain": 33.07,
         "best": 183.22
       },
@@ -156,8 +156,8 @@
         "factor": "session",
         "value": "pre",
         "count": 5,
-        "wins": 5,
-        "success_rate": 100.0,
+        "wins": 4,
+        "success_rate": 80.0,
         "avg_max_gain": 19.19,
         "best": 52.67
       }
@@ -185,8 +185,8 @@
         "factor": "sector",
         "value": "Consumer Cyclical",
         "count": 2,
-        "wins": 2,
-        "success_rate": 100.0,
+        "wins": 1,
+        "success_rate": 50.0,
         "avg_max_gain": 7.38,
         "best": 12.43
       },
@@ -203,8 +203,8 @@
         "factor": "sector",
         "value": "Healthcare",
         "count": 5,
-        "wins": 5,
-        "success_rate": 100.0,
+        "wins": 4,
+        "success_rate": 80.0,
         "avg_max_gain": 30.41,
         "best": 113.6
       },
@@ -212,8 +212,8 @@
         "factor": "sector",
         "value": "Industrials",
         "count": 5,
-        "wins": 5,
-        "success_rate": 100.0,
+        "wins": 3,
+        "success_rate": 60.0,
         "avg_max_gain": 44.1,
         "best": 183.22
       },
@@ -232,8 +232,8 @@
         "factor": "flag",
         "value": "Major Mover",
         "count": 14,
-        "wins": 14,
-        "success_rate": 100.0,
+        "wins": 10,
+        "success_rate": 71.4,
         "avg_max_gain": 33.9,
         "best": 183.22
       },
@@ -241,8 +241,8 @@
         "factor": "flag",
         "value": "Volume Explosion",
         "count": 12,
-        "wins": 12,
-        "success_rate": 100.0,
+        "wins": 9,
+        "success_rate": 75.0,
         "avg_max_gain": 38.12,
         "best": 183.22
       },
@@ -250,8 +250,8 @@
         "factor": "flag",
         "value": "Sub $5",
         "count": 11,
-        "wins": 10,
-        "success_rate": 90.9,
+        "wins": 7,
+        "success_rate": 63.6,
         "avg_max_gain": 30.73,
         "best": 183.22
       },
@@ -259,8 +259,8 @@
         "factor": "flag",
         "value": "High RVol",
         "count": 6,
-        "wins": 4,
-        "success_rate": 66.7,
+        "wins": 3,
+        "success_rate": 50.0,
         "avg_max_gain": 6.17,
         "best": 12.43
       },

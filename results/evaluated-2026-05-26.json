@@ -1,8 +1,7 @@
 {
   "date": "2026-05-26",
-  "n_records": 22,
   "n_evaluated": 22,
-  "n_failed": 0,
+  "n_excluded": 0,
   "evaluated": [
     {
       "bucket": "running",
@@ -314,7 +313,7 @@
       "max_gain": 2.78,
       "max_loss": -30.56,
       "close_pct": -5.56,
-      "success": 1
+      "success": 0
     },
     {
       "bucket": "triggered",
@@ -569,7 +568,7 @@
       "max_gain": 4.13,
       "max_loss": -10.61,
       "close_pct": -1.96,
-      "success": 1
+      "success": 0
     },
     {
       "bucket": "watch",
@@ -636,7 +635,7 @@
       "max_gain": 2.79,
       "max_loss": -7.91,
       "close_pct": -0.93,
-      "success": 1
+      "success": 0
     },
     {
       "bucket": "triggered",
@@ -700,7 +699,7 @@
       "max_gain": 2.37,
       "max_loss": -2.07,
       "close_pct": -0.0,
-      "success": 1
+      "success": 0
     },
     {
       "bucket": "watch",
@@ -730,8 +729,10 @@
       "max_gain": 3.53,
       "max_loss": -6.03,
       "close_pct": -0.0,
-      "success": 1
+      "success": 0
     }
   ],
-  "failed": []
+  "excluded": [],
+  "threshold": 5.0,
+  "min_price": 1.0
 }

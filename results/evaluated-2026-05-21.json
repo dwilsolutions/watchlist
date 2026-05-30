@@ -1,8 +1,7 @@
 {
   "date": "2026-05-21",
-  "n_records": 14,
   "n_evaluated": 14,
-  "n_failed": 0,
+  "n_excluded": 0,
   "evaluated": [
     {
       "bucket": "running",
@@ -474,5 +473,7 @@
       "success": 1
     }
   ],
-  "failed": []
+  "excluded": [],
+  "threshold": 5.0,
+  "min_price": 1.0
 }

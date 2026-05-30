@@ -1,48 +1,39 @@
 {
   "date": "2026-05-20",
   "summary": {
-    "n_evaluated": 31,
-    "wins": 23,
-    "success_rate_pct": 74.2,
-    "avg_max_gain_pct": 360.55,
-    "median_max_gain_pct": 11.63,
-    "best_run_pct": 10524.0,
-    "worst_run_pct": -21.05,
+    "n_evaluated": 12,
+    "wins": 11,
+    "success_rate_pct": 91.7,
+    "avg_max_gain_pct": 37.73,
+    "median_max_gain_pct": 15.27,
+    "best_run_pct": 169.59,
+    "worst_run_pct": 4.88,
     "by_bucket": [
       {
         "factor": "bucket",
-        "value": "ondeck",
-        "count": 5,
-        "wins": 5,
-        "success_rate": 100.0,
-        "avg_max_gain": 22.1,
-        "best": 32.67
-      },
-      {
-        "factor": "bucket",
         "value": "running",
-        "count": 14,
-        "wins": 9,
-        "success_rate": 64.3,
-        "avg_max_gain": 17.61,
+        "count": 5,
+        "wins": 4,
+        "success_rate": 80.0,
+        "avg_max_gain": 35.0,
         "best": 89.8
       },
       {
         "factor": "bucket",
         "value": "triggered",
-        "count": 7,
-        "wins": 4,
-        "success_rate": 57.1,
-        "avg_max_gain": 1531.88,
-        "best": 10524.0
+        "count": 3,
+        "wins": 3,
+        "success_rate": 100.0,
+        "avg_max_gain": 63.0,
+        "best": 169.59
       },
       {
         "factor": "bucket",
         "value": "watch",
-        "count": 5,
-        "wins": 5,
+        "count": 4,
+        "wins": 4,
         "success_rate": 100.0,
-        "avg_max_gain": 19.37,
+        "avg_max_gain": 22.2,
         "best": 60.68
       }
     ],
@@ -50,20 +41,20 @@
       {
         "factor": "score_range",
         "value": "0-49",
-        "count": 13,
-        "wins": 10,
-        "success_rate": 76.9,
-        "avg_max_gain": 24.77,
+        "count": 5,
+        "wins": 4,
+        "success_rate": 80.0,
+        "avg_max_gain": 39.16,
         "best": 169.59
       },
       {
         "factor": "score_range",
         "value": "50-69",
-        "count": 18,
-        "wins": 13,
-        "success_rate": 72.2,
-        "avg_max_gain": 603.06,
-        "best": 10524.0
+        "count": 7,
+        "wins": 7,
+        "success_rate": 100.0,
+        "avg_max_gain": 36.71,
+        "best": 89.8
       }
     ],
     "by_price_range": [
@@ -84,34 +75,25 @@
         "success_rate": 100.0,
         "avg_max_gain": 30.22,
         "best": 89.8
-      },
-      {
-        "factor": "price_range",
-        "value": "sub $1",
-        "count": 19,
-        "wins": 12,
-        "success_rate": 63.2,
-        "avg_max_gain": 564.44,
-        "best": 10524.0
       }
     ],
     "by_change_pct": [
       {
         "factor": "change_range",
         "value": "10-20%",
-        "count": 6,
-        "wins": 3,
-        "success_rate": 50.0,
-        "avg_max_gain": 1766.92,
-        "best": 10524.0
+        "count": 2,
+        "wins": 2,
+        "success_rate": 100.0,
+        "avg_max_gain": 33.68,
+        "best": 60.68
       },
       {
         "factor": "change_range",
         "value": "20-30%",
-        "count": 6,
-        "wins": 5,
-        "success_rate": 83.3,
-        "avg_max_gain": 16.55,
+        "count": 4,
+        "wins": 4,
+        "success_rate": 100.0,
+        "avg_max_gain": 22.8,
         "best": 42.57
       },
       {
@@ -126,170 +108,134 @@
       {
         "factor": "change_range",
         "value": "<5%",
-        "count": 7,
-        "wins": 7,
+        "count": 1,
+        "wins": 1,
         "success_rate": 100.0,
-        "avg_max_gain": 18.24,
-        "best": 32.67
+        "avg_max_gain": 9.13,
+        "best": 9.13
       },
       {
         "factor": "change_range",
         "value": "\u226530%",
-        "count": 10,
-        "wins": 7,
-        "success_rate": 70.0,
-        "avg_max_gain": 33.82,
+        "count": 3,
+        "wins": 3,
+        "success_rate": 100.0,
+        "avg_max_gain": 91.55,
         "best": 169.59
       }
     ],
     "by_market_session": [
       {
         "factor": "session",
-        "value": "after",
-        "count": 1,
-        "wins": 0,
-        "success_rate": 0.0,
-        "avg_max_gain": 3.11,
-        "best": 3.11
-      },
-      {
-        "factor": "session",
         "value": "open",
-        "count": 14,
-        "wins": 11,
-        "success_rate": 78.6,
-        "avg_max_gain": 25.38,
+        "count": 9,
+        "wins": 8,
+        "success_rate": 88.9,
+        "avg_max_gain": 32.02,
         "best": 169.59
       },
       {
         "factor": "session",
         "value": "pre",
-        "count": 16,
-        "wins": 12,
-        "success_rate": 75.0,
-        "avg_max_gain": 676.17,
-        "best": 10524.0
+        "count": 3,
+        "wins": 3,
+        "success_rate": 100.0,
+        "avg_max_gain": 54.86,
+        "best": 89.8
       }
     ],
     "by_sector": [
       {
         "factor": "sector",
-        "value": "Basic Materials",
-        "count": 1,
-        "wins": 1,
-        "success_rate": 100.0,
-        "avg_max_gain": 11.63,
-        "best": 11.63
-      },
-      {
-        "factor": "sector",
-        "value": "Communication Services",
-        "count": 4,
-        "wins": 2,
-        "success_rate": 50.0,
-        "avg_max_gain": 2631.87,
-        "best": 10524.0
-      },
-      {
-        "factor": "sector",
         "value": "Consumer Cyclical",
-        "count": 3,
-        "wins": 3,
+        "count": 2,
+        "wins": 2,
         "success_rate": 100.0,
-        "avg_max_gain": 50.36,
+        "avg_max_gain": 66.19,
         "best": 89.8
       },
       {
         "factor": "sector",
         "value": "Consumer Defensive",
-        "count": 2,
-        "wins": 2,
+        "count": 1,
+        "wins": 1,
         "success_rate": 100.0,
-        "avg_max_gain": 31.1,
+        "avg_max_gain": 32.2,
         "best": 32.2
       },
       {
         "factor": "sector",
         "value": "Financial",
-        "count": 2,
+        "count": 1,
         "wins": 1,
-        "success_rate": 50.0,
-        "avg_max_gain": 6.12,
+        "success_rate": 100.0,
+        "avg_max_gain": 9.13,
         "best": 9.13
       },
       {
         "factor": "sector",
         "value": "Healthcare",
-        "count": 12,
-        "wins": 8,
-        "success_rate": 66.7,
-        "avg_max_gain": 26.13,
+        "count": 5,
+        "wins": 5,
+        "success_rate": 100.0,
+        "avg_max_gain": 50.68,
         "best": 169.59
       },
       {
         "factor": "sector",
         "value": "Technology",
-        "count": 6,
-        "wins": 5,
-        "success_rate": 83.3,
-        "avg_max_gain": 11.04,
-        "best": 17.08
-      },
-      {
-        "factor": "sector",
-        "value": "Utilities",
-        "count": 1,
-        "wins": 1,
-        "success_rate": 100.0,
-        "avg_max_gain": 32.67,
-        "best": 32.67
+        "count": 3,
+        "wins": 2,
+        "success_rate": 66.7,
+        "avg_max_gain": 8.56,
+        "best": 15.27
       }
     ],
     "by_flag": [
       {
         "factor": "flag",
-        "value": "Sub $5",
-        "count": 27,
-        "wins": 19,
-        "success_rate": 70.4,
-        "avg_max_gain": 409.49,
-        "best": 10524.0
+        "value": "Volume Explosion",
+        "count": 8,
+        "wins": 7,
+        "success_rate": 87.5,
+        "avg_max_gain": 32.14,
+        "best": 89.8
       },
       {
         "factor": "flag",
-        "value": "Volume Explosion",
-        "count": 24,
-        "wins": 18,
-        "success_rate": 75.0,
-        "avg_max_gain": 456.9,
-        "best": 10524.0
+        "value": "Sub $5",
+        "count": 8,
+        "wins": 7,
+        "success_rate": 87.5,
+        "avg_max_gain": 41.49,
+        "best": 169.59
       },
       {
         "factor": "flag",
         "value": "Major Mover",
-        "count": 16,
-        "wins": 12,
-        "success_rate": 75.0,
-        "avg_max_gain": 27.34,
+        "count": 7,
+        "wins": 7,
+        "success_rate": 100.0,
+        "avg_max_gain": 52.27,
         "best": 169.59
       },
       {
         "factor": "flag",
         "value": "High RVol",
-        "count": 7,
-        "wins": 5,
-        "success_rate": 71.4,
-        "avg_max_gain": 30.2,
+        "count": 4,
+        "wins": 4,
+        "success_rate": 100.0,
+        "avg_max_gain": 48.92,
         "best": 169.59
       },
       {
         "factor": "flag",
         "value": "Strong Momentum",
-        "count": 6,
-        "wins": 3,
-        "success_rate": 50.0,
-        "avg_max_gain": 1766.92,
-        "best": 10524.0
+        "count": 2,
+        "wins": 2,
+        "success_rate": 100.0,
+        "avg_max_gain": 33.68,
+        "best": 60.68
       }
     ]
   }

@@ -2,8 +2,8 @@
   "date": "2026-05-27",
   "summary": {
     "n_evaluated": 19,
-    "wins": 11,
-    "success_rate_pct": 57.9,
+    "wins": 10,
+    "success_rate_pct": 52.6,
     "avg_max_gain_pct": 12.0,
     "median_max_gain_pct": 5.3,
     "best_run_pct": 165.46,
@@ -31,8 +31,8 @@
         "factor": "bucket",
         "value": "watch",
         "count": 5,
-        "wins": 4,
-        "success_rate": 80.0,
+        "wins": 3,
+        "success_rate": 60.0,
         "avg_max_gain": 8.65,
         "best": 18.58
       }
@@ -51,8 +51,8 @@
         "factor": "score_range",
         "value": "50-69",
         "count": 17,
-        "wins": 10,
-        "success_rate": 58.8,
+        "wins": 9,
+        "success_rate": 52.9,
         "avg_max_gain": 12.77,
         "best": 165.46
       }
@@ -62,8 +62,8 @@
         "factor": "price_range",
         "value": "$1-$5",
         "count": 11,
-        "wins": 6,
-        "success_rate": 54.5,
+        "wins": 5,
+        "success_rate": 45.5,
         "avg_max_gain": 4.4,
         "best": 44.77
       },
@@ -100,8 +100,8 @@
         "factor": "change_range",
         "value": "20-30%",
         "count": 3,
-        "wins": 3,
-        "success_rate": 100.0,
+        "wins": 2,
+        "success_rate": 66.7,
         "avg_max_gain": 6.11,
         "best": 8.52
       },
@@ -138,8 +138,8 @@
         "factor": "session",
         "value": "open",
         "count": 6,
-        "wins": 6,
-        "success_rate": 100.0,
+        "wins": 5,
+        "success_rate": 83.3,
         "avg_max_gain": 10.12,
         "best": 18.58
       },
@@ -185,8 +185,8 @@
         "factor": "sector",
         "value": "Healthcare",
         "count": 5,
-        "wins": 3,
-        "success_rate": 60.0,
+        "wins": 2,
+        "success_rate": 40.0,
         "avg_max_gain": 5.04,
         "best": 18.58
       },
@@ -214,8 +214,8 @@
         "factor": "flag",
         "value": "Volume Explosion",
         "count": 18,
-        "wins": 11,
-        "success_rate": 61.1,
+        "wins": 10,
+        "success_rate": 55.6,
         "avg_max_gain": 12.69,
         "best": 165.46
       },
@@ -223,8 +223,8 @@
         "factor": "flag",
         "value": "Major Mover",
         "count": 14,
-        "wins": 7,
-        "success_rate": 50.0,
+        "wins": 6,
+        "success_rate": 42.9,
         "avg_max_gain": 11.04,
         "best": 165.46
       },
@@ -232,8 +232,8 @@
         "factor": "flag",
         "value": "Sub $5",
         "count": 11,
-        "wins": 6,
-        "success_rate": 54.5,
+        "wins": 5,
+        "success_rate": 45.5,
         "avg_max_gain": 4.4,
         "best": 44.77
       },

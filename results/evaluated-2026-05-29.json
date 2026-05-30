@@ -1,8 +1,7 @@
 {
   "date": "2026-05-29",
-  "n_records": 29,
-  "n_evaluated": 29,
-  "n_failed": 0,
+  "n_evaluated": 28,
+  "n_excluded": 1,
   "evaluated": [
     {
       "bucket": "triggered",
@@ -210,7 +209,7 @@
       "max_gain": 2.14,
       "max_loss": -30.97,
       "close_pct": 1.15,
-      "success": 1
+      "success": 0
     },
     {
       "bucket": "watch",
@@ -778,41 +777,6 @@
       "success": 1
     },
     {
-      "bucket": "ondeck",
-      "change_pct": 56.66,
-      "company": "ParaZero Technologies Ltd",
-      "date": "2026-05-29",
-      "entry": 1.03,
-      "flags": [
-        "Volume Explosion",
-        "Major Mover",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "open",
-      "price": 0.9903,
-      "rvol": 28.41,
-      "score": 65,
-      "sector": "Industrials",
-      "signals": [
-        "NEAR HOD",
-        "VOL SPIKE",
-        "BIG MOVER"
-      ],
-      "sma20_pct": 0.0,
-      "stop": 0.99,
-      "ticker": "PRZO",
-      "time": "11:29:36",
-      "day_open": 0.7,
-      "day_high": 1.18,
-      "day_low": 0.62,
-      "day_close": 0.928,
-      "max_gain": 19.16,
-      "max_loss": -37.39,
-      "close_pct": -6.29,
-      "success": 1
-    },
-    {
       "bucket": "watch",
       "change_pct": 117.87,
       "company": "CDT Equity Inc",
@@ -976,5 +940,14 @@
       "success": 1
     }
   ],
-  "failed": []
+  "excluded": [
+    {
+      "ticker": "PRZO",
+      "date": "2026-05-29",
+      "sighting_price": 0.9903,
+      "reason": "price below $1.00 floor"
+    }
+  ],
+  "threshold": 5.0,
+  "min_price": 1.0
 }

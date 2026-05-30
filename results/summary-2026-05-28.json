@@ -2,8 +2,8 @@
   "date": "2026-05-28",
   "summary": {
     "n_evaluated": 25,
-    "wins": 23,
-    "success_rate_pct": 92.0,
+    "wins": 21,
+    "success_rate_pct": 84.0,
     "avg_max_gain_pct": 25.86,
     "median_max_gain_pct": 11.11,
     "best_run_pct": 269.78,
@@ -40,8 +40,8 @@
         "factor": "bucket",
         "value": "watch",
         "count": 8,
-        "wins": 8,
-        "success_rate": 100.0,
+        "wins": 6,
+        "success_rate": 75.0,
         "avg_max_gain": 9.01,
         "best": 18.98
       }
@@ -60,8 +60,8 @@
         "factor": "score_range",
         "value": "50-69",
         "count": 20,
-        "wins": 18,
-        "success_rate": 90.0,
+        "wins": 16,
+        "success_rate": 80.0,
         "avg_max_gain": 27.5,
         "best": 269.78
       }
@@ -89,8 +89,8 @@
         "factor": "price_range",
         "value": "$5-$20",
         "count": 10,
-        "wins": 9,
-        "success_rate": 90.0,
+        "wins": 7,
+        "success_rate": 70.0,
         "avg_max_gain": 13.78,
         "best": 43.1
       }
@@ -100,8 +100,8 @@
         "factor": "change_range",
         "value": "10-20%",
         "count": 9,
-        "wins": 8,
-        "success_rate": 88.9,
+        "wins": 6,
+        "success_rate": 66.7,
         "avg_max_gain": 9.55,
         "best": 18.21
       },
@@ -138,8 +138,8 @@
         "factor": "session",
         "value": "open",
         "count": 13,
-        "wins": 12,
-        "success_rate": 92.3,
+        "wins": 10,
+        "success_rate": 76.9,
         "avg_max_gain": 9.32,
         "best": 18.98
       },
@@ -167,8 +167,8 @@
         "factor": "sector",
         "value": "Consumer Cyclical",
         "count": 2,
-        "wins": 2,
-        "success_rate": 100.0,
+        "wins": 1,
+        "success_rate": 50.0,
         "avg_max_gain": 9.41,
         "best": 13.85
       },
@@ -221,8 +221,8 @@
         "factor": "sector",
         "value": "Technology",
         "count": 11,
-        "wins": 10,
-        "success_rate": 90.9,
+        "wins": 9,
+        "success_rate": 81.8,
         "avg_max_gain": 41.84,
         "best": 269.78
       },
@@ -268,8 +268,8 @@
         "factor": "flag",
         "value": "Strong Momentum",
         "count": 9,
-        "wins": 8,
-        "success_rate": 88.9,
+        "wins": 6,
+        "success_rate": 66.7,
         "avg_max_gain": 9.55,
         "best": 18.21
       },
@@ -277,8 +277,8 @@
         "factor": "flag",
         "value": "High RVol",
         "count": 8,
-        "wins": 8,
-        "success_rate": 100.0,
+        "wins": 6,
+        "success_rate": 75.0,
         "avg_max_gain": 16.16,
         "best": 55.0
       }

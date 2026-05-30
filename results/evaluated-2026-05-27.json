@@ -1,8 +1,7 @@
 {
   "date": "2026-05-27",
-  "n_records": 19,
   "n_evaluated": 19,
-  "n_failed": 0,
+  "n_excluded": 0,
   "evaluated": [
     {
       "bucket": "running",
@@ -617,7 +616,7 @@
       "max_gain": 4.51,
       "max_loss": -14.59,
       "close_pct": -5.31,
-      "success": 1
+      "success": 0
     },
     {
       "bucket": "watch",
@@ -653,5 +652,7 @@
       "success": 1
     }
   ],
-  "failed": []
+  "excluded": [],
+  "threshold": 5.0,
+  "min_price": 1.0
 }

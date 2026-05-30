@@ -1,218 +1,8 @@
 {
   "date": "2026-05-20",
-  "n_records": 31,
-  "n_evaluated": 31,
-  "n_failed": 0,
+  "n_evaluated": 12,
+  "n_excluded": 19,
   "evaluated": [
-    {
-      "bucket": "triggered",
-      "change_pct": 19.29,
-      "company": "Haoxi Health Technology Ltd",
-      "date": "2026-05-20",
-      "entry": 0.02,
-      "flags": [
-        "Volume Explosion",
-        "Strong Momentum",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "pre",
-      "price": 0.02,
-      "rvol": 105.14,
-      "score": 64,
-      "sector": "Communication Services",
-      "signals": [
-        "STRONG GAP",
-        "NEAR HOD",
-        "VOL SPIKE"
-      ],
-      "sma20_pct": 0.0,
-      "stop": 0.02,
-      "ticker": "HAO",
-      "time": "08:33:59",
-      "day_open": 1.9328,
-      "day_high": 2.1248,
-      "day_low": 1.5616,
-      "day_close": 1.8432,
-      "max_gain": 10524.0,
-      "max_loss": 7708.0,
-      "close_pct": 9116.0,
-      "success": 1
-    },
-    {
-      "bucket": "triggered",
-      "change_pct": 10.96,
-      "company": "Dreamland Ltd",
-      "date": "2026-05-20",
-      "entry": 0.64,
-      "flags": [
-        "Volume Explosion",
-        "Strong Momentum",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "pre",
-      "price": 0.64,
-      "rvol": 17.87,
-      "score": 51,
-      "sector": "Communication Services",
-      "signals": [
-        "STRONG GAP",
-        "VOL SPIKE"
-      ],
-      "sma20_pct": 0.0,
-      "stop": 0.62,
-      "ticker": "TDIC",
-      "time": "08:33:59",
-      "day_open": 0.63,
-      "day_high": 0.656,
-      "day_low": 0.579,
-      "day_close": 0.591,
-      "max_gain": 2.5,
-      "max_loss": -9.53,
-      "close_pct": -7.66,
-      "success": 0
-    },
-    {
-      "bucket": "running",
-      "change_pct": 42.38,
-      "company": "Capstone Holding Corp",
-      "date": "2026-05-20",
-      "entry": 0.43,
-      "flags": [
-        "Volume Explosion",
-        "Major Mover",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "pre",
-      "price": 0.43,
-      "rvol": 395.67,
-      "score": 65,
-      "sector": "Basic Materials",
-      "signals": [
-        "MAJOR GAP",
-        "NEAR HOD",
-        "VOL SPIKE"
-      ],
-      "sma20_pct": 0.0,
-      "stop": 0.42,
-      "ticker": "CAPS",
-      "time": "08:33:59",
-      "day_open": 0.41,
-      "day_high": 0.48,
-      "day_low": 0.35,
-      "day_close": 0.39,
-      "max_gain": 11.63,
-      "max_loss": -18.6,
-      "close_pct": -9.3,
-      "success": 1
-    },
-    {
-      "bucket": "running",
-      "change_pct": 82.97,
-      "company": "GCL Global Holdings Ltd",
-      "date": "2026-05-20",
-      "entry": 0.79,
-      "flags": [
-        "Volume Explosion",
-        "Major Mover",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "pre",
-      "price": 0.79,
-      "rvol": 1150.24,
-      "score": 65,
-      "sector": "Communication Services",
-      "signals": [
-        "MAJOR GAP",
-        "NEAR HOD",
-        "VOL SPIKE"
-      ],
-      "sma20_pct": 0.0,
-      "stop": 0.77,
-      "ticker": "GCL",
-      "time": "08:33:59",
-      "day_open": 0.74,
-      "day_high": 0.964,
-      "day_low": 0.685,
-      "day_close": 0.745,
-      "max_gain": 22.03,
-      "max_loss": -13.29,
-      "close_pct": -5.7,
-      "success": 1
-    },
-    {
-      "bucket": "running",
-      "change_pct": 36.58,
-      "company": "GD Culture Group Limited",
-      "date": "2026-05-20",
-      "entry": 0.19,
-      "flags": [
-        "Volume Explosion",
-        "Major Mover",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "pre",
-      "price": 0.19,
-      "rvol": 94.64,
-      "score": 65,
-      "sector": "Communication Services",
-      "signals": [
-        "MAJOR GAP",
-        "NEAR HOD",
-        "VOL SPIKE"
-      ],
-      "sma20_pct": 0.0,
-      "stop": 0.18,
-      "ticker": "GDC",
-      "time": "08:33:59",
-      "day_open": 0.146,
-      "day_high": 0.15,
-      "day_low": 0.091,
-      "day_close": 0.116,
-      "max_gain": -21.05,
-      "max_loss": -52.11,
-      "close_pct": -38.95,
-      "success": 0
-    },
-    {
-      "bucket": "running",
-      "change_pct": 77.28,
-      "company": "Jupiter Neurosciences Inc",
-      "date": "2026-05-20",
-      "entry": 0.57,
-      "flags": [
-        "Volume Explosion",
-        "Major Mover",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "pre",
-      "price": 0.57,
-      "rvol": 15844.26,
-      "score": 65,
-      "sector": "Healthcare",
-      "signals": [
-        "MAJOR GAP",
-        "NEAR HOD",
-        "VOL SPIKE"
-      ],
-      "sma20_pct": 0.0,
-      "stop": 0.55,
-      "ticker": "JUNS",
-      "time": "08:33:59",
-      "day_open": 0.513,
-      "day_high": 0.53,
-      "day_low": 0.172,
-      "day_close": 0.205,
-      "max_gain": -7.02,
-      "max_loss": -69.82,
-      "close_pct": -64.04,
-      "success": 0
-    },
     {
       "bucket": "running",
       "change_pct": 55.72,
@@ -284,41 +74,6 @@
     },
     {
       "bucket": "running",
-      "change_pct": 35.64,
-      "company": "BiomX Inc",
-      "date": "2026-05-20",
-      "entry": 0.51,
-      "flags": [
-        "Volume Explosion",
-        "Major Mover",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "pre",
-      "price": 0.51,
-      "rvol": 6064.94,
-      "score": 65,
-      "sector": "Healthcare",
-      "signals": [
-        "MAJOR GAP",
-        "NEAR HOD",
-        "VOL SPIKE"
-      ],
-      "sma20_pct": 0.0,
-      "stop": 0.49,
-      "ticker": "PHGE",
-      "time": "08:33:59",
-      "day_open": 0.526,
-      "day_high": 0.713,
-      "day_low": 0.38,
-      "day_close": 0.597,
-      "max_gain": 39.8,
-      "max_loss": -25.49,
-      "close_pct": 17.06,
-      "success": 1
-    },
-    {
-      "bucket": "running",
       "change_pct": 28.31,
       "company": "Arcadia Biosciences Inc",
       "date": "2026-05-20",
@@ -350,205 +105,6 @@
       "max_gain": 32.2,
       "max_loss": -32.2,
       "close_pct": -19.75,
-      "success": 1
-    },
-    {
-      "bucket": "running",
-      "change_pct": 147.66,
-      "company": "Silexion Therapeutics Corp",
-      "date": "2026-05-20",
-      "entry": 0.67,
-      "flags": [
-        "Volume Explosion",
-        "Major Mover",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "pre",
-      "price": 0.67,
-      "rvol": 17369.6,
-      "score": 65,
-      "sector": "Healthcare",
-      "signals": [
-        "MAJOR GAP",
-        "NEAR HOD",
-        "VOL SPIKE"
-      ],
-      "sma20_pct": 0.0,
-      "stop": 0.65,
-      "ticker": "SLXN",
-      "time": "08:33:59",
-      "day_open": 0.63,
-      "day_high": 0.666,
-      "day_low": 0.366,
-      "day_close": 0.53,
-      "max_gain": -0.6,
-      "max_loss": -45.37,
-      "close_pct": -20.9,
-      "success": 0
-    },
-    {
-      "bucket": "ondeck",
-      "change_pct": 2.89,
-      "company": "QTREX Quantum Ltd",
-      "date": "2026-05-20",
-      "entry": 0.39,
-      "flags": [
-        "Volume Explosion",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "pre",
-      "price": 0.39,
-      "rvol": 559.84,
-      "score": 39,
-      "sector": "Healthcare",
-      "signals": [
-        "VOL SPIKE"
-      ],
-      "sma20_pct": 0.0,
-      "stop": 0.38,
-      "ticker": "QTEX",
-      "time": "08:33:59",
-      "day_open": 0.441,
-      "day_high": 0.45,
-      "day_low": 0.333,
-      "day_close": 0.391,
-      "max_gain": 15.38,
-      "max_loss": -14.62,
-      "close_pct": 0.26,
-      "success": 1
-    },
-    {
-      "bucket": "ondeck",
-      "change_pct": 0.45,
-      "company": "Hub Cyber Security Ltd",
-      "date": "2026-05-20",
-      "entry": 0.13,
-      "flags": [
-        "Volume Explosion",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "pre",
-      "price": 0.13,
-      "rvol": 16.26,
-      "score": 36,
-      "sector": "Technology",
-      "signals": [
-        "VOL SPIKE"
-      ],
-      "sma20_pct": 0.0,
-      "stop": 0.13,
-      "ticker": "HUBC",
-      "time": "08:33:59",
-      "day_open": 0.15,
-      "day_high": 0.15,
-      "day_low": 0.121,
-      "day_close": 0.128,
-      "max_gain": 15.38,
-      "max_loss": -6.92,
-      "close_pct": -1.54,
-      "success": 1
-    },
-    {
-      "bucket": "ondeck",
-      "change_pct": 0.21,
-      "company": "Republic Power Group Ltd",
-      "date": "2026-05-20",
-      "entry": 0.24,
-      "flags": [
-        "Volume Explosion",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "pre",
-      "price": 0.24,
-      "rvol": 43.55,
-      "score": 35,
-      "sector": "Technology",
-      "signals": [
-        "VOL SPIKE"
-      ],
-      "sma20_pct": 0.0,
-      "stop": 0.23,
-      "ticker": "RPGL",
-      "time": "08:33:59",
-      "day_open": 0.244,
-      "day_high": 0.281,
-      "day_low": 0.221,
-      "day_close": 0.26,
-      "max_gain": 17.08,
-      "max_loss": -7.92,
-      "close_pct": 8.33,
-      "success": 1
-    },
-    {
-      "bucket": "ondeck",
-      "change_pct": 3.44,
-      "company": "Functional Brands Inc",
-      "date": "2026-05-20",
-      "entry": 0.07,
-      "flags": [
-        "Volume Explosion",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "pre",
-      "price": 0.07,
-      "rvol": 112.94,
-      "score": 40,
-      "sector": "Consumer Defensive",
-      "signals": [
-        "NEAR HOD",
-        "VOL SPIKE"
-      ],
-      "sma20_pct": 0.0,
-      "stop": 0.07,
-      "ticker": "MEHA",
-      "time": "08:42:29",
-      "day_open": 0.084,
-      "day_high": 0.091,
-      "day_low": 0.067,
-      "day_close": 0.085,
-      "max_gain": 30.0,
-      "max_loss": -4.29,
-      "close_pct": 21.43,
-      "success": 1
-    },
-    {
-      "bucket": "running",
-      "change_pct": 29.46,
-      "company": "Wellgistics Health Inc",
-      "date": "2026-05-20",
-      "entry": 0.22,
-      "flags": [
-        "Volume Explosion",
-        "Major Mover",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "pre",
-      "price": 0.22,
-      "rvol": 15.42,
-      "score": 65,
-      "sector": "Healthcare",
-      "signals": [
-        "MAJOR GAP",
-        "NEAR HOD",
-        "VOL SPIKE"
-      ],
-      "sma20_pct": 0.0,
-      "stop": 0.21,
-      "ticker": "WGRX",
-      "time": "09:24:56",
-      "day_open": 0.22,
-      "day_high": 0.231,
-      "day_low": 0.102,
-      "day_close": 0.129,
-      "max_gain": 5.0,
-      "max_loss": -53.64,
-      "close_pct": -41.36,
       "success": 1
     },
     {
@@ -620,69 +176,6 @@
     },
     {
       "bucket": "watch",
-      "change_pct": 3.96,
-      "company": "CXApp Inc",
-      "date": "2026-05-20",
-      "entry": 0.18,
-      "flags": [
-        "High RVol",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "open",
-      "price": 0.1786,
-      "rvol": 8.13,
-      "score": 34,
-      "sector": "Technology",
-      "signals": [],
-      "sma20_pct": 0.0,
-      "stop": 0.17,
-      "ticker": "CXAI",
-      "time": "09:35:16",
-      "day_open": 0.181,
-      "day_high": 0.193,
-      "day_low": 0.165,
-      "day_close": 0.178,
-      "max_gain": 8.06,
-      "max_loss": -7.61,
-      "close_pct": -0.34,
-      "success": 1
-    },
-    {
-      "bucket": "ondeck",
-      "change_pct": 2.55,
-      "company": "NextNRG Inc",
-      "date": "2026-05-20",
-      "entry": 0.84,
-      "flags": [
-        "Volume Explosion",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "open",
-      "price": 0.799,
-      "rvol": 19.24,
-      "score": 39,
-      "sector": "Utilities",
-      "signals": [
-        "NEAR HOD",
-        "VOL SPIKE"
-      ],
-      "sma20_pct": 0.0,
-      "stop": 0.81,
-      "ticker": "NXXT",
-      "time": "09:35:16",
-      "day_open": 0.74,
-      "day_high": 1.06,
-      "day_low": 0.65,
-      "day_close": 0.673,
-      "max_gain": 32.67,
-      "max_loss": -18.65,
-      "close_pct": -15.77,
-      "success": 1
-    },
-    {
-      "bucket": "watch",
       "change_pct": 10.59,
       "company": "MetaVia Inc",
       "date": "2026-05-20",
@@ -713,41 +206,6 @@
       "max_gain": 60.68,
       "max_loss": -6.8,
       "close_pct": 40.29,
-      "success": 1
-    },
-    {
-      "bucket": "running",
-      "change_pct": 64.13,
-      "company": "Linkage Global Inc",
-      "date": "2026-05-20",
-      "entry": 0.55,
-      "flags": [
-        "Volume Explosion",
-        "Major Mover",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "open",
-      "price": 0.5711,
-      "rvol": 354.78,
-      "score": 65,
-      "sector": "Consumer Cyclical",
-      "signals": [
-        "ENTRY BREAK",
-        "VOL SPIKE",
-        "BIG MOVER"
-      ],
-      "sma20_pct": 0.0,
-      "stop": 0.53,
-      "ticker": "UZX",
-      "time": "09:51:16",
-      "day_open": 0.357,
-      "day_high": 0.678,
-      "day_low": 0.235,
-      "day_close": 0.305,
-      "max_gain": 18.72,
-      "max_loss": -58.85,
-      "close_pct": -46.59,
       "success": 1
     },
     {
@@ -881,74 +339,6 @@
       "success": 1
     },
     {
-      "bucket": "triggered",
-      "change_pct": 10.23,
-      "company": "Akebia Therapeutics Inc",
-      "date": "2026-05-20",
-      "entry": 0.99,
-      "flags": [
-        "High RVol",
-        "Strong Momentum",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "open",
-      "price": 0.9934,
-      "rvol": 5.06,
-      "score": 32,
-      "sector": "Healthcare",
-      "signals": [
-        "ENTRY BREAK",
-        "NEAR HOD"
-      ],
-      "sma20_pct": 0.0,
-      "stop": 0.96,
-      "ticker": "AKBA",
-      "time": "11:26:44",
-      "day_open": 0.9,
-      "day_high": 1.02,
-      "day_low": 0.895,
-      "day_close": 1.01,
-      "max_gain": 2.68,
-      "max_loss": -9.91,
-      "close_pct": 1.67,
-      "success": 0
-    },
-    {
-      "bucket": "triggered",
-      "change_pct": 16.9,
-      "company": "Accuray Inc",
-      "date": "2026-05-20",
-      "entry": 0.33,
-      "flags": [
-        "High RVol",
-        "Strong Momentum",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "open",
-      "price": 0.3335,
-      "rvol": 5.67,
-      "score": 44,
-      "sector": "Healthcare",
-      "signals": [
-        "ENTRY BREAK",
-        "BIG MOVER"
-      ],
-      "sma20_pct": 0.0,
-      "stop": 0.32,
-      "ticker": "ARAY",
-      "time": "11:41:44",
-      "day_open": 0.28,
-      "day_high": 0.35,
-      "day_low": 0.28,
-      "day_close": 0.33,
-      "max_gain": 4.95,
-      "max_loss": -16.04,
-      "close_pct": -1.05,
-      "success": 0
-    },
-    {
       "bucket": "watch",
       "change_pct": 24.34,
       "company": "Black Diamond Therapeutics Inc",
@@ -1015,41 +405,124 @@
       "max_loss": -36.41,
       "close_pct": -10.07,
       "success": 1
-    },
-    {
-      "bucket": "running",
-      "change_pct": 24.02,
-      "company": "Netcapital Inc",
-      "date": "2026-05-20",
-      "entry": 0.45,
-      "flags": [
-        "Volume Explosion",
-        "Major Mover",
-        "Sub $5"
-      ],
-      "float_m": 0.0,
-      "market": "after",
-      "price": 0.45,
-      "rvol": 21.84,
-      "score": 65,
-      "sector": "Financial",
-      "signals": [
-        "MAJOR GAP",
-        "VOL SPIKE"
-      ],
-      "sma20_pct": 0.0,
-      "stop": 0.44,
-      "ticker": "NCPL",
-      "time": "17:50:15",
-      "day_open": 0.38,
-      "day_high": 0.464,
-      "day_low": 0.368,
-      "day_close": 0.454,
-      "max_gain": 3.11,
-      "max_loss": -18.22,
-      "close_pct": 0.89,
-      "success": 0
     }
   ],
-  "failed": []
+  "excluded": [
+    {
+      "ticker": "HAO",
+      "date": "2026-05-20",
+      "sighting_price": 0.02,
+      "reason": "price below $1.00 floor"
+    },
+    {
+      "ticker": "TDIC",
+      "date": "2026-05-20",
+      "sighting_price": 0.64,
+      "reason": "price below $1.00 floor"
+    },
+    {
+      "ticker": "CAPS",
+      "date": "2026-05-20",
+      "sighting_price": 0.43,
+      "reason": "price below $1.00 floor"
+    },
+    {
+      "ticker": "GCL",
+      "date": "2026-05-20",
+      "sighting_price": 0.79,
+      "reason": "price below $1.00 floor"
+    },
+    {
+      "ticker": "GDC",
+      "date": "2026-05-20",
+      "sighting_price": 0.19,
+      "reason": "price below $1.00 floor"
+    },
+    {
+      "ticker": "JUNS",
+      "date": "2026-05-20",
+      "sighting_price": 0.57,
+      "reason": "price below $1.00 floor"
+    },
+    {
+      "ticker": "PHGE",
+      "date": "2026-05-20",
+      "sighting_price": 0.51,
+      "reason": "price below $1.00 floor"
+    },
+    {
+      "ticker": "SLXN",
+      "date": "2026-05-20",
+      "sighting_price": 0.67,
+      "reason": "price below $1.00 floor"
+    },
+    {
+      "ticker": "QTEX",
+      "date": "2026-05-20",
+      "sighting_price": 0.39,
+      "reason": "price below $1.00 floor"
+    },
+    {
+      "ticker": "HUBC",
+      "date": "2026-05-20",
+      "sighting_price": 0.13,
+      "reason": "price below $1.00 floor"
+    },
+    {
+      "ticker": "RPGL",
+      "date": "2026-05-20",
+      "sighting_price": 0.24,
+      "reason": "price below $1.00 floor"
+    },
+    {
+      "ticker": "MEHA",
+      "date": "2026-05-20",
+      "sighting_price": 0.07,
+      "reason": "price below $1.00 floor"
+    },
+    {
+      "ticker": "WGRX",
+      "date": "2026-05-20",
+      "sighting_price": 0.22,
+      "reason": "price below $1.00 floor"
+    },
+    {
+      "ticker": "CXAI",
+      "date": "2026-05-20",
+      "sighting_price": 0.1786,
+      "reason": "price below $1.00 floor"
+    },
+    {
+      "ticker": "NXXT",
+      "date": "2026-05-20",
+      "sighting_price": 0.799,
+      "reason": "price below $1.00 floor"
+    },
+    {
+      "ticker": "UZX",
+      "date": "2026-05-20",
+      "sighting_price": 0.5711,
+      "reason": "price below $1.00 floor"
+    },
+    {
+      "ticker": "AKBA",
+      "date": "2026-05-20",
+      "sighting_price": 0.9934,
+      "reason": "price below $1.00 floor"
+    },
+    {
+      "ticker": "ARAY",
+      "date": "2026-05-20",
+      "sighting_price": 0.3335,
+      "reason": "price below $1.00 floor"
+    },
+    {
+      "ticker": "NCPL",
+      "date": "2026-05-20",
+      "sighting_price": 0.45,
+      "reason": "price below $1.00 floor"
+    }
+  ],
+  "threshold": 5.0,
+  "min_price": 1.0
 }

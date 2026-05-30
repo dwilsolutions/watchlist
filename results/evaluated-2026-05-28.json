@@ -1,8 +1,7 @@
 {
   "date": "2026-05-28",
-  "n_records": 25,
   "n_evaluated": 25,
-  "n_failed": 0,
+  "n_excluded": 0,
   "evaluated": [
     {
       "bucket": "triggered",
@@ -577,7 +576,7 @@
       "max_gain": 4.98,
       "max_loss": -4.34,
       "close_pct": 0.91,
-      "success": 1
+      "success": 0
     },
     {
       "bucket": "watch",
@@ -710,7 +709,7 @@
       "max_gain": 3.5,
       "max_loss": -8.38,
       "close_pct": -2.63,
-      "success": 1
+      "success": 0
     },
     {
       "bucket": "triggered",
@@ -844,5 +843,7 @@
       "success": 1
     }
   ],
-  "failed": []
+  "excluded": [],
+  "threshold": 5.0,
+  "min_price": 1.0
 }
