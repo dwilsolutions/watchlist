@@ -21,7 +21,8 @@ from datetime import datetime
 import yfinance as yf
 
 
-SUCCESS_THRESHOLD_PCT = 2.0  # ran ≥2% from sighting = success
+SUCCESS_THRESHOLD_PCT = 5.0  # ran ≥5% from sighting = success
+MIN_SIGHTING_PRICE    = 1.0  # match scanner's sh_price_o1 filter; exclude sub-$1 leakage
 
 
 def load_log(path):
@@ -71,9 +72,15 @@ def fetch_candle(ticker, date_str):
 
 
 def evaluate(records):
-    """Run evaluation across all records. Returns (evaluated_list, failed_list)."""
+    """Run evaluation across all records. Returns (evaluated_list, failed_list, excluded_list).
+
+    Excluded: tickers with sighting price below MIN_SIGHTING_PRICE — these match the
+    scanner's sh_price_o1 filter intent (the scanner doesn't want them) but occasionally
+    leak through when a stock dips below $1 mid-session after Finviz's snapshot.
+    """
     evaluated = []
     failed = []
+    excluded = []
     for i, r in enumerate(records):
         sym = r["ticker"]
         date_str = r["date"]
@@ -81,6 +88,16 @@ def evaluate(records):
 
         if sighting_price <= 0:
             failed.append({"ticker": sym, "reason": "no sighting price"})
+            continue
+
+        # Match scanner's $1 floor — exclude leaked sub-$1 sightings
+        if sighting_price < MIN_SIGHTING_PRICE:
+            excluded.append({
+                "ticker":         sym,
+                "date":           date_str,
+                "sighting_price": sighting_price,
+                "reason":         f"price below ${MIN_SIGHTING_PRICE:.2f} floor",
+            })
             continue
 
         candle = fetch_candle(sym, date_str)
@@ -200,18 +217,31 @@ def main():
 
     log_path = sys.argv[1]
     records  = load_log(log_path)
+
+    # Skip cleanly if log is empty (e.g., market holiday)
+    if not records:
+        print(f"No records in {log_path} — likely a holiday or non-trading day. Skipping.")
+        return
+
     deduped  = dedupe_first_sightings(records)
     print(f"Loaded {len(records)} sightings, {len(deduped)} unique tickers")
 
     print(f"\nFetching daily OHLC for {len(deduped)} tickers...")
-    evaluated, failed = evaluate(deduped)
-    print(f"\nEvaluated: {len(evaluated)}, Failed: {len(failed)}")
+    evaluated, failed, excluded = evaluate(deduped)
+    print(f"\nEvaluated: {len(evaluated)}, Failed: {len(failed)}, Excluded (sub-${MIN_SIGHTING_PRICE:.2f}): {len(excluded)}")
 
     if failed:
         print(f"Failed tickers: {[f['ticker'] for f in failed]}")
+    if excluded:
+        print(f"Excluded (price floor): {[e['ticker'] + ' @ $' + str(e['sighting_price']) for e in excluded]}")
 
     # Extract date from filename or first record
     date_str = deduped[0]["date"] if deduped else "unknown"
+
+    # Don't write anything if no tickers survived evaluation (all failed/excluded)
+    if not evaluated:
+        print("No tickers evaluated successfully — skipping output.")
+        return
 
     summary = aggregate(evaluated)
 
@@ -224,8 +254,10 @@ def main():
             "n_records":      len(deduped),
             "n_evaluated":    len(evaluated),
             "n_failed":       len(failed),
+            "n_excluded":     len(excluded),
             "evaluated":      evaluated,
             "failed":         failed,
+            "excluded":       excluded,
         }, f, indent=2)
 
     with open(sum_path, "w") as f:
