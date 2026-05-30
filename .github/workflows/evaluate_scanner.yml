@@ -9,9 +9,15 @@ on:
         required: true
         type: string
 
-  # Daily auto-run at 8:30 PM ET (1:30 AM UTC next day), Mon-Fri
+  # Daily auto-run after market close, Mon-Fri trading days
+  # Cron '30 1 * * 2-6' = 1:30 AM UTC Tue-Sat
+  # = 8:30 PM ET Mon-Fri during EST (winter)
+  # = 9:30 PM ET Mon-Fri during EDT (summer)
+  # Either way, comfortably after the 8 PM ET scanner cutoff.
+  # The workflow targets "yesterday UTC" which correctly resolves to the trading
+  # day that just ended in ET.
   schedule:
-    - cron: '30 1 * * 2-6'  # 1:30 UTC Tue-Sat = previous trading day's EOD ET
+    - cron: '30 1 * * 2-6'
 
 jobs:
   evaluate:
