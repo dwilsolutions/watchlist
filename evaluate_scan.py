@@ -124,7 +124,7 @@ def evaluate(records):
         if (i + 1) % 10 == 0:
             print(f"  ...{i + 1}/{len(records)} processed")
 
-    return evaluated, failed
+    return evaluated, failed, excluded
 
 
 def aggregate(evaluated):
