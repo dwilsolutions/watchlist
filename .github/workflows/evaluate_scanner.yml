@@ -32,13 +32,16 @@ jobs:
         id: url
         run: |
           if [ -n "${{ inputs.log_url }}" ]; then
-            echo "url=${{ inputs.log_url }}" >> $GITHUB_OUTPUT
+            URL="${{ inputs.log_url }}"
+            echo "Using user-provided URL: $URL"
           else
-            # Default: yesterday's log (since this runs after midnight UTC)
-            YESTERDAY=$(date -u -d "yesterday" +%Y-%m-%d)
-            echo "url=https://duanewilson.pythonanywhere.com/api/log/${YESTERDAY}" >> $GITHUB_OUTPUT
+            # Use ET timezone directly — gives today's trading day regardless
+            # of when this workflow fires (scheduled or manual).
+            TODAY_ET=$(TZ=America/New_York date +%Y-%m-%d)
+            URL="https://duanewilson.pythonanywhere.com/api/log/${TODAY_ET}"
+            echo "Auto-targeting today's ET trading day: $TODAY_ET"
           fi
-          echo "Using URL: ${{ steps.url.outputs.url }}"
+          echo "url=$URL" >> $GITHUB_OUTPUT
 
       - name: Download scanner log
         run: |
